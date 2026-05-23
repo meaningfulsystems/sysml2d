@@ -1,0 +1,269 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-intf",
+    "kind": "InterfaceView",
+    "name": "Toaster Interfaces",
+    "canvas": {
+      "width": 628,
+      "height": 754,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "UserInterface",
+        "model_ref": "UserInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "User Interface",
+        "style": "interface"
+      },
+      {
+        "id": "PowerInterface",
+        "model_ref": "PowerInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 252,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Power Interface",
+        "style": "interface"
+      },
+      {
+        "id": "MechanicalInterface",
+        "model_ref": "MechanicalInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 432,
+          "width": 174,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Mechanical Interface",
+        "style": "interface"
+      },
+      {
+        "id": "ThermalInterface",
+        "model_ref": "ThermalInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 612,
+          "width": 153,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Thermal Interface",
+        "style": "interface"
+      },
+      {
+        "id": "UserCommand",
+        "model_ref": "UserCommand",
+        "symbol": "item",
+        "layout": {
+          "x": 406,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "UserCommand",
+        "style": "item"
+      },
+      {
+        "id": "ElectricalEnergy",
+        "model_ref": "ElectricalEnergy",
+        "symbol": "item",
+        "layout": {
+          "x": 406,
+          "y": 252,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "ElectricalEnergy",
+        "style": "item"
+      },
+      {
+        "id": "BreadSlice",
+        "model_ref": "BreadSlice",
+        "symbol": "item",
+        "layout": {
+          "x": 406,
+          "y": 432,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "BreadSlice",
+        "style": "item"
+      },
+      {
+        "id": "HeatEnergy",
+        "model_ref": "HeatEnergy",
+        "symbol": "item",
+        "layout": {
+          "x": 406,
+          "y": 612,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "HeatEnergy",
+        "style": "item"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-UserInterface-UserCommand",
+        "model_ref": "UserInterface",
+        "source": {
+          "element": "UserInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "UserCommand",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-PowerInterface-ElectricalEnergy",
+        "model_ref": "PowerInterface",
+        "source": {
+          "element": "PowerInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ElectricalEnergy",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-MechanicalInterface-BreadSlice",
+        "model_ref": "MechanicalInterface",
+        "source": {
+          "element": "MechanicalInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "BreadSlice",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "positions",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ThermalInterface-HeatEnergy",
+        "model_ref": "ThermalInterface",
+        "source": {
+          "element": "ThermalInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "HeatEnergy",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

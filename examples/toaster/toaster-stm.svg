@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1090" height="541" viewBox="0 0 1090 541">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1090" height="541" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1086" height="499" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 600 L 616 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[stv.mb] Toaster Control State Machine [toasterControl : ToasterControl]</text>
+<rect x="2" y="38" width="1086" height="501" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="95" y="75" width="951" height="384" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="105" y="97">toasterControl</text>
+<circle id="initial" cx="155" cy="221" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="idle" x="318" y="191" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="383" y="221">Idle</text>
+<rect id="heating" x="546" y="191" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="611" y="221">Heating</text>
+<rect id="done" x="774" y="125" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="839" y="155">Done</text>
+<rect id="error" x="774" y="257" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="839" y="287">Error</text>
+<path d="M 165,221 L 318,221" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 448,221 L 546,221" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 676,210.998 L 701,211 Q 709,211 709,203 L 709,163 Q 709,155 717,155 L 774,155" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 676,231.002 L 733,231 Q 741,231 741,239 L 741,279 Q 741,287 749,287 L 774,287" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 611,251 L 611,271 Q 611,279 603,279 L 391,279 Q 383,279 383,271 L 383,251" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 904,144.998 L 960,145 Q 968,145 968,153 L 968,401 Q 968,409 960,409 L 352,409 Q 344,409 344,401 L 344,251" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 904,297.002 L 932,297 Q 940,297 940,305 L 940,373 Q 940,381 932,381 L 372,381 Q 364,381 363.969,373 L 363.5,251" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="497" y="229">lever down</text>
+<text class="small" text-anchor="middle" x="709" y="174.2">timer expired</text>
+<text class="small" x="751" y="242.2">fault: overheat / jam / power</text>
+<text class="small" text-anchor="middle" x="497" y="287">carriage up abort</text>
+<text class="small" text-anchor="middle" x="656" y="417">carriage up</text>
+<text class="small" text-anchor="middle" x="652" y="389">reset</text>
+</g>
+</svg>

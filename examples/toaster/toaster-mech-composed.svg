@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="976" height="570" viewBox="0 0 976 570">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="976" height="570" fill="#FFFFFF"/>
+<rect x="2" y="38" width="972" height="528" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 616 L 632 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] Toaster Mechanical Interconnection (Composed) [toaster : Toaster]</text>
+<rect x="2" y="38" width="972" height="530" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="892" height="448" rx="12" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">toaster</text>
+<rect id="bnd--lever" x="589.984" y="482" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="bnd--buttons" x="149.96" y="34" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="bnd--crumb-tray" x="370.016" y="34" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="chassis" x="296" y="372" width="160" height="80" rx="10" fill="#F5F5F5" stroke="#616161" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="376" y="412">Chassis</text>
+<rect id="lever" x="516" y="372" width="160" height="80" rx="10" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="596" y="412">Lever</text>
+<rect id="buttons" x="76" y="76" width="160" height="80" rx="10" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="156" y="116">Buttons</text>
+<rect id="carriage" x="736" y="76" width="160" height="80" rx="10" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="816" y="116">Carriage</text>
+<rect id="crumb-tray" x="296" y="76" width="160" height="80" rx="10" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="376" y="116">Crumb Tray</text>
+<rect id="pcs" x="516" y="76" width="160" height="80" rx="10" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="596" y="108.5">Power &amp; Control</tspan><tspan x="596" dy="15">Subsystem</tspan></text>
+<rect id="chassis--crumb-tray--src" x="370" y="366" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="chassis--pcs--src" x="396.672" y="366" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="chassis--carriage--src" x="423.328" y="366" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="chassis--buttons--src" x="290" y="406" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lever--carriage--src" x="670" y="406" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lever--bnd--tgt" x="590" y="446" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="chassis--buttons--tgt" x="150" y="150" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="buttons--bnd--tgt" x="150" y="70" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="chassis--carriage--tgt" x="783.328" y="150" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lever--carriage--tgt" x="836.672" y="150" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="chassis--crumb-tray--tgt" x="370" y="150" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="crumb-tray--bnd--tgt" x="370" y="70" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="chassis--pcs--tgt" x="590" y="150" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 682,412 L 834.672,412 Q 842.672,412 842.672,404 L 842.672,162" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 429.328,366 L 429.328,300 Q 429.328,292 437.328,292 L 781.328,292 Q 789.328,292 789.328,284 L 789.328,162" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 290,412 L 164,412 Q 156,412 156,404 L 156,162" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 376,366 L 376,162" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 402.672,366 L 402.672,272 Q 402.672,264 410.672,264 L 588,264 Q 596,264 596,256 L 596,162" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 595.984,482 L 596,458" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 155.96,46 L 156,70" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 376.016,46 L 376,70" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="595.984" y="515">lever input</text>
+<text class="small" text-anchor="middle" x="155.96" y="24">button press</text>
+<text class="small" text-anchor="middle" x="376.016" y="24">pull/remove</text>
+<text class="small" text-anchor="middle" x="376" y="356">guide</text>
+<text class="small" text-anchor="middle" x="402.672" y="339">mount</text>
+<text class="small" text-anchor="middle" x="429.328" y="356">guide</text>
+<text class="small" text-anchor="end" x="280" y="396">mount</text>
+<text class="small" x="692" y="396">lift</text>
+<text class="small" text-anchor="end" x="580" y="479">lever input</text>
+<text class="small" text-anchor="end" x="140" y="183">mount</text>
+<text class="small" x="172" y="60">button press</text>
+<text class="small" text-anchor="end" x="773.328" y="183">guide</text>
+<text class="small" text-anchor="end" x="826.672" y="183">lift</text>
+<text class="small" text-anchor="end" x="360" y="183">guide</text>
+<text class="small" text-anchor="end" x="360" y="60">pull/remove</text>
+<text class="small" text-anchor="end" x="580" y="183">mount</text>
+</g>
+</svg>

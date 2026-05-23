@@ -1,0 +1,457 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "blender-req",
+    "kind": "RequirementView",
+    "name": "Blender Requirements",
+    "canvas": {
+      "width": 1891,
+      "height": 628,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "lidInterlockRequirement",
+        "model_ref": "lidInterlockRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 834,
+          "y": 72,
+          "width": 223,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-B-001 Lid Interlock\nPrevent blending unless lid\nand container are seated.",
+        "style": "requirement"
+      },
+      {
+        "id": "motorControlRequirement",
+        "model_ref": "motorControlRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 202,
+          "y": 270,
+          "width": 230,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-B-002 Motor Control\nCommand motor speed and stop\nunder program control.",
+        "style": "requirement"
+      },
+      {
+        "id": "smoothnessDetectionRequirement",
+        "model_ref": "smoothnessDetectionRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 634,
+          "y": 270,
+          "width": 265,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-B-003 Smoothness Detection\nUse sensor feedback to stop\nwhen smoothness threshold is met.",
+        "style": "requirement"
+      },
+      {
+        "id": "powerRequirement",
+        "model_ref": "powerRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 971,
+          "y": 270,
+          "width": 237,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-B-004 Power\nProvide controlled electrical\npower to the motor base.",
+        "style": "requirement"
+      },
+      {
+        "id": "interlockLatencyRequirement",
+        "model_ref": "interlockLatencyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1280,
+          "y": 270,
+          "width": 223,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-B-010 Interlock Latency\nDisable motor within 100 ms\nof lid-open detection.",
+        "style": "requirement"
+      },
+      {
+        "id": "motorSpeedRequirement",
+        "model_ref": "motorSpeedRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 468,
+          "width": 216,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-B-020 Motor Speed\nAchieve 20,000 rpm no-load\nand controlled ramp-up.",
+        "style": "requirement"
+      },
+      {
+        "id": "overcurrentProtectionRequirement",
+        "model_ref": "overcurrentProtectionRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 360,
+          "y": 468,
+          "width": 202,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-B-021 Overcurrent\nStop motor within 250 ms\nof jam or overcurrent.",
+        "style": "requirement"
+      },
+      {
+        "id": "smoothnessThresholdRequirement",
+        "model_ref": "smoothnessThresholdRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 644.5,
+          "y": 468,
+          "width": 244,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-B-030 Smoothness Threshold\nDeclare smooth when vibration\nindex remains below threshold.",
+        "style": "requirement"
+      },
+      {
+        "id": "noiseRequirement",
+        "model_ref": "noiseRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 978,
+          "y": 468,
+          "width": 223,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-B-040 Noise\nOperate below 85 dBA at\n1 m during normal blending.",
+        "style": "requirement"
+      },
+      {
+        "id": "containerSeatRequirement",
+        "model_ref": "containerSeatRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1575,
+          "y": 270,
+          "width": 244,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-B-050 Container Seat\nDetect seated container before\nmotor torque is enabled.",
+        "style": "requirement"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-lidInterlockRequirement-motorControlRequirement",
+        "model_ref": "lidInterlockRequirement",
+        "source": {
+          "element": "lidInterlockRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.167
+          }
+        },
+        "target": {
+          "element": "motorControlRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "derive",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-lidInterlockRequirement-smoothnessDetectionRequirement",
+        "model_ref": "lidInterlockRequirement",
+        "source": {
+          "element": "lidInterlockRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.333
+          }
+        },
+        "target": {
+          "element": "smoothnessDetectionRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "derive",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-lidInterlockRequirement-powerRequirement",
+        "model_ref": "lidInterlockRequirement",
+        "source": {
+          "element": "lidInterlockRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "powerRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "derive",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-lidInterlockRequirement-interlockLatencyRequirement",
+        "model_ref": "lidInterlockRequirement",
+        "source": {
+          "element": "lidInterlockRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.667
+          }
+        },
+        "target": {
+          "element": "interlockLatencyRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-motorControlRequirement-motorSpeedRequirement",
+        "model_ref": "motorControlRequirement",
+        "source": {
+          "element": "motorControlRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.333
+          }
+        },
+        "target": {
+          "element": "motorSpeedRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-motorControlRequirement-overcurrentProtectionRequirement",
+        "model_ref": "motorControlRequirement",
+        "source": {
+          "element": "motorControlRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.667
+          }
+        },
+        "target": {
+          "element": "overcurrentProtectionRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-smoothnessDetectionRequirement-smoothnessThresholdRequirement",
+        "model_ref": "smoothnessDetectionRequirement",
+        "source": {
+          "element": "smoothnessDetectionRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothnessThresholdRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-powerRequirement-noiseRequirement",
+        "model_ref": "powerRequirement",
+        "source": {
+          "element": "powerRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "noiseRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "trace",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-lidInterlockRequirement-containerSeatRequirement",
+        "model_ref": "lidInterlockRequirement",
+        "source": {
+          "element": "lidInterlockRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.833
+          }
+        },
+        "target": {
+          "element": "containerSeatRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Blender"
+  }
+}

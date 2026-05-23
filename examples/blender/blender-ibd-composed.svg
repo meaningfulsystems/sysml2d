@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1063" height="661" viewBox="0 0 1063 661">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1063" height="661" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1059" height="619" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 552 L 568 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] Blender Internal Structure (Composed) [blender : Blender]</text>
+<rect x="2" y="38" width="1059" height="621" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="979" height="539" rx="14" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">blender</text>
+<rect id="tamper" x="121" y="76" width="150" height="74" rx="10" fill="#F5F5F5" stroke="#616161" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="196" y="113">Tamper</text>
+<rect id="lid" x="106" y="256" width="180" height="74" rx="10" fill="#ECEFF1" stroke="#455A64" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="196" y="293">Lid</text>
+<rect id="container" x="76" y="427" width="240" height="92" rx="10" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="196" y="473">Container</text>
+<rect id="bladeAssembly" x="427" y="436" width="190" height="74" rx="10" fill="#FCE4EC" stroke="#AD1457" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="522" y="473">Blade Assembly</text>
+<rect id="driveCoupling" x="427" y="256" width="190" height="74" rx="10" fill="#FFF8DC" stroke="#8B6914" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="522" y="293">Drive Coupling</text>
+<rect id="smoothnessSensor" x="427" y="76" width="190" height="74" rx="10" fill="#FFF3E0" stroke="#EF6C00" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="522" y="105.5">Smoothness</tspan><tspan x="522" dy="15">Sensor</tspan></text>
+<rect id="motorBase" x="739" y="436" width="220" height="74" rx="10" fill="#EDE7F6" stroke="#5E35B1" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="849" y="473">Motor Base</text>
+<rect id="motor" x="764" y="256" width="170" height="74" rx="10" fill="#FFEDE0" stroke="#CC4400" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="849" y="293">Motor</text>
+<rect id="controlPanel" x="754" y="76" width="190" height="74" rx="10" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="849" y="113">Control Panel</text>
+<rect id="tamper--lid--src" x="190" y="144" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="tamper--lid--tgt" x="190" y="250" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lid--container--src" x="190" y="324" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lid--container--tgt" x="190" y="421" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="container--bladeAssembly--src" x="310" y="467" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="container--motorBase--src" x="190" y="513" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="container--bladeAssembly--tgt" x="421" y="467" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="bladeAssembly--driveCoupling--src" x="516" y="430" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="bladeAssembly--driveCoupling--tgt" x="516" y="324" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="motorBase--driveCoupling--tgt" x="563.5" y="324" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="driveCoupling--motor--src" x="611" y="287" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="driveCoupling--smoothnessSensor--src" x="516" y="250" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="driveCoupling--smoothnessSensor--tgt" x="516" y="144" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="smoothnessSensor--controlPanel--src" x="611" y="107" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="container--motorBase--tgt" x="843" y="504" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="motorBase--driveCoupling--src" x="788" y="430" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="motorBase--motor--src" x="843" y="430" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="motorBase--controlPanel--src" x="953" y="467" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="motorBase--motor--tgt" x="843" y="324" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="driveCoupling--motor--tgt" x="758" y="287" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="controlPanel--motor--tgt" x="843" y="250" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="motorBase--controlPanel--tgt" x="938" y="107" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="smoothnessSensor--controlPanel--tgt" x="748" y="107" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="controlPanel--motor--src" x="843" y="144" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 196,156 L 196,250" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 196,336 L 196,421" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 322,473 L 421,473" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 196,525 L 196,535 Q 196,543 204,543 L 841,543 Q 849,543 849,535 L 849,516" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 849,430 L 849,336" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 965,473 L 975,473 Q 983,473 983,465 L 983,121 Q 983,113 975,113 L 950,113" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 794,430 L 794,400.667 Q 794,392.667 786,392.667 L 577.5,392.667 Q 569.5,392.667 569.5,384.667 L 569.5,336" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 522,430 L 522,336" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 623,293 L 758,293" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 522,250 L 522,156" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 623,113 L 748,113" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 849,156 L 849,250" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="end" x="180" y="177">tamper fit</text>
+<text class="small" text-anchor="end" x="180" y="240">tamper fit</text>
+<text class="small" text-anchor="end" x="180" y="357">lid seat</text>
+<text class="small" text-anchor="end" x="180" y="411">lid seat</text>
+<text class="small" x="332" y="457">contains</text>
+<text class="small" text-anchor="middle" x="196" y="563">container seat</text>
+<text class="small" text-anchor="end" x="411" y="500">contains</text>
+<text class="small" text-anchor="end" x="506" y="420">blade drive</text>
+<text class="small" text-anchor="middle" x="522" y="357">blade drive</text>
+<text class="small" text-anchor="middle" x="569.5" y="374">coupling support</text>
+<text class="small" x="633" y="277">motor drive</text>
+<text class="small" text-anchor="end" x="506" y="240">vibration/load</text>
+<text class="small" text-anchor="end" x="506" y="177">vibration/load</text>
+<text class="small" x="633" y="97">complete</text>
+<text class="small" text-anchor="middle" x="849" y="571">container seat</text>
+<text class="small" text-anchor="middle" x="794" y="420">coupling support</text>
+<text class="small" text-anchor="middle" x="849" y="403">motor mount</text>
+<text class="small" x="975" y="500">panel mount</text>
+<text class="small" text-anchor="end" x="833" y="357">motor mount</text>
+<text class="small" text-anchor="end" x="748" y="320">motor drive</text>
+<text class="small" text-anchor="end" x="833" y="240">command</text>
+<text class="small" x="960" y="97">panel mount</text>
+<text class="small" text-anchor="end" x="738" y="140">complete</text>
+<text class="small" text-anchor="end" x="833" y="177">command</text>
+</g>
+</svg>

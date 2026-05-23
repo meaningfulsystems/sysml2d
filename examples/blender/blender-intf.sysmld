@@ -1,0 +1,269 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "blender-intf",
+    "kind": "InterfaceView",
+    "name": "Blender Interfaces",
+    "canvas": {
+      "width": 607,
+      "height": 754,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "UserControlsInterface",
+        "model_ref": "UserControlsInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "User Controls",
+        "style": "interface"
+      },
+      {
+        "id": "PowerInterface",
+        "model_ref": "PowerInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 252,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Power Interface",
+        "style": "interface"
+      },
+      {
+        "id": "DriveInterface",
+        "model_ref": "DriveInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 432,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Drive Interface",
+        "style": "interface"
+      },
+      {
+        "id": "SensingInterface",
+        "model_ref": "SensingInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 612,
+          "width": 153,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Sensing Interface",
+        "style": "interface"
+      },
+      {
+        "id": "UserCommand",
+        "model_ref": "UserCommand",
+        "symbol": "item",
+        "layout": {
+          "x": 385,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "UserCommand",
+        "style": "item"
+      },
+      {
+        "id": "ElectricalEnergy",
+        "model_ref": "ElectricalEnergy",
+        "symbol": "item",
+        "layout": {
+          "x": 385,
+          "y": 252,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "ElectricalEnergy",
+        "style": "item"
+      },
+      {
+        "id": "RotationalEnergy",
+        "model_ref": "RotationalEnergy",
+        "symbol": "item",
+        "layout": {
+          "x": 385,
+          "y": 432,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "RotationalEnergy",
+        "style": "item"
+      },
+      {
+        "id": "SmoothnessSignal",
+        "model_ref": "SmoothnessSignal",
+        "symbol": "item",
+        "layout": {
+          "x": 385,
+          "y": 612,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "SmoothnessSignal",
+        "style": "item"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-UserControlsInterface-UserCommand",
+        "model_ref": "UserControlsInterface",
+        "source": {
+          "element": "UserControlsInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "UserCommand",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-PowerInterface-ElectricalEnergy",
+        "model_ref": "PowerInterface",
+        "source": {
+          "element": "PowerInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ElectricalEnergy",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-DriveInterface-RotationalEnergy",
+        "model_ref": "DriveInterface",
+        "source": {
+          "element": "DriveInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RotationalEnergy",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-SensingInterface-SmoothnessSignal",
+        "model_ref": "SensingInterface",
+        "source": {
+          "element": "SensingInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SmoothnessSignal",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Blender"
+  }
+}

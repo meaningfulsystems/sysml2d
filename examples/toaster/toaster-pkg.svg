@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="818" height="716" viewBox="0 0 818 716">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="818" height="716" fill="#FFFFFF"/>
+<rect x="2" y="38" width="814" height="674" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 400 L 416 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[pkg.mb] Toaster Package Organization [Toaster]</text>
+<rect x="2" y="38" width="814" height="676" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<path id="ToasterModel" d="M 332,92 V 72 H 429.5 L 441.5,92 H 482 V 142 H 332 Z" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="small" x="342" y="87">Toaster Model</text>
+<path id="ToasterStructure" d="M 72,322 V 302 H 155 L 167,322 H 222 V 372 H 72 Z" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="small" x="82" y="317">Structure</text>
+<path id="ToasterBehavior" d="M 332,322 V 302 H 408 L 420,322 H 482 V 372 H 332 Z" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="small" x="342" y="317">Behavior</text>
+<path id="ToasterRequirements" d="M 592,322 V 302 H 689.5 L 701.5,322 H 742 V 372 H 592 Z" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="small" x="602" y="317">Requirements</text>
+<path id="ToasterAnalysis" d="M 202,552 V 532 H 278 L 290,552 H 352 V 602 H 202 Z" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="small" x="212" y="547">Analysis</text>
+<path id="ToasterVerification" d="M 462,552 V 532 H 559.5 L 571.5,552 H 612 V 602 H 462 Z" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="small" x="472" y="547">Verification</text>
+<path d="M 407,142 L 407,198 L 147,198 L 147,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 407,142 L 407,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 407,142 L 407,198 L 667,198 L 667,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 407,142 L 407,198 L 277,198 L 277,532" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 407,142 L 407,198 L 537,198 L 537,532" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="238" y="206">contains</text>
+<text class="small" text-anchor="middle" x="407" y="230">contains</text>
+<text class="small" text-anchor="middle" x="576" y="206">contains</text>
+<text class="small" text-anchor="middle" x="277" y="373">contains</text>
+<text class="small" text-anchor="middle" x="537" y="373">contains</text>
+</g>
+</svg>

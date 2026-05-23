@@ -1,0 +1,316 @@
+{
+  "$schema": "../../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": ["../toaster.sysml"],
+  "aliases": {
+    "toaster": "Toaster::Toaster",
+    "lever": "Toaster::Toaster::lever",
+    "powerAndControlSubsystem": "Toaster::Toaster::powerAndControlSubsystem",
+    "heater": "Toaster::Toaster::heatingElement",
+    "buttons": "Toaster::Toaster::buttons",
+    "powerCord": "Toaster::Toaster::powerCord",
+    "buttonInput": "Toaster::Toaster::buttonInput",
+    "mainsPower": "Toaster::Toaster::mainsPower",
+    "cordPowerIn": "Toaster::Toaster::cordPowerIn",
+    "cordPowerOut": "Toaster::Toaster::cordPowerOut",
+    "buttonUserInputIn": "Toaster::Toaster::buttonUserInputIn",
+    "buttonControlOut": "Toaster::Toaster::buttonControlOut",
+    "leverControlOut": "Toaster::Toaster::leverControlOut",
+    "controlInput": "Toaster::Toaster::controlInput",
+    "buttonControlIn": "Toaster::Toaster::buttonControlIn",
+    "subsystemPowerIn": "Toaster::Toaster::subsystemPowerIn",
+    "heatCommandOut": "Toaster::Toaster::heatCommandOut",
+    "heaterControlIn": "Toaster::Toaster::heaterControlIn",
+    "buttonInputToButtons": "Toaster::Toaster::buttonInputToButtons",
+    "buttonsToPowerControl": "Toaster::Toaster::buttonsToPowerControl",
+    "mainsToCord": "Toaster::Toaster::mainsToCord",
+    "cordToPowerControl": "Toaster::Toaster::cordToPowerControl",
+    "leverToControl": "Toaster::Toaster::leverToControl",
+    "controlToHeater": "Toaster::Toaster::controlToHeater"
+  },
+  "diagram": {
+    "id": "toaster-electrical-icn",
+    "kind": "InterconnectionView",
+    "name": "Toaster Electrical Interconnection",
+    "subject": "toaster",
+    "canvas": {
+      "width": 1000,
+      "height": 620,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "toaster-boundary",
+        "model_ref": "toaster",
+        "symbol": "boundary",
+        "layout": { "x": 40, "y": 50, "width": 920, "height": 500, "z": 0 },
+        "compartments": { "attributes": false, "ports": false, "actions": false },
+        "style": "boundary.system"
+      },
+      {
+        "id": "lever",
+        "model_ref": "lever",
+        "symbol": "part_usage",
+        "layout": { "x": 100, "y": 240, "width": 150, "height": 90, "z": 10 },
+        "label": "Lever",
+        "compartments": { "attributes": false, "ports": true, "actions": false },
+        "style": "part.mechanical"
+      },
+      {
+        "id": "power-control-subsystem",
+        "model_ref": "powerAndControlSubsystem",
+        "symbol": "part_usage",
+        "layout": { "x": 360, "y": 240, "width": 230, "height": 90, "z": 10 },
+        "label": "Power and Control\nSubsystem",
+        "compartments": { "attributes": false, "ports": true, "actions": false },
+        "style": "part.control"
+      },
+      {
+        "id": "buttons",
+        "model_ref": "buttons",
+        "symbol": "part_usage",
+        "layout": { "x": 100, "y": 130, "width": 160, "height": 70, "z": 10 },
+        "label": "Buttons",
+        "compartments": { "attributes": false, "ports": true, "actions": false },
+        "style": "part.mechanical"
+      },
+      {
+        "id": "heater",
+        "model_ref": "heater",
+        "symbol": "part_usage",
+        "layout": { "x": 700, "y": 240, "width": 190, "height": 90, "z": 10 },
+        "label": "Heating Element",
+        "compartments": { "attributes": false, "ports": true, "actions": false },
+        "style": "part.thermal"
+      },
+      {
+        "id": "power-cord",
+        "model_ref": "powerCord",
+        "symbol": "part_usage",
+        "layout": { "x": 415, "y": 400, "width": 120, "height": 70, "z": 10 },
+        "label": "Power Cord",
+        "compartments": { "attributes": false, "ports": true, "actions": false },
+        "style": "part.electrical"
+      },
+      {
+        "id": "button-input-port",
+        "model_ref": "buttonInput",
+        "symbol": "port",
+        "owner": "toaster-boundary",
+        "placement": { "side": "top", "offset": 0.15217391304347827 },
+        "label": "Button Input"
+      },
+      {
+        "id": "mains-port",
+        "model_ref": "mainsPower",
+        "symbol": "port",
+        "owner": "toaster-boundary",
+        "placement": { "side": "bottom", "offset": 0.47282608695652173 },
+        "label": "Mains Power"
+      },
+      {
+        "id": "lever-out",
+        "model_ref": "leverControlOut",
+        "symbol": "port",
+        "owner": "lever",
+        "placement": { "side": "right", "offset": 0.5 },
+        "label": "ctrl"
+      },
+      {
+        "id": "control-in",
+        "model_ref": "controlInput",
+        "symbol": "port",
+        "owner": "power-control-subsystem",
+        "placement": { "side": "left", "offset": 0.5 },
+        "label": "ctrl"
+      },
+      {
+        "id": "button-user-in",
+        "model_ref": "buttonUserInputIn",
+        "symbol": "port",
+        "owner": "buttons",
+        "placement": { "side": "top", "offset": 0.5 },
+        "label": "press"
+      },
+      {
+        "id": "button-control-out",
+        "model_ref": "buttonControlOut",
+        "symbol": "port",
+        "owner": "buttons",
+        "placement": { "side": "bottom", "offset": 0.5 },
+        "label": "ctrl"
+      },
+      {
+        "id": "button-in",
+        "model_ref": "buttonControlIn",
+        "symbol": "port",
+        "owner": "power-control-subsystem",
+        "placement": { "side": "top", "offset": 0.43043478260869567 },
+        "label": "button"
+      },
+      {
+        "id": "subsystem-power",
+        "model_ref": "subsystemPowerIn",
+        "symbol": "port",
+        "owner": "power-control-subsystem",
+        "placement": { "side": "bottom", "offset": 0.5 },
+        "label": "power"
+      },
+      {
+        "id": "cord-in",
+        "model_ref": "cordPowerIn",
+        "symbol": "port",
+        "owner": "power-cord",
+        "placement": { "side": "bottom", "offset": 0.5 },
+        "label": "in"
+      },
+      {
+        "id": "cord-out",
+        "model_ref": "cordPowerOut",
+        "symbol": "port",
+        "owner": "power-cord",
+        "placement": { "side": "top", "offset": 0.5 },
+        "label": "out"
+      },
+      {
+        "id": "control-out",
+        "model_ref": "heatCommandOut",
+        "symbol": "port",
+        "owner": "power-control-subsystem",
+        "placement": { "side": "right", "offset": 0.5 },
+        "label": "cmd"
+      },
+      {
+        "id": "heater-in",
+        "model_ref": "heaterControlIn",
+        "symbol": "port",
+        "owner": "heater",
+        "placement": { "side": "left", "offset": 0.5 },
+        "label": "cmd"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-button-input-buttons",
+        "model_ref": "buttonInputToButtons",
+        "source": { "element": "button-input-port", "anchor": { "side": "bottom", "offset": 0.5 } },
+        "target": { "element": "button-user-in", "anchor": { "side": "top", "offset": 0.5 } },
+        "route": { "kind": "orthogonal", "waypoints": [] },
+        "labels": [
+          { "text": "button input", "position": { "segment": 0, "offset": 0.5 } }
+        ],
+        "style": "connector.signal"
+      },
+      {
+        "id": "conn-buttons-power-control",
+        "model_ref": "buttonsToPowerControl",
+        "source": { "element": "button-control-out", "anchor": { "side": "bottom", "offset": 0.5 } },
+        "target": { "element": "button-in", "anchor": { "side": "top", "offset": 0.5 } },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            { "x": 180, "y": 220 },
+            { "x": 459, "y": 220 }
+          ]
+        },
+        "labels": [
+          { "text": "button control", "position": { "segment": 0, "offset": 0.5 } }
+        ],
+        "style": "connector.signal"
+      },
+      {
+        "id": "conn-mains-cord",
+        "model_ref": "mainsToCord",
+        "source": { "element": "mains-port", "anchor": { "side": "top", "offset": 0.5 } },
+        "target": { "element": "cord-in", "anchor": { "side": "bottom", "offset": 0.5 } },
+        "route": { "kind": "orthogonal", "waypoints": [] },
+        "labels": [
+          { "text": "mains power", "position": { "segment": 0, "offset": 0.5 } }
+        ],
+        "style": "connector.power"
+      },
+      {
+        "id": "conn-cord-power-control",
+        "model_ref": "cordToPowerControl",
+        "source": { "element": "cord-out", "anchor": { "side": "top", "offset": 0.5 } },
+        "target": { "element": "subsystem-power", "anchor": { "side": "bottom", "offset": 0.5 } },
+        "route": { "kind": "orthogonal", "waypoints": [] },
+        "labels": [
+          { "text": "line power", "position": { "segment": 0, "offset": 0.5 } }
+        ],
+        "style": "connector.power"
+      },
+      {
+        "id": "conn-lever-control",
+        "model_ref": "leverToControl",
+        "source": { "element": "lever-out", "anchor": { "side": "right", "offset": 0.5 } },
+        "target": { "element": "control-in", "anchor": { "side": "left", "offset": 0.5 } },
+        "route": { "kind": "orthogonal", "waypoints": [] },
+        "labels": [
+          { "text": "control", "position": { "segment": 0, "offset": 0.5 } }
+        ],
+        "style": "connector.signal"
+      },
+      {
+        "id": "conn-control-heater",
+        "model_ref": "controlToHeater",
+        "source": { "element": "control-out", "anchor": { "side": "right", "offset": 0.5 } },
+        "target": { "element": "heater-in", "anchor": { "side": "left", "offset": 0.5 } },
+        "route": { "kind": "orthogonal", "waypoints": [] },
+        "labels": [
+          { "text": "heat command", "position": { "segment": 0, "offset": 0.5 } }
+        ],
+        "style": "connector.signal"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "part.mechanical": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "part.control": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "part.thermal": {
+        "fill": "#FFF3E0",
+        "stroke": "#EF6C00",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "part.electrical": {
+        "fill": "#F3E5F5",
+        "stroke": "#6A1B9A",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "connector.signal": {
+        "stroke": "#333333",
+        "stroke_width": 2,
+        "corner_radius": 12,
+        "label_offset": 10
+      },
+      "connector.power": {
+        "stroke": "#6D4C41",
+        "stroke_width": 2,
+        "corner_radius": 12,
+        "label_offset": 10
+      }
+    }
+  }
+}

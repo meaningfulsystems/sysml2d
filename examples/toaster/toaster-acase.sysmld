@@ -1,0 +1,277 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-acase",
+    "kind": "AnalysisCaseView",
+    "name": "Toaster Analysis Cases",
+    "canvas": {
+      "width": 979,
+      "height": 418,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "thermalPerformanceAnalysis",
+        "model_ref": "thermalPerformanceAnalysis",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 84,
+          "width": 167,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Thermal Performance",
+        "style": "case"
+      },
+      {
+        "id": "electricalLoadAnalysis",
+        "model_ref": "electricalLoadAnalysis",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 264,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Electrical Load",
+        "style": "case"
+      },
+      {
+        "id": "heatEnergyBalance",
+        "model_ref": "heatEnergyBalance",
+        "symbol": "constraint",
+        "layout": {
+          "x": 399,
+          "y": 78,
+          "width": 167,
+          "height": 76,
+          "z": 10
+        },
+        "label": "Heat Energy Balance",
+        "style": "constraint"
+      },
+      {
+        "id": "electricalPowerLimit",
+        "model_ref": "electricalPowerLimit",
+        "symbol": "constraint",
+        "layout": {
+          "x": 399,
+          "y": 264,
+          "width": 160,
+          "height": 76,
+          "z": 10
+        },
+        "label": "Power Limit",
+        "style": "constraint"
+      },
+      {
+        "id": "browningRequirement",
+        "model_ref": "browningRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 726,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Browning Req",
+        "style": "requirement"
+      },
+      {
+        "id": "electricalSafetyRequirement",
+        "model_ref": "electricalSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 726,
+          "y": 264,
+          "width": 181,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Electrical Safety Req",
+        "style": "requirement"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-thermalPerformanceAnalysis-heatEnergyBalance",
+        "model_ref": "thermalPerformanceAnalysis",
+        "source": {
+          "element": "thermalPerformanceAnalysis",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "heatEnergyBalance",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 295,
+              "y": 119
+            },
+            {
+              "x": 295,
+              "y": 116
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "method",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-electricalLoadAnalysis-electricalPowerLimit",
+        "model_ref": "electricalLoadAnalysis",
+        "source": {
+          "element": "electricalLoadAnalysis",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "electricalPowerLimit",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 278,
+              "y": 299
+            },
+            {
+              "x": 278,
+              "y": 302
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "method",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-heatEnergyBalance-browningRequirement",
+        "model_ref": "heatEnergyBalance",
+        "source": {
+          "element": "heatEnergyBalance",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "browningRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 622,
+              "y": 116
+            },
+            {
+              "x": 622,
+              "y": 113
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "evaluates",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-electricalPowerLimit-electricalSafetyRequirement",
+        "model_ref": "electricalPowerLimit",
+        "source": {
+          "element": "electricalPowerLimit",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "electricalSafetyRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 615,
+              "y": 302
+            },
+            {
+              "x": 615,
+              "y": 305
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "evaluates",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

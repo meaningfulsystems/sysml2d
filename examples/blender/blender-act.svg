@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="342" height="1520" viewBox="0 0 342 1520">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="342" height="1520" fill="#FFFFFF"/>
+<rect x="2" y="38" width="338" height="1478" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 368 L 384 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[act.mb] Blender Smoothie Program [Blender]</text>
+<rect x="2" y="38" width="338" height="1480" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<circle id="blendStart" cx="147" cy="82" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="loadIngredients" x="72" y="164" width="150" height="64" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="196">Load Ingredients</text>
+<rect id="closeLid" x="72" y="300" width="150" height="64" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="332">Close Lid</text>
+<rect id="powerOnBlender" x="72" y="436" width="150" height="64" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="468">Power On</text>
+<rect id="startBlendProgram" x="72" y="572" width="150" height="64" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="604">Start Program</text>
+<rect id="spinBladeAssembly" x="72" y="708" width="150" height="64" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="740">Spin Blades</text>
+<rect id="senseSmoothness" x="72" y="844" width="150" height="64" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="876">Sense Smoothness</text>
+<polygon id="smoothEnough" points="147,980 188.5,1009 147,1038 105.5,1009" fill="#FEFCE8" stroke="#A16207" stroke-width="2"/>
+<text class="small" text-anchor="middle" x="147" y="1013">smooth?</text>
+<rect id="stopMotor" x="72" y="1110" width="150" height="64" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="1142">Stop Motor</text>
+<rect id="pourSmoothie" x="72" y="1246" width="150" height="64" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="1278">Pour Smoothie</text>
+<circle cx="147" cy="1394" r="12" fill="none" stroke="#111827" stroke-width="2"/>
+<circle id="blendEnd" cx="147" cy="1394" r="6.6" fill="#111827" stroke="none"/>
+<path d="M 147,92 L 147,164" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 147,228 L 147,300" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 147,364 L 147,436" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 147,500 L 147,572" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 147,636 L 147,708" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 147,772 L 147,844" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 147,908 L 147,980" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 188.5,1009 L 266,1009 L 266,740 L 222,740" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 147,1038 L 147,1110" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 147,1174 L 147,1246" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 147,1310 L 147,1382" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<text class="small" text-anchor="middle" x="266" y="882.5">not yet</text>
+<text class="small" text-anchor="middle" x="147" y="1082">complete</text>
+</g>
+</svg>

@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Local editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+
+# Local/generated documents
+*.docx
+~$*.docx
+
+# External reference materials and local helper scripts
+sysml2-specs/
+scripts/
+
+# Claude files
+.claude
+
+# Internal AI collaboration documents and planning notes
+ai-collab/
+
+# Design decision records (internal, may be published separately)
+# decisions/

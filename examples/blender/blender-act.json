@@ -1,0 +1,38 @@
+{
+  "diagram": "blender-act",
+  "kind": "ActionView",
+  "name": "Blender Smoothie Program",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "direction": "top-down",
+  "default_w": 150,
+  "default_h": 64,
+  "rank_gap": 72,
+  "col_gap": 90,
+  "nodes": {
+    "blendStart": {"label": "", "symbol": "initial_state", "model_ref": null, "rank": 0, "order": 0},
+    "loadIngredients": {"label": "Load Ingredients", "rank": 1, "order": 0},
+    "closeLid": {"label": "Close Lid", "rank": 2, "order": 0},
+    "powerOnBlender": {"label": "Power On", "rank": 3, "order": 0},
+    "startBlendProgram": {"label": "Start Program", "rank": 4, "order": 0},
+    "spinBladeAssembly": {"label": "Spin Blades", "rank": 5, "order": 0},
+    "senseSmoothness": {"label": "Sense Smoothness", "rank": 6, "order": 0},
+    "smoothEnough": {"label": "smooth?", "symbol": "decision_node", "model_ref": null, "rank": 7, "order": 0},
+    "stopMotor": {"label": "Stop Motor", "rank": 8, "order": 0},
+    "pourSmoothie": {"label": "Pour Smoothie", "rank": 9, "order": 0},
+    "blendEnd": {"label": "", "symbol": "activity_final_node", "model_ref": null, "rank": 10, "order": 0}
+  },
+  "edges": [
+    {"from": "blendStart", "to": "loadIngredients", "model_ref": "loadIngredients"},
+    {"from": "loadIngredients", "to": "closeLid"},
+    {"from": "closeLid", "to": "powerOnBlender"},
+    {"from": "powerOnBlender", "to": "startBlendProgram"},
+    {"from": "startBlendProgram", "to": "spinBladeAssembly"},
+    {"from": "spinBladeAssembly", "to": "senseSmoothness"},
+    {"from": "senseSmoothness", "to": "smoothEnough"},
+    {"from": "smoothEnough", "to": "spinBladeAssembly", "label": "not yet", "model_ref": "senseSmoothness"},
+    {"from": "smoothEnough", "to": "stopMotor", "label": "complete", "model_ref": "stopMotor"},
+    {"from": "stopMotor", "to": "pourSmoothie"},
+    {"from": "pourSmoothie", "to": "blendEnd"}
+  ]
+}

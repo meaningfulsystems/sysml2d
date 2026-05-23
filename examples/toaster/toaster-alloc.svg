@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="938" height="696" viewBox="0 0 938 696">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="938" height="696" fill="#FFFFFF"/>
+<rect x="2" y="38" width="934" height="654" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 344 L 360 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[alloc.mb] Toaster Allocations [Toaster]</text>
+<rect x="2" y="38" width="934" height="656" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="toastSafetyRequirement" x="72" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="157" y="113">Safety Req</text>
+<rect id="browningRequirement" x="72" y="264" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="157" y="305">Browning Req</text>
+<rect id="cleanabilityRequirement" x="72" y="456" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="157" y="497">Cleanability Req</text>
+<rect id="powerAndControlSubsystem" x="402" y="90" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="477" y="125">Power &amp; Control</text>
+<rect id="heatingElement" x="402" y="270" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="477" y="305">Heating Element</text>
+<rect id="crumbTray" x="402" y="450" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="477" y="485">Crumb Tray</text>
+<rect id="energizeHeater" x="712" y="270" width="150" height="70" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="787" y="305">Energize Heater</text>
+<path d="M 242,113 L 298,113 L 298,125 L 402,125" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 242,305 L 402,305" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 242,305 L 242,582 L 712,582 L 712,305" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 242,497 L 298,497 L 298,485 L 402,485" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<text class="small" text-anchor="middle" x="350" y="133">allocate</text>
+<text class="small" text-anchor="middle" x="322" y="313">allocate</text>
+<text class="small" text-anchor="middle" x="477" y="590">allocate</text>
+<text class="small" text-anchor="middle" x="350" y="493">allocate</text>
+</g>
+</svg>

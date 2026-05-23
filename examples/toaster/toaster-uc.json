@@ -1,0 +1,24 @@
+{
+  "diagram": "toaster-uc",
+  "kind": "UseCaseView",
+  "name": "Toaster Use Cases",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "user": {"label": "User", "symbol": "actor", "rank": 0, "order": 0},
+    "toastBreadUseCase": {"label": "Toast Bread", "rank": 1, "order": 0},
+    "cancelToastUseCase": {"label": "Cancel Toast", "rank": 1, "order": 1},
+    "emptyCrumbTrayUseCase": {"label": "Empty Crumb Tray", "rank": 1, "order": 2}
+  },
+  "groups": [
+    {"id": "toasterBoundary", "label": "Toaster", "model_ref": "Toaster", "members": ["toastBreadUseCase", "cancelToastUseCase", "emptyCrumbTrayUseCase"]}
+  ],
+  "edges": [
+    {"from": "user", "to": "toastBreadUseCase", "label": "uses", "source_offset": 0.35},
+    {"from": "user", "to": "cancelToastUseCase", "label": "uses", "source_offset": 0.5},
+    {"from": "user", "to": "emptyCrumbTrayUseCase", "label": "uses", "source_offset": 0.65},
+    {"from": "cancelToastUseCase", "to": "toastBreadUseCase", "label": "extend", "style": "connector.extend"},
+    {"from": "emptyCrumbTrayUseCase", "to": "toastBreadUseCase", "label": "include", "style": "connector.include"}
+  ]
+}

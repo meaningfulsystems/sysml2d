@@ -1,0 +1,24 @@
+{
+  "diagram": "toaster-flow",
+  "kind": "FlowView",
+  "name": "Toaster Item and Energy Flows",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "user": {"label": "User", "symbol": "actor", "rank": 0, "order": 0},
+    "mainsSupply": {"label": "Mains Supply", "symbol": "part_usage", "rank": 0, "order": 1},
+    "carriage": {"label": "Carriage", "symbol": "part_usage", "rank": 1, "order": 0},
+    "powerAndControlSubsystem": {"label": "Power & Control", "symbol": "part_usage", "rank": 1, "order": 1},
+    "heatingElement": {"label": "Heating Element", "symbol": "part_usage", "rank": 2, "order": 1},
+    "crumbTray": {"label": "Crumb Tray", "symbol": "part_usage", "rank": 2, "order": 2}
+  },
+  "edges": [
+    {"from": "user", "to": "carriage", "label": "bread", "model_ref": "breadIntoSlot", "source_offset": 0.35, "target_offset": 0.35},
+    {"from": "mainsSupply", "to": "powerAndControlSubsystem", "label": "electrical energy", "model_ref": "mainsPowerFlow"},
+    {"from": "powerAndControlSubsystem", "to": "heatingElement", "label": "command", "model_ref": "userCommandFlow"},
+    {"from": "heatingElement", "to": "carriage", "label": "heat", "model_ref": "heatFlowToBread"},
+    {"from": "carriage", "to": "crumbTray", "label": "crumbs", "model_ref": "crumbFlowToTray"},
+    {"from": "carriage", "to": "user", "label": "toast", "model_ref": "toastOutOfSlot", "source_offset": 0.65, "target_offset": 0.65}
+  ]
+}

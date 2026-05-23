@@ -1,0 +1,544 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-cst",
+    "kind": "ConstraintView",
+    "name": "Toaster Parametrics",
+    "canvas": {
+      "width": 1311,
+      "height": 598,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "targetBrowning",
+        "model_ref": "targetBrowning",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 102,
+          "width": 132,
+          "height": 58,
+          "z": 10
+        },
+        "label": "targetBrowning\n7 levels",
+        "style": "value_property"
+      },
+      {
+        "id": "inputPower",
+        "model_ref": "inputPower",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 270,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "inputPower\n900-1200 W",
+        "style": "value_property"
+      },
+      {
+        "id": "toastDuration",
+        "model_ref": "toastDuration",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 438,
+          "width": 167,
+          "height": 58,
+          "z": 10
+        },
+        "label": "toastDuration\n90-150 s at level 4",
+        "style": "value_property"
+      },
+      {
+        "id": "heatEnergyBalance",
+        "model_ref": "heatEnergyBalance",
+        "symbol": "constraint",
+        "layout": {
+          "x": 399,
+          "y": 72,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Heat Energy\nBalance",
+        "style": "constraint"
+      },
+      {
+        "id": "electricalPowerLimit",
+        "model_ref": "electricalPowerLimit",
+        "symbol": "constraint",
+        "layout": {
+          "x": 399,
+          "y": 260,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Electrical Power\nLimit <= 1200 W",
+        "style": "constraint"
+      },
+      {
+        "id": "toastTimingEstimate",
+        "model_ref": "toastTimingEstimate",
+        "symbol": "constraint",
+        "layout": {
+          "x": 399,
+          "y": 448,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Toast Timing\nEstimate",
+        "style": "constraint"
+      },
+      {
+        "id": "browningTemperatureEstimate",
+        "model_ref": "browningTemperatureEstimate",
+        "symbol": "constraint",
+        "layout": {
+          "x": 739,
+          "y": 72,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Browning Temp\nEstimate",
+        "style": "constraint"
+      },
+      {
+        "id": "surfaceTemperatureLimit",
+        "model_ref": "surfaceTemperatureLimit",
+        "symbol": "constraint",
+        "layout": {
+          "x": 739,
+          "y": 260,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Surface Temp\nLimit <= 60 C",
+        "style": "constraint"
+      },
+      {
+        "id": "carriageReleaseTiming",
+        "model_ref": "carriageReleaseTiming",
+        "symbol": "constraint",
+        "layout": {
+          "x": 739,
+          "y": 448,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Carriage Release\n<= 2 s",
+        "style": "constraint"
+      },
+      {
+        "id": "toastTemperature",
+        "model_ref": "toastTemperature",
+        "symbol": "value_property",
+        "layout": {
+          "x": 1079,
+          "y": 102,
+          "width": 146,
+          "height": 58,
+          "z": 10
+        },
+        "label": "toastTemperature\ncontrolled range",
+        "style": "value_property"
+      },
+      {
+        "id": "surfaceTemperature",
+        "model_ref": "surfaceTemperature",
+        "symbol": "value_property",
+        "layout": {
+          "x": 1079,
+          "y": 270,
+          "width": 160,
+          "height": 58,
+          "z": 10
+        },
+        "label": "surfaceTemperature\nexternal touch",
+        "style": "value_property"
+      },
+      {
+        "id": "releaseTime",
+        "model_ref": "releaseTime",
+        "symbol": "value_property",
+        "layout": {
+          "x": 1079,
+          "y": 438,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "releaseTime\n<= 2 s",
+        "style": "value_property"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-inputPower-heatEnergyBalance",
+        "model_ref": "inputPower",
+        "source": {
+          "element": "inputPower",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "heatEnergyBalance",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-toastDuration-toastTimingEstimate",
+        "model_ref": "toastDuration",
+        "source": {
+          "element": "toastDuration",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "toastTimingEstimate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-targetBrowning-browningTemperatureEstimate",
+        "model_ref": "targetBrowning",
+        "source": {
+          "element": "targetBrowning",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "browningTemperatureEstimate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-heatEnergyBalance-browningTemperatureEstimate",
+        "model_ref": "heatEnergyBalance",
+        "source": {
+          "element": "heatEnergyBalance",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "browningTemperatureEstimate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-electricalPowerLimit-inputPower",
+        "model_ref": "electricalPowerLimit",
+        "source": {
+          "element": "electricalPowerLimit",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "inputPower",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "limit",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-browningTemperatureEstimate-toastTemperature",
+        "model_ref": "browningTemperatureEstimate",
+        "source": {
+          "element": "browningTemperatureEstimate",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "toastTemperature",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 975,
+              "y": 111
+            },
+            {
+              "x": 975,
+              "y": 131
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "result",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-heatEnergyBalance-surfaceTemperatureLimit",
+        "model_ref": "heatEnergyBalance",
+        "source": {
+          "element": "heatEnergyBalance",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "surfaceTemperatureLimit",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 635,
+              "y": 111
+            },
+            {
+              "x": 635,
+              "y": 299
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bounds",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-surfaceTemperatureLimit-surfaceTemperature",
+        "model_ref": "surfaceTemperatureLimit",
+        "source": {
+          "element": "surfaceTemperatureLimit",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "surfaceTemperature",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "result",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-toastTimingEstimate-carriageReleaseTiming",
+        "model_ref": "toastTimingEstimate",
+        "source": {
+          "element": "toastTimingEstimate",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "carriageReleaseTiming",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bounds",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-carriageReleaseTiming-releaseTime",
+        "model_ref": "carriageReleaseTiming",
+        "source": {
+          "element": "carriageReleaseTiming",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "releaseTime",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 975,
+              "y": 487
+            },
+            {
+              "x": 975,
+              "y": 467
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "result",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

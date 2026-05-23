@@ -1,0 +1,364 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-context",
+    "kind": "GeneralView",
+    "name": "Toaster Operating Context",
+    "canvas": {
+      "width": 971,
+      "height": 594,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "user",
+        "model_ref": "user",
+        "symbol": "actor",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 70,
+          "height": 90,
+          "z": 10
+        },
+        "label": "User",
+        "style": "actor"
+      },
+      {
+        "id": "BreadSlice",
+        "model_ref": "BreadSlice",
+        "symbol": "item",
+        "layout": {
+          "x": 72,
+          "y": 272,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Bread Slice",
+        "style": "item"
+      },
+      {
+        "id": "mainsSupply",
+        "model_ref": "mainsSupply",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 72,
+          "y": 452,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "120 VAC Outlet",
+        "style": "part_usage"
+      },
+      {
+        "id": "Toaster",
+        "model_ref": "Toaster",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 382,
+          "y": 252,
+          "width": 190,
+          "height": 90,
+          "z": 10
+        },
+        "label": "Toaster",
+        "style": "part_usage"
+      },
+      {
+        "id": "ToastSlice",
+        "model_ref": "ToastSlice",
+        "symbol": "item",
+        "layout": {
+          "x": 732,
+          "y": 82,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Toast Slice",
+        "style": "item"
+      },
+      {
+        "id": "CrumbDebris",
+        "model_ref": "CrumbDebris",
+        "symbol": "item",
+        "layout": {
+          "x": 732,
+          "y": 262,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Crumb Debris",
+        "style": "item"
+      },
+      {
+        "id": "environment",
+        "model_ref": "environment",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 732,
+          "y": 442,
+          "width": 167,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Kitchen Environment",
+        "style": "part_usage"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-user-Toaster",
+        "model_ref": "userCommandFlow",
+        "source": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.35
+          }
+        },
+        "target": {
+          "element": "Toaster",
+          "anchor": {
+            "side": "left",
+            "offset": 0.25
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 226,
+              "y": 103.5
+            },
+            {
+              "x": 226,
+              "y": 274.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "lever/buttons",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-BreadSlice-Toaster",
+        "model_ref": "breadIntoSlot",
+        "source": {
+          "element": "BreadSlice",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Toaster",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 278,
+              "y": 307
+            },
+            {
+              "x": 278,
+              "y": 297
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "insert",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-mainsSupply-Toaster",
+        "model_ref": "mainsPowerFlow",
+        "source": {
+          "element": "mainsSupply",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Toaster",
+          "anchor": {
+            "side": "left",
+            "offset": 0.75
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 278,
+              "y": 487
+            },
+            {
+              "x": 278,
+              "y": 319.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "900-1200 W",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-Toaster-ToastSlice",
+        "model_ref": "toastOutOfSlot",
+        "source": {
+          "element": "Toaster",
+          "anchor": {
+            "side": "right",
+            "offset": 0.25
+          }
+        },
+        "target": {
+          "element": "ToastSlice",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 628,
+              "y": 274.5
+            },
+            {
+              "x": 628,
+              "y": 117
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "toast",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-Toaster-CrumbDebris",
+        "model_ref": "crumbFlowToTray",
+        "source": {
+          "element": "Toaster",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CrumbDebris",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "crumbs",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-Toaster-environment",
+        "model_ref": "heatFlowToBread",
+        "source": {
+          "element": "Toaster",
+          "anchor": {
+            "side": "right",
+            "offset": 0.75
+          }
+        },
+        "target": {
+          "element": "environment",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 628,
+              "y": 319.5
+            },
+            {
+              "x": 628,
+              "y": 477
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "heat/noise",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

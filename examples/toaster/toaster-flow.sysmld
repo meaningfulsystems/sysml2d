@@ -1,0 +1,350 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-flow",
+    "kind": "FlowView",
+    "name": "Toaster Item and Energy Flows",
+    "canvas": {
+      "width": 914,
+      "height": 414,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "user",
+        "model_ref": "user",
+        "symbol": "actor",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 70,
+          "height": 90,
+          "z": 10
+        },
+        "label": "User",
+        "style": "actor"
+      },
+      {
+        "id": "mainsSupply",
+        "model_ref": "mainsSupply",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 72,
+          "y": 272,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Mains Supply",
+        "style": "part_usage"
+      },
+      {
+        "id": "carriage",
+        "model_ref": "carriage",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 382,
+          "y": 82,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Carriage",
+        "style": "part_usage"
+      },
+      {
+        "id": "powerAndControlSubsystem",
+        "model_ref": "powerAndControlSubsystem",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 382,
+          "y": 262,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Power & Control",
+        "style": "part_usage"
+      },
+      {
+        "id": "heatingElement",
+        "model_ref": "heatingElement",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 692,
+          "y": 82,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Heating Element",
+        "style": "part_usage"
+      },
+      {
+        "id": "crumbTray",
+        "model_ref": "crumbTray",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 692,
+          "y": 262,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Crumb Tray",
+        "style": "part_usage"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-user-carriage",
+        "model_ref": "breadIntoSlot",
+        "source": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.35
+          }
+        },
+        "target": {
+          "element": "carriage",
+          "anchor": {
+            "side": "left",
+            "offset": 0.35
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 198,
+              "y": 103.5
+            },
+            {
+              "x": 198,
+              "y": 106.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bread",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.flow"
+      },
+      {
+        "id": "conn-mainsSupply-powerAndControlSubsystem",
+        "model_ref": "mainsPowerFlow",
+        "source": {
+          "element": "mainsSupply",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "powerAndControlSubsystem",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 278,
+              "y": 307
+            },
+            {
+              "x": 278,
+              "y": 297
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "electrical energy",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.flow"
+      },
+      {
+        "id": "conn-powerAndControlSubsystem-heatingElement",
+        "model_ref": "userCommandFlow",
+        "source": {
+          "element": "powerAndControlSubsystem",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "heatingElement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 588,
+              "y": 297
+            },
+            {
+              "x": 588,
+              "y": 117
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "command",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.flow"
+      },
+      {
+        "id": "conn-heatingElement-carriage",
+        "model_ref": "heatFlowToBread",
+        "source": {
+          "element": "heatingElement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "carriage",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "heat",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.flow"
+      },
+      {
+        "id": "conn-carriage-crumbTray",
+        "model_ref": "crumbFlowToTray",
+        "source": {
+          "element": "carriage",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "crumbTray",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 588,
+              "y": 117
+            },
+            {
+              "x": 588,
+              "y": 297
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "crumbs",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.flow"
+      },
+      {
+        "id": "conn-carriage-user",
+        "model_ref": "toastOutOfSlot",
+        "source": {
+          "element": "carriage",
+          "anchor": {
+            "side": "left",
+            "offset": 0.65
+          }
+        },
+        "target": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.65
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 326,
+              "y": 127.5
+            },
+            {
+              "x": 326,
+              "y": 130.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "toast",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.flow"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

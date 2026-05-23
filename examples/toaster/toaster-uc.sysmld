@@ -1,0 +1,286 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-uc",
+    "kind": "UseCaseView",
+    "name": "Toaster Use Cases",
+    "canvas": {
+      "width": 566,
+      "height": 658,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "toasterBoundary",
+        "model_ref": "Toaster",
+        "symbol": "boundary",
+        "layout": {
+          "x": 260,
+          "y": 72,
+          "width": 234.0,
+          "height": 514.0,
+          "z": 0
+        },
+        "label": "Toaster",
+        "style": "boundary.system"
+      },
+      {
+        "id": "user",
+        "model_ref": "user",
+        "symbol": "actor",
+        "layout": {
+          "x": 72,
+          "y": 284,
+          "width": 70,
+          "height": 90,
+          "z": 10
+        },
+        "label": "User",
+        "style": "actor"
+      },
+      {
+        "id": "toastBreadUseCase",
+        "model_ref": "toastBreadUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 302,
+          "y": 114,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Toast Bread",
+        "style": "use_case"
+      },
+      {
+        "id": "cancelToastUseCase",
+        "model_ref": "cancelToastUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 302,
+          "y": 294,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Cancel Toast",
+        "style": "use_case"
+      },
+      {
+        "id": "emptyCrumbTrayUseCase",
+        "model_ref": "emptyCrumbTrayUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 302,
+          "y": 474,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Empty Crumb Tray",
+        "style": "use_case"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-user-toastBreadUseCase",
+        "model_ref": "user",
+        "source": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.35
+          }
+        },
+        "target": {
+          "element": "toastBreadUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 198,
+              "y": 315.5
+            },
+            {
+              "x": 198,
+              "y": 149
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "uses",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-user-cancelToastUseCase",
+        "model_ref": "user",
+        "source": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cancelToastUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "uses",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-user-emptyCrumbTrayUseCase",
+        "model_ref": "user",
+        "source": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.65
+          }
+        },
+        "target": {
+          "element": "emptyCrumbTrayUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 198,
+              "y": 342.5
+            },
+            {
+              "x": 198,
+              "y": 509
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "uses",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-cancelToastUseCase-toastBreadUseCase",
+        "model_ref": "cancelToastUseCase",
+        "source": {
+          "element": "cancelToastUseCase",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "toastBreadUseCase",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "extend",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.extend"
+      },
+      {
+        "id": "conn-emptyCrumbTrayUseCase-toastBreadUseCase",
+        "model_ref": "emptyCrumbTrayUseCase",
+        "source": {
+          "element": "emptyCrumbTrayUseCase",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "toastBreadUseCase",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 281,
+              "y": 474
+            },
+            {
+              "x": 281,
+              "y": 184
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "include",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.include"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

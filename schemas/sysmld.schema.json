@@ -1,0 +1,503 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://meaningful.systems/schemas/sysmld/0.1/sysmld.schema.json",
+  "title": "SysMLD v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "mode",
+    "diagram"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "model_based",
+        "sketch"
+      ]
+    },
+    "model_files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "aliases": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "diagram": {
+      "$ref": "#/$defs/diagram"
+    }
+  },
+  "$defs": {
+    "diagram": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "name",
+        "canvas",
+        "elements",
+        "connections"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "DefinitionView",
+            "InterconnectionView",
+            "PackageView",
+            "ConstraintView",
+            "RequirementView",
+            "ActionView",
+            "StateView",
+            "InteractionView",
+            "UseCaseView",
+            "AllocationView",
+            "FlowView",
+            "AnalysisCaseView",
+            "VerificationCaseView",
+            "InterfaceView",
+            "GeneralView"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "subject": {
+          "type": "string"
+        },
+        "canvas": {
+          "$ref": "#/$defs/canvas"
+        },
+        "frame": {
+          "$ref": "#/$defs/frame"
+        },
+        "elements": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/element"
+          }
+        },
+        "connections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/connection"
+          }
+        },
+        "annotations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/annotation"
+          },
+          "default": []
+        },
+        "styles": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object"
+          },
+          "default": {}
+        },
+        "theme_files": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "canvas": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "width",
+        "height"
+      ],
+      "properties": {
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "background": {
+          "$ref": "#/$defs/color"
+        }
+      }
+    },
+    "frame": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "visible": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "element": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "symbol"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_ref": {
+          "type": "string"
+        },
+        "symbol": {
+          "type": "string",
+          "enum": [
+            "boundary",
+            "part_usage",
+            "part_definition",
+            "port",
+            "note",
+            "package",
+            "requirement",
+            "constraint",
+            "value_property",
+            "action",
+            "decision_node",
+            "fork_node",
+            "join_node",
+            "activity_final_node",
+            "actor",
+            "use_case",
+            "lifeline",
+            "execution",
+            "case",
+            "interface",
+            "flow_node",
+            "allocation",
+            "item",
+            "signal",
+            "state_usage",
+            "initial_state",
+            "final_state"
+          ]
+        },
+        "owner": {
+          "type": "string"
+        },
+        "layout": {
+          "$ref": "#/$defs/layout"
+        },
+        "placement": {
+          "$ref": "#/$defs/placement"
+        },
+        "compartments": {
+          "$ref": "#/$defs/compartments"
+        },
+        "label": {
+          "type": "string"
+        },
+        "style": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "object"
+            }
+          ]
+        }
+      }
+    },
+    "layout": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y",
+        "width",
+        "height"
+      ],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "width": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "height": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "z": {
+          "type": "number",
+          "default": 0
+        }
+      }
+    },
+    "placement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "side",
+        "offset"
+      ],
+      "properties": {
+        "side": {
+          "$ref": "#/$defs/side"
+        },
+        "offset": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "compartments": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "attributes": {
+          "type": "boolean"
+        },
+        "ports": {
+          "type": "boolean"
+        },
+        "actions": {
+          "type": "boolean"
+        }
+      }
+    },
+    "connection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "model_ref",
+        "source",
+        "target"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "model_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source": {
+          "$ref": "#/$defs/endpoint"
+        },
+        "target": {
+          "$ref": "#/$defs/endpoint"
+        },
+        "route": {
+          "$ref": "#/$defs/route"
+        },
+        "autoroute": {
+          "type": "boolean",
+          "default": false
+        },
+        "labels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/connectionLabel"
+          },
+          "default": []
+        },
+        "style": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "object"
+            }
+          ]
+        }
+      }
+    },
+    "endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "element",
+        "anchor"
+      ],
+      "properties": {
+        "element": {
+          "type": "string",
+          "minLength": 1
+        },
+        "anchor": {
+          "$ref": "#/$defs/anchor"
+        }
+      }
+    },
+    "anchor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "side",
+        "offset"
+      ],
+      "properties": {
+        "side": {
+          "$ref": "#/$defs/side"
+        },
+        "offset": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    },
+    "route": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "orthogonal",
+            "polyline"
+          ]
+        },
+        "waypoints": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/point"
+          },
+          "default": []
+        }
+      }
+    },
+    "connectionLabel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "position"
+      ],
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "position": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "segment",
+            "offset"
+          ],
+          "properties": {
+            "segment": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "offset": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "dx": {
+              "type": "number",
+              "default": 0
+            },
+            "dy": {
+              "type": "number",
+              "default": 0
+            },
+            "placement": {
+              "type": "string",
+              "enum": [
+                "centerline"
+              ]
+            },
+            "text_anchor": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "annotation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "point": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "x",
+        "y"
+      ],
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        }
+      }
+    },
+    "side": {
+      "type": "string",
+      "enum": [
+        "top",
+        "right",
+        "bottom",
+        "left"
+      ]
+    },
+    "color": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}([0-9A-Fa-f]{2})?$"
+    }
+  }
+}

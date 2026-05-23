@@ -1,0 +1,254 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-general",
+    "kind": "GeneralView",
+    "name": "Toaster Cross-View Trace",
+    "canvas": {
+      "width": 574,
+      "height": 922,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "toastBreadUseCase",
+        "model_ref": "toastBreadUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 212,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Toast Bread",
+        "style": "use_case"
+      },
+      {
+        "id": "browningRequirement",
+        "model_ref": "browningRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 202,
+          "y": 302,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Browning Req",
+        "style": "requirement"
+      },
+      {
+        "id": "energizeHeater",
+        "model_ref": "energizeHeater",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 544,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Energize Heater",
+        "style": "action"
+      },
+      {
+        "id": "verifyToastBrowning",
+        "model_ref": "verifyToastBrowning",
+        "symbol": "case",
+        "layout": {
+          "x": 332,
+          "y": 544,
+          "width": 170,
+          "height": 76,
+          "z": 10
+        },
+        "label": "Verify Browning",
+        "style": "case"
+      },
+      {
+        "id": "heatingElement",
+        "model_ref": "heatingElement",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 212,
+          "y": 780,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Heating Element",
+        "style": "part_usage"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-toastBreadUseCase-browningRequirement",
+        "model_ref": "toastBreadUseCase",
+        "source": {
+          "element": "toastBreadUseCase",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "browningRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-browningRequirement-energizeHeater",
+        "model_ref": "browningRequirement",
+        "source": {
+          "element": "browningRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "energizeHeater",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 287,
+              "y": 440
+            },
+            {
+              "x": 147,
+              "y": 440
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-energizeHeater-heatingElement",
+        "model_ref": "energizeHeater",
+        "source": {
+          "element": "energizeHeater",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "heatingElement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 670
+            },
+            {
+              "x": 287,
+              "y": 670
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "performed by",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-verifyToastBrowning-browningRequirement",
+        "model_ref": "verifyToastBrowning",
+        "source": {
+          "element": "verifyToastBrowning",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "browningRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 417,
+              "y": 488
+            },
+            {
+              "x": 287,
+              "y": 488
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "verify",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

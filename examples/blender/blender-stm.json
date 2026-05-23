@@ -1,0 +1,47 @@
+{
+  "diagram":     "blender-stm",
+  "kind":        "StateView",
+  "name":        "Blender Control State Machine",
+  "subject":     "blenderControl",
+  "model_files": ["blender.sysml"],
+  "direction":   "left-right",
+  "default_w":   140,
+  "default_h":   60,
+  "aliases": {
+    "blenderControl": "Blender::BlenderControl",
+    "off":            "Blender::BlenderControl::off",
+    "powered":        "Blender::BlenderControl::powered",
+    "ready":          "Blender::BlenderControl::powered::ready",
+    "blending":       "Blender::BlenderControl::powered::blending",
+    "error":          "Blender::BlenderControl::powered::error",
+    "powerOn":        "Blender::BlenderControl::powerOn",
+    "powerOff":       "Blender::BlenderControl::powerOff",
+    "start":          "Blender::BlenderControl::powered::start",
+    "smoothieComplete":"Blender::BlenderControl::powered::smoothieComplete",
+    "stopCommand":    "Blender::BlenderControl::powered::stopCommand",
+    "timeout":        "Blender::BlenderControl::powered::timeout",
+    "fault":          "Blender::BlenderControl::powered::fault",
+    "resetError":     "Blender::BlenderControl::powered::resetError"
+  },
+  "states": {
+    "initial":  { "initial": true },
+    "off":      { "label": "Off",      "model_ref": "off" },
+    "powered":  { "label": "Powered",  "model_ref": "powered", "composite": true, "style": "state.composite", "h": 320 },
+    "poweredInitial": { "initial": true, "parent": "powered" },
+    "ready":    { "label": "Ready",    "model_ref": "ready",    "parent": "powered" },
+    "blending": { "label": "Blending", "model_ref": "blending", "parent": "powered" },
+    "error":    { "label": "Error",    "model_ref": "error",    "parent": "powered" }
+  },
+  "transitions": [
+    { "from": "initial",  "to": "off",      "label": "" },
+    { "from": "off",      "to": "powered",  "label": "power on",                         "model_ref": "powerOn" },
+    { "from": "poweredInitial", "to": "ready", "label": "" },
+    { "from": "ready",    "to": "blending", "label": "start command",                     "model_ref": "start" },
+    { "from": "blending", "to": "ready",    "label": "smoothness signal [smooth] / stop", "model_ref": "smoothieComplete" },
+    { "from": "blending", "to": "ready",    "label": "stop command / stop motor",         "model_ref": "stopCommand" },
+    { "from": "blending", "to": "ready",    "label": "timeout / stop motor",              "model_ref": "timeout" },
+    { "from": "blending", "to": "error",    "label": "fault: lid / jam / overcurrent / sensor", "model_ref": "fault" },
+    { "from": "error",    "to": "ready",    "label": "reset",                             "model_ref": "resetError" },
+    { "from": "powered",  "to": "off",      "label": "power off",                         "model_ref": "powerOff" }
+  ]
+}

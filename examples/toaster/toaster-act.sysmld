@@ -1,0 +1,450 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-act",
+    "kind": "ActionView",
+    "name": "Toaster Toast Cycle",
+    "canvas": {
+      "width": 338,
+      "height": 1342,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "toastStart",
+        "model_ref": null,
+        "symbol": "initial_state",
+        "layout": {
+          "x": 137,
+          "y": 72,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "label": "",
+        "style": "initial_state"
+      },
+      {
+        "id": "insertBread",
+        "model_ref": "insertBread",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 164,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Insert Bread",
+        "style": "action"
+      },
+      {
+        "id": "lowerLever",
+        "model_ref": "lowerLever",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 300,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Lower Lever",
+        "style": "action"
+      },
+      {
+        "id": "latchCarriage",
+        "model_ref": "latchCarriage",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 436,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Latch Carriage",
+        "style": "action"
+      },
+      {
+        "id": "energizeHeater",
+        "model_ref": "energizeHeater",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 572,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Energize Heater",
+        "style": "action"
+      },
+      {
+        "id": "monitorToastTimer",
+        "model_ref": "monitorToastTimer",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 708,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Monitor Timer",
+        "style": "action"
+      },
+      {
+        "id": "toastDecision",
+        "model_ref": null,
+        "symbol": "decision_node",
+        "layout": {
+          "x": 112.5,
+          "y": 844,
+          "width": 69,
+          "height": 58,
+          "z": 10
+        },
+        "label": "done?",
+        "style": "decision_node"
+      },
+      {
+        "id": "releaseCarriage",
+        "model_ref": "releaseCarriage",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 974,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Release Carriage",
+        "style": "action"
+      },
+      {
+        "id": "presentToast",
+        "model_ref": "presentToast",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 1110,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Present Toast",
+        "style": "action"
+      },
+      {
+        "id": "toastEnd",
+        "model_ref": null,
+        "symbol": "activity_final_node",
+        "layout": {
+          "x": 135,
+          "y": 1246,
+          "width": 24,
+          "height": 24,
+          "z": 10
+        },
+        "label": "",
+        "style": "activity_final_node"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-toastStart-insertBread",
+        "model_ref": "insertBread",
+        "source": {
+          "element": "toastStart",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "insertBread",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-insertBread-lowerLever",
+        "model_ref": "insertBread",
+        "source": {
+          "element": "insertBread",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lowerLever",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bread loaded",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-lowerLever-latchCarriage",
+        "model_ref": "lowerLever",
+        "source": {
+          "element": "lowerLever",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "latchCarriage",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-latchCarriage-energizeHeater",
+        "model_ref": "latchCarriage",
+        "source": {
+          "element": "latchCarriage",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "energizeHeater",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-energizeHeater-monitorToastTimer",
+        "model_ref": "energizeHeater",
+        "source": {
+          "element": "energizeHeater",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "monitorToastTimer",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-monitorToastTimer-toastDecision",
+        "model_ref": "monitorToastTimer",
+        "source": {
+          "element": "monitorToastTimer",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "toastDecision",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "sample",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-toastDecision-monitorToastTimer",
+        "model_ref": "monitorToastTimer",
+        "source": {
+          "element": "toastDecision",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "monitorToastTimer",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 266,
+              "y": 873
+            },
+            {
+              "x": 266,
+              "y": 740
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "not done",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-toastDecision-releaseCarriage",
+        "model_ref": "releaseCarriage",
+        "source": {
+          "element": "toastDecision",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "releaseCarriage",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "complete",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-releaseCarriage-presentToast",
+        "model_ref": "releaseCarriage",
+        "source": {
+          "element": "releaseCarriage",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "presentToast",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-presentToast-toastEnd",
+        "model_ref": "presentToast",
+        "source": {
+          "element": "presentToast",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "toastEnd",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

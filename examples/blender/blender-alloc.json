@@ -1,0 +1,23 @@
+{
+  "diagram": "blender-alloc",
+  "kind": "AllocationView",
+  "name": "Blender Allocations",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "lidInterlockRequirement": {"label": "Lid Interlock Req", "symbol": "requirement", "rank": 0, "order": 0},
+    "motorControlRequirement": {"label": "Motor Control Req", "symbol": "requirement", "rank": 0, "order": 1},
+    "smoothnessDetectionRequirement": {"label": "Smoothness Req", "symbol": "requirement", "rank": 0, "order": 2},
+    "controlPanel": {"label": "Control Panel", "symbol": "part_usage", "rank": 1, "order": 0},
+    "motor": {"label": "Motor", "symbol": "part_usage", "rank": 1, "order": 1},
+    "smoothnessSensor": {"label": "Smoothness Sensor", "symbol": "part_usage", "rank": 1, "order": 2},
+    "spinBladeAssembly": {"label": "Spin Blades", "symbol": "action", "rank": 2, "order": 1}
+  },
+  "edges": [
+    {"from": "lidInterlockRequirement", "to": "controlPanel", "label": "allocate", "model_ref": "allocateInterlockToControlPanel"},
+    {"from": "motorControlRequirement", "to": "motor", "label": "allocate", "model_ref": "allocateTorqueToMotor"},
+    {"from": "smoothnessDetectionRequirement", "to": "smoothnessSensor", "label": "allocate", "model_ref": "allocateSmoothnessToSensor"},
+    {"from": "motorControlRequirement", "to": "spinBladeAssembly", "label": "allocate", "model_ref": "allocateTorqueToMotor"}
+  ]
+}

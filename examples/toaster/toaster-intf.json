@@ -1,0 +1,24 @@
+{
+  "diagram": "toaster-intf",
+  "kind": "InterfaceView",
+  "name": "Toaster Interfaces",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "UserInterface": {"label": "User Interface", "rank": 0, "order": 0},
+    "PowerInterface": {"label": "Power Interface", "rank": 0, "order": 1},
+    "MechanicalInterface": {"label": "Mechanical Interface", "rank": 0, "order": 2},
+    "ThermalInterface": {"label": "Thermal Interface", "rank": 0, "order": 3},
+    "UserCommand": {"label": "UserCommand", "symbol": "item", "rank": 1, "order": 0},
+    "ElectricalEnergy": {"label": "ElectricalEnergy", "symbol": "item", "rank": 1, "order": 1},
+    "BreadSlice": {"label": "BreadSlice", "symbol": "item", "rank": 1, "order": 2},
+    "HeatEnergy": {"label": "HeatEnergy", "symbol": "item", "rank": 1, "order": 3}
+  },
+  "edges": [
+    {"from": "UserInterface", "to": "UserCommand", "label": "carries"},
+    {"from": "PowerInterface", "to": "ElectricalEnergy", "label": "carries"},
+    {"from": "MechanicalInterface", "to": "BreadSlice", "label": "positions"},
+    {"from": "ThermalInterface", "to": "HeatEnergy", "label": "carries"}
+  ]
+}

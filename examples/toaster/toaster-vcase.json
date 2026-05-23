@@ -1,0 +1,35 @@
+{
+  "diagram": "toaster-vcase",
+  "kind": "VerificationCaseView",
+  "name": "Toaster Verification Cases",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "verifyToastBrowning": {"label": "Verify Browning", "rank": 0, "order": 0},
+    "verifyElectricalSafety": {"label": "Verify Electrical Safety", "rank": 0, "order": 1},
+    "verifyCrumbTrayRemoval": {"label": "Verify Crumb Tray", "rank": 0, "order": 2},
+    "verifyCarriageRelease": {"label": "Verify Carriage Release", "rank": 0, "order": 3},
+    "verifySurfaceTemperature": {"label": "Verify Surface Temp", "rank": 0, "order": 4},
+    "browningRequirement": {"label": "Browning Req", "symbol": "requirement", "model_ref": "browningRequirement", "rank": 1, "order": 0},
+    "browningLevelsRequirement": {"label": "Browning Levels Req", "symbol": "requirement", "model_ref": "browningLevelsRequirement", "rank": 1, "order": 1},
+    "electricalSafetyRequirement": {"label": "Electrical Safety Req", "symbol": "requirement", "model_ref": "electricalSafetyRequirement", "rank": 1, "order": 2},
+    "powerRatingRequirement": {"label": "Power Rating Req", "symbol": "requirement", "model_ref": "powerRatingRequirement", "rank": 1, "order": 3},
+    "thermalCutoffRequirement": {"label": "Thermal Cutoff Req", "symbol": "requirement", "model_ref": "thermalCutoffRequirement", "rank": 1, "order": 4},
+    "crumbTrayForceRequirement": {"label": "Crumb Tray Force Req", "symbol": "requirement", "model_ref": "crumbTrayForceRequirement", "rank": 1, "order": 5},
+    "cleanabilityRequirement": {"label": "Cleanability Req", "symbol": "requirement", "model_ref": "cleanabilityRequirement", "rank": 1, "order": 6},
+    "carriageReleaseRequirement": {"label": "Carriage Release Req", "symbol": "requirement", "model_ref": "carriageReleaseRequirement", "rank": 1, "order": 7},
+    "surfaceTemperatureRequirement": {"label": "Surface Temp Req", "symbol": "requirement", "model_ref": "surfaceTemperatureRequirement", "rank": 1, "order": 8}
+  },
+  "edges": [
+    {"from": "verifyToastBrowning", "to": "browningRequirement", "label": "verifies"},
+    {"from": "verifyToastBrowning", "to": "browningLevelsRequirement", "label": "verifies"},
+    {"from": "verifyElectricalSafety", "to": "electricalSafetyRequirement", "label": "verifies"},
+    {"from": "verifyElectricalSafety", "to": "powerRatingRequirement", "label": "verifies"},
+    {"from": "verifyElectricalSafety", "to": "thermalCutoffRequirement", "label": "verifies"},
+    {"from": "verifyCrumbTrayRemoval", "to": "crumbTrayForceRequirement", "label": "verifies"},
+    {"from": "verifyCrumbTrayRemoval", "to": "cleanabilityRequirement", "label": "verifies"},
+    {"from": "verifyCarriageRelease", "to": "carriageReleaseRequirement", "label": "verifies"},
+    {"from": "verifySurfaceTemperature", "to": "surfaceTemperatureRequirement", "label": "verifies"}
+  ]
+}

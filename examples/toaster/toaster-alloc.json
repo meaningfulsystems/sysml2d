@@ -1,0 +1,23 @@
+{
+  "diagram": "toaster-alloc",
+  "kind": "AllocationView",
+  "name": "Toaster Allocations",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "toastSafetyRequirement": {"label": "Safety Req", "symbol": "requirement", "rank": 0, "order": 0},
+    "browningRequirement": {"label": "Browning Req", "symbol": "requirement", "rank": 0, "order": 1},
+    "cleanabilityRequirement": {"label": "Cleanability Req", "symbol": "requirement", "rank": 0, "order": 2},
+    "powerAndControlSubsystem": {"label": "Power & Control", "symbol": "part_usage", "rank": 1, "order": 0},
+    "heatingElement": {"label": "Heating Element", "symbol": "part_usage", "rank": 1, "order": 1},
+    "crumbTray": {"label": "Crumb Tray", "symbol": "part_usage", "rank": 1, "order": 2},
+    "energizeHeater": {"label": "Energize Heater", "symbol": "action", "rank": 2, "order": 1}
+  },
+  "edges": [
+    {"from": "toastSafetyRequirement", "to": "powerAndControlSubsystem", "label": "allocate", "model_ref": "allocateSafetyToPowerControl"},
+    {"from": "browningRequirement", "to": "heatingElement", "label": "allocate", "model_ref": "allocateHeatToHeater"},
+    {"from": "browningRequirement", "to": "energizeHeater", "label": "allocate", "model_ref": "allocateBrowningToToastCycle"},
+    {"from": "cleanabilityRequirement", "to": "crumbTray", "label": "allocate", "model_ref": "allocateCleanabilityToCrumbTray"}
+  ]
+}

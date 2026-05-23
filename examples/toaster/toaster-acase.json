@@ -1,0 +1,22 @@
+{
+  "diagram": "toaster-acase",
+  "kind": "AnalysisCaseView",
+  "name": "Toaster Analysis Cases",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "thermalPerformanceAnalysis": {"label": "Thermal Performance", "rank": 0, "order": 0},
+    "electricalLoadAnalysis": {"label": "Electrical Load", "rank": 0, "order": 1},
+    "heatEnergyBalance": {"label": "Heat Energy Balance", "symbol": "constraint", "rank": 1, "order": 0},
+    "electricalPowerLimit": {"label": "Power Limit", "symbol": "constraint", "rank": 1, "order": 1},
+    "browningRequirement": {"label": "Browning Req", "symbol": "requirement", "rank": 2, "order": 0},
+    "electricalSafetyRequirement": {"label": "Electrical Safety Req", "symbol": "requirement", "rank": 2, "order": 1}
+  },
+  "edges": [
+    {"from": "thermalPerformanceAnalysis", "to": "heatEnergyBalance", "label": "method"},
+    {"from": "electricalLoadAnalysis", "to": "electricalPowerLimit", "label": "method"},
+    {"from": "heatEnergyBalance", "to": "browningRequirement", "label": "evaluates"},
+    {"from": "electricalPowerLimit", "to": "electricalSafetyRequirement", "label": "evaluates"}
+  ]
+}

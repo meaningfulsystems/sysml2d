@@ -1,0 +1,24 @@
+{
+  "diagram": "blender-intf",
+  "kind": "InterfaceView",
+  "name": "Blender Interfaces",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "UserControlsInterface": {"label": "User Controls", "rank": 0, "order": 0},
+    "PowerInterface": {"label": "Power Interface", "rank": 0, "order": 1},
+    "DriveInterface": {"label": "Drive Interface", "rank": 0, "order": 2},
+    "SensingInterface": {"label": "Sensing Interface", "rank": 0, "order": 3},
+    "UserCommand": {"label": "UserCommand", "symbol": "item", "rank": 1, "order": 0},
+    "ElectricalEnergy": {"label": "ElectricalEnergy", "symbol": "item", "rank": 1, "order": 1},
+    "RotationalEnergy": {"label": "RotationalEnergy", "symbol": "item", "rank": 1, "order": 2},
+    "SmoothnessSignal": {"label": "SmoothnessSignal", "symbol": "item", "rank": 1, "order": 3}
+  },
+  "edges": [
+    {"from": "UserControlsInterface", "to": "UserCommand", "label": "carries"},
+    {"from": "PowerInterface", "to": "ElectricalEnergy", "label": "carries"},
+    {"from": "DriveInterface", "to": "RotationalEnergy", "label": "carries"},
+    {"from": "SensingInterface", "to": "SmoothnessSignal", "label": "carries"}
+  ]
+}

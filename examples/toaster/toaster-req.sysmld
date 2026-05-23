@@ -1,0 +1,503 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-req",
+    "kind": "RequirementView",
+    "name": "Toaster Requirements",
+    "canvas": {
+      "width": 1849,
+      "height": 826,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "toastSafetyRequirement",
+        "model_ref": "toastSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 820,
+          "y": 72,
+          "width": 209,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-T-001 Toast Safety\nPrevent exposed energized\nor overheating hazards.",
+        "style": "requirement"
+      },
+      {
+        "id": "electricalSafetyRequirement",
+        "model_ref": "electricalSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 374,
+          "y": 270,
+          "width": 223,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-T-002 Electrical Safety\nComply with UL 1026 / IEC\n60335-2-9 safety intent.",
+        "style": "requirement"
+      },
+      {
+        "id": "browningRequirement",
+        "model_ref": "browningRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 971,
+          "y": 270,
+          "width": 223,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-T-003 Browning Quality\nDeliver selectable browning\nwithout burning bread.",
+        "style": "requirement"
+      },
+      {
+        "id": "timingRequirement",
+        "model_ref": "timingRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1410,
+          "y": 270,
+          "width": 223,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-T-004 Toast Timing\nRelease carriage when timer\nor cancel event occurs.",
+        "style": "requirement"
+      },
+      {
+        "id": "powerRatingRequirement",
+        "model_ref": "powerRatingRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 468,
+          "width": 202,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-T-010 Power Rating\nOperate at 900-1200 W on\n120 VAC / 60 Hz supply.",
+        "style": "requirement"
+      },
+      {
+        "id": "surfaceTemperatureRequirement",
+        "model_ref": "surfaceTemperatureRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 346,
+          "y": 468,
+          "width": 237,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-T-011 Surface Temp\nTouchable surfaces <= 60 C\nat max setting, 25 C ambient.",
+        "style": "requirement"
+      },
+      {
+        "id": "thermalCutoffRequirement",
+        "model_ref": "thermalCutoffRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 655,
+          "y": 468,
+          "width": 244,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-T-012 Thermal Cutoff\nOpen heater circuit before\nexternal surface exceeds 90 C.",
+        "style": "requirement"
+      },
+      {
+        "id": "browningLevelsRequirement",
+        "model_ref": "browningLevelsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 974.5,
+          "y": 468,
+          "width": 216,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-T-020 Browning Levels\nProvide 7 browning levels;\nslot delta <= 1.5 DeltaE.",
+        "style": "requirement"
+      },
+      {
+        "id": "carriageReleaseRequirement",
+        "model_ref": "carriageReleaseRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1269.5,
+          "y": 468,
+          "width": 216,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-T-021 Carriage Release\nPop up within 2 s of cycle\ncompletion or cancel.",
+        "style": "requirement"
+      },
+      {
+        "id": "crumbTrayForceRequirement",
+        "model_ref": "crumbTrayForceRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1266,
+          "y": 666,
+          "width": 223,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-T-030 Crumb Tray Force\nRemove tray with 5-15 N and\ncapture >= 90% crumbs.",
+        "style": "requirement"
+      },
+      {
+        "id": "cycleLifeRequirement",
+        "model_ref": "cycleLifeRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1561,
+          "y": 468,
+          "width": 216,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-T-040 Cycle Life\nLever, latch, and carriage\nsurvive >= 10,000 cycles.",
+        "style": "requirement"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-toastSafetyRequirement-electricalSafetyRequirement",
+        "model_ref": "toastSafetyRequirement",
+        "source": {
+          "element": "toastSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.25
+          }
+        },
+        "target": {
+          "element": "electricalSafetyRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "derive",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-toastSafetyRequirement-browningRequirement",
+        "model_ref": "toastSafetyRequirement",
+        "source": {
+          "element": "toastSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "browningRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "derive",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-toastSafetyRequirement-timingRequirement",
+        "model_ref": "toastSafetyRequirement",
+        "source": {
+          "element": "toastSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.75
+          }
+        },
+        "target": {
+          "element": "timingRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "derive",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-electricalSafetyRequirement-powerRatingRequirement",
+        "model_ref": "electricalSafetyRequirement",
+        "source": {
+          "element": "electricalSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.25
+          }
+        },
+        "target": {
+          "element": "powerRatingRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-electricalSafetyRequirement-surfaceTemperatureRequirement",
+        "model_ref": "electricalSafetyRequirement",
+        "source": {
+          "element": "electricalSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "surfaceTemperatureRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-electricalSafetyRequirement-thermalCutoffRequirement",
+        "model_ref": "electricalSafetyRequirement",
+        "source": {
+          "element": "electricalSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.75
+          }
+        },
+        "target": {
+          "element": "thermalCutoffRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-browningRequirement-browningLevelsRequirement",
+        "model_ref": "browningRequirement",
+        "source": {
+          "element": "browningRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "browningLevelsRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-timingRequirement-carriageReleaseRequirement",
+        "model_ref": "timingRequirement",
+        "source": {
+          "element": "timingRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.333
+          }
+        },
+        "target": {
+          "element": "carriageReleaseRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-timingRequirement-cycleLifeRequirement",
+        "model_ref": "timingRequirement",
+        "source": {
+          "element": "timingRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.667
+          }
+        },
+        "target": {
+          "element": "cycleLifeRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "trace",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-carriageReleaseRequirement-crumbTrayForceRequirement",
+        "model_ref": "carriageReleaseRequirement",
+        "source": {
+          "element": "carriageReleaseRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "crumbTrayForceRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "trace",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

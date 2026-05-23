@@ -1,0 +1,534 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {
+    "toaster": "Toaster::Toaster",
+    "lever": "Toaster::Toaster::lever",
+    "buttons": "Toaster::Toaster::buttons",
+    "power-control-subsystem": "Toaster::Toaster::powerAndControlSubsystem",
+    "heater": "Toaster::Toaster::heatingElement",
+    "power-cord": "Toaster::Toaster::powerCord",
+    "bnd--buttons": "Toaster::Toaster::buttonInput",
+    "buttons--bnd--tgt": "Toaster::Toaster::buttonUserInputIn",
+    "bnd--power-cord": "Toaster::Toaster::mainsPower",
+    "power-cord--bnd--tgt": "Toaster::Toaster::cordPowerIn",
+    "buttons--power-control-subsystem--src": "Toaster::Toaster::buttonControlOut",
+    "buttons--power-control-subsystem--tgt": "Toaster::Toaster::buttonControlIn",
+    "power-cord--power-control-subsystem--src": "Toaster::Toaster::cordPowerOut",
+    "power-cord--power-control-subsystem--tgt": "Toaster::Toaster::subsystemPowerIn",
+    "lever--power-control-subsystem--src": "Toaster::Toaster::leverControlOut",
+    "lever--power-control-subsystem--tgt": "Toaster::Toaster::controlInput",
+    "power-control-subsystem--heater--src": "Toaster::Toaster::heatCommandOut",
+    "power-control-subsystem--heater--tgt": "Toaster::Toaster::heaterControlIn",
+    "buttonInputToButtons": "Toaster::Toaster::buttonInputToButtons",
+    "conn-bnd-buttons": "Toaster::Toaster::buttonInputToButtons",
+    "buttonsToPowerControl": "Toaster::Toaster::buttonsToPowerControl",
+    "mainsToCord": "Toaster::Toaster::mainsToCord",
+    "conn-bnd-power-cord": "Toaster::Toaster::mainsToCord",
+    "cordToPowerControl": "Toaster::Toaster::cordToPowerControl",
+    "leverToControl": "Toaster::Toaster::leverToControl",
+    "controlToHeater": "Toaster::Toaster::controlToHeater"
+  },
+  "diagram": {
+    "id": "toaster-electrical-icn",
+    "kind": "InterconnectionView",
+    "name": "Toaster Electrical Interconnection",
+    "canvas": {
+      "width": 999,
+      "height": 522,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "toaster",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 919,
+          "height": 442,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "buttons",
+        "model_ref": "buttons",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 160,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Buttons",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.mechanical"
+      },
+      {
+        "id": "lever",
+        "model_ref": "lever",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 81,
+          "y": 225,
+          "width": 150,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Lever",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.mechanical"
+      },
+      {
+        "id": "power-cord",
+        "model_ref": "power-cord",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 81,
+          "y": 374,
+          "width": 150,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Power Cord",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.electrical"
+      },
+      {
+        "id": "power-control-subsystem",
+        "model_ref": "power-control-subsystem",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 377,
+          "y": 216,
+          "width": 230,
+          "height": 90,
+          "z": 10
+        },
+        "label": "Power & Control\nSubsystem",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.control"
+      },
+      {
+        "id": "heater",
+        "model_ref": "heater",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 733,
+          "y": 221,
+          "width": 190,
+          "height": 80,
+          "z": 10
+        },
+        "label": "Heating Element",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.thermal"
+      },
+      {
+        "id": "buttons--power-control-subsystem--src",
+        "model_ref": "buttons--power-control-subsystem--src",
+        "symbol": "port",
+        "owner": "buttons",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": "ctrl"
+      },
+      {
+        "id": "buttons--bnd--tgt",
+        "model_ref": "buttons--bnd--tgt",
+        "symbol": "port",
+        "owner": "buttons",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": "press"
+      },
+      {
+        "id": "lever--power-control-subsystem--src",
+        "model_ref": "lever--power-control-subsystem--src",
+        "symbol": "port",
+        "owner": "lever",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": "ctrl"
+      },
+      {
+        "id": "power-cord--power-control-subsystem--src",
+        "model_ref": "power-cord--power-control-subsystem--src",
+        "symbol": "port",
+        "owner": "power-cord",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": "out"
+      },
+      {
+        "id": "power-cord--bnd--tgt",
+        "model_ref": "power-cord--bnd--tgt",
+        "symbol": "port",
+        "owner": "power-cord",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": "in"
+      },
+      {
+        "id": "buttons--power-control-subsystem--tgt",
+        "model_ref": "buttons--power-control-subsystem--tgt",
+        "symbol": "port",
+        "owner": "power-control-subsystem",
+        "placement": {
+          "side": "left",
+          "offset": 0.25
+        },
+        "label": "button"
+      },
+      {
+        "id": "lever--power-control-subsystem--tgt",
+        "model_ref": "lever--power-control-subsystem--tgt",
+        "symbol": "port",
+        "owner": "power-control-subsystem",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": "ctrl"
+      },
+      {
+        "id": "power-cord--power-control-subsystem--tgt",
+        "model_ref": "power-cord--power-control-subsystem--tgt",
+        "symbol": "port",
+        "owner": "power-control-subsystem",
+        "placement": {
+          "side": "left",
+          "offset": 0.75
+        },
+        "label": "power"
+      },
+      {
+        "id": "power-control-subsystem--heater--src",
+        "model_ref": "power-control-subsystem--heater--src",
+        "symbol": "port",
+        "owner": "power-control-subsystem",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": "cmd"
+      },
+      {
+        "id": "power-control-subsystem--heater--tgt",
+        "model_ref": "power-control-subsystem--heater--tgt",
+        "symbol": "port",
+        "owner": "heater",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": "cmd"
+      },
+      {
+        "id": "bnd--buttons",
+        "model_ref": "bnd--buttons",
+        "symbol": "port",
+        "owner": "boundary",
+        "placement": {
+          "side": "left",
+          "offset": 0.1629
+        },
+        "label": "Button Input"
+      },
+      {
+        "id": "bnd--power-cord",
+        "model_ref": "bnd--power-cord",
+        "symbol": "port",
+        "owner": "boundary",
+        "placement": {
+          "side": "left",
+          "offset": 0.8371
+        },
+        "label": "Mains Power"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-buttons-power-control-subsystem",
+        "model_ref": "buttonsToPowerControl",
+        "source": {
+          "element": "buttons--power-control-subsystem--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "buttons--power-control-subsystem--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 283.25,
+              "y": 112
+            },
+            {
+              "x": 283.25,
+              "y": 238.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "button control",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.signal"
+      },
+      {
+        "id": "conn-lever-power-control-subsystem",
+        "model_ref": "leverToControl",
+        "source": {
+          "element": "lever--power-control-subsystem--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lever--power-control-subsystem--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "control",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.signal"
+      },
+      {
+        "id": "conn-power-cord-power-control-subsystem",
+        "model_ref": "cordToPowerControl",
+        "source": {
+          "element": "power-cord--power-control-subsystem--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "power-cord--power-control-subsystem--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 329.75,
+              "y": 410
+            },
+            {
+              "x": 329.75,
+              "y": 283.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "line power",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.power"
+      },
+      {
+        "id": "conn-power-control-subsystem-heater",
+        "model_ref": "controlToHeater",
+        "source": {
+          "element": "power-control-subsystem--heater--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "power-control-subsystem--heater--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "heat command",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.signal"
+      },
+      {
+        "id": "conn-bnd-buttons",
+        "model_ref": "buttonInputToButtons",
+        "source": {
+          "element": "bnd--buttons",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "buttons--bnd--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.signal"
+      },
+      {
+        "id": "conn-bnd-power-cord",
+        "model_ref": "mainsToCord",
+        "source": {
+          "element": "bnd--power-cord",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "power-cord--bnd--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.power"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "part.mechanical": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "part.control": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "part.thermal": {
+        "fill": "#FFF3E0",
+        "stroke": "#EF6C00",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "part.electrical": {
+        "fill": "#F3E5F5",
+        "stroke": "#6A1B9A",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "connector.signal": {
+        "stroke": "#333333",
+        "stroke_width": 2,
+        "corner_radius": 12,
+        "label_offset": 10
+      },
+      "connector.power": {
+        "stroke": "#6D4C41",
+        "stroke_width": 2,
+        "corner_radius": 12,
+        "label_offset": 10
+      }
+    },
+    "subject": "toaster"
+  }
+}

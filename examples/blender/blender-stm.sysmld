@@ -1,0 +1,541 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {
+    "blenderControl": "Blender::BlenderControl",
+    "off": "Blender::BlenderControl::off",
+    "powered": "Blender::BlenderControl::powered",
+    "ready": "Blender::BlenderControl::powered::ready",
+    "blending": "Blender::BlenderControl::powered::blending",
+    "error": "Blender::BlenderControl::powered::error",
+    "powerOn": "Blender::BlenderControl::powerOn",
+    "powerOff": "Blender::BlenderControl::powerOff",
+    "start": "Blender::BlenderControl::powered::start",
+    "smoothieComplete": "Blender::BlenderControl::powered::smoothieComplete",
+    "stopCommand": "Blender::BlenderControl::powered::stopCommand",
+    "timeout": "Blender::BlenderControl::powered::timeout",
+    "fault": "Blender::BlenderControl::powered::fault",
+    "resetError": "Blender::BlenderControl::powered::resetError"
+  },
+  "diagram": {
+    "id": "blender-stm",
+    "kind": "StateView",
+    "name": "Blender Control State Machine",
+    "canvas": {
+      "width": 1429,
+      "height": 529,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "blenderControl",
+        "symbol": "boundary",
+        "layout": {
+          "x": 100,
+          "y": 10,
+          "width": 1289,
+          "height": 479,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 150,
+          "y": 150,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "off",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 292,
+          "y": 130,
+          "width": 140,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "off",
+        "label": "Off",
+        "style": "state.default"
+      },
+      {
+        "id": "powered",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 482,
+          "y": 60,
+          "width": 737,
+          "height": 259,
+          "z": 4
+        },
+        "model_ref": "powered",
+        "label": "Powered",
+        "style": "state.composite"
+      },
+      {
+        "id": "poweredInitial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 527,
+          "y": 150,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "ready",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 562,
+          "y": 130,
+          "width": 140,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "ready",
+        "label": "Ready",
+        "style": "state.default"
+      },
+      {
+        "id": "blending",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 798,
+          "y": 130,
+          "width": 140,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "blending",
+        "label": "Blending",
+        "style": "state.default"
+      },
+      {
+        "id": "error",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1034,
+          "y": 130,
+          "width": 140,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "error",
+        "label": "Error",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--off",
+        "model_ref": "blenderControl",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "off",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "poweredInitial--ready",
+        "model_ref": "blenderControl",
+        "source": {
+          "element": "poweredInitial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ready",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "ready--blending",
+        "model_ref": "start",
+        "source": {
+          "element": "ready",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "blending",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "start command",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "blending--error",
+        "model_ref": "fault",
+        "source": {
+          "element": "blending",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "error",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "fault: lid / jam / overcurrent / sensor",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "off--powered",
+        "model_ref": "powerOn",
+        "source": {
+          "element": "off",
+          "anchor": {
+            "side": "right",
+            "offset": 0.3333
+          }
+        },
+        "target": {
+          "element": "powered",
+          "anchor": {
+            "side": "left",
+            "offset": 0.3475
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "power on",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "powered--off",
+        "model_ref": "powerOff",
+        "source": {
+          "element": "powered",
+          "anchor": {
+            "side": "left",
+            "offset": 0.4247
+          }
+        },
+        "target": {
+          "element": "off",
+          "anchor": {
+            "side": "right",
+            "offset": 0.6667
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "power off",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "blending-back-ready",
+        "model_ref": "smoothieComplete",
+        "source": {
+          "element": "blending",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.25
+          }
+        },
+        "target": {
+          "element": "ready",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.75
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 833,
+              "y": 218
+            },
+            {
+              "x": 667,
+              "y": 218
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "smoothness signal [smooth] / stop",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "blending-back-ready-2",
+        "model_ref": "stopCommand",
+        "source": {
+          "element": "blending",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ready",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 868,
+              "y": 246
+            },
+            {
+              "x": 632,
+              "y": 246
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "stop command / stop motor",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "blending-back-ready-3",
+        "model_ref": "timeout",
+        "source": {
+          "element": "blending",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.75
+          }
+        },
+        "target": {
+          "element": "ready",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.25
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 903,
+              "y": 274
+            },
+            {
+              "x": 597,
+              "y": 274
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "timeout / stop motor",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "error-back-ready",
+        "model_ref": "resetError",
+        "source": {
+          "element": "error",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ready",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1104,
+              "y": 102
+            },
+            {
+              "x": 632,
+              "y": 102
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "reset",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "blenderControl"
+  }
+}

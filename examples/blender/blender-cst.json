@@ -1,0 +1,35 @@
+{
+  "diagram": "blender-cst",
+  "kind": "ConstraintView",
+  "name": "Blender Parametrics",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "direction": "left-right",
+  "default_w": 180,
+  "default_h": 78,
+  "nodes": {
+    "commandedSpeed": {"label": "commandedSpeed\n20k rpm no-load", "symbol": "value_property", "rank": 0, "order": 0},
+    "motorTorque": {"label": "motorTorque\njam margin", "symbol": "value_property", "rank": 0, "order": 1},
+    "blendDuration": {"label": "blendDuration\n<= 120 s program", "symbol": "value_property", "rank": 0, "order": 2},
+    "interlockLatency": {"label": "interlockLatency\n<= 100 ms", "symbol": "value_property", "rank": 0, "order": 3},
+    "torqueSpeedLoadEstimate": {"label": "Torque-Speed-\nLoad", "rank": 1, "order": 0},
+    "motorPowerLimit": {"label": "Motor Power\nLimit", "rank": 1, "order": 1},
+    "blendTimingEstimate": {"label": "Blend Timing\nEstimate", "rank": 1, "order": 2},
+    "interlockStopTiming": {"label": "Interlock Stop\nTiming", "rank": 1, "order": 3},
+    "smoothnessThresholdEstimate": {"label": "Smoothness\nThreshold", "rank": 2, "order": 1},
+    "noisePowerTradeoff": {"label": "Noise-Power\nTradeoff <= 85 dBA", "rank": 2, "order": 2},
+    "smoothnessIndex": {"label": "smoothnessIndex\nbelow threshold", "symbol": "value_property", "rank": 3, "order": 1},
+    "noiseLevel": {"label": "noiseLevel\n1 m distance", "symbol": "value_property", "rank": 3, "order": 2}
+  },
+  "edges": [
+    {"from": "commandedSpeed", "to": "torqueSpeedLoadEstimate", "label": "bind"},
+    {"from": "motorTorque", "to": "torqueSpeedLoadEstimate", "label": "bind"},
+    {"from": "blendDuration", "to": "blendTimingEstimate", "label": "bind"},
+    {"from": "interlockLatency", "to": "interlockStopTiming", "label": "bind"},
+    {"from": "torqueSpeedLoadEstimate", "to": "motorPowerLimit", "label": "limit"},
+    {"from": "blendTimingEstimate", "to": "smoothnessThresholdEstimate", "label": "estimate"},
+    {"from": "smoothnessThresholdEstimate", "to": "smoothnessIndex", "label": "result"},
+    {"from": "motorPowerLimit", "to": "noisePowerTradeoff", "label": "bounds"},
+    {"from": "noisePowerTradeoff", "to": "noiseLevel", "label": "result"}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "diagram": "toaster-context",
+  "kind": "GeneralView",
+  "name": "Toaster Operating Context",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "user": {"label": "User", "symbol": "actor", "rank": 0, "order": 0},
+    "BreadSlice": {"label": "Bread Slice", "symbol": "item", "rank": 0, "order": 1},
+    "mainsSupply": {"label": "120 VAC Outlet", "symbol": "part_usage", "rank": 0, "order": 2},
+    "Toaster": {"label": "Toaster", "symbol": "part_usage", "rank": 1, "order": 1, "w": 190, "h": 90},
+    "ToastSlice": {"label": "Toast Slice", "symbol": "item", "rank": 2, "order": 0},
+    "CrumbDebris": {"label": "Crumb Debris", "symbol": "item", "rank": 2, "order": 1},
+    "environment": {"label": "Kitchen Environment", "symbol": "part_usage", "rank": 2, "order": 2}
+  },
+  "edges": [
+    {"from": "user", "to": "Toaster", "label": "lever/buttons", "model_ref": "userCommandFlow", "source_offset": 0.35, "target_offset": 0.25},
+    {"from": "BreadSlice", "to": "Toaster", "label": "insert", "model_ref": "breadIntoSlot", "target_offset": 0.5},
+    {"from": "mainsSupply", "to": "Toaster", "label": "900-1200 W", "model_ref": "mainsPowerFlow", "target_offset": 0.75},
+    {"from": "Toaster", "to": "ToastSlice", "label": "toast", "model_ref": "toastOutOfSlot", "source_offset": 0.25},
+    {"from": "Toaster", "to": "CrumbDebris", "label": "crumbs", "model_ref": "crumbFlowToTray", "source_offset": 0.5},
+    {"from": "Toaster", "to": "environment", "label": "heat/noise", "model_ref": "heatFlowToBread", "source_offset": 0.75}
+  ]
+}

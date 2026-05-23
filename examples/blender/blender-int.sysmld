@@ -1,0 +1,337 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "blender-int",
+    "kind": "InteractionView",
+    "name": "Blender Smoothness Interaction",
+    "canvas": {
+      "width": 1400,
+      "height": 558,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "user",
+        "model_ref": "user",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 70,
+          "y": 70,
+          "width": 110,
+          "height": 448,
+          "z": 10
+        },
+        "label": "User",
+        "style": "lifeline"
+      },
+      {
+        "id": "controlPanel",
+        "model_ref": "controlPanel",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 270,
+          "y": 70,
+          "width": 137,
+          "height": 448,
+          "z": 10
+        },
+        "label": "Control Panel",
+        "style": "lifeline"
+      },
+      {
+        "id": "motor",
+        "model_ref": "motor",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 497,
+          "y": 70,
+          "width": 110,
+          "height": 448,
+          "z": 10
+        },
+        "label": "Motor",
+        "style": "lifeline"
+      },
+      {
+        "id": "driveCoupling",
+        "model_ref": "driveCoupling",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 697,
+          "y": 70,
+          "width": 144,
+          "height": 448,
+          "z": 10
+        },
+        "label": "Drive Coupling",
+        "style": "lifeline"
+      },
+      {
+        "id": "bladeAssembly",
+        "model_ref": "bladeAssembly",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 931,
+          "y": 70,
+          "width": 144,
+          "height": 448,
+          "z": 10
+        },
+        "label": "Blade Assembly",
+        "style": "lifeline"
+      },
+      {
+        "id": "smoothnessSensor",
+        "model_ref": "smoothnessSensor",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 1165,
+          "y": 70,
+          "width": 165,
+          "height": 448,
+          "z": 10
+        },
+        "label": "Smoothness Sensor",
+        "style": "lifeline"
+      }
+    ],
+    "connections": [
+      {
+        "id": "msgStart",
+        "model_ref": "startBlendProgram",
+        "source": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.156
+          }
+        },
+        "target": {
+          "element": "controlPanel",
+          "anchor": {
+            "side": "left",
+            "offset": 0.156
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "start",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgMotor",
+        "model_ref": "controlPanelToMotor",
+        "source": {
+          "element": "controlPanel",
+          "anchor": {
+            "side": "right",
+            "offset": 0.277
+          }
+        },
+        "target": {
+          "element": "motor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.277
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "speed command",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgTorque",
+        "model_ref": "motorToCoupling",
+        "source": {
+          "element": "motor",
+          "anchor": {
+            "side": "right",
+            "offset": 0.397
+          }
+        },
+        "target": {
+          "element": "driveCoupling",
+          "anchor": {
+            "side": "left",
+            "offset": 0.397
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "torque",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgBlade",
+        "model_ref": "couplingToBlade",
+        "source": {
+          "element": "driveCoupling",
+          "anchor": {
+            "side": "right",
+            "offset": 0.518
+          }
+        },
+        "target": {
+          "element": "bladeAssembly",
+          "anchor": {
+            "side": "left",
+            "offset": 0.518
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "rotation",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgSense",
+        "model_ref": "couplingToSensor",
+        "source": {
+          "element": "driveCoupling",
+          "anchor": {
+            "side": "right",
+            "offset": 0.638
+          }
+        },
+        "target": {
+          "element": "smoothnessSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.638
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "vibration",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgComplete",
+        "model_ref": "sensorToControlPanel",
+        "source": {
+          "element": "smoothnessSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.759
+          }
+        },
+        "target": {
+          "element": "controlPanel",
+          "anchor": {
+            "side": "right",
+            "offset": 0.759
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "smoothness signal",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgStop",
+        "model_ref": "stopMotor",
+        "source": {
+          "element": "controlPanel",
+          "anchor": {
+            "side": "right",
+            "offset": 0.879
+          }
+        },
+        "target": {
+          "element": "motor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.879
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "stop",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Blender"
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "blender-alloc",
+    "kind": "AllocationView",
+    "name": "Blender Allocations",
+    "canvas": {
+      "width": 937,
+      "height": 654,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "lidInterlockRequirement",
+        "model_ref": "lidInterlockRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Lid Interlock Req",
+        "style": "requirement"
+      },
+      {
+        "id": "motorControlRequirement",
+        "model_ref": "motorControlRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 264,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Motor Control Req",
+        "style": "requirement"
+      },
+      {
+        "id": "smoothnessDetectionRequirement",
+        "model_ref": "smoothnessDetectionRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 456,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Smoothness Req",
+        "style": "requirement"
+      },
+      {
+        "id": "controlPanel",
+        "model_ref": "controlPanel",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 90,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Control Panel",
+        "style": "part_usage"
+      },
+      {
+        "id": "motor",
+        "model_ref": "motor",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 270,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Motor",
+        "style": "part_usage"
+      },
+      {
+        "id": "smoothnessSensor",
+        "model_ref": "smoothnessSensor",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 450,
+          "width": 153,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Smoothness Sensor",
+        "style": "part_usage"
+      },
+      {
+        "id": "spinBladeAssembly",
+        "model_ref": "spinBladeAssembly",
+        "symbol": "action",
+        "layout": {
+          "x": 715,
+          "y": 270,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Spin Blades",
+        "style": "action"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-lidInterlockRequirement-controlPanel",
+        "model_ref": "allocateInterlockToControlPanel",
+        "source": {
+          "element": "lidInterlockRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "controlPanel",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 298,
+              "y": 113
+            },
+            {
+              "x": 298,
+              "y": 125
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.allocation"
+      },
+      {
+        "id": "conn-motorControlRequirement-motor",
+        "model_ref": "allocateTorqueToMotor",
+        "source": {
+          "element": "motorControlRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.allocation"
+      },
+      {
+        "id": "conn-smoothnessDetectionRequirement-smoothnessSensor",
+        "model_ref": "allocateSmoothnessToSensor",
+        "source": {
+          "element": "smoothnessDetectionRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothnessSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 298,
+              "y": 497
+            },
+            {
+              "x": 298,
+              "y": 485
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.allocation"
+      },
+      {
+        "id": "conn-motorControlRequirement-spinBladeAssembly",
+        "model_ref": "allocateTorqueToMotor",
+        "source": {
+          "element": "motorControlRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "spinBladeAssembly",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 242,
+              "y": 582
+            },
+            {
+              "x": 715,
+              "y": 582
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.allocation"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Blender"
+  }
+}

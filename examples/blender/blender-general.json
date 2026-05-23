@@ -1,0 +1,21 @@
+{
+  "diagram": "blender-general",
+  "kind": "GeneralView",
+  "name": "Blender Cross-View Trace",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "makeSmoothieUseCase": {"label": "Make Smoothie", "symbol": "use_case", "rank": 0, "order": 0},
+    "smoothnessDetectionRequirement": {"label": "Smoothness Req", "symbol": "requirement", "rank": 1, "order": 0},
+    "senseSmoothness": {"label": "Sense Smoothness", "symbol": "action", "rank": 2, "order": 0},
+    "smoothnessSensor": {"label": "Smoothness Sensor", "symbol": "part_usage", "rank": 3, "order": 0},
+    "verifySmoothnessDetection": {"label": "Verify Smoothness", "symbol": "case", "rank": 4, "order": 0}
+  },
+  "edges": [
+    {"from": "makeSmoothieUseCase", "to": "smoothnessDetectionRequirement", "label": "refine"},
+    {"from": "smoothnessDetectionRequirement", "to": "senseSmoothness", "label": "allocate"},
+    {"from": "senseSmoothness", "to": "smoothnessSensor", "label": "performed by"},
+    {"from": "verifySmoothnessDetection", "to": "smoothnessDetectionRequirement", "label": "verify"}
+  ]
+}

@@ -1,0 +1,282 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-alloc",
+    "kind": "AllocationView",
+    "name": "Toaster Allocations",
+    "canvas": {
+      "width": 934,
+      "height": 654,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "toastSafetyRequirement",
+        "model_ref": "toastSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Safety Req",
+        "style": "requirement"
+      },
+      {
+        "id": "browningRequirement",
+        "model_ref": "browningRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 264,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Browning Req",
+        "style": "requirement"
+      },
+      {
+        "id": "cleanabilityRequirement",
+        "model_ref": "cleanabilityRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 456,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Cleanability Req",
+        "style": "requirement"
+      },
+      {
+        "id": "powerAndControlSubsystem",
+        "model_ref": "powerAndControlSubsystem",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 90,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Power & Control",
+        "style": "part_usage"
+      },
+      {
+        "id": "heatingElement",
+        "model_ref": "heatingElement",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 270,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Heating Element",
+        "style": "part_usage"
+      },
+      {
+        "id": "crumbTray",
+        "model_ref": "crumbTray",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 450,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Crumb Tray",
+        "style": "part_usage"
+      },
+      {
+        "id": "energizeHeater",
+        "model_ref": "energizeHeater",
+        "symbol": "action",
+        "layout": {
+          "x": 712,
+          "y": 270,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Energize Heater",
+        "style": "action"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-toastSafetyRequirement-powerAndControlSubsystem",
+        "model_ref": "allocateSafetyToPowerControl",
+        "source": {
+          "element": "toastSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "powerAndControlSubsystem",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 298,
+              "y": 113
+            },
+            {
+              "x": 298,
+              "y": 125
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.allocation"
+      },
+      {
+        "id": "conn-browningRequirement-heatingElement",
+        "model_ref": "allocateHeatToHeater",
+        "source": {
+          "element": "browningRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "heatingElement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.allocation"
+      },
+      {
+        "id": "conn-browningRequirement-energizeHeater",
+        "model_ref": "allocateBrowningToToastCycle",
+        "source": {
+          "element": "browningRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "energizeHeater",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 242,
+              "y": 582
+            },
+            {
+              "x": 712,
+              "y": 582
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.allocation"
+      },
+      {
+        "id": "conn-cleanabilityRequirement-crumbTray",
+        "model_ref": "allocateCleanabilityToCrumbTray",
+        "source": {
+          "element": "cleanabilityRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "crumbTray",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 298,
+              "y": 497
+            },
+            {
+              "x": 298,
+              "y": 485
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.allocation"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

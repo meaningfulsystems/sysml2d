@@ -1,0 +1,35 @@
+{
+  "diagram": "toaster-req",
+  "kind": "RequirementView",
+  "name": "Toaster Requirements",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "direction": "top-down",
+  "default_w": 250,
+  "default_h": 124,
+  "nodes": {
+    "toastSafetyRequirement": {"label": "«requirement»\nREQ-T-001 Toast Safety\nPrevent exposed energized\nor overheating hazards.", "rank": 0, "order": 0},
+    "electricalSafetyRequirement": {"label": "«requirement»\nREQ-T-002 Electrical Safety\nComply with UL 1026 / IEC\n60335-2-9 safety intent.", "rank": 1, "order": 0},
+    "browningRequirement": {"label": "«requirement»\nREQ-T-003 Browning Quality\nDeliver selectable browning\nwithout burning bread.", "rank": 1, "order": 1},
+    "timingRequirement": {"label": "«requirement»\nREQ-T-004 Toast Timing\nRelease carriage when timer\nor cancel event occurs.", "rank": 1, "order": 2},
+    "powerRatingRequirement": {"label": "«requirement»\nREQ-T-010 Power Rating\nOperate at 900-1200 W on\n120 VAC / 60 Hz supply.", "rank": 2, "order": 0},
+    "surfaceTemperatureRequirement": {"label": "«requirement»\nREQ-T-011 Surface Temp\nTouchable surfaces <= 60 C\nat max setting, 25 C ambient.", "rank": 2, "order": 1},
+    "thermalCutoffRequirement": {"label": "«requirement»\nREQ-T-012 Thermal Cutoff\nOpen heater circuit before\nexternal surface exceeds 90 C.", "rank": 2, "order": 2},
+    "browningLevelsRequirement": {"label": "«requirement»\nREQ-T-020 Browning Levels\nProvide 7 browning levels;\nslot delta <= 1.5 DeltaE.", "rank": 3, "order": 0},
+    "carriageReleaseRequirement": {"label": "«requirement»\nREQ-T-021 Carriage Release\nPop up within 2 s of cycle\ncompletion or cancel.", "rank": 3, "order": 1},
+    "crumbTrayForceRequirement": {"label": "«requirement»\nREQ-T-030 Crumb Tray Force\nRemove tray with 5-15 N and\ncapture >= 90% crumbs.", "rank": 3, "order": 2},
+    "cycleLifeRequirement": {"label": "«requirement»\nREQ-T-040 Cycle Life\nLever, latch, and carriage\nsurvive >= 10,000 cycles.", "rank": 3, "order": 3}
+  },
+  "edges": [
+    {"from": "toastSafetyRequirement", "to": "electricalSafetyRequirement", "label": "derive"},
+    {"from": "toastSafetyRequirement", "to": "browningRequirement", "label": "derive"},
+    {"from": "toastSafetyRequirement", "to": "timingRequirement", "label": "derive"},
+    {"from": "electricalSafetyRequirement", "to": "powerRatingRequirement", "label": "refine"},
+    {"from": "electricalSafetyRequirement", "to": "surfaceTemperatureRequirement", "label": "refine"},
+    {"from": "electricalSafetyRequirement", "to": "thermalCutoffRequirement", "label": "refine"},
+    {"from": "browningRequirement", "to": "browningLevelsRequirement", "label": "refine"},
+    {"from": "timingRequirement", "to": "carriageReleaseRequirement", "label": "refine"},
+    {"from": "timingRequirement", "to": "cycleLifeRequirement", "label": "trace"},
+    {"from": "carriageReleaseRequirement", "to": "crumbTrayForceRequirement", "label": "trace"}
+  ]
+}

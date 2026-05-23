@@ -1,0 +1,86 @@
+{
+  "direction": "top-down",
+  "ranks": {
+    "0": [
+      "tamper"
+    ],
+    "1": [
+      "lid"
+    ],
+    "2": [
+      "container"
+    ],
+    "3": [
+      "bladeAssembly",
+      "motorBase"
+    ],
+    "4": [
+      "driveCoupling"
+    ],
+    "5": [
+      "smoothnessSensor"
+    ],
+    "6": [
+      "controlPanel"
+    ],
+    "7": [
+      "motor"
+    ]
+  },
+  "nodes": {
+    "tamper": {
+      "rank": 0,
+      "position_in_rank": 0,
+      "cx": 80,
+      "cy": 80
+    },
+    "lid": {
+      "rank": 1,
+      "position_in_rank": 0,
+      "cx": 80,
+      "cy": 240
+    },
+    "container": {
+      "rank": 2,
+      "position_in_rank": 0,
+      "cx": 80,
+      "cy": 400
+    },
+    "bladeAssembly": {
+      "rank": 3,
+      "position_in_rank": 0,
+      "cx": 272,
+      "cy": 400
+    },
+    "driveCoupling": {
+      "rank": 4,
+      "position_in_rank": 0,
+      "cx": 272,
+      "cy": 240
+    },
+    "smoothnessSensor": {
+      "rank": 5,
+      "position_in_rank": 0,
+      "cx": 272,
+      "cy": 80
+    },
+    "motorBase": {
+      "rank": 3,
+      "position_in_rank": 1,
+      "cx": 464,
+      "cy": 400
+    },
+    "motor": {
+      "rank": 7,
+      "position_in_rank": 0,
+      "cx": 464,
+      "cy": 240
+    },
+    "controlPanel": {
+      "rank": 6,
+      "position_in_rank": 0,
+      "cx": 464,
+      "cy": 80
+    }
+  }
+}

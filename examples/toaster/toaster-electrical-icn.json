@@ -1,0 +1,177 @@
+{
+  "diagram": "toaster-electrical-icn",
+  "kind": "InterconnectionView",
+  "name": "Toaster Electrical Interconnection",
+  "subject": "toaster",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {
+    "toaster": "Toaster::Toaster",
+    "lever": "Toaster::Toaster::lever",
+    "buttons": "Toaster::Toaster::buttons",
+    "power-control-subsystem": "Toaster::Toaster::powerAndControlSubsystem",
+    "heater": "Toaster::Toaster::heatingElement",
+    "power-cord": "Toaster::Toaster::powerCord",
+    "bnd--buttons": "Toaster::Toaster::buttonInput",
+    "buttons--bnd--tgt": "Toaster::Toaster::buttonUserInputIn",
+    "bnd--power-cord": "Toaster::Toaster::mainsPower",
+    "power-cord--bnd--tgt": "Toaster::Toaster::cordPowerIn",
+    "buttons--power-control-subsystem--src": "Toaster::Toaster::buttonControlOut",
+    "buttons--power-control-subsystem--tgt": "Toaster::Toaster::buttonControlIn",
+    "power-cord--power-control-subsystem--src": "Toaster::Toaster::cordPowerOut",
+    "power-cord--power-control-subsystem--tgt": "Toaster::Toaster::subsystemPowerIn",
+    "lever--power-control-subsystem--src": "Toaster::Toaster::leverControlOut",
+    "lever--power-control-subsystem--tgt": "Toaster::Toaster::controlInput",
+    "power-control-subsystem--heater--src": "Toaster::Toaster::heatCommandOut",
+    "power-control-subsystem--heater--tgt": "Toaster::Toaster::heaterControlIn",
+    "buttonInputToButtons": "Toaster::Toaster::buttonInputToButtons",
+    "conn-bnd-buttons": "Toaster::Toaster::buttonInputToButtons",
+    "buttonsToPowerControl": "Toaster::Toaster::buttonsToPowerControl",
+    "mainsToCord": "Toaster::Toaster::mainsToCord",
+    "conn-bnd-power-cord": "Toaster::Toaster::mainsToCord",
+    "cordToPowerControl": "Toaster::Toaster::cordToPowerControl",
+    "leverToControl": "Toaster::Toaster::leverToControl",
+    "controlToHeater": "Toaster::Toaster::controlToHeater"
+  },
+  "direction": "left-right",
+  "default_w": 170,
+  "default_h": 78,
+  "col_gap": 72,
+  "rank_gap": 86,
+  "label_mode": "both",
+  "nodes": {
+    "buttons": {
+      "label": "Buttons",
+      "style": "part.mechanical",
+      "w": 160,
+      "h": 72
+    },
+    "lever": {
+      "label": "Lever",
+      "style": "part.mechanical",
+      "w": 150,
+      "h": 72
+    },
+    "power-cord": {
+      "label": "Power Cord",
+      "style": "part.electrical",
+      "w": 150,
+      "h": 72
+    },
+    "power-control-subsystem": {
+      "label": "Power & Control\nSubsystem",
+      "style": "part.control",
+      "w": 230,
+      "h": 90
+    },
+    "heater": {
+      "label": "Heating Element",
+      "style": "part.thermal",
+      "w": 190,
+      "h": 80
+    }
+  },
+  "edges": [
+    {
+      "from": "buttons",
+      "to": "power-control-subsystem",
+      "label": "button control",
+      "source_label": "ctrl",
+      "target_label": "button",
+      "source_side": "right",
+      "target_side": "left",
+      "model_ref": "buttonsToPowerControl",
+      "style": "connector.signal"
+    },
+    {
+      "from": "lever",
+      "to": "power-control-subsystem",
+      "label": "control",
+      "source_label": "ctrl",
+      "target_label": "ctrl",
+      "model_ref": "leverToControl",
+      "style": "connector.signal"
+    },
+    {
+      "from": "power-cord",
+      "to": "power-control-subsystem",
+      "label": "line power",
+      "source_label": "out",
+      "target_label": "power",
+      "source_side": "right",
+      "target_side": "left",
+      "model_ref": "cordToPowerControl",
+      "style": "connector.power"
+    },
+    {
+      "from": "power-control-subsystem",
+      "to": "heater",
+      "label": "heat command",
+      "source_label": "cmd",
+      "target_label": "cmd",
+      "model_ref": "controlToHeater",
+      "style": "connector.signal"
+    }
+  ],
+  "boundary_inputs": [
+    {
+      "to": "buttons",
+      "label": "Button Input",
+      "target_label": "press",
+      "model_ref": "buttonInputToButtons",
+      "style": "connector.signal"
+    },
+    {
+      "to": "power-cord",
+      "label": "Mains Power",
+      "target_label": "in",
+      "model_ref": "mainsToCord",
+      "style": "connector.power"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2,
+      "corner_radius": 12
+    },
+    "part.mechanical": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.control": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.thermal": {
+      "fill": "#FFF3E0",
+      "stroke": "#EF6C00",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.electrical": {
+      "fill": "#F3E5F5",
+      "stroke": "#6A1B9A",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "connector.signal": {
+      "stroke": "#333333",
+      "stroke_width": 2,
+      "corner_radius": 12,
+      "label_offset": 10
+    },
+    "connector.power": {
+      "stroke": "#6D4C41",
+      "stroke_width": 2,
+      "corner_radius": 12,
+      "label_offset": 10
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "diagram":     "toaster-stm",
+  "kind":        "StateView",
+  "name":        "Toaster Control State Machine",
+  "subject":     "toasterControl",
+  "model_files": ["toaster.sysml"],
+  "direction":   "left-right",
+  "default_w":   130,
+  "default_h":   60,
+  "aliases": {
+    "toasterControl": "Toaster::ToasterControl",
+    "idle":           "Toaster::ToasterControl::idle",
+    "heating":        "Toaster::ToasterControl::heating",
+    "done":           "Toaster::ToasterControl::done",
+    "error":          "Toaster::ToasterControl::error",
+    "leverDown":      "Toaster::ToasterControl::leverDown",
+    "timerExpired":   "Toaster::ToasterControl::timerExpired",
+    "carriageUpDone": "Toaster::ToasterControl::carriageUpDone",
+    "overheat":       "Toaster::ToasterControl::overheat",
+    "carriageUpAbort":"Toaster::ToasterControl::carriageUpAbort",
+    "reset":          "Toaster::ToasterControl::reset"
+  },
+  "states": {
+    "initial": { "initial": true },
+    "idle":    { "label": "Idle",    "model_ref": "idle" },
+    "heating": { "label": "Heating", "model_ref": "heating" },
+    "done":    { "label": "Done",    "model_ref": "done" },
+    "error":   { "label": "Error",   "model_ref": "error" }
+  },
+  "transitions": [
+    { "from": "initial", "to": "idle",    "label": "" },
+    { "from": "idle",    "to": "heating", "label": "lever down",    "model_ref": "leverDown" },
+    { "from": "heating", "to": "done",    "label": "timer expired", "model_ref": "timerExpired" },
+    { "from": "done",    "to": "idle",    "label": "carriage up",   "model_ref": "carriageUpDone" },
+    { "from": "heating", "to": "error",   "label": "fault: overheat / jam / power", "model_ref": "overheat" },
+    { "from": "heating", "to": "idle",    "label": "carriage up abort", "model_ref": "carriageUpAbort" },
+    { "from": "error",   "to": "idle",    "label": "reset",         "model_ref": "reset" }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "diagram": "toaster-pkg",
+  "kind": "PackageView",
+  "name": "Toaster Package Organization",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "direction": "top-down",
+  "nodes": {
+    "ToasterModel": {"label": "Toaster Model", "rank": 0, "order": 0},
+    "ToasterStructure": {"label": "Structure", "rank": 1, "order": 0},
+    "ToasterBehavior": {"label": "Behavior", "rank": 1, "order": 1},
+    "ToasterRequirements": {"label": "Requirements", "rank": 1, "order": 2},
+    "ToasterAnalysis": {"label": "Analysis", "rank": 2, "order": 0},
+    "ToasterVerification": {"label": "Verification", "rank": 2, "order": 1}
+  },
+  "edges": [
+    {"from": "ToasterModel", "to": "ToasterStructure", "label": "contains"},
+    {"from": "ToasterModel", "to": "ToasterBehavior", "label": "contains"},
+    {"from": "ToasterModel", "to": "ToasterRequirements", "label": "contains"},
+    {"from": "ToasterModel", "to": "ToasterAnalysis", "label": "contains"},
+    {"from": "ToasterModel", "to": "ToasterVerification", "label": "contains"}
+  ]
+}

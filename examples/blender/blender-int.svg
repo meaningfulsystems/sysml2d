@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1404" height="600" viewBox="0 0 1404 600">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1404" height="600" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1400" height="558" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 416 L 432 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[int.mb] Blender Smoothness Interaction [Blender]</text>
+<rect x="2" y="38" width="1400" height="560" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="user" x="70" y="70" width="110" height="34" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text class="small" text-anchor="middle" x="125" y="91">User</text>
+<line x1="125" y1="104" x2="125" y2="518" stroke="#334155" stroke-width="1.2" stroke-dasharray="5 5"/>
+<rect id="controlPanel" x="270" y="70" width="137" height="34" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text class="small" text-anchor="middle" x="338.5" y="91">Control Panel</text>
+<line x1="338.5" y1="104" x2="338.5" y2="518" stroke="#334155" stroke-width="1.2" stroke-dasharray="5 5"/>
+<rect id="motor" x="497" y="70" width="110" height="34" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text class="small" text-anchor="middle" x="552" y="91">Motor</text>
+<line x1="552" y1="104" x2="552" y2="518" stroke="#334155" stroke-width="1.2" stroke-dasharray="5 5"/>
+<rect id="driveCoupling" x="697" y="70" width="144" height="34" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text class="small" text-anchor="middle" x="769" y="91">Drive Coupling</text>
+<line x1="769" y1="104" x2="769" y2="518" stroke="#334155" stroke-width="1.2" stroke-dasharray="5 5"/>
+<rect id="bladeAssembly" x="931" y="70" width="144" height="34" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text class="small" text-anchor="middle" x="1003" y="91">Blade Assembly</text>
+<line x1="1003" y1="104" x2="1003" y2="518" stroke="#334155" stroke-width="1.2" stroke-dasharray="5 5"/>
+<rect id="smoothnessSensor" x="1165" y="70" width="165" height="34" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text class="small" text-anchor="middle" x="1247.5" y="91">Smoothness Sensor</text>
+<line x1="1247.5" y1="104" x2="1247.5" y2="518" stroke="#334155" stroke-width="1.2" stroke-dasharray="5 5"/>
+<path d="M 125,139.888 L 338.5,139.888" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 338.5,194.096 L 552,194.096" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 552,247.856 L 769,247.856" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 769,302.064 L 1003,302.064" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 769,355.824 L 1247.5,355.824" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 1247.5,410.032 L 338.5,410.032" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 338.5,463.792 L 552,463.792" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<text class="small" text-anchor="middle" x="231.75" y="147.888">start</text>
+<text class="small" text-anchor="middle" x="445.25" y="202.096">speed command</text>
+<text class="small" text-anchor="middle" x="660.5" y="255.856">torque</text>
+<text class="small" text-anchor="middle" x="886" y="310.064">rotation</text>
+<text class="small" text-anchor="middle" x="864.7" y="363.824">vibration</text>
+<text class="small" text-anchor="middle" x="656.65" y="418.032">smoothness signal</text>
+<text class="small" text-anchor="middle" x="445.25" y="471.792">stop</text>
+</g>
+</svg>

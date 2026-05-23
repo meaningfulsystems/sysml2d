@@ -1,0 +1,130 @@
+{
+  "diagram": "blender-bdd",
+  "kind": "DefinitionView",
+  "name": "Blender Definition Tree",
+  "subject": "Blender::Blender",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {
+    "blenderDef": "Blender::Blender",
+    "tamperDef": "Blender::Tamper",
+    "lidDef": "Blender::Lid",
+    "containerDef": "Blender::Container",
+    "bladeAssemblyDef": "Blender::BladeAssembly",
+    "driveCouplingDef": "Blender::DriveCoupling",
+    "smoothnessSensorDef": "Blender::SmoothnessSensor",
+    "motorBaseDef": "Blender::MotorBase",
+    "motorDef": "Blender::Motor",
+    "controlPanelDef": "Blender::ControlPanel",
+    "tamperPart": "Blender::Blender::tamper",
+    "lidPart": "Blender::Blender::lid",
+    "containerPart": "Blender::Blender::container",
+    "bladeAssemblyPart": "Blender::Blender::bladeAssembly",
+    "driveCouplingPart": "Blender::Blender::driveCoupling",
+    "smoothnessSensorPart": "Blender::Blender::smoothnessSensor",
+    "motorBasePart": "Blender::Blender::motorBase",
+    "motorPart": "Blender::Blender::motor",
+    "controlPanelPart": "Blender::Blender::controlPanel"
+  },
+  "direction": "top-down",
+  "default_w": 190,
+  "default_h": 72,
+  "sibling_gap": 44,
+  "rank_gap": 110,
+  "roots": [
+    {
+      "id": "blender",
+      "label": "Blender",
+      "model_ref": "blenderDef",
+      "style": "part.definition.root",
+      "w": 210,
+      "children": [
+        {
+          "id": "tamper",
+          "label": "Tamper",
+          "model_ref": "tamperDef",
+          "part_ref": "tamperPart",
+          "multiplicity": "0..1"
+        },
+        {
+          "id": "lid",
+          "label": "Lid",
+          "model_ref": "lidDef",
+          "part_ref": "lidPart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "container",
+          "label": "Container",
+          "model_ref": "containerDef",
+          "part_ref": "containerPart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "blade-assembly",
+          "label": "Blade Assembly",
+          "model_ref": "bladeAssemblyDef",
+          "part_ref": "bladeAssemblyPart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "drive-coupling",
+          "label": "Drive Coupling",
+          "model_ref": "driveCouplingDef",
+          "part_ref": "driveCouplingPart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "smoothness-sensor",
+          "label": "Smoothness\nSensor",
+          "model_ref": "smoothnessSensorDef",
+          "part_ref": "smoothnessSensorPart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "motor-base",
+          "label": "Motor Base",
+          "model_ref": "motorBaseDef",
+          "part_ref": "motorBasePart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "motor",
+          "label": "Motor",
+          "model_ref": "motorDef",
+          "part_ref": "motorPart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "control-panel",
+          "label": "Control Panel",
+          "model_ref": "controlPanelDef",
+          "part_ref": "controlPanelPart",
+          "multiplicity": "1"
+        }
+      ]
+    }
+  ],
+  "styles": {
+    "part.definition.root": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.definition": {
+      "fill": "#F8FAFC",
+      "stroke": "#475569",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "connector.definition": {
+      "stroke": "#64748B",
+      "stroke_width": 2,
+      "corner_radius": 8,
+      "marker_start": "composition",
+      "label_offset": 12
+    }
+  }
+}

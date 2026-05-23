@@ -1,0 +1,23 @@
+{
+  "diagram": "blender-pkg",
+  "kind": "PackageView",
+  "name": "Blender Package Organization",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "direction": "top-down",
+  "nodes": {
+    "BlenderModel": {"label": "Blender Model", "rank": 0, "order": 0},
+    "BlenderStructure": {"label": "Structure", "rank": 1, "order": 0},
+    "BlenderBehavior": {"label": "Behavior", "rank": 1, "order": 1},
+    "BlenderRequirements": {"label": "Requirements", "rank": 1, "order": 2},
+    "BlenderAnalysis": {"label": "Analysis", "rank": 2, "order": 0},
+    "BlenderVerification": {"label": "Verification", "rank": 2, "order": 1}
+  },
+  "edges": [
+    {"from": "BlenderModel", "to": "BlenderStructure", "label": "contains"},
+    {"from": "BlenderModel", "to": "BlenderBehavior", "label": "contains"},
+    {"from": "BlenderModel", "to": "BlenderRequirements", "label": "contains"},
+    {"from": "BlenderModel", "to": "BlenderAnalysis", "label": "contains"},
+    {"from": "BlenderModel", "to": "BlenderVerification", "label": "contains"}
+  ]
+}

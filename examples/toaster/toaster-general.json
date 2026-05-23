@@ -1,0 +1,21 @@
+{
+  "diagram": "toaster-general",
+  "kind": "GeneralView",
+  "name": "Toaster Cross-View Trace",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "direction": "top-down",
+  "nodes": {
+    "toastBreadUseCase": {"label": "Toast Bread", "symbol": "use_case", "rank": 0, "order": 0},
+    "browningRequirement": {"label": "Browning Req", "symbol": "requirement", "rank": 1, "order": 0},
+    "energizeHeater": {"label": "Energize Heater", "symbol": "action", "rank": 2, "order": 0},
+    "verifyToastBrowning": {"label": "Verify Browning", "symbol": "case", "rank": 2, "order": 1},
+    "heatingElement": {"label": "Heating Element", "symbol": "part_usage", "rank": 3, "order": 0}
+  },
+  "edges": [
+    {"from": "toastBreadUseCase", "to": "browningRequirement", "label": "refine"},
+    {"from": "browningRequirement", "to": "energizeHeater", "label": "allocate"},
+    {"from": "energizeHeater", "to": "heatingElement", "label": "performed by"},
+    {"from": "verifyToastBrowning", "to": "browningRequirement", "label": "verify"}
+  ]
+}

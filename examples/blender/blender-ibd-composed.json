@@ -1,0 +1,254 @@
+{
+  "diagram": "blender-ibd-composed",
+  "kind": "InterconnectionView",
+  "name": "Blender Internal Structure (Composed)",
+  "subject": "blender",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {
+    "blender": "Blender::Blender",
+    "tamper": "Blender::Blender::tamper",
+    "lid": "Blender::Blender::lid",
+    "container": "Blender::Blender::container",
+    "bladeAssembly": "Blender::Blender::bladeAssembly",
+    "driveCoupling": "Blender::Blender::driveCoupling",
+    "smoothnessSensor": "Blender::Blender::smoothnessSensor",
+    "motorBase": "Blender::Blender::motorBase",
+    "motor": "Blender::Blender::motor",
+    "controlPanel": "Blender::Blender::controlPanel",
+    "tamper--lid--src": "Blender::Blender::tamperLidMechanical",
+    "tamper--lid--tgt": "Blender::Blender::lidTamperMechanical",
+    "lid--container--src": "Blender::Blender::lidContainerMechanical",
+    "lid--container--tgt": "Blender::Blender::containerLidMechanical",
+    "container--bladeAssembly--src": "Blender::Blender::containerBladeMount",
+    "container--bladeAssembly--tgt": "Blender::Blender::bladeMountIn",
+    "container--motorBase--src": "Blender::Blender::containerMechanical",
+    "container--motorBase--tgt": "Blender::Blender::baseMechanical",
+    "motorBase--motor--src": "Blender::Blender::baseMotorMountOut",
+    "motorBase--motor--tgt": "Blender::Blender::motorMountIn",
+    "motorBase--controlPanel--src": "Blender::Blender::baseControlPanelMountOut",
+    "motorBase--controlPanel--tgt": "Blender::Blender::panelMountIn",
+    "motorBase--driveCoupling--src": "Blender::Blender::baseCouplingMountOut",
+    "motorBase--driveCoupling--tgt": "Blender::Blender::couplingMountIn",
+    "bladeAssembly--driveCoupling--src": "Blender::Blender::bladeDriveIn",
+    "bladeAssembly--driveCoupling--tgt": "Blender::Blender::couplingDriveOut",
+    "driveCoupling--motor--src": "Blender::Blender::couplingDriveIn",
+    "driveCoupling--motor--tgt": "Blender::Blender::motorDriveOut",
+    "driveCoupling--smoothnessSensor--src": "Blender::Blender::couplingVibrationOut",
+    "driveCoupling--smoothnessSensor--tgt": "Blender::Blender::sensorVibrationIn",
+    "smoothnessSensor--controlPanel--src": "Blender::Blender::sensorCompleteOut",
+    "smoothnessSensor--controlPanel--tgt": "Blender::Blender::panelCompleteIn",
+    "controlPanel--motor--src": "Blender::Blender::panelMotorCommandOut",
+    "controlPanel--motor--tgt": "Blender::Blender::motorCommandIn",
+    "tamperToLid": "Blender::Blender::tamperToLid",
+    "lidToContainer": "Blender::Blender::lidToContainer",
+    "containerToBlade": "Blender::Blender::containerToBlade",
+    "containerToBase": "Blender::Blender::containerToBase",
+    "motorBaseToMotor": "Blender::Blender::motorBaseToMotor",
+    "motorBaseToControlPanel": "Blender::Blender::motorBaseToControlPanel",
+    "motorBaseToDriveCoupling": "Blender::Blender::motorBaseToDriveCoupling",
+    "couplingToBlade": "Blender::Blender::couplingToBlade",
+    "motorToCoupling": "Blender::Blender::motorToCoupling",
+    "couplingToSensor": "Blender::Blender::couplingToSensor",
+    "sensorToControlPanel": "Blender::Blender::sensorToControlPanel",
+    "controlPanelToMotor": "Blender::Blender::controlPanelToMotor"
+  },
+  "direction": "top-down",
+  "rank_wrap": "golden",
+  "target_aspect": 1.618,
+  "default_w": 180,
+  "default_h": 74,
+  "col_gap": 70,
+  "rank_gap": 92,
+  "label_mode": "port",
+  "nodes": {
+    "tamper": {
+      "label": "Tamper",
+      "style": "part.tool",
+      "w": 150
+    },
+    "lid": {
+      "label": "Lid",
+      "style": "part.structure",
+      "w": 180
+    },
+    "container": {
+      "label": "Container",
+      "style": "part.container",
+      "w": 240,
+      "h": 92
+    },
+    "bladeAssembly": {
+      "label": "Blade Assembly",
+      "style": "part.blade",
+      "w": 190
+    },
+    "driveCoupling": {
+      "label": "Drive Coupling",
+      "style": "part.drive",
+      "w": 190
+    },
+    "smoothnessSensor": {
+      "label": "Smoothness\nSensor",
+      "style": "part.sensor",
+      "w": 190
+    },
+    "motorBase": {
+      "label": "Motor Base",
+      "style": "part.base",
+      "w": 220
+    },
+    "motor": {
+      "label": "Motor",
+      "style": "part.motor",
+      "w": 170
+    },
+    "controlPanel": {
+      "label": "Control Panel",
+      "style": "part.control",
+      "w": 190
+    }
+  },
+  "edges": [
+    {
+      "from": "tamper",
+      "to": "lid",
+      "label": "tamper fit",
+      "model_ref": "tamperToLid"
+    },
+    {
+      "from": "lid",
+      "to": "container",
+      "label": "lid seat",
+      "model_ref": "lidToContainer"
+    },
+    {
+      "from": "container",
+      "to": "bladeAssembly",
+      "label": "contains",
+      "model_ref": "containerToBlade"
+    },
+    {
+      "from": "container",
+      "to": "motorBase",
+      "label": "container seat",
+      "model_ref": "containerToBase"
+    },
+    {
+      "from": "motorBase",
+      "to": "motor",
+      "label": "motor mount",
+      "model_ref": "motorBaseToMotor"
+    },
+    {
+      "from": "motorBase",
+      "to": "controlPanel",
+      "label": "panel mount",
+      "model_ref": "motorBaseToControlPanel"
+    },
+    {
+      "from": "motorBase",
+      "to": "driveCoupling",
+      "label": "coupling support",
+      "model_ref": "motorBaseToDriveCoupling"
+    },
+    {
+      "from": "bladeAssembly",
+      "to": "driveCoupling",
+      "label": "blade drive",
+      "model_ref": "couplingToBlade"
+    },
+    {
+      "from": "driveCoupling",
+      "to": "motor",
+      "label": "motor drive",
+      "model_ref": "motorToCoupling"
+    },
+    {
+      "from": "driveCoupling",
+      "to": "smoothnessSensor",
+      "label": "vibration/load",
+      "model_ref": "couplingToSensor"
+    },
+    {
+      "from": "smoothnessSensor",
+      "to": "controlPanel",
+      "label": "complete",
+      "model_ref": "sensorToControlPanel"
+    },
+    {
+      "from": "controlPanel",
+      "to": "motor",
+      "label": "command",
+      "model_ref": "controlPanelToMotor"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2,
+      "corner_radius": 14
+    },
+    "part.tool": {
+      "fill": "#F5F5F5",
+      "stroke": "#616161",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.structure": {
+      "fill": "#ECEFF1",
+      "stroke": "#455A64",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.container": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.blade": {
+      "fill": "#FCE4EC",
+      "stroke": "#AD1457",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.drive": {
+      "fill": "#FFF8DC",
+      "stroke": "#8B6914",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.sensor": {
+      "fill": "#FFF3E0",
+      "stroke": "#EF6C00",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.base": {
+      "fill": "#EDE7F6",
+      "stroke": "#5E35B1",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.motor": {
+      "fill": "#FFEDE0",
+      "stroke": "#CC4400",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.control": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2,
+      "corner_radius": 8
+    }
+  }
+}

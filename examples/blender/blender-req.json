@@ -1,0 +1,33 @@
+{
+  "diagram": "blender-req",
+  "kind": "RequirementView",
+  "name": "Blender Requirements",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "direction": "top-down",
+  "default_w": 250,
+  "default_h": 124,
+  "nodes": {
+    "lidInterlockRequirement": {"label": "«requirement»\nREQ-B-001 Lid Interlock\nPrevent blending unless lid\nand container are seated.", "rank": 0, "order": 0},
+    "motorControlRequirement": {"label": "«requirement»\nREQ-B-002 Motor Control\nCommand motor speed and stop\nunder program control.", "rank": 1, "order": 0},
+    "smoothnessDetectionRequirement": {"label": "«requirement»\nREQ-B-003 Smoothness Detection\nUse sensor feedback to stop\nwhen smoothness threshold is met.", "rank": 1, "order": 1},
+    "powerRequirement": {"label": "«requirement»\nREQ-B-004 Power\nProvide controlled electrical\npower to the motor base.", "rank": 1, "order": 2},
+    "interlockLatencyRequirement": {"label": "«requirement»\nREQ-B-010 Interlock Latency\nDisable motor within 100 ms\nof lid-open detection.", "rank": 2, "order": 0},
+    "motorSpeedRequirement": {"label": "«requirement»\nREQ-B-020 Motor Speed\nAchieve 20,000 rpm no-load\nand controlled ramp-up.", "rank": 2, "order": 1},
+    "overcurrentProtectionRequirement": {"label": "«requirement»\nREQ-B-021 Overcurrent\nStop motor within 250 ms\nof jam or overcurrent.", "rank": 2, "order": 2},
+    "smoothnessThresholdRequirement": {"label": "«requirement»\nREQ-B-030 Smoothness Threshold\nDeclare smooth when vibration\nindex remains below threshold.", "rank": 3, "order": 0},
+    "noiseRequirement": {"label": "«requirement»\nREQ-B-040 Noise\nOperate below 85 dBA at\n1 m during normal blending.", "rank": 3, "order": 1},
+    "containerSeatRequirement": {"label": "«requirement»\nREQ-B-050 Container Seat\nDetect seated container before\nmotor torque is enabled.", "rank": 3, "order": 2}
+  },
+  "edges": [
+    {"from": "lidInterlockRequirement", "to": "motorControlRequirement", "label": "derive"},
+    {"from": "lidInterlockRequirement", "to": "smoothnessDetectionRequirement", "label": "derive"},
+    {"from": "lidInterlockRequirement", "to": "powerRequirement", "label": "derive"},
+    {"from": "lidInterlockRequirement", "to": "interlockLatencyRequirement", "label": "refine"},
+    {"from": "motorControlRequirement", "to": "motorSpeedRequirement", "label": "refine"},
+    {"from": "motorControlRequirement", "to": "overcurrentProtectionRequirement", "label": "refine"},
+    {"from": "smoothnessDetectionRequirement", "to": "smoothnessThresholdRequirement", "label": "refine"},
+    {"from": "powerRequirement", "to": "noiseRequirement", "label": "trace"},
+    {"from": "lidInterlockRequirement", "to": "containerSeatRequirement", "label": "refine"}
+  ]
+}

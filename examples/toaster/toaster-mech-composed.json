@@ -1,0 +1,155 @@
+{
+  "diagram": "toaster-mech-composed",
+  "kind": "InterconnectionView",
+  "name": "Toaster Mechanical Interconnection (Composed)",
+  "subject": "toaster",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {
+    "toaster": "Toaster::Toaster",
+    "boundary": "Toaster::Toaster",
+    "chassis": "Toaster::Toaster::chassis",
+    "lever": "Toaster::Toaster::lever",
+    "buttons": "Toaster::Toaster::buttons",
+    "carriage": "Toaster::Toaster::carriage",
+    "crumb-tray": "Toaster::Toaster::crumbTray",
+    "pcs": "Toaster::Toaster::powerAndControlSubsystem",
+    "lever--carriage--src": "Toaster::Toaster::leverMechanicalOut",
+    "lever--carriage--tgt": "Toaster::Toaster::carriageLeverIn",
+    "chassis--carriage--src": "Toaster::Toaster::chassisGuideOut",
+    "chassis--carriage--tgt": "Toaster::Toaster::carriageGuideIn",
+    "chassis--buttons--src": "Toaster::Toaster::chassisButtonMountOut",
+    "chassis--buttons--tgt": "Toaster::Toaster::buttonMountIn",
+    "chassis--crumb-tray--src": "Toaster::Toaster::chassisCrumbTrayGuideOut",
+    "chassis--crumb-tray--tgt": "Toaster::Toaster::crumbTrayGuideIn",
+    "chassis--pcs--src": "Toaster::Toaster::chassisSubsystemMountOut",
+    "chassis--pcs--tgt": "Toaster::Toaster::subsystemMountIn",
+    "bnd--lever": "Toaster::Toaster::leverInput",
+    "lever--bnd--tgt": "Toaster::Toaster::leverUserInputIn",
+    "bnd--buttons": "Toaster::Toaster::buttonInput",
+    "buttons--bnd--tgt": "Toaster::Toaster::buttonUserInputIn",
+    "bnd--crumb-tray": "Toaster::Toaster::trayPullInput",
+    "crumb-tray--bnd--tgt": "Toaster::Toaster::crumbTrayUserInputIn",
+    "conn-lever-carriage": "Toaster::Toaster::leverToCarriage",
+    "conn-chassis-carriage": "Toaster::Toaster::chassisToCarriage",
+    "conn-chassis-buttons": "Toaster::Toaster::chassisToButtons",
+    "conn-chassis-crumb-tray": "Toaster::Toaster::chassisToCrumbTray",
+    "conn-chassis-pcs": "Toaster::Toaster::chassisToPowerControl",
+    "conn-bnd-lever": "Toaster::Toaster::leverInputToLever",
+    "conn-bnd-buttons": "Toaster::Toaster::buttonInputToButtons",
+    "conn-bnd-crumb-tray": "Toaster::Toaster::trayPullToCrumbTray"
+  },
+  "direction": "bottom-up",
+  "default_w": 160,
+  "default_h": 80,
+  "col_gap": 60,
+  "rank_gap": 80,
+  "label_mode": "port",
+  "nodes": {
+    "chassis": {
+      "label": "Chassis",
+      "style": "part.structure"
+    },
+    "lever": {
+      "label": "Lever",
+      "style": "part.mechanical"
+    },
+    "buttons": {
+      "label": "Buttons",
+      "style": "part.mechanical"
+    },
+    "carriage": {
+      "label": "Carriage",
+      "style": "part.mechanical"
+    },
+    "crumb-tray": {
+      "label": "Crumb Tray",
+      "style": "part.mechanical"
+    },
+    "pcs": {
+      "label": "Power & Control\nSubsystem",
+      "style": "part.control"
+    }
+  },
+  "edges": [
+    {
+      "from": "lever",
+      "to": "carriage",
+      "label": "lift",
+      "model_ref": "conn-lever-carriage"
+    },
+    {
+      "from": "chassis",
+      "to": "carriage",
+      "label": "guide",
+      "model_ref": "conn-chassis-carriage"
+    },
+    {
+      "from": "chassis",
+      "to": "buttons",
+      "label": "mount",
+      "model_ref": "conn-chassis-buttons"
+    },
+    {
+      "from": "chassis",
+      "to": "crumb-tray",
+      "label": "guide",
+      "model_ref": "conn-chassis-crumb-tray"
+    },
+    {
+      "from": "chassis",
+      "to": "pcs",
+      "label": "mount",
+      "model_ref": "conn-chassis-pcs"
+    }
+  ],
+  "boundary_inputs": [
+    {
+      "to": "lever",
+      "label": "lever input",
+      "model_ref": "conn-bnd-lever"
+    },
+    {
+      "to": "buttons",
+      "label": "button press",
+      "model_ref": "conn-bnd-buttons"
+    },
+    {
+      "to": "crumb-tray",
+      "label": "pull/remove",
+      "model_ref": "conn-bnd-crumb-tray"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2,
+      "corner_radius": 12
+    },
+    "part.mechanical": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.structure": {
+      "fill": "#F5F5F5",
+      "stroke": "#616161",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.control": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "connector.default": {
+      "stroke": "#2E7D32",
+      "stroke_width": 2,
+      "corner_radius": 8
+    }
+  }
+}

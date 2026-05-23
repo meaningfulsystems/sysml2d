@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1581" height="306" viewBox="0 0 1581 306">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1581" height="306" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1577" height="264" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 368 L 384 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[gen.mb] Blender Cross-View Trace [Blender]</text>
+<rect x="2" y="38" width="1577" height="266" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<ellipse id="makeSmoothieUseCase" cx="147" cy="113" rx="75" ry="35" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="113">Make Smoothie</text>
+<rect id="smoothnessDetectionRequirement" x="382" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="467" y="113">Smoothness Req</text>
+<rect id="senseSmoothness" x="712" y="78" width="150" height="70" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="787" y="113">Sense Smoothness</text>
+<rect id="smoothnessSensor" x="1022" y="78" width="153" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1098.5" y="113">Smoothness Sensor</text>
+<rect id="verifySmoothnessDetection" x="1335" y="75" width="170" height="76" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1420" y="113">Verify Smoothness</text>
+<path d="M 222,113 L 382,113" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 552,113 L 712,113" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 862,113 L 1022,113" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 1335,113 L 1335,192 L 552,192 L 552,113" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<text class="small" text-anchor="middle" x="302" y="121">refine</text>
+<text class="small" text-anchor="middle" x="632" y="121">allocate</text>
+<text class="small" text-anchor="middle" x="942" y="121">performed by</text>
+<text class="small" text-anchor="middle" x="943.5" y="200">verify</text>
+</g>
+</svg>

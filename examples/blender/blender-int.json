@@ -1,0 +1,24 @@
+{
+  "diagram": "blender-int",
+  "kind": "InteractionView",
+  "name": "Blender Smoothness Interaction",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "lifelines": {
+    "user": {"label": "User"},
+    "controlPanel": {"label": "Control Panel"},
+    "motor": {"label": "Motor"},
+    "driveCoupling": {"label": "Drive Coupling"},
+    "bladeAssembly": {"label": "Blade Assembly"},
+    "smoothnessSensor": {"label": "Smoothness Sensor"}
+  },
+  "messages": [
+    {"id": "msgStart", "from": "user", "to": "controlPanel", "label": "start", "model_ref": "startBlendProgram"},
+    {"id": "msgMotor", "from": "controlPanel", "to": "motor", "label": "speed command", "model_ref": "controlPanelToMotor"},
+    {"id": "msgTorque", "from": "motor", "to": "driveCoupling", "label": "torque", "model_ref": "motorToCoupling"},
+    {"id": "msgBlade", "from": "driveCoupling", "to": "bladeAssembly", "label": "rotation", "model_ref": "couplingToBlade"},
+    {"id": "msgSense", "from": "driveCoupling", "to": "smoothnessSensor", "label": "vibration", "model_ref": "couplingToSensor"},
+    {"id": "msgComplete", "from": "smoothnessSensor", "to": "controlPanel", "label": "smoothness signal", "model_ref": "sensorToControlPanel"},
+    {"id": "msgStop", "from": "controlPanel", "to": "motor", "label": "stop", "model_ref": "stopMotor"}
+  ]
+}

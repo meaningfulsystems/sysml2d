@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1895" height="670" viewBox="0 0 1895 670">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1895" height="670" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1891" height="628" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 336 L 352 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[req.mb] Blender Requirements [Blender]</text>
+<rect x="2" y="38" width="1891" height="630" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="lidInterlockRequirement" x="834" y="72" width="223" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="945.5" y="93.5">«requirement»</tspan><tspan x="945.5" dy="15">REQ-B-001 Lid Interlock</tspan><tspan x="945.5" dy="15">Prevent blending unless lid</tspan><tspan x="945.5" dy="15">and container are seated.</tspan></text>
+<rect id="motorControlRequirement" x="202" y="270" width="230" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="317" y="291.5">«requirement»</tspan><tspan x="317" dy="15">REQ-B-002 Motor Control</tspan><tspan x="317" dy="15">Command motor speed and stop</tspan><tspan x="317" dy="15">under program control.</tspan></text>
+<rect id="smoothnessDetectionRequirement" x="634" y="270" width="265" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="766.5" y="291.5">«requirement»</tspan><tspan x="766.5" dy="15">REQ-B-003 Smoothness Detection</tspan><tspan x="766.5" dy="15">Use sensor feedback to stop</tspan><tspan x="766.5" dy="15">when smoothness threshold is met.</tspan></text>
+<rect id="powerRequirement" x="971" y="270" width="237" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1089.5" y="291.5">«requirement»</tspan><tspan x="1089.5" dy="15">REQ-B-004 Power</tspan><tspan x="1089.5" dy="15">Provide controlled electrical</tspan><tspan x="1089.5" dy="15">power to the motor base.</tspan></text>
+<rect id="interlockLatencyRequirement" x="1280" y="270" width="223" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1391.5" y="291.5">«requirement»</tspan><tspan x="1391.5" dy="15">REQ-B-010 Interlock Latency</tspan><tspan x="1391.5" dy="15">Disable motor within 100 ms</tspan><tspan x="1391.5" dy="15">of lid-open detection.</tspan></text>
+<rect id="motorSpeedRequirement" x="72" y="468" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="180" y="489.5">«requirement»</tspan><tspan x="180" dy="15">REQ-B-020 Motor Speed</tspan><tspan x="180" dy="15">Achieve 20,000 rpm no-load</tspan><tspan x="180" dy="15">and controlled ramp-up.</tspan></text>
+<rect id="overcurrentProtectionRequirement" x="360" y="468" width="202" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="461" y="489.5">«requirement»</tspan><tspan x="461" dy="15">REQ-B-021 Overcurrent</tspan><tspan x="461" dy="15">Stop motor within 250 ms</tspan><tspan x="461" dy="15">of jam or overcurrent.</tspan></text>
+<rect id="smoothnessThresholdRequirement" x="644.5" y="468" width="244" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="766.5" y="489.5">«requirement»</tspan><tspan x="766.5" dy="15">REQ-B-030 Smoothness Threshold</tspan><tspan x="766.5" dy="15">Declare smooth when vibration</tspan><tspan x="766.5" dy="15">index remains below threshold.</tspan></text>
+<rect id="noiseRequirement" x="978" y="468" width="223" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1089.5" y="489.5">«requirement»</tspan><tspan x="1089.5" dy="15">REQ-B-040 Noise</tspan><tspan x="1089.5" dy="15">Operate below 85 dBA at</tspan><tspan x="1089.5" dy="15">1 m during normal blending.</tspan></text>
+<rect id="containerSeatRequirement" x="1575" y="270" width="244" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1697" y="291.5">«requirement»</tspan><tspan x="1697" dy="15">REQ-B-050 Container Seat</tspan><tspan x="1697" dy="15">Detect seated container before</tspan><tspan x="1697" dy="15">motor torque is enabled.</tspan></text>
+<path d="M 871.241,160 L 317,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 908.259,160 L 766.5,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 945.5,160 L 1089.5,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 982.741,160 L 1391.5,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 278.59,358 L 180,468" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 355.41,358 L 461,468" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 766.5,358 L 766.5,468" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1089.5,358 L 1089.5,468" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1019.76,160 L 1697,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="594.12" y="223">derive</text>
+<text class="small" text-anchor="middle" x="837.38" y="223">derive</text>
+<text class="small" text-anchor="middle" x="1017.5" y="223">derive</text>
+<text class="small" text-anchor="middle" x="1187.12" y="223">refine</text>
+<text class="small" text-anchor="middle" x="229.295" y="421">refine</text>
+<text class="small" text-anchor="middle" x="408.205" y="421">refine</text>
+<text class="small" text-anchor="middle" x="766.5" y="421">refine</text>
+<text class="small" text-anchor="middle" x="1089.5" y="421">trace</text>
+<text class="small" text-anchor="middle" x="1358.38" y="223">refine</text>
+</g>
+</svg>

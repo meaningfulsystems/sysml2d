@@ -1,0 +1,309 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-pkg",
+    "kind": "PackageView",
+    "name": "Toaster Package Organization",
+    "canvas": {
+      "width": 814,
+      "height": 674,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "ToasterModel",
+        "model_ref": "ToasterModel",
+        "symbol": "package",
+        "layout": {
+          "x": 332,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Toaster Model",
+        "style": "package"
+      },
+      {
+        "id": "ToasterStructure",
+        "model_ref": "ToasterStructure",
+        "symbol": "package",
+        "layout": {
+          "x": 72,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Structure",
+        "style": "package"
+      },
+      {
+        "id": "ToasterBehavior",
+        "model_ref": "ToasterBehavior",
+        "symbol": "package",
+        "layout": {
+          "x": 332,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Behavior",
+        "style": "package"
+      },
+      {
+        "id": "ToasterRequirements",
+        "model_ref": "ToasterRequirements",
+        "symbol": "package",
+        "layout": {
+          "x": 592,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Requirements",
+        "style": "package"
+      },
+      {
+        "id": "ToasterAnalysis",
+        "model_ref": "ToasterAnalysis",
+        "symbol": "package",
+        "layout": {
+          "x": 202,
+          "y": 532,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Analysis",
+        "style": "package"
+      },
+      {
+        "id": "ToasterVerification",
+        "model_ref": "ToasterVerification",
+        "symbol": "package",
+        "layout": {
+          "x": 462,
+          "y": 532,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Verification",
+        "style": "package"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-ToasterModel-ToasterStructure",
+        "model_ref": "ToasterModel",
+        "source": {
+          "element": "ToasterModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ToasterStructure",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 407,
+              "y": 198
+            },
+            {
+              "x": 147,
+              "y": 198
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "contains",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ToasterModel-ToasterBehavior",
+        "model_ref": "ToasterModel",
+        "source": {
+          "element": "ToasterModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ToasterBehavior",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "contains",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ToasterModel-ToasterRequirements",
+        "model_ref": "ToasterModel",
+        "source": {
+          "element": "ToasterModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ToasterRequirements",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 407,
+              "y": 198
+            },
+            {
+              "x": 667,
+              "y": 198
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "contains",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ToasterModel-ToasterAnalysis",
+        "model_ref": "ToasterModel",
+        "source": {
+          "element": "ToasterModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ToasterAnalysis",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 407,
+              "y": 198
+            },
+            {
+              "x": 277,
+              "y": 198
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "contains",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ToasterModel-ToasterVerification",
+        "model_ref": "ToasterModel",
+        "source": {
+          "element": "ToasterModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ToasterVerification",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 407,
+              "y": 198
+            },
+            {
+              "x": 537,
+              "y": 198
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "contains",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

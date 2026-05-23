@@ -1,0 +1,36 @@
+{
+  "diagram": "toaster-act",
+  "kind": "ActionView",
+  "name": "Toaster Toast Cycle",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "direction": "top-down",
+  "default_w": 150,
+  "default_h": 64,
+  "rank_gap": 72,
+  "col_gap": 90,
+  "nodes": {
+    "toastStart": {"label": "", "symbol": "initial_state", "model_ref": null, "rank": 0, "order": 0},
+    "insertBread": {"label": "Insert Bread", "rank": 1, "order": 0},
+    "lowerLever": {"label": "Lower Lever", "rank": 2, "order": 0},
+    "latchCarriage": {"label": "Latch Carriage", "rank": 3, "order": 0},
+    "energizeHeater": {"label": "Energize Heater", "rank": 4, "order": 0},
+    "monitorToastTimer": {"label": "Monitor Timer", "rank": 5, "order": 0},
+    "toastDecision": {"label": "done?", "symbol": "decision_node", "model_ref": null, "rank": 6, "order": 0},
+    "releaseCarriage": {"label": "Release Carriage", "rank": 7, "order": 0},
+    "presentToast": {"label": "Present Toast", "rank": 8, "order": 0},
+    "toastEnd": {"label": "", "symbol": "activity_final_node", "model_ref": null, "rank": 9, "order": 0}
+  },
+  "edges": [
+    {"from": "toastStart", "to": "insertBread", "model_ref": "insertBread"},
+    {"from": "insertBread", "to": "lowerLever", "label": "bread loaded"},
+    {"from": "lowerLever", "to": "latchCarriage"},
+    {"from": "latchCarriage", "to": "energizeHeater"},
+    {"from": "energizeHeater", "to": "monitorToastTimer"},
+    {"from": "monitorToastTimer", "to": "toastDecision", "label": "sample"},
+    {"from": "toastDecision", "to": "monitorToastTimer", "label": "not done", "model_ref": "monitorToastTimer"},
+    {"from": "toastDecision", "to": "releaseCarriage", "label": "complete", "model_ref": "releaseCarriage"},
+    {"from": "releaseCarriage", "to": "presentToast"},
+    {"from": "presentToast", "to": "toastEnd"}
+  ]
+}

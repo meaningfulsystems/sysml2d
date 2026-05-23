@@ -1,0 +1,578 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {
+    "toasterDef": "Toaster::Toaster",
+    "leverDef": "Toaster::Lever",
+    "powerAndControlDef": "Toaster::PowerAndControlSubsystem",
+    "heatingElementDef": "Toaster::HeatingElement",
+    "carriageDef": "Toaster::Carriage",
+    "chassisDef": "Toaster::Chassis",
+    "buttonsDef": "Toaster::Buttons",
+    "crumbTrayDef": "Toaster::CrumbTray",
+    "powerCordDef": "Toaster::PowerCord",
+    "chassisPart": "Toaster::Toaster::chassis",
+    "leverPart": "Toaster::Toaster::lever",
+    "buttonsPart": "Toaster::Toaster::buttons",
+    "powerAndControlPart": "Toaster::Toaster::powerAndControlSubsystem",
+    "heatingElementPart": "Toaster::Toaster::heatingElement",
+    "carriagePart": "Toaster::Toaster::carriage",
+    "crumbTrayPart": "Toaster::Toaster::crumbTray",
+    "powerCordPart": "Toaster::Toaster::powerCord"
+  },
+  "diagram": {
+    "id": "toaster-bdd",
+    "kind": "DefinitionView",
+    "name": "Toaster Definition Tree",
+    "canvas": {
+      "width": 1109,
+      "height": 434,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "toaster",
+        "model_ref": "toasterDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 401,
+          "y": 40,
+          "width": 210,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Toaster",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      },
+      {
+        "id": "chassis",
+        "model_ref": "chassisDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 40,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Chassis",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "lever",
+        "model_ref": "leverDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 274,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Lever",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "buttons",
+        "model_ref": "buttonsDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 508,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Buttons",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "power-control-subsystem",
+        "model_ref": "powerAndControlDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 742,
+          "y": 222,
+          "width": 230,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Power & Control\nSubsystem",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "heating-element",
+        "model_ref": "heatingElementDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 177,
+          "y": 322,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Heating Element",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "carriage",
+        "model_ref": "carriageDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 411,
+          "y": 322,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Carriage",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "crumb-tray",
+        "model_ref": "crumbTrayDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 645,
+          "y": 322,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Crumb Tray",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "power-cord",
+        "model_ref": "powerCordDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 879,
+          "y": 322,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Power Cord",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-toaster-chassis",
+        "model_ref": "chassisPart",
+        "source": {
+          "element": "toaster",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "chassis",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 506,
+              "y": 167
+            },
+            {
+              "x": 135,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-toaster-lever",
+        "model_ref": "leverPart",
+        "source": {
+          "element": "toaster",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lever",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 506,
+              "y": 167
+            },
+            {
+              "x": 369,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-toaster-buttons",
+        "model_ref": "buttonsPart",
+        "source": {
+          "element": "toaster",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "buttons",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 506,
+              "y": 167
+            },
+            {
+              "x": 603,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-toaster-power-control-subsystem",
+        "model_ref": "powerAndControlPart",
+        "source": {
+          "element": "toaster",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "power-control-subsystem",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 506,
+              "y": 167
+            },
+            {
+              "x": 857,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-toaster-heating-element",
+        "model_ref": "heatingElementPart",
+        "source": {
+          "element": "toaster",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "heating-element",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 506,
+              "y": 167
+            },
+            {
+              "x": 272,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-toaster-carriage",
+        "model_ref": "carriagePart",
+        "source": {
+          "element": "toaster",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "carriage",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 506,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 1,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-toaster-crumb-tray",
+        "model_ref": "crumbTrayPart",
+        "source": {
+          "element": "toaster",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "crumb-tray",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 506,
+              "y": 167
+            },
+            {
+              "x": 740,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "0..1",
+            "position": {
+              "segment": 2,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-toaster-power-cord",
+        "model_ref": "powerCordPart",
+        "source": {
+          "element": "toaster",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "power-cord",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 506,
+              "y": 167
+            },
+            {
+              "x": 974,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "part.definition.root": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "part.definition": {
+        "fill": "#F8FAFC",
+        "stroke": "#475569",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "connector.definition": {
+        "stroke": "#64748B",
+        "stroke_width": 2,
+        "corner_radius": 8,
+        "marker_start": "composition",
+        "label_offset": 12
+      }
+    },
+    "subject": "Toaster::Toaster"
+  }
+}

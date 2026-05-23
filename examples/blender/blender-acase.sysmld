@@ -1,0 +1,277 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "blender-acase",
+    "kind": "AnalysisCaseView",
+    "name": "Blender Analysis Cases",
+    "canvas": {
+      "width": 982,
+      "height": 418,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "motorLoadAnalysis",
+        "model_ref": "motorLoadAnalysis",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 84,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Motor Load",
+        "style": "case"
+      },
+      {
+        "id": "smoothnessDetectionAnalysis",
+        "model_ref": "smoothnessDetectionAnalysis",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 264,
+          "width": 174,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Smoothness Detection",
+        "style": "case"
+      },
+      {
+        "id": "torqueSpeedLoadEstimate",
+        "model_ref": "torqueSpeedLoadEstimate",
+        "symbol": "constraint",
+        "layout": {
+          "x": 406,
+          "y": 78,
+          "width": 160,
+          "height": 76,
+          "z": 10
+        },
+        "label": "Torque-Speed-Load",
+        "style": "constraint"
+      },
+      {
+        "id": "smoothnessThresholdEstimate",
+        "model_ref": "smoothnessThresholdEstimate",
+        "symbol": "constraint",
+        "layout": {
+          "x": 406,
+          "y": 264,
+          "width": 174,
+          "height": 76,
+          "z": 10
+        },
+        "label": "Smoothness Threshold",
+        "style": "constraint"
+      },
+      {
+        "id": "motorControlRequirement",
+        "model_ref": "motorControlRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 740,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Motor Control Req",
+        "style": "requirement"
+      },
+      {
+        "id": "smoothnessDetectionRequirement",
+        "model_ref": "smoothnessDetectionRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 740,
+          "y": 264,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Smoothness Req",
+        "style": "requirement"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-motorLoadAnalysis-torqueSpeedLoadEstimate",
+        "model_ref": "motorLoadAnalysis",
+        "source": {
+          "element": "motorLoadAnalysis",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "torqueSpeedLoadEstimate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 278,
+              "y": 119
+            },
+            {
+              "x": 278,
+              "y": 116
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "method",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-smoothnessDetectionAnalysis-smoothnessThresholdEstimate",
+        "model_ref": "smoothnessDetectionAnalysis",
+        "source": {
+          "element": "smoothnessDetectionAnalysis",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothnessThresholdEstimate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 302,
+              "y": 299
+            },
+            {
+              "x": 302,
+              "y": 302
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "method",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-torqueSpeedLoadEstimate-motorControlRequirement",
+        "model_ref": "torqueSpeedLoadEstimate",
+        "source": {
+          "element": "torqueSpeedLoadEstimate",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorControlRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 622,
+              "y": 116
+            },
+            {
+              "x": 622,
+              "y": 113
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "evaluates",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-smoothnessThresholdEstimate-smoothnessDetectionRequirement",
+        "model_ref": "smoothnessThresholdEstimate",
+        "source": {
+          "element": "smoothnessThresholdEstimate",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothnessDetectionRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 636,
+              "y": 302
+            },
+            {
+              "x": 636,
+              "y": 305
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "evaluates",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Blender"
+  }
+}

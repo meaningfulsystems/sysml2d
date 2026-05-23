@@ -1,0 +1,25 @@
+{
+  "diagram": "blender-context",
+  "kind": "GeneralView",
+  "name": "Blender Operating Context",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "user": {"label": "User", "symbol": "actor", "rank": 0, "order": 0},
+    "ingredients": {"label": "Ingredients", "symbol": "part_usage", "rank": 0, "order": 1},
+    "mainsSupply": {"label": "120 VAC Outlet", "symbol": "part_usage", "rank": 0, "order": 2},
+    "Blender": {"label": "Blender", "symbol": "part_usage", "rank": 1, "order": 1, "w": 190, "h": 90},
+    "smoothie": {"label": "Smoothie", "symbol": "part_usage", "rank": 2, "order": 0},
+    "SmoothnessSignal": {"label": "Smoothness Signal", "symbol": "signal", "rank": 2, "order": 1},
+    "UserCommand": {"label": "User Command", "symbol": "item", "rank": 2, "order": 2}
+  },
+  "edges": [
+    {"from": "user", "to": "Blender", "label": "controls", "model_ref": "commandToControlPanel", "source_offset": 0.35},
+    {"from": "ingredients", "to": "Blender", "label": "load", "model_ref": "ingredientsIntoContainer"},
+    {"from": "mainsSupply", "to": "Blender", "label": "power", "model_ref": "mainsPowerFlow"},
+    {"from": "Blender", "to": "smoothie", "label": "blend", "model_ref": "bladeShearFlow"},
+    {"from": "Blender", "to": "SmoothnessSignal", "label": "feedback", "model_ref": "smoothnessFeedbackFlow"},
+    {"from": "Blender", "to": "UserCommand", "label": "status", "model_ref": "commandToControlPanel"}
+  ]
+}

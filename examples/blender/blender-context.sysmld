@@ -1,0 +1,364 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "blender-context",
+    "kind": "GeneralView",
+    "name": "Blender Operating Context",
+    "canvas": {
+      "width": 957,
+      "height": 594,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "user",
+        "model_ref": "user",
+        "symbol": "actor",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 70,
+          "height": 90,
+          "z": 10
+        },
+        "label": "User",
+        "style": "actor"
+      },
+      {
+        "id": "ingredients",
+        "model_ref": "ingredients",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 72,
+          "y": 272,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Ingredients",
+        "style": "part_usage"
+      },
+      {
+        "id": "mainsSupply",
+        "model_ref": "mainsSupply",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 72,
+          "y": 452,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "120 VAC Outlet",
+        "style": "part_usage"
+      },
+      {
+        "id": "Blender",
+        "model_ref": "Blender",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 382,
+          "y": 252,
+          "width": 190,
+          "height": 90,
+          "z": 10
+        },
+        "label": "Blender",
+        "style": "part_usage"
+      },
+      {
+        "id": "smoothie",
+        "model_ref": "smoothie",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 732,
+          "y": 82,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Smoothie",
+        "style": "part_usage"
+      },
+      {
+        "id": "SmoothnessSignal",
+        "model_ref": "SmoothnessSignal",
+        "symbol": "signal",
+        "layout": {
+          "x": 732,
+          "y": 262,
+          "width": 153,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Smoothness Signal",
+        "style": "signal"
+      },
+      {
+        "id": "UserCommand",
+        "model_ref": "UserCommand",
+        "symbol": "item",
+        "layout": {
+          "x": 732,
+          "y": 442,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "User Command",
+        "style": "item"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-user-Blender",
+        "model_ref": "commandToControlPanel",
+        "source": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.35
+          }
+        },
+        "target": {
+          "element": "Blender",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 226,
+              "y": 103.5
+            },
+            {
+              "x": 226,
+              "y": 297
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "controls",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-ingredients-Blender",
+        "model_ref": "ingredientsIntoContainer",
+        "source": {
+          "element": "ingredients",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Blender",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 278,
+              "y": 307
+            },
+            {
+              "x": 278,
+              "y": 297
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "load",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-mainsSupply-Blender",
+        "model_ref": "mainsPowerFlow",
+        "source": {
+          "element": "mainsSupply",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Blender",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 278,
+              "y": 487
+            },
+            {
+              "x": 278,
+              "y": 297
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "power",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-Blender-smoothie",
+        "model_ref": "bladeShearFlow",
+        "source": {
+          "element": "Blender",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothie",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 628,
+              "y": 297
+            },
+            {
+              "x": 628,
+              "y": 117
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "blend",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-Blender-SmoothnessSignal",
+        "model_ref": "smoothnessFeedbackFlow",
+        "source": {
+          "element": "Blender",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SmoothnessSignal",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "feedback",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-Blender-UserCommand",
+        "model_ref": "commandToControlPanel",
+        "source": {
+          "element": "Blender",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "UserCommand",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 628,
+              "y": 297
+            },
+            {
+              "x": 628,
+              "y": 477
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "status",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Blender"
+  }
+}

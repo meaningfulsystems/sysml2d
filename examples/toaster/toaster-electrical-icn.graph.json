@@ -1,0 +1,48 @@
+{
+  "direction": "left-right",
+  "ranks": {
+    "0": [
+      "buttons",
+      "lever",
+      "power-cord"
+    ],
+    "1": [
+      "power-control-subsystem"
+    ],
+    "2": [
+      "heater"
+    ]
+  },
+  "nodes": {
+    "buttons": {
+      "rank": 0,
+      "position_in_rank": 0,
+      "cx": 80,
+      "cy": 80
+    },
+    "lever": {
+      "rank": 0,
+      "position_in_rank": 1,
+      "cx": 80,
+      "cy": 200
+    },
+    "power-cord": {
+      "rank": 0,
+      "position_in_rank": 2,
+      "cx": 80,
+      "cy": 320
+    },
+    "power-control-subsystem": {
+      "rank": 1,
+      "position_in_rank": 0,
+      "cx": 240,
+      "cy": 200
+    },
+    "heater": {
+      "rank": 2,
+      "position_in_rank": 0,
+      "cx": 400,
+      "cy": 200
+    }
+  }
+}

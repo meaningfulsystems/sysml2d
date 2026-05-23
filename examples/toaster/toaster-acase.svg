@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="983" height="460" viewBox="0 0 983 460">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="983" height="460" fill="#FFFFFF"/>
+<rect x="2" y="38" width="979" height="418" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 368 L 384 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[acase.mb] Toaster Analysis Cases [Toaster]</text>
+<rect x="2" y="38" width="979" height="420" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="thermalPerformanceAnalysis" x="72" y="84" width="167" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="155.5" y="119">Thermal Performance</text>
+<rect id="electricalLoadAnalysis" x="72" y="264" width="150" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="299">Electrical Load</text>
+<rect id="heatEnergyBalance" x="399" y="78" width="167" height="76" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="482.5" y="116">Heat Energy Balance</text>
+<rect id="electricalPowerLimit" x="399" y="264" width="160" height="76" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="479" y="302">Power Limit</text>
+<rect id="browningRequirement" x="726" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="811" y="113">Browning Req</text>
+<rect id="electricalSafetyRequirement" x="726" y="264" width="181" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="816.5" y="305">Electrical Safety Req</text>
+<path d="M 239,119 L 295,119 L 295,116 L 399,116" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 222,299 L 278,299 L 278,302 L 399,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 566,116 L 622,116 L 622,113 L 726,113" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 559,302 L 615,302 L 615,305 L 726,305" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="347" y="124">method</text>
+<text class="small" text-anchor="middle" x="338.5" y="310">method</text>
+<text class="small" text-anchor="middle" x="674" y="121">evaluates</text>
+<text class="small" text-anchor="middle" x="670.5" y="313">evaluates</text>
+</g>
+</svg>

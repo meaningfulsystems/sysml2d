@@ -1,0 +1,122 @@
+{
+  "diagram": "toaster-bdd",
+  "kind": "DefinitionView",
+  "name": "Toaster Definition Tree",
+  "subject": "Toaster::Toaster",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {
+    "toasterDef": "Toaster::Toaster",
+    "leverDef": "Toaster::Lever",
+    "powerAndControlDef": "Toaster::PowerAndControlSubsystem",
+    "heatingElementDef": "Toaster::HeatingElement",
+    "carriageDef": "Toaster::Carriage",
+    "chassisDef": "Toaster::Chassis",
+    "buttonsDef": "Toaster::Buttons",
+    "crumbTrayDef": "Toaster::CrumbTray",
+    "powerCordDef": "Toaster::PowerCord",
+    "chassisPart": "Toaster::Toaster::chassis",
+    "leverPart": "Toaster::Toaster::lever",
+    "buttonsPart": "Toaster::Toaster::buttons",
+    "powerAndControlPart": "Toaster::Toaster::powerAndControlSubsystem",
+    "heatingElementPart": "Toaster::Toaster::heatingElement",
+    "carriagePart": "Toaster::Toaster::carriage",
+    "crumbTrayPart": "Toaster::Toaster::crumbTray",
+    "powerCordPart": "Toaster::Toaster::powerCord"
+  },
+  "direction": "top-down",
+  "default_w": 190,
+  "default_h": 72,
+  "sibling_gap": 44,
+  "rank_gap": 110,
+  "roots": [
+    {
+      "id": "toaster",
+      "label": "Toaster",
+      "model_ref": "toasterDef",
+      "style": "part.definition.root",
+      "w": 210,
+      "children": [
+        {
+          "id": "chassis",
+          "label": "Chassis",
+          "model_ref": "chassisDef",
+          "part_ref": "chassisPart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "lever",
+          "label": "Lever",
+          "model_ref": "leverDef",
+          "part_ref": "leverPart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "buttons",
+          "label": "Buttons",
+          "model_ref": "buttonsDef",
+          "part_ref": "buttonsPart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "power-control-subsystem",
+          "label": "Power & Control\nSubsystem",
+          "model_ref": "powerAndControlDef",
+          "part_ref": "powerAndControlPart",
+          "multiplicity": "1",
+          "w": 230
+        },
+        {
+          "id": "heating-element",
+          "label": "Heating Element",
+          "model_ref": "heatingElementDef",
+          "part_ref": "heatingElementPart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "carriage",
+          "label": "Carriage",
+          "model_ref": "carriageDef",
+          "part_ref": "carriagePart",
+          "multiplicity": "1"
+        },
+        {
+          "id": "crumb-tray",
+          "label": "Crumb Tray",
+          "model_ref": "crumbTrayDef",
+          "part_ref": "crumbTrayPart",
+          "multiplicity": "0..1"
+        },
+        {
+          "id": "power-cord",
+          "label": "Power Cord",
+          "model_ref": "powerCordDef",
+          "part_ref": "powerCordPart",
+          "multiplicity": "1"
+        }
+      ]
+    }
+  ],
+  "styles": {
+    "part.definition.root": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.definition": {
+      "fill": "#F8FAFC",
+      "stroke": "#475569",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "connector.definition": {
+      "stroke": "#64748B",
+      "stroke_width": 2,
+      "corner_radius": 8,
+      "marker_start": "composition",
+      "label_offset": 12
+    }
+  }
+}

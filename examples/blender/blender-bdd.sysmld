@@ -1,0 +1,637 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {
+    "blenderDef": "Blender::Blender",
+    "tamperDef": "Blender::Tamper",
+    "lidDef": "Blender::Lid",
+    "containerDef": "Blender::Container",
+    "bladeAssemblyDef": "Blender::BladeAssembly",
+    "driveCouplingDef": "Blender::DriveCoupling",
+    "smoothnessSensorDef": "Blender::SmoothnessSensor",
+    "motorBaseDef": "Blender::MotorBase",
+    "motorDef": "Blender::Motor",
+    "controlPanelDef": "Blender::ControlPanel",
+    "tamperPart": "Blender::Blender::tamper",
+    "lidPart": "Blender::Blender::lid",
+    "containerPart": "Blender::Blender::container",
+    "bladeAssemblyPart": "Blender::Blender::bladeAssembly",
+    "driveCouplingPart": "Blender::Blender::driveCoupling",
+    "smoothnessSensorPart": "Blender::Blender::smoothnessSensor",
+    "motorBasePart": "Blender::Blender::motorBase",
+    "motorPart": "Blender::Blender::motor",
+    "controlPanelPart": "Blender::Blender::controlPanel"
+  },
+  "diagram": {
+    "id": "blender-bdd",
+    "kind": "DefinitionView",
+    "name": "Blender Definition Tree",
+    "canvas": {
+      "width": 1206,
+      "height": 434,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "blender",
+        "model_ref": "blenderDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 498,
+          "y": 40,
+          "width": 210,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Blender",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      },
+      {
+        "id": "tamper",
+        "model_ref": "tamperDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 40,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Tamper",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "lid",
+        "model_ref": "lidDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 274,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Lid",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "container",
+        "model_ref": "containerDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 508,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Container",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "blade-assembly",
+        "model_ref": "bladeAssemblyDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 742,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Blade Assembly",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "drive-coupling",
+        "model_ref": "driveCouplingDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 976,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Drive Coupling",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "smoothness-sensor",
+        "model_ref": "smoothnessSensorDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 157,
+          "y": 322,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Smoothness\nSensor",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "motor-base",
+        "model_ref": "motorBaseDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 391,
+          "y": 322,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Motor Base",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "motor",
+        "model_ref": "motorDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 625,
+          "y": 322,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Motor",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "control-panel",
+        "model_ref": "controlPanelDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 859,
+          "y": 322,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Control Panel",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-blender-tamper",
+        "model_ref": "tamperPart",
+        "source": {
+          "element": "blender",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "tamper",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 603,
+              "y": 167
+            },
+            {
+              "x": 135,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "0..1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": 0
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-blender-lid",
+        "model_ref": "lidPart",
+        "source": {
+          "element": "blender",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lid",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 603,
+              "y": 167
+            },
+            {
+              "x": 369,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": 0
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-blender-container",
+        "model_ref": "containerPart",
+        "source": {
+          "element": "blender",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "container",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": 0
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-blender-blade-assembly",
+        "model_ref": "bladeAssemblyPart",
+        "source": {
+          "element": "blender",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "blade-assembly",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 603,
+              "y": 167
+            },
+            {
+              "x": 837,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": 0
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-blender-drive-coupling",
+        "model_ref": "driveCouplingPart",
+        "source": {
+          "element": "blender",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "drive-coupling",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 603,
+              "y": 167
+            },
+            {
+              "x": 1071,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": 0
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-blender-smoothness-sensor",
+        "model_ref": "smoothnessSensorPart",
+        "source": {
+          "element": "blender",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothness-sensor",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 603,
+              "y": 167
+            },
+            {
+              "x": 252,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": 0
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-blender-motor-base",
+        "model_ref": "motorBasePart",
+        "source": {
+          "element": "blender",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motor-base",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 603,
+              "y": 167
+            },
+            {
+              "x": 486,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": 0
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-blender-motor",
+        "model_ref": "motorPart",
+        "source": {
+          "element": "blender",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motor",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 603,
+              "y": 167
+            },
+            {
+              "x": 720,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": 0
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-blender-control-panel",
+        "model_ref": "controlPanelPart",
+        "source": {
+          "element": "blender",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "control-panel",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 603,
+              "y": 167
+            },
+            {
+              "x": 954,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": 0
+            }
+          }
+        ],
+        "style": "connector.definition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "part.definition.root": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "part.definition": {
+        "fill": "#F8FAFC",
+        "stroke": "#475569",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "connector.definition": {
+        "stroke": "#64748B",
+        "stroke_width": 2,
+        "corner_radius": 8,
+        "marker_start": "composition",
+        "label_offset": 12
+      }
+    },
+    "subject": "Blender::Blender"
+  }
+}

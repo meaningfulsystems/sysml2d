@@ -1,0 +1,259 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "toaster-int",
+    "kind": "InteractionView",
+    "name": "Toaster User Interaction",
+    "canvas": {
+      "width": 1132,
+      "height": 450,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "user",
+        "model_ref": "user",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 70,
+          "y": 70,
+          "width": 110,
+          "height": 340,
+          "z": 10
+        },
+        "label": "User",
+        "style": "lifeline"
+      },
+      {
+        "id": "lever",
+        "model_ref": "lever",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 270,
+          "y": 70,
+          "width": 110,
+          "height": 340,
+          "z": 10
+        },
+        "label": "Lever",
+        "style": "lifeline"
+      },
+      {
+        "id": "powerAndControlSubsystem",
+        "model_ref": "powerAndControlSubsystem",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 470,
+          "y": 70,
+          "width": 151,
+          "height": 340,
+          "z": 10
+        },
+        "label": "Power & Control",
+        "style": "lifeline"
+      },
+      {
+        "id": "heatingElement",
+        "model_ref": "heatingElement",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 711,
+          "y": 70,
+          "width": 151,
+          "height": 340,
+          "z": 10
+        },
+        "label": "Heating Element",
+        "style": "lifeline"
+      },
+      {
+        "id": "carriage",
+        "model_ref": "carriage",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 952,
+          "y": 70,
+          "width": 110,
+          "height": 340,
+          "z": 10
+        },
+        "label": "Carriage",
+        "style": "lifeline"
+      }
+    ],
+    "connections": [
+      {
+        "id": "msgLowerLever",
+        "model_ref": "lowerLever",
+        "source": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.206
+          }
+        },
+        "target": {
+          "element": "lever",
+          "anchor": {
+            "side": "left",
+            "offset": 0.206
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "lower lever",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgControl",
+        "model_ref": "leverToControl",
+        "source": {
+          "element": "lever",
+          "anchor": {
+            "side": "right",
+            "offset": 0.365
+          }
+        },
+        "target": {
+          "element": "powerAndControlSubsystem",
+          "anchor": {
+            "side": "left",
+            "offset": 0.365
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "toast request",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgHeat",
+        "model_ref": "controlToHeater",
+        "source": {
+          "element": "powerAndControlSubsystem",
+          "anchor": {
+            "side": "right",
+            "offset": 0.524
+          }
+        },
+        "target": {
+          "element": "heatingElement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.524
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "heat command",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgRelease",
+        "model_ref": "releaseCarriage",
+        "source": {
+          "element": "powerAndControlSubsystem",
+          "anchor": {
+            "side": "right",
+            "offset": 0.682
+          }
+        },
+        "target": {
+          "element": "carriage",
+          "anchor": {
+            "side": "left",
+            "offset": 0.682
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "release",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgPresent",
+        "model_ref": "presentToast",
+        "source": {
+          "element": "carriage",
+          "anchor": {
+            "side": "left",
+            "offset": 0.841
+          }
+        },
+        "target": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.841
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "toast available",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Toaster"
+  }
+}

@@ -1,0 +1,472 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "blender-act",
+    "kind": "ActionView",
+    "name": "Blender Smoothie Program",
+    "canvas": {
+      "width": 338,
+      "height": 1478,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "blendStart",
+        "model_ref": null,
+        "symbol": "initial_state",
+        "layout": {
+          "x": 137,
+          "y": 72,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "label": "",
+        "style": "initial_state"
+      },
+      {
+        "id": "loadIngredients",
+        "model_ref": "loadIngredients",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 164,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Load Ingredients",
+        "style": "action"
+      },
+      {
+        "id": "closeLid",
+        "model_ref": "closeLid",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 300,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Close Lid",
+        "style": "action"
+      },
+      {
+        "id": "powerOnBlender",
+        "model_ref": "powerOnBlender",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 436,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Power On",
+        "style": "action"
+      },
+      {
+        "id": "startBlendProgram",
+        "model_ref": "startBlendProgram",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 572,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Start Program",
+        "style": "action"
+      },
+      {
+        "id": "spinBladeAssembly",
+        "model_ref": "spinBladeAssembly",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 708,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Spin Blades",
+        "style": "action"
+      },
+      {
+        "id": "senseSmoothness",
+        "model_ref": "senseSmoothness",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 844,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Sense Smoothness",
+        "style": "action"
+      },
+      {
+        "id": "smoothEnough",
+        "model_ref": null,
+        "symbol": "decision_node",
+        "layout": {
+          "x": 105.5,
+          "y": 980,
+          "width": 83,
+          "height": 58,
+          "z": 10
+        },
+        "label": "smooth?",
+        "style": "decision_node"
+      },
+      {
+        "id": "stopMotor",
+        "model_ref": "stopMotor",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 1110,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Stop Motor",
+        "style": "action"
+      },
+      {
+        "id": "pourSmoothie",
+        "model_ref": "pourSmoothie",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 1246,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Pour Smoothie",
+        "style": "action"
+      },
+      {
+        "id": "blendEnd",
+        "model_ref": null,
+        "symbol": "activity_final_node",
+        "layout": {
+          "x": 135,
+          "y": 1382,
+          "width": 24,
+          "height": 24,
+          "z": 10
+        },
+        "label": "",
+        "style": "activity_final_node"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-blendStart-loadIngredients",
+        "model_ref": "loadIngredients",
+        "source": {
+          "element": "blendStart",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "loadIngredients",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-loadIngredients-closeLid",
+        "model_ref": "loadIngredients",
+        "source": {
+          "element": "loadIngredients",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "closeLid",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-closeLid-powerOnBlender",
+        "model_ref": "closeLid",
+        "source": {
+          "element": "closeLid",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "powerOnBlender",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-powerOnBlender-startBlendProgram",
+        "model_ref": "powerOnBlender",
+        "source": {
+          "element": "powerOnBlender",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "startBlendProgram",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-startBlendProgram-spinBladeAssembly",
+        "model_ref": "startBlendProgram",
+        "source": {
+          "element": "startBlendProgram",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "spinBladeAssembly",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-spinBladeAssembly-senseSmoothness",
+        "model_ref": "spinBladeAssembly",
+        "source": {
+          "element": "spinBladeAssembly",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "senseSmoothness",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-senseSmoothness-smoothEnough",
+        "model_ref": "senseSmoothness",
+        "source": {
+          "element": "senseSmoothness",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothEnough",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-smoothEnough-spinBladeAssembly",
+        "model_ref": "senseSmoothness",
+        "source": {
+          "element": "smoothEnough",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "spinBladeAssembly",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 266,
+              "y": 1009
+            },
+            {
+              "x": 266,
+              "y": 740
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "not yet",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-smoothEnough-stopMotor",
+        "model_ref": "stopMotor",
+        "source": {
+          "element": "smoothEnough",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "stopMotor",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "complete",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-stopMotor-pourSmoothie",
+        "model_ref": "stopMotor",
+        "source": {
+          "element": "stopMotor",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "pourSmoothie",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      },
+      {
+        "id": "conn-pourSmoothie-blendEnd",
+        "model_ref": "pourSmoothie",
+        "source": {
+          "element": "pourSmoothie",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "blendEnd",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Blender"
+  }
+}

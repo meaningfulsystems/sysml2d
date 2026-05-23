@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1433" height="571" viewBox="0 0 1433 571">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1433" height="571" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1429" height="529" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 600 L 616 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[stv.mb] Blender Control State Machine [blenderControl : BlenderControl]</text>
+<rect x="2" y="38" width="1429" height="531" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="100" y="10" width="1289" height="479" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="110" y="32">blenderControl</text>
+<rect id="powered" x="482" y="60" width="737" height="259" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" x="494" y="84">Powered</text>
+<circle id="initial" cx="160" cy="160" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="off" x="292" y="130" width="140" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="362" y="160">Off</text>
+<circle id="poweredInitial" cx="537" cy="160" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="ready" x="562" y="130" width="140" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="632" y="160">Ready</text>
+<rect id="blending" x="798" y="130" width="140" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="868" y="160">Blending</text>
+<rect id="error" x="1034" y="130" width="140" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1104" y="160">Error</text>
+<path d="M 170,160 L 292,160" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 547,160 L 562,160" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 702,160 L 798,160" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 938,160 L 1034,160" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 432,149.998 L 482,150.002" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 482,169.997 L 432,170.002" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 833,190 L 833,210 Q 833,218 825,218 L 675,218 Q 667,218 667,210 L 667,190" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 868,190 L 868,238 Q 868,246 860,246 L 640,246 Q 632,246 632,238 L 632,190" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 903,190 L 903,266 Q 903,274 895,274 L 605,274 Q 597,274 597,266 L 597,190" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1104,130 L 1104,110 Q 1104,102 1096,102 L 640,102 Q 632,102 632,110 L 632,130" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="750" y="168">start command</text>
+<text class="small" text-anchor="middle" x="971.6" y="181">fault: lid / jam / overcurrent / sensor</text>
+<text class="small" text-anchor="middle" x="472" y="140.002">power on</text>
+<text class="small" text-anchor="middle" x="472" y="177.998">power off</text>
+<text class="small" text-anchor="middle" x="750" y="226">smoothness signal [smooth] / stop</text>
+<text class="small" text-anchor="middle" x="750" y="254">stop command / stop motor</text>
+<text class="small" text-anchor="middle" x="750" y="282">timeout / stop motor</text>
+<text class="small" text-anchor="middle" x="868" y="110">reset</text>
+</g>
+</svg>

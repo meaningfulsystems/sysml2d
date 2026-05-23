@@ -1,0 +1,521 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "blender-cst",
+    "kind": "ConstraintView",
+    "name": "Blender Parametrics",
+    "canvas": {
+      "width": 1269,
+      "height": 786,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "commandedSpeed",
+        "model_ref": "commandedSpeed",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 112,
+          "width": 139,
+          "height": 58,
+          "z": 10
+        },
+        "label": "commandedSpeed\n20k rpm no-load",
+        "style": "value_property"
+      },
+      {
+        "id": "motorTorque",
+        "model_ref": "motorTorque",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 280,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "motorTorque\njam margin",
+        "style": "value_property"
+      },
+      {
+        "id": "blendDuration",
+        "model_ref": "blendDuration",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 448,
+          "width": 146,
+          "height": 58,
+          "z": 10
+        },
+        "label": "blendDuration\n<= 120 s program",
+        "style": "value_property"
+      },
+      {
+        "id": "interlockLatency",
+        "model_ref": "interlockLatency",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 616,
+          "width": 146,
+          "height": 58,
+          "z": 10
+        },
+        "label": "interlockLatency\n<= 100 ms",
+        "style": "value_property"
+      },
+      {
+        "id": "torqueSpeedLoadEstimate",
+        "model_ref": "torqueSpeedLoadEstimate",
+        "symbol": "constraint",
+        "layout": {
+          "x": 378,
+          "y": 72,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Torque-Speed-\nLoad",
+        "style": "constraint"
+      },
+      {
+        "id": "motorPowerLimit",
+        "model_ref": "motorPowerLimit",
+        "symbol": "constraint",
+        "layout": {
+          "x": 378,
+          "y": 260,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Motor Power\nLimit",
+        "style": "constraint"
+      },
+      {
+        "id": "blendTimingEstimate",
+        "model_ref": "blendTimingEstimate",
+        "symbol": "constraint",
+        "layout": {
+          "x": 378,
+          "y": 448,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Blend Timing\nEstimate",
+        "style": "constraint"
+      },
+      {
+        "id": "interlockStopTiming",
+        "model_ref": "interlockStopTiming",
+        "symbol": "constraint",
+        "layout": {
+          "x": 378,
+          "y": 636,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Interlock Stop\nTiming",
+        "style": "constraint"
+      },
+      {
+        "id": "smoothnessThresholdEstimate",
+        "model_ref": "smoothnessThresholdEstimate",
+        "symbol": "constraint",
+        "layout": {
+          "x": 718,
+          "y": 260,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Smoothness\nThreshold",
+        "style": "constraint"
+      },
+      {
+        "id": "noisePowerTradeoff",
+        "model_ref": "noisePowerTradeoff",
+        "symbol": "constraint",
+        "layout": {
+          "x": 718,
+          "y": 448,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Noise-Power\nTradeoff <= 85 dBA",
+        "style": "constraint"
+      },
+      {
+        "id": "smoothnessIndex",
+        "model_ref": "smoothnessIndex",
+        "symbol": "value_property",
+        "layout": {
+          "x": 1058,
+          "y": 280,
+          "width": 139,
+          "height": 58,
+          "z": 10
+        },
+        "label": "smoothnessIndex\nbelow threshold",
+        "style": "value_property"
+      },
+      {
+        "id": "noiseLevel",
+        "model_ref": "noiseLevel",
+        "symbol": "value_property",
+        "layout": {
+          "x": 1058,
+          "y": 448,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "noiseLevel\n1 m distance",
+        "style": "value_property"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-commandedSpeed-torqueSpeedLoadEstimate",
+        "model_ref": "commandedSpeed",
+        "source": {
+          "element": "commandedSpeed",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "torqueSpeedLoadEstimate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-motorTorque-torqueSpeedLoadEstimate",
+        "model_ref": "motorTorque",
+        "source": {
+          "element": "motorTorque",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "torqueSpeedLoadEstimate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-blendDuration-blendTimingEstimate",
+        "model_ref": "blendDuration",
+        "source": {
+          "element": "blendDuration",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "blendTimingEstimate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-interlockLatency-interlockStopTiming",
+        "model_ref": "interlockLatency",
+        "source": {
+          "element": "interlockLatency",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "interlockStopTiming",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-torqueSpeedLoadEstimate-motorPowerLimit",
+        "model_ref": "torqueSpeedLoadEstimate",
+        "source": {
+          "element": "torqueSpeedLoadEstimate",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorPowerLimit",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "limit",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-blendTimingEstimate-smoothnessThresholdEstimate",
+        "model_ref": "blendTimingEstimate",
+        "source": {
+          "element": "blendTimingEstimate",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothnessThresholdEstimate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 614,
+              "y": 487
+            },
+            {
+              "x": 614,
+              "y": 299
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "estimate",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-smoothnessThresholdEstimate-smoothnessIndex",
+        "model_ref": "smoothnessThresholdEstimate",
+        "source": {
+          "element": "smoothnessThresholdEstimate",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothnessIndex",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 954,
+              "y": 299
+            },
+            {
+              "x": 954,
+              "y": 309
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "result",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-motorPowerLimit-noisePowerTradeoff",
+        "model_ref": "motorPowerLimit",
+        "source": {
+          "element": "motorPowerLimit",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "noisePowerTradeoff",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 614,
+              "y": 299
+            },
+            {
+              "x": 614,
+              "y": 487
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bounds",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-noisePowerTradeoff-noiseLevel",
+        "model_ref": "noisePowerTradeoff",
+        "source": {
+          "element": "noisePowerTradeoff",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "noiseLevel",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 954,
+              "y": 487
+            },
+            {
+              "x": 954,
+              "y": 477
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "result",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Blender"
+  }
+}

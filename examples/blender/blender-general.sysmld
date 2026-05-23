@@ -1,0 +1,236 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "blender-general",
+    "kind": "GeneralView",
+    "name": "Blender Cross-View Trace",
+    "canvas": {
+      "width": 1577,
+      "height": 264,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "makeSmoothieUseCase",
+        "model_ref": "makeSmoothieUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 72,
+          "y": 78,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Make Smoothie",
+        "style": "use_case"
+      },
+      {
+        "id": "smoothnessDetectionRequirement",
+        "model_ref": "smoothnessDetectionRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 382,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Smoothness Req",
+        "style": "requirement"
+      },
+      {
+        "id": "senseSmoothness",
+        "model_ref": "senseSmoothness",
+        "symbol": "action",
+        "layout": {
+          "x": 712,
+          "y": 78,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Sense Smoothness",
+        "style": "action"
+      },
+      {
+        "id": "smoothnessSensor",
+        "model_ref": "smoothnessSensor",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 1022,
+          "y": 78,
+          "width": 153,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Smoothness Sensor",
+        "style": "part_usage"
+      },
+      {
+        "id": "verifySmoothnessDetection",
+        "model_ref": "verifySmoothnessDetection",
+        "symbol": "case",
+        "layout": {
+          "x": 1335,
+          "y": 75,
+          "width": 170,
+          "height": 76,
+          "z": 10
+        },
+        "label": "Verify Smoothness",
+        "style": "case"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-makeSmoothieUseCase-smoothnessDetectionRequirement",
+        "model_ref": "makeSmoothieUseCase",
+        "source": {
+          "element": "makeSmoothieUseCase",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothnessDetectionRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-smoothnessDetectionRequirement-senseSmoothness",
+        "model_ref": "smoothnessDetectionRequirement",
+        "source": {
+          "element": "smoothnessDetectionRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "senseSmoothness",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-senseSmoothness-smoothnessSensor",
+        "model_ref": "senseSmoothness",
+        "source": {
+          "element": "senseSmoothness",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothnessSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "performed by",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      },
+      {
+        "id": "conn-verifySmoothnessDetection-smoothnessDetectionRequirement",
+        "model_ref": "verifySmoothnessDetection",
+        "source": {
+          "element": "verifySmoothnessDetection",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "smoothnessDetectionRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1335,
+              "y": 192
+            },
+            {
+              "x": 552,
+              "y": 192
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "verify",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.directed"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Blender"
+  }
+}

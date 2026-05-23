@@ -1,0 +1,620 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {
+    "toaster": "Toaster::Toaster",
+    "boundary": "Toaster::Toaster",
+    "chassis": "Toaster::Toaster::chassis",
+    "lever": "Toaster::Toaster::lever",
+    "buttons": "Toaster::Toaster::buttons",
+    "carriage": "Toaster::Toaster::carriage",
+    "crumb-tray": "Toaster::Toaster::crumbTray",
+    "pcs": "Toaster::Toaster::powerAndControlSubsystem",
+    "lever--carriage--src": "Toaster::Toaster::leverMechanicalOut",
+    "lever--carriage--tgt": "Toaster::Toaster::carriageLeverIn",
+    "chassis--carriage--src": "Toaster::Toaster::chassisGuideOut",
+    "chassis--carriage--tgt": "Toaster::Toaster::carriageGuideIn",
+    "chassis--buttons--src": "Toaster::Toaster::chassisButtonMountOut",
+    "chassis--buttons--tgt": "Toaster::Toaster::buttonMountIn",
+    "chassis--crumb-tray--src": "Toaster::Toaster::chassisCrumbTrayGuideOut",
+    "chassis--crumb-tray--tgt": "Toaster::Toaster::crumbTrayGuideIn",
+    "chassis--pcs--src": "Toaster::Toaster::chassisSubsystemMountOut",
+    "chassis--pcs--tgt": "Toaster::Toaster::subsystemMountIn",
+    "bnd--lever": "Toaster::Toaster::leverInput",
+    "lever--bnd--tgt": "Toaster::Toaster::leverUserInputIn",
+    "bnd--buttons": "Toaster::Toaster::buttonInput",
+    "buttons--bnd--tgt": "Toaster::Toaster::buttonUserInputIn",
+    "bnd--crumb-tray": "Toaster::Toaster::trayPullInput",
+    "crumb-tray--bnd--tgt": "Toaster::Toaster::crumbTrayUserInputIn",
+    "conn-lever-carriage": "Toaster::Toaster::leverToCarriage",
+    "conn-chassis-carriage": "Toaster::Toaster::chassisToCarriage",
+    "conn-chassis-buttons": "Toaster::Toaster::chassisToButtons",
+    "conn-chassis-crumb-tray": "Toaster::Toaster::chassisToCrumbTray",
+    "conn-chassis-pcs": "Toaster::Toaster::chassisToPowerControl",
+    "conn-bnd-lever": "Toaster::Toaster::leverInputToLever",
+    "conn-bnd-buttons": "Toaster::Toaster::buttonInputToButtons",
+    "conn-bnd-crumb-tray": "Toaster::Toaster::trayPullToCrumbTray"
+  },
+  "diagram": {
+    "id": "toaster-mech-composed",
+    "kind": "InterconnectionView",
+    "name": "Toaster Mechanical Interconnection (Composed)",
+    "canvas": {
+      "width": 972,
+      "height": 528,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "toaster",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 892,
+          "height": 448,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "chassis",
+        "model_ref": "chassis",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 296,
+          "y": 372,
+          "width": 160,
+          "height": 80,
+          "z": 10
+        },
+        "label": "Chassis",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.structure"
+      },
+      {
+        "id": "lever",
+        "model_ref": "lever",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 516,
+          "y": 372,
+          "width": 160,
+          "height": 80,
+          "z": 10
+        },
+        "label": "Lever",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.mechanical"
+      },
+      {
+        "id": "buttons",
+        "model_ref": "buttons",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 160,
+          "height": 80,
+          "z": 10
+        },
+        "label": "Buttons",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.mechanical"
+      },
+      {
+        "id": "carriage",
+        "model_ref": "carriage",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 736,
+          "y": 76,
+          "width": 160,
+          "height": 80,
+          "z": 10
+        },
+        "label": "Carriage",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.mechanical"
+      },
+      {
+        "id": "crumb-tray",
+        "model_ref": "crumb-tray",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 296,
+          "y": 76,
+          "width": 160,
+          "height": 80,
+          "z": 10
+        },
+        "label": "Crumb Tray",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.mechanical"
+      },
+      {
+        "id": "pcs",
+        "model_ref": "pcs",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 516,
+          "y": 76,
+          "width": 160,
+          "height": 80,
+          "z": 10
+        },
+        "label": "Power & Control\nSubsystem",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.control"
+      },
+      {
+        "id": "chassis--crumb-tray--src",
+        "model_ref": "chassis--crumb-tray--src",
+        "symbol": "port",
+        "owner": "chassis",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": "guide"
+      },
+      {
+        "id": "chassis--pcs--src",
+        "model_ref": "chassis--pcs--src",
+        "symbol": "port",
+        "owner": "chassis",
+        "placement": {
+          "side": "top",
+          "offset": 0.6667
+        },
+        "label": "mount"
+      },
+      {
+        "id": "chassis--carriage--src",
+        "model_ref": "chassis--carriage--src",
+        "symbol": "port",
+        "owner": "chassis",
+        "placement": {
+          "side": "top",
+          "offset": 0.8333
+        },
+        "label": "guide"
+      },
+      {
+        "id": "chassis--buttons--src",
+        "model_ref": "chassis--buttons--src",
+        "symbol": "port",
+        "owner": "chassis",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": "mount"
+      },
+      {
+        "id": "lever--carriage--src",
+        "model_ref": "lever--carriage--src",
+        "symbol": "port",
+        "owner": "lever",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": "lift"
+      },
+      {
+        "id": "lever--bnd--tgt",
+        "model_ref": "lever--bnd--tgt",
+        "symbol": "port",
+        "owner": "lever",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": "lever input"
+      },
+      {
+        "id": "chassis--buttons--tgt",
+        "model_ref": "chassis--buttons--tgt",
+        "symbol": "port",
+        "owner": "buttons",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": "mount"
+      },
+      {
+        "id": "buttons--bnd--tgt",
+        "model_ref": "buttons--bnd--tgt",
+        "symbol": "port",
+        "owner": "buttons",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": "button press"
+      },
+      {
+        "id": "chassis--carriage--tgt",
+        "model_ref": "chassis--carriage--tgt",
+        "symbol": "port",
+        "owner": "carriage",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.3333
+        },
+        "label": "guide"
+      },
+      {
+        "id": "lever--carriage--tgt",
+        "model_ref": "lever--carriage--tgt",
+        "symbol": "port",
+        "owner": "carriage",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.6667
+        },
+        "label": "lift"
+      },
+      {
+        "id": "chassis--crumb-tray--tgt",
+        "model_ref": "chassis--crumb-tray--tgt",
+        "symbol": "port",
+        "owner": "crumb-tray",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": "guide"
+      },
+      {
+        "id": "crumb-tray--bnd--tgt",
+        "model_ref": "crumb-tray--bnd--tgt",
+        "symbol": "port",
+        "owner": "crumb-tray",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": "pull/remove"
+      },
+      {
+        "id": "chassis--pcs--tgt",
+        "model_ref": "chassis--pcs--tgt",
+        "symbol": "port",
+        "owner": "pcs",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": "mount"
+      },
+      {
+        "id": "bnd--lever",
+        "model_ref": "bnd--lever",
+        "symbol": "port",
+        "owner": "boundary",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.6233
+        },
+        "label": "lever input"
+      },
+      {
+        "id": "bnd--buttons",
+        "model_ref": "bnd--buttons",
+        "symbol": "port",
+        "owner": "boundary",
+        "placement": {
+          "side": "top",
+          "offset": 0.13
+        },
+        "label": "button press"
+      },
+      {
+        "id": "bnd--crumb-tray",
+        "model_ref": "bnd--crumb-tray",
+        "symbol": "port",
+        "owner": "boundary",
+        "placement": {
+          "side": "top",
+          "offset": 0.3767
+        },
+        "label": "pull/remove"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-lever-carriage",
+        "model_ref": "conn-lever-carriage",
+        "source": {
+          "element": "lever--carriage--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lever--carriage--tgt",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 842.672,
+              "y": 412
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-chassis-carriage",
+        "model_ref": "conn-chassis-carriage",
+        "source": {
+          "element": "chassis--carriage--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "chassis--carriage--tgt",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 429.328,
+              "y": 292
+            },
+            {
+              "x": 789.328,
+              "y": 292
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-chassis-buttons",
+        "model_ref": "conn-chassis-buttons",
+        "source": {
+          "element": "chassis--buttons--src",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "chassis--buttons--tgt",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 156,
+              "y": 412
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-chassis-crumb-tray",
+        "model_ref": "conn-chassis-crumb-tray",
+        "source": {
+          "element": "chassis--crumb-tray--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "chassis--crumb-tray--tgt",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-chassis-pcs",
+        "model_ref": "conn-chassis-pcs",
+        "source": {
+          "element": "chassis--pcs--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "chassis--pcs--tgt",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 402.672,
+              "y": 264
+            },
+            {
+              "x": 596,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-bnd-lever",
+        "model_ref": "conn-bnd-lever",
+        "source": {
+          "element": "bnd--lever",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lever--bnd--tgt",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-bnd-buttons",
+        "model_ref": "conn-bnd-buttons",
+        "source": {
+          "element": "bnd--buttons",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "buttons--bnd--tgt",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-bnd-crumb-tray",
+        "model_ref": "conn-bnd-crumb-tray",
+        "source": {
+          "element": "bnd--crumb-tray",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "crumb-tray--bnd--tgt",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "part.mechanical": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "part.structure": {
+        "fill": "#F5F5F5",
+        "stroke": "#616161",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "part.control": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "connector.default": {
+        "stroke": "#2E7D32",
+        "stroke_width": 2,
+        "corner_radius": 8
+      }
+    },
+    "subject": "toaster"
+  }
+}

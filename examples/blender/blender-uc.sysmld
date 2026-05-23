@@ -1,0 +1,286 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "blender.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "blender-uc",
+    "kind": "UseCaseView",
+    "name": "Blender Use Cases",
+    "canvas": {
+      "width": 566,
+      "height": 658,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "blenderBoundary",
+        "model_ref": "Blender",
+        "symbol": "boundary",
+        "layout": {
+          "x": 260,
+          "y": 72,
+          "width": 234.0,
+          "height": 514.0,
+          "z": 0
+        },
+        "label": "Blender",
+        "style": "boundary.system"
+      },
+      {
+        "id": "user",
+        "model_ref": "user",
+        "symbol": "actor",
+        "layout": {
+          "x": 72,
+          "y": 284,
+          "width": 70,
+          "height": 90,
+          "z": 10
+        },
+        "label": "User",
+        "style": "actor"
+      },
+      {
+        "id": "makeSmoothieUseCase",
+        "model_ref": "makeSmoothieUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 302,
+          "y": 114,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Make Smoothie",
+        "style": "use_case"
+      },
+      {
+        "id": "stopBlendUseCase",
+        "model_ref": "stopBlendUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 302,
+          "y": 294,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Stop Blend",
+        "style": "use_case"
+      },
+      {
+        "id": "cleanContainerUseCase",
+        "model_ref": "cleanContainerUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 302,
+          "y": 474,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Clean Container",
+        "style": "use_case"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-user-makeSmoothieUseCase",
+        "model_ref": "user",
+        "source": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.35
+          }
+        },
+        "target": {
+          "element": "makeSmoothieUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 198,
+              "y": 315.5
+            },
+            {
+              "x": 198,
+              "y": 149
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "uses",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-user-stopBlendUseCase",
+        "model_ref": "user",
+        "source": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "stopBlendUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "uses",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-user-cleanContainerUseCase",
+        "model_ref": "user",
+        "source": {
+          "element": "user",
+          "anchor": {
+            "side": "right",
+            "offset": 0.65
+          }
+        },
+        "target": {
+          "element": "cleanContainerUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 198,
+              "y": 342.5
+            },
+            {
+              "x": 198,
+              "y": 509
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "uses",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-stopBlendUseCase-makeSmoothieUseCase",
+        "model_ref": "stopBlendUseCase",
+        "source": {
+          "element": "stopBlendUseCase",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "makeSmoothieUseCase",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "extend",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.extend"
+      },
+      {
+        "id": "conn-cleanContainerUseCase-makeSmoothieUseCase",
+        "model_ref": "cleanContainerUseCase",
+        "source": {
+          "element": "cleanContainerUseCase",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "makeSmoothieUseCase",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 281,
+              "y": 474
+            },
+            {
+              "x": 281,
+              "y": 184
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "include",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "connector.include"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Blender"
+  }
+}

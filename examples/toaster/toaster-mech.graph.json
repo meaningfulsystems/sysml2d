@@ -1,0 +1,53 @@
+{
+  "direction": "bottom-up",
+  "ranks": {
+    "0": [
+      "chassis",
+      "lever"
+    ],
+    "1": [
+      "buttons",
+      "crumb-tray",
+      "pcs",
+      "carriage"
+    ]
+  },
+  "nodes": {
+    "chassis": {
+      "rank": 0,
+      "position_in_rank": 0,
+      "cx": 200,
+      "cy": 240
+    },
+    "lever": {
+      "rank": 0,
+      "position_in_rank": 1,
+      "cx": 320,
+      "cy": 240
+    },
+    "buttons": {
+      "rank": 1,
+      "position_in_rank": 0,
+      "cx": 80,
+      "cy": 80
+    },
+    "carriage": {
+      "rank": 1,
+      "position_in_rank": 3,
+      "cx": 440,
+      "cy": 80
+    },
+    "crumb-tray": {
+      "rank": 1,
+      "position_in_rank": 1,
+      "cx": 200,
+      "cy": 80
+    },
+    "pcs": {
+      "rank": 1,
+      "position_in_rank": 2,
+      "cx": 320,
+      "cy": 80
+    }
+  }
+}

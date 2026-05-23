@@ -1,0 +1,33 @@
+{
+  "diagram": "blender-vcase",
+  "kind": "VerificationCaseView",
+  "name": "Blender Verification Cases",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "verifyLidInterlock": {"label": "Verify Lid Interlock", "rank": 0, "order": 0},
+    "verifySmoothnessDetection": {"label": "Verify Smoothness", "rank": 0, "order": 1},
+    "verifyStopCommand": {"label": "Verify Stop", "rank": 0, "order": 2},
+    "verifyOvercurrentProtection": {"label": "Verify Overcurrent", "rank": 0, "order": 3},
+    "verifyContainerSeat": {"label": "Verify Container Seat", "rank": 0, "order": 4},
+    "lidInterlockRequirement": {"label": "Lid Interlock Req", "symbol": "requirement", "model_ref": "lidInterlockRequirement", "rank": 1, "order": 0},
+    "interlockLatencyRequirement": {"label": "Interlock Latency Req", "symbol": "requirement", "model_ref": "interlockLatencyRequirement", "rank": 1, "order": 1},
+    "smoothnessDetectionRequirement": {"label": "Smoothness Req", "symbol": "requirement", "model_ref": "smoothnessDetectionRequirement", "rank": 1, "order": 2},
+    "smoothnessThresholdRequirement": {"label": "Smoothness Threshold Req", "symbol": "requirement", "model_ref": "smoothnessThresholdRequirement", "rank": 1, "order": 3},
+    "userControlsRequirement": {"label": "User Controls Req", "symbol": "requirement", "model_ref": "userControlsRequirement", "rank": 1, "order": 4},
+    "motorControlRequirement": {"label": "Motor Control Req", "symbol": "requirement", "model_ref": "motorControlRequirement", "rank": 1, "order": 5},
+    "overcurrentProtectionRequirement": {"label": "Overcurrent Protection Req", "symbol": "requirement", "model_ref": "overcurrentProtectionRequirement", "rank": 1, "order": 6},
+    "containerSeatRequirement": {"label": "Container Seat Req", "symbol": "requirement", "model_ref": "containerSeatRequirement", "rank": 1, "order": 7}
+  },
+  "edges": [
+    {"from": "verifyLidInterlock", "to": "lidInterlockRequirement", "label": "verifies"},
+    {"from": "verifyLidInterlock", "to": "interlockLatencyRequirement", "label": "verifies"},
+    {"from": "verifySmoothnessDetection", "to": "smoothnessDetectionRequirement", "label": "verifies"},
+    {"from": "verifySmoothnessDetection", "to": "smoothnessThresholdRequirement", "label": "verifies"},
+    {"from": "verifyStopCommand", "to": "userControlsRequirement", "label": "verifies"},
+    {"from": "verifyStopCommand", "to": "motorControlRequirement", "label": "verifies"},
+    {"from": "verifyOvercurrentProtection", "to": "overcurrentProtectionRequirement", "label": "verifies"},
+    {"from": "verifyContainerSeat", "to": "containerSeatRequirement", "label": "verifies"}
+  ]
+}

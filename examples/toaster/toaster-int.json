@@ -1,0 +1,21 @@
+{
+  "diagram": "toaster-int",
+  "kind": "InteractionView",
+  "name": "Toaster User Interaction",
+  "subject": "Toaster",
+  "model_files": ["toaster.sysml"],
+  "lifelines": {
+    "user": {"label": "User"},
+    "lever": {"label": "Lever"},
+    "powerAndControlSubsystem": {"label": "Power & Control"},
+    "heatingElement": {"label": "Heating Element"},
+    "carriage": {"label": "Carriage"}
+  },
+  "messages": [
+    {"id": "msgLowerLever", "from": "user", "to": "lever", "label": "lower lever", "model_ref": "lowerLever"},
+    {"id": "msgControl", "from": "lever", "to": "powerAndControlSubsystem", "label": "toast request", "model_ref": "leverToControl"},
+    {"id": "msgHeat", "from": "powerAndControlSubsystem", "to": "heatingElement", "label": "heat command", "model_ref": "controlToHeater"},
+    {"id": "msgRelease", "from": "powerAndControlSubsystem", "to": "carriage", "label": "release", "model_ref": "releaseCarriage"},
+    {"id": "msgPresent", "from": "carriage", "to": "user", "label": "toast available", "model_ref": "presentToast"}
+  ]
+}

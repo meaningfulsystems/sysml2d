@@ -1,0 +1,27 @@
+{
+  "diagram": "blender-flow",
+  "kind": "FlowView",
+  "name": "Blender Item, Power, and Signal Flows",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "user": {"label": "User", "symbol": "actor", "rank": 0, "order": 0},
+    "mainsSupply": {"label": "Mains Supply", "symbol": "part_usage", "rank": 0, "order": 1},
+    "container": {"label": "Container", "symbol": "part_usage", "rank": 1, "order": 0},
+    "controlPanel": {"label": "Control Panel", "symbol": "part_usage", "rank": 1, "order": 1},
+    "motor": {"label": "Motor", "symbol": "part_usage", "rank": 2, "order": 1},
+    "driveCoupling": {"label": "Drive Coupling", "symbol": "part_usage", "rank": 3, "order": 1},
+    "bladeAssembly": {"label": "Blade Assembly", "symbol": "part_usage", "rank": 4, "order": 0},
+    "smoothnessSensor": {"label": "Smoothness Sensor", "symbol": "part_usage", "rank": 4, "order": 1}
+  },
+  "edges": [
+    {"from": "user", "to": "container", "label": "ingredients", "model_ref": "ingredientsIntoContainer"},
+    {"from": "user", "to": "controlPanel", "label": "command", "model_ref": "commandToControlPanel"},
+    {"from": "mainsSupply", "to": "controlPanel", "label": "power", "model_ref": "mainsPowerFlow"},
+    {"from": "controlPanel", "to": "motor", "label": "drive command", "model_ref": "commandToControlPanel"},
+    {"from": "motor", "to": "driveCoupling", "label": "torque", "model_ref": "motorTorqueFlow"},
+    {"from": "driveCoupling", "to": "bladeAssembly", "label": "rotation", "model_ref": "bladeShearFlow"},
+    {"from": "driveCoupling", "to": "smoothnessSensor", "label": "feedback", "model_ref": "smoothnessFeedbackFlow"}
+  ]
+}

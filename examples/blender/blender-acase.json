@@ -1,0 +1,22 @@
+{
+  "diagram": "blender-acase",
+  "kind": "AnalysisCaseView",
+  "name": "Blender Analysis Cases",
+  "subject": "Blender",
+  "model_files": ["blender.sysml"],
+  "direction": "left-right",
+  "nodes": {
+    "motorLoadAnalysis": {"label": "Motor Load", "rank": 0, "order": 0},
+    "smoothnessDetectionAnalysis": {"label": "Smoothness Detection", "rank": 0, "order": 1},
+    "torqueSpeedLoadEstimate": {"label": "Torque-Speed-Load", "symbol": "constraint", "rank": 1, "order": 0},
+    "smoothnessThresholdEstimate": {"label": "Smoothness Threshold", "symbol": "constraint", "rank": 1, "order": 1},
+    "motorControlRequirement": {"label": "Motor Control Req", "symbol": "requirement", "rank": 2, "order": 0},
+    "smoothnessDetectionRequirement": {"label": "Smoothness Req", "symbol": "requirement", "rank": 2, "order": 1}
+  },
+  "edges": [
+    {"from": "motorLoadAnalysis", "to": "torqueSpeedLoadEstimate", "label": "method"},
+    {"from": "smoothnessDetectionAnalysis", "to": "smoothnessThresholdEstimate", "label": "method"},
+    {"from": "torqueSpeedLoadEstimate", "to": "motorControlRequirement", "label": "evaluates"},
+    {"from": "smoothnessThresholdEstimate", "to": "smoothnessDetectionRequirement", "label": "evaluates"}
+  ]
+}

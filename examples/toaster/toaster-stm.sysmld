@@ -1,0 +1,439 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "toaster.sysml"
+  ],
+  "aliases": {
+    "toasterControl": "Toaster::ToasterControl",
+    "idle": "Toaster::ToasterControl::idle",
+    "heating": "Toaster::ToasterControl::heating",
+    "done": "Toaster::ToasterControl::done",
+    "error": "Toaster::ToasterControl::error",
+    "leverDown": "Toaster::ToasterControl::leverDown",
+    "timerExpired": "Toaster::ToasterControl::timerExpired",
+    "carriageUpDone": "Toaster::ToasterControl::carriageUpDone",
+    "overheat": "Toaster::ToasterControl::overheat",
+    "carriageUpAbort": "Toaster::ToasterControl::carriageUpAbort",
+    "reset": "Toaster::ToasterControl::reset"
+  },
+  "diagram": {
+    "id": "toaster-stm",
+    "kind": "StateView",
+    "name": "Toaster Control State Machine",
+    "canvas": {
+      "width": 1086,
+      "height": 499,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "toasterControl",
+        "symbol": "boundary",
+        "layout": {
+          "x": 95,
+          "y": 75,
+          "width": 951,
+          "height": 384,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 145,
+          "y": 211,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "idle",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 318,
+          "y": 191,
+          "width": 130,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "idle",
+        "label": "Idle",
+        "style": "state.default"
+      },
+      {
+        "id": "heating",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 546,
+          "y": 191,
+          "width": 130,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "heating",
+        "label": "Heating",
+        "style": "state.default"
+      },
+      {
+        "id": "done",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 774,
+          "y": 125,
+          "width": 130,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "done",
+        "label": "Done",
+        "style": "state.default"
+      },
+      {
+        "id": "error",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 774,
+          "y": 257,
+          "width": 130,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "error",
+        "label": "Error",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--idle",
+        "model_ref": "toasterControl",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "idle",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "idle--heating",
+        "model_ref": "leverDown",
+        "source": {
+          "element": "idle",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "heating",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "lever down",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "heating--done",
+        "model_ref": "timerExpired",
+        "source": {
+          "element": "heating",
+          "anchor": {
+            "side": "right",
+            "offset": 0.3333
+          }
+        },
+        "target": {
+          "element": "done",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 709,
+              "y": 211
+            },
+            {
+              "x": 709,
+              "y": 155
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "timer expired",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "heating--error",
+        "model_ref": "overheat",
+        "source": {
+          "element": "heating",
+          "anchor": {
+            "side": "right",
+            "offset": 0.6667
+          }
+        },
+        "target": {
+          "element": "error",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 741,
+              "y": 231
+            },
+            {
+              "x": 741,
+              "y": 287
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "fault: overheat / jam / power",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "heating-back-idle",
+        "model_ref": "carriageUpAbort",
+        "source": {
+          "element": "heating",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "idle",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 611,
+              "y": 279
+            },
+            {
+              "x": 383,
+              "y": 279
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "carriage up abort",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "done-back-idle",
+        "model_ref": "carriageUpDone",
+        "source": {
+          "element": "done",
+          "anchor": {
+            "side": "right",
+            "offset": 0.3333
+          }
+        },
+        "target": {
+          "element": "idle",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.2
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 968,
+              "y": 145
+            },
+            {
+              "x": 968,
+              "y": 409
+            },
+            {
+              "x": 344,
+              "y": 409
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "carriage up",
+            "position": {
+              "segment": 2,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "error-back-idle",
+        "model_ref": "reset",
+        "source": {
+          "element": "error",
+          "anchor": {
+            "side": "right",
+            "offset": 0.6667
+          }
+        },
+        "target": {
+          "element": "idle",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.35
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 940,
+              "y": 297
+            },
+            {
+              "x": 940,
+              "y": 381
+            },
+            {
+              "x": 364,
+              "y": 381
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "reset",
+            "position": {
+              "segment": 2,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "toasterControl"
+  }
+}

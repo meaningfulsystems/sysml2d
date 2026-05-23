@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="578" height="964" viewBox="0 0 578 964">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="578" height="964" fill="#FFFFFF"/>
+<rect x="2" y="38" width="574" height="922" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 368 L 384 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[gen.mb] Toaster Cross-View Trace [Toaster]</text>
+<rect x="2" y="38" width="574" height="924" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<ellipse id="toastBreadUseCase" cx="287" cy="107" rx="75" ry="35" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="287" y="107">Toast Bread</text>
+<rect id="browningRequirement" x="202" y="302" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="287" y="343">Browning Req</text>
+<rect id="energizeHeater" x="72" y="544" width="150" height="70" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="579">Energize Heater</text>
+<rect id="verifyToastBrowning" x="332" y="544" width="170" height="76" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="417" y="582">Verify Browning</text>
+<rect id="heatingElement" x="212" y="780" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="287" y="815">Heating Element</text>
+<path d="M 287,142 L 287,302" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 287,384 L 287,440 L 147,440 L 147,544" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 147,614 L 147,670 L 287,670 L 287,780" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 417,544 L 417,488 L 287,488 L 287,384" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<text class="small" text-anchor="middle" x="287" y="230">refine</text>
+<text class="small" text-anchor="middle" x="217" y="448">allocate</text>
+<text class="small" text-anchor="middle" x="217" y="678">performed by</text>
+<text class="small" text-anchor="middle" x="352" y="496">verify</text>
+</g>
+</svg>

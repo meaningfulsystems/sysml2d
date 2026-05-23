@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1136" height="492" viewBox="0 0 1136 492">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1136" height="492" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1132" height="450" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 368 L 384 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[int.mb] Toaster User Interaction [Toaster]</text>
+<rect x="2" y="38" width="1132" height="452" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="user" x="70" y="70" width="110" height="34" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text class="small" text-anchor="middle" x="125" y="91">User</text>
+<line x1="125" y1="104" x2="125" y2="410" stroke="#334155" stroke-width="1.2" stroke-dasharray="5 5"/>
+<rect id="lever" x="270" y="70" width="110" height="34" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text class="small" text-anchor="middle" x="325" y="91">Lever</text>
+<line x1="325" y1="104" x2="325" y2="410" stroke="#334155" stroke-width="1.2" stroke-dasharray="5 5"/>
+<rect id="powerAndControlSubsystem" x="470" y="70" width="151" height="34" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text class="small" text-anchor="middle" x="545.5" y="91">Power &amp; Control</text>
+<line x1="545.5" y1="104" x2="545.5" y2="410" stroke="#334155" stroke-width="1.2" stroke-dasharray="5 5"/>
+<rect id="heatingElement" x="711" y="70" width="151" height="34" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text class="small" text-anchor="middle" x="786.5" y="91">Heating Element</text>
+<line x1="786.5" y1="104" x2="786.5" y2="410" stroke="#334155" stroke-width="1.2" stroke-dasharray="5 5"/>
+<rect id="carriage" x="952" y="70" width="110" height="34" fill="#FFFFFF" stroke="#334155" stroke-width="1.5"/>
+<text class="small" text-anchor="middle" x="1007" y="91">Carriage</text>
+<line x1="1007" y1="104" x2="1007" y2="410" stroke="#334155" stroke-width="1.2" stroke-dasharray="5 5"/>
+<path d="M 125,140.04 L 325,140.04" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 325,194.1 L 545.5,194.1" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 545.5,248.16 L 786.5,248.16" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 545.5,301.88 L 1007,301.88" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 1007,355.94 L 125,355.94" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<text class="small" text-anchor="middle" x="225" y="148.04">lower lever</text>
+<text class="small" text-anchor="middle" x="435.25" y="202.1">toast request</text>
+<text class="small" text-anchor="middle" x="666" y="256.16">heat command</text>
+<text class="small" text-anchor="middle" x="914.7" y="309.88">release</text>
+<text class="small" text-anchor="middle" x="433.7" y="363.94">toast available</text>
+</g>
+</svg>
