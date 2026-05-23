@@ -16,7 +16,7 @@ from .graph import graph_file
 from .interaction_view import sequence_file
 from .interface_view import interface_file
 from .package_view import package_file
-from .render_svg import render_svg
+from .render_svg import render_png, render_svg
 from .requirement_view import requirement_file
 from .state_view import stm_file
 from .definition_view import tree_file
@@ -107,8 +107,10 @@ def main() -> int:
 
     render_parser = subparsers.add_parser("render")
     render_parser.add_argument("path")
-    render_parser.add_argument("--svg", action="store_true")
-    render_parser.add_argument("--all", action="store_true")
+    render_parser.add_argument("--svg", action="store_true", help="Render to SVG (default)")
+    render_parser.add_argument("--png", action="store_true", help="Render to PNG (requires cairosvg)")
+    render_parser.add_argument("--all", action="store_true", help="Render to both SVG and PNG")
+    render_parser.add_argument("--scale", type=float, default=2.0, help="PNG scale factor (default: 2.0 for retina quality)")
     render_parser.add_argument("--output")
     render_parser.add_argument("--no-strict", action="store_true")
 
@@ -162,13 +164,17 @@ def main() -> int:
         return 1 if report.errors else 0
 
     if args.command == "render":
-        if not args.svg and not args.all:
-            args.svg = True
-        if args.all:
-            print("PNG rendering is not implemented yet; rendering SVG only.")
+        do_svg = args.svg or args.all or (not args.png)
+        do_png = args.png or args.all
         output = Path(args.output) if args.output else None
-        target = render_svg(Path(args.path), output_path=output, strict=not args.no_strict)
-        print(target)
+        strict = not args.no_strict
+        if do_svg:
+            target = render_svg(Path(args.path), output_path=output, strict=strict)
+            print(target)
+        if do_png:
+            png_output = output.with_suffix(".png") if output else None
+            target = render_png(Path(args.path), output_path=png_output, strict=strict, scale=args.scale)
+            print(target)
         return 0
 
     return 1

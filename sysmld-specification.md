@@ -9,7 +9,7 @@ SysMLD is a JSON diagram/view format for SysML v2 models.
 
 - `.sysml` files contain model semantics.
 - `.sysmld` files contain diagram layout and rendering instructions.
-- SVG outputs are generated artifacts. PNG output is outside the v0.1 scope.
+- SVG and PNG outputs are generated artifacts. PNG requires the optional cairosvg dependency.
 
 SysMLD view-kind names and abbreviations are SysMLD-defined. They are not OMG standard diagram codes.
 

@@ -32,3 +32,6 @@ ai-collab/
 
 # Design decision records (internal, may be published separately)
 # decisions/
+
+# Generated PNG outputs
+*.png

@@ -49,6 +49,35 @@ def render_svg(path: Path, output_path: Path | None = None, strict: bool = True)
     return target
 
 
+def render_png(path: Path, output_path: Path | None = None, strict: bool = True, scale: float = 2.0) -> Path:
+    """Validate and render a SysMLD document to a PNG file.
+
+    Builds the scene graph once, converts via the SVG representation using
+    cairosvg.  Requires: pip install cairosvg
+
+    scale=2.0 produces a 2× retina-quality image suitable for sharing on
+    LinkedIn and other social platforms.
+    """
+    try:
+        import cairosvg
+    except ImportError:
+        raise ImportError(
+            "PNG rendering requires cairosvg. Install it with: pip install cairosvg"
+        )
+
+    if strict:
+        report = validate_file(path, strict=True)
+        if report.errors:
+            messages = "; ".join(f"{finding.code}: {finding.message}" for finding in report.findings)
+            raise ValueError(f"Cannot render strict-invalid diagram: {messages}")
+
+    scene = build_scene(path)
+    svg_text = scene_to_svg(scene)
+    target = output_path or path.with_suffix(".png")
+    cairosvg.svg2png(bytestring=svg_text.encode("utf-8"), write_to=str(target), scale=scale)
+    return target
+
+
 def scene_to_svg(scene: Scene) -> str:
     """Convert a resolved scene graph to an SVG document string."""
 

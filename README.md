@@ -85,7 +85,13 @@ Add `--graph` to see the crossing-minimized topology before full layout:
 sysmld interconnection examples/toaster/toaster-mech-composed.json --graph
 ```
 
-**Note:** SVG is the primary output format in v0.1. PNG rendering is not yet implemented.
+PNG output is also supported (requires `pip install cairosvg`):
+
+```bash
+sysmld render examples/toaster/toaster-stm.sysmld --png        # PNG only
+sysmld render examples/toaster/toaster-stm.sysmld --all        # SVG + PNG
+sysmld render examples/toaster/toaster-stm.sysmld --png --scale 3.0  # higher resolution
+```
 
 ## Repository Layout
 
