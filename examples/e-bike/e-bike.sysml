@@ -83,7 +83,7 @@ package ElectricBike {
         state off;
         state standby;
         state assist;
-        state walkAssist;
+        state walk;
         state charging;
         state fault;
 
@@ -105,15 +105,15 @@ package ElectricBike {
         transition startWalk
             first standby
             accept walkButton
-            then walkAssist;
+            then walk;
 
         transition stopWalk
-            first walkAssist
+            first walk
             accept walkRelease
             then standby;
 
         transition brakeWalk
-            first walkAssist
+            first walk
             accept brakeLever
             then standby;
 
@@ -187,7 +187,7 @@ package ElectricBike {
     flow roadLoadFlow;
 
     requirement rideSafetyRequirement       { doc /* Motor fail-silent: brake input, controller, cadence/speed sensors, and BMS shall cut motor torque before the wheel can keep driving the rider. */ }
-    requirement rangeRequirement            { doc /* Tour-mode scenario only: at least 60 km on a 500 Wh pack (~8.3 Wh/km). Not Eco / PAS-1; undemonstrated unless this scenario is bound. */ }
+    requirement rangeRequirement            { doc /* Tour-mode scenario only: usableWh 500 Wh / energyPerKm ~8.3 Wh/km ≥ 60 km. Not Eco / PAS-1; undemonstrated unless this scenario is bound. */ }
     requirement assistLimitRequirement      { doc /* EPAC (EN 15194): cadence PAS only, no certified throttle. Assist shall cut off at 25 km/h. Walk assist ≤ 6 km/h is a real EPAC feature, not a throttle. */ }
     requirement walkAssistRequirement       { doc /* EPAC walk assist shall not exceed 6 km/h. Walk assist is not a throttle. */ }
     requirement continuousPowerRequirement  { doc /* Continuous assist shall not exceed 250 W. */ }
@@ -204,9 +204,11 @@ package ElectricBike {
     constraint def rangeEstimate;
     constraint def assistPowerLimit;
     constraint def brakeLatencyLimit;
-    constraint def tourRangeBind;
+    constraint def tourRangeBind { doc /* Tour 60 km: usableWh / energyPerKm. Do not mix rider watts into pack usableWh. */ }
     constraint def thermalDerate;
     attribute packEnergy;
+    attribute usableWh;
+    attribute energyPerKm;
     attribute packVoltage;
     attribute riderPower;
     attribute assistPower;

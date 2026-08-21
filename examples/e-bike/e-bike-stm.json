@@ -16,7 +16,7 @@
     "off": "ElectricBike::RideControl::off",
     "standby": "ElectricBike::RideControl::standby",
     "assist": "ElectricBike::RideControl::assist",
-    "walkAssist": "ElectricBike::RideControl::walkAssist",
+    "walk": "ElectricBike::RideControl::walk",
     "charging": "ElectricBike::RideControl::charging",
     "fault": "ElectricBike::RideControl::fault",
     "powerOn": "ElectricBike::RideControl::powerOn",
@@ -49,9 +49,9 @@
       "label": "Assist",
       "model_ref": "assist"
     },
-    "walkAssist": {
-      "label": "Walk Assist\n<= 6 km/h",
-      "model_ref": "walkAssist"
+    "walk": {
+      "label": "walk\n<= 6 km/h EPAC",
+      "model_ref": "walk"
     },
     "charging": {
       "label": "Charging",
@@ -82,12 +82,12 @@
     },
     {
       "from": "standby",
-      "to": "walkAssist",
+      "to": "walk",
       "label": "walk button",
       "model_ref": "startWalk"
     },
     {
-      "from": "walkAssist",
+      "from": "walk",
       "to": "standby",
       "label": "release / brake",
       "model_ref": "stopWalk"

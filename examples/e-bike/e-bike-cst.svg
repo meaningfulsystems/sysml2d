@@ -12,7 +12,11 @@
 <rect x="2" y="38" width="1584" height="1154" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
 <rect id="packEnergy" x="72" y="82" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
-<text class="label" text-anchor="middle"><tspan x="137" y="103.5">packEnergy</tspan><tspan x="137" dy="15">500 Wh</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="137" y="103.5">packEnergy</tspan><tspan x="137" dy="15">nameplate</tspan></text>
+<rect id="usableWh" x="702" y="834" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle"><tspan x="767" y="855.5">usableWh</tspan><tspan x="767" dy="15">500 Wh Tour</tspan></text>
+<rect id="energyPerKm" x="702" y="646" width="139" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle"><tspan x="771.5" y="667.5">energyPerKm</tspan><tspan x="771.5" dy="15">~8.3 Wh/km Tour</tspan></text>
 <rect id="riderPower" x="72" y="270" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
 <text class="label" text-anchor="middle"><tspan x="137" y="291.5">riderPower</tspan><tspan x="137" dy="15">pedal input</tspan></text>
 <rect id="cutoffSpeed" x="72" y="458" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
@@ -39,8 +43,8 @@
 <text class="label" text-anchor="middle"><tspan x="767" y="291.5">assistPower</tspan><tspan x="767" dy="15">limited</tspan></text>
 <rect id="brakeLatency" x="702" y="458" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
 <text class="label" text-anchor="middle"><tspan x="767" y="479.5">brakeLatency</tspan><tspan x="767" dy="15">measured</tspan></text>
-<rect id="tourWhPerKm" x="702" y="646" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
-<text class="label" text-anchor="middle"><tspan x="767" y="667.5">tourWhPerKm</tspan><tspan x="767" dy="15">~8.3 Wh/km</tspan></text>
+<rect id="tourWhPerKm" x="702" y="1022" width="167" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle"><tspan x="785.5" y="1043.5">tourWhPerKm</tspan><tspan x="785.5" dy="15">(alias energyPerKm)</tspan></text>
 <rect id="tourRangeBind" x="1042" y="72" width="180" height="78" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
 <text class="label" text-anchor="middle"><tspan x="1132" y="103.5">Tour Scenario</tspan><tspan x="1132" dy="15">(not Eco/PAS-1)</tspan></text>
 <rect id="rangeKm" x="1382" y="82" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
@@ -50,28 +54,34 @@
 <path d="M 202,675 L 254.571,675 L 254.571,306 A 7 7 0 0 0 254.571,292 L 254.571,111 L 362,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 202,863 L 309.429,863 L 309.429,682 A 7 7 0 0 0 309.429,668 L 309.429,299 L 362,299" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 202,1051 L 327.714,1051 L 327.714,682 A 7 7 0 0 0 327.714,668 L 327.714,299 L 362,299" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 702,299 L 660.4,299 L 660.4,863 L 542,863" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 702,299 L 664.667,299 L 664.667,863 L 542,863" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 202,487 L 247.571,487 A 7 7 0 0 0 261.571,487 L 272.857,487 L 272.857,299 L 362,299" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 542,111 L 643.333,111 L 643.333,863 L 702,863" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 542,111 L 702,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 542,299 L 609.2,299 L 609.2,111 L 702,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 832,863 L 974.8,863 L 974.8,111 L 1042,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 841,675 L 949.2,675 L 949.2,111 L 1042,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 542,299 L 600.667,299 L 600.667,111 L 702,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 882,111 L 1042,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 832,675 L 983.333,675 L 983.333,111 L 1042,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 869,1051 L 1000.4,1051 L 1000.4,111 L 1042,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 1222,111 L 1382,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 542,299 L 702,299" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 542,487 L 653.4,487 A 7 7 0 0 0 667.4,487 L 702,487" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 542,299 L 636.333,299 A 7 7 0 0 0 650.333,299 L 702,299" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 542,487 L 636.333,487 A 7 7 0 0 0 650.333,487 L 657.667,487 A 7 7 0 0 0 671.667,487 L 702,487" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <text class="small" text-anchor="middle" x="282" y="99">bind</text>
 <text class="small" text-anchor="middle" x="233.2" y="287">bind</text>
 <text class="small" text-anchor="end" x="242.571" y="393">bind</text>
 <text class="small" text-anchor="end" x="297.429" y="750.2">bind</text>
 <text class="small" x="339.714" y="787.8">bind</text>
-<text class="small" x="672.4" y="581">bind</text>
+<text class="small" x="676.667" y="581">bind</text>
 <text class="small" text-anchor="middle" x="317.428" y="287">bind</text>
+<text class="small" text-anchor="end" x="631.333" y="374.2">usable Wh</text>
 <text class="small" text-anchor="middle" x="622" y="99">feeds</text>
-<text class="small" x="621.2" y="205">bounds</text>
+<text class="small" text-anchor="end" x="962.8" y="712.6">bind</text>
+<text class="small" text-anchor="end" x="937.2" y="393">bind</text>
+<text class="small" text-anchor="end" x="588.667" y="205">bounds</text>
 <text class="small" text-anchor="middle" x="962" y="99">feeds</text>
-<text class="small" x="995.333" y="393">bind</text>
+<text class="small" x="1012.4" y="581">bind</text>
 <text class="small" text-anchor="middle" x="1302" y="99">result</text>
-<text class="small" text-anchor="middle" x="622" y="322">result</text>
+<text class="small" text-anchor="middle" x="598" y="322">result</text>
 <text class="small" text-anchor="middle" x="622" y="475">limit</text>
 </g>
 </svg>

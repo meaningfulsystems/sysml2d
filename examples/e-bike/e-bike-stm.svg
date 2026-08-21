@@ -20,8 +20,8 @@
 <text class="label" text-anchor="middle" x="724" y="155">Standby</text>
 <rect id="assist" x="943" y="125" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1008" y="155">Assist</text>
-<rect id="walkAssist" x="943" y="269" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1008" y="291.5">Walk Assist</tspan><tspan x="1008" dy="15">&lt;= 6 km/h</tspan></text>
+<rect id="walk" x="943" y="269" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1008" y="291.5">walk</tspan><tspan x="1008" dy="15">&lt;= 6 km/h EPAC</tspan></text>
 <rect id="charging" x="659" y="269" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="724" y="299">Charging</text>
 <rect id="fault" x="1227" y="197" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>

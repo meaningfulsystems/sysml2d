@@ -17,7 +17,7 @@
       "order": 0
     },
     "rangeRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-002 Range (Tour)\n>= 60 km on 500 Wh at\n~8.3 Wh/km. Not Eco/PAS-1.",
+      "label": "\u00abrequirement\u00bb\nREQ-E-002 Range (Tour)\nusableWh 500 / energyPerKm\n~8.3 => 60 km. Not Eco/PAS-1.",
       "rank": 0,
       "order": 1
     },

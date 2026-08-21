@@ -11,7 +11,7 @@
     "kind": "RequirementView",
     "name": "Electric Bike Requirements",
     "canvas": {
-      "width": 2686,
+      "width": 2707,
       "height": 430,
       "background": "#FFFFFF"
     },
@@ -40,11 +40,11 @@
         "layout": {
           "x": 386,
           "y": 72,
-          "width": 216,
+          "width": 237,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-E-002 Range (Tour)\n>= 60 km on 500 Wh at\n~8.3 Wh/km. Not Eco/PAS-1.",
+        "label": "\u00abrequirement\u00bb\nREQ-E-002 Range (Tour)\nusableWh 500 / energyPerKm\n~8.3 => 60 km. Not Eco/PAS-1.",
         "style": "requirement"
       },
       {
@@ -52,7 +52,7 @@
         "model_ref": "assistLimitRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 930,
+          "x": 951,
           "y": 72,
           "width": 244,
           "height": 88,
@@ -66,7 +66,7 @@
         "model_ref": "chargeSafetyRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1502,
+          "x": 1523,
           "y": 72,
           "width": 258,
           "height": 88,
@@ -80,7 +80,7 @@
         "model_ref": "structuralRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1816,
+          "x": 1837,
           "y": 72,
           "width": 251,
           "height": 88,
@@ -94,7 +94,7 @@
         "model_ref": "displayRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 2123,
+          "x": 2144,
           "y": 72,
           "width": 265,
           "height": 88,
@@ -108,7 +108,7 @@
         "model_ref": "lightingRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 2444,
+          "x": 2465,
           "y": 72,
           "width": 170,
           "height": 88,
@@ -136,7 +136,7 @@
         "model_ref": "en15194DistanceRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 658,
+          "x": 679,
           "y": 270,
           "width": 258,
           "height": 88,
@@ -150,7 +150,7 @@
         "model_ref": "batteryCutoffRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1512.5,
+          "x": 1533.5,
           "y": 270,
           "width": 237,
           "height": 88,
@@ -164,7 +164,7 @@
         "model_ref": "walkAssistRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 972,
+          "x": 993,
           "y": 270,
           "width": 195,
           "height": 88,
@@ -178,7 +178,7 @@
         "model_ref": "continuousPowerRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1223,
+          "x": 1244,
           "y": 264,
           "width": 223,
           "height": 82,

@@ -29,9 +29,37 @@
           "height": 58,
           "z": 10
         },
-        "label": "packEnergy\n500 Wh",
+        "label": "packEnergy\nnameplate",
         "style": "value_property",
         "model_ref": "packEnergy"
+      },
+      {
+        "id": "usableWh",
+        "symbol": "value_property",
+        "layout": {
+          "x": 702,
+          "y": 834,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "usableWh\n500 Wh Tour",
+        "style": "value_property",
+        "model_ref": "usableWh"
+      },
+      {
+        "id": "energyPerKm",
+        "symbol": "value_property",
+        "layout": {
+          "x": 702,
+          "y": 646,
+          "width": 139,
+          "height": 58,
+          "z": 10
+        },
+        "label": "energyPerKm\n~8.3 Wh/km Tour",
+        "style": "value_property",
+        "model_ref": "energyPerKm"
       },
       {
         "id": "riderPower",
@@ -220,12 +248,12 @@
         "symbol": "value_property",
         "layout": {
           "x": 702,
-          "y": 646,
-          "width": 130,
+          "y": 1022,
+          "width": 167,
           "height": 58,
           "z": 10
         },
-        "label": "tourWhPerKm\n~8.3 Wh/km",
+        "label": "tourWhPerKm\n(alias energyPerKm)",
         "style": "value_property",
         "model_ref": "tourWhPerKm"
       },
@@ -470,11 +498,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 660.4,
+              "x": 664.667,
               "y": 299
             },
             {
-              "x": 660.4,
+              "x": 664.667,
               "y": 863
             }
           ]
@@ -531,6 +559,46 @@
         "model_ref": "cutoffSpeed"
       },
       {
+        "id": "conn-energyBalance-usableWh",
+        "source": {
+          "element": "energyBalance",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "usableWh",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 643.333,
+              "y": 111
+            },
+            {
+              "x": 643.333,
+              "y": 863
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "usable Wh",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "energyBalance"
+      },
+      {
         "id": "conn-energyBalance-rangeEstimate",
         "source": {
           "element": "energyBalance",
@@ -562,6 +630,86 @@
         "model_ref": "energyBalance"
       },
       {
+        "id": "conn-usableWh-tourRangeBind",
+        "source": {
+          "element": "usableWh",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "tourRangeBind",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 974.8,
+              "y": 863
+            },
+            {
+              "x": 974.8,
+              "y": 111
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "usableWh"
+      },
+      {
+        "id": "conn-energyPerKm-tourRangeBind",
+        "source": {
+          "element": "energyPerKm",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "tourRangeBind",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 949.2,
+              "y": 675
+            },
+            {
+              "x": 949.2,
+              "y": 111
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "energyPerKm"
+      },
+      {
         "id": "conn-assistPowerLimit-rangeEstimate",
         "source": {
           "element": "assistPowerLimit",
@@ -581,11 +729,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 609.2,
+              "x": 600.667,
               "y": 299
             },
             {
-              "x": 609.2,
+              "x": 600.667,
               "y": 111
             }
           ]
@@ -652,11 +800,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 983.333,
-              "y": 675
+              "x": 1000.4,
+              "y": 1051
             },
             {
-              "x": 983.333,
+              "x": 1000.4,
               "y": 111
             }
           ]

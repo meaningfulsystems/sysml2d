@@ -96,7 +96,7 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("accept cadencePedal", model)
         self.assertNotIn("accept throttle", model.lower())
         self.assertIn("Tour-mode scenario only", model)
-        self.assertIn("~8.3 Wh/km", model)
+        self.assertIn("usableWh 500 Wh / energyPerKm ~8.3 Wh/km", model)
         self.assertIn("Not Eco / PAS-1", model)
         self.assertIn("within 50 ms", model)
         self.assertIn("en15194DistanceRequirement", model)
@@ -106,7 +106,10 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("25 km/h", model)
         self.assertIn("Rear geared hub. No regenerative braking.", model)
         self.assertIn("Cadence PAS, walk assist, and display. No throttle.", model)
-        self.assertIn("state walkAssist", model)
+        self.assertIn("state walk;", model)
+        self.assertNotIn("state walkAssist", model)
+        self.assertIn("attribute energyPerKm", model)
+        self.assertIn("attribute usableWh", model)
         self.assertIn("accept walkButton", model)
         self.assertIn("6 km/h", model)
         self.assertIn("Walk assist is not a throttle", model)
@@ -159,11 +162,25 @@ class ExampleViewTests(unittest.TestCase):
         self.assertTrue(
             any(edge.get("from") == "riderPower" and edge.get("to") == "riderInputBalance" for edge in cst["edges"])
         )
+        self.assertTrue(
+            any(edge.get("from") == "usableWh" and edge.get("to") == "tourRangeBind" for edge in cst["edges"])
+        )
+        self.assertTrue(
+            any(edge.get("from") == "energyPerKm" and edge.get("to") == "tourRangeBind" for edge in cst["edges"])
+        )
+        self.assertTrue(
+            any(edge.get("from") == "energyBalance" and edge.get("to") == "usableWh" for edge in cst["edges"])
+        )
 
         ibd = json.loads((ROOT / "examples/e-bike/e-bike-ibd.json").read_text(encoding="utf-8"))
         self.assertEqual(ibd["aliases"]["frame--batteryPack--src"], "ElectricBike::Frame::batteryMountOut")
         self.assertEqual(ibd["aliases"]["batteryPack--bnd--tgt"], "ElectricBike::BMS::chargerIn")
         self.assertNotIn("ElectricBike::ElectricBike::frameBatteryMountOut", ibd["aliases"].values())
+        parent_body = model[model.index("part def ElectricBike {") : model.index("part def Frame")]
+        self.assertNotIn("port ", parent_body)
+        for key, value in ibd["aliases"].items():
+            if "--src" in key or "--tgt" in key or key.startswith("bnd--"):
+                self.assertNotIn("ElectricBike::ElectricBike::", value)
 
         bdd = json.loads((ROOT / "examples/e-bike/e-bike-bdd.json").read_text(encoding="utf-8"))
         children = bdd["roots"][0]["children"]

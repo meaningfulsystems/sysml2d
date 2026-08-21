@@ -10,7 +10,7 @@
     "off": "ElectricBike::RideControl::off",
     "standby": "ElectricBike::RideControl::standby",
     "assist": "ElectricBike::RideControl::assist",
-    "walkAssist": "ElectricBike::RideControl::walkAssist",
+    "walk": "ElectricBike::RideControl::walk",
     "charging": "ElectricBike::RideControl::charging",
     "fault": "ElectricBike::RideControl::fault",
     "powerOn": "ElectricBike::RideControl::powerOn",
@@ -113,7 +113,7 @@
         "style": "state.default"
       },
       {
-        "id": "walkAssist",
+        "id": "walk",
         "symbol": "state_usage",
         "layout": {
           "x": 943,
@@ -122,8 +122,8 @@
           "height": 60,
           "z": 10
         },
-        "model_ref": "walkAssist",
-        "label": "Walk Assist\n<= 6 km/h",
+        "model_ref": "walk",
+        "label": "walk\n<= 6 km/h EPAC",
         "style": "state.default"
       },
       {
@@ -265,7 +265,7 @@
         "style": "transition"
       },
       {
-        "id": "standby--walkAssist",
+        "id": "standby--walk",
         "model_ref": "startWalk",
         "source": {
           "element": "standby",
@@ -275,7 +275,7 @@
           }
         },
         "target": {
-          "element": "walkAssist",
+          "element": "walk",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -391,10 +391,10 @@
         "style": "transition"
       },
       {
-        "id": "walkAssist-back-standby",
+        "id": "walk-back-standby",
         "model_ref": "stopWalk",
         "source": {
-          "element": "walkAssist",
+          "element": "walk",
           "anchor": {
             "side": "bottom",
             "offset": 0.5

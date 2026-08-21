@@ -11,10 +11,22 @@
   "default_h": 78,
   "nodes": {
     "packEnergy": {
-      "label": "packEnergy\n500 Wh",
+      "label": "packEnergy\nnameplate",
       "symbol": "value_property",
       "rank": 0,
       "order": 0
+    },
+    "usableWh": {
+      "label": "usableWh\n500 Wh Tour",
+      "symbol": "value_property",
+      "rank": 2,
+      "order": 4
+    },
+    "energyPerKm": {
+      "label": "energyPerKm\n~8.3 Wh/km Tour",
+      "symbol": "value_property",
+      "rank": 2,
+      "order": 3
     },
     "riderPower": {
       "label": "riderPower\npedal input",
@@ -89,10 +101,10 @@
       "order": 2
     },
     "tourWhPerKm": {
-      "label": "tourWhPerKm\n~8.3 Wh/km",
+      "label": "tourWhPerKm\n(alias energyPerKm)",
       "symbol": "value_property",
       "rank": 2,
-      "order": 3
+      "order": 5
     },
     "tourRangeBind": {
       "label": "Tour Scenario\n(not Eco/PAS-1)",
@@ -144,8 +156,23 @@
     },
     {
       "from": "energyBalance",
+      "to": "usableWh",
+      "label": "usable Wh"
+    },
+    {
+      "from": "energyBalance",
       "to": "rangeEstimate",
       "label": "feeds"
+    },
+    {
+      "from": "usableWh",
+      "to": "tourRangeBind",
+      "label": "bind"
+    },
+    {
+      "from": "energyPerKm",
+      "to": "tourRangeBind",
+      "label": "bind"
     },
     {
       "from": "assistPowerLimit",
