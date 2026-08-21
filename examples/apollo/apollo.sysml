@@ -618,15 +618,15 @@ package Apollo11 {
     requirement p27Requirement { doc /* P27 uplink verbs ONLY V70–V73 (clock/block/scatter). Separate from CCATS real-time command-load path. */ }
     requirement commandPathARequirement { doc /* Path A: FC→CCC→RTCC→CCATS→site 642B→USB 70 kHz. */ }
     requirement cmEcsRequirement { doc /* CM ECLSS: 3 crew / 14 d spec; 5.0 psia 100% O2; CO2 ≤7.6 torr; SM O2 640 lb; potable 36 lb / waste 56 lb; LiOH 1.5 man-day, swap 12 h. A11 mission 196 h vs 336 h spec. */ }
-    requirement lm5ConsumableRequirement { doc /* LM-5: descent O2 ~48 lb — 2800 psi vs 3000 psi (cite both, no silent winner); ascent O2 ~2.4 lb ×2; descent water 332 lb; ascent water 42 lb ×2; LCG 1200 Btu/man-h steady. */ }
+    requirement lm5ConsumableRequirement { doc /* LM-5: descent O2 ~48 lb — teaching figure 2800 psi; 3000 psi D-6724 is the other text; no required pressure; ascent O2 ~2.4 lb ×2; descent water 332 lb; ascent water 42 lb ×2; LCG 1200 Btu/man-h steady. */ }
     requirement a7lRequirement { doc /* A7L: 3.75±0.25 psid; EV 19.69 kg; PLSS usable O2 1.04 lb / 4 h at 1200 Btu/h. */ }
     requirement foodRequirement { doc /* TN D-7720 April 1967 plan baseline: 2800 kcal/man/day CM, 3200 kcal/man/day LM. Not A11 flown intake. A11 actual intake UNKNOWN. */ }
     requirement delayRequirement { doc /* Lunar delay = range/c (~1.3 s). Entry blackout duration UNKNOWN. */ }
     requirement earthOrbitRequirement { doc /* Earth parking orbit 100 nmi planned. */ }
     requirement f1Requirement { doc /* F-1 ×5 @ 1,530,000 lbf each (SA-507). F-1 hydraulics collapsed. */ }
     requirement j2Requirement { doc /* J-2 ×5 @ 230,000 lbf (S-II); J-2 ×1 @ 207,000 lbf (S-IVB). */ }
-    requirement spsRequirement { doc /* Engine conflict — cite both, no silent winner: SPS 20,500 lbf (PK) vs 21,500 lbf (TN D-7375). SPS loaded mass UNKNOWN. */ }
-    requirement dpsRequirement { doc /* Engine conflict — cite both, no silent winner: DPS 9,870 / 1,050–6,300 lbf (PK) vs 10,500 lbf 10:1 (TN D-7143). */ }
+    requirement spsRequirement { doc /* Engine conflict — cite both, no silent winner, no required thrust: SPS 20,500 lbf (PK) vs 21,500 lbf (TN D-7375). SPS loaded mass UNKNOWN. */ }
+    requirement dpsRequirement { doc /* Engine conflict — cite all three, no silent winner, no required thrust: DPS 9,870 / 1,050–6,300 lbf (PK) vs 10,500 lbf 10:1 (TN D-7143) vs 9,870 / 1,050–6,800 lbf (LMA790). */ }
     requirement apsRequirement { doc /* APS 3,500 lbf, 90% in 0.450 s (TN D-7082); 1.5° cant. */ }
     requirement a11MassRequirement { doc /* Stack serials S-IC-6 / S-II-6 / S-IVB-6N / IU-6 / SLA-14. A11 PK p.109 tank loads (no longer UNKNOWN): S-IC 5,022,674 fueled / 288,750 dry; LOX 3,307,855; RP-1 1,426,069; liftoff 7,653,854 lbf. S-II 1,059,171 / 79,918; LOX 821,022; LH2 158,221. S-IVB 260,523 / 25,000; LOX 192,023; LH2 43,500. IU 4,306 lb; CM 12,250; SM 51,243. Also PK: ignition 6,484,280 lb; first motion 6,398,535; LES 8,930; LM descent dry 4,483; LM RCS 604; DPS load 18,100; APS load 5,214. SPS loaded mass UNKNOWN. CSM lunar Δv UNKNOWN — do not invent. */ }
     requirement agcRequirement { doc /* Two AGCs: AGC_CM and AGC_LM. Block II: 16-bit, 2048 E / 36864 F, 1.024 MHz, MCT 11.7 μs (AGCIS 30). CM = 1 AGC + 2 DSKY. LM = 1 AGC + 1 DSKY. Do not merge. A11 ropes: Comanche 055 + Luminary 1A LMY99/1. P-numbers are not global: CMC P61–P67 = ENTRY; LGC P63–P68 = LANDING. V37 mode, V36 fresh start, V69 restart. 1201/1202 is exec overflow, not an abort. */ }

@@ -4,7 +4,7 @@ This note is an educational architecture walkthrough of the Apollo 11 / Block II
 
 A new systems engineer should be able to learn the *system* and the *method* from this note without opening the Systems Modeling Language (SysML) source. The `.sysml` model is authoritative when a generated view label disagrees.
 
-This is an example model, not a certifiable vehicle. Numbers are from NASA primary sources cited in the model (Apollo 11 Press Kit 69-83K, Saturn V Flight Manual, Apollo Experience Reports, Apollo Guidance Computer Information Series (AGCIS) / Massachusetts Institute of Technology Instrumentation Laboratory (MIT IL), Technical Notes D-6718 / D-6724 / D-7082 / D-7143 / D-7375 / D-7720 / D-8093 / D-8227 / TN-7990). Values not in those extracts are left unmarked. There is no official Command/Service Module lunar change-in-velocity (Δv) table in the sources used here — that table is not invented.
+This is an example model, not a certifiable vehicle. Numbers are from NASA primary sources cited in the model (Apollo 11 Press Kit 69-83K, Saturn V Flight Manual, Apollo Experience Reports, Apollo Guidance Computer Information Series (AGCIS) / Massachusetts Institute of Technology Instrumentation Laboratory (MIT IL), Technical Notes D-6718 / D-6724 / D-7082 / D-7143 / D-7375 / D-7720 / D-8093 / D-8227 / TN-7990) and from LMA790 (a Grumman Lunar Module document number). Values not in those extracts are left unmarked. There is no official Command/Service Module lunar change-in-velocity (Δv) table in the sources used here — that table is not invented.
 
 Hyphens are not legal identifiers: S-IC / S-II / S-IVB appear as `SIC`, `SII`, `SIVB`; ST-124 appears as `ST124`. The mission phase surface/extravehicular activity is `surfaceEVA`.
 
@@ -87,7 +87,7 @@ Context flows: MCC → MSFN (Path A / voice); RSO → vehicle (destruct UHF, not
 
 ## 3. Requirements
 
-The model states sourced requirements as documentation on named requirement elements. Conflicts are cited both ways with no silent winner. View identifiers are not model elements.
+The model states sourced requirements as documentation on named requirement elements. Engine thrust conflicts are cited with no silent winner and no required thrust. View identifiers are not model elements.
 
 ### Mass and propellant (A11 Press Kit p.109)
 
@@ -103,14 +103,16 @@ The model states sourced requirements as documentation on named requirement elem
 
 ### Engines
 
-| Engine | Source A | Source B |
-|--------|----------|----------|
-| SPS | 20,500 lbf (Press Kit) | 21,500 lbf vac (TN D-7375) |
-| DPS | 9,870 / 1,050–6,300 lbf (Press Kit) | 10,500 lbf 10:1 (TN D-7143) |
-| LM APS (engine) | 3,500 lbf; 90% in 0.450 s; **1.5° cant** (TN D-7082) | — |
-| F-1 ×5 | 1,530,000 lbf each, sourced as **SA-507**, not AS-506 | hydraulics collapsed |
-| J-2 S-II ×5 | 230,000 lbf | — |
-| J-2 S-IVB ×1 | 207,000 lbf | — |
+No required thrust. SPS and DPS numbers are cited; the model does not pick a winner and does not add a shall.
+
+| Engine | Source A | Source B | Source C |
+|--------|----------|----------|----------|
+| SPS | 20,500 lbf (Press Kit) | 21,500 lbf vac (TN D-7375) | — |
+| DPS | 9,870 / 1,050–6,300 lbf (Press Kit) | 10,500 lbf 10:1 (TN D-7143) | 9,870 / 1,050–6,800 lbf (LMA790) |
+| LM APS (engine) | 3,500 lbf; 90% in 0.450 s; **1.5° cant** (TN D-7082) | — | — |
+| F-1 ×5 | 1,530,000 lbf each, sourced as **SA-507**, not AS-506 | hydraulics collapsed | — |
+| J-2 S-II ×5 | 230,000 lbf | — | — |
+| J-2 S-IVB ×1 | 207,000 lbf | — | — |
 
 ### RCS
 
@@ -155,7 +157,7 @@ SM: fuel cells FC1–FC3; cryo **2+2** (not J-mission 3+3). CM: silver-zinc (AgZ
 | CM spec vs A11 | 3 crew / 14 d spec; A11 **196 h** vs 336 h spec |
 | SM O2 / water | 640 lb O2; potable 36 lb / waste 56 lb |
 | Lithium hydroxide (LiOH) | 1.5 man-day; swap 12 h |
-| LM-5 descent O2 | ~48 lb — **2800 psi vs 3000 psi, both cited** |
+| LM-5 descent O2 | ~48 lb — **teaching figure 2800 psi**; 3000 psi D-6724 is the other text; no required pressure |
 | LM-5 ascent O2 | ~2.4 lb ×2 |
 | LM-5 water | descent 332 lb; ascent 42 lb ×2 |
 | Liquid Cooling Garment (LCG) | 1200 Btu/man-h steady |
