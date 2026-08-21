@@ -78,6 +78,62 @@ class TreeComposerTests(unittest.TestCase):
         second_row_label = connections["conn-root-child-4"]["labels"][0]["position"]
         self.assertGreater(second_row_label["offset"], 0.9)
 
+    def test_stacked_column_wrap_does_not_rejoin_blocker_centerline(self):
+        spec = {
+            "diagram": "spine-tree",
+            "kind": "DefinitionView",
+            "name": "Spine Tree",
+            "route_around_boxes": True,
+            "break_column_spines": True,
+            "max_siblings_per_row": 1,
+            "default_w": 80,
+            "default_h": 40,
+            "rank_gap": 40,
+            "row_gap": 16,
+            "roots": [
+                {
+                    "id": "root",
+                    "w": 80,
+                    "children": [
+                        {"id": "blocker", "w": 80},
+                        {
+                            "id": "mid",
+                            "w": 80,
+                            "children": [{"id": "leaf", "w": 80}],
+                        },
+                    ],
+                }
+            ],
+        }
+        doc = compose_tree(spec)
+        boxes = {element["id"]: element["layout"] for element in doc["diagram"]["elements"]}
+        connections = {connection["id"]: connection for connection in doc["diagram"]["connections"]}
+        self.assertEqual(connections["conn-root-mid"]["target"]["anchor"]["side"], "left")
+        self.assertEqual(connections["conn-mid-leaf"]["target"]["anchor"]["side"], "left")
+        self.assertEqual(_definition_box_hits(doc), [])
+        self.assertFalse(
+            _rejoins_stacked_centerline(doc, "blocker", ("mid", "leaf")),
+            "wrap rejoined the blocker/mid/leaf centerline",
+        )
+        blocker_left = boxes["blocker"]["x"]
+        col_top = boxes["blocker"]["y"]
+        col_bottom = boxes["leaf"]["y"] + boxes["leaf"]["height"]
+        for conn_id in ("conn-root-mid", "conn-mid-leaf"):
+            points = _connection_points(doc, connections[conn_id])
+            for start, end in zip(points, points[1:]):
+                if abs(start[0] - end[0]) >= 0.6:
+                    continue
+                lo, hi = sorted((start[1], end[1]))
+                if hi < col_top or lo > col_bottom:
+                    continue
+                self.assertLess(start[0], blocker_left, f"{conn_id} vertical at {start[0]} is not left of blocker")
+
+        unchanged = compose_tree({**spec, "break_column_spines": False})
+        self.assertTrue(
+            _rejoins_stacked_centerline(unchanged, "blocker", ("mid", "leaf")),
+            "centerline-rejoin detector must fail the old top-entry spine",
+        )
+
     def test_later_wrap_routes_around_first_row_boxes(self):
         doc = compose_tree({
             "diagram": "around-tree",
@@ -205,6 +261,62 @@ class TreeComposerTests(unittest.TestCase):
                 doc = compose_tree(spec)
                 self.assertEqual(doc["diagram"]["kind"], "DefinitionView")
                 self.assertTrue(all(element["symbol"] == "part_definition" for element in doc["diagram"]["elements"]))
+
+
+def _connection_points(doc, connection):
+    elements = {element["id"]: element for element in doc["diagram"]["elements"]}
+    source = connection["source"]
+    target = connection["target"]
+    return [
+        _anchor(elements[source["element"]], source["anchor"]["side"]),
+        *[(point["x"], point["y"]) for point in connection["route"].get("waypoints", [])],
+        _anchor(elements[target["element"]], target["anchor"]["side"]),
+    ]
+
+
+def _is_vertical_run(doc, connection, x, tol=8):
+    points = _connection_points(doc, connection)
+    for start, end in zip(points, points[1:]):
+        if abs(start[0] - end[0]) < 0.6 and abs(start[0] - x) <= tol and abs(start[1] - end[1]) > 8:
+            return True
+    return False
+
+
+def _rejoins_stacked_centerline(doc, blocker_id, stacked_ids):
+    """True when a vertical bus sits on the shared centerline through a stacked column.
+
+    Interior-only hits miss a jog that rides the gaps and then re-enters the spine.
+    """
+    elements = {element["id"]: element for element in doc["diagram"]["elements"]}
+    blocker = elements[blocker_id]["layout"]
+    column = [blocker, *[elements[node_id]["layout"] for node_id in stacked_ids]]
+    cx = blocker["x"] + blocker["width"] / 2
+    col_top = min(box["y"] for box in column)
+    col_bottom = max(box["y"] + box["height"] for box in column)
+    stacked_top = min(elements[node_id]["layout"]["y"] for node_id in stacked_ids)
+    for connection in doc["diagram"]["connections"]:
+        ends = {connection["source"]["element"], connection["target"]["element"]}
+        if not ends & {blocker_id, *stacked_ids}:
+            continue
+        points = _connection_points(doc, connection)
+        for start, end in zip(points, points[1:]):
+            if abs(start[0] - end[0]) >= 0.6:
+                continue
+            if abs(start[0] - cx) > 8:
+                continue
+            lo, hi = sorted((start[1], end[1]))
+            if hi < col_top or lo > col_bottom:
+                continue
+            # First-row stub that only arrives at the blocker top may stay.
+            if ends == {"root", blocker_id} and hi <= blocker["y"] + 1:
+                continue
+            if connection["target"]["element"] == blocker_id and hi <= blocker["y"] + 1:
+                continue
+            # A vertical on the centerline that reaches the stacked boxes or the
+            # gap under the blocker is a rejoin / spine.
+            if hi > stacked_top - 1 or lo >= blocker["y"] + blocker["height"] - 1:
+                return True
+    return False
 
 
 def _definition_box_hits(doc):

@@ -1308,7 +1308,7 @@
         "target": {
           "element": "IU",
           "anchor": {
-            "side": "top",
+            "side": "left",
             "offset": 0.5
           }
         },
@@ -1325,11 +1325,7 @@
             },
             {
               "x": 170,
-              "y": 402
-            },
-            {
-              "x": 268,
-              "y": 402
+              "y": 456
             }
           ]
         },
@@ -1337,7 +1333,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 4,
+              "segment": 3,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1359,7 +1355,7 @@
         "target": {
           "element": "SLA",
           "anchor": {
-            "side": "top",
+            "side": "right",
             "offset": 0.5
           }
         },
@@ -1367,20 +1363,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 426,
-              "y": 250
+              "x": 512,
+              "y": 222
             },
             {
-              "x": 682,
-              "y": 250
-            },
-            {
-              "x": 682,
-              "y": 402
-            },
-            {
-              "x": 584,
-              "y": 402
+              "x": 512,
+              "y": 456
             }
           ]
         },
@@ -1388,7 +1376,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 4,
+              "segment": 2,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1454,7 +1442,7 @@
         "source": {
           "element": "IU",
           "anchor": {
-            "side": "bottom",
+            "side": "left",
             "offset": 0.5
           }
         },
@@ -1469,12 +1457,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 268,
-              "y": 521
+              "x": 198,
+              "y": 508
             },
             {
               "x": 110,
-              "y": 521
+              "y": 508
             }
           ]
         },
@@ -1497,27 +1485,36 @@
         "source": {
           "element": "IU",
           "anchor": {
-            "side": "bottom",
+            "side": "left",
             "offset": 0.5
           }
         },
         "target": {
           "element": "ST124",
           "anchor": {
-            "side": "top",
+            "side": "left",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 186,
+              "y": 456
+            },
+            {
+              "x": 186,
+              "y": 586
+            }
+          ]
         },
         "labels": [
           {
             "text": "1",
             "position": {
-              "segment": 0,
-              "offset": 0.82,
+              "segment": 2,
+              "offset": 0.94,
               "dx": 10,
               "dy": -4
             }
@@ -1531,7 +1528,7 @@
         "source": {
           "element": "IU",
           "anchor": {
-            "side": "bottom",
+            "side": "right",
             "offset": 0.5
           }
         },
@@ -1546,12 +1543,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 268,
-              "y": 521
+              "x": 338,
+              "y": 508
             },
             {
               "x": 426,
-              "y": 521
+              "y": 508
             }
           ]
         },

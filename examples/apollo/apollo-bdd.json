@@ -13,6 +13,7 @@
   "rank_gap": 78,
   "max_siblings_per_row": 3,
   "route_around_boxes": true,
+  "break_column_spines": true,
   "aliases": {
     "root": "Apollo11::Apollo11",
     "SaturnV": "Apollo11::SaturnV::SaturnV",

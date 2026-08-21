@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .routing import orthogonal_path_avoiding_boxes, path_crosses_boxes
+from .routing import orthogonal_path_avoiding_boxes, path_crosses_boxes, segment_crosses_box_interior
 
 
 CANVAS_MARGIN = 40
@@ -85,10 +85,20 @@ def compose_tree(spec: dict[str, Any]) -> dict[str, Any]:
         }
 
     avoid_boxes = bool(spec.get("route_around_boxes"))
+    break_column_spines = bool(spec.get("break_column_spines"))
+    parent_of = {child.id: parent for parent in node_order for child in parent.children}
     connections = []
     for parent in node_order:
         for child in parent.children:
-            connections.append(_connection(parent, child, boxes, direction, avoid_boxes=avoid_boxes))
+            connections.append(_connection(
+                parent,
+                child,
+                boxes,
+                direction,
+                avoid_boxes=avoid_boxes,
+                break_column_spines=break_column_spines,
+                parent_of=parent_of,
+            ))
 
     boxes, connections, canvas_w, canvas_h = _fit_canvas(boxes, connections)
 
@@ -372,6 +382,8 @@ def _connection(
     boxes: dict[str, tuple[int, int, int, int]],
     direction: str,
     avoid_boxes: bool = False,
+    break_column_spines: bool = False,
+    parent_of: dict[str, TreeNode] | None = None,
 ) -> dict[str, Any]:
     source_side, target_side = {
         "top-down": ("bottom", "top"),
@@ -379,19 +391,46 @@ def _connection(
         "left-right": ("right", "left"),
         "right-left": ("left", "right"),
     }[direction]
+    primary_target = _primary_child_anchor(parent, boxes, "top" if direction == "top-down" else target_side, direction)
+    first_row_boxes = _first_row_child_boxes(parent, boxes, primary_target, direction)
+    later_row = _is_later_row(boxes[child.id], primary_target, direction)
+    side_rail = False
+    if avoid_boxes and break_column_spines and direction == "top-down":
+        if later_row and _stacked_under_first_row(boxes[child.id], first_row_boxes):
+            target_side = "left" if _center_x(boxes[child.id]) <= _center_x(boxes[parent.id]) else "right"
+            side_rail = True
+        elif _has_sibling_blocker_above(parent, boxes, parent_of or {}):
+            if abs(_center_x(boxes[parent.id]) - _center_x(boxes[child.id])) <= 8:
+                source_side = "left"
+                target_side = "left"
+                side_rail = True
+            else:
+                source_side = "left" if _center_x(boxes[child.id]) < _center_x(boxes[parent.id]) else "right"
     source_point = _anchor_point(boxes[parent.id], source_side)
     target_point = _anchor_point(boxes[child.id], target_side)
-    primary_target = _primary_child_anchor(parent, boxes, target_side, direction)
-    first_row_boxes = _first_row_child_boxes(parent, boxes, primary_target, direction)
-    waypoints = _tree_waypoints(
-        source_point,
-        target_point,
-        direction,
-        primary_target,
-        child_box=boxes[child.id],
-        parent_box=boxes[parent.id],
-        first_row_boxes=first_row_boxes if avoid_boxes else None,
-    )
+    if side_rail and later_row:
+        waypoints = _side_enter_around_first_row(
+            source_point, target_point, first_row_boxes, target_side
+        )
+    elif side_rail:
+        waypoints = _column_side_rail(
+            source_point,
+            target_point,
+            boxes[parent.id],
+            boxes[child.id],
+            boxes,
+            {parent.id, child.id},
+        )
+    else:
+        waypoints = _tree_waypoints(
+            source_point,
+            target_point,
+            direction,
+            primary_target,
+            child_box=boxes[child.id],
+            parent_box=boxes[parent.id],
+            first_row_boxes=first_row_boxes if avoid_boxes else None,
+        )
     if avoid_boxes:
         points = [source_point, *[(point["x"], point["y"]) for point in waypoints], target_point]
         ignore = {parent.id, child.id}
@@ -491,6 +530,103 @@ def _first_row_child_boxes(
         elif abs(anchor[0] - primary_target[0]) <= 20:
             found.append(boxes[child.id])
     return found
+
+
+def _center_x(box: tuple[int, int, int, int]) -> float:
+    return box[0] + box[2] / 2
+
+
+def _is_later_row(
+    child_box: tuple[int, int, int, int],
+    primary_target: tuple[float, float] | None,
+    direction: str,
+) -> bool:
+    if primary_target is None:
+        return False
+    if direction in {"top-down", "bottom-up"}:
+        return abs(_anchor_point(child_box, "top" if direction == "top-down" else "bottom")[1] - primary_target[1]) > 20
+    return abs(_anchor_point(child_box, "left" if direction == "left-right" else "right")[0] - primary_target[0]) > 20
+
+
+def _stacked_under_first_row(
+    child_box: tuple[int, int, int, int],
+    first_row_boxes: list[tuple[int, int, int, int]],
+    tol: float = 8,
+) -> bool:
+    cx = _center_x(child_box)
+    return any(abs(_center_x(box) - cx) <= tol for box in first_row_boxes)
+
+
+def _has_sibling_blocker_above(
+    parent: TreeNode,
+    boxes: dict[str, tuple[int, int, int, int]],
+    parent_of: dict[str, TreeNode],
+    tol: float = 8,
+) -> bool:
+    owner = parent_of.get(parent.id)
+    if owner is None or parent.id not in boxes:
+        return False
+    parent_top = boxes[parent.id][1]
+    parent_cx = _center_x(boxes[parent.id])
+    for sibling in owner.children:
+        if sibling.id == parent.id or sibling.id not in boxes:
+            continue
+        box = boxes[sibling.id]
+        if abs(_center_x(box) - parent_cx) > tol:
+            continue
+        if box[1] + box[3] <= parent_top + 1:
+            return True
+    return False
+
+
+def _side_enter_around_first_row(
+    source: tuple[float, float],
+    target: tuple[float, float],
+    first_row_boxes: list[tuple[int, int, int, int]],
+    target_side: str,
+) -> list[dict[str, float]]:
+    gutter = 28
+    if first_row_boxes:
+        left = min(box[0] for box in first_row_boxes) - gutter
+        right = max(box[0] + box[2] for box in first_row_boxes) + gutter
+    else:
+        left = min(source[0], target[0]) - gutter
+        right = max(source[0], target[0]) + gutter
+    side_x = left if target_side == "left" else right
+    stub = min(28, max(16, abs(target[1] - source[1]) * 0.2))
+    mid_y = source[1] + stub if target[1] >= source[1] else source[1] - stub
+    return _clean_waypoints([
+        (source[0], mid_y),
+        (side_x, mid_y),
+        (side_x, target[1]),
+    ])
+
+
+def _column_side_rail(
+    source: tuple[float, float],
+    target: tuple[float, float],
+    parent_box: tuple[int, int, int, int],
+    child_box: tuple[int, int, int, int],
+    boxes: dict[str, tuple[int, int, int, int]] | None = None,
+    ignore: set[str] | None = None,
+) -> list[dict[str, float]]:
+    col_left = min(parent_box[0], child_box[0])
+    rail_x = col_left - 28
+    skip = ignore or set()
+    obstacles = [
+        box
+        for node_id, box in (boxes or {}).items()
+        if node_id not in skip
+    ]
+    if obstacles and any(
+        segment_crosses_box_interior((rail_x, source[1]), (rail_x, target[1]), box)
+        for box in obstacles
+    ):
+        rail_x = col_left - 12
+    return _clean_waypoints([
+        (rail_x, source[1]),
+        (rail_x, target[1]),
+    ])
 
 
 def _around_first_row_waypoints(

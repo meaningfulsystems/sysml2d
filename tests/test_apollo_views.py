@@ -214,6 +214,30 @@ class ApolloViewTests(unittest.TestCase):
             act_boxes["p70Abort"]["x"],
         )
 
+        bdd = compose_tree(json.loads((APOLLO / "apollo-bdd.json").read_text(encoding="utf-8")))
+        bdd_boxes = {element["id"]: element["layout"] for element in bdd["diagram"]["elements"]}
+        bdd_conns = {connection["id"]: connection for connection in bdd["diagram"]["connections"]}
+        sic_left = bdd_boxes["SIC"]["x"]
+        self.assertEqual(bdd_conns["conn-SaturnV-IU"]["target"]["anchor"]["side"], "left")
+        self.assertEqual(bdd_conns["conn-IU-ST124"]["target"]["anchor"]["side"], "left")
+        self.assertEqual(bdd_conns["conn-IU-ST124"]["source"]["anchor"]["side"], "left")
+        self.assertFalse(_column_centerline_spine(bdd, "SIC", ("IU", "ST124")))
+        col_top = bdd_boxes["SIC"]["y"]
+        col_bottom = bdd_boxes["ST124"]["y"] + bdd_boxes["ST124"]["height"]
+        for conn_id in ("conn-SaturnV-IU", "conn-IU-ST124"):
+            points = _definition_connection_points(bdd, bdd_conns[conn_id])
+            for start, end in zip(points, points[1:]):
+                if abs(start[0] - end[0]) >= 0.6:
+                    continue
+                lo, hi = sorted((start[1], end[1]))
+                if hi < col_top or lo > col_bottom:
+                    continue
+                self.assertLess(start[0], sic_left, f"{conn_id} vertical {start[0]} is not left of S-IC")
+        self.assertEqual(bdd_conns["conn-recovery-Hornet"]["route"]["waypoints"], [])
+        rso = bdd_conns["conn-apollo-RSO"]["route"]["waypoints"]
+        self.assertEqual(len(rso), 2)
+        self.assertEqual(rso[0]["x"], rso[1]["x"])
+
     def test_apollo_locked_msml_names(self):
         text = (APOLLO / "apollo.sysml").read_text(encoding="utf-8")
         for token in LOCKED:
@@ -456,6 +480,51 @@ def _definition_route_box_hits(doc: dict) -> list[tuple[str, str]]:
                 if _segment_crosses_interior(start, end, box):
                     hits.append((connection["id"], box_id))
     return hits
+
+
+def _definition_connection_points(doc: dict, connection: dict) -> list[tuple[float, float]]:
+    elements = {element["id"]: element for element in doc["diagram"]["elements"]}
+    source = connection["source"]
+    target = connection["target"]
+    return [
+        _element_anchor(elements[source["element"]], source["anchor"]),
+        *[(point["x"], point["y"]) for point in connection["route"].get("waypoints", [])],
+        _element_anchor(elements[target["element"]], target["anchor"]),
+    ]
+
+
+def _definition_vertical_at(doc: dict, connection: dict, x: float, tol: float = 8) -> bool:
+    points = _definition_connection_points(doc, connection)
+    for start, end in zip(points, points[1:]):
+        if abs(start[0] - end[0]) < 0.6 and abs(start[0] - x) <= tol and abs(start[1] - end[1]) > 8:
+            return True
+    return False
+
+
+def _column_centerline_spine(doc: dict, blocker_id: str, stacked_ids: tuple[str, ...]) -> bool:
+    elements = {element["id"]: element for element in doc["diagram"]["elements"]}
+    blocker = elements[blocker_id]["layout"]
+    cx = blocker["x"] + blocker["width"] / 2
+    stacked_top = min(elements[node_id]["layout"]["y"] for node_id in stacked_ids)
+    col_bottom = max(
+        elements[node_id]["layout"]["y"] + elements[node_id]["layout"]["height"]
+        for node_id in (blocker_id, *stacked_ids)
+    )
+    for connection in doc["diagram"]["connections"]:
+        ends = {connection["source"]["element"], connection["target"]["element"]}
+        if not ends & {blocker_id, *stacked_ids}:
+            continue
+        points = _definition_connection_points(doc, connection)
+        for start, end in zip(points, points[1:]):
+            if abs(start[0] - end[0]) >= 0.6 or abs(start[0] - cx) > 8:
+                continue
+            lo, hi = sorted((start[1], end[1]))
+            if connection["target"]["element"] == blocker_id and hi <= blocker["y"] + 1:
+                continue
+            if hi > stacked_top - 1 or lo >= blocker["y"] + blocker["height"] - 1:
+                if lo < col_bottom:
+                    return True
+    return False
 
 
 def _element_anchor(element: dict, anchor: dict) -> tuple[float, float]:
