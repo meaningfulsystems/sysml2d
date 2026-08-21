@@ -66,7 +66,7 @@
       "model_ref": "TLI"
     },
     "dockEject": {
-      "label": "dock/eject\nCMP · SM RCS",
+      "label": "dock/eject",
       "model_ref": "dockEject"
     },
     "translunar": {
@@ -141,7 +141,7 @@
     {
       "from": "TLI",
       "to": "dockEject",
-      "label": "TD&E",
+      "label": "TDE ~03:20–04:09",
       "model_ref": "startDockEject"
     },
     {

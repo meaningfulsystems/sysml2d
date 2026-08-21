@@ -157,12 +157,41 @@ class ApolloViewTests(unittest.TestCase):
         self.assertNotIn("part vanguard", text)
         stm_spec = json.loads((APOLLO / "apollo-stm.json").read_text(encoding="utf-8"))
         self.assertIn("dockEject", stm_spec["states"])
+        self.assertEqual(stm_spec["states"]["dockEject"]["label"], "dock/eject")
         hops = {(edge["from"], edge["to"]) for edge in stm_spec["transitions"]}
+        mission = [
+            "countdown",
+            "boost",
+            "earthOrbit",
+            "TLI",
+            "dockEject",
+            "translunar",
+            "LOI",
+            "undock",
+            "DOI",
+            "descent",
+            "surfaceEVA",
+            "ascent",
+            "rendezvous",
+            "TEI",
+            "entry",
+            "recovery",
+        ]
+        self.assertEqual(
+            [edge["to"] for edge in stm_spec["transitions"] if edge.get("from") in mission[:-1] and edge.get("to") in mission],
+            mission[1:],
+        )
         self.assertIn(("TLI", "dockEject"), hops)
         self.assertIn(("dockEject", "translunar"), hops)
         self.assertIn(("translunar", "LOI"), hops)
         self.assertNotIn(("TLI", "translunar"), hops)
         self.assertNotIn(("dockEject", "LOI"), hops)
+        self.assertNotIn(("translunar", "dockEject"), hops)
+        tli_i = text.find("state TLI")
+        dock_i = text.find("state dockEject")
+        coast_i = text.find("state translunar")
+        loi_i = text.find("state LOI")
+        self.assertTrue(tli_i < dock_i < coast_i < loi_i)
         self.assertIn("CMP-owned", text)
         self.assertIn("02:44:15 GET", text)
         self.assertIn("75:54:28 GET", text)

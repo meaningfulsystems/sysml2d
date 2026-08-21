@@ -149,7 +149,7 @@
           "z": 10
         },
         "model_ref": "dockEject",
-        "label": "dock/eject\nCMP \u00b7 SM RCS",
+        "label": "dock/eject",
         "style": "state.default"
       },
       {
@@ -454,7 +454,7 @@
         },
         "labels": [
           {
-            "text": "TD&E",
+            "text": "TDE ~03:20\u201304:09",
             "position": {
               "segment": 0,
               "offset": 0.5,
