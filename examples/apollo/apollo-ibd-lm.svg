@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="952" height="594" viewBox="0 0 952 594">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="952" height="594" fill="#FFFFFF"/>
+<rect x="2" y="38" width="948" height="552" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 400 L 416 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] LM-5 PNGS / AGS / Propulsion [lm : LM]</text>
+<rect x="2" y="38" width="948" height="554" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="868" height="472" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">lm</text>
+<rect id="pngs" x="76" y="247" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="146" y="268.5">PNGS</tspan><tspan x="146" dy="15">IMU + radars</tspan></text>
+<rect id="lgc" x="404" y="247" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="474" y="276">LGC Luminary</text>
+<rect id="lmDsky" x="732" y="76" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="802" y="105">LM DSKY</text>
+<rect id="ags" x="732" y="190" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="802" y="211.5">AGS</tspan><tspan x="802" dy="15">AEA+ASA</tspan></text>
+<rect id="aps" x="732" y="304" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="802" y="333">APS 3,500 lbf</text>
+<rect id="lmRcs" x="732" y="418" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="802" y="439.5">LM RCS</tspan><tspan x="802" dy="15">604 lb PK</tspan></text>
+<rect id="pngs--lgc--src" x="210" y="270" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="pngs--lgc--tgt" x="398" y="270" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lgc--lmDsky--src" x="538" y="252.6" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lgc--ags--src" x="538" y="264.2" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lgc--aps--src" x="538" y="275.8" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lgc--lmRcs--src" x="538" y="287.4" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lgc--lmDsky--tgt" x="726" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lgc--ags--tgt" x="726" y="213" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lgc--aps--tgt" x="726" y="327" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lgc--lmRcs--tgt" x="726" y="441" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 222,276 L 398,276" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550,258.6 L 596,258.6 L 596,105 L 726,105" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550,270.2 L 624,270.2 L 624,219 L 726,219" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550,281.8 L 680,281.8 L 680,333 L 726,333" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550,293.4 L 652,293.4 L 652,447 L 726,447" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="310" y="264">computer</text>
+<text class="small" x="608" y="181.8">DSKY</text>
+<text class="small" text-anchor="middle" x="675" y="207">R47 init</text>
+<text class="small" text-anchor="middle" x="654" y="269.8">P12</text>
+<text class="small" x="664" y="370.2">jets</text>
+</g>
+</svg>

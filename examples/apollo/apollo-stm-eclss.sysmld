@@ -1,0 +1,282 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "eclssMode": "Apollo11::EclssMode",
+    "cabin": "Apollo11::EclssMode::cabin",
+    "suit": "Apollo11::EclssMode::suit",
+    "eva": "Apollo11::EclssMode::eva",
+    "toSuit": "Apollo11::EclssMode::toSuit",
+    "toEva": "Apollo11::EclssMode::toEva",
+    "toCabin": "Apollo11::EclssMode::toCabin"
+  },
+  "diagram": {
+    "id": "apollo-stm-eclss",
+    "kind": "StateView",
+    "name": "Apollo 11 ECLSS / EVA modes",
+    "canvas": {
+      "width": 900,
+      "height": 262,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "eclssMode",
+        "symbol": "boundary",
+        "layout": {
+          "x": 114,
+          "y": 42,
+          "width": 746,
+          "height": 180,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 150,
+          "y": 150,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "cabin",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 288,
+          "y": 134,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "cabin",
+        "label": "Cabin 5.0 psia",
+        "style": "state.default"
+      },
+      {
+        "id": "suit",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 486,
+          "y": 134,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "suit",
+        "label": "Suit circuit",
+        "style": "state.default"
+      },
+      {
+        "id": "eva",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 684,
+          "y": 134,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "eva",
+        "label": "EVA (A11: one)",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--cabin",
+        "model_ref": "eclssMode",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cabin",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "cabin--suit",
+        "model_ref": "toSuit",
+        "source": {
+          "element": "cabin",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "suit",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "suit connect",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "suit--eva",
+        "model_ref": "toEva",
+        "source": {
+          "element": "suit",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "eva",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "PLSS",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "eva-back-cabin",
+        "model_ref": "toCabin",
+        "source": {
+          "element": "eva",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cabin",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 754,
+              "y": 78
+            },
+            {
+              "x": 458,
+              "y": 78
+            },
+            {
+              "x": 458,
+              "y": 160
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "ingress",
+            "position": {
+              "segment": 2,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "eclssMode"
+  }
+}

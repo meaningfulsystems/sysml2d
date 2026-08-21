@@ -1,0 +1,104 @@
+{
+  "diagram": "apollo-ibd-agc",
+  "kind": "InterconnectionView",
+  "name": "AGC Block II Memory / Clock",
+  "subject": "mission",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 48,
+  "rank_gap": 130,
+  "label_mode": "connection",
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "cmcOsc": "Apollo11::CMC::oscillator",
+    "cmcE": "Apollo11::CMC::erasable",
+    "cmcF": "Apollo11::CMC::fixed",
+    "lgcOsc": "Apollo11::LGC::oscillator",
+    "lgcE": "Apollo11::LGC::erasable",
+    "lgcF": "Apollo11::LGC::fixed",
+    "cmcOsc--cmcE--src": "Apollo11::CMC::oscillator",
+    "cmcOsc--cmcE--tgt": "Apollo11::CMC::erasable",
+    "conn-cmcOsc-cmcE": "Apollo11::CMC::oscillator",
+    "cmcOsc--cmcF--src": "Apollo11::CMC::oscillator",
+    "cmcOsc--cmcF--tgt": "Apollo11::CMC::fixed",
+    "conn-cmcOsc-cmcF": "Apollo11::CMC::oscillator",
+    "lgcOsc--lgcE--src": "Apollo11::LGC::oscillator",
+    "lgcOsc--lgcE--tgt": "Apollo11::LGC::erasable",
+    "conn-lgcOsc-lgcE": "Apollo11::LGC::oscillator",
+    "lgcOsc--lgcF--src": "Apollo11::LGC::oscillator",
+    "lgcOsc--lgcF--tgt": "Apollo11::LGC::fixed",
+    "conn-lgcOsc-lgcF": "Apollo11::LGC::oscillator"
+  },
+  "nodes": {
+    "cmcOsc": {
+      "label": "CMC osc\n1.024 MHz",
+      "style": "part.gnc"
+    },
+    "cmcE": {
+      "label": "CMC 2048 E",
+      "style": "part.gnc"
+    },
+    "cmcF": {
+      "label": "CMC 36864 F\nrope ID UNKNOWN",
+      "style": "part.gnc"
+    },
+    "lgcOsc": {
+      "label": "LGC osc\n1.024 MHz",
+      "style": "part.gnc"
+    },
+    "lgcE": {
+      "label": "LGC 2048 E",
+      "style": "part.gnc"
+    },
+    "lgcF": {
+      "label": "LGC 36864 F\nrope ID UNKNOWN",
+      "style": "part.gnc"
+    }
+  },
+  "edges": [
+    {
+      "from": "cmcOsc",
+      "to": "cmcE",
+      "label": "MCT 11.7 \u03bcs",
+      "model_ref": "conn-cmcOsc-cmcE"
+    },
+    {
+      "from": "cmcOsc",
+      "to": "cmcF",
+      "label": "fixed",
+      "model_ref": "conn-cmcOsc-cmcF"
+    },
+    {
+      "from": "lgcOsc",
+      "to": "lgcE",
+      "label": "MCT 11.7 \u03bcs",
+      "model_ref": "conn-lgcOsc-lgcE"
+    },
+    {
+      "from": "lgcOsc",
+      "to": "lgcF",
+      "label": "fixed",
+      "model_ref": "conn-lgcOsc-lgcF"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

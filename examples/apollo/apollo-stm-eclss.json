@@ -1,0 +1,65 @@
+{
+  "diagram": "apollo-stm-eclss",
+  "kind": "StateView",
+  "name": "Apollo 11 ECLSS / EVA modes",
+  "subject": "eclssMode",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 52,
+  "rank_gap": 88,
+  "col_gap": 56,
+  "aliases": {
+    "eclssMode": "Apollo11::EclssMode",
+    "cabin": "Apollo11::EclssMode::cabin",
+    "suit": "Apollo11::EclssMode::suit",
+    "eva": "Apollo11::EclssMode::eva",
+    "toSuit": "Apollo11::EclssMode::toSuit",
+    "toEva": "Apollo11::EclssMode::toEva",
+    "toCabin": "Apollo11::EclssMode::toCabin"
+  },
+  "states": {
+    "initial": {
+      "initial": true
+    },
+    "cabin": {
+      "label": "Cabin 5.0 psia",
+      "model_ref": "cabin"
+    },
+    "suit": {
+      "label": "Suit circuit",
+      "model_ref": "suit"
+    },
+    "eva": {
+      "label": "EVA (A11: one)",
+      "model_ref": "eva"
+    }
+  },
+  "transitions": [
+    {
+      "from": "initial",
+      "to": "cabin",
+      "label": ""
+    },
+    {
+      "from": "cabin",
+      "to": "suit",
+      "label": "suit connect",
+      "model_ref": "toSuit"
+    },
+    {
+      "from": "suit",
+      "to": "eva",
+      "label": "PLSS",
+      "model_ref": "toEva"
+    },
+    {
+      "from": "eva",
+      "to": "cabin",
+      "label": "ingress",
+      "model_ref": "toCabin"
+    }
+  ]
+}

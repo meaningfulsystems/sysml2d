@@ -1,0 +1,509 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "msfn": "Apollo11::MannedSpaceFlightNetwork",
+    "goldstone85": "Apollo11::MannedSpaceFlightNetwork::goldstone85",
+    "madrid85": "Apollo11::MannedSpaceFlightNetwork::madrid85",
+    "honeysuckle85": "Apollo11::MannedSpaceFlightNetwork::honeysuckle85",
+    "site642B": "Apollo11::MannedSpaceFlightNetwork::site642B",
+    "goldstone210": "Apollo11::MannedSpaceFlightNetwork::goldstone210",
+    "parkes": "Apollo11::MannedSpaceFlightNetwork::parkes",
+    "goldstone85--site642B--src": "Apollo11::MannedSpaceFlightNetwork::goldstone85",
+    "goldstone85--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
+    "conn-goldstone85-site642B": "Apollo11::MannedSpaceFlightNetwork::goldstone85",
+    "madrid85--site642B--src": "Apollo11::MannedSpaceFlightNetwork::madrid85",
+    "madrid85--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
+    "conn-madrid85-site642B": "Apollo11::MannedSpaceFlightNetwork::madrid85",
+    "honeysuckle85--site642B--src": "Apollo11::MannedSpaceFlightNetwork::honeysuckle85",
+    "honeysuckle85--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
+    "conn-honeysuckle85-site642B": "Apollo11::MannedSpaceFlightNetwork::honeysuckle85",
+    "goldstone210--site642B--src": "Apollo11::MannedSpaceFlightNetwork::goldstone210",
+    "goldstone210--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
+    "conn-goldstone210-site642B": "Apollo11::MannedSpaceFlightNetwork::goldstone210",
+    "parkes--site642B--src": "Apollo11::MannedSpaceFlightNetwork::parkes",
+    "parkes--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
+    "conn-parkes-site642B": "Apollo11::MannedSpaceFlightNetwork::parkes"
+  },
+  "diagram": {
+    "id": "apollo-ibd-msfn",
+    "kind": "InterconnectionView",
+    "name": "MSFN USB / A11 coverage",
+    "canvas": {
+      "width": 657,
+      "height": 634,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "msfn",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 577,
+          "height": 554,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "goldstone85",
+        "model_ref": "goldstone85",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 82,
+          "y": 182,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Goldstone 85-ft",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "madrid85",
+        "model_ref": "madrid85",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 82,
+          "y": 394,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Madrid 85-ft",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "honeysuckle85",
+        "model_ref": "honeysuckle85",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 288,
+          "width": 153,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Honeysuckle 85-ft",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "site642B",
+        "model_ref": "site642B",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 441,
+          "y": 288,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Site 642B\n70 kHz path A",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "goldstone210",
+        "model_ref": "goldstone210",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 79,
+          "y": 76,
+          "width": 146,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Goldstone 210-ft\nA11 TV",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.a11"
+      },
+      {
+        "id": "parkes",
+        "model_ref": "parkes",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 82,
+          "y": 500,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Parkes\nA11 TV",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.a11"
+      },
+      {
+        "id": "goldstone85--site642B--src",
+        "model_ref": "goldstone85--site642B--src",
+        "symbol": "port",
+        "owner": "goldstone85",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "madrid85--site642B--src",
+        "model_ref": "madrid85--site642B--src",
+        "symbol": "port",
+        "owner": "madrid85",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "honeysuckle85--site642B--src",
+        "model_ref": "honeysuckle85--site642B--src",
+        "symbol": "port",
+        "owner": "honeysuckle85",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "goldstone210--site642B--tgt",
+        "model_ref": "goldstone210--site642B--tgt",
+        "symbol": "port",
+        "owner": "site642B",
+        "placement": {
+          "side": "left",
+          "offset": 0.1667
+        },
+        "label": ""
+      },
+      {
+        "id": "goldstone85--site642B--tgt",
+        "model_ref": "goldstone85--site642B--tgt",
+        "symbol": "port",
+        "owner": "site642B",
+        "placement": {
+          "side": "left",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "honeysuckle85--site642B--tgt",
+        "model_ref": "honeysuckle85--site642B--tgt",
+        "symbol": "port",
+        "owner": "site642B",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "madrid85--site642B--tgt",
+        "model_ref": "madrid85--site642B--tgt",
+        "symbol": "port",
+        "owner": "site642B",
+        "placement": {
+          "side": "left",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "parkes--site642B--tgt",
+        "model_ref": "parkes--site642B--tgt",
+        "symbol": "port",
+        "owner": "site642B",
+        "placement": {
+          "side": "left",
+          "offset": 0.8333
+        },
+        "label": ""
+      },
+      {
+        "id": "goldstone210--site642B--src",
+        "model_ref": "goldstone210--site642B--src",
+        "symbol": "port",
+        "owner": "goldstone210",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "parkes--site642B--src",
+        "model_ref": "parkes--site642B--src",
+        "symbol": "port",
+        "owner": "parkes",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-goldstone85-site642B",
+        "model_ref": "conn-goldstone85-site642B",
+        "source": {
+          "element": "goldstone85--site642B--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "goldstone85--site642B--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 152,
+              "y": 211
+            },
+            {
+              "x": 413,
+              "y": 211
+            },
+            {
+              "x": 413,
+              "y": 307.331
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "USB",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-madrid85-site642B",
+        "model_ref": "conn-madrid85-site642B",
+        "source": {
+          "element": "madrid85--site642B--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "madrid85--site642B--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 253,
+              "y": 452
+            },
+            {
+              "x": 253,
+              "y": 326.669
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "USB",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-honeysuckle85-site642B",
+        "model_ref": "conn-honeysuckle85-site642B",
+        "source": {
+          "element": "honeysuckle85--site642B--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "honeysuckle85--site642B--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "USB",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-goldstone210-site642B",
+        "model_ref": "conn-goldstone210-site642B",
+        "source": {
+          "element": "goldstone210--site642B--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "goldstone210--site642B--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 253,
+              "y": 76
+            },
+            {
+              "x": 253,
+              "y": 297.669
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "A11 coverage",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-parkes-site642B",
+        "model_ref": "conn-parkes-site642B",
+        "source": {
+          "element": "parkes--site642B--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "parkes--site642B--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 253,
+              "y": 558
+            },
+            {
+              "x": 253,
+              "y": 336.331
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "A11 coverage",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.a11": {
+        "fill": "#FCE4EC",
+        "stroke": "#AD1457",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "msfn"
+  }
+}

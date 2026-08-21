@@ -1,0 +1,87 @@
+{
+  "diagram": "apollo-bdd-eclss",
+  "kind": "DefinitionView",
+  "name": "ECLSS Loops",
+  "subject": "Apollo11::CMECS",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "top-down",
+  "default_w": 150,
+  "default_h": 56,
+  "sibling_gap": 22,
+  "rank_gap": 80,
+  "max_siblings_per_row": 4,
+  "aliases": {
+    "cmecs": "Apollo11::CMECS",
+    "lmecs": "Apollo11::LMECS",
+    "o2": "Apollo11::OxygenLoop",
+    "h2o": "Apollo11::WaterLoop",
+    "lioh": "Apollo11::LiOHCanister",
+    "suit": "Apollo11::SuitCircuit",
+    "sub": "Apollo11::WaterSublimator",
+    "a7l": "Apollo11::A7L",
+    "plss": "Apollo11::PLSS"
+  },
+  "roots": [
+    {
+      "id": "cmecs",
+      "label": "CM ECS",
+      "model_ref": "cmecs",
+      "style": "part.definition.root",
+      "children": [
+        {
+          "id": "o2",
+          "label": "O2 loop\n5.0 psia 100%",
+          "model_ref": "o2"
+        },
+        {
+          "id": "h2o",
+          "label": "Water loop",
+          "model_ref": "h2o"
+        },
+        {
+          "id": "lioh",
+          "label": "LiOH\n1.5 man-day",
+          "model_ref": "lioh"
+        },
+        {
+          "id": "suit",
+          "label": "Suit circuit",
+          "model_ref": "suit"
+        }
+      ]
+    },
+    {
+      "id": "lmecs",
+      "label": "LM ECS",
+      "model_ref": "lmecs",
+      "style": "part.definition.root",
+      "children": [
+        {
+          "id": "lmSuit",
+          "label": "Suit loop",
+          "model_ref": "suit"
+        },
+        {
+          "id": "sub",
+          "label": "Sublimator",
+          "model_ref": "sub"
+        }
+      ]
+    },
+    {
+      "id": "eva",
+      "label": "A7L / PLSS",
+      "model_ref": "a7l",
+      "style": "part.definition.root",
+      "children": [
+        {
+          "id": "plss",
+          "label": "PLSS 1.04 lb / 4 h",
+          "model_ref": "plss"
+        }
+      ]
+    }
+  ]
+}

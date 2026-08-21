@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="952" height="480" viewBox="0 0 952 480">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="952" height="480" fill="#FFFFFF"/>
+<rect x="2" y="38" width="948" height="438" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 416 L 432 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] CSM Block II Interconnection [csm : CSM]</text>
+<rect x="2" y="38" width="948" height="440" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="868" height="358" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">csm</text>
+<rect id="scs" x="76" y="304" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="333">SCS</text>
+<rect id="cmc" x="404" y="76" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="474" y="105">CMC Colossus</text>
+<rect id="ems" x="732" y="133" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="802" y="162">EMS</text>
+<rect id="cmRcs" x="404" y="304" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="474" y="333">CM RCS</text>
+<rect id="ecs" x="76" y="76" width="140" height="58" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="105">CM ECS</text>
+<rect id="fuelCell1" x="76" y="190" width="140" height="58" rx="4" fill="#F3E5F5" stroke="#6A1B9A" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="219">Fuel cells (×3)</text>
+<rect id="sps" x="404" y="190" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="474" y="219">SPS 20,500 lbf</text>
+<rect id="smRcsA" x="732" y="247" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="802" y="268.5">SM RCS</tspan><tspan x="802" dy="15">4 quads</tspan></text>
+<rect id="scs--cmc--src" x="210" y="312.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="scs--cmRcs--src" x="210" y="327" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="ecs--cmc--tgt" x="398" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="scs--cmc--tgt" x="398" y="113.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="cmc--ems--src" x="538" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="cmc--ems--tgt" x="726" y="156" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="scs--cmRcs--tgt" x="398" y="327" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="ecs--cmc--src" x="210" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="fuelCell1--sps--src" x="210" y="213" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="fuelCell1--sps--tgt" x="398" y="213" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="sps--smRcsA--src" x="538" y="213" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="sps--smRcsA--tgt" x="726" y="270" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 222,318.5 L 296,318.5 L 296,119.5 L 398,119.5" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 222,333 L 398,333" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550,105 L 614.667,105 L 614.667,162 L 726,162" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 222,105 L 398,105" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 222,219 L 289,219 A 7 7 0 0 0 303,219 L 398,219" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 550,219 L 661.333,219 L 661.333,276 L 726,276" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="308" y="248.85">backup / CMC</text>
+<text class="small" text-anchor="middle" x="310" y="356">jets</text>
+<text class="small" text-anchor="middle" x="670.333" y="150">entry</text>
+<text class="small" text-anchor="middle" x="310" y="93">cabin</text>
+<text class="small" text-anchor="middle" x="336.4" y="207">power</text>
+<text class="small" text-anchor="middle" x="605.667" y="207">ullage / RCS</text>
+</g>
+</svg>

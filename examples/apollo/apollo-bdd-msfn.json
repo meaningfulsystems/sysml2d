@@ -1,0 +1,99 @@
+{
+  "diagram": "apollo-bdd-msfn",
+  "kind": "DefinitionView",
+  "name": "MSFN / MCC-H Definition Tree",
+  "subject": "Apollo11::Ground",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "top-down",
+  "default_w": 140,
+  "default_h": 52,
+  "sibling_gap": 16,
+  "rank_gap": 78,
+  "max_siblings_per_row": 5,
+  "aliases": {
+    "ground": "Apollo11::Ground",
+    "mcc": "Apollo11::MissionControlHouston",
+    "msfn": "Apollo11::MannedSpaceFlightNetwork",
+    "gsfc": "Apollo11::GoddardSpaceFlightCenter",
+    "mocr": "Apollo11::MOCR",
+    "rtcc": "Apollo11::RealTimeComputerComplex",
+    "ccats": "Apollo11::CCATS",
+    "usb85": "Apollo11::USB85ft",
+    "usb210": "Apollo11::USB210ft",
+    "parkes": "Apollo11::Parkes",
+    "ship": "Apollo11::AISShip",
+    "site": "Apollo11::CommandSite"
+  },
+  "roots": [
+    {
+      "id": "ground",
+      "label": "Ground",
+      "model_ref": "ground",
+      "style": "part.definition.root",
+      "w": 160,
+      "children": [
+        {
+          "id": "mcc",
+          "label": "MCC-H",
+          "model_ref": "mcc",
+          "children": [
+            {
+              "id": "mocr",
+              "label": "MOCR",
+              "model_ref": "mocr"
+            },
+            {
+              "id": "rtcc",
+              "label": "RTCC 5\u00d7360/75",
+              "model_ref": "rtcc"
+            },
+            {
+              "id": "ccats",
+              "label": "CCATS",
+              "model_ref": "ccats"
+            }
+          ]
+        },
+        {
+          "id": "gsfc",
+          "label": "GSFC",
+          "model_ref": "gsfc"
+        },
+        {
+          "id": "msfn",
+          "label": "MSFN",
+          "model_ref": "msfn",
+          "children": [
+            {
+              "id": "usb85",
+              "label": "85-ft USB",
+              "model_ref": "usb85"
+            },
+            {
+              "id": "usb210",
+              "label": "210-ft (A11)",
+              "model_ref": "usb210"
+            },
+            {
+              "id": "parkes",
+              "label": "Parkes (A11)",
+              "model_ref": "parkes"
+            },
+            {
+              "id": "ship",
+              "label": "AIS ship",
+              "model_ref": "ship"
+            },
+            {
+              "id": "site",
+              "label": "Site 642B",
+              "model_ref": "site"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

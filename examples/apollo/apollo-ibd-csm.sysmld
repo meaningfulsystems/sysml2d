@@ -1,0 +1,607 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "csm": "Apollo11::CSM",
+    "cmc": "Apollo11::CM::cmc",
+    "scs": "Apollo11::CM::scs",
+    "cmRcs": "Apollo11::CM::cmRcs",
+    "ecs": "Apollo11::CM::ecs",
+    "ems": "Apollo11::CM::ems",
+    "sps": "Apollo11::SM::sps",
+    "smRcsA": "Apollo11::SM::smRcsA",
+    "fuelCell1": "Apollo11::SM::fuelCell1",
+    "scs--cmc--src": "Apollo11::CM::scs",
+    "scs--cmc--tgt": "Apollo11::CM::cmc",
+    "conn-scs-cmc": "Apollo11::CM::scs",
+    "scs--cmRcs--src": "Apollo11::CM::scs",
+    "scs--cmRcs--tgt": "Apollo11::CM::cmRcs",
+    "conn-scs-cmRcs": "Apollo11::CM::scs",
+    "cmc--ems--src": "Apollo11::CM::cmc",
+    "cmc--ems--tgt": "Apollo11::CM::ems",
+    "conn-cmc-ems": "Apollo11::CM::cmc",
+    "ecs--cmc--src": "Apollo11::CM::ecs",
+    "ecs--cmc--tgt": "Apollo11::CM::cmc",
+    "conn-ecs-cmc": "Apollo11::CM::ecs",
+    "sps--smRcsA--src": "Apollo11::SM::sps",
+    "sps--smRcsA--tgt": "Apollo11::SM::smRcsA",
+    "conn-sps-smRcsA": "Apollo11::SM::sps",
+    "fuelCell1--sps--src": "Apollo11::SM::fuelCell1",
+    "fuelCell1--sps--tgt": "Apollo11::SM::sps",
+    "conn-fuelCell1-sps": "Apollo11::SM::fuelCell1"
+  },
+  "diagram": {
+    "id": "apollo-ibd-csm",
+    "kind": "InterconnectionView",
+    "name": "CSM Block II Interconnection",
+    "canvas": {
+      "width": 948,
+      "height": 438,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "csm",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 868,
+          "height": 358,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "scs",
+        "model_ref": "scs",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 304,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "SCS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "cmc",
+        "model_ref": "cmc",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CMC Colossus",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "ems",
+        "model_ref": "ems",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 732,
+          "y": 133,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "EMS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "cmRcs",
+        "model_ref": "cmRcs",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 304,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CM RCS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "ecs",
+        "model_ref": "ecs",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CM ECS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "fuelCell1",
+        "model_ref": "fuelCell1",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 190,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Fuel cells (\u00d73)",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.power"
+      },
+      {
+        "id": "sps",
+        "model_ref": "sps",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 190,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "SPS 20,500 lbf",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "smRcsA",
+        "model_ref": "smRcsA",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 732,
+          "y": 247,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "SM RCS\n4 quads",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "scs--cmc--src",
+        "model_ref": "scs--cmc--src",
+        "symbol": "port",
+        "owner": "scs",
+        "placement": {
+          "side": "right",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "scs--cmRcs--src",
+        "model_ref": "scs--cmRcs--src",
+        "symbol": "port",
+        "owner": "scs",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "ecs--cmc--tgt",
+        "model_ref": "ecs--cmc--tgt",
+        "symbol": "port",
+        "owner": "cmc",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "scs--cmc--tgt",
+        "model_ref": "scs--cmc--tgt",
+        "symbol": "port",
+        "owner": "cmc",
+        "placement": {
+          "side": "left",
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "cmc--ems--src",
+        "model_ref": "cmc--ems--src",
+        "symbol": "port",
+        "owner": "cmc",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "cmc--ems--tgt",
+        "model_ref": "cmc--ems--tgt",
+        "symbol": "port",
+        "owner": "ems",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "scs--cmRcs--tgt",
+        "model_ref": "scs--cmRcs--tgt",
+        "symbol": "port",
+        "owner": "cmRcs",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "ecs--cmc--src",
+        "model_ref": "ecs--cmc--src",
+        "symbol": "port",
+        "owner": "ecs",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "fuelCell1--sps--src",
+        "model_ref": "fuelCell1--sps--src",
+        "symbol": "port",
+        "owner": "fuelCell1",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "fuelCell1--sps--tgt",
+        "model_ref": "fuelCell1--sps--tgt",
+        "symbol": "port",
+        "owner": "sps",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "sps--smRcsA--src",
+        "model_ref": "sps--smRcsA--src",
+        "symbol": "port",
+        "owner": "sps",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "sps--smRcsA--tgt",
+        "model_ref": "sps--smRcsA--tgt",
+        "symbol": "port",
+        "owner": "smRcsA",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-scs-cmc",
+        "model_ref": "conn-scs-cmc",
+        "source": {
+          "element": "scs--cmc--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "scs--cmc--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 296,
+              "y": 318.5
+            },
+            {
+              "x": 296,
+              "y": 119.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "backup / CMC",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-scs-cmRcs",
+        "model_ref": "conn-scs-cmRcs",
+        "source": {
+          "element": "scs--cmRcs--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "scs--cmRcs--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "jets",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-cmc-ems",
+        "model_ref": "conn-cmc-ems",
+        "source": {
+          "element": "cmc--ems--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmc--ems--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 614.667,
+              "y": 105
+            },
+            {
+              "x": 614.667,
+              "y": 162
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "entry",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ecs-cmc",
+        "model_ref": "conn-ecs-cmc",
+        "source": {
+          "element": "ecs--cmc--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ecs--cmc--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "cabin",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-fuelCell1-sps",
+        "model_ref": "conn-fuelCell1-sps",
+        "source": {
+          "element": "fuelCell1--sps--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "fuelCell1--sps--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "power",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-sps-smRcsA",
+        "model_ref": "conn-sps-smRcsA",
+        "source": {
+          "element": "sps--smRcsA--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "sps--smRcsA--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 661.333,
+              "y": 219
+            },
+            {
+              "x": 661.333,
+              "y": 276
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "ullage / RCS",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.power": {
+        "fill": "#F3E5F5",
+        "stroke": "#6A1B9A",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "csm"
+  }
+}

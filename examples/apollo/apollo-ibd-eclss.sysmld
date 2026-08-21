@@ -1,0 +1,432 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "oxygenLoop": "Apollo11::CMECS::oxygenLoop",
+    "waterLoop": "Apollo11::CMECS::waterLoop",
+    "suitCircuit": "Apollo11::CMECS::suitCircuit",
+    "co2Removal": "Apollo11::CMECS::co2Removal",
+    "suitLoop": "Apollo11::LMECS::suitLoop",
+    "waterSublimator": "Apollo11::LMECS::waterSublimator",
+    "oxygenLoop--suitCircuit--src": "Apollo11::CMECS::oxygenLoop",
+    "oxygenLoop--suitCircuit--tgt": "Apollo11::CMECS::suitCircuit",
+    "conn-oxygenLoop-suitCircuit": "Apollo11::CMECS::oxygenLoop",
+    "waterLoop--suitCircuit--src": "Apollo11::CMECS::waterLoop",
+    "waterLoop--suitCircuit--tgt": "Apollo11::CMECS::suitCircuit",
+    "conn-waterLoop-suitCircuit": "Apollo11::CMECS::waterLoop",
+    "suitCircuit--co2Removal--src": "Apollo11::CMECS::suitCircuit",
+    "suitCircuit--co2Removal--tgt": "Apollo11::CMECS::co2Removal",
+    "conn-suitCircuit-co2Removal": "Apollo11::CMECS::suitCircuit",
+    "suitLoop--waterSublimator--src": "Apollo11::LMECS::suitLoop",
+    "suitLoop--waterSublimator--tgt": "Apollo11::LMECS::waterSublimator",
+    "conn-suitLoop-waterSublimator": "Apollo11::LMECS::suitLoop"
+  },
+  "diagram": {
+    "id": "apollo-ibd-eclss",
+    "kind": "InterconnectionView",
+    "name": "CM / LM ECLSS Loops",
+    "canvas": {
+      "width": 892,
+      "height": 430,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "mission",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 812,
+          "height": 350,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "oxygenLoop",
+        "model_ref": "oxygenLoop",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CM O2 loop\n5.0 psia",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "waterLoop",
+        "model_ref": "waterLoop",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 296,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CM water\n36 / 56 lb",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "suitCircuit",
+        "model_ref": "suitCircuit",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 376,
+          "y": 131,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Suit circuit",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "co2Removal",
+        "model_ref": "co2Removal",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 676,
+          "y": 186,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "LiOH\nswap 12 h",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "suitLoop",
+        "model_ref": "suitLoop",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 186,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "LM suit loop",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "waterSublimator",
+        "model_ref": "waterSublimator",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 376,
+          "y": 241,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "LM sublimator",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "oxygenLoop--suitCircuit--src",
+        "model_ref": "oxygenLoop--suitCircuit--src",
+        "symbol": "port",
+        "owner": "oxygenLoop",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "waterLoop--suitCircuit--src",
+        "model_ref": "waterLoop--suitCircuit--src",
+        "symbol": "port",
+        "owner": "waterLoop",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "oxygenLoop--suitCircuit--tgt",
+        "model_ref": "oxygenLoop--suitCircuit--tgt",
+        "symbol": "port",
+        "owner": "suitCircuit",
+        "placement": {
+          "side": "left",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "waterLoop--suitCircuit--tgt",
+        "model_ref": "waterLoop--suitCircuit--tgt",
+        "symbol": "port",
+        "owner": "suitCircuit",
+        "placement": {
+          "side": "left",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "suitCircuit--co2Removal--src",
+        "model_ref": "suitCircuit--co2Removal--src",
+        "symbol": "port",
+        "owner": "suitCircuit",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "suitCircuit--co2Removal--tgt",
+        "model_ref": "suitCircuit--co2Removal--tgt",
+        "symbol": "port",
+        "owner": "co2Removal",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "suitLoop--waterSublimator--src",
+        "model_ref": "suitLoop--waterSublimator--src",
+        "symbol": "port",
+        "owner": "suitLoop",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "suitLoop--waterSublimator--tgt",
+        "model_ref": "suitLoop--waterSublimator--tgt",
+        "symbol": "port",
+        "owner": "waterSublimator",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-oxygenLoop-suitCircuit",
+        "model_ref": "conn-oxygenLoop-suitCircuit",
+        "source": {
+          "element": "oxygenLoop--suitCircuit--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "oxygenLoop--suitCircuit--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 146,
+              "y": 150.331
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "O2",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-waterLoop-suitCircuit",
+        "model_ref": "conn-waterLoop-suitCircuit",
+        "source": {
+          "element": "waterLoop--suitCircuit--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "waterLoop--suitCircuit--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 376,
+              "y": 354
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "water",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-suitCircuit-co2Removal",
+        "model_ref": "conn-suitCircuit-co2Removal",
+        "source": {
+          "element": "suitCircuit--co2Removal--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "suitCircuit--co2Removal--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 596,
+              "y": 160
+            },
+            {
+              "x": 596,
+              "y": 215
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "CO2 \u22647.6 torr",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-suitLoop-waterSublimator",
+        "model_ref": "conn-suitLoop-waterSublimator",
+        "source": {
+          "element": "suitLoop--waterSublimator--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "suitLoop--waterSublimator--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 146,
+              "y": 270
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "heat",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "mission"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "diagram": "apollo-ibd-csm",
+  "kind": "InterconnectionView",
+  "name": "CSM Block II Interconnection",
+  "subject": "csm",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 56,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "csm": "Apollo11::CSM",
+    "cmc": "Apollo11::CM::cmc",
+    "scs": "Apollo11::CM::scs",
+    "cmRcs": "Apollo11::CM::cmRcs",
+    "ecs": "Apollo11::CM::ecs",
+    "ems": "Apollo11::CM::ems",
+    "sps": "Apollo11::SM::sps",
+    "smRcsA": "Apollo11::SM::smRcsA",
+    "fuelCell1": "Apollo11::SM::fuelCell1",
+    "scs--cmc--src": "Apollo11::CM::scs",
+    "scs--cmc--tgt": "Apollo11::CM::cmc",
+    "conn-scs-cmc": "Apollo11::CM::scs",
+    "scs--cmRcs--src": "Apollo11::CM::scs",
+    "scs--cmRcs--tgt": "Apollo11::CM::cmRcs",
+    "conn-scs-cmRcs": "Apollo11::CM::scs",
+    "cmc--ems--src": "Apollo11::CM::cmc",
+    "cmc--ems--tgt": "Apollo11::CM::ems",
+    "conn-cmc-ems": "Apollo11::CM::cmc",
+    "ecs--cmc--src": "Apollo11::CM::ecs",
+    "ecs--cmc--tgt": "Apollo11::CM::cmc",
+    "conn-ecs-cmc": "Apollo11::CM::ecs",
+    "sps--smRcsA--src": "Apollo11::SM::sps",
+    "sps--smRcsA--tgt": "Apollo11::SM::smRcsA",
+    "conn-sps-smRcsA": "Apollo11::SM::sps",
+    "fuelCell1--sps--src": "Apollo11::SM::fuelCell1",
+    "fuelCell1--sps--tgt": "Apollo11::SM::sps",
+    "conn-fuelCell1-sps": "Apollo11::SM::fuelCell1"
+  },
+  "nodes": {
+    "scs": {
+      "label": "SCS",
+      "style": "part.gnc"
+    },
+    "cmc": {
+      "label": "CMC Colossus",
+      "style": "part.gnc"
+    },
+    "ems": {
+      "label": "EMS",
+      "style": "part.gnc"
+    },
+    "cmRcs": {
+      "label": "CM RCS",
+      "style": "part.prop"
+    },
+    "ecs": {
+      "label": "CM ECS",
+      "style": "part.eclss"
+    },
+    "fuelCell1": {
+      "label": "Fuel cells (\u00d73)",
+      "style": "part.power"
+    },
+    "sps": {
+      "label": "SPS 20,500 lbf",
+      "style": "part.prop"
+    },
+    "smRcsA": {
+      "label": "SM RCS\n4 quads",
+      "style": "part.prop"
+    }
+  },
+  "edges": [
+    {
+      "from": "scs",
+      "to": "cmc",
+      "label": "backup / CMC",
+      "model_ref": "conn-scs-cmc"
+    },
+    {
+      "from": "scs",
+      "to": "cmRcs",
+      "label": "jets",
+      "model_ref": "conn-scs-cmRcs"
+    },
+    {
+      "from": "cmc",
+      "to": "ems",
+      "label": "entry",
+      "model_ref": "conn-cmc-ems"
+    },
+    {
+      "from": "ecs",
+      "to": "cmc",
+      "label": "cabin",
+      "model_ref": "conn-ecs-cmc"
+    },
+    {
+      "from": "fuelCell1",
+      "to": "sps",
+      "label": "power",
+      "model_ref": "conn-fuelCell1-sps"
+    },
+    {
+      "from": "sps",
+      "to": "smRcsA",
+      "label": "ullage / RCS",
+      "model_ref": "conn-sps-smRcsA"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.power": {
+      "fill": "#F3E5F5",
+      "stroke": "#6A1B9A",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

@@ -64,17 +64,11 @@ class ApolloViewTests(unittest.TestCase):
         self.assertEqual(kinds, set(COMPOSERS))
 
     def test_apollo_ibds_do_not_cross_boxes(self):
-        for name in (
-            "apollo-ibd.json",
-            "apollo-ibd-vehicle.json",
-            "apollo-ibd-gnc.json",
-            "apollo-ibd-mcc.json",
-        ):
-            intent = APOLLO / name
+        from sysmld.interconnection_view import compose
+        for intent in sorted(APOLLO.glob("apollo-ibd*.json")):
             spec = json.loads(intent.read_text(encoding="utf-8"))
-            from sysmld.interconnection_view import compose
             doc = compose(spec)
-            with self.subTest(name=name):
+            with self.subTest(name=intent.name):
                 self.assertEqual(_route_box_hits(doc), [])
 
     def test_apollo_does_not_collapse_agcs(self):
@@ -101,6 +95,15 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("requirement pngsRequirement", text)
         self.assertNotIn("part pngs : AGS", text)
         self.assertNotIn("part scs : CMC", text)
+        self.assertIn("part def SaturnV", text)
+        self.assertIn("part def CSM", text)
+        self.assertIn("part def LM", text)
+        self.assertIn("part cmRcs : CMRCS", text)
+        self.assertIn("part smRcsA : SMRCSQuad", text)
+        self.assertIn("part lmRcs : LMRCS", text)
+        self.assertIn("part oxygenLoop : OxygenLoop", text)
+        self.assertIn("part erasable : ErasableMemory", text)
+        self.assertIn("state def EclssMode", text)
 
 
 def _route_box_hits(doc: dict) -> list[tuple[str, str]]:

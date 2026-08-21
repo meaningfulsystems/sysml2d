@@ -1,0 +1,582 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "cmc": "Apollo11::CMC",
+    "lgc": "Apollo11::LGC",
+    "e": "Apollo11::ErasableMemory",
+    "f": "Apollo11::FixedMemory",
+    "osc": "Apollo11::Oscillator",
+    "dsky": "Apollo11::DSKY",
+    "ags": "Apollo11::AGS"
+  },
+  "diagram": {
+    "id": "apollo-bdd-agc",
+    "kind": "DefinitionView",
+    "name": "AGC Block II Hardware",
+    "canvas": {
+      "width": 1187,
+      "height": 356,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "cmc",
+        "model_ref": "cmc",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 127,
+          "y": 40,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "CMC Colossus",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      },
+      {
+        "id": "cmcE",
+        "model_ref": "e",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 40,
+          "y": 176,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "2048 E",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "cmcF",
+        "model_ref": "f",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 214,
+          "y": 176,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "36864 F",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "cmcOsc",
+        "model_ref": "osc",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 127,
+          "y": 260,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "1.024 MHz",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "cmDsky",
+        "model_ref": "dsky",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 301,
+          "y": 260,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "DSKY \u00d72",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "lgc",
+        "model_ref": "lgc",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 649,
+          "y": 40,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "LGC Luminary",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      },
+      {
+        "id": "lgcE",
+        "model_ref": "e",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 562,
+          "y": 176,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "2048 E",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "lgcF",
+        "model_ref": "f",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 736,
+          "y": 176,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "36864 F",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "lgcOsc",
+        "model_ref": "osc",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 649,
+          "y": 260,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "1.024 MHz",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "lmDsky",
+        "model_ref": "dsky",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 823,
+          "y": 260,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "DSKY \u00d71",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ags",
+        "model_ref": "ags",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 997,
+          "y": 40,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "AGS (not AGC)",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-cmc-cmcE",
+        "model_ref": "e",
+        "source": {
+          "element": "cmc",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmcE",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 202,
+              "y": 136
+            },
+            {
+              "x": 115,
+              "y": 136
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-cmc-cmcF",
+        "model_ref": "f",
+        "source": {
+          "element": "cmc",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmcF",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 202,
+              "y": 136
+            },
+            {
+              "x": 289,
+              "y": 136
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-cmc-cmcOsc",
+        "model_ref": "osc",
+        "source": {
+          "element": "cmc",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmcOsc",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 202,
+              "y": 232
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 1,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-cmc-cmDsky",
+        "model_ref": "dsky",
+        "source": {
+          "element": "cmc",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmDsky",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 202,
+              "y": 232
+            },
+            {
+              "x": 376,
+              "y": 232
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-lgc-lgcE",
+        "model_ref": "e",
+        "source": {
+          "element": "lgc",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lgcE",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 724,
+              "y": 136
+            },
+            {
+              "x": 637,
+              "y": 136
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-lgc-lgcF",
+        "model_ref": "f",
+        "source": {
+          "element": "lgc",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lgcF",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 724,
+              "y": 136
+            },
+            {
+              "x": 811,
+              "y": 136
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-lgc-lgcOsc",
+        "model_ref": "osc",
+        "source": {
+          "element": "lgc",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lgcOsc",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 724,
+              "y": 232
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 1,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-lgc-lmDsky",
+        "model_ref": "dsky",
+        "source": {
+          "element": "lgc",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lmDsky",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 724,
+              "y": 232
+            },
+            {
+              "x": 898,
+              "y": 232
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11::CMC"
+  }
+}

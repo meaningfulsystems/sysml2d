@@ -1,0 +1,725 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "ground": "Apollo11::Ground",
+    "mcc": "Apollo11::MissionControlHouston",
+    "msfn": "Apollo11::MannedSpaceFlightNetwork",
+    "gsfc": "Apollo11::GoddardSpaceFlightCenter",
+    "mocr": "Apollo11::MOCR",
+    "rtcc": "Apollo11::RealTimeComputerComplex",
+    "ccats": "Apollo11::CCATS",
+    "usb85": "Apollo11::USB85ft",
+    "usb210": "Apollo11::USB210ft",
+    "parkes": "Apollo11::Parkes",
+    "ship": "Apollo11::AISShip",
+    "site": "Apollo11::CommandSite"
+  },
+  "diagram": {
+    "id": "apollo-bdd-msfn",
+    "kind": "DefinitionView",
+    "name": "MSFN / MCC-H Definition Tree",
+    "canvas": {
+      "width": 1468,
+      "height": 392,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "ground",
+        "model_ref": "ground",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 654,
+          "y": 40,
+          "width": 160,
+          "height": 52,
+          "z": 10
+        },
+        "label": "Ground",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      },
+      {
+        "id": "mcc",
+        "model_ref": "mcc",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 196,
+          "y": 170,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "MCC-H",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "mocr",
+        "model_ref": "mocr",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 40,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "MOCR",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "rtcc",
+        "model_ref": "rtcc",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 196,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "RTCC 5\u00d7360/75",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ccats",
+        "model_ref": "ccats",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 352,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "CCATS",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "gsfc",
+        "model_ref": "gsfc",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 508,
+          "y": 170,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "GSFC",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "msfn",
+        "model_ref": "msfn",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 976,
+          "y": 170,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "MSFN",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "usb85",
+        "model_ref": "usb85",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 664,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "85-ft USB",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "usb210",
+        "model_ref": "usb210",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 820,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "210-ft (A11)",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "parkes",
+        "model_ref": "parkes",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 976,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "Parkes (A11)",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ship",
+        "model_ref": "ship",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1132,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "AIS ship",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "site",
+        "model_ref": "site",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1288,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "Site 642B",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-ground-mcc",
+        "model_ref": "mcc",
+        "source": {
+          "element": "ground",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "mcc",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 734,
+              "y": 131
+            },
+            {
+              "x": 266,
+              "y": 131
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ground-gsfc",
+        "model_ref": "gsfc",
+        "source": {
+          "element": "ground",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "gsfc",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 734,
+              "y": 131
+            },
+            {
+              "x": 578,
+              "y": 131
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ground-msfn",
+        "model_ref": "msfn",
+        "source": {
+          "element": "ground",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "msfn",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 734,
+              "y": 131
+            },
+            {
+              "x": 1046,
+              "y": 131
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-mcc-mocr",
+        "model_ref": "mocr",
+        "source": {
+          "element": "mcc",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "mocr",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 266,
+              "y": 261
+            },
+            {
+              "x": 110,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-mcc-rtcc",
+        "model_ref": "rtcc",
+        "source": {
+          "element": "mcc",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rtcc",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-mcc-ccats",
+        "model_ref": "ccats",
+        "source": {
+          "element": "mcc",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ccats",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 266,
+              "y": 261
+            },
+            {
+              "x": 422,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-msfn-usb85",
+        "model_ref": "usb85",
+        "source": {
+          "element": "msfn",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "usb85",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1046,
+              "y": 261
+            },
+            {
+              "x": 734,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-msfn-usb210",
+        "model_ref": "usb210",
+        "source": {
+          "element": "msfn",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "usb210",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1046,
+              "y": 261
+            },
+            {
+              "x": 890,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-msfn-parkes",
+        "model_ref": "parkes",
+        "source": {
+          "element": "msfn",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "parkes",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-msfn-ship",
+        "model_ref": "ship",
+        "source": {
+          "element": "msfn",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ship",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1046,
+              "y": 261
+            },
+            {
+              "x": 1202,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-msfn-site",
+        "model_ref": "site",
+        "source": {
+          "element": "msfn",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "site",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1046,
+              "y": 261
+            },
+            {
+              "x": 1358,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11::Ground"
+  }
+}

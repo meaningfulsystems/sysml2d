@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="661" height="676" viewBox="0 0 661 676">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="661" height="676" fill="#FFFFFF"/>
+<rect x="2" y="38" width="657" height="634" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 552 L 568 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] MSFN USB / A11 coverage [msfn : MannedSpaceFlightNetwork]</text>
+<rect x="2" y="38" width="657" height="636" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="577" height="554" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">msfn</text>
+<rect id="goldstone85" x="82" y="182" width="140" height="58" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="152" y="211">Goldstone 85-ft</text>
+<rect id="madrid85" x="82" y="394" width="140" height="58" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="152" y="423">Madrid 85-ft</text>
+<rect id="honeysuckle85" x="76" y="288" width="153" height="58" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="152.5" y="317">Honeysuckle 85-ft</text>
+<rect id="site642B" x="441" y="288" width="140" height="58" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="511" y="309.5">Site 642B</tspan><tspan x="511" dy="15">70 kHz path A</tspan></text>
+<rect id="goldstone210" x="79" y="76" width="146" height="58" rx="4" fill="#FCE4EC" stroke="#AD1457" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="152" y="97.5">Goldstone 210-ft</tspan><tspan x="152" dy="15">A11 TV</tspan></text>
+<rect id="parkes" x="82" y="500" width="140" height="58" rx="4" fill="#FCE4EC" stroke="#AD1457" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="152" y="521.5">Parkes</tspan><tspan x="152" dy="15">A11 TV</tspan></text>
+<rect id="goldstone85--site642B--src" x="146" y="234" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="madrid85--site642B--src" x="146" y="446" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="honeysuckle85--site642B--src" x="223" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="goldstone210--site642B--tgt" x="435" y="291.669" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="goldstone85--site642B--tgt" x="435" y="301.331" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="honeysuckle85--site642B--tgt" x="435" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="madrid85--site642B--tgt" x="435" y="320.669" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="parkes--site642B--tgt" x="435" y="330.331" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="goldstone210--site642B--src" x="146" y="70" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="parkes--site642B--src" x="146" y="552" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 152,246 L 152,211 L 413,211 L 413,307.331 L 435,307.331" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 152,458 L 253,452 L 253,326.669 L 435,326.669" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 235,317 L 435,317" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 152,70 L 253,76 L 253,204 A 7 7 0 0 1 253,218 L 253,297.669 L 406,297.669 A 7 7 0 0 0 420,297.669 L 435,297.669" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 152,564 L 253,558 L 253,336.331 L 435,336.331" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="282.5" y="199">USB</text>
+<text class="small" text-anchor="middle" x="344" y="349.669">USB</text>
+<text class="small" text-anchor="middle" x="335" y="305">USB</text>
+<text class="small" x="265" y="153.584">A11 coverage</text>
+<text class="small" x="265" y="447.166">A11 coverage</text>
+</g>
+</svg>

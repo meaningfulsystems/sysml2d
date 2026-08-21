@@ -1,0 +1,104 @@
+{
+  "diagram": "apollo-ibd-eclss",
+  "kind": "InterconnectionView",
+  "name": "CM / LM ECLSS Loops",
+  "subject": "mission",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 52,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "oxygenLoop": "Apollo11::CMECS::oxygenLoop",
+    "waterLoop": "Apollo11::CMECS::waterLoop",
+    "suitCircuit": "Apollo11::CMECS::suitCircuit",
+    "co2Removal": "Apollo11::CMECS::co2Removal",
+    "suitLoop": "Apollo11::LMECS::suitLoop",
+    "waterSublimator": "Apollo11::LMECS::waterSublimator",
+    "oxygenLoop--suitCircuit--src": "Apollo11::CMECS::oxygenLoop",
+    "oxygenLoop--suitCircuit--tgt": "Apollo11::CMECS::suitCircuit",
+    "conn-oxygenLoop-suitCircuit": "Apollo11::CMECS::oxygenLoop",
+    "waterLoop--suitCircuit--src": "Apollo11::CMECS::waterLoop",
+    "waterLoop--suitCircuit--tgt": "Apollo11::CMECS::suitCircuit",
+    "conn-waterLoop-suitCircuit": "Apollo11::CMECS::waterLoop",
+    "suitCircuit--co2Removal--src": "Apollo11::CMECS::suitCircuit",
+    "suitCircuit--co2Removal--tgt": "Apollo11::CMECS::co2Removal",
+    "conn-suitCircuit-co2Removal": "Apollo11::CMECS::suitCircuit",
+    "suitLoop--waterSublimator--src": "Apollo11::LMECS::suitLoop",
+    "suitLoop--waterSublimator--tgt": "Apollo11::LMECS::waterSublimator",
+    "conn-suitLoop-waterSublimator": "Apollo11::LMECS::suitLoop"
+  },
+  "nodes": {
+    "oxygenLoop": {
+      "label": "CM O2 loop\n5.0 psia",
+      "style": "part.eclss"
+    },
+    "waterLoop": {
+      "label": "CM water\n36 / 56 lb",
+      "style": "part.eclss"
+    },
+    "suitCircuit": {
+      "label": "Suit circuit",
+      "style": "part.eclss"
+    },
+    "co2Removal": {
+      "label": "LiOH\nswap 12 h",
+      "style": "part.eclss"
+    },
+    "suitLoop": {
+      "label": "LM suit loop",
+      "style": "part.eclss"
+    },
+    "waterSublimator": {
+      "label": "LM sublimator",
+      "style": "part.eclss"
+    }
+  },
+  "edges": [
+    {
+      "from": "oxygenLoop",
+      "to": "suitCircuit",
+      "label": "O2",
+      "model_ref": "conn-oxygenLoop-suitCircuit"
+    },
+    {
+      "from": "waterLoop",
+      "to": "suitCircuit",
+      "label": "water",
+      "model_ref": "conn-waterLoop-suitCircuit"
+    },
+    {
+      "from": "suitCircuit",
+      "to": "co2Removal",
+      "label": "CO2 \u22647.6 torr",
+      "model_ref": "conn-suitCircuit-co2Removal"
+    },
+    {
+      "from": "suitLoop",
+      "to": "waterSublimator",
+      "label": "heat",
+      "model_ref": "conn-suitLoop-waterSublimator"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

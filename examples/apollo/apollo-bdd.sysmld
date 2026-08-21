@@ -7,6 +7,11 @@
   ],
   "aliases": {
     "root": "Apollo11::Apollo11",
+    "saturnV": "Apollo11::SaturnV",
+    "csm": "Apollo11::CSM",
+    "lm": "Apollo11::LM",
+    "crew": "Apollo11::Crew",
+    "ground": "Apollo11::Ground",
     "sic": "Apollo11::SIC",
     "sii": "Apollo11::SII",
     "sivb": "Apollo11::SIVB",
@@ -27,15 +32,20 @@
     "cmp": "Apollo11::CommandModulePilot",
     "lmp": "Apollo11::LunarModulePilot",
     "scsDef": "Apollo11::SCS",
-    "pngsDef": "Apollo11::PNGS"
+    "pngsDef": "Apollo11::PNGS",
+    "cmcDef": "Apollo11::CMC",
+    "lgcDef": "Apollo11::LGC",
+    "agsDef": "Apollo11::AGS",
+    "spsDef": "Apollo11::SPS",
+    "dpsDef": "Apollo11::DPS"
   },
   "diagram": {
     "id": "apollo-bdd",
     "kind": "DefinitionView",
-    "name": "Apollo 11 Definition Tree",
+    "name": "Apollo 11 System Definition Tree",
     "canvas": {
-      "width": 1013,
-      "height": 534,
+      "width": 3580,
+      "height": 528,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -47,10 +57,10 @@
         "model_ref": "root",
         "symbol": "part_definition",
         "layout": {
-          "x": 363,
+          "x": 1690,
           "y": 40,
           "width": 200,
-          "height": 56,
+          "height": 52,
           "z": 10
         },
         "label": "Apollo 11 AS-506",
@@ -62,14 +72,33 @@
         "style": "part.definition.root"
       },
       {
+        "id": "saturnV",
+        "model_ref": "saturnV",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 440,
+          "y": 172,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "Saturn V",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
         "id": "sIc",
         "model_ref": "sic",
         "symbol": "part_definition",
         "layout": {
           "x": 40,
-          "y": 186,
-          "width": 150,
-          "height": 56,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "S-IC",
@@ -85,10 +114,10 @@
         "model_ref": "sii",
         "symbol": "part_definition",
         "layout": {
-          "x": 214,
-          "y": 186,
-          "width": 150,
-          "height": 56,
+          "x": 200,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "S-II",
@@ -104,10 +133,10 @@
         "model_ref": "sivb",
         "symbol": "part_definition",
         "layout": {
-          "x": 388,
-          "y": 186,
-          "width": 150,
-          "height": 56,
+          "x": 360,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "S-IVB",
@@ -123,10 +152,10 @@
         "model_ref": "iu",
         "symbol": "part_definition",
         "layout": {
-          "x": 562,
-          "y": 186,
-          "width": 150,
-          "height": 56,
+          "x": 520,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "IU",
@@ -142,10 +171,10 @@
         "model_ref": "sla",
         "symbol": "part_definition",
         "layout": {
-          "x": 736,
-          "y": 186,
-          "width": 150,
-          "height": 56,
+          "x": 680,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "SLA",
@@ -161,13 +190,32 @@
         "model_ref": "les",
         "symbol": "part_definition",
         "layout": {
-          "x": 127,
-          "y": 270,
-          "width": 150,
-          "height": 56,
+          "x": 840,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "LES",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "csm",
+        "model_ref": "csm",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1160,
+          "y": 172,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "CSM Block II",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -180,13 +228,32 @@
         "model_ref": "cm",
         "symbol": "part_definition",
         "layout": {
-          "x": 301,
-          "y": 270,
-          "width": 150,
-          "height": 56,
+          "x": 1080,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "CM",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "cmc",
+        "model_ref": "cmcDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1000,
+          "y": 436,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "CMC",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -199,10 +266,10 @@
         "model_ref": "scsDef",
         "symbol": "part_definition",
         "layout": {
-          "x": 301,
-          "y": 416,
-          "width": 150,
-          "height": 56,
+          "x": 1160,
+          "y": 436,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "SCS",
@@ -218,13 +285,51 @@
         "model_ref": "sm",
         "symbol": "part_definition",
         "layout": {
-          "x": 475,
-          "y": 270,
-          "width": 150,
-          "height": 56,
+          "x": 1320,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "SM",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "sps",
+        "model_ref": "spsDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1320,
+          "y": 436,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "SPS",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "lm",
+        "model_ref": "lm",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1720,
+          "y": 172,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "LM-5",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -237,13 +342,32 @@
         "model_ref": "lmd",
         "symbol": "part_definition",
         "layout": {
-          "x": 649,
-          "y": 270,
-          "width": 150,
-          "height": 56,
+          "x": 1480,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
-        "label": "LM Descent",
+        "label": "Descent",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "dps",
+        "model_ref": "dpsDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1480,
+          "y": 436,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "DPS",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -256,13 +380,13 @@
         "model_ref": "lma",
         "symbol": "part_definition",
         "layout": {
-          "x": 823,
-          "y": 270,
-          "width": 150,
-          "height": 56,
+          "x": 1800,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
-        "label": "LM Ascent",
+        "label": "Ascent",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -275,10 +399,10 @@
         "model_ref": "pngsDef",
         "symbol": "part_definition",
         "layout": {
-          "x": 823,
-          "y": 416,
-          "width": 150,
-          "height": 56,
+          "x": 1640,
+          "y": 436,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "PNGS",
@@ -290,17 +414,17 @@
         "style": "part.definition"
       },
       {
-        "id": "mcc",
-        "model_ref": "mcc",
+        "id": "lgc",
+        "model_ref": "lgcDef",
         "symbol": "part_definition",
         "layout": {
-          "x": 40,
-          "y": 354,
-          "width": 150,
-          "height": 56,
+          "x": 1800,
+          "y": 436,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
-        "label": "MCC-H",
+        "label": "LGC",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -309,17 +433,17 @@
         "style": "part.definition"
       },
       {
-        "id": "gsfc",
-        "model_ref": "gsfc",
+        "id": "ags",
+        "model_ref": "agsDef",
         "symbol": "part_definition",
         "layout": {
-          "x": 214,
-          "y": 354,
-          "width": 150,
-          "height": 56,
+          "x": 1960,
+          "y": 436,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
-        "label": "GSFC",
+        "label": "AGS",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -328,74 +452,17 @@
         "style": "part.definition"
       },
       {
-        "id": "msfn",
-        "model_ref": "msfn",
+        "id": "crew",
+        "model_ref": "crew",
         "symbol": "part_definition",
         "layout": {
-          "x": 388,
-          "y": 354,
-          "width": 150,
-          "height": 56,
+          "x": 2280,
+          "y": 172,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
-        "label": "MSFN",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "ksc",
-        "model_ref": "ksc",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 562,
-          "y": 354,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "KSC LC-39",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "rso",
-        "model_ref": "rso",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 736,
-          "y": 354,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "RSO / AFETR",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "recovery",
-        "model_ref": "rec",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 127,
-          "y": 438,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "Recovery",
+        "label": "Crew",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -408,10 +475,10 @@
         "model_ref": "cdr",
         "symbol": "part_definition",
         "layout": {
-          "x": 301,
-          "y": 438,
-          "width": 150,
-          "height": 56,
+          "x": 2120,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "CDR",
@@ -427,10 +494,10 @@
         "model_ref": "cmp",
         "symbol": "part_definition",
         "layout": {
-          "x": 475,
-          "y": 438,
-          "width": 150,
-          "height": 56,
+          "x": 2280,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "CMP",
@@ -446,13 +513,146 @@
         "model_ref": "lmp",
         "symbol": "part_definition",
         "layout": {
-          "x": 649,
-          "y": 438,
-          "width": 150,
-          "height": 56,
+          "x": 2440,
+          "y": 304,
+          "width": 140,
+          "height": 52,
           "z": 10
         },
         "label": "LMP",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ground",
+        "model_ref": "ground",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 3000,
+          "y": 172,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "Ground",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "mcc",
+        "model_ref": "mcc",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 2600,
+          "y": 304,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "MCC-H",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "gsfc",
+        "model_ref": "gsfc",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 2760,
+          "y": 304,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "GSFC",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "msfn",
+        "model_ref": "msfn",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 2920,
+          "y": 304,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "MSFN",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ksc",
+        "model_ref": "ksc",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 3080,
+          "y": 304,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "KSC LC-39",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "rso",
+        "model_ref": "rso",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 3240,
+          "y": 304,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "RSO / AFETR",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "recovery",
+        "model_ref": "rec",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 3400,
+          "y": 304,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "Recovery",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -463,8 +663,8 @@
     ],
     "connections": [
       {
-        "id": "conn-apollo-sIc",
-        "model_ref": "sic",
+        "id": "conn-apollo-saturnV",
+        "model_ref": "saturnV",
         "source": {
           "element": "apollo",
           "anchor": {
@@ -473,7 +673,7 @@
           }
         },
         "target": {
-          "element": "sIc",
+          "element": "saturnV",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -483,12 +683,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 463,
-              "y": 141
+              "x": 1790,
+              "y": 132
             },
             {
-              "x": 115,
-              "y": 141
+              "x": 510,
+              "y": 132
             }
           ]
         },
@@ -506,8 +706,8 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-apollo-sIi",
-        "model_ref": "sii",
+        "id": "conn-apollo-csm",
+        "model_ref": "csm",
         "source": {
           "element": "apollo",
           "anchor": {
@@ -516,7 +716,7 @@
           }
         },
         "target": {
-          "element": "sIi",
+          "element": "csm",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -526,12 +726,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 463,
-              "y": 141
+              "x": 1790,
+              "y": 132
             },
             {
-              "x": 289,
-              "y": 141
+              "x": 1230,
+              "y": 132
             }
           ]
         },
@@ -549,8 +749,8 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-apollo-sIvb",
-        "model_ref": "sivb",
+        "id": "conn-apollo-lm",
+        "model_ref": "lm",
         "source": {
           "element": "apollo",
           "anchor": {
@@ -559,7 +759,7 @@
           }
         },
         "target": {
-          "element": "sIvb",
+          "element": "lm",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -583,10 +783,225 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-apollo-iu",
-        "model_ref": "iu",
+        "id": "conn-apollo-crew",
+        "model_ref": "crew",
         "source": {
           "element": "apollo",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "crew",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1790,
+              "y": 132
+            },
+            {
+              "x": 2350,
+              "y": 132
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-apollo-ground",
+        "model_ref": "ground",
+        "source": {
+          "element": "apollo",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ground",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1790,
+              "y": 132
+            },
+            {
+              "x": 3070,
+              "y": 132
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-saturnV-sIc",
+        "model_ref": "sic",
+        "source": {
+          "element": "saturnV",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "sIc",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 510,
+              "y": 264
+            },
+            {
+              "x": 110,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-saturnV-sIi",
+        "model_ref": "sii",
+        "source": {
+          "element": "saturnV",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "sIi",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 510,
+              "y": 264
+            },
+            {
+              "x": 270,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-saturnV-sIvb",
+        "model_ref": "sivb",
+        "source": {
+          "element": "saturnV",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "sIvb",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 510,
+              "y": 264
+            },
+            {
+              "x": 430,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-saturnV-iu",
+        "model_ref": "iu",
+        "source": {
+          "element": "saturnV",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
@@ -603,12 +1018,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 463,
-              "y": 141
+              "x": 510,
+              "y": 264
             },
             {
-              "x": 637,
-              "y": 141
+              "x": 590,
+              "y": 264
             }
           ]
         },
@@ -626,10 +1041,10 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-apollo-sla",
+        "id": "conn-saturnV-sla",
         "model_ref": "sla",
         "source": {
-          "element": "apollo",
+          "element": "saturnV",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
@@ -646,12 +1061,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 463,
-              "y": 141
+              "x": 510,
+              "y": 264
             },
             {
-              "x": 811,
-              "y": 141
+              "x": 750,
+              "y": 264
             }
           ]
         },
@@ -669,10 +1084,10 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-apollo-les",
+        "id": "conn-saturnV-les",
         "model_ref": "les",
         "source": {
-          "element": "apollo",
+          "element": "saturnV",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
@@ -689,12 +1104,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 463,
-              "y": 242
+              "x": 510,
+              "y": 264
             },
             {
-              "x": 202,
-              "y": 242
+              "x": 910,
+              "y": 264
             }
           ]
         },
@@ -703,7 +1118,7 @@
             "text": "1",
             "position": {
               "segment": 2,
-              "offset": 0.94,
+              "offset": 0.82,
               "dx": 10,
               "dy": -4
             }
@@ -712,10 +1127,10 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-apollo-cm",
+        "id": "conn-csm-cm",
         "model_ref": "cm",
         "source": {
-          "element": "apollo",
+          "element": "csm",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
@@ -732,12 +1147,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 463,
-              "y": 242
+              "x": 1230,
+              "y": 264
             },
             {
-              "x": 376,
-              "y": 242
+              "x": 1150,
+              "y": 264
             }
           ]
         },
@@ -746,7 +1161,7 @@
             "text": "1",
             "position": {
               "segment": 2,
-              "offset": 0.94,
+              "offset": 0.82,
               "dx": 10,
               "dy": -4
             }
@@ -755,10 +1170,10 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-apollo-sm",
+        "id": "conn-csm-sm",
         "model_ref": "sm",
         "source": {
-          "element": "apollo",
+          "element": "csm",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
@@ -775,12 +1190,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 463,
-              "y": 242
+              "x": 1230,
+              "y": 264
             },
             {
-              "x": 550,
-              "y": 242
+              "x": 1390,
+              "y": 264
             }
           ]
         },
@@ -789,7 +1204,7 @@
             "text": "1",
             "position": {
               "segment": 2,
-              "offset": 0.94,
+              "offset": 0.82,
               "dx": 10,
               "dy": -4
             }
@@ -798,17 +1213,17 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-apollo-lmDescent",
-        "model_ref": "lmd",
+        "id": "conn-cm-cmc",
+        "model_ref": "cmcDef",
         "source": {
-          "element": "apollo",
+          "element": "cm",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "lmDescent",
+          "element": "cmc",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -818,12 +1233,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 463,
-              "y": 242
+              "x": 1150,
+              "y": 396
             },
             {
-              "x": 724,
-              "y": 242
+              "x": 1070,
+              "y": 396
             }
           ]
         },
@@ -832,433 +1247,7 @@
             "text": "1",
             "position": {
               "segment": 2,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-apollo-lmAscent",
-        "model_ref": "lma",
-        "source": {
-          "element": "apollo",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "lmAscent",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 463,
-              "y": 242
-            },
-            {
-              "x": 898,
-              "y": 242
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-apollo-mcc",
-        "model_ref": "mcc",
-        "source": {
-          "element": "apollo",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "mcc",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 463,
-              "y": 326
-            },
-            {
-              "x": 115,
-              "y": 326
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-apollo-gsfc",
-        "model_ref": "gsfc",
-        "source": {
-          "element": "apollo",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "gsfc",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 463,
-              "y": 326
-            },
-            {
-              "x": 289,
-              "y": 326
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-apollo-msfn",
-        "model_ref": "msfn",
-        "source": {
-          "element": "apollo",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "msfn",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 463,
-              "y": 326
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 1,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-apollo-ksc",
-        "model_ref": "ksc",
-        "source": {
-          "element": "apollo",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "ksc",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 463,
-              "y": 326
-            },
-            {
-              "x": 637,
-              "y": 326
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-apollo-rso",
-        "model_ref": "rso",
-        "source": {
-          "element": "apollo",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "rso",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 463,
-              "y": 326
-            },
-            {
-              "x": 811,
-              "y": 326
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-apollo-recovery",
-        "model_ref": "rec",
-        "source": {
-          "element": "apollo",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "recovery",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 463,
-              "y": 410
-            },
-            {
-              "x": 202,
-              "y": 410
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-apollo-cdr",
-        "model_ref": "cdr",
-        "source": {
-          "element": "apollo",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "cdr",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 463,
-              "y": 410
-            },
-            {
-              "x": 376,
-              "y": 410
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-apollo-cmp",
-        "model_ref": "cmp",
-        "source": {
-          "element": "apollo",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "cmp",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 463,
-              "y": 410
-            },
-            {
-              "x": 550,
-              "y": 410
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-apollo-lmp",
-        "model_ref": "lmp",
-        "source": {
-          "element": "apollo",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "lmp",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 463,
-              "y": 410
-            },
-            {
-              "x": 724,
-              "y": 410
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
+              "offset": 0.82,
               "dx": 10,
               "dy": -4
             }
@@ -1278,6 +1267,169 @@
         },
         "target": {
           "element": "scs",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1150,
+              "y": 396
+            },
+            {
+              "x": 1230,
+              "y": 396
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-sm-sps",
+        "model_ref": "spsDef",
+        "source": {
+          "element": "sm",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "sps",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-lm-lmDescent",
+        "model_ref": "lmd",
+        "source": {
+          "element": "lm",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lmDescent",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1790,
+              "y": 264
+            },
+            {
+              "x": 1550,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-lm-lmAscent",
+        "model_ref": "lma",
+        "source": {
+          "element": "lm",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lmAscent",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1790,
+              "y": 264
+            },
+            {
+              "x": 1870,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-lmDescent-dps",
+        "model_ref": "dpsDef",
+        "source": {
+          "element": "lmDescent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "dps",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -1319,6 +1471,49 @@
         },
         "route": {
           "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1870,
+              "y": 396
+            },
+            {
+              "x": 1710,
+              "y": 396
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-lmAscent-lgc",
+        "model_ref": "lgcDef",
+        "source": {
+          "element": "lmAscent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lgc",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
           "waypoints": []
         },
         "labels": [
@@ -1326,6 +1521,427 @@
             "text": "1",
             "position": {
               "segment": 0,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-lmAscent-ags",
+        "model_ref": "agsDef",
+        "source": {
+          "element": "lmAscent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ags",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1870,
+              "y": 396
+            },
+            {
+              "x": 2030,
+              "y": 396
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-crew-cdr",
+        "model_ref": "cdr",
+        "source": {
+          "element": "crew",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cdr",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 2350,
+              "y": 264
+            },
+            {
+              "x": 2190,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-crew-cmp",
+        "model_ref": "cmp",
+        "source": {
+          "element": "crew",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmp",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-crew-lmp",
+        "model_ref": "lmp",
+        "source": {
+          "element": "crew",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lmp",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 2350,
+              "y": 264
+            },
+            {
+              "x": 2510,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ground-mcc",
+        "model_ref": "mcc",
+        "source": {
+          "element": "ground",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "mcc",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 3070,
+              "y": 264
+            },
+            {
+              "x": 2670,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ground-gsfc",
+        "model_ref": "gsfc",
+        "source": {
+          "element": "ground",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "gsfc",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 3070,
+              "y": 264
+            },
+            {
+              "x": 2830,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ground-msfn",
+        "model_ref": "msfn",
+        "source": {
+          "element": "ground",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "msfn",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 3070,
+              "y": 264
+            },
+            {
+              "x": 2990,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ground-ksc",
+        "model_ref": "ksc",
+        "source": {
+          "element": "ground",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ksc",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 3070,
+              "y": 264
+            },
+            {
+              "x": 3150,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ground-rso",
+        "model_ref": "rso",
+        "source": {
+          "element": "ground",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rso",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 3070,
+              "y": 264
+            },
+            {
+              "x": 3310,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ground-recovery",
+        "model_ref": "rec",
+        "source": {
+          "element": "ground",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "recovery",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 3070,
+              "y": 264
+            },
+            {
+              "x": 3470,
+              "y": 264
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
               "offset": 0.82,
               "dx": 10,
               "dy": -4

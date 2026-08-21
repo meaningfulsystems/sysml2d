@@ -1,0 +1,426 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "cmcOsc": "Apollo11::CMC::oscillator",
+    "cmcE": "Apollo11::CMC::erasable",
+    "cmcF": "Apollo11::CMC::fixed",
+    "lgcOsc": "Apollo11::LGC::oscillator",
+    "lgcE": "Apollo11::LGC::erasable",
+    "lgcF": "Apollo11::LGC::fixed",
+    "cmcOsc--cmcE--src": "Apollo11::CMC::oscillator",
+    "cmcOsc--cmcE--tgt": "Apollo11::CMC::erasable",
+    "conn-cmcOsc-cmcE": "Apollo11::CMC::oscillator",
+    "cmcOsc--cmcF--src": "Apollo11::CMC::oscillator",
+    "cmcOsc--cmcF--tgt": "Apollo11::CMC::fixed",
+    "conn-cmcOsc-cmcF": "Apollo11::CMC::oscillator",
+    "lgcOsc--lgcE--src": "Apollo11::LGC::oscillator",
+    "lgcOsc--lgcE--tgt": "Apollo11::LGC::erasable",
+    "conn-lgcOsc-lgcE": "Apollo11::LGC::oscillator",
+    "lgcOsc--lgcF--src": "Apollo11::LGC::oscillator",
+    "lgcOsc--lgcF--tgt": "Apollo11::LGC::fixed",
+    "conn-lgcOsc-lgcF": "Apollo11::LGC::oscillator"
+  },
+  "diagram": {
+    "id": "apollo-ibd-agc",
+    "kind": "InterconnectionView",
+    "name": "AGC Block II Memory / Clock",
+    "canvas": {
+      "width": 620,
+      "height": 528,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "mission",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 540,
+          "height": 448,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "cmcOsc",
+        "model_ref": "cmcOsc",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 182,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CMC osc\n1.024 MHz",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "cmcE",
+        "model_ref": "cmcE",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CMC 2048 E",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "cmcF",
+        "model_ref": "cmcF",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 182,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CMC 36864 F\nrope ID UNKNOWN",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "lgcOsc",
+        "model_ref": "lgcOsc",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 288,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "LGC osc\n1.024 MHz",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "lgcE",
+        "model_ref": "lgcE",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 288,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "LGC 2048 E",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "lgcF",
+        "model_ref": "lgcF",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 394,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "LGC 36864 F\nrope ID UNKNOWN",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "cmcOsc--cmcE--src",
+        "model_ref": "cmcOsc--cmcE--src",
+        "symbol": "port",
+        "owner": "cmcOsc",
+        "placement": {
+          "side": "right",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "cmcOsc--cmcF--src",
+        "model_ref": "cmcOsc--cmcF--src",
+        "symbol": "port",
+        "owner": "cmcOsc",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "cmcOsc--cmcE--tgt",
+        "model_ref": "cmcOsc--cmcE--tgt",
+        "symbol": "port",
+        "owner": "cmcE",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "cmcOsc--cmcF--tgt",
+        "model_ref": "cmcOsc--cmcF--tgt",
+        "symbol": "port",
+        "owner": "cmcF",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "lgcOsc--lgcE--src",
+        "model_ref": "lgcOsc--lgcE--src",
+        "symbol": "port",
+        "owner": "lgcOsc",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "lgcOsc--lgcF--src",
+        "model_ref": "lgcOsc--lgcF--src",
+        "symbol": "port",
+        "owner": "lgcOsc",
+        "placement": {
+          "side": "right",
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "lgcOsc--lgcE--tgt",
+        "model_ref": "lgcOsc--lgcE--tgt",
+        "symbol": "port",
+        "owner": "lgcE",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "lgcOsc--lgcF--tgt",
+        "model_ref": "lgcOsc--lgcF--tgt",
+        "symbol": "port",
+        "owner": "lgcF",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-cmcOsc-cmcE",
+        "model_ref": "conn-cmcOsc-cmcE",
+        "source": {
+          "element": "cmcOsc--cmcE--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmcOsc--cmcE--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 268,
+              "y": 196.5
+            },
+            {
+              "x": 268,
+              "y": 105
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "MCT 11.7 \u03bcs",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-cmcOsc-cmcF",
+        "model_ref": "conn-cmcOsc-cmcF",
+        "source": {
+          "element": "cmcOsc--cmcF--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmcOsc--cmcF--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "fixed",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-lgcOsc-lgcE",
+        "model_ref": "conn-lgcOsc-lgcE",
+        "source": {
+          "element": "lgcOsc--lgcE--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lgcOsc--lgcE--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "MCT 11.7 \u03bcs",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-lgcOsc-lgcF",
+        "model_ref": "conn-lgcOsc-lgcF",
+        "source": {
+          "element": "lgcOsc--lgcF--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lgcOsc--lgcF--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 352,
+              "y": 331.5
+            },
+            {
+              "x": 352,
+              "y": 423
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "fixed",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "mission"
+  }
+}

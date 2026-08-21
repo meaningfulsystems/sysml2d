@@ -113,22 +113,77 @@ package Apollo11 {
     }
     part def SLA;
     part def LES;
+    part def SaturnV {
+        part sIc : SIC;
+        part sIi : SII;
+        part sIvb : SIVB;
+        part iu : IU;
+        part sla : SLA;
+        part les : LES;
+    }
+    part def CSM {
+        part cm : CM;
+        part sm : SM;
+    }
+    part def LM {
+        part descent : LMDescent;
+        part ascent : LMAscent;
+    }
+    part def Crew {
+        part cdr : Commander;
+        part cmp : CommandModulePilot;
+        part lmp : LunarModulePilot;
+    }
+    part def Ground {
+        part mcc : MissionControlHouston;
+        part gsfc : GoddardSpaceFlightCenter;
+        part msfn : MannedSpaceFlightNetwork;
+        part ksc : KennedyLC39;
+        part rso : RangeSafetyAFETR;
+        part recovery : RecoveryForces;
+    }
     part def CM {
         part cmc : CMC;
         part cmDsky1 : DSKY;
         part cmDsky2 : DSKY;
         part scs : SCS;
         part ems : EMS;
+        part cmRcs : CMRCS;
         part cmUsb : USB;
+        part hga : HGA;
+        part omni : OmniAntenna;
         part ecs : CMECS;
+        connection cmcToDsky1 connect cmc to cmDsky1;
+        connection cmcToDsky2 connect cmc to cmDsky2;
+        connection scsToCmc connect scs to cmc;
+        connection scsToCmRcs connect scs to cmRcs;
+        connection cmcToEms connect cmc to ems;
+        connection ecsToCabin connect ecs to cmc;
+        connection usbToHga connect cmUsb to hga;
+        connection usbToOmni connect cmUsb to omni;
     }
     part def SM {
         part sps : SPS;
+        part smRcsA : SMRCSQuad;
+        part smRcsB : SMRCSQuad;
+        part smRcsC : SMRCSQuad;
+        part smRcsD : SMRCSQuad;
+        part fuelCell1 : FuelCell;
+        part fuelCell2 : FuelCell;
+        part fuelCell3 : FuelCell;
+        part smO2 : Consumable;
+        connection spsToSmRcsA connect sps to smRcsA;
+        connection fuelCellToSps connect fuelCell1 to sps;
+        connection smO2ToFuelCell connect smO2 to fuelCell1;
     }
     part def LMDescent {
         part dps : DPS;
         part descentO2 : Consumable;
         part descentWater : Consumable;
+        part descentEcs : LMECS;
+        connection dpsToDescentEcs connect dps to descentEcs;
+        connection descentO2ToEcs connect descentO2 to descentEcs;
+        connection descentWaterToEcs connect descentWater to descentEcs;
     }
     part def LMAscent {
         part aps : APS;
@@ -138,23 +193,82 @@ package Apollo11 {
         part ags : AGS;
         part aea : AEA;
         part asa : ASA;
+        part lmRcs : LMRCS;
         part lmUsb : USB;
+        part ascentEcs : LMECS;
         part ascentO2a : Consumable;
         part ascentO2b : Consumable;
         part ascentWaterA : Consumable;
         part ascentWaterB : Consumable;
+        connection pngsToLgc connect pngs to lgc;
+        connection lgcToDsky connect lgc to lmDsky;
+        connection lgcToAgs connect lgc to ags;
+        connection agsToAea connect ags to aea;
+        connection agsToAsa connect ags to asa;
+        connection lgcToAps connect lgc to aps;
+        connection lgcToLmRcs connect lgc to lmRcs;
+        connection ascentO2ToEcs connect ascentO2a to ascentEcs;
+        connection ascentWaterToEcs connect ascentWaterA to ascentEcs;
     }
     part def F1;
     part def J2;
     part def SPS;
     part def DPS;
     part def APS;
-    part def CMC;
-    part def SCS;
-    part def PNGS;
-    part def LGC;
+    part def CMRCS;
+    part def SMRCSQuad;
+    part def LMRCS;
+    part def FuelCell;
+    part def HGA;
+    part def OmniAntenna;
+    part def IMU;
+    part def LandingRadar;
+    part def RendezvousRadar;
+    part def BMAG;
+    part def TVC;
+    part def RHC;
+    part def ErasableMemory;
+    part def FixedMemory;
+    part def Oscillator;
+    part def OxygenLoop;
+    part def WaterLoop;
+    part def LiOHCanister;
+    part def SuitCircuit;
+    part def WaterSublimator;
+    part def CMC {
+        part erasable : ErasableMemory;
+        part fixed : FixedMemory;
+        part oscillator : Oscillator;
+        connection oscToErasable connect oscillator to erasable;
+        connection oscToFixed connect oscillator to fixed;
+    }
+    part def LGC {
+        part erasable : ErasableMemory;
+        part fixed : FixedMemory;
+        part oscillator : Oscillator;
+        connection oscToErasable connect oscillator to erasable;
+        connection oscToFixed connect oscillator to fixed;
+    }
+    part def SCS {
+        part bmag : BMAG;
+        part tvc : TVC;
+        part rhc : RHC;
+        connection rhcToBmag connect rhc to bmag;
+        connection bmagToTvc connect bmag to tvc;
+    }
+    part def PNGS {
+        part imu : IMU;
+        part landingRadar : LandingRadar;
+        part rendezvousRadar : RendezvousRadar;
+        connection imuToLandingRadar connect imu to landingRadar;
+        connection imuToRendezvousRadar connect imu to rendezvousRadar;
+    }
     part def DSKY;
-    part def AGS;
+    part def AGS {
+        part aea : AEA;
+        part asa : ASA;
+        connection aeaToAsa connect aea to asa;
+    }
     part def AEA;
     part def ASA;
     part def LVDC;
@@ -162,7 +276,20 @@ package Apollo11 {
     part def FCC;
     part def EMS;
     part def USB;
-    part def CMECS;
+    part def CMECS {
+        part oxygenLoop : OxygenLoop;
+        part waterLoop : WaterLoop;
+        part co2Removal : LiOHCanister;
+        part suitCircuit : SuitCircuit;
+        connection o2ToSuit connect oxygenLoop to suitCircuit;
+        connection waterToSuit connect waterLoop to suitCircuit;
+        connection suitToLioh connect suitCircuit to co2Removal;
+    }
+    part def LMECS {
+        part suitLoop : SuitCircuit;
+        part waterSublimator : WaterSublimator;
+        connection suitToSublimator connect suitLoop to waterSublimator;
+    }
     part def Consumable;
 
     part def MissionControlHouston {
@@ -438,6 +565,16 @@ package Apollo11 {
         transition toP67 first p62 accept p67 then p67;
     }
 
+    state def EclssMode {
+        entry; then cabin;
+        state cabin;
+        state suit;
+        state eva;
+        transition toSuit first cabin accept suitConnect then suit;
+        transition toEva first suit accept plss then eva;
+        transition toCabin first eva accept ingress then cabin;
+    }
+
     package ApolloModel;
     package ApolloStructure;
     package ApolloBehavior;
@@ -493,6 +630,12 @@ package Apollo11 {
     requirement a11AtypicalRequirement { doc /* A11 instance vs generic lunar stack: (1) first landing, one short EVA, 196 h vs 336 h ECS spec — later H/J had longer stays and multiple EVAs; (2) no LRV (A15–A17) and no SIM bay (J-mission CSM); (3) P66 was the A11-flown landing program after P63/P64 — the family is generic, the A11 takeover is instance; (4) Parkes + Goldstone 210-ft for A11 descent/TV is coverage, not a generic-stack part; (5) F-1 1,530,000 lbf is sourced as SA-507, not AS-506 — instance/source mismatch; (6) PK masses are A11-only; tank/Δv UNKNOWN; (7) rope IDs UNKNOWN. Generic stack: Saturn V + Block II CSM (CMC+2 DSKY+SCS+EMS) + LM (PNGS/LGC+1 DSKY+AGS) + IU LVDC + MSFN + MCC + phases countdown→recovery. */ }
     requirement scsRequirement { doc /* CSM SCS is the Block II analog backup to the CMC (attitude / SPS TVC). Crew selects CMC vs SCS. Full SCS switch deck TBD (researcher brief). */ }
     requirement pngsRequirement { doc /* LM PNGS is LGC + IMU + landing/rendezvous radars. AGS is a separate computer. Do not merge PNGS with AGS. */ }
+    requirement cmRcsRequirement { doc /* CM RCS is a Block II CM part (attitude / entry). Engine count and thrust UNKNOWN. */ }
+    requirement smRcsRequirement { doc /* SM RCS is four quads A–D. Quad thrust UNKNOWN. */ }
+    requirement lmRcsRequirement { doc /* LM RCS mass 604 lb (A11 PK). Thruster count/thrust UNKNOWN. */ }
+    requirement fuelCellRequirement { doc /* Block II SM has three fuel cells. Electrical output UNKNOWN. */ }
+    requirement eclssLoopRequirement { doc /* CM ECS loops: O2, water, LiOH CO2 removal, suit circuit. 5.0 psia 100% O2; CO2 ≤7.6 torr; LiOH 1.5 man-day, swap 12 h. SM O2 640 lb; potable 36 lb / waste 56 lb. */ }
+    requirement lmEclssRequirement { doc /* LM ECS: suit loop + water sublimator. LM-5 descent O2 ~48 lb @ 3000 psi; ascent O2 ~2.4 lb ×2; descent water 332 lb; ascent water 42 lb ×2. */ }
     requirement rtccRequirement { doc /* RTCC: five IBM 360/75. MOC+DSC roles; which-is-which on A11 UNKNOWN. */ }
     requirement msfnSiteRequirement { doc /* 3×85-ft USB: Goldstone, Madrid, Honeysuckle + DSN wings. Named 30-ft only — do NOT merge GSFC-1968 and TN D-6723 into “the 14”; complete 30-ft inventory UNKNOWN. 4 AIS ships: Vanguard, Huntsville, Redstone + 4th UNKNOWN. 8 ARIA (no command/track). Goldstone 210-ft + Parkes for A11 descent/TV. */ }
     requirement kscRequirement { doc /* KSC LC-39: Firing Room 1, RCA 110A pair (LCC + ML), ACE in O&C, umbilicals, pad cryo. Handoff MCC at tower clear. */ }

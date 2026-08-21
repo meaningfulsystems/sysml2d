@@ -1,0 +1,118 @@
+{
+  "diagram": "apollo-ibd-lm",
+  "kind": "InterconnectionView",
+  "name": "LM-5 PNGS / AGS / Propulsion",
+  "subject": "lm",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 56,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "lm": "Apollo11::LM",
+    "pngs": "Apollo11::LMAscent::pngs",
+    "lgc": "Apollo11::LMAscent::lgc",
+    "lmDsky": "Apollo11::LMAscent::lmDsky",
+    "ags": "Apollo11::LMAscent::ags",
+    "aps": "Apollo11::LMAscent::aps",
+    "lmRcs": "Apollo11::LMAscent::lmRcs",
+    "pngs--lgc--src": "Apollo11::LMAscent::pngs",
+    "pngs--lgc--tgt": "Apollo11::LMAscent::lgc",
+    "conn-pngs-lgc": "Apollo11::LMAscent::pngs",
+    "lgc--lmDsky--src": "Apollo11::LMAscent::lgc",
+    "lgc--lmDsky--tgt": "Apollo11::LMAscent::lmDsky",
+    "conn-lgc-lmDsky": "Apollo11::LMAscent::lgc",
+    "lgc--ags--src": "Apollo11::LMAscent::lgc",
+    "lgc--ags--tgt": "Apollo11::LMAscent::ags",
+    "conn-lgc-ags": "Apollo11::LMAscent::lgc",
+    "lgc--aps--src": "Apollo11::LMAscent::lgc",
+    "lgc--aps--tgt": "Apollo11::LMAscent::aps",
+    "conn-lgc-aps": "Apollo11::LMAscent::lgc",
+    "lgc--lmRcs--src": "Apollo11::LMAscent::lgc",
+    "lgc--lmRcs--tgt": "Apollo11::LMAscent::lmRcs",
+    "conn-lgc-lmRcs": "Apollo11::LMAscent::lgc"
+  },
+  "nodes": {
+    "pngs": {
+      "label": "PNGS\nIMU + radars",
+      "style": "part.gnc"
+    },
+    "lgc": {
+      "label": "LGC Luminary",
+      "style": "part.gnc"
+    },
+    "lmDsky": {
+      "label": "LM DSKY",
+      "style": "part.gnc"
+    },
+    "ags": {
+      "label": "AGS\nAEA+ASA",
+      "style": "part.gnc"
+    },
+    "aps": {
+      "label": "APS 3,500 lbf",
+      "style": "part.prop"
+    },
+    "lmRcs": {
+      "label": "LM RCS\n604 lb PK",
+      "style": "part.prop"
+    }
+  },
+  "edges": [
+    {
+      "from": "pngs",
+      "to": "lgc",
+      "label": "computer",
+      "model_ref": "conn-pngs-lgc"
+    },
+    {
+      "from": "lgc",
+      "to": "lmDsky",
+      "label": "DSKY",
+      "model_ref": "conn-lgc-lmDsky"
+    },
+    {
+      "from": "lgc",
+      "to": "ags",
+      "label": "R47 init",
+      "model_ref": "conn-lgc-ags"
+    },
+    {
+      "from": "lgc",
+      "to": "aps",
+      "label": "P12",
+      "model_ref": "conn-lgc-aps"
+    },
+    {
+      "from": "lgc",
+      "to": "lmRcs",
+      "label": "jets",
+      "model_ref": "conn-lgc-lmRcs"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

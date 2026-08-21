@@ -1,0 +1,88 @@
+{
+  "diagram": "apollo-bdd-agc",
+  "kind": "DefinitionView",
+  "name": "AGC Block II Hardware",
+  "subject": "Apollo11::CMC",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "top-down",
+  "default_w": 150,
+  "default_h": 56,
+  "sibling_gap": 24,
+  "rank_gap": 80,
+  "max_siblings_per_row": 3,
+  "aliases": {
+    "cmc": "Apollo11::CMC",
+    "lgc": "Apollo11::LGC",
+    "e": "Apollo11::ErasableMemory",
+    "f": "Apollo11::FixedMemory",
+    "osc": "Apollo11::Oscillator",
+    "dsky": "Apollo11::DSKY",
+    "ags": "Apollo11::AGS"
+  },
+  "roots": [
+    {
+      "id": "cmc",
+      "label": "CMC Colossus",
+      "model_ref": "cmc",
+      "style": "part.definition.root",
+      "children": [
+        {
+          "id": "cmcE",
+          "label": "2048 E",
+          "model_ref": "e"
+        },
+        {
+          "id": "cmcF",
+          "label": "36864 F",
+          "model_ref": "f"
+        },
+        {
+          "id": "cmcOsc",
+          "label": "1.024 MHz",
+          "model_ref": "osc"
+        },
+        {
+          "id": "cmDsky",
+          "label": "DSKY \u00d72",
+          "model_ref": "dsky"
+        }
+      ]
+    },
+    {
+      "id": "lgc",
+      "label": "LGC Luminary",
+      "model_ref": "lgc",
+      "style": "part.definition.root",
+      "children": [
+        {
+          "id": "lgcE",
+          "label": "2048 E",
+          "model_ref": "e"
+        },
+        {
+          "id": "lgcF",
+          "label": "36864 F",
+          "model_ref": "f"
+        },
+        {
+          "id": "lgcOsc",
+          "label": "1.024 MHz",
+          "model_ref": "osc"
+        },
+        {
+          "id": "lmDsky",
+          "label": "DSKY \u00d71",
+          "model_ref": "dsky"
+        }
+      ]
+    },
+    {
+      "id": "ags",
+      "label": "AGS (not AGC)",
+      "model_ref": "ags",
+      "style": "part.definition.root"
+    }
+  ]
+}

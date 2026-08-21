@@ -1,19 +1,22 @@
 {
   "diagram": "apollo-bdd",
   "kind": "DefinitionView",
-  "name": "Apollo 11 Definition Tree",
+  "name": "Apollo 11 System Definition Tree",
   "subject": "Apollo11::Apollo11",
-  "model_files": [
-    "apollo.sysml"
-  ],
+  "model_files": ["apollo.sysml"],
   "direction": "top-down",
-  "default_w": 150,
-  "default_h": 56,
-  "sibling_gap": 24,
-  "rank_gap": 90,
-  "max_siblings_per_row": 5,
+  "default_w": 140,
+  "default_h": 52,
+  "sibling_gap": 20,
+  "rank_gap": 80,
+  "max_siblings_per_row": 6,
   "aliases": {
     "root": "Apollo11::Apollo11",
+    "saturnV": "Apollo11::SaturnV",
+    "csm": "Apollo11::CSM",
+    "lm": "Apollo11::LM",
+    "crew": "Apollo11::Crew",
+    "ground": "Apollo11::Ground",
     "sic": "Apollo11::SIC",
     "sii": "Apollo11::SII",
     "sivb": "Apollo11::SIVB",
@@ -34,7 +37,12 @@
     "cmp": "Apollo11::CommandModulePilot",
     "lmp": "Apollo11::LunarModulePilot",
     "scsDef": "Apollo11::SCS",
-    "pngsDef": "Apollo11::PNGS"
+    "pngsDef": "Apollo11::PNGS",
+    "cmcDef": "Apollo11::CMC",
+    "lgcDef": "Apollo11::LGC",
+    "agsDef": "Apollo11::AGS",
+    "spsDef": "Apollo11::SPS",
+    "dpsDef": "Apollo11::DPS"
   },
   "roots": [
     {
@@ -45,113 +53,89 @@
       "w": 200,
       "children": [
         {
-          "id": "sIc",
-          "label": "S-IC",
-          "model_ref": "sic"
+          "id": "saturnV",
+          "label": "Saturn V",
+          "model_ref": "saturnV",
+          "children": [
+            {"id": "sIc", "label": "S-IC", "model_ref": "sic"},
+            {"id": "sIi", "label": "S-II", "model_ref": "sii"},
+            {"id": "sIvb", "label": "S-IVB", "model_ref": "sivb"},
+            {"id": "iu", "label": "IU", "model_ref": "iu"},
+            {"id": "sla", "label": "SLA", "model_ref": "sla"},
+            {"id": "les", "label": "LES", "model_ref": "les"}
+          ]
         },
         {
-          "id": "sIi",
-          "label": "S-II",
-          "model_ref": "sii"
-        },
-        {
-          "id": "sIvb",
-          "label": "S-IVB",
-          "model_ref": "sivb"
-        },
-        {
-          "id": "iu",
-          "label": "IU",
-          "model_ref": "iu"
-        },
-        {
-          "id": "sla",
-          "label": "SLA",
-          "model_ref": "sla"
-        },
-        {
-          "id": "les",
-          "label": "LES",
-          "model_ref": "les"
-        },
-        {
-          "id": "cm",
-          "label": "CM",
-          "model_ref": "cm",
+          "id": "csm",
+          "label": "CSM Block II",
+          "model_ref": "csm",
           "children": [
             {
-              "id": "scs",
-              "label": "SCS",
-              "model_ref": "scsDef"
+              "id": "cm",
+              "label": "CM",
+              "model_ref": "cm",
+              "children": [
+                {"id": "cmc", "label": "CMC", "model_ref": "cmcDef"},
+                {"id": "scs", "label": "SCS", "model_ref": "scsDef"}
+              ]
+            },
+            {
+              "id": "sm",
+              "label": "SM",
+              "model_ref": "sm",
+              "children": [
+                {"id": "sps", "label": "SPS", "model_ref": "spsDef"}
+              ]
             }
           ]
         },
         {
-          "id": "sm",
-          "label": "SM",
-          "model_ref": "sm"
-        },
-        {
-          "id": "lmDescent",
-          "label": "LM Descent",
-          "model_ref": "lmd"
-        },
-        {
-          "id": "lmAscent",
-          "label": "LM Ascent",
-          "model_ref": "lma",
+          "id": "lm",
+          "label": "LM-5",
+          "model_ref": "lm",
           "children": [
             {
-              "id": "pngs",
-              "label": "PNGS",
-              "model_ref": "pngsDef"
+              "id": "lmDescent",
+              "label": "Descent",
+              "model_ref": "lmd",
+              "children": [
+                {"id": "dps", "label": "DPS", "model_ref": "dpsDef"}
+              ]
+            },
+            {
+              "id": "lmAscent",
+              "label": "Ascent",
+              "model_ref": "lma",
+              "children": [
+                {"id": "pngs", "label": "PNGS", "model_ref": "pngsDef"},
+                {"id": "lgc", "label": "LGC", "model_ref": "lgcDef"},
+                {"id": "ags", "label": "AGS", "model_ref": "agsDef"}
+              ]
             }
           ]
         },
         {
-          "id": "mcc",
-          "label": "MCC-H",
-          "model_ref": "mcc"
+          "id": "crew",
+          "label": "Crew",
+          "model_ref": "crew",
+          "children": [
+            {"id": "cdr", "label": "CDR", "model_ref": "cdr"},
+            {"id": "cmp", "label": "CMP", "model_ref": "cmp"},
+            {"id": "lmp", "label": "LMP", "model_ref": "lmp"}
+          ]
         },
         {
-          "id": "gsfc",
-          "label": "GSFC",
-          "model_ref": "gsfc"
-        },
-        {
-          "id": "msfn",
-          "label": "MSFN",
-          "model_ref": "msfn"
-        },
-        {
-          "id": "ksc",
-          "label": "KSC LC-39",
-          "model_ref": "ksc"
-        },
-        {
-          "id": "rso",
-          "label": "RSO / AFETR",
-          "model_ref": "rso"
-        },
-        {
-          "id": "recovery",
-          "label": "Recovery",
-          "model_ref": "rec"
-        },
-        {
-          "id": "cdr",
-          "label": "CDR",
-          "model_ref": "cdr"
-        },
-        {
-          "id": "cmp",
-          "label": "CMP",
-          "model_ref": "cmp"
-        },
-        {
-          "id": "lmp",
-          "label": "LMP",
-          "model_ref": "lmp"
+          "id": "ground",
+          "label": "Ground",
+          "model_ref": "ground",
+          "children": [
+            {"id": "mcc", "label": "MCC-H", "model_ref": "mcc"},
+            {"id": "gsfc", "label": "GSFC", "model_ref": "gsfc"},
+            {"id": "msfn", "label": "MSFN", "model_ref": "msfn"},
+            {"id": "ksc", "label": "KSC LC-39", "model_ref": "ksc"},
+            {"id": "rso", "label": "RSO / AFETR", "model_ref": "rso"},
+            {"id": "recovery", "label": "Recovery", "model_ref": "rec"}
+          ]
         }
       ]
     }

@@ -11,7 +11,7 @@
     "kind": "RequirementView",
     "name": "Apollo 11 Sourced Requirements",
     "canvas": {
-      "width": 2337,
+      "width": 3247,
       "height": 430,
       "background": "#FFFFFF"
     },
@@ -171,6 +171,62 @@
           "z": 10
         },
         "label": "\u00abrequirement\u00bb\nLM PNGS \u2260 AGS\nLGC + IMU + radars\nR47 inits AGS",
+        "style": "requirement"
+      },
+      {
+        "id": "eclssLoopRequirement",
+        "model_ref": "eclssLoopRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 2301,
+          "y": 72,
+          "width": 202,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nCM ECS loops O2/H2O/LiOH\n5.0 psia 100% O2\nCO2 \u22647.6 torr",
+        "style": "requirement"
+      },
+      {
+        "id": "smRcsRequirement",
+        "model_ref": "smRcsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 2539,
+          "y": 72,
+          "width": 181,
+          "height": 82,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nSM RCS four quads A\u2013D\nThrust UNKNOWN",
+        "style": "requirement"
+      },
+      {
+        "id": "lmRcsRequirement",
+        "model_ref": "lmRcsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 2756,
+          "y": 72,
+          "width": 174,
+          "height": 82,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nLM RCS 604 lb PK\nCount/thrust UNKNOWN",
+        "style": "requirement"
+      },
+      {
+        "id": "fuelCellRequirement",
+        "model_ref": "fuelCellRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 2966,
+          "y": 72,
+          "width": 209,
+          "height": 82,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nBlock II three fuel cells\nOutput UNKNOWN",
         "style": "requirement"
       }
     ],
