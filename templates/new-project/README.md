@@ -1,6 +1,6 @@
 # New project starter
 
-Copy this folder onto your own project. Rename the `StarterSystem` package, aliases, and file stems. Do not clone toaster or e-bike as the starter.
+Copy this folder onto your own project. Rename the `StarterSystem` package, aliases, and file stems. Do not clone toaster or e-bike as the starter. This is a **SysML2d** starter (`.sysml` / `.sysmld` / SVG). Do not mix in `.msml` files — that is the paired MSML toolchain.
 
 Requires Python 3.11+ and SysMLD installed (`pip install -e .` from the SysMLD repo, or `PYTHONPATH=src`).
 
