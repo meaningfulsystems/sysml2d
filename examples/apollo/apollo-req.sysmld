@@ -11,7 +11,7 @@
     "kind": "RequirementView",
     "name": "Apollo 11 Sourced Requirements",
     "canvas": {
-      "width": 4279,
+      "width": 4272,
       "height": 430,
       "background": "#FFFFFF"
     },
@@ -236,11 +236,11 @@
         "layout": {
           "x": 3330,
           "y": 72,
-          "width": 195,
+          "width": 188,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nSM 4 quads, lbf UNKNOWN\nCM 2\u00d76 \u00d7 93 lbf\nno auto translation",
+        "label": "\u00abrequirement\u00bb\nRCS: SM/LM 100 lbf\nCM 93 lbf; SM 4 quads\n\u0394v table still UNKNOWN",
         "style": "requirement"
       },
       {
@@ -248,7 +248,7 @@
         "model_ref": "spsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 3561,
+          "x": 3554,
           "y": 72,
           "width": 216,
           "height": 88,
@@ -262,7 +262,7 @@
         "model_ref": "dpsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 3813,
+          "x": 3806,
           "y": 72,
           "width": 188,
           "height": 88,
@@ -276,7 +276,7 @@
         "model_ref": "pipaRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 4037,
+          "x": 4030,
           "y": 72,
           "width": 170,
           "height": 88,

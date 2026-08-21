@@ -102,7 +102,7 @@
       "order": 2
     },
     "rcsRequirement": {
-      "label": "\u00abrequirement\u00bb\nSM 4 quads, lbf UNKNOWN\nCM 2\u00d76 \u00d7 93 lbf\nno auto translation",
+      "label": "\u00abrequirement\u00bb\nRCS: SM/LM 100 lbf\nCM 93 lbf; SM 4 quads\n\u0394v table still UNKNOWN",
       "rank": 3,
       "order": 3
     }

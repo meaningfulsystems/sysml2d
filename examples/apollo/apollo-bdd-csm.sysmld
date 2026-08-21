@@ -429,7 +429,7 @@
           "height": 52,
           "z": 10
         },
-        "label": "quadA",
+        "label": "quadA 100 lbf",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -448,7 +448,7 @@
           "height": 52,
           "z": 10
         },
-        "label": "quadB",
+        "label": "quadB 100 lbf",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -467,7 +467,7 @@
           "height": 52,
           "z": 10
         },
-        "label": "quadC",
+        "label": "quadC 100 lbf",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -486,7 +486,7 @@
           "height": 52,
           "z": 10
         },
-        "label": "quadD",
+        "label": "quadD 100 lbf",
         "compartments": {
           "attributes": false,
           "ports": false,

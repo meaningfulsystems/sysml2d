@@ -52,7 +52,7 @@
           {"id": "DEDA", "label": "DEDA", "model_ref": "DEDA"}
         ]},
         {"id": "APS", "label": "APS", "model_ref": "APS"},
-        {"id": "RCS", "label": "RCS", "model_ref": "RCS"},
+        {"id": "RCS", "label": "RCS 100 lbf", "model_ref": "RCS"},
         {"id": "landingRadar", "label": "landingRadar", "model_ref": "landingRadar"},
         {"id": "rendezvousRadar", "label": "rendezvousRadar", "model_ref": "rendezvousRadar"},
         {"id": "drogue", "label": "drogue", "model_ref": "drogue"}

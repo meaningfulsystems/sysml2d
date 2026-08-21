@@ -44,7 +44,7 @@
 <rect id="APS" x="1383" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1453" y="326">APS</text>
 <rect id="RCS" x="824" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="894" y="406">RCS</text>
+<text class="label" text-anchor="middle" x="894" y="406">RCS 100 lbf</text>
 <rect id="landingRadar" x="982" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1052" y="406">landingRadar</text>
 <rect id="rendezvousRadar" x="1140" y="380" width="156" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>

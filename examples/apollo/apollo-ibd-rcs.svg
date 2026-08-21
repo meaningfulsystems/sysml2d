@@ -7,8 +7,8 @@
 </defs>
 <rect x="0" y="0" width="624" height="582" fill="#FFFFFF"/>
 <rect x="2" y="38" width="620" height="540" fill="none" stroke="#333333" stroke-width="2"/>
-<path d="M 2 1 H 424 L 440 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
-<text class="header" x="12" y="24">[icn.mb] SM RCS four quads (lbf UNKNOWN) [SM : SM]</text>
+<path d="M 2 1 H 448 L 464 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] SM RCS four quads (100 lbf/engine) [SM : SM]</text>
 <rect x="2" y="38" width="620" height="542" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
 <rect id="boundary" x="40" y="40" width="540" height="460" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
@@ -16,13 +16,13 @@
 <rect id="RCS" x="76" y="241" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="146" y="270">RCS</text>
 <rect id="quadA" x="404" y="76" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="474" y="97.5">quadA</tspan><tspan x="474" dy="15">lbf UNKNOWN</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="474" y="97.5">quadA</tspan><tspan x="474" dy="15">100 lbf/engine</tspan></text>
 <rect id="quadB" x="404" y="186" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="474" y="207.5">quadB</tspan><tspan x="474" dy="15">lbf UNKNOWN</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="474" y="207.5">quadB</tspan><tspan x="474" dy="15">100 lbf/engine</tspan></text>
 <rect id="quadC" x="404" y="296" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="474" y="317.5">quadC</tspan><tspan x="474" dy="15">lbf UNKNOWN</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="474" y="317.5">quadC</tspan><tspan x="474" dy="15">100 lbf/engine</tspan></text>
 <rect id="quadD" x="404" y="406" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="474" y="427.5">quadD</tspan><tspan x="474" dy="15">lbf UNKNOWN</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="474" y="427.5">quadD</tspan><tspan x="474" dy="15">100 lbf/engine</tspan></text>
 <rect id="RCS--quadA--src" x="210" y="246.6" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="RCS--quadB--src" x="210" y="258.2" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="RCS--quadC--src" x="210" y="269.8" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
@@ -35,9 +35,9 @@
 <path d="M 222,264.2 L 296,264.2 L 296,215 L 398,215" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 222,275.8 L 352,275.8 L 352,325 L 398,325" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 222,287.4 L 324,287.4 L 324,435 L 398,435" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" x="280" y="178.8">quad</text>
-<text class="small" text-anchor="middle" x="347" y="203">quad</text>
-<text class="small" text-anchor="middle" x="326" y="263.8">quad</text>
-<text class="small" x="336" y="361.2">quad</text>
+<text class="small" x="280" y="178.8">100 lbf</text>
+<text class="small" text-anchor="middle" x="347" y="203">100 lbf</text>
+<text class="small" text-anchor="middle" x="326" y="263.8">100 lbf</text>
+<text class="small" x="336" y="361.2">100 lbf</text>
 </g>
 </svg>

@@ -1,7 +1,7 @@
 {
   "diagram": "apollo-ibd-rcs",
   "kind": "InterconnectionView",
-  "name": "SM RCS four quads (lbf UNKNOWN)",
+  "name": "SM RCS four quads (100 lbf/engine)",
   "subject": "SM",
   "model_files": [
     "apollo.sysml"
@@ -38,19 +38,19 @@
       "style": "part.prop"
     },
     "quadA": {
-      "label": "quadA\nlbf UNKNOWN",
+      "label": "quadA\n100 lbf/engine",
       "style": "part.prop"
     },
     "quadB": {
-      "label": "quadB\nlbf UNKNOWN",
+      "label": "quadB\n100 lbf/engine",
       "style": "part.prop"
     },
     "quadC": {
-      "label": "quadC\nlbf UNKNOWN",
+      "label": "quadC\n100 lbf/engine",
       "style": "part.prop"
     },
     "quadD": {
-      "label": "quadD\nlbf UNKNOWN",
+      "label": "quadD\n100 lbf/engine",
       "style": "part.prop"
     }
   },
@@ -58,25 +58,25 @@
     {
       "from": "RCS",
       "to": "quadA",
-      "label": "quad",
+      "label": "100 lbf",
       "model_ref": "conn-RCS-quadA"
     },
     {
       "from": "RCS",
       "to": "quadB",
-      "label": "quad",
+      "label": "100 lbf",
       "model_ref": "conn-RCS-quadB"
     },
     {
       "from": "RCS",
       "to": "quadC",
-      "label": "quad",
+      "label": "100 lbf",
       "model_ref": "conn-RCS-quadC"
     },
     {
       "from": "RCS",
       "to": "quadD",
-      "label": "quad",
+      "label": "100 lbf",
       "model_ref": "conn-RCS-quadD"
     }
   ],

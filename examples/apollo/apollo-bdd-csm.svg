@@ -52,13 +52,13 @@
 <rect id="FC3" x="1747" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1817" y="326">FC3</text>
 <rect id="quadA" x="1352" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1422" y="406">quadA</text>
+<text class="label" text-anchor="middle" x="1422" y="406">quadA 100 lbf</text>
 <rect id="quadB" x="1510" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1580" y="406">quadB</text>
+<text class="label" text-anchor="middle" x="1580" y="406">quadB 100 lbf</text>
 <rect id="quadC" x="1668" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1738" y="406">quadC</text>
+<text class="label" text-anchor="middle" x="1738" y="406">quadC 100 lbf</text>
 <rect id="quadD" x="1826" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1896" y="406">quadD</text>
+<text class="label" text-anchor="middle" x="1896" y="406">quadD 100 lbf</text>
 <path d="M 1003,92 L 1003,131 L 608,131 L 608,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 1003,92 L 1003,131 L 1580,131 L 1580,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 608,222 L 608,261 L 110,261 L 110,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>

@@ -10,7 +10,7 @@ All notable changes to SysMLD are documented here.
 - `examples/e-bike/` — a street-legal class e-bike model with intents, `.sysmld`, and SVG for all 15 view kinds plus an operating-context general view
 - Adoption pack: [AGENTS.md](AGENTS.md), four installable skills (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`), and [templates/new-project/](templates/new-project/) (copy-this `.sysml` + IBD + STM)
 - `examples/apollo/` — Apollo 11 / Block II (AS-506) whole-stack model: ground/crew, vehicles, two AGCs, AGS, IU LVDC, USB, mission + abort STMs. Sourced numbers only; UNKNOWN marked
-- Apollo morning delta: SM three fuel cells; CM AgZn + charger + two 117 V 400 Hz inverters; LM six AgZn + ECA; AGS AEA/ASA/DEDA (TN-7990); CM probe / LM drogue / 12 latches; SM four quads (lbf UNKNOWN) and CM 2×6 × 93 lbf
+- Apollo morning delta: SM three fuel cells; CM AgZn + charger + two 117 V 400 Hz inverters; LM six AgZn + ECA; AGS AEA/ASA/DEDA (TN-7990); CM probe / LM drogue / 12 latches; SM/LM RCS 100 lbf per engine, CM 93 lbf
 - Apollo Press Kit p.109 tank loads filled; A11 ropes Comanche 055 + Luminary 1A LMY99/1; CMC ENTRY vs LGC LANDING split; SPS/DPS cited as PK vs TN conflicts. SPS loaded mass and CSM lunar Δv stay UNKNOWN
 
 ### Changed
@@ -23,7 +23,7 @@ All notable changes to SysMLD are documented here.
 - Toaster, blender, and e-bike example artifacts regenerated from the composers
 - README / CONTRIBUTING test counts updated for the new routing and e-bike coverage
 - E-bike review: EPAC cadence PAS only (throttle removed from RideControl, HumanInterface, and RiderInterface), Tour-mode 500 Wh / 60 km bind, BMS inside BatteryPack, EN 15194 5 m / 2 m plus 50 ms inhibit, fail-silent allocated beyond brakes, `lockBikeUseCase` removed, rear geared hub (no regen), StVZO / ISO 6742 lighting
-- E-bike addendum: walk assist ≤ 6 km/h (not throttle); energyBalance is pack-only; ports moved onto child parts; 250 W / pack voltage / thermal derate / wheelSpeedSensor as extras
+- E-bike addendum: RideControl state `walk` (≤ 6 km/h, not throttle); Tour binds `usableWh` + `energyPerKm`; energyBalance is pack-only; ports live on child parts only
 
 ## [0.1.0] — 2026-05-22
 

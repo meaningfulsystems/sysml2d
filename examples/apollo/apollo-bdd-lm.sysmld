@@ -352,7 +352,7 @@
           "height": 52,
           "z": 10
         },
-        "label": "RCS",
+        "label": "RCS 100 lbf",
         "compartments": {
           "attributes": false,
           "ports": false,

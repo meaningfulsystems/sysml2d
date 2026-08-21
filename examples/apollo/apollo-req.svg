@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="4283" height="472" viewBox="0 0 4283 472">
+<svg xmlns="http://www.w3.org/2000/svg" width="4276" height="472" viewBox="0 0 4276 472">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="4283" height="472" fill="#FFFFFF"/>
-<rect x="2" y="38" width="4279" height="430" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="4276" height="472" fill="#FFFFFF"/>
+<rect x="2" y="38" width="4272" height="430" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 424 L 440 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[req.mb] Apollo 11 Sourced Requirements [Apollo11]</text>
-<rect x="2" y="38" width="4279" height="432" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="4272" height="432" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
 <rect id="agcRequirement" x="72" y="72" width="195" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle"><tspan x="169.5" y="93.5">«requirement»</tspan><tspan x="169.5" dy="15">Two AGCs Block II</tspan><tspan x="169.5" dy="15">Comanche 055 + LMY99/1</tspan><tspan x="169.5" dy="15">CMC ENTRY ≠ LGC LANDING</tspan></text>
@@ -41,14 +41,14 @@
 <text class="label" text-anchor="middle"><tspan x="2962" y="93.5">«requirement»</tspan><tspan x="2962" dy="15">AGS AEA+ASA+DEDA</tspan><tspan x="2962" dy="15">AEA 4096×18, 5 μs, 32.7 lb</tspan><tspan x="2962" dy="15">Not a landing computer</tspan></text>
 <rect id="dockingRequirement" x="3106" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle"><tspan x="3200" y="93.5">«requirement»</tspan><tspan x="3200" dy="15">CM probe / LM drogue</tspan><tspan x="3200" dy="15">12 ring latches</tspan><tspan x="3200" dy="15">soft then hard; hw off</tspan></text>
-<rect id="rcsRequirement" x="3330" y="72" width="195" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="3427.5" y="93.5">«requirement»</tspan><tspan x="3427.5" dy="15">SM 4 quads, lbf UNKNOWN</tspan><tspan x="3427.5" dy="15">CM 2×6 × 93 lbf</tspan><tspan x="3427.5" dy="15">no auto translation</tspan></text>
-<rect id="spsRequirement" x="3561" y="72" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="3669" y="93.5">«requirement»</tspan><tspan x="3669" dy="15">SPS conflict</tspan><tspan x="3669" dy="15">20,500 PK vs 21,500 D-7375</tspan><tspan x="3669" dy="15">loaded mass UNKNOWN</tspan></text>
-<rect id="dpsRequirement" x="3813" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="3907" y="93.5">«requirement»</tspan><tspan x="3907" dy="15">DPS conflict</tspan><tspan x="3907" dy="15">9,870 / 1,050–6,300 PK</tspan><tspan x="3907" dy="15">vs 10,500 10:1 D-7143</tspan></text>
-<rect id="pipaRequirement" x="4037" y="72" width="170" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="4122" y="93.5">«requirement»</tspan><tspan x="4122" dy="15">PIPA scale</tspan><tspan x="4122" dy="15">CM 5.85 cm/s/pulse</tspan><tspan x="4122" dy="15">LM 1.0 cm/s/pulse</tspan></text>
+<rect id="rcsRequirement" x="3330" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="3424" y="93.5">«requirement»</tspan><tspan x="3424" dy="15">RCS: SM/LM 100 lbf</tspan><tspan x="3424" dy="15">CM 93 lbf; SM 4 quads</tspan><tspan x="3424" dy="15">Δv table still UNKNOWN</tspan></text>
+<rect id="spsRequirement" x="3554" y="72" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="3662" y="93.5">«requirement»</tspan><tspan x="3662" dy="15">SPS conflict</tspan><tspan x="3662" dy="15">20,500 PK vs 21,500 D-7375</tspan><tspan x="3662" dy="15">loaded mass UNKNOWN</tspan></text>
+<rect id="dpsRequirement" x="3806" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="3900" y="93.5">«requirement»</tspan><tspan x="3900" dy="15">DPS conflict</tspan><tspan x="3900" dy="15">9,870 / 1,050–6,300 PK</tspan><tspan x="3900" dy="15">vs 10,500 10:1 D-7143</tspan></text>
+<rect id="pipaRequirement" x="4030" y="72" width="170" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="4115" y="93.5">«requirement»</tspan><tspan x="4115" dy="15">PIPA scale</tspan><tspan x="4115" dy="15">CM 5.85 cm/s/pulse</tspan><tspan x="4115" dy="15">LM 1.0 cm/s/pulse</tspan></text>
 <path d="M 169.5,160 L 169.5,264" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 943,160 L 943,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text class="small" x="181.5" y="212">refine</text>
