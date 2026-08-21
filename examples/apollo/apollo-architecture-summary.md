@@ -107,11 +107,11 @@ TLI Ground Elapsed Time (GET) has three labels only.
 
 Planned LOI-1 is 75:54:28 GET. A11-FP is the **only planned source**. Flown LOI-1 is ~075:49:50 GET (PAD / Mission Report). Two LOI-1 numbers only.
 
-The requirements figure follows that model text. Six English boxes, grouped by job: safety, land, talk, abort, air, guide. A view label is not a requirement. Locked numbers stay in the prose and in the engine table, not as a dump inside a box. The thrust fights stay in the sentences, not on the figure.
+The requirements figure is six INCOSE shalls, one per job box: safety, land, talk, abort, air, guide. Each box states The [subject] shall [capability] under [condition]. A view label is not a shall the model does not have. Locked numbers and the thrust fights stay in the prose and in the engine table, not inside a box.
 
 ![Apollo requirements](apollo-req.svg)
 
-*Apollo requirements. Boxes state the shalls in words; they do not invent a shall or a third LOI-1 time.*
+*Apollo requirements. The six boxes are INCOSE shalls. They do not invent a number or a third LOI-1 time.*
 
 The pad stack from the ground up is S-IC-6, S-II-6, S-IVB-6N, IU-6, SLA-14 with LM-5 inside, SM, CM, and LES. The system-definition figure is seven top-level parts under Apollo 11 AS-506: Saturn V, Command/Service Module, Lunar Module, Crew, Ground, Range Safety Officer, and Recovery. Stage, Instrument Unit, and guidance detail stay on the child figures. The Instrument Unit is IU → LVDC, ST-124, FCC. SLA is eight-panel. Descent and ascent stay separate. Two AGCs stay separate.
 
@@ -141,7 +141,7 @@ countdown → boost → earthOrbit → TLI → dockEject → translunar → LOI 
 
 Tower clear starts boost. SECO is orbital insertion. The TLI burn, then `tliComplete`, then LM extract, then the SPS LOI burn. DPS does DOI. P66 is the flown landing program. P12 is ascent. SPS does TEI. The recovery force closes the book.
 
-The mission clock is two pages so each stays printable. The model still nests Earth coast and Lunar return. The four sourced AND regions sit on a third small page. They are not flattened and they are not a 2000-pixel wallpaper.
+The mission clock is two pages so each stays printable. The model still nests Earth coast and Lunar return. The four sourced concurrent regions stay in the model. They are not flattened onto a forced lecture page.
 
 Earth coast holds countdown through Lunar Orbit Insertion. The locked hop sits on that page: TLI → dockEject → translunar → LOI. TLI boxes carry the three GET labels. LOI-1 boxes carry planned 75:54:28 GET and flown ~075:49:50 GET.
 
@@ -155,17 +155,13 @@ Lunar return holds Lunar Orbit Insertion through recovery.
 
 *Apollo lunar return. Descent Orbit Insertion, surface EVA, Trans-Earth Injection, and recovery sit on this page.*
 
-The concurrency page keeps the four sourced AND regions only. Abort runs beside the mission clock. After undock, the Command Module Pilot stays in lunar orbit while the Lunar Module flies DOI through ascent. Range Safety destruct runs beside Mission Control until it is safed after Earth orbit. Abort Guidance runs beside Primary Guidance; Abort Guidance still does not land. There is no fourth computer region and no concurrent Δv table.
+The model keeps four concurrent regions. Abort runs beside the nominal clock. After undock, the Command/Service Module stays in lunar orbit while the Lunar Module flies Descent Orbit Insertion through ascent. Range Safety runs beside Mission Control until destruct is safed after Earth orbit. Abort Guidance runs beside Primary Guidance in operate and follow-PNGS; Abort Guidance does not land. There is no fourth computer and no concurrent Δv table.
 
-![Apollo sourced concurrency](apollo-stm-and.svg)
-
-*Apollo sourced concurrency. Four AND pairs only. The abort fan and the computer-mode machines stay on their own pages.*
-
-Abort runs beside the nominal machine: pad, I, II, III, IV, contingency TLI, lunar, SPS. LES covers pad / Mode I only. Later modes are not LES. Crew safety is not the tower alone. The abort figure is the fan detail. Arrows into the right-hand states match the left-hand entries.
+Abort runs beside the nominal machine: Pad, Mode I, Mode II, Mode III, Mode IV, Contingency Translunar Injection, Lunar, and Service Propulsion System. Pad and Mode I sit with the Launch Escape System. Later modes do not. Crew safety is not the tower alone. The abort figure teaches those names in the state boxes.
 
 ![Apollo abort modes](apollo-stm-abort.svg)
 
-*Apollo abort modes, as a detail view. Pad and Mode I sit with LES; later modes do not. Right-side arrows match the left.*
+*Apollo abort modes. Pad and Mode I sit with the Launch Escape System; Mode II, Mode III, Mode IV, Contingency Translunar Injection, Lunar, and Service Propulsion System do not.*
 
 Computer mode machines stay separate. CMC entry is P61 → P62 → P63 → P64 → P65 → P66 → P67 (entry only). LGC landing is P63 → P64 → {P65 | P66} → P67 → P68 (landing only). Apollo 11 flew P66. AGS goes idle → operate (R47 from PNGS) → follow PNGS → idle and does not land. ECLSS goes cabin → suit → EVA (PLSS) → cabin. Docking mode, which is not the mission `dockEject` state, is undocked → soft → hard (twelve latches) → hardware off.
 

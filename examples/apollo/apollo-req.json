@@ -8,7 +8,7 @@
   ],
   "direction": "top-down",
   "default_w": 280,
-  "default_h": 148,
+  "default_h": 156,
   "sibling_gap": 36,
   "rank_gap": 56,
   "max_per_row": 3,
@@ -22,45 +22,45 @@
   },
   "nodes": {
     "safety": {
-      "label": "«requirement»\nSafety\nCrew safety is not Launch\nEscape System only. The Range\nSafety Officer sits outside\nMission Control.",
+      "label": "«requirement»\nSafety\nThe Range Safety Officer\nshall command UHF destruct\nfrom outside Mission Control\nuntil that command is safed\nafter Earth orbit.",
       "rank": 0,
       "order": 0,
-      "h": 148,
+      "h": 156,
       "model_ref": "safety"
     },
     "land": {
-      "label": "«requirement»\nLand\nTwo crew land. The flown\nlanding program is P66.\nPrimary Guidance lands;\nAbort Guidance does not.",
+      "label": "«requirement»\nLand\nThe Lunar Module shall land\ntwo crew on the Moon under\nPrimary Guidance program P66.",
       "rank": 0,
       "order": 1,
-      "h": 148,
+      "h": 156,
       "model_ref": "land"
     },
     "talk": {
-      "label": "«requirement»\nTalk\nMission Control talks to the\nstack on Unified S-Band.",
+      "label": "«requirement»\nTalk\nThe stack shall communicate\nwith Mission Control on\nUnified S-Band.",
       "rank": 0,
       "order": 2,
-      "h": 148,
+      "h": 156,
       "model_ref": "talk"
     },
     "abort": {
-      "label": "«requirement»\nAbort\nAbort Guidance is not a landing\ncomputer. Pad and Mode I sit\nwith the escape tower; later\nmodes do not.",
+      "label": "«requirement»\nAbort\nThe Abort Guidance System\nshall provide abort guidance\nwithout landing the Lunar\nModule.",
       "rank": 1,
       "order": 0,
-      "h": 148,
+      "h": 156,
       "model_ref": "abort"
     },
     "air": {
-      "label": "«requirement»\nAir\nLife support is oxygen, water,\nand lithium hydroxide. Lunar\nModule descent oxygen is a\nteaching figure, not a\nrequired pressure.",
+      "label": "«requirement»\nAir\nThe Lunar Module shall supply\noxygen, water, and lithium\nhydroxide for life support.",
       "rank": 1,
       "order": 1,
-      "h": 148,
+      "h": 156,
       "model_ref": "air"
     },
     "guide": {
-      "label": "«requirement»\nGuide\nTwo Block II guidance computers.\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. Landing radar is on\ndescent; rendezvous radar is\non ascent.",
+      "label": "«requirement»\nGuide\nThe Lunar Module Primary\nGuidance system shall use\nlanding radar during descent\nand rendezvous radar during\nascent.",
       "rank": 1,
       "order": 2,
-      "h": 148,
+      "h": 156,
       "model_ref": "guide"
     }
   },

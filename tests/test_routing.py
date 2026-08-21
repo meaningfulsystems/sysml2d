@@ -45,6 +45,14 @@ class RoutingTests(unittest.TestCase):
         self.assertIn(" A 7 7 0 0 ", path)
         self.assertIn("30,13", path)
 
+    def test_connection_path_last_segment_follows_shaft(self):
+        path = _connection_path(
+            [(258, 562), (258, 560), (367, 560), (367, 562)],
+            8,
+        )
+        self.assertTrue(path.endswith("L 367,560"))
+        self.assertNotIn("L 367,562", path)
+
     def test_ranked_channel_tracks_separate_parallel_edges(self):
         spec = {
             "kind": "VerificationCaseView",

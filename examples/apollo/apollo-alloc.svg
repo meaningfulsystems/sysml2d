@@ -20,11 +20,11 @@
 <rect id="agsRequirement" x="944" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1029" y="113">AGS separate</text>
 <rect id="epsRequirement" x="1162" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1247" y="113">EPS Press Kit</text>
+<text class="label" text-anchor="middle" x="1247" y="113">Electrical Power</text>
 <rect id="dockingRequirement" x="1380" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1465" y="113">Docking</text>
 <rect id="rcsRequirement" x="1598" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1683" y="113">RCS</text>
+<text class="label" text-anchor="middle" x="1683" y="113">Reaction Control</text>
 <rect id="IU" x="82" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="157" y="369">IU</text>
 <rect id="RSO" x="300" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
@@ -36,32 +36,32 @@
 <rect id="AGS" x="954" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1029" y="369">AGS</text>
 <rect id="SM" x="1172" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1247" y="369">SM</text>
+<text class="label" text-anchor="middle" x="1247" y="369">Service Module</text>
 <rect id="CM" x="1390" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1465" y="369">CM</text>
+<text class="label" text-anchor="middle" x="1465" y="369">Command Module</text>
 <rect id="descent" x="1608" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1683" y="369">descent</text>
+<text class="label" text-anchor="middle" x="1683" y="369">Descent stage</text>
 <path d="M 157,154 L 157,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
 <path d="M 375,154 L 375,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
 <path d="M 593,154 L 593,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
 <path d="M 593,154 L 593,202.889 L 811,202.889 L 811,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
 <path d="M 1029,154 L 1029,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1247,154 L 1247,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1247,154 L 1247,235.778 L 1465,235.778 L 1465,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1247,154 L 1247,252.222 L 1458,252.222 A 7 7 0 0 0 1472,252.222 L 1683,252.222 L 1683,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 1247,154 L 1247,219.333 L 1214,219.333 L 1214,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 1247,154 L 1247,235.778 L 1423,235.778 L 1423,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 1247,154 L 1247,252.222 L 1416,252.222 A 7 7 0 0 0 1430,252.222 L 1641,252.222 L 1641,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
 <path d="M 1465,154 L 1465,245.222 A 7 7 0 0 1 1465,259.222 L 1465,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1683,154 L 1683,285.111 L 1472,285.111 A 7 7 0 0 1 1458,285.111 L 1247,285.111 L 1247,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1683,154 L 1683,301.556 L 1465,301.556 L 1465,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 1683,154 L 1683,285.111 L 1648,285.111 A 7 7 0 0 1 1634,285.111 L 1472,285.111 A 7 7 0 0 1 1458,285.111 L 1430,285.111 A 7 7 0 0 1 1416,285.111 L 1280,285.111 L 1280,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 1683,154 L 1683,301.556 L 1648,301.556 A 7 7 0 0 1 1634,301.556 L 1507,301.556 L 1507,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
 <text class="small" x="169" y="244">allocate</text>
 <text class="small" x="387" y="244">allocate</text>
 <text class="small" x="605" y="244">allocate</text>
 <text class="small" text-anchor="middle" x="702" y="190.889">allocate</text>
 <text class="small" x="1041" y="244">allocate</text>
-<text class="small" text-anchor="end" x="1235" y="244">allocate</text>
-<text class="small" text-anchor="middle" x="1356" y="223.778">allocate</text>
-<text class="small" text-anchor="middle" x="1399.6" y="275.222">allocate</text>
+<text class="small" x="1226" y="276.666">allocate</text>
+<text class="small" text-anchor="middle" x="1335" y="223.778">allocate</text>
+<text class="small" text-anchor="middle" x="1384.9" y="275.222">allocate</text>
 <text class="small" x="1477" y="244">allocate</text>
-<text class="small" text-anchor="middle" x="1530.4" y="273.111">allocate</text>
+<text class="small" text-anchor="middle" x="1541.95" y="273.111">allocate</text>
 <text class="small" x="1695" y="227.778">allocate</text>
 </g>
 </svg>

@@ -1,60 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1213" height="757" viewBox="0 0 1213 757">
+<svg xmlns="http://www.w3.org/2000/svg" width="1265" height="764" viewBox="0 0 1265 764">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1213" height="757" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1209" height="715" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1265" height="764" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1261" height="722" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 496 L 512 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[stv.mb] Apollo 11 Lunar Return [lunarReturn : lunarReturn]</text>
-<rect x="2" y="38" width="1209" height="717" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1261" height="724" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="boundary" x="-7" y="40" width="1176" height="635" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
-<text class="label" x="3" y="62">lunarReturn</text>
-<rect id="lunarReturn" x="29" y="76" width="1104" height="563" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" x="41" y="100">Lunar return</text>
-<circle id="initial" cx="174" cy="174" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
-<circle id="lunarInitial" cx="174" cy="315" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
-<rect id="LOI" x="74" y="340" width="200" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="174" y="368">Lunar Orbit Insertion</text>
-<rect id="undock" x="90" y="534" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="174" y="562">Undock</text>
-<rect id="DOI" x="367" y="530" width="168" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="451" y="554.5">Descent Orbit</tspan><tspan x="451" dy="15">Insertion</tspan></text>
-<rect id="descent" x="367" y="340" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="451" y="368">Descent</text>
-<rect id="surfaceEVA" x="367" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="451" y="174">Surface EVA</text>
-<rect id="ascent" x="644" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="728" y="174">Ascent</text>
-<rect id="rendezvous" x="644" y="340" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="728" y="368">Rendezvous</text>
-<rect id="TEI" x="644" y="530" width="168" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="728" y="554.5">Trans-Earth</tspan><tspan x="728" dy="15">Injection</tspan></text>
-<rect id="entry" x="920" y="534" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1004" y="562">Entry</text>
-<rect id="recovery" x="920" y="340" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1004" y="368">Recovery</text>
-<path d="M 174,325 L 174,340" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 174,396 L 174,534" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 258,562 L 258,561 Q 258,560 259,560 L 366,560 Q 367,560 367,561 L 367,562" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 451,530 L 451,396" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 451,340 L 451,202" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 535,174 L 535,174 L 644,174 L 644,174" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 728,202 L 728,340" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 728,396 L 728,530" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 812,562 L 812,563 Q 812,564 813,564 L 919,564 Q 920,564 920,563 L 920,562" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 1004,534 L 1004,396" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 184,172 L 114,172 Q 106,172 98,171.999 L 29,171.992" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<text class="small" text-anchor="middle" x="312.5" y="568">Descent Propulsion</text>
-<text class="small" text-anchor="middle" x="451" y="471">P63</text>
-<text class="small" text-anchor="middle" x="451" y="279">P68</text>
-<text class="small" text-anchor="middle" x="589.5" y="182">P12</text>
-<text class="small" text-anchor="middle" x="728" y="279">P30</text>
-<text class="small" text-anchor="middle" x="728" y="471">Service Propulsion</text>
-<text class="small" text-anchor="middle" x="866" y="572">entry interface</text>
-<text class="small" text-anchor="middle" x="1004" y="473">splashdown</text>
+<rect id="boundary" x="-7" y="5" width="1228" height="677" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="3" y="27">lunarReturn</text>
+<rect id="lunarReturn" x="29" y="41" width="1156" height="605" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" x="41" y="65">Lunar return</text>
+<circle id="lunarInitial" cx="174" cy="121" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="LOI" x="74" y="146" width="200" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="174" y="174">Lunar Orbit Insertion</text>
+<rect id="undock" x="90" y="344" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="174" y="372">Undock</text>
+<rect id="DOI" x="90" y="537" width="168" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="174" y="561.5">Descent Orbit</tspan><tspan x="174" dy="15">Insertion</tspan></text>
+<rect id="descent" x="384" y="541" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="468" y="569">Descent</text>
+<rect id="surfaceEVA" x="384" y="344" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="468" y="372">Surface EVA</text>
+<rect id="ascent" x="384" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="468" y="174">Ascent</text>
+<rect id="rendezvous" x="678" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="762" y="174">Rendezvous</text>
+<rect id="TEI" x="678" y="340" width="168" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="762" y="364.5">Trans-Earth</tspan><tspan x="762" dy="15">Injection</tspan></text>
+<rect id="entry" x="678" y="541" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="762" y="569">Entry</text>
+<rect id="recovery" x="972" y="541" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1056" y="569">Recovery</text>
+<path d="M 174,131 L 174,146" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 174,202 L 174,344" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 174,400 L 174,537" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 258,569 L 258,570 Q 258,571 259,571 L 384,571" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 468,541 L 468,400" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 468,344 L 468,202" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 552,174 L 552,174 L 678,174" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 762,202 L 762,340" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 762,404 L 762,541" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 846,569 L 846,569 L 972,569" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="174" y="476.5">Descent Propulsion</text>
+<text class="small" text-anchor="middle" x="321" y="579">P63</text>
+<text class="small" text-anchor="middle" x="468" y="478.5">P68</text>
+<text class="small" text-anchor="middle" x="468" y="281">P12</text>
+<text class="small" text-anchor="middle" x="615" y="182">P30</text>
+<text class="small" text-anchor="middle" x="762" y="279">Service Propulsion</text>
+<text class="small" text-anchor="middle" x="762" y="480.5">entry interface</text>
+<text class="small" text-anchor="middle" x="909" y="577">splashdown</text>
 </g>
 </svg>

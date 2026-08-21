@@ -85,7 +85,7 @@
           "height": 82,
           "z": 10
         },
-        "label": "EPS Press Kit",
+        "label": "Electrical Power",
         "style": "requirement",
         "model_ref": "epsRequirement"
       },
@@ -113,7 +113,7 @@
           "height": 82,
           "z": 10
         },
-        "label": "RCS",
+        "label": "Reaction Control",
         "style": "requirement",
         "model_ref": "rcsRequirement"
       },
@@ -197,7 +197,7 @@
           "height": 70,
           "z": 10
         },
-        "label": "SM",
+        "label": "Service Module",
         "style": "part_usage",
         "model_ref": "SM"
       },
@@ -211,7 +211,7 @@
           "height": 70,
           "z": 10
         },
-        "label": "CM",
+        "label": "Command Module",
         "style": "part_usage",
         "model_ref": "CM"
       },
@@ -225,7 +225,7 @@
           "height": 70,
           "z": 10
         },
-        "label": "descent",
+        "label": "Descent stage",
         "style": "part_usage",
         "model_ref": "descent"
       }
@@ -408,12 +408,21 @@
           "element": "SM",
           "anchor": {
             "side": "top",
-            "offset": 0.5
+            "offset": 0.28
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 1247,
+              "y": 219.333
+            },
+            {
+              "x": 1214,
+              "y": 219.333
+            }
+          ]
         },
         "labels": [
           {
@@ -439,7 +448,7 @@
           "element": "CM",
           "anchor": {
             "side": "top",
-            "offset": 0.5
+            "offset": 0.22
           }
         },
         "route": {
@@ -450,7 +459,7 @@
               "y": 235.778
             },
             {
-              "x": 1465,
+              "x": 1423,
               "y": 235.778
             }
           ]
@@ -479,7 +488,7 @@
           "element": "descent",
           "anchor": {
             "side": "top",
-            "offset": 0.5
+            "offset": 0.22
           }
         },
         "route": {
@@ -490,7 +499,7 @@
               "y": 252.222
             },
             {
-              "x": 1683,
+              "x": 1641,
               "y": 252.222
             }
           ]
@@ -550,7 +559,7 @@
           "element": "SM",
           "anchor": {
             "side": "top",
-            "offset": 0.5
+            "offset": 0.72
           }
         },
         "route": {
@@ -561,7 +570,7 @@
               "y": 285.111
             },
             {
-              "x": 1247,
+              "x": 1280,
               "y": 285.111
             }
           ]
@@ -590,7 +599,7 @@
           "element": "CM",
           "anchor": {
             "side": "top",
-            "offset": 0.5
+            "offset": 0.78
           }
         },
         "route": {
@@ -601,7 +610,7 @@
               "y": 301.556
             },
             {
-              "x": 1465,
+              "x": 1507,
               "y": 301.556
             }
           ]

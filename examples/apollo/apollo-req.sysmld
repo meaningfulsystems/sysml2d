@@ -18,8 +18,8 @@
     "kind": "RequirementView",
     "name": "Apollo 11 Sourced Requirements",
     "canvas": {
-      "width": 969,
-      "height": 496,
+      "width": 913,
+      "height": 512,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -33,11 +33,11 @@
         "layout": {
           "x": 72,
           "y": 72,
-          "width": 237,
-          "height": 148,
+          "width": 230,
+          "height": 156,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nSafety\nCrew safety is not Launch\nEscape System only. The Range\nSafety Officer sits outside\nMission Control.",
+        "label": "\u00abrequirement\u00bb\nSafety\nThe Range Safety Officer\nshall command UHF destruct\nfrom outside Mission Control\nuntil that command is safed\nafter Earth orbit.",
         "style": "requirement"
       },
       {
@@ -45,13 +45,13 @@
         "model_ref": "land",
         "symbol": "requirement",
         "layout": {
-          "x": 345,
+          "x": 338,
           "y": 72,
-          "width": 202,
-          "height": 148,
+          "width": 237,
+          "height": 156,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nLand\nTwo crew land. The flown\nlanding program is P66.\nPrimary Guidance lands;\nAbort Guidance does not.",
+        "label": "\u00abrequirement\u00bb\nLand\nThe Lunar Module shall land\ntwo crew on the Moon under\nPrimary Guidance program P66.",
         "style": "requirement"
       },
       {
@@ -59,13 +59,13 @@
         "model_ref": "talk",
         "symbol": "requirement",
         "layout": {
-          "x": 583,
+          "x": 611,
           "y": 72,
-          "width": 230,
-          "height": 148,
+          "width": 223,
+          "height": 156,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nTalk\nMission Control talks to the\nstack on Unified S-Band.",
+        "label": "\u00abrequirement\u00bb\nTalk\nThe stack shall communicate\nwith Mission Control on\nUnified S-Band.",
         "style": "requirement"
       },
       {
@@ -74,12 +74,12 @@
         "symbol": "requirement",
         "layout": {
           "x": 72,
-          "y": 276,
-          "width": 251,
-          "height": 148,
+          "y": 284,
+          "width": 230,
+          "height": 156,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nAbort\nAbort Guidance is not a landing\ncomputer. Pad and Mode I sit\nwith the escape tower; later\nmodes do not.",
+        "label": "\u00abrequirement\u00bb\nAbort\nThe Abort Guidance System\nshall provide abort guidance\nwithout landing the Lunar\nModule.",
         "style": "requirement"
       },
       {
@@ -87,13 +87,13 @@
         "model_ref": "air",
         "symbol": "requirement",
         "layout": {
-          "x": 359,
-          "y": 276,
-          "width": 244,
-          "height": 148,
+          "x": 338,
+          "y": 284,
+          "width": 237,
+          "height": 156,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nAir\nLife support is oxygen, water,\nand lithium hydroxide. Lunar\nModule descent oxygen is a\nteaching figure, not a\nrequired pressure.",
+        "label": "\u00abrequirement\u00bb\nAir\nThe Lunar Module shall supply\noxygen, water, and lithium\nhydroxide for life support.",
         "style": "requirement"
       },
       {
@@ -101,13 +101,13 @@
         "model_ref": "guide",
         "symbol": "requirement",
         "layout": {
-          "x": 639,
-          "y": 276,
-          "width": 258,
-          "height": 148,
+          "x": 611,
+          "y": 284,
+          "width": 230,
+          "height": 156,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nGuide\nTwo Block II guidance computers.\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. Landing radar is on\ndescent; rendezvous radar is\non ascent.",
+        "label": "\u00abrequirement\u00bb\nGuide\nThe Lunar Module Primary\nGuidance system shall use\nlanding radar during descent\nand rendezvous radar during\nascent.",
         "style": "requirement"
       }
     ],

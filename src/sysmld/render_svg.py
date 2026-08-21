@@ -405,11 +405,37 @@ def _connection(
     ]
 
 
+def _align_last_approach(
+    points: list[tuple[float, float]],
+    min_len: float = 8.0,
+) -> list[tuple[float, float]]:
+    """Drop a 1-px hook so marker-end follows the shaft, not a stub."""
+    if len(points) < 3:
+        return points
+    aligned = list(points)
+    prev, last, end = aligned[-3], aligned[-2], aligned[-1]
+    last_dx = end[0] - last[0]
+    last_dy = end[1] - last[1]
+    last_len = (last_dx * last_dx + last_dy * last_dy) ** 0.5
+    if last_len >= min_len:
+        return aligned
+    shaft_dx = last[0] - prev[0]
+    shaft_dy = last[1] - prev[1]
+    if abs(shaft_dx) >= abs(shaft_dy):
+        aligned[-1] = (end[0], last[1])
+    else:
+        aligned[-1] = (last[0], end[1])
+    if abs(aligned[-2][0] - aligned[-1][0]) < 1 and abs(aligned[-2][1] - aligned[-1][1]) < 1:
+        aligned.pop(-2)
+    return aligned
+
+
 def _connection_path(
     points: list[tuple[float, float]],
     corner_radius: float,
     hops: list[tuple[int, float, float]] | None = None,
 ) -> str:
+    points = _align_last_approach(points)
     if not points:
         return ""
     if len(points) == 1:

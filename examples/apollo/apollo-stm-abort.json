@@ -7,10 +7,10 @@
     "apollo.sysml"
   ],
   "direction": "top-down",
-  "default_w": 190,
-  "default_h": 56,
+  "default_w": 210,
+  "default_h": 80,
   "rank_gap": 180,
-  "col_gap": 80,
+  "col_gap": 56,
   "fan_tracks": "mirror",
   "aliases": {
     "abortMode": "Apollo11::AbortMode",
@@ -41,35 +41,35 @@
       "model_ref": "nominal"
     },
     "pad": {
-      "label": "Pad abort",
+      "label": "Pad\nLaunch Escape System",
       "model_ref": "pad"
     },
     "I": {
-      "label": "Mode I",
+      "label": "Mode I\nLaunch Escape System",
       "model_ref": "I"
     },
     "II": {
-      "label": "Mode II",
+      "label": "Mode II\nnot Launch Escape System",
       "model_ref": "II"
     },
     "III": {
-      "label": "Mode III",
+      "label": "Mode III\nnot Launch Escape System",
       "model_ref": "III"
     },
     "IV": {
-      "label": "Mode IV",
+      "label": "Mode IV\nnot Launch Escape System",
       "model_ref": "IV"
     },
     "contingencyTLI": {
-      "label": "Contingency TLI",
+      "label": "Contingency Translunar\nInjection\nnot Launch Escape System",
       "model_ref": "contingencyTLI"
     },
     "lunar": {
-      "label": "Lunar abort",
+      "label": "Lunar\nnot Launch Escape System",
       "model_ref": "lunar"
     },
     "SPS": {
-      "label": "Service Propulsion\nSystem",
+      "label": "Service Propulsion\nSystem\nnot Launch Escape System",
       "model_ref": "SPS"
     }
   },

@@ -157,16 +157,18 @@ class ApolloViewTests(unittest.TestCase):
         self.assertEqual(list(req["nodes"]), ["safety", "land", "talk", "abort", "air", "guide"])
         joined = "\n".join(node["label"] for node in req["nodes"].values())
         land = req["nodes"]["land"]["label"]
-        self.assertIn("Two crew land", land)
+        self.assertIn("The Lunar Module shall land", land)
+        self.assertIn("two crew on the Moon", land)
         self.assertIn("P66", land)
         self.assertIn("Primary Guidance", land)
         self.assertNotIn("Splash", land)
         self.assertNotIn("195:18:35", joined)
         self.assertNotIn("Hornet", joined)
         air = req["nodes"]["air"]["label"]
-        self.assertIn("teaching figure", air)
-        self.assertIn("required pressure", air)
-        self.assertRegex(air, r"(?i)\bnot\b")
+        self.assertIn("The Lunar Module shall supply", air)
+        self.assertIn("oxygen, water, and lithium", air)
+        self.assertNotIn("teaching figure", air)
+        self.assertNotIn("required pressure", air)
         self.assertNotIn("cite both", air)
         self.assertNotIn("2800 psi", air)
         self.assertNotIn("3000 psi", air)
@@ -179,10 +181,19 @@ class ApolloViewTests(unittest.TestCase):
         self.assertNotIn("21,500", joined)
         self.assertNotIn("LMA790", joined)
         self.assertNotRegex(joined, r"(?i)required thrust")
+        self.assertNotIn("75:54:28", joined)
+        self.assertNotIn("lbf", joined)
         talk = req["nodes"]["talk"]["label"]
+        self.assertIn("The stack shall communicate", talk)
         self.assertIn("Unified S-Band", talk)
         self.assertNotIn("stage-to-stage", talk)
         self.assertNotIn("crossfeed", talk)
+        self.assertIn("The Range Safety Officer\nshall command UHF destruct", req["nodes"]["safety"]["label"])
+        self.assertIn("The Abort Guidance System\nshall provide abort guidance", req["nodes"]["abort"]["label"])
+        self.assertIn("landing radar during descent", req["nodes"]["guide"]["label"])
+        self.assertIn("rendezvous radar during\nascent", req["nodes"]["guide"]["label"])
+        for node in req["nodes"].values():
+            self.assertIn("shall", node["label"])
         self.assertLess(sizes["apollo-stm"]["width"], 1600)
         self.assertGreater(sizes["apollo-stm"]["height"], 200)
         self.assertLess(sizes["apollo-stm"]["height"], 1000)
@@ -366,6 +377,9 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("~075:49:50", loi_label)
         self.assertNotIn("Press Kit", loi_label)
         lunar_spec = json.loads((APOLLO / "apollo-stm-lunar.json").read_text(encoding="utf-8"))
+        self.assertNotIn("initial", lunar_spec["states"])
+        self.assertTrue(lunar_spec["states"]["lunarInitial"].get("initial"))
+        self.assertEqual(lunar_spec["states"]["lunarInitial"].get("parent"), "lunarReturn")
         self.assertTrue(lunar_spec["states"]["lunarReturn"].get("composite"))
         lunar_children = [
             sid
@@ -429,6 +443,12 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("Loaded SM/CM RCS propellant mass UNKNOWN", text)
         self.assertIn("Δv table still UNKNOWN", text)
         self.assertNotIn("per-engine lbf UNKNOWN in press kit", text)
+        self.assertIn("The Range Safety Officer shall command UHF destruct from outside Mission Control until that command is safed after Earth orbit.", text)
+        self.assertIn("The Lunar Module shall land two crew on the Moon under Primary Guidance program P66.", text)
+        self.assertIn("The stack shall communicate with Mission Control on Unified S-Band.", text)
+        self.assertIn("The Abort Guidance System shall provide abort guidance without landing the Lunar Module.", text)
+        self.assertIn("The Lunar Module shall supply oxygen, water, and lithium hydroxide for life support.", text)
+        self.assertIn("The Lunar Module Primary Guidance system shall use landing radar during descent and rendezvous radar during ascent.", text)
         self.assertIn("Not a landing computer", text)
         self.assertIn("4096 × 18-bit", text)
         self.assertIn("two × six 93 lbf", text)
@@ -532,6 +552,45 @@ class ApolloViewTests(unittest.TestCase):
         self.assertNotIn("DoDAF", note)
         self.assertNotIn("ninth-grade", note)
         self.assertNotIn("ninth grade", note)
+        self.assertNotIn("apollo-stm-and.svg", note)
+        self.assertNotIn("concurrency page", note)
+        self.assertNotIn("third small page", note)
+        self.assertIn("INCOSE shalls", note)
+        self.assertIn("four concurrent regions", note)
+        abort_spec = json.loads((APOLLO / "apollo-stm-abort.json").read_text(encoding="utf-8"))
+        abort_labels = "\n".join(state.get("label", "") for state in abort_spec["states"].values())
+        self.assertIn("Pad", abort_labels)
+        self.assertIn("Mode I", abort_labels)
+        self.assertIn("Mode II", abort_labels)
+        self.assertIn("Mode III", abort_labels)
+        self.assertIn("Mode IV", abort_labels)
+        self.assertIn("Contingency Translunar", abort_labels)
+        self.assertIn("Injection", abort_labels)
+        self.assertIn("Lunar", abort_labels)
+        self.assertIn("Service Propulsion", abort_labels)
+        self.assertIn("Launch Escape System", abort_spec["states"]["pad"]["label"])
+        self.assertIn("Launch Escape System", abort_spec["states"]["I"]["label"])
+        self.assertIn("not Launch Escape System", abort_spec["states"]["II"]["label"])
+        self.assertIn("not Launch Escape System", abort_spec["states"]["SPS"]["label"])
+        alloc_spec = json.loads((APOLLO / "apollo-alloc.json").read_text(encoding="utf-8"))
+        self.assertEqual(alloc_spec["nodes"]["SM"]["label"], "Service Module")
+        self.assertEqual(alloc_spec["nodes"]["CM"]["label"], "Command Module")
+        self.assertEqual(alloc_spec["nodes"]["descent"]["label"], "Descent stage")
+        right_offsets = {
+            (edge["from"], edge["to"]): edge["target_offset"]
+            for edge in alloc_spec["edges"]
+            if edge["to"] in {"SM", "CM", "descent"}
+        }
+        self.assertNotEqual(right_offsets[("epsRequirement", "SM")], right_offsets[("rcsRequirement", "SM")])
+        self.assertEqual(
+            len({
+                right_offsets[("epsRequirement", "CM")],
+                right_offsets[("dockingRequirement", "CM")],
+                right_offsets[("rcsRequirement", "CM")],
+            }),
+            3,
+        )
+        self.assertIn(("epsRequirement", "descent"), right_offsets)
         self.assertNotIn("├──", note)
         self.assertNotIn("\n*Saturn V SA-506", note)
         self.assertIn("Stakeholder", note)

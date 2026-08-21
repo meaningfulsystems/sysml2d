@@ -35,9 +35,6 @@
     "splashdown": "Apollo11::MissionPhase::lunarReturn::splashdown"
   },
   "states": {
-    "initial": {
-      "initial": true
-    },
     "lunarReturn": {
       "label": "Lunar return",
       "composite": true,
@@ -103,11 +100,6 @@
     }
   },
   "transitions": [
-    {
-      "from": "initial",
-      "to": "lunarReturn",
-      "label": ""
-    },
     {
       "from": "lunarInitial",
       "to": "LOI",

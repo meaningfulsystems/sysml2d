@@ -1,27 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="973" height="538" viewBox="0 0 973 538">
+<svg xmlns="http://www.w3.org/2000/svg" width="917" height="554" viewBox="0 0 917 554">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="973" height="538" fill="#FFFFFF"/>
-<rect x="2" y="38" width="969" height="496" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="917" height="554" fill="#FFFFFF"/>
+<rect x="2" y="38" width="913" height="512" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 424 L 440 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[req.mb] Apollo 11 Sourced Requirements [Apollo11]</text>
-<rect x="2" y="38" width="969" height="498" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="913" height="514" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="safety" x="72" y="72" width="237" height="148" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="190.5" y="108.5">«requirement»</tspan><tspan x="190.5" dy="15">Safety</tspan><tspan x="190.5" dy="15">Crew safety is not Launch</tspan><tspan x="190.5" dy="15">Escape System only. The Range</tspan><tspan x="190.5" dy="15">Safety Officer sits outside</tspan><tspan x="190.5" dy="15">Mission Control.</tspan></text>
-<rect id="land" x="345" y="72" width="202" height="148" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="446" y="108.5">«requirement»</tspan><tspan x="446" dy="15">Land</tspan><tspan x="446" dy="15">Two crew land. The flown</tspan><tspan x="446" dy="15">landing program is P66.</tspan><tspan x="446" dy="15">Primary Guidance lands;</tspan><tspan x="446" dy="15">Abort Guidance does not.</tspan></text>
-<rect id="talk" x="583" y="72" width="230" height="148" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="698" y="123.5">«requirement»</tspan><tspan x="698" dy="15">Talk</tspan><tspan x="698" dy="15">Mission Control talks to the</tspan><tspan x="698" dy="15">stack on Unified S-Band.</tspan></text>
-<rect id="abort" x="72" y="276" width="251" height="148" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="197.5" y="312.5">«requirement»</tspan><tspan x="197.5" dy="15">Abort</tspan><tspan x="197.5" dy="15">Abort Guidance is not a landing</tspan><tspan x="197.5" dy="15">computer. Pad and Mode I sit</tspan><tspan x="197.5" dy="15">with the escape tower; later</tspan><tspan x="197.5" dy="15">modes do not.</tspan></text>
-<rect id="air" x="359" y="276" width="244" height="148" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="481" y="305">«requirement»</tspan><tspan x="481" dy="15">Air</tspan><tspan x="481" dy="15">Life support is oxygen, water,</tspan><tspan x="481" dy="15">and lithium hydroxide. Lunar</tspan><tspan x="481" dy="15">Module descent oxygen is a</tspan><tspan x="481" dy="15">teaching figure, not a</tspan><tspan x="481" dy="15">required pressure.</tspan></text>
-<rect id="guide" x="639" y="276" width="258" height="148" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="768" y="297.5">«requirement»</tspan><tspan x="768" dy="15">Guide</tspan><tspan x="768" dy="15">Two Block II guidance computers.</tspan><tspan x="768" dy="15">Primary Guidance, Navigation,</tspan><tspan x="768" dy="15">and Control is not Abort</tspan><tspan x="768" dy="15">Guidance. Landing radar is on</tspan><tspan x="768" dy="15">descent; rendezvous radar is</tspan><tspan x="768" dy="15">on ascent.</tspan></text>
+<rect id="safety" x="72" y="72" width="230" height="156" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="187" y="105">«requirement»</tspan><tspan x="187" dy="15">Safety</tspan><tspan x="187" dy="15">The Range Safety Officer</tspan><tspan x="187" dy="15">shall command UHF destruct</tspan><tspan x="187" dy="15">from outside Mission Control</tspan><tspan x="187" dy="15">until that command is safed</tspan><tspan x="187" dy="15">after Earth orbit.</tspan></text>
+<rect id="land" x="338" y="72" width="237" height="156" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="456.5" y="120">«requirement»</tspan><tspan x="456.5" dy="15">Land</tspan><tspan x="456.5" dy="15">The Lunar Module shall land</tspan><tspan x="456.5" dy="15">two crew on the Moon under</tspan><tspan x="456.5" dy="15">Primary Guidance program P66.</tspan></text>
+<rect id="talk" x="611" y="72" width="223" height="156" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="722.5" y="120">«requirement»</tspan><tspan x="722.5" dy="15">Talk</tspan><tspan x="722.5" dy="15">The stack shall communicate</tspan><tspan x="722.5" dy="15">with Mission Control on</tspan><tspan x="722.5" dy="15">Unified S-Band.</tspan></text>
+<rect id="abort" x="72" y="284" width="230" height="156" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="187" y="324.5">«requirement»</tspan><tspan x="187" dy="15">Abort</tspan><tspan x="187" dy="15">The Abort Guidance System</tspan><tspan x="187" dy="15">shall provide abort guidance</tspan><tspan x="187" dy="15">without landing the Lunar</tspan><tspan x="187" dy="15">Module.</tspan></text>
+<rect id="air" x="338" y="284" width="237" height="156" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="456.5" y="332">«requirement»</tspan><tspan x="456.5" dy="15">Air</tspan><tspan x="456.5" dy="15">The Lunar Module shall supply</tspan><tspan x="456.5" dy="15">oxygen, water, and lithium</tspan><tspan x="456.5" dy="15">hydroxide for life support.</tspan></text>
+<rect id="guide" x="611" y="284" width="230" height="156" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="726" y="317">«requirement»</tspan><tspan x="726" dy="15">Guide</tspan><tspan x="726" dy="15">The Lunar Module Primary</tspan><tspan x="726" dy="15">Guidance system shall use</tspan><tspan x="726" dy="15">landing radar during descent</tspan><tspan x="726" dy="15">and rendezvous radar during</tspan><tspan x="726" dy="15">ascent.</tspan></text>
 </g>
 </svg>

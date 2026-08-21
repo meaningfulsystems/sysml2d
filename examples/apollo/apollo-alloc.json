@@ -12,17 +12,17 @@
     "rsoRequirement": {"label": "RSO destruct", "symbol": "requirement", "rank": 0, "order": 1},
     "agcRequirement": {"label": "AGC_CM + AGC_LM", "symbol": "requirement", "rank": 0, "order": 2},
     "agsRequirement": {"label": "AGS separate", "symbol": "requirement", "rank": 0, "order": 4},
-    "epsRequirement": {"label": "EPS Press Kit", "symbol": "requirement", "rank": 0, "order": 5},
+    "epsRequirement": {"label": "Electrical Power", "symbol": "requirement", "rank": 0, "order": 5},
     "dockingRequirement": {"label": "Docking", "symbol": "requirement", "rank": 0, "order": 6},
-    "rcsRequirement": {"label": "RCS", "symbol": "requirement", "rank": 0, "order": 7},
+    "rcsRequirement": {"label": "Reaction Control", "symbol": "requirement", "rank": 0, "order": 7},
     "IU": {"label": "IU", "symbol": "part_usage", "rank": 1, "order": 0},
     "RSO": {"label": "RSO", "symbol": "part_usage", "rank": 1, "order": 1},
     "AGC_CM": {"label": "AGC_CM", "symbol": "part_usage", "rank": 1, "order": 2},
     "AGC_LM": {"label": "AGC_LM", "symbol": "part_usage", "rank": 1, "order": 3},
     "AGS": {"label": "AGS", "symbol": "part_usage", "rank": 1, "order": 4},
-    "SM": {"label": "SM", "symbol": "part_usage", "rank": 1, "order": 5},
-    "CM": {"label": "CM", "symbol": "part_usage", "rank": 1, "order": 6},
-    "descent": {"label": "descent", "symbol": "part_usage", "rank": 1, "order": 7}
+    "SM": {"label": "Service Module", "symbol": "part_usage", "rank": 1, "order": 5},
+    "CM": {"label": "Command Module", "symbol": "part_usage", "rank": 1, "order": 6},
+    "descent": {"label": "Descent stage", "symbol": "part_usage", "rank": 1, "order": 7}
   },
   "edges": [
     {"from": "iuGncRequirement", "to": "IU", "label": "allocate", "model_ref": "allocateBoostToIU"},
@@ -30,11 +30,11 @@
     {"from": "agcRequirement", "to": "AGC_CM", "label": "allocate", "model_ref": "allocateAGC_CMToCM"},
     {"from": "agcRequirement", "to": "AGC_LM", "label": "allocate", "model_ref": "allocateAGC_LMToLM"},
     {"from": "agsRequirement", "to": "AGS", "label": "allocate", "model_ref": "allocateAGSToLM"},
-    {"from": "epsRequirement", "to": "SM", "label": "allocate", "model_ref": "allocateEPSToSM"},
-    {"from": "epsRequirement", "to": "CM", "label": "allocate", "model_ref": "allocateEPSToCM"},
-    {"from": "epsRequirement", "to": "descent", "label": "allocate", "model_ref": "allocateEPSToDescent"},
-    {"from": "dockingRequirement", "to": "CM", "label": "allocate", "model_ref": "allocateDockToCM"},
-    {"from": "rcsRequirement", "to": "SM", "label": "allocate", "model_ref": "allocateRCSToSM"},
-    {"from": "rcsRequirement", "to": "CM", "label": "allocate", "model_ref": "allocateRCSToCM"}
+    {"from": "epsRequirement", "to": "SM", "label": "allocate", "model_ref": "allocateEPSToSM", "target_offset": 0.28},
+    {"from": "epsRequirement", "to": "CM", "label": "allocate", "model_ref": "allocateEPSToCM", "target_offset": 0.22},
+    {"from": "epsRequirement", "to": "descent", "label": "allocate", "model_ref": "allocateEPSToDescent", "target_offset": 0.22},
+    {"from": "dockingRequirement", "to": "CM", "label": "allocate", "model_ref": "allocateDockToCM", "target_offset": 0.50},
+    {"from": "rcsRequirement", "to": "SM", "label": "allocate", "model_ref": "allocateRCSToSM", "target_offset": 0.72},
+    {"from": "rcsRequirement", "to": "CM", "label": "allocate", "model_ref": "allocateRCSToCM", "target_offset": 0.78}
   ]
 }

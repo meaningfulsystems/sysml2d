@@ -30,8 +30,8 @@
     "kind": "StateView",
     "name": "Apollo 11 Abort Modes",
     "canvas": {
-      "width": 2127,
-      "height": 754,
+      "width": 2105,
+      "height": 819,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -44,9 +44,9 @@
         "symbol": "boundary",
         "layout": {
           "x": 54,
-          "y": 139,
-          "width": 2033,
-          "height": 575,
+          "y": 149,
+          "width": 2011,
+          "height": 630,
           "z": 0
         },
         "compartments": {
@@ -60,8 +60,8 @@
         "id": "initial",
         "symbol": "initial_state",
         "layout": {
-          "x": 1060,
-          "y": 175,
+          "x": 1050,
+          "y": 185,
           "width": 20,
           "height": 20,
           "z": 10
@@ -72,10 +72,10 @@
         "id": "nominal",
         "symbol": "state_usage",
         "layout": {
-          "x": 976,
-          "y": 389,
-          "width": 190,
-          "height": 56,
+          "x": 954,
+          "y": 409,
+          "width": 210,
+          "height": 80,
           "z": 10
         },
         "model_ref": "nominal",
@@ -87,111 +87,111 @@
         "symbol": "state_usage",
         "layout": {
           "x": 90,
-          "y": 622,
-          "width": 190,
-          "height": 56,
+          "y": 663,
+          "width": 210,
+          "height": 80,
           "z": 10
         },
         "model_ref": "pad",
-        "label": "Pad abort",
+        "label": "Pad\nLaunch Escape System",
         "style": "state.default"
       },
       {
         "id": "I",
         "symbol": "state_usage",
         "layout": {
-          "x": 343,
-          "y": 622,
-          "width": 190,
-          "height": 56,
+          "x": 337,
+          "y": 663,
+          "width": 210,
+          "height": 80,
           "z": 10
         },
         "model_ref": "I",
-        "label": "Mode I",
+        "label": "Mode I\nLaunch Escape System",
         "style": "state.default"
       },
       {
         "id": "II",
         "symbol": "state_usage",
         "layout": {
-          "x": 596,
-          "y": 622,
-          "width": 190,
-          "height": 56,
+          "x": 584,
+          "y": 663,
+          "width": 210,
+          "height": 80,
           "z": 10
         },
         "model_ref": "II",
-        "label": "Mode II",
+        "label": "Mode II\nnot Launch Escape System",
         "style": "state.default"
       },
       {
         "id": "III",
         "symbol": "state_usage",
         "layout": {
-          "x": 849,
-          "y": 622,
-          "width": 190,
-          "height": 56,
+          "x": 831,
+          "y": 663,
+          "width": 210,
+          "height": 80,
           "z": 10
         },
         "model_ref": "III",
-        "label": "Mode III",
+        "label": "Mode III\nnot Launch Escape System",
         "style": "state.default"
       },
       {
         "id": "IV",
         "symbol": "state_usage",
         "layout": {
-          "x": 1102,
-          "y": 622,
-          "width": 190,
-          "height": 56,
+          "x": 1078,
+          "y": 663,
+          "width": 210,
+          "height": 80,
           "z": 10
         },
         "model_ref": "IV",
-        "label": "Mode IV",
+        "label": "Mode IV\nnot Launch Escape System",
         "style": "state.default"
       },
       {
         "id": "contingencyTLI",
         "symbol": "state_usage",
         "layout": {
-          "x": 1355,
-          "y": 622,
-          "width": 190,
-          "height": 56,
+          "x": 1325,
+          "y": 663,
+          "width": 210,
+          "height": 80,
           "z": 10
         },
         "model_ref": "contingencyTLI",
-        "label": "Contingency TLI",
+        "label": "Contingency Translunar\nInjection\nnot Launch Escape System",
         "style": "state.default"
       },
       {
         "id": "lunar",
         "symbol": "state_usage",
         "layout": {
-          "x": 1608,
-          "y": 622,
-          "width": 190,
-          "height": 56,
+          "x": 1572,
+          "y": 663,
+          "width": 210,
+          "height": 80,
           "z": 10
         },
         "model_ref": "lunar",
-        "label": "Lunar abort",
+        "label": "Lunar\nnot Launch Escape System",
         "style": "state.default"
       },
       {
         "id": "SPS",
         "symbol": "state_usage",
         "layout": {
-          "x": 1861,
-          "y": 622,
-          "width": 190,
-          "height": 56,
+          "x": 1819,
+          "y": 663,
+          "width": 210,
+          "height": 80,
           "z": 10
         },
         "model_ref": "SPS",
-        "label": "Service Propulsion\nSystem",
+        "label": "Service Propulsion\nSystem\nnot Launch Escape System",
         "style": "state.default"
       }
     ],
@@ -241,12 +241,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 997,
-              "y": 480
+              "x": 977,
+              "y": 524
             },
             {
-              "x": 185,
-              "y": 480
+              "x": 195,
+              "y": 524
             }
           ]
         },
@@ -283,12 +283,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1018,
-              "y": 516
+              "x": 1001,
+              "y": 559
             },
             {
-              "x": 438,
-              "y": 516
+              "x": 442,
+              "y": 559
             }
           ]
         },
@@ -325,12 +325,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1039,
-              "y": 551
+              "x": 1024,
+              "y": 593
             },
             {
-              "x": 691,
-              "y": 551
+              "x": 689,
+              "y": 593
             }
           ]
         },
@@ -367,12 +367,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1060,
-              "y": 587
+              "x": 1047,
+              "y": 628
             },
             {
-              "x": 944,
-              "y": 587
+              "x": 936,
+              "y": 628
             }
           ]
         },
@@ -409,12 +409,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1082,
-              "y": 587
+              "x": 1071,
+              "y": 628
             },
             {
-              "x": 1197,
-              "y": 587
+              "x": 1183,
+              "y": 628
             }
           ]
         },
@@ -451,12 +451,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1103,
-              "y": 551
+              "x": 1094,
+              "y": 593
             },
             {
-              "x": 1450,
-              "y": 551
+              "x": 1430,
+              "y": 593
             }
           ]
         },
@@ -493,12 +493,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1124,
-              "y": 516
+              "x": 1117,
+              "y": 559
             },
             {
-              "x": 1703,
-              "y": 516
+              "x": 1677,
+              "y": 559
             }
           ]
         },
@@ -535,12 +535,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1145,
-              "y": 480
+              "x": 1141,
+              "y": 524
             },
             {
-              "x": 1956,
-              "y": 480
+              "x": 1924,
+              "y": 524
             }
           ]
         },
