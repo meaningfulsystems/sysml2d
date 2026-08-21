@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1869" height="460" viewBox="0 0 1869 460">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1869" height="460" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1865" height="418" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 424 L 440 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[req.mb] Apollo 11 Sourced Requirements [Apollo11]</text>
+<rect x="2" y="38" width="1865" height="420" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="agcRequirement" x="72" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="166" y="93.5">«requirement»</tspan><tspan x="166" dy="15">Two AGCs Block II</tspan><tspan x="166" dy="15">2048 E / 36864 F</tspan><tspan x="166" dy="15">1.024 MHz, MCT 11.7 μs</tspan></text>
+<rect id="p27Requirement" x="72" y="264" width="188" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="166" y="290">«requirement»</tspan><tspan x="166" dy="15">P27 verbs V70–V73 only</tspan><tspan x="166" dy="15">Not the CCATS path</tspan></text>
+<rect id="usbCsmRequirement" x="296" y="72" width="237" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="414.5" y="93.5">«requirement»</tspan><tspan x="414.5" dy="15">USB CSM</tspan><tspan x="414.5" dy="15">2106.40625 ↑ / 2287.5 PM ↓</tspan><tspan x="414.5" dy="15">2272.5 FM · PCM 51.2/1.6 kbps</tspan></text>
+<rect id="usbLmRequirement" x="569" y="72" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="673.5" y="93.5">«requirement»</tspan><tspan x="673.5" dy="15">USB LM</tspan><tspan x="673.5" dy="15">2101.802 ↑ / 2282.5</tspan><tspan x="673.5" dy="15">20.5 dB · 20 W · no PM+FM</tspan></text>
+<rect id="cmEcsRequirement" x="814" y="72" width="195" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="911.5" y="93.5">«requirement»</tspan><tspan x="911.5" dy="15">CM ECS 5.0 psia 100% O2</tspan><tspan x="911.5" dy="15">3 crew / 14 d spec</tspan><tspan x="911.5" dy="15">A11 196 h vs 336 h spec</tspan></text>
+<rect id="a7lRequirement" x="1045" y="72" width="258" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1174" y="98">«requirement»</tspan><tspan x="1174" dy="15">A7L 3.75±0.25 psid</tspan><tspan x="1174" dy="15">EV 19.69 kg · PLSS 1.04 lb / 4 h</tspan></text>
+<rect id="a11MassRequirement" x="1339" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1433" y="93.5">«requirement»</tspan><tspan x="1433" dy="15">Ignition 6,484,280 lb</tspan><tspan x="1433" dy="15">First motion 6,398,535</tspan><tspan x="1433" dy="15">Tank/Δv table UNKNOWN</tspan></text>
+<rect id="rsoRequirement" x="1563" y="72" width="230" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1678" y="98">«requirement»</tspan><tspan x="1678" dy="15">RSO outside MCC</tspan><tspan x="1678" dy="15">UHF destruct; safed after EO</tspan></text>
+<path d="M 166,160 L 166,264" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="178" y="212">refine</text>
+</g>
+</svg>

@@ -1,0 +1,328 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-alloc",
+    "kind": "AllocationView",
+    "name": "Apollo 11 Allocations",
+    "canvas": {
+      "width": 624,
+      "height": 988,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "iuGncRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "IU owns boost+TLI",
+        "style": "requirement",
+        "model_ref": "iuGncRequirement"
+      },
+      {
+        "id": "rsoRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 264,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "RSO destruct",
+        "style": "requirement",
+        "model_ref": "rsoRequirement"
+      },
+      {
+        "id": "agcRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 456,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Two AGCs",
+        "style": "requirement",
+        "model_ref": "agcRequirement"
+      },
+      {
+        "id": "agsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 648,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "AGS separate",
+        "style": "requirement",
+        "model_ref": "agsRequirement"
+      },
+      {
+        "id": "iu",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 78,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "IU",
+        "style": "part_usage",
+        "model_ref": "iu"
+      },
+      {
+        "id": "rso",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 270,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "RSO / AFETR",
+        "style": "part_usage",
+        "model_ref": "rso"
+      },
+      {
+        "id": "cmc",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 462,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "CMC",
+        "style": "part_usage",
+        "model_ref": "cmc"
+      },
+      {
+        "id": "lgc",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 654,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "LGC",
+        "style": "part_usage",
+        "model_ref": "lgc"
+      },
+      {
+        "id": "ags",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 846,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "AGS",
+        "style": "part_usage",
+        "model_ref": "ags"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-iuGncRequirement-iu",
+        "source": {
+          "element": "iuGncRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "iu",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateBoostToIu"
+      },
+      {
+        "id": "conn-rsoRequirement-rso",
+        "source": {
+          "element": "rsoRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rso",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateDestructToRso"
+      },
+      {
+        "id": "conn-agcRequirement-cmc",
+        "source": {
+          "element": "agcRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmc",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateCmcToCm"
+      },
+      {
+        "id": "conn-agcRequirement-lgc",
+        "source": {
+          "element": "agcRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lgc",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 322,
+              "y": 497
+            },
+            {
+              "x": 322,
+              "y": 689
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateLgcToLm"
+      },
+      {
+        "id": "conn-agsRequirement-ags",
+        "source": {
+          "element": "agsRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ags",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 354,
+              "y": 689
+            },
+            {
+              "x": 354,
+              "y": 881
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateAgsToLm"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

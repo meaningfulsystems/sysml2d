@@ -1,0 +1,854 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "missionPhase": "Apollo11::MissionPhase",
+    "countdown": "Apollo11::MissionPhase::countdown",
+    "boost": "Apollo11::MissionPhase::boost",
+    "earthOrbit": "Apollo11::MissionPhase::earthOrbit",
+    "tli": "Apollo11::MissionPhase::tli",
+    "translunar": "Apollo11::MissionPhase::translunar",
+    "dockEject": "Apollo11::MissionPhase::dockEject",
+    "loi": "Apollo11::MissionPhase::loi",
+    "undock": "Apollo11::MissionPhase::undock",
+    "doi": "Apollo11::MissionPhase::doi",
+    "descent": "Apollo11::MissionPhase::descent",
+    "surfaceEva": "Apollo11::MissionPhase::surfaceEva",
+    "ascent": "Apollo11::MissionPhase::ascent",
+    "rendezvous": "Apollo11::MissionPhase::rendezvous",
+    "tei": "Apollo11::MissionPhase::tei",
+    "entry": "Apollo11::MissionPhase::entry",
+    "recovery": "Apollo11::MissionPhase::recovery",
+    "liftoff": "Apollo11::MissionPhase::liftoff",
+    "seoi": "Apollo11::MissionPhase::seoi",
+    "startTli": "Apollo11::MissionPhase::startTli",
+    "tliCutoff": "Apollo11::MissionPhase::tliCutoff",
+    "dock": "Apollo11::MissionPhase::dock",
+    "startLoi": "Apollo11::MissionPhase::startLoi",
+    "loiCutoff": "Apollo11::MissionPhase::loiCutoff",
+    "startDoi": "Apollo11::MissionPhase::startDoi",
+    "startDescent": "Apollo11::MissionPhase::startDescent",
+    "touchdown": "Apollo11::MissionPhase::touchdown",
+    "startAscent": "Apollo11::MissionPhase::startAscent",
+    "startRndz": "Apollo11::MissionPhase::startRndz",
+    "startTei": "Apollo11::MissionPhase::startTei",
+    "startEntry": "Apollo11::MissionPhase::startEntry",
+    "splashdown": "Apollo11::MissionPhase::splashdown"
+  },
+  "diagram": {
+    "id": "apollo-stm",
+    "kind": "StateView",
+    "name": "Apollo 11 Mission Phases",
+    "canvas": {
+      "width": 3488,
+      "height": 251,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "missionPhase",
+        "symbol": "boundary",
+        "layout": {
+          "x": 103,
+          "y": 87,
+          "width": 3345,
+          "height": 124,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 139,
+          "y": 139,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "countdown",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 290,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "countdown",
+        "label": "Countdown",
+        "style": "state.default"
+      },
+      {
+        "id": "boost",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 490,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "boost",
+        "label": "Boost",
+        "style": "state.default"
+      },
+      {
+        "id": "earthOrbit",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 691,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "earthOrbit",
+        "label": "Earth orbit\n100 nmi plan",
+        "style": "state.default"
+      },
+      {
+        "id": "tli",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 891,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "tli",
+        "label": "TLI",
+        "style": "state.default"
+      },
+      {
+        "id": "translunar",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1091,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "translunar",
+        "label": "Translunar",
+        "style": "state.default"
+      },
+      {
+        "id": "dockEject",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1291,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "dockEject",
+        "label": "Dock / eject",
+        "style": "state.default"
+      },
+      {
+        "id": "loi",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1492,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "loi",
+        "label": "LOI",
+        "style": "state.default"
+      },
+      {
+        "id": "undock",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1692,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "undock",
+        "label": "Undock",
+        "style": "state.default"
+      },
+      {
+        "id": "doi",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1892,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "doi",
+        "label": "DOI",
+        "style": "state.default"
+      },
+      {
+        "id": "descent",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 2092,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "descent",
+        "label": "Descent",
+        "style": "state.default"
+      },
+      {
+        "id": "surfaceEva",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 2293,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "surfaceEva",
+        "label": "Surface / EVA",
+        "style": "state.default"
+      },
+      {
+        "id": "ascent",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 2493,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "ascent",
+        "label": "Ascent",
+        "style": "state.default"
+      },
+      {
+        "id": "rendezvous",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 2693,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "rendezvous",
+        "label": "Rendezvous",
+        "style": "state.default"
+      },
+      {
+        "id": "tei",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 2893,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "tei",
+        "label": "TEI",
+        "style": "state.default"
+      },
+      {
+        "id": "entry",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 3094,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "entry",
+        "label": "Entry",
+        "style": "state.default"
+      },
+      {
+        "id": "recovery",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 3294,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "recovery",
+        "label": "Recovery",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--countdown",
+        "model_ref": "missionPhase",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "countdown",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "countdown--boost",
+        "model_ref": "liftoff",
+        "source": {
+          "element": "countdown",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "boost",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "tower clear",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "boost--earthOrbit",
+        "model_ref": "seoi",
+        "source": {
+          "element": "boost",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "earthOrbit",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "SECO",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "earthOrbit--tli",
+        "model_ref": "startTli",
+        "source": {
+          "element": "earthOrbit",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "tli",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "IU / S-IVB",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "tli--translunar",
+        "model_ref": "tliCutoff",
+        "source": {
+          "element": "tli",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "translunar",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "translunar--dockEject",
+        "model_ref": "dock",
+        "source": {
+          "element": "translunar",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "dockEject",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "dock",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "dockEject--loi",
+        "model_ref": "startLoi",
+        "source": {
+          "element": "dockEject",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "loi",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "SPS",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "loi--undock",
+        "model_ref": "loiCutoff",
+        "source": {
+          "element": "loi",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "undock",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "undock--doi",
+        "model_ref": "startDoi",
+        "source": {
+          "element": "undock",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "doi",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "DPS",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "doi--descent",
+        "model_ref": "startDescent",
+        "source": {
+          "element": "doi",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "descent",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "P63",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "descent--surfaceEva",
+        "model_ref": "touchdown",
+        "source": {
+          "element": "descent",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "surfaceEva",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "P68",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "surfaceEva--ascent",
+        "model_ref": "startAscent",
+        "source": {
+          "element": "surfaceEva",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ascent",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "P12",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "ascent--rendezvous",
+        "model_ref": "startRndz",
+        "source": {
+          "element": "ascent",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rendezvous",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "P30",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "rendezvous--tei",
+        "model_ref": "startTei",
+        "source": {
+          "element": "rendezvous",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "tei",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "SPS",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "tei--entry",
+        "model_ref": "startEntry",
+        "source": {
+          "element": "tei",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "entry",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "EI",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "entry--recovery",
+        "model_ref": "splashdown",
+        "source": {
+          "element": "entry",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "recovery",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "splashdown",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "missionPhase"
+  }
+}

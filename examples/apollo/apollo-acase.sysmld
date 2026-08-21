@@ -1,0 +1,201 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-acase",
+    "kind": "AnalysisCaseView",
+    "name": "Apollo 11 Analysis Cases",
+    "canvas": {
+      "width": 944,
+      "height": 458,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "usbLinkAnalysis",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 78,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "USB link",
+        "style": "case",
+        "model_ref": "usbLinkAnalysis"
+      },
+      {
+        "id": "consumableAnalysis",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 270,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Consumables",
+        "style": "case",
+        "model_ref": "consumableAnalysis"
+      },
+      {
+        "id": "usbCsmLink",
+        "symbol": "constraint",
+        "layout": {
+          "x": 382,
+          "y": 75,
+          "width": 160,
+          "height": 76,
+          "z": 10
+        },
+        "label": "USB CSM link",
+        "style": "constraint",
+        "model_ref": "usbCsmLink"
+      },
+      {
+        "id": "usbCsmRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 702,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "USB CSM req",
+        "style": "requirement",
+        "model_ref": "usbCsmRequirement"
+      },
+      {
+        "id": "cmEcsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 702,
+          "y": 264,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "CM ECS req",
+        "style": "requirement",
+        "model_ref": "cmEcsRequirement"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-usbLinkAnalysis-usbCsmLink",
+        "source": {
+          "element": "usbLinkAnalysis",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "usbCsmLink",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "method",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "usbLinkAnalysis"
+      },
+      {
+        "id": "conn-usbCsmLink-usbCsmRequirement",
+        "source": {
+          "element": "usbCsmLink",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "usbCsmRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "evaluates",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "usbCsmLink"
+      },
+      {
+        "id": "conn-consumableAnalysis-cmEcsRequirement",
+        "source": {
+          "element": "consumableAnalysis",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmEcsRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 386
+            },
+            {
+              "x": 787,
+              "y": 386
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "evaluates",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "consumableAnalysis"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

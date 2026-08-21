@@ -1,0 +1,265 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-vcase",
+    "kind": "VerificationCaseView",
+    "name": "Apollo 11 Verification Cases",
+    "canvas": {
+      "width": 624,
+      "height": 592,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "verifyUsbCsm",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 78,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Verify USB CSM",
+        "style": "case",
+        "model_ref": "verifyUsbCsm"
+      },
+      {
+        "id": "verifyA7l",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 200,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Verify A7L",
+        "style": "case",
+        "model_ref": "verifyA7l"
+      },
+      {
+        "id": "verifyP27",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 322,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Verify P27",
+        "style": "case",
+        "model_ref": "verifyP27"
+      },
+      {
+        "id": "verifyRso",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 444,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Verify RSO",
+        "style": "case",
+        "model_ref": "verifyRso"
+      },
+      {
+        "id": "usbCsmRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 382,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "USB CSM",
+        "style": "requirement",
+        "model_ref": "usbCsmRequirement"
+      },
+      {
+        "id": "a7lRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 382,
+          "y": 194,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "A7L",
+        "style": "requirement",
+        "model_ref": "a7lRequirement"
+      },
+      {
+        "id": "p27Requirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 382,
+          "y": 316,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "P27 V70\u2013V73",
+        "style": "requirement",
+        "model_ref": "p27Requirement"
+      },
+      {
+        "id": "rsoRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 382,
+          "y": 438,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "RSO",
+        "style": "requirement",
+        "model_ref": "rsoRequirement"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-verifyUsbCsm-usbCsmRequirement",
+        "source": {
+          "element": "verifyUsbCsm",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "usbCsmRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "verifies",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "verifyUsbCsm"
+      },
+      {
+        "id": "conn-verifyA7l-a7lRequirement",
+        "source": {
+          "element": "verifyA7l",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "a7lRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "verifies",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "verifyA7l"
+      },
+      {
+        "id": "conn-verifyP27-p27Requirement",
+        "source": {
+          "element": "verifyP27",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p27Requirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "verifies",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "verifyP27"
+      },
+      {
+        "id": "conn-verifyRso-rsoRequirement",
+        "source": {
+          "element": "verifyRso",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rsoRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "verifies",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "verifyRso"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

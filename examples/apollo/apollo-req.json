@@ -1,0 +1,62 @@
+{
+  "diagram": "apollo-req",
+  "kind": "RequirementView",
+  "name": "Apollo 11 Sourced Requirements",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "top-down",
+  "default_w": 240,
+  "default_h": 100,
+  "sibling_gap": 36,
+  "nodes": {
+    "agcRequirement": {
+      "label": "\u00abrequirement\u00bb\nTwo AGCs Block II\n2048 E / 36864 F\n1.024 MHz, MCT 11.7 \u03bcs",
+      "rank": 0,
+      "order": 0
+    },
+    "p27Requirement": {
+      "label": "\u00abrequirement\u00bb\nP27 verbs V70\u2013V73 only\nNot the CCATS path",
+      "rank": 0,
+      "order": 1
+    },
+    "usbCsmRequirement": {
+      "label": "\u00abrequirement\u00bb\nUSB CSM\n2106.40625 \u2191 / 2287.5 PM \u2193\n2272.5 FM \u00b7 PCM 51.2/1.6 kbps",
+      "rank": 0,
+      "order": 2
+    },
+    "usbLmRequirement": {
+      "label": "\u00abrequirement\u00bb\nUSB LM\n2101.802 \u2191 / 2282.5\n20.5 dB \u00b7 20 W \u00b7 no PM+FM",
+      "rank": 0,
+      "order": 3
+    },
+    "cmEcsRequirement": {
+      "label": "\u00abrequirement\u00bb\nCM ECS 5.0 psia 100% O2\n3 crew / 14 d spec\nA11 196 h vs 336 h spec",
+      "rank": 1,
+      "order": 0
+    },
+    "a7lRequirement": {
+      "label": "\u00abrequirement\u00bb\nA7L 3.75\u00b10.25 psid\nEV 19.69 kg \u00b7 PLSS 1.04 lb / 4 h",
+      "rank": 1,
+      "order": 1
+    },
+    "a11MassRequirement": {
+      "label": "\u00abrequirement\u00bb\nIgnition 6,484,280 lb\nFirst motion 6,398,535\nTank/\u0394v table UNKNOWN",
+      "rank": 1,
+      "order": 2
+    },
+    "rsoRequirement": {
+      "label": "\u00abrequirement\u00bb\nRSO outside MCC\nUHF destruct; safed after EO",
+      "rank": 1,
+      "order": 3
+    }
+  },
+  "edges": [
+    {
+      "from": "agcRequirement",
+      "to": "p27Requirement",
+      "label": "refine"
+    }
+  ]
+}

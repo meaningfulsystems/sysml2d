@@ -1,0 +1,64 @@
+{
+  "diagram": "apollo-general",
+  "kind": "GeneralView",
+  "name": "Apollo 11 Cross-View Trace",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "top-down",
+  "nodes": {
+    "flyMissionUseCase": {
+      "label": "Fly mission",
+      "symbol": "use_case",
+      "rank": 0,
+      "order": 0
+    },
+    "p27Requirement": {
+      "label": "P27 V70\u2013V73",
+      "symbol": "requirement",
+      "rank": 1,
+      "order": 0
+    },
+    "sendP27": {
+      "label": "Send P27",
+      "symbol": "action",
+      "rank": 2,
+      "order": 0
+    },
+    "cmc": {
+      "label": "CMC",
+      "symbol": "part_usage",
+      "rank": 3,
+      "order": 0
+    },
+    "verifyP27": {
+      "label": "Verify P27",
+      "symbol": "case",
+      "rank": 2,
+      "order": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "flyMissionUseCase",
+      "to": "p27Requirement",
+      "label": "refine"
+    },
+    {
+      "from": "p27Requirement",
+      "to": "sendP27",
+      "label": "allocate"
+    },
+    {
+      "from": "sendP27",
+      "to": "cmc",
+      "label": "performed by"
+    },
+    {
+      "from": "verifyP27",
+      "to": "p27Requirement",
+      "label": "verify"
+    }
+  ]
+}

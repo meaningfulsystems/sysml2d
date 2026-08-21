@@ -1,0 +1,78 @@
+{
+  "diagram": "apollo-intf",
+  "kind": "InterfaceView",
+  "name": "Apollo 11 Interfaces",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "nodes": {
+    "UsbInterface": {
+      "label": "USB",
+      "rank": 0,
+      "order": 0
+    },
+    "CommandInterface": {
+      "label": "CCATS path A",
+      "rank": 0,
+      "order": 1
+    },
+    "P27Interface": {
+      "label": "P27",
+      "rank": 0,
+      "order": 2
+    },
+    "DestructInterface": {
+      "label": "RSO UHF",
+      "rank": 0,
+      "order": 3
+    },
+    "UsbUplink": {
+      "label": "UsbUplink",
+      "symbol": "item",
+      "rank": 1,
+      "order": 0
+    },
+    "UsbDownlinkPm": {
+      "label": "UsbDownlinkPm",
+      "symbol": "item",
+      "rank": 1,
+      "order": 1
+    },
+    "CcatsLoad": {
+      "label": "CcatsLoad",
+      "symbol": "item",
+      "rank": 1,
+      "order": 2
+    },
+    "P27Load": {
+      "label": "P27Load V70\u2013V73",
+      "symbol": "item",
+      "rank": 1,
+      "order": 3
+    }
+  },
+  "edges": [
+    {
+      "from": "UsbInterface",
+      "to": "UsbUplink",
+      "label": "carries"
+    },
+    {
+      "from": "UsbInterface",
+      "to": "UsbDownlinkPm",
+      "label": "carries"
+    },
+    {
+      "from": "CommandInterface",
+      "to": "CcatsLoad",
+      "label": "carries"
+    },
+    {
+      "from": "P27Interface",
+      "to": "P27Load",
+      "label": "carries"
+    }
+  ]
+}

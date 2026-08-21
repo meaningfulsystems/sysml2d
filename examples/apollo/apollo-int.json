@@ -1,0 +1,73 @@
+{
+  "diagram": "apollo-int",
+  "kind": "InteractionView",
+  "name": "Two command paths (A vs P27)",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "lifelines": {
+    "flight": {
+      "label": "FLIGHT"
+    },
+    "ccc": {
+      "label": "CCC"
+    },
+    "rtcc": {
+      "label": "RTCC"
+    },
+    "ccats": {
+      "label": "CCATS"
+    },
+    "site642B": {
+      "label": "Site 642B"
+    },
+    "cmc": {
+      "label": "CMC"
+    }
+  },
+  "messages": [
+    {
+      "id": "m1",
+      "from": "flight",
+      "to": "ccc",
+      "label": "FC",
+      "model_ref": "sendPathA"
+    },
+    {
+      "id": "m2",
+      "from": "ccc",
+      "to": "rtcc",
+      "label": "path A",
+      "model_ref": "commandPathA"
+    },
+    {
+      "id": "m3",
+      "from": "rtcc",
+      "to": "ccats",
+      "label": "load",
+      "model_ref": "commandPathA"
+    },
+    {
+      "id": "m4",
+      "from": "ccats",
+      "to": "site642B",
+      "label": "70 kHz",
+      "model_ref": "commandPathA"
+    },
+    {
+      "id": "m5",
+      "from": "site642B",
+      "to": "cmc",
+      "label": "USB",
+      "model_ref": "usbCsmFlow"
+    },
+    {
+      "id": "m6",
+      "from": "flight",
+      "to": "cmc",
+      "label": "P27 V70\u2013V73",
+      "model_ref": "sendP27"
+    }
+  ]
+}

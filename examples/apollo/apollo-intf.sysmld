@@ -1,0 +1,292 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-intf",
+    "kind": "InterfaceView",
+    "name": "Apollo 11 Interfaces",
+    "canvas": {
+      "width": 604,
+      "height": 754,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "UsbInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "USB",
+        "style": "interface",
+        "model_ref": "UsbInterface"
+      },
+      {
+        "id": "CommandInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 252,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "CCATS path A",
+        "style": "interface",
+        "model_ref": "CommandInterface"
+      },
+      {
+        "id": "P27Interface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 432,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "P27",
+        "style": "interface",
+        "model_ref": "P27Interface"
+      },
+      {
+        "id": "DestructInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 612,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "RSO UHF",
+        "style": "interface",
+        "model_ref": "DestructInterface"
+      },
+      {
+        "id": "UsbUplink",
+        "symbol": "item",
+        "layout": {
+          "x": 382,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "UsbUplink",
+        "style": "item",
+        "model_ref": "UsbUplink"
+      },
+      {
+        "id": "UsbDownlinkPm",
+        "symbol": "item",
+        "layout": {
+          "x": 382,
+          "y": 252,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "UsbDownlinkPm",
+        "style": "item",
+        "model_ref": "UsbDownlinkPm"
+      },
+      {
+        "id": "CcatsLoad",
+        "symbol": "item",
+        "layout": {
+          "x": 382,
+          "y": 432,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "CcatsLoad",
+        "style": "item",
+        "model_ref": "CcatsLoad"
+      },
+      {
+        "id": "P27Load",
+        "symbol": "item",
+        "layout": {
+          "x": 382,
+          "y": 612,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "P27Load V70\u2013V73",
+        "style": "item",
+        "model_ref": "P27Load"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-UsbInterface-UsbUplink",
+        "source": {
+          "element": "UsbInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "UsbUplink",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "UsbInterface"
+      },
+      {
+        "id": "conn-UsbInterface-UsbDownlinkPm",
+        "source": {
+          "element": "UsbInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "UsbDownlinkPm",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 289.2,
+              "y": 107
+            },
+            {
+              "x": 289.2,
+              "y": 287
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "UsbInterface"
+      },
+      {
+        "id": "conn-CommandInterface-CcatsLoad",
+        "source": {
+          "element": "CommandInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CcatsLoad",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 314.8,
+              "y": 287
+            },
+            {
+              "x": 314.8,
+              "y": 467
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "CommandInterface"
+      },
+      {
+        "id": "conn-P27Interface-P27Load",
+        "source": {
+          "element": "P27Interface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "P27Load",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 340.4,
+              "y": 467
+            },
+            {
+              "x": 340.4,
+              "y": 647
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "P27Interface"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

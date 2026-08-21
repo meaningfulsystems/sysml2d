@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="890" height="796" viewBox="0 0 890 796">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="890" height="796" fill="#FFFFFF"/>
+<rect x="2" y="38" width="886" height="754" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 416 L 432 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[cst.mb] Apollo 11 Sourced Parametrics [Apollo11]</text>
+<rect x="2" y="38" width="886" height="756" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="usbCsmUplinkMhz" x="72" y="78" width="132" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle"><tspan x="138" y="99.5">CSM uplink</tspan><tspan x="138" dy="15">2106.40625 MHz</tspan></text>
+<rect id="f1Lbf" x="72" y="258" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle"><tspan x="137" y="279.5">F-1</tspan><tspan x="137" dy="15">1,530,000 lbf</tspan></text>
+<rect id="mctUs" x="72" y="438" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle"><tspan x="137" y="459.5">MCT</tspan><tspan x="137" dy="15">11.7 μs</tspan></text>
+<rect id="ignitionLb" x="72" y="618" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle"><tspan x="137" y="639.5">Ignition</tspan><tspan x="137" dy="15">6,484,280 lb</tspan></text>
+<rect id="usbCsmLink" x="364" y="72" width="160" height="70" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="444" y="99.5">USB CSM</tspan><tspan x="444" dy="15">link</tspan></text>
+<rect id="f1Thrust" x="364" y="252" width="160" height="70" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="444" y="279.5">F-1 ×5</tspan><tspan x="444" dy="15">(SA-507)</tspan></text>
+<rect id="agcCycle" x="364" y="432" width="160" height="70" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="444" y="459.5">AGC cycle</tspan><tspan x="444" dy="15">(AGCIS 30)</tspan></text>
+<rect id="a11IgnitionMass" x="364" y="612" width="160" height="70" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="444" y="639.5">A11 PK</tspan><tspan x="444" dy="15">mass</tspan></text>
+<rect id="lunarDelayS" x="684" y="78" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle"><tspan x="749" y="99.5">lunar delay</tspan><tspan x="749" dy="15">~1.3 s</tspan></text>
+<rect id="earthOrbitNmi" x="684" y="258" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle"><tspan x="749" y="279.5">EO planned</tspan><tspan x="749" dy="15">100 nmi</tspan></text>
+<path d="M 204,107 L 364,107" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 202,287 L 364,287" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 202,467 L 364,467" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 202,647 L 364,647" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 524,107 L 684,107" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<text class="small" text-anchor="middle" x="284" y="95">bind</text>
+<text class="small" text-anchor="middle" x="283" y="275">bind</text>
+<text class="small" text-anchor="middle" x="283" y="455">bind</text>
+<text class="small" text-anchor="middle" x="283" y="635">bind</text>
+<text class="small" text-anchor="middle" x="604" y="95">range/c</text>
+</g>
+</svg>

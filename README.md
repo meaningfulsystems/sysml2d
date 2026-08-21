@@ -69,7 +69,7 @@ The same idea — models, diagrams, and history as text — also drives the pair
 
 ![Electric Bike Interconnection](examples/e-bike/e-bike-ibd.svg)
 
-See all 15 view kinds in [examples/e-bike/](examples/e-bike/). Appliance extras: [toaster](examples/toaster), [blender](examples/blender).
+See all 15 view kinds in [examples/e-bike/](examples/e-bike/). Full-stack [Apollo 11](examples/apollo/) (AS-506 / Block II). Appliance extras: [toaster](examples/toaster), [blender](examples/blender).
 
 ## Quick Start
 
@@ -167,6 +167,7 @@ schemas/                 SysMLD JSON Schema (authoritative for .sysmld document 
 examples/toaster/        Toaster appliance model and all diagram examples
 examples/blender/        Blender appliance model and all diagram examples
 examples/e-bike/         Electric-bike model covering all 15 view kinds
+examples/apollo/         Apollo 11 / Block II whole-stack example (sourced; UNKNOWN marked)
 templates/new-project/   Copy-this starter (model stub + IBD + STM intents)
 skills/                  Installable agent skills plus leftover one-shot prompts
 AGENTS.md                How an agent should work in this repo

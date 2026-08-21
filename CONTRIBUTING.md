@@ -56,6 +56,7 @@ tests/
   test_cli.py                   CLI command coverage tests
   test_example_views.py         E-bike end-to-end compose / validate / render
   test_starter_template.py      Copy-this starter IBD + STM
+  test_apollo_views.py          Apollo 11 compose / validate / IBD box hits
 ```
 
 Each view type has a dedicated `*_view.py` module in `src/sysmld/`. Thin wrappers (most views) call `views.py`. Full composers (`interconnection_view.py`, `state_view.py`, `definition_view.py`, `requirement_view.py`) contain view-specific layout logic. Shared routing lives in `routing.py`. Tests cover composers, routing, examples, and the renderer.

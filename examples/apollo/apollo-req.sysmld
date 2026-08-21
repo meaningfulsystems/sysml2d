@@ -1,0 +1,172 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-req",
+    "kind": "RequirementView",
+    "name": "Apollo 11 Sourced Requirements",
+    "canvas": {
+      "width": 1865,
+      "height": 418,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "agcRequirement",
+        "model_ref": "agcRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 188,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nTwo AGCs Block II\n2048 E / 36864 F\n1.024 MHz, MCT 11.7 \u03bcs",
+        "style": "requirement"
+      },
+      {
+        "id": "p27Requirement",
+        "model_ref": "p27Requirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 264,
+          "width": 188,
+          "height": 82,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nP27 verbs V70\u2013V73 only\nNot the CCATS path",
+        "style": "requirement"
+      },
+      {
+        "id": "usbCsmRequirement",
+        "model_ref": "usbCsmRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 296,
+          "y": 72,
+          "width": 237,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nUSB CSM\n2106.40625 \u2191 / 2287.5 PM \u2193\n2272.5 FM \u00b7 PCM 51.2/1.6 kbps",
+        "style": "requirement"
+      },
+      {
+        "id": "usbLmRequirement",
+        "model_ref": "usbLmRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 569,
+          "y": 72,
+          "width": 209,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nUSB LM\n2101.802 \u2191 / 2282.5\n20.5 dB \u00b7 20 W \u00b7 no PM+FM",
+        "style": "requirement"
+      },
+      {
+        "id": "cmEcsRequirement",
+        "model_ref": "cmEcsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 814,
+          "y": 72,
+          "width": 195,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nCM ECS 5.0 psia 100% O2\n3 crew / 14 d spec\nA11 196 h vs 336 h spec",
+        "style": "requirement"
+      },
+      {
+        "id": "a7lRequirement",
+        "model_ref": "a7lRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1045,
+          "y": 72,
+          "width": 258,
+          "height": 82,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nA7L 3.75\u00b10.25 psid\nEV 19.69 kg \u00b7 PLSS 1.04 lb / 4 h",
+        "style": "requirement"
+      },
+      {
+        "id": "a11MassRequirement",
+        "model_ref": "a11MassRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1339,
+          "y": 72,
+          "width": 188,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nIgnition 6,484,280 lb\nFirst motion 6,398,535\nTank/\u0394v table UNKNOWN",
+        "style": "requirement"
+      },
+      {
+        "id": "rsoRequirement",
+        "model_ref": "rsoRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1563,
+          "y": 72,
+          "width": 230,
+          "height": 82,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nRSO outside MCC\nUHF destruct; safed after EO",
+        "style": "requirement"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-agcRequirement-p27Requirement",
+        "model_ref": "agcRequirement",
+        "source": {
+          "element": "agcRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p27Requirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

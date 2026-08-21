@@ -9,6 +9,7 @@ All notable changes to SysMLD are documented here.
 - Shared orthogonal autorouting helpers (`src/sysmld/routing.py`): unique channel tracks for adjacent-rank edges, outside rails for skip-rank edges, and renderer hop-overs as small half-circle arcs where later connections cross earlier ones
 - `examples/e-bike/` — a street-legal class e-bike model with intents, `.sysmld`, and SVG for all 15 view kinds plus an operating-context general view
 - Adoption pack: [AGENTS.md](AGENTS.md), four installable skills (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`), and [templates/new-project/](templates/new-project/) (copy-this `.sysml` + IBD + STM)
+- `examples/apollo/` — Apollo 11 / Block II (AS-506) whole-stack model: ground/crew, vehicles, two AGCs, AGS, IU LVDC, USB, mission + abort STMs. Sourced numbers only; UNKNOWN marked
 
 ### Changed
 
@@ -19,6 +20,7 @@ All notable changes to SysMLD are documented here.
 - Connection labels on generic, action, and requirement views sit beside the line instead of on the centerline
 - Toaster, blender, and e-bike example artifacts regenerated from the composers
 - README / CONTRIBUTING test counts updated for the new routing and e-bike coverage
+- E-bike review: EPAC (no certified throttle), Tour-mode 500 Wh / 60 km bind, BMS inside BatteryPack, EN 15194 5 m / 2 m plus 50 ms inhibit, fail-silent allocated beyond brakes, `lockBikeUseCase` removed, rear geared hub, StVZO / ISO 6742 lighting
 
 ## [0.1.0] — 2026-05-22
 

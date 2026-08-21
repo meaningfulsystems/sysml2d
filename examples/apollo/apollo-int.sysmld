@@ -1,0 +1,305 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-int",
+    "kind": "InteractionView",
+    "name": "Two command paths (A vs P27)",
+    "canvas": {
+      "width": 1250,
+      "height": 442,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "flight",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 70,
+          "y": 70,
+          "width": 110,
+          "height": 364,
+          "z": 10
+        },
+        "label": "FLIGHT",
+        "style": "lifeline",
+        "model_ref": "flight"
+      },
+      {
+        "id": "ccc",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 270,
+          "y": 70,
+          "width": 110,
+          "height": 364,
+          "z": 10
+        },
+        "label": "CCC",
+        "style": "lifeline",
+        "model_ref": "ccc"
+      },
+      {
+        "id": "rtcc",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 470,
+          "y": 70,
+          "width": 110,
+          "height": 364,
+          "z": 10
+        },
+        "label": "RTCC",
+        "style": "lifeline",
+        "model_ref": "rtcc"
+      },
+      {
+        "id": "ccats",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 670,
+          "y": 70,
+          "width": 110,
+          "height": 364,
+          "z": 10
+        },
+        "label": "CCATS",
+        "style": "lifeline",
+        "model_ref": "ccats"
+      },
+      {
+        "id": "site642B",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 870,
+          "y": 70,
+          "width": 110,
+          "height": 364,
+          "z": 10
+        },
+        "label": "Site 642B",
+        "style": "lifeline",
+        "model_ref": "site642B"
+      },
+      {
+        "id": "cmc",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 1070,
+          "y": 70,
+          "width": 110,
+          "height": 364,
+          "z": 10
+        },
+        "label": "CMC",
+        "style": "lifeline",
+        "model_ref": "cmc"
+      }
+    ],
+    "connections": [
+      {
+        "id": "m1",
+        "model_ref": "sendPathA",
+        "source": {
+          "element": "flight",
+          "anchor": {
+            "side": "right",
+            "offset": 0.192
+          }
+        },
+        "target": {
+          "element": "ccc",
+          "anchor": {
+            "side": "left",
+            "offset": 0.192
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "FC",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "m2",
+        "model_ref": "commandPathA",
+        "source": {
+          "element": "ccc",
+          "anchor": {
+            "side": "right",
+            "offset": 0.341
+          }
+        },
+        "target": {
+          "element": "rtcc",
+          "anchor": {
+            "side": "left",
+            "offset": 0.341
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "path A",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "m3",
+        "model_ref": "commandPathA",
+        "source": {
+          "element": "rtcc",
+          "anchor": {
+            "side": "right",
+            "offset": 0.489
+          }
+        },
+        "target": {
+          "element": "ccats",
+          "anchor": {
+            "side": "left",
+            "offset": 0.489
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "load",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "m4",
+        "model_ref": "commandPathA",
+        "source": {
+          "element": "ccats",
+          "anchor": {
+            "side": "right",
+            "offset": 0.637
+          }
+        },
+        "target": {
+          "element": "site642B",
+          "anchor": {
+            "side": "left",
+            "offset": 0.637
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "70 kHz",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "m5",
+        "model_ref": "usbCsmFlow",
+        "source": {
+          "element": "site642B",
+          "anchor": {
+            "side": "right",
+            "offset": 0.786
+          }
+        },
+        "target": {
+          "element": "cmc",
+          "anchor": {
+            "side": "left",
+            "offset": 0.786
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "USB",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "m6",
+        "model_ref": "sendP27",
+        "source": {
+          "element": "flight",
+          "anchor": {
+            "side": "right",
+            "offset": 0.934
+          }
+        },
+        "target": {
+          "element": "cmc",
+          "anchor": {
+            "side": "left",
+            "offset": 0.934
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "P27 V70\u2013V73",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

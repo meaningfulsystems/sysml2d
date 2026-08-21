@@ -1,0 +1,80 @@
+{
+  "diagram": "apollo-vcase",
+  "kind": "VerificationCaseView",
+  "name": "Apollo 11 Verification Cases",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "rank_gap": 160,
+  "col_gap": 40,
+  "nodes": {
+    "verifyUsbCsm": {
+      "label": "Verify USB CSM",
+      "rank": 0,
+      "order": 0
+    },
+    "verifyA7l": {
+      "label": "Verify A7L",
+      "rank": 0,
+      "order": 1
+    },
+    "verifyP27": {
+      "label": "Verify P27",
+      "rank": 0,
+      "order": 2
+    },
+    "verifyRso": {
+      "label": "Verify RSO",
+      "rank": 0,
+      "order": 3
+    },
+    "usbCsmRequirement": {
+      "label": "USB CSM",
+      "symbol": "requirement",
+      "rank": 1,
+      "order": 0
+    },
+    "a7lRequirement": {
+      "label": "A7L",
+      "symbol": "requirement",
+      "rank": 1,
+      "order": 1
+    },
+    "p27Requirement": {
+      "label": "P27 V70\u2013V73",
+      "symbol": "requirement",
+      "rank": 1,
+      "order": 2
+    },
+    "rsoRequirement": {
+      "label": "RSO",
+      "symbol": "requirement",
+      "rank": 1,
+      "order": 3
+    }
+  },
+  "edges": [
+    {
+      "from": "verifyUsbCsm",
+      "to": "usbCsmRequirement",
+      "label": "verifies"
+    },
+    {
+      "from": "verifyA7l",
+      "to": "a7lRequirement",
+      "label": "verifies"
+    },
+    {
+      "from": "verifyP27",
+      "to": "p27Requirement",
+      "label": "verifies"
+    },
+    {
+      "from": "verifyRso",
+      "to": "rsoRequirement",
+      "label": "verifies"
+    }
+  ]
+}

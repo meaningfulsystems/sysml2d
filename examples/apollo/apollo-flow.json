@@ -1,0 +1,91 @@
+{
+  "diagram": "apollo-flow",
+  "kind": "FlowView",
+  "name": "Apollo 11 Command and USB Flows",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "nodes": {
+    "flight": {
+      "label": "FLIGHT",
+      "rank": 0,
+      "order": 0
+    },
+    "ccc": {
+      "label": "CCC",
+      "rank": 1,
+      "order": 0
+    },
+    "rtcc": {
+      "label": "RTCC",
+      "rank": 2,
+      "order": 0
+    },
+    "ccats": {
+      "label": "CCATS",
+      "rank": 3,
+      "order": 0
+    },
+    "site642B": {
+      "label": "Site 642B",
+      "rank": 4,
+      "order": 0
+    },
+    "cmc": {
+      "label": "CMC",
+      "rank": 5,
+      "order": 0
+    },
+    "lgc": {
+      "label": "LGC",
+      "rank": 5,
+      "order": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "flight",
+      "to": "ccc",
+      "label": "FC",
+      "model_ref": "commandPathA"
+    },
+    {
+      "from": "ccc",
+      "to": "rtcc",
+      "label": "path A",
+      "model_ref": "commandPathA"
+    },
+    {
+      "from": "rtcc",
+      "to": "ccats",
+      "label": "path A",
+      "model_ref": "commandPathA"
+    },
+    {
+      "from": "ccats",
+      "to": "site642B",
+      "label": "70 kHz",
+      "model_ref": "commandPathA"
+    },
+    {
+      "from": "site642B",
+      "to": "cmc",
+      "label": "USB",
+      "model_ref": "usbCsmFlow"
+    },
+    {
+      "from": "site642B",
+      "to": "lgc",
+      "label": "USB",
+      "model_ref": "usbLmFlow"
+    },
+    {
+      "from": "flight",
+      "to": "cmc",
+      "label": "P27 V70\u2013V73",
+      "model_ref": "commandPathB"
+    }
+  ]
+}

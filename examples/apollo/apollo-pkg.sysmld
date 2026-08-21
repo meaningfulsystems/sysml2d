@@ -1,0 +1,276 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-pkg",
+    "kind": "PackageView",
+    "name": "Apollo 11 Packages",
+    "canvas": {
+      "width": 1334,
+      "height": 444,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "ApolloModel",
+        "symbol": "package",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Apollo Model",
+        "style": "package",
+        "model_ref": "ApolloModel"
+      },
+      {
+        "id": "ApolloStructure",
+        "symbol": "package",
+        "layout": {
+          "x": 72,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Structure",
+        "style": "package",
+        "model_ref": "ApolloStructure"
+      },
+      {
+        "id": "ApolloBehavior",
+        "symbol": "package",
+        "layout": {
+          "x": 332,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Behavior",
+        "style": "package",
+        "model_ref": "ApolloBehavior"
+      },
+      {
+        "id": "ApolloRequirements",
+        "symbol": "package",
+        "layout": {
+          "x": 592,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Requirements",
+        "style": "package",
+        "model_ref": "ApolloRequirements"
+      },
+      {
+        "id": "ApolloAnalysis",
+        "symbol": "package",
+        "layout": {
+          "x": 852,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Analysis",
+        "style": "package",
+        "model_ref": "ApolloAnalysis"
+      },
+      {
+        "id": "ApolloVerification",
+        "symbol": "package",
+        "layout": {
+          "x": 1112,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Verification",
+        "style": "package",
+        "model_ref": "ApolloVerification"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-ApolloModel-ApolloStructure",
+        "source": {
+          "element": "ApolloModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ApolloStructure",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "contains",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "ApolloModel"
+      },
+      {
+        "id": "conn-ApolloModel-ApolloBehavior",
+        "source": {
+          "element": "ApolloModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ApolloBehavior",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 407,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "ApolloModel"
+      },
+      {
+        "id": "conn-ApolloModel-ApolloRequirements",
+        "source": {
+          "element": "ApolloModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ApolloRequirements",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 667,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "ApolloModel"
+      },
+      {
+        "id": "conn-ApolloModel-ApolloAnalysis",
+        "source": {
+          "element": "ApolloModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ApolloAnalysis",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 927,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "ApolloModel"
+      },
+      {
+        "id": "conn-ApolloModel-ApolloVerification",
+        "source": {
+          "element": "ApolloModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ApolloVerification",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 1187,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "ApolloModel"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

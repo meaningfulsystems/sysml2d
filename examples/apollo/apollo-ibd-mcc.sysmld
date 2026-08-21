@@ -1,0 +1,653 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "mcc": "Apollo11::MissionControlHouston",
+    "flight": "Apollo11::MOCR::flight",
+    "capcom": "Apollo11::MOCR::capcom",
+    "eecom": "Apollo11::MOCR::eecom",
+    "gncProp": "Apollo11::MOCR::gncProp",
+    "fdo": "Apollo11::MOCR::fdo",
+    "ccc": "Apollo11::MOCR::ccc",
+    "rtcc": "Apollo11::MissionControlHouston::rtcc",
+    "ccats": "Apollo11::MissionControlHouston::ccats",
+    "flight--ccc--src": "Apollo11::MOCR::flight",
+    "flight--ccc--tgt": "Apollo11::MOCR::ccc",
+    "conn-flight-ccc": "Apollo11::MOCR::flight",
+    "capcom--ccc--src": "Apollo11::MOCR::capcom",
+    "capcom--ccc--tgt": "Apollo11::MOCR::ccc",
+    "conn-capcom-ccc": "Apollo11::MOCR::capcom",
+    "eecom--ccc--src": "Apollo11::MOCR::eecom",
+    "eecom--ccc--tgt": "Apollo11::MOCR::ccc",
+    "conn-eecom-ccc": "Apollo11::MOCR::eecom",
+    "gncProp--ccc--src": "Apollo11::MOCR::gncProp",
+    "gncProp--ccc--tgt": "Apollo11::MOCR::ccc",
+    "conn-gncProp-ccc": "Apollo11::MOCR::gncProp",
+    "fdo--ccc--src": "Apollo11::MOCR::fdo",
+    "fdo--ccc--tgt": "Apollo11::MOCR::ccc",
+    "conn-fdo-ccc": "Apollo11::MOCR::fdo",
+    "ccc--rtcc--src": "Apollo11::MOCR::ccc",
+    "ccc--rtcc--tgt": "Apollo11::MissionControlHouston::rtcc",
+    "conn-ccc-rtcc": "Apollo11::MOCR::ccc",
+    "rtcc--ccats--src": "Apollo11::MissionControlHouston::rtcc",
+    "rtcc--ccats--tgt": "Apollo11::MissionControlHouston::ccats",
+    "conn-rtcc-ccats": "Apollo11::MissionControlHouston::rtcc"
+  },
+  "diagram": {
+    "id": "apollo-ibd-mcc",
+    "kind": "InterconnectionView",
+    "name": "MCC-H MOCR / RTCC / CCATS",
+    "canvas": {
+      "width": 1320,
+      "height": 602,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "mcc",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 1240,
+          "height": 522,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "flight",
+        "model_ref": "flight",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 370,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "FLIGHT",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "capcom",
+        "model_ref": "capcom",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CAPCOM",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "eecom",
+        "model_ref": "eecom",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 174,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "EECOM",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "gncProp",
+        "model_ref": "gncProp",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 468,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "GNC / prop",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "fdo",
+        "model_ref": "fdo",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 272,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "FDO",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "ccc",
+        "model_ref": "ccc",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 422,
+          "y": 272,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CCC",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "rtcc",
+        "model_ref": "rtcc",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 768,
+          "y": 272,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "RTCC\n5\u00d7 360/75",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "ccats",
+        "model_ref": "ccats",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 1114,
+          "y": 272,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CCATS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "flight--ccc--src",
+        "model_ref": "flight--ccc--src",
+        "symbol": "port",
+        "owner": "flight",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "capcom--ccc--src",
+        "model_ref": "capcom--ccc--src",
+        "symbol": "port",
+        "owner": "capcom",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "eecom--ccc--src",
+        "model_ref": "eecom--ccc--src",
+        "symbol": "port",
+        "owner": "eecom",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "gncProp--ccc--src",
+        "model_ref": "gncProp--ccc--src",
+        "symbol": "port",
+        "owner": "gncProp",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "fdo--ccc--src",
+        "model_ref": "fdo--ccc--src",
+        "symbol": "port",
+        "owner": "fdo",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "capcom--ccc--tgt",
+        "model_ref": "capcom--ccc--tgt",
+        "symbol": "port",
+        "owner": "ccc",
+        "placement": {
+          "side": "left",
+          "offset": 0.1667
+        },
+        "label": ""
+      },
+      {
+        "id": "eecom--ccc--tgt",
+        "model_ref": "eecom--ccc--tgt",
+        "symbol": "port",
+        "owner": "ccc",
+        "placement": {
+          "side": "left",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "fdo--ccc--tgt",
+        "model_ref": "fdo--ccc--tgt",
+        "symbol": "port",
+        "owner": "ccc",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "flight--ccc--tgt",
+        "model_ref": "flight--ccc--tgt",
+        "symbol": "port",
+        "owner": "ccc",
+        "placement": {
+          "side": "left",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "gncProp--ccc--tgt",
+        "model_ref": "gncProp--ccc--tgt",
+        "symbol": "port",
+        "owner": "ccc",
+        "placement": {
+          "side": "left",
+          "offset": 0.8333
+        },
+        "label": ""
+      },
+      {
+        "id": "ccc--rtcc--src",
+        "model_ref": "ccc--rtcc--src",
+        "symbol": "port",
+        "owner": "ccc",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "ccc--rtcc--tgt",
+        "model_ref": "ccc--rtcc--tgt",
+        "symbol": "port",
+        "owner": "rtcc",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "rtcc--ccats--src",
+        "model_ref": "rtcc--ccats--src",
+        "symbol": "port",
+        "owner": "rtcc",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "rtcc--ccats--tgt",
+        "model_ref": "rtcc--ccats--tgt",
+        "symbol": "port",
+        "owner": "ccats",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-flight-ccc",
+        "model_ref": "conn-flight-ccc",
+        "source": {
+          "element": "flight--ccc--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "flight--ccc--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 141,
+              "y": 354
+            },
+            {
+              "x": 230,
+              "y": 354
+            },
+            {
+              "x": 230,
+              "y": 310.669
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "FC",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-capcom-ccc",
+        "model_ref": "conn-capcom-ccc",
+        "source": {
+          "element": "capcom--ccc--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "capcom--ccc--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 141,
+              "y": 150
+            },
+            {
+              "x": 230,
+              "y": 150
+            },
+            {
+              "x": 230,
+              "y": 281.669
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-eecom-ccc",
+        "model_ref": "conn-eecom-ccc",
+        "source": {
+          "element": "eecom--ccc--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "eecom--ccc--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 141,
+              "y": 203
+            },
+            {
+              "x": 394,
+              "y": 203
+            },
+            {
+              "x": 394,
+              "y": 291.331
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-gncProp-ccc",
+        "model_ref": "conn-gncProp-ccc",
+        "source": {
+          "element": "gncProp--ccc--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "gncProp--ccc--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 141,
+              "y": 452
+            },
+            {
+              "x": 230,
+              "y": 452
+            },
+            {
+              "x": 230,
+              "y": 320.331
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-fdo-ccc",
+        "model_ref": "conn-fdo-ccc",
+        "source": {
+          "element": "fdo--ccc--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "fdo--ccc--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ccc-rtcc",
+        "model_ref": "conn-ccc-rtcc",
+        "source": {
+          "element": "ccc--rtcc--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ccc--rtcc--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "path A",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-rtcc-ccats",
+        "model_ref": "conn-rtcc-ccats",
+        "source": {
+          "element": "rtcc--ccats--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rtcc--ccats--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "load",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "mcc"
+  }
+}

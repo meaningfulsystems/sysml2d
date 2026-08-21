@@ -1,0 +1,142 @@
+{
+  "diagram": "apollo-stm-abort",
+  "kind": "StateView",
+  "name": "Apollo 11 Abort Modes",
+  "subject": "abortMode",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 120,
+  "default_h": 52,
+  "rank_gap": 100,
+  "col_gap": 50,
+  "aliases": {
+    "abortMode": "Apollo11::AbortMode",
+    "nominal": "Apollo11::AbortMode::nominal",
+    "padLes": "Apollo11::AbortMode::padLes",
+    "modeI": "Apollo11::AbortMode::modeI",
+    "modeII": "Apollo11::AbortMode::modeII",
+    "modeIII": "Apollo11::AbortMode::modeIII",
+    "modeIV": "Apollo11::AbortMode::modeIV",
+    "contingencyTli": "Apollo11::AbortMode::contingencyTli",
+    "spsAbort": "Apollo11::AbortMode::spsAbort",
+    "p70Dps": "Apollo11::AbortMode::p70Dps",
+    "p71Aps": "Apollo11::AbortMode::p71Aps",
+    "lesAbort": "Apollo11::AbortMode::lesAbort",
+    "abortModeI": "Apollo11::AbortMode::abortModeI",
+    "abortModeII": "Apollo11::AbortMode::abortModeII",
+    "abortModeIII": "Apollo11::AbortMode::abortModeIII",
+    "abortModeIV": "Apollo11::AbortMode::abortModeIV",
+    "abortTli": "Apollo11::AbortMode::abortTli",
+    "abortSps": "Apollo11::AbortMode::abortSps",
+    "abortP70": "Apollo11::AbortMode::abortP70",
+    "abortP71": "Apollo11::AbortMode::abortP71"
+  },
+  "states": {
+    "initial": {
+      "initial": true
+    },
+    "nominal": {
+      "label": "Nominal",
+      "model_ref": "nominal"
+    },
+    "padLes": {
+      "label": "Pad / LES",
+      "model_ref": "padLes"
+    },
+    "modeI": {
+      "label": "Mode I",
+      "model_ref": "modeI"
+    },
+    "modeII": {
+      "label": "Mode II",
+      "model_ref": "modeII"
+    },
+    "modeIII": {
+      "label": "Mode III",
+      "model_ref": "modeIII"
+    },
+    "modeIV": {
+      "label": "Mode IV",
+      "model_ref": "modeIV"
+    },
+    "contingencyTli": {
+      "label": "Contingency TLI",
+      "model_ref": "contingencyTli"
+    },
+    "spsAbort": {
+      "label": "SPS abort",
+      "model_ref": "spsAbort"
+    },
+    "p70Dps": {
+      "label": "P70 DPS",
+      "model_ref": "p70Dps"
+    },
+    "p71Aps": {
+      "label": "P71 APS",
+      "model_ref": "p71Aps"
+    }
+  },
+  "transitions": [
+    {
+      "from": "initial",
+      "to": "nominal",
+      "label": ""
+    },
+    {
+      "from": "nominal",
+      "to": "padLes",
+      "label": "pad",
+      "model_ref": "lesAbort"
+    },
+    {
+      "from": "nominal",
+      "to": "modeI",
+      "label": "I",
+      "model_ref": "abortModeI"
+    },
+    {
+      "from": "nominal",
+      "to": "modeII",
+      "label": "II",
+      "model_ref": "abortModeII"
+    },
+    {
+      "from": "nominal",
+      "to": "modeIII",
+      "label": "III",
+      "model_ref": "abortModeIII"
+    },
+    {
+      "from": "nominal",
+      "to": "modeIV",
+      "label": "IV",
+      "model_ref": "abortModeIV"
+    },
+    {
+      "from": "nominal",
+      "to": "contingencyTli",
+      "label": "TLI",
+      "model_ref": "abortTli"
+    },
+    {
+      "from": "nominal",
+      "to": "spsAbort",
+      "label": "SPS",
+      "model_ref": "abortSps"
+    },
+    {
+      "from": "nominal",
+      "to": "p70Dps",
+      "label": "P70",
+      "model_ref": "abortP70"
+    },
+    {
+      "from": "p70Dps",
+      "to": "p71Aps",
+      "label": "P71",
+      "model_ref": "abortP71"
+    }
+  ]
+}

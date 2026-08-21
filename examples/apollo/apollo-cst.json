@@ -1,0 +1,97 @@
+{
+  "diagram": "apollo-cst",
+  "kind": "ConstraintView",
+  "name": "Apollo 11 Sourced Parametrics",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 160,
+  "default_h": 70,
+  "nodes": {
+    "usbCsmUplinkMhz": {
+      "label": "CSM uplink\n2106.40625 MHz",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 0
+    },
+    "f1Lbf": {
+      "label": "F-1\n1,530,000 lbf",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 1
+    },
+    "mctUs": {
+      "label": "MCT\n11.7 \u03bcs",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 2
+    },
+    "ignitionLb": {
+      "label": "Ignition\n6,484,280 lb",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 3
+    },
+    "usbCsmLink": {
+      "label": "USB CSM\nlink",
+      "rank": 1,
+      "order": 0
+    },
+    "f1Thrust": {
+      "label": "F-1 \u00d75\n(SA-507)",
+      "rank": 1,
+      "order": 1
+    },
+    "agcCycle": {
+      "label": "AGC cycle\n(AGCIS 30)",
+      "rank": 1,
+      "order": 2
+    },
+    "a11IgnitionMass": {
+      "label": "A11 PK\nmass",
+      "rank": 1,
+      "order": 3
+    },
+    "lunarDelayS": {
+      "label": "lunar delay\n~1.3 s",
+      "symbol": "value_property",
+      "rank": 2,
+      "order": 0
+    },
+    "earthOrbitNmi": {
+      "label": "EO planned\n100 nmi",
+      "symbol": "value_property",
+      "rank": 2,
+      "order": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "usbCsmUplinkMhz",
+      "to": "usbCsmLink",
+      "label": "bind"
+    },
+    {
+      "from": "f1Lbf",
+      "to": "f1Thrust",
+      "label": "bind"
+    },
+    {
+      "from": "mctUs",
+      "to": "agcCycle",
+      "label": "bind"
+    },
+    {
+      "from": "ignitionLb",
+      "to": "a11IgnitionMass",
+      "label": "bind"
+    },
+    {
+      "from": "usbCsmLink",
+      "to": "lunarDelayS",
+      "label": "range/c"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="908" height="411" viewBox="0 0 908 411">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="908" height="411" fill="#FFFFFF"/>
+<rect x="2" y="38" width="904" height="369" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 400 L 416 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[gen.mb] Apollo 11 Operating Context [Apollo11]</text>
+<rect x="2" y="38" width="904" height="371" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="mcc" x="72" y="77" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="112">MCC-H</text>
+<rect id="rso" x="72" y="227" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="262">RSO / AFETR</text>
+<rect id="msfn" x="372" y="72" width="160" height="80" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="452" y="112">MSFN</text>
+<rect id="earth" x="682" y="77" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="757" y="112">Earth</text>
+<rect id="moon" x="682" y="227" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="757" y="262">Moon</text>
+<path d="M 222,112 L 277.333,112 L 277.333,96 L 372,96" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 222,262 L 316.667,262 L 316.667,128 L 372,128" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 532,112 L 682,112" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 532,112 L 568,112 L 568,262 L 682,262" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<text class="small" text-anchor="middle" x="310.466" y="84">path A / voice</text>
+<text class="small" x="328.667" y="195">destruct UHF (not MCC)</text>
+<text class="small" text-anchor="middle" x="607" y="100">USB / 210-ft / Parkes</text>
+<text class="small" x="580" y="187">~1.3 s</text>
+</g>
+</svg>

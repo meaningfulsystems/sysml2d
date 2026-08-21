@@ -1,0 +1,337 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-uc",
+    "kind": "UseCaseView",
+    "name": "Apollo 11 Use Cases",
+    "canvas": {
+      "width": 594,
+      "height": 782,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "mission",
+        "symbol": "boundary",
+        "layout": {
+          "x": 252,
+          "y": 72,
+          "width": 270.0,
+          "height": 638.0,
+          "z": 0
+        },
+        "label": "Apollo 11",
+        "style": "boundary.system",
+        "model_ref": "Apollo11"
+      },
+      {
+        "id": "cdr",
+        "symbol": "actor",
+        "layout": {
+          "x": 72,
+          "y": 106,
+          "width": 70,
+          "height": 90,
+          "z": 10
+        },
+        "label": "CDR",
+        "style": "actor",
+        "model_ref": "cdr"
+      },
+      {
+        "id": "mcc",
+        "symbol": "actor",
+        "layout": {
+          "x": 72,
+          "y": 266,
+          "width": 70,
+          "height": 90,
+          "z": 10
+        },
+        "label": "MCC-H",
+        "style": "actor",
+        "model_ref": "mcc"
+      },
+      {
+        "id": "rso",
+        "symbol": "actor",
+        "layout": {
+          "x": 72,
+          "y": 426,
+          "width": 70,
+          "height": 90,
+          "z": 10
+        },
+        "label": "RSO",
+        "style": "actor",
+        "model_ref": "rso"
+      },
+      {
+        "id": "flyMissionUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 312,
+          "y": 116,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Fly mission",
+        "style": "use_case",
+        "model_ref": "flyMissionUseCase"
+      },
+      {
+        "id": "lunarEvaUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 312,
+          "y": 276,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Lunar EVA",
+        "style": "use_case",
+        "model_ref": "lunarEvaUseCase"
+      },
+      {
+        "id": "recoverCrewUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 312,
+          "y": 436,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Recover crew",
+        "style": "use_case",
+        "model_ref": "recoverCrewUseCase"
+      },
+      {
+        "id": "rangeSafetyUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 312,
+          "y": 596,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Range safety",
+        "style": "use_case",
+        "model_ref": "rangeSafetyUseCase"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-cdr-flyMissionUseCase",
+        "source": {
+          "element": "cdr",
+          "anchor": {
+            "side": "right",
+            "offset": 0.3
+          }
+        },
+        "target": {
+          "element": "flyMissionUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 171,
+              "y": 133
+            },
+            {
+              "x": 171,
+              "y": 151
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "cdr"
+      },
+      {
+        "id": "conn-cdr-lunarEvaUseCase",
+        "source": {
+          "element": "cdr",
+          "anchor": {
+            "side": "right",
+            "offset": 0.55
+          }
+        },
+        "target": {
+          "element": "lunarEvaUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 184,
+              "y": 155.5
+            },
+            {
+              "x": 184,
+              "y": 311
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "cdr"
+      },
+      {
+        "id": "conn-mcc-flyMissionUseCase",
+        "source": {
+          "element": "mcc",
+          "anchor": {
+            "side": "right",
+            "offset": 0.45
+          }
+        },
+        "target": {
+          "element": "flyMissionUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 197,
+              "y": 306.5
+            },
+            {
+              "x": 197,
+              "y": 151
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "mcc"
+      },
+      {
+        "id": "conn-mcc-recoverCrewUseCase",
+        "source": {
+          "element": "mcc",
+          "anchor": {
+            "side": "right",
+            "offset": 0.7
+          }
+        },
+        "target": {
+          "element": "recoverCrewUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 210,
+              "y": 329
+            },
+            {
+              "x": 210,
+              "y": 471
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "mcc"
+      },
+      {
+        "id": "conn-rso-rangeSafetyUseCase",
+        "source": {
+          "element": "rso",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rangeSafetyUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 223,
+              "y": 471
+            },
+            {
+              "x": 223,
+              "y": 631
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "rso"
+      },
+      {
+        "id": "conn-flyMissionUseCase-lunarEvaUseCase",
+        "source": {
+          "element": "flyMissionUseCase",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lunarEvaUseCase",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "include",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.include",
+        "model_ref": "flyMissionUseCase"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

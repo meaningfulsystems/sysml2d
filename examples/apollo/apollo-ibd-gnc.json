@@ -1,0 +1,114 @@
+{
+  "diagram": "apollo-ibd-gnc",
+  "kind": "InterconnectionView",
+  "name": "Apollo 11 AGC / GNC (do not merge)",
+  "subject": "mission",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 64,
+  "col_gap": 60,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "cmc": "Apollo11::CM::cmc",
+    "cmDsky1": "Apollo11::CM::cmDsky1",
+    "cmDsky2": "Apollo11::CM::cmDsky2",
+    "ems": "Apollo11::CM::ems",
+    "lgc": "Apollo11::LMAscent::lgc",
+    "lmDsky": "Apollo11::LMAscent::lmDsky",
+    "ags": "Apollo11::LMAscent::ags",
+    "lvdc": "Apollo11::IU::lvdc",
+    "cmDsky1--cmc--src": "Apollo11::CM::cmDsky1",
+    "cmDsky1--cmc--tgt": "Apollo11::CM::cmc",
+    "conn-cmDsky1-cmc": "Apollo11::CM::cmDsky1",
+    "cmDsky2--cmc--src": "Apollo11::CM::cmDsky2",
+    "cmDsky2--cmc--tgt": "Apollo11::CM::cmc",
+    "conn-cmDsky2-cmc": "Apollo11::CM::cmDsky2",
+    "lmDsky--lgc--src": "Apollo11::LMAscent::lmDsky",
+    "lmDsky--lgc--tgt": "Apollo11::LMAscent::lgc",
+    "conn-lmDsky-lgc": "Apollo11::LMAscent::lmDsky",
+    "lgc--ags--src": "Apollo11::LMAscent::lgc",
+    "lgc--ags--tgt": "Apollo11::LMAscent::ags",
+    "conn-lgc-ags": "Apollo11::LMAscent::lgc"
+  },
+  "nodes": {
+    "cmDsky1": {
+      "label": "CM DSKY 1",
+      "style": "part.gnc"
+    },
+    "cmDsky2": {
+      "label": "CM DSKY 2",
+      "style": "part.gnc"
+    },
+    "cmc": {
+      "label": "CMC (Colossus)",
+      "style": "part.gnc"
+    },
+    "ems": {
+      "label": "EMS",
+      "style": "part.gnc"
+    },
+    "lgc": {
+      "label": "LGC (Luminary)",
+      "style": "part.gnc"
+    },
+    "lmDsky": {
+      "label": "LM DSKY",
+      "style": "part.gnc"
+    },
+    "ags": {
+      "label": "AGS (AEA+ASA)",
+      "style": "part.gnc"
+    },
+    "lvdc": {
+      "label": "IU LVDC",
+      "style": "part.gnc"
+    }
+  },
+  "edges": [
+    {
+      "from": "cmDsky1",
+      "to": "cmc",
+      "label": "DSKY",
+      "model_ref": "conn-cmDsky1-cmc"
+    },
+    {
+      "from": "cmDsky2",
+      "to": "cmc",
+      "label": "DSKY",
+      "model_ref": "conn-cmDsky2-cmc"
+    },
+    {
+      "from": "lmDsky",
+      "to": "lgc",
+      "label": "DSKY",
+      "model_ref": "conn-lmDsky-lgc"
+    },
+    {
+      "from": "lgc",
+      "to": "ags",
+      "label": "R47 init",
+      "model_ref": "conn-lgc-ags"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

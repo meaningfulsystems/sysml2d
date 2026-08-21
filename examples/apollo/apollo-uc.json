@@ -1,0 +1,100 @@
+{
+  "diagram": "apollo-uc",
+  "kind": "UseCaseView",
+  "name": "Apollo 11 Use Cases",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "col_gap": 70,
+  "rank_gap": 170,
+  "nodes": {
+    "cdr": {
+      "label": "CDR",
+      "symbol": "actor",
+      "rank": 0,
+      "order": 0
+    },
+    "mcc": {
+      "label": "MCC-H",
+      "symbol": "actor",
+      "rank": 0,
+      "order": 1
+    },
+    "rso": {
+      "label": "RSO",
+      "symbol": "actor",
+      "rank": 0,
+      "order": 2
+    },
+    "flyMissionUseCase": {
+      "label": "Fly mission",
+      "rank": 1,
+      "order": 0
+    },
+    "lunarEvaUseCase": {
+      "label": "Lunar EVA",
+      "rank": 1,
+      "order": 1
+    },
+    "recoverCrewUseCase": {
+      "label": "Recover crew",
+      "rank": 1,
+      "order": 2
+    },
+    "rangeSafetyUseCase": {
+      "label": "Range safety",
+      "rank": 1,
+      "order": 3
+    }
+  },
+  "groups": [
+    {
+      "id": "mission",
+      "label": "Apollo 11",
+      "model_ref": "Apollo11",
+      "members": [
+        "flyMissionUseCase",
+        "lunarEvaUseCase",
+        "recoverCrewUseCase",
+        "rangeSafetyUseCase"
+      ],
+      "pad_x": 60,
+      "pad_y": 44
+    }
+  ],
+  "edges": [
+    {
+      "from": "cdr",
+      "to": "flyMissionUseCase",
+      "source_offset": 0.3
+    },
+    {
+      "from": "cdr",
+      "to": "lunarEvaUseCase",
+      "source_offset": 0.55
+    },
+    {
+      "from": "mcc",
+      "to": "flyMissionUseCase",
+      "source_offset": 0.45
+    },
+    {
+      "from": "mcc",
+      "to": "recoverCrewUseCase",
+      "source_offset": 0.7
+    },
+    {
+      "from": "rso",
+      "to": "rangeSafetyUseCase",
+      "source_offset": 0.5
+    },
+    {
+      "from": "flyMissionUseCase",
+      "to": "lunarEvaUseCase",
+      "label": "include",
+      "style": "connector.include"
+    }
+  ]
+}

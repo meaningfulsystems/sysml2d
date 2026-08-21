@@ -1,0 +1,65 @@
+{
+  "diagram": "apollo-pkg",
+  "kind": "PackageView",
+  "name": "Apollo 11 Packages",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "top-down",
+  "nodes": {
+    "ApolloModel": {
+      "label": "Apollo Model",
+      "rank": 0,
+      "order": 0
+    },
+    "ApolloStructure": {
+      "label": "Structure",
+      "rank": 1,
+      "order": 0
+    },
+    "ApolloBehavior": {
+      "label": "Behavior",
+      "rank": 1,
+      "order": 1
+    },
+    "ApolloRequirements": {
+      "label": "Requirements",
+      "rank": 1,
+      "order": 2
+    },
+    "ApolloAnalysis": {
+      "label": "Analysis",
+      "rank": 1,
+      "order": 3
+    },
+    "ApolloVerification": {
+      "label": "Verification",
+      "rank": 1,
+      "order": 4
+    }
+  },
+  "edges": [
+    {
+      "from": "ApolloModel",
+      "to": "ApolloStructure",
+      "label": "contains"
+    },
+    {
+      "from": "ApolloModel",
+      "to": "ApolloBehavior"
+    },
+    {
+      "from": "ApolloModel",
+      "to": "ApolloRequirements"
+    },
+    {
+      "from": "ApolloModel",
+      "to": "ApolloAnalysis"
+    },
+    {
+      "from": "ApolloModel",
+      "to": "ApolloVerification"
+    }
+  ]
+}

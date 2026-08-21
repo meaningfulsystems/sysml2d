@@ -1,0 +1,314 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "start": "Apollo11",
+    "abort": "Apollo11",
+    "done": "Apollo11",
+    "p63Braking": "p63Braking",
+    "p64Approach": "p64Approach",
+    "p66Landing": "p66Landing",
+    "p70Abort": "p70Abort"
+  },
+  "diagram": {
+    "id": "apollo-act",
+    "kind": "ActionView",
+    "name": "A11 Powered Descent (P63/P64/P66)",
+    "canvas": {
+      "width": 311,
+      "height": 854,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "start",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 145.5,
+          "y": 72,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "label": "",
+        "style": "initial_state"
+      },
+      {
+        "id": "p63Braking",
+        "symbol": "action",
+        "layout": {
+          "x": 80.5,
+          "y": 156,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "P63 braking",
+        "style": "action",
+        "model_ref": "p63Braking"
+      },
+      {
+        "id": "p64Approach",
+        "symbol": "action",
+        "layout": {
+          "x": 80.5,
+          "y": 276,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "P64 approach",
+        "style": "action",
+        "model_ref": "p64Approach"
+      },
+      {
+        "id": "abort",
+        "symbol": "decision_node",
+        "layout": {
+          "x": 117.5,
+          "y": 396,
+          "width": 76,
+          "height": 58,
+          "z": 10
+        },
+        "label": "abort?",
+        "style": "decision_node"
+      },
+      {
+        "id": "p66Landing",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 518,
+          "width": 167,
+          "height": 56,
+          "z": 10
+        },
+        "label": "P66 landing (flown)",
+        "style": "action",
+        "model_ref": "p66Landing"
+      },
+      {
+        "id": "p70Abort",
+        "symbol": "action",
+        "layout": {
+          "x": 80.5,
+          "y": 638,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "P70 DPS abort",
+        "style": "action",
+        "model_ref": "p70Abort"
+      },
+      {
+        "id": "done",
+        "symbol": "activity_final_node",
+        "layout": {
+          "x": 143.5,
+          "y": 758,
+          "width": 24,
+          "height": 24,
+          "z": 10
+        },
+        "label": "",
+        "style": "activity_final_node"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-start-p63Braking",
+        "source": {
+          "element": "start",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p63Braking",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "start"
+      },
+      {
+        "id": "conn-p63Braking-p64Approach",
+        "source": {
+          "element": "p63Braking",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p64Approach",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "p63Braking"
+      },
+      {
+        "id": "conn-p64Approach-abort",
+        "source": {
+          "element": "p64Approach",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "abort",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "p64Approach"
+      },
+      {
+        "id": "conn-abort-p66Landing",
+        "source": {
+          "element": "abort",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p66Landing",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "no",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.control_flow",
+        "model_ref": "abort"
+      },
+      {
+        "id": "conn-abort-p70Abort",
+        "source": {
+          "element": "abort",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p70Abort",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "yes",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.control_flow",
+        "model_ref": "p70Abort"
+      },
+      {
+        "id": "conn-p66Landing-done",
+        "source": {
+          "element": "p66Landing",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "done",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "p66Landing"
+      },
+      {
+        "id": "conn-p70Abort-done",
+        "source": {
+          "element": "p70Abort",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "done",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "p70Abort"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

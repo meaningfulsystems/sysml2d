@@ -1,0 +1,659 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "abortMode": "Apollo11::AbortMode",
+    "nominal": "Apollo11::AbortMode::nominal",
+    "padLes": "Apollo11::AbortMode::padLes",
+    "modeI": "Apollo11::AbortMode::modeI",
+    "modeII": "Apollo11::AbortMode::modeII",
+    "modeIII": "Apollo11::AbortMode::modeIII",
+    "modeIV": "Apollo11::AbortMode::modeIV",
+    "contingencyTli": "Apollo11::AbortMode::contingencyTli",
+    "spsAbort": "Apollo11::AbortMode::spsAbort",
+    "p70Dps": "Apollo11::AbortMode::p70Dps",
+    "p71Aps": "Apollo11::AbortMode::p71Aps",
+    "lesAbort": "Apollo11::AbortMode::lesAbort",
+    "abortModeI": "Apollo11::AbortMode::abortModeI",
+    "abortModeII": "Apollo11::AbortMode::abortModeII",
+    "abortModeIII": "Apollo11::AbortMode::abortModeIII",
+    "abortModeIV": "Apollo11::AbortMode::abortModeIV",
+    "abortTli": "Apollo11::AbortMode::abortTli",
+    "abortSps": "Apollo11::AbortMode::abortSps",
+    "abortP70": "Apollo11::AbortMode::abortP70",
+    "abortP71": "Apollo11::AbortMode::abortP71"
+  },
+  "diagram": {
+    "id": "apollo-stm-abort",
+    "kind": "StateView",
+    "name": "Apollo 11 Abort Modes",
+    "canvas": {
+      "width": 919,
+      "height": 946,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "abortMode",
+        "symbol": "boundary",
+        "layout": {
+          "x": 104,
+          "y": 88,
+          "width": 775,
+          "height": 818,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 140,
+          "y": 487,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "nominal",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 301,
+          "y": 471,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "nominal",
+        "label": "Nominal",
+        "style": "state.default"
+      },
+      {
+        "id": "padLes",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 512,
+          "y": 124,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "padLes",
+        "label": "Pad / LES",
+        "style": "state.default"
+      },
+      {
+        "id": "modeI",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 512,
+          "y": 223,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "modeI",
+        "label": "Mode I",
+        "style": "state.default"
+      },
+      {
+        "id": "modeII",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 512,
+          "y": 322,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "modeII",
+        "label": "Mode II",
+        "style": "state.default"
+      },
+      {
+        "id": "modeIII",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 512,
+          "y": 421,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "modeIII",
+        "label": "Mode III",
+        "style": "state.default"
+      },
+      {
+        "id": "modeIV",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 512,
+          "y": 520,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "modeIV",
+        "label": "Mode IV",
+        "style": "state.default"
+      },
+      {
+        "id": "contingencyTli",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 512,
+          "y": 619,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "contingencyTli",
+        "label": "Contingency TLI",
+        "style": "state.default"
+      },
+      {
+        "id": "spsAbort",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 512,
+          "y": 719,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "spsAbort",
+        "label": "SPS abort",
+        "style": "state.default"
+      },
+      {
+        "id": "p70Dps",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 512,
+          "y": 818,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p70Dps",
+        "label": "P70 DPS",
+        "style": "state.default"
+      },
+      {
+        "id": "p71Aps",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 723,
+          "y": 471,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p71Aps",
+        "label": "P71 APS",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--nominal",
+        "model_ref": "abortMode",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "nominal",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--padLes",
+        "model_ref": "lesAbort",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "right",
+            "offset": 0.1111
+          }
+        },
+        "target": {
+          "element": "padLes",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 441,
+              "y": 477
+            },
+            {
+              "x": 441,
+              "y": 150
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "pad",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--modeI",
+        "model_ref": "abortModeI",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "right",
+            "offset": 0.2222
+          }
+        },
+        "target": {
+          "element": "modeI",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 461,
+              "y": 483
+            },
+            {
+              "x": 461,
+              "y": 249
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "I",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--modeII",
+        "model_ref": "abortModeII",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "right",
+            "offset": 0.3333
+          }
+        },
+        "target": {
+          "element": "modeII",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 481,
+              "y": 488
+            },
+            {
+              "x": 481,
+              "y": 348
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "II",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--modeIII",
+        "model_ref": "abortModeIII",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "right",
+            "offset": 0.4444
+          }
+        },
+        "target": {
+          "element": "modeIII",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 501,
+              "y": 494
+            },
+            {
+              "x": 501,
+              "y": 447
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "III",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--modeIV",
+        "model_ref": "abortModeIV",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5556
+          }
+        },
+        "target": {
+          "element": "modeIV",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 521,
+              "y": 500
+            },
+            {
+              "x": 521,
+              "y": 546
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "IV",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--contingencyTli",
+        "model_ref": "abortTli",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "right",
+            "offset": 0.6667
+          }
+        },
+        "target": {
+          "element": "contingencyTli",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 541,
+              "y": 506
+            },
+            {
+              "x": 541,
+              "y": 645
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "TLI",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--spsAbort",
+        "model_ref": "abortSps",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "right",
+            "offset": 0.7778
+          }
+        },
+        "target": {
+          "element": "spsAbort",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 561,
+              "y": 511
+            },
+            {
+              "x": 561,
+              "y": 745
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "SPS",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--p70Dps",
+        "model_ref": "abortP70",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "right",
+            "offset": 0.8889
+          }
+        },
+        "target": {
+          "element": "p70Dps",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 581,
+              "y": 517
+            },
+            {
+              "x": 581,
+              "y": 844
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "P70",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p70Dps--p71Aps",
+        "model_ref": "abortP71",
+        "source": {
+          "element": "p70Dps",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p71Aps",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 678,
+              "y": 844
+            },
+            {
+              "x": 678,
+              "y": 497
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "P71",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "abortMode"
+  }
+}

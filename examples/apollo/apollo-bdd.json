@@ -1,0 +1,143 @@
+{
+  "diagram": "apollo-bdd",
+  "kind": "DefinitionView",
+  "name": "Apollo 11 Definition Tree",
+  "subject": "Apollo11::Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "top-down",
+  "default_w": 150,
+  "default_h": 56,
+  "sibling_gap": 24,
+  "rank_gap": 90,
+  "max_siblings_per_row": 5,
+  "aliases": {
+    "root": "Apollo11::Apollo11",
+    "sic": "Apollo11::SIC",
+    "sii": "Apollo11::SII",
+    "sivb": "Apollo11::SIVB",
+    "iu": "Apollo11::IU",
+    "sla": "Apollo11::SLA",
+    "les": "Apollo11::LES",
+    "cm": "Apollo11::CM",
+    "sm": "Apollo11::SM",
+    "lmd": "Apollo11::LMDescent",
+    "lma": "Apollo11::LMAscent",
+    "mcc": "Apollo11::MissionControlHouston",
+    "gsfc": "Apollo11::GoddardSpaceFlightCenter",
+    "msfn": "Apollo11::MannedSpaceFlightNetwork",
+    "ksc": "Apollo11::KennedyLC39",
+    "rso": "Apollo11::RangeSafetyAFETR",
+    "rec": "Apollo11::RecoveryForces",
+    "cdr": "Apollo11::Commander",
+    "cmp": "Apollo11::CommandModulePilot",
+    "lmp": "Apollo11::LunarModulePilot"
+  },
+  "roots": [
+    {
+      "id": "apollo",
+      "label": "Apollo 11 AS-506",
+      "model_ref": "root",
+      "style": "part.definition.root",
+      "w": 200,
+      "children": [
+        {
+          "id": "sIc",
+          "label": "S-IC",
+          "model_ref": "sic"
+        },
+        {
+          "id": "sIi",
+          "label": "S-II",
+          "model_ref": "sii"
+        },
+        {
+          "id": "sIvb",
+          "label": "S-IVB",
+          "model_ref": "sivb"
+        },
+        {
+          "id": "iu",
+          "label": "IU",
+          "model_ref": "iu"
+        },
+        {
+          "id": "sla",
+          "label": "SLA",
+          "model_ref": "sla"
+        },
+        {
+          "id": "les",
+          "label": "LES",
+          "model_ref": "les"
+        },
+        {
+          "id": "cm",
+          "label": "CM",
+          "model_ref": "cm"
+        },
+        {
+          "id": "sm",
+          "label": "SM",
+          "model_ref": "sm"
+        },
+        {
+          "id": "lmDescent",
+          "label": "LM Descent",
+          "model_ref": "lmd"
+        },
+        {
+          "id": "lmAscent",
+          "label": "LM Ascent",
+          "model_ref": "lma"
+        },
+        {
+          "id": "mcc",
+          "label": "MCC-H",
+          "model_ref": "mcc"
+        },
+        {
+          "id": "gsfc",
+          "label": "GSFC",
+          "model_ref": "gsfc"
+        },
+        {
+          "id": "msfn",
+          "label": "MSFN",
+          "model_ref": "msfn"
+        },
+        {
+          "id": "ksc",
+          "label": "KSC LC-39",
+          "model_ref": "ksc"
+        },
+        {
+          "id": "rso",
+          "label": "RSO / AFETR",
+          "model_ref": "rso"
+        },
+        {
+          "id": "recovery",
+          "label": "Recovery",
+          "model_ref": "rec"
+        },
+        {
+          "id": "cdr",
+          "label": "CDR",
+          "model_ref": "cdr"
+        },
+        {
+          "id": "cmp",
+          "label": "CMP",
+          "model_ref": "cmp"
+        },
+        {
+          "id": "lmp",
+          "label": "LMP",
+          "model_ref": "lmp"
+        }
+      ]
+    }
+  ]
+}

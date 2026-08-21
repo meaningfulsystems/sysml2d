@@ -1,0 +1,112 @@
+{
+  "diagram": "apollo-ibd-mcc",
+  "kind": "InterconnectionView",
+  "name": "MCC-H MOCR / RTCC / CCATS",
+  "subject": "mcc",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 130,
+  "default_h": 58,
+  "col_gap": 40,
+  "rank_gap": 110,
+  "aliases": {
+    "mcc": "Apollo11::MissionControlHouston",
+    "flight": "Apollo11::MOCR::flight",
+    "capcom": "Apollo11::MOCR::capcom",
+    "eecom": "Apollo11::MOCR::eecom",
+    "gncProp": "Apollo11::MOCR::gncProp",
+    "fdo": "Apollo11::MOCR::fdo",
+    "ccc": "Apollo11::MOCR::ccc",
+    "rtcc": "Apollo11::MissionControlHouston::rtcc",
+    "ccats": "Apollo11::MissionControlHouston::ccats",
+    "flight--ccc--src": "Apollo11::MOCR::flight",
+    "flight--ccc--tgt": "Apollo11::MOCR::ccc",
+    "conn-flight-ccc": "Apollo11::MOCR::flight",
+    "capcom--ccc--src": "Apollo11::MOCR::capcom",
+    "capcom--ccc--tgt": "Apollo11::MOCR::ccc",
+    "conn-capcom-ccc": "Apollo11::MOCR::capcom",
+    "eecom--ccc--src": "Apollo11::MOCR::eecom",
+    "eecom--ccc--tgt": "Apollo11::MOCR::ccc",
+    "conn-eecom-ccc": "Apollo11::MOCR::eecom",
+    "gncProp--ccc--src": "Apollo11::MOCR::gncProp",
+    "gncProp--ccc--tgt": "Apollo11::MOCR::ccc",
+    "conn-gncProp-ccc": "Apollo11::MOCR::gncProp",
+    "fdo--ccc--src": "Apollo11::MOCR::fdo",
+    "fdo--ccc--tgt": "Apollo11::MOCR::ccc",
+    "conn-fdo-ccc": "Apollo11::MOCR::fdo",
+    "ccc--rtcc--src": "Apollo11::MOCR::ccc",
+    "ccc--rtcc--tgt": "Apollo11::MissionControlHouston::rtcc",
+    "conn-ccc-rtcc": "Apollo11::MOCR::ccc",
+    "rtcc--ccats--src": "Apollo11::MissionControlHouston::rtcc",
+    "rtcc--ccats--tgt": "Apollo11::MissionControlHouston::ccats",
+    "conn-rtcc-ccats": "Apollo11::MissionControlHouston::rtcc"
+  },
+  "nodes": {
+    "flight": {
+      "label": "FLIGHT"
+    },
+    "capcom": {
+      "label": "CAPCOM"
+    },
+    "eecom": {
+      "label": "EECOM"
+    },
+    "gncProp": {
+      "label": "GNC / prop"
+    },
+    "fdo": {
+      "label": "FDO"
+    },
+    "ccc": {
+      "label": "CCC"
+    },
+    "rtcc": {
+      "label": "RTCC\n5\u00d7 360/75"
+    },
+    "ccats": {
+      "label": "CCATS"
+    }
+  },
+  "edges": [
+    {
+      "from": "flight",
+      "to": "ccc",
+      "label": "FC",
+      "model_ref": "conn-flight-ccc"
+    },
+    {
+      "from": "capcom",
+      "to": "ccc",
+      "model_ref": "conn-capcom-ccc"
+    },
+    {
+      "from": "eecom",
+      "to": "ccc",
+      "model_ref": "conn-eecom-ccc"
+    },
+    {
+      "from": "gncProp",
+      "to": "ccc",
+      "model_ref": "conn-gncProp-ccc"
+    },
+    {
+      "from": "fdo",
+      "to": "ccc",
+      "model_ref": "conn-fdo-ccc"
+    },
+    {
+      "from": "ccc",
+      "to": "rtcc",
+      "label": "path A",
+      "model_ref": "conn-ccc-rtcc"
+    },
+    {
+      "from": "rtcc",
+      "to": "ccats",
+      "label": "load",
+      "model_ref": "conn-rtcc-ccats"
+    }
+  ]
+}
