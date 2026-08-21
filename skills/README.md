@@ -4,7 +4,7 @@ Installable Cursor-style skills for taking SysML2d onto a new project. Stems mat
 
 | Skill | When to use it |
 | --- | --- |
-| [bootstrap-project](bootstrap-project/SKILL.md) | Start a new user project from [templates/new-project/](../templates/new-project/) |
+| [bootstrap-project](bootstrap-project/SKILL.md) | Start a new user project from [template/new-project/](../template/new-project/) |
 | [author-model](author-model/SKILL.md) | Write or update SysML v2 textual models in this style |
 | [compose-views](compose-views/SKILL.md) | Write intent JSON and run the right `sysmld` command (all 15 kinds) |
 | [vision-review](vision-review/SKILL.md) | Vision QA: no line through a box, hop-overs only for line crossings, meaning checks |

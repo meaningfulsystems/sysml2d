@@ -14,7 +14,7 @@ These are **paired toolchains**, not two names for one language.
 
 A first-time systems engineer picks **one** toolchain per project. Do not mix `.sysml` and `.msml`. This repo is not MSML. MSML is not SysML v2.
 
-Hero path: the [e-bike](examples/e-bike/) example, then start your own system with [templates/new-project/](templates/new-project/) and the four skills (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`).
+Hero path: the [e-bike](examples/e-bike/) example, then start your own system with [template/new-project/](template/new-project/) and the four skills (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`).
 
 ## The Most Advanced System Modeling Language, Made Accessible
 
@@ -83,10 +83,10 @@ Then see [QUICKSTART.md](QUICKSTART.md) for a step-by-step guide to creating you
 
 ## Start your own system
 
-Copy [templates/new-project/](templates/new-project/) — a stub `.sysml`, one IBD intent, and one state-machine intent. Rename the `StarterSystem` package and aliases; do not clone toaster as the starter. Do not mix in `.msml` files.
+Copy [template/new-project/](template/new-project/) — a stub `.sysml`, one IBD intent, and one state-machine intent. Rename the `StarterSystem` package and aliases; do not clone toaster as the starter. Do not mix in `.msml` files.
 
 ```bash
-cp -R templates/new-project/ ../my-system
+cp -R template/new-project/ ../my-system
 cd ../my-system
 sysmld interconnection starter-ibd.json
 sysmld state           starter-stm.json
@@ -167,7 +167,7 @@ schemas/                 SysMLD JSON Schema (authoritative for .sysmld document 
 examples/toaster/        Toaster appliance model and all diagram examples
 examples/blender/        Blender appliance model and all diagram examples
 examples/e-bike/         Electric-bike model covering all 15 view kinds
-templates/new-project/   Copy-this starter (model stub + IBD + STM intents)
+template/new-project/   Copy-this starter (model stub + IBD + STM intents)
 skills/                  Installable agent skills plus leftover one-shot prompts
 AGENTS.md                How an agent should work in this repo
 tests/                   Unit and regression tests

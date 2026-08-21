@@ -10,7 +10,7 @@ Use this when someone wants **their own** SysML2d system (`.sysml` / `.sysmld` /
 ## Copy the starter
 
 ```bash
-cp -R templates/new-project/ ../my-system
+cp -R template/new-project/ ../my-system
 cd ../my-system
 ```
 
