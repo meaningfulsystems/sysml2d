@@ -1,49 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="896" height="754" viewBox="0 0 896 754">
+<svg xmlns="http://www.w3.org/2000/svg" width="1008" height="1002" viewBox="0 0 1008 1002">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="896" height="754" fill="#FFFFFF"/>
-<rect x="2" y="38" width="892" height="712" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1008" height="1002" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1004" height="960" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 536 L 552 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[icn.mb] Apollo 11 AGC / GNC (do not merge) [mission : Apollo11]</text>
-<rect x="2" y="38" width="892" height="714" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1004" height="962" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="boundary" x="40" y="40" width="812" height="632" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<rect id="boundary" x="40" y="40" width="924" height="880" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="label" x="50" y="62">mission</text>
 <rect id="cmDsky1" x="76" y="76" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="146" y="108">CM DSKY 1</text>
 <rect id="cmDsky2" x="76" y="200" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="146" y="232">CM DSKY 2</text>
-<rect id="cmc" x="376" y="262" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="446" y="294">CMC (Colossus)</text>
+<rect id="scs" x="76" y="820" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="852">CM SCS</text>
+<rect id="cmc" x="432" y="386" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="502" y="418">CMC (Colossus)</text>
 <rect id="ems" x="76" y="324" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="146" y="356">EMS</text>
-<rect id="lgc" x="376" y="386" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="446" y="418">LGC (Luminary)</text>
+<rect id="pngs" x="76" y="696" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="728">LM PNGS</text>
+<rect id="lgc" x="432" y="510" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="502" y="542">LGC (Luminary)</text>
 <rect id="lmDsky" x="76" y="448" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="146" y="480">LM DSKY</text>
-<rect id="ags" x="676" y="324" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="746" y="356">AGS (AEA+ASA)</text>
+<rect id="ags" x="788" y="448" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="858" y="480">AGS (AEA+ASA)</text>
 <rect id="lvdc" x="76" y="572" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="146" y="604">IU LVDC</text>
 <rect id="cmDsky1--cmc--src" x="140" y="134" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="cmDsky2--cmc--src" x="140" y="258" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cmDsky1--cmc--tgt" x="370" y="277.331" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cmDsky2--cmc--tgt" x="370" y="298.669" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lmDsky--lgc--tgt" x="370" y="412" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lgc--ags--src" x="510" y="412" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="scs--cmc--src" x="140" y="878" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="cmDsky1--cmc--tgt" x="426" y="396" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="cmDsky2--cmc--tgt" x="426" y="412" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="scs--cmc--tgt" x="426" y="428" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="pngs--lgc--src" x="140" y="754" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lmDsky--lgc--tgt" x="426" y="525.331" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="pngs--lgc--tgt" x="426" y="546.669" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lgc--ags--src" x="566" y="536" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="lmDsky--lgc--src" x="140" y="506" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lgc--ags--tgt" x="670" y="350" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<path d="M 146,146 L 376,140 L 370,283.331" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 146,270 L 146,304.669 L 370,304.669" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 146,518 L 146,418 L 370,418" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 522,418 L 596,418 L 596,356 L 670,356" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" text-anchor="middle" x="261" y="131">DSKY</text>
-<text class="small" text-anchor="middle" x="258" y="292.669">DSKY</text>
-<text class="small" text-anchor="middle" x="258" y="406">DSKY</text>
-<text class="small" text-anchor="middle" x="559" y="406">R47 init</text>
+<rect id="lgc--ags--tgt" x="782" y="474" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 146,890 L 240,884 L 240,536 L 432,536 L 426,434" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 146,766 L 432,760 L 426,552.669" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 146,146 L 146,176 L 240,176 L 240,300 L 432,300 L 426,402" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 146,270 L 146,300 L 240,300 L 240,418 L 426,418" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 146,518 L 146,531.331 L 426,531.331" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 578,542 L 680,542 L 680,480 L 782,480" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="252" y="710">backup / CMC</text>
+<text class="small" text-anchor="middle" x="289" y="751">computer</text>
+<text class="small" text-anchor="middle" x="336" y="288">DSKY</text>
+<text class="small" text-anchor="middle" x="333" y="406">DSKY</text>
+<text class="small" text-anchor="middle" x="286" y="519.331">DSKY</text>
+<text class="small" text-anchor="middle" x="629" y="530">R47 init</text>
 </g>
 </svg>

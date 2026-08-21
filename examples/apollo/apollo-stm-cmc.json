@@ -1,0 +1,47 @@
+{
+  "diagram": "apollo-stm-cmc",
+  "kind": "StateView",
+  "name": "Apollo 11 CMC Programs",
+  "subject": "cmcMajorMode",
+  "model_files": ["apollo.sysml"],
+  "direction": "top-down",
+  "default_w": 150,
+  "default_h": 52,
+  "rank_gap": 72,
+  "col_gap": 48,
+  "aliases": {
+    "cmcMajorMode": "Apollo11::CmcMajorMode",
+    "p00": "Apollo11::CmcMajorMode::p00",
+    "p11": "Apollo11::CmcMajorMode::p11",
+    "p27": "Apollo11::CmcMajorMode::p27",
+    "p40": "Apollo11::CmcMajorMode::p40",
+    "p61": "Apollo11::CmcMajorMode::p61",
+    "p62": "Apollo11::CmcMajorMode::p62",
+    "p67": "Apollo11::CmcMajorMode::p67",
+    "toP11": "Apollo11::CmcMajorMode::toP11",
+    "toP27": "Apollo11::CmcMajorMode::toP27",
+    "toP40": "Apollo11::CmcMajorMode::toP40",
+    "toP61": "Apollo11::CmcMajorMode::toP61",
+    "toP62": "Apollo11::CmcMajorMode::toP62",
+    "toP67": "Apollo11::CmcMajorMode::toP67"
+  },
+  "states": {
+    "initial": {"initial": true},
+    "p00": {"label": "P00 idle", "model_ref": "p00"},
+    "p11": {"label": "P11 earth orbit", "model_ref": "p11"},
+    "p27": {"label": "P27 uplink (V70–V73)", "model_ref": "p27"},
+    "p40": {"label": "P40 SPS", "model_ref": "p40"},
+    "p61": {"label": "P61 entry prep", "model_ref": "p61"},
+    "p62": {"label": "P62 CM/SM sep", "model_ref": "p62"},
+    "p67": {"label": "P67 final\n(P63–P66 TBD)", "model_ref": "p67", "h": 64}
+  },
+  "transitions": [
+    {"from": "initial", "to": "p00", "label": ""},
+    {"from": "p00", "to": "p11", "label": "orbit", "model_ref": "toP11"},
+    {"from": "p00", "to": "p27", "label": "uplink", "model_ref": "toP27"},
+    {"from": "p00", "to": "p40", "label": "SPS", "model_ref": "toP40"},
+    {"from": "p00", "to": "p61", "label": "entry", "model_ref": "toP61"},
+    {"from": "p61", "to": "p62", "label": "sep", "model_ref": "toP62"},
+    {"from": "p62", "to": "p67", "label": "P63–P66 collapsed", "model_ref": "toP67"}
+  ]
+}

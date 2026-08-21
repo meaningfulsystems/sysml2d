@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="692" height="542" viewBox="0 0 692 542">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="692" height="542" fill="#FFFFFF"/>
+<rect x="2" y="38" width="688" height="500" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 432 L 448 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[stv.mb] Apollo 11 CM SCS Modes [scsMode : ScsMode]</text>
+<rect x="2" y="38" width="688" height="502" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="109" y="37" width="539" height="423" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="119" y="59">scsMode</text>
+<circle id="initial" cx="155" cy="249" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="cmc" x="286" y="223" width="130" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="351" y="249">CMC (digital)</text>
+<rect id="attHold" x="482" y="129" width="130" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="547" y="155">Attitude hold</text>
+<rect id="rateCommand" x="482" y="223" width="130" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="547" y="249">Rate command</text>
+<rect id="minImpulse" x="482" y="316" width="130" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="547" y="342">Min impulse</text>
+<path d="M 165,249 L 286,249" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 416,236 L 428,236 Q 436,236 436,228 L 436,163 Q 436,155 444,155 L 482,155" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 416,249 L 482,249" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 416,262 L 468,262 Q 476,262 476,270 L 476,339 Q 476,342 479,342 L 482,342" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 547,129 L 547,81 Q 547,73 539,73 L 359,73 Q 351,73 351,81 L 351,223" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 547,275 L 547,388 Q 547,396 539,396 L 359,396 Q 351,396 351,388 L 351,275" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 547,368 L 547,416 Q 547,424 539,424 L 359,424 Q 351,424 351,416 L 351,275" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="436" y="203.5">SCS hold</text>
+<text class="small" text-anchor="middle" x="449" y="257">rate</text>
+<text class="small" text-anchor="middle" x="476" y="298">min</text>
+<text class="small" text-anchor="middle" x="449" y="81">CMC</text>
+<text class="small" text-anchor="middle" x="449" y="404">CMC</text>
+<text class="small" text-anchor="middle" x="449" y="432">CMC</text>
+</g>
+</svg>

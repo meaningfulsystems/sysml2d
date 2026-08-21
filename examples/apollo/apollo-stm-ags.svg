@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="904" height="332" viewBox="0 0 904 332">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="904" height="332" fill="#FFFFFF"/>
+<rect x="2" y="38" width="900" height="290" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 432 L 448 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[stv.mb] Apollo 11 LM AGS Modes [agsMode : AgsMode]</text>
+<rect x="2" y="38" width="900" height="292" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="114" y="98" width="746" height="152" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="124" y="120">agsMode</text>
+<circle id="initial" cx="160" cy="160" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="idle" x="288" y="134" width="140" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="358" y="160">AGS idle</text>
+<rect id="operate" x="486" y="134" width="140" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="556" y="160">AGS operate</text>
+<rect id="followPngs" x="684" y="134" width="140" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="754" y="160">Follow PNGS</text>
+<path d="M 170,160 L 288,160" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 428,160 L 486,160" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 626,160 L 684,160" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 556,186 L 556,206 Q 556,214 548,214 L 366,214 Q 358,214 358,206 L 358,186" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="457" y="168">on</text>
+<text class="small" text-anchor="middle" x="655" y="168">R47 init</text>
+<text class="small" text-anchor="middle" x="457" y="222">standby</text>
+</g>
+</svg>

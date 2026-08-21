@@ -11,8 +11,8 @@
     "kind": "RequirementView",
     "name": "Apollo 11 Sourced Requirements",
     "canvas": {
-      "width": 1865,
-      "height": 418,
+      "width": 2337,
+      "height": 430,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -80,7 +80,7 @@
         "model_ref": "cmEcsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 814,
+          "x": 835,
           "y": 72,
           "width": 195,
           "height": 88,
@@ -94,7 +94,7 @@
         "model_ref": "a7lRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1045,
+          "x": 1087,
           "y": 72,
           "width": 258,
           "height": 82,
@@ -108,7 +108,7 @@
         "model_ref": "a11MassRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1339,
+          "x": 1381,
           "y": 72,
           "width": 188,
           "height": 88,
@@ -122,13 +122,55 @@
         "model_ref": "rsoRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1563,
+          "x": 1605,
           "y": 72,
           "width": 230,
           "height": 82,
           "z": 10
         },
         "label": "\u00abrequirement\u00bb\nRSO outside MCC\nUHF destruct; safed after EO",
+        "style": "requirement"
+      },
+      {
+        "id": "a11AtypicalRequirement",
+        "model_ref": "a11AtypicalRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 814,
+          "y": 270,
+          "width": 237,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nA11 atypical vs generic stack\n1 EVA / 196 h; no LRV/SIM\nP66 flown; F-1 from SA-507",
+        "style": "requirement"
+      },
+      {
+        "id": "scsRequirement",
+        "model_ref": "scsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1871,
+          "y": 72,
+          "width": 188,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nCSM SCS analog backup\nCMC vs SCS crew-select\nFull switch deck TBD",
+        "style": "requirement"
+      },
+      {
+        "id": "pngsRequirement",
+        "model_ref": "pngsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 2095,
+          "y": 72,
+          "width": 170,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nLM PNGS \u2260 AGS\nLGC + IMU + radars\nR47 inits AGS",
         "style": "requirement"
       }
     ],
@@ -157,6 +199,37 @@
         "labels": [
           {
             "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-cmEcsRequirement-a11AtypicalRequirement",
+        "model_ref": "cmEcsRequirement",
+        "source": {
+          "element": "cmEcsRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "a11AtypicalRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "A11 instance",
             "position": {
               "offset": 0.5
             }

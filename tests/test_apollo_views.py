@@ -88,6 +88,20 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("part cmDsky2 : DSKY", text)
         self.assertIn("part lmDsky : DSKY", text)
 
+    def test_apollo_keeps_inner_machines_and_a11_flags(self):
+        text = (APOLLO / "apollo.sysml").read_text(encoding="utf-8")
+        self.assertIn("part scs : SCS", text)
+        self.assertIn("part pngs : PNGS", text)
+        self.assertIn("state def ScsMode", text)
+        self.assertIn("state def AgsMode", text)
+        self.assertIn("state def LgcMajorMode", text)
+        self.assertIn("state def CmcMajorMode", text)
+        self.assertIn("requirement a11AtypicalRequirement", text)
+        self.assertIn("requirement scsRequirement", text)
+        self.assertIn("requirement pngsRequirement", text)
+        self.assertNotIn("part pngs : AGS", text)
+        self.assertNotIn("part scs : CMC", text)
+
 
 def _route_box_hits(doc: dict) -> list[tuple[str, str]]:
     elements = {element["id"]: element for element in doc["diagram"]["elements"]}

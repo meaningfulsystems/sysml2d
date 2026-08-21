@@ -1,0 +1,278 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "agsMode": "Apollo11::AgsMode",
+    "idle": "Apollo11::AgsMode::idle",
+    "operate": "Apollo11::AgsMode::operate",
+    "followPngs": "Apollo11::AgsMode::followPngs",
+    "agsOn": "Apollo11::AgsMode::agsOn",
+    "r47": "Apollo11::AgsMode::r47",
+    "agsOff": "Apollo11::AgsMode::agsOff"
+  },
+  "diagram": {
+    "id": "apollo-stm-ags",
+    "kind": "StateView",
+    "name": "Apollo 11 LM AGS Modes",
+    "canvas": {
+      "width": 900,
+      "height": 290,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "agsMode",
+        "symbol": "boundary",
+        "layout": {
+          "x": 114,
+          "y": 98,
+          "width": 746,
+          "height": 152,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 150,
+          "y": 150,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "idle",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 288,
+          "y": 134,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "idle",
+        "label": "AGS idle",
+        "style": "state.default"
+      },
+      {
+        "id": "operate",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 486,
+          "y": 134,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "operate",
+        "label": "AGS operate",
+        "style": "state.default"
+      },
+      {
+        "id": "followPngs",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 684,
+          "y": 134,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "followPngs",
+        "label": "Follow PNGS",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--idle",
+        "model_ref": "agsMode",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "idle",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "idle--operate",
+        "model_ref": "agsOn",
+        "source": {
+          "element": "idle",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "operate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "on",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "operate--followPngs",
+        "model_ref": "r47",
+        "source": {
+          "element": "operate",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "followPngs",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "R47 init",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "operate-back-idle",
+        "model_ref": "agsOff",
+        "source": {
+          "element": "operate",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "idle",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 556,
+              "y": 214
+            },
+            {
+              "x": 358,
+              "y": 214
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "standby",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "agsMode"
+  }
+}

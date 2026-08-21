@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="865" height="801" viewBox="0 0 865 801">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="865" height="801" fill="#FFFFFF"/>
+<rect x="2" y="38" width="861" height="759" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 512 L 528 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[stv.mb] Apollo 11 CMC Programs [cmcMajorMode : CmcMajorMode]</text>
+<rect x="2" y="38" width="861" height="761" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="54" y="119" width="767" height="600" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="64" y="141">cmcMajorMode</text>
+<circle id="initial" cx="438" cy="165" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="p00" x="363" y="260" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="438" y="286">P00 idle</text>
+<rect id="p11" x="90" y="382" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="165" y="408">P11 earth orbit</text>
+<rect id="p27" x="272" y="382" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="347" y="408">P27 uplink (V70–V73)</text>
+<rect id="p40" x="454" y="382" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="529" y="408">P40 SPS</text>
+<rect id="p61" x="635" y="382" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="710" y="408">P61 entry prep</text>
+<rect id="p62" x="363" y="504" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="438" y="530">P62 CM/SM sep</text>
+<rect id="p67" x="363" y="619" width="150" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="438" y="643.5">P67 final</tspan><tspan x="438" dy="15">(P63–P66 TBD)</tspan></text>
+<path d="M 438,175 L 438,260" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 393,312 L 393,324 Q 393,332 385,332 L 173,332 Q 165,332 165,340 L 165,382" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 423,312 L 423,344 Q 423,352 415,352 L 355,352 Q 347,352 347,360 L 347,382" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 453,312 L 453,364 Q 453,372 461,372 L 524,372 Q 529,372 529,377 L 529,382" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 483,312 L 483,365 A 7 7 0 0 1 483,379 L 483,384 Q 483,392 491,392 L 705,392 Q 710,392 710,387 L 710,382" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 710,434 L 710,461 Q 710,469 702,469 L 446,469 Q 438,469 438,477 L 438,504" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 438,556 L 438,619" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="279" y="340">orbit</text>
+<text class="small" text-anchor="middle" x="385" y="360">uplink</text>
+<text class="small" text-anchor="middle" x="502.4" y="360">SPS</text>
+<text class="small" text-anchor="middle" x="483" y="336">entry</text>
+<text class="small" text-anchor="middle" x="574" y="477">sep</text>
+<text class="small" text-anchor="middle" x="438" y="595.5">P63–P66 collapsed</text>
+</g>
+</svg>

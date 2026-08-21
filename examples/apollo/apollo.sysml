@@ -117,6 +117,7 @@ package Apollo11 {
         part cmc : CMC;
         part cmDsky1 : DSKY;
         part cmDsky2 : DSKY;
+        part scs : SCS;
         part ems : EMS;
         part cmUsb : USB;
         part ecs : CMECS;
@@ -131,6 +132,7 @@ package Apollo11 {
     }
     part def LMAscent {
         part aps : APS;
+        part pngs : PNGS;
         part lgc : LGC;
         part lmDsky : DSKY;
         part ags : AGS;
@@ -148,6 +150,8 @@ package Apollo11 {
     part def DPS;
     part def APS;
     part def CMC;
+    part def SCS;
+    part def PNGS;
     part def LGC;
     part def DSKY;
     part def AGS;
@@ -386,6 +390,30 @@ package Apollo11 {
         transition toP12 first p68 accept p12 then p12;
     }
 
+    state def ScsMode {
+        entry; then cmc;
+        state cmc;
+        state attHold;
+        state rateCommand;
+        state minImpulse;
+        transition scsToHold first cmc accept scsAttHold then attHold;
+        transition scsToRate first cmc accept scsRate then rateCommand;
+        transition scsToMin first cmc accept scsMinImpulse then minImpulse;
+        transition scsToCmc first attHold accept returnCmc then cmc;
+        transition scsRateToCmc first rateCommand accept returnCmc then cmc;
+        transition scsMinToCmc first minImpulse accept returnCmc then cmc;
+    }
+
+    state def AgsMode {
+        entry; then idle;
+        state idle;
+        state operate;
+        state followPngs;
+        transition agsOn first idle accept agsOperate then operate;
+        transition r47 first operate accept r47Init then followPngs;
+        transition agsOff first operate accept agsStandby then idle;
+    }
+
     state def CmcMajorMode {
         entry; then p00;
         state p00;
@@ -403,6 +431,7 @@ package Apollo11 {
         state p66;
         state p67;
         transition toP11 first p00 accept p11 then p11;
+        transition toP27 first p00 accept p27 then p27;
         transition toP40 first p00 accept p40 then p40;
         transition toP61 first p00 accept p61 then p61;
         transition toP62 first p61 accept p62 then p62;
@@ -461,6 +490,9 @@ package Apollo11 {
     requirement iuGncRequirement { doc /* IU LVDC + ST-124 + FCC stays separate from AGC. IU owns boost+TLI. */ }
     requirement emsRequirement { doc /* EMS is a CM part, independent of AGC. */ }
     requirement rsoRequirement { doc /* RSO/AFETR is OUTSIDE MCC. UHF destruct, safed after Earth orbit. RSO owns destruct until orbital safing. */ }
+    requirement a11AtypicalRequirement { doc /* A11 instance vs generic lunar stack: (1) first landing, one short EVA, 196 h vs 336 h ECS spec — later H/J had longer stays and multiple EVAs; (2) no LRV (A15–A17) and no SIM bay (J-mission CSM); (3) P66 was the A11-flown landing program after P63/P64 — the family is generic, the A11 takeover is instance; (4) Parkes + Goldstone 210-ft for A11 descent/TV is coverage, not a generic-stack part; (5) F-1 1,530,000 lbf is sourced as SA-507, not AS-506 — instance/source mismatch; (6) PK masses are A11-only; tank/Δv UNKNOWN; (7) rope IDs UNKNOWN. Generic stack: Saturn V + Block II CSM (CMC+2 DSKY+SCS+EMS) + LM (PNGS/LGC+1 DSKY+AGS) + IU LVDC + MSFN + MCC + phases countdown→recovery. */ }
+    requirement scsRequirement { doc /* CSM SCS is the Block II analog backup to the CMC (attitude / SPS TVC). Crew selects CMC vs SCS. Full SCS switch deck TBD (researcher brief). */ }
+    requirement pngsRequirement { doc /* LM PNGS is LGC + IMU + landing/rendezvous radars. AGS is a separate computer. Do not merge PNGS with AGS. */ }
     requirement rtccRequirement { doc /* RTCC: five IBM 360/75. MOC+DSC roles; which-is-which on A11 UNKNOWN. */ }
     requirement msfnSiteRequirement { doc /* 3×85-ft USB: Goldstone, Madrid, Honeysuckle + DSN wings. Named 30-ft only — do NOT merge GSFC-1968 and TN D-6723 into “the 14”; complete 30-ft inventory UNKNOWN. 4 AIS ships: Vanguard, Huntsville, Redstone + 4th UNKNOWN. 8 ARIA (no command/track). Goldstone 210-ft + Parkes for A11 descent/TV. */ }
     requirement kscRequirement { doc /* KSC LC-39: Firing Room 1, RCA 110A pair (LCC + ML), ACE in O&C, umbilicals, pad cryo. Handoff MCC at tower clear. */ }

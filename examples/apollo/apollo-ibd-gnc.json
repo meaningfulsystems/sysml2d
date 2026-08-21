@@ -22,6 +22,8 @@
     "lmDsky": "Apollo11::LMAscent::lmDsky",
     "ags": "Apollo11::LMAscent::ags",
     "lvdc": "Apollo11::IU::lvdc",
+    "scs": "Apollo11::CM::scs",
+    "pngs": "Apollo11::LMAscent::pngs",
     "cmDsky1--cmc--src": "Apollo11::CM::cmDsky1",
     "cmDsky1--cmc--tgt": "Apollo11::CM::cmc",
     "conn-cmDsky1-cmc": "Apollo11::CM::cmDsky1",
@@ -33,7 +35,13 @@
     "conn-lmDsky-lgc": "Apollo11::LMAscent::lmDsky",
     "lgc--ags--src": "Apollo11::LMAscent::lgc",
     "lgc--ags--tgt": "Apollo11::LMAscent::ags",
-    "conn-lgc-ags": "Apollo11::LMAscent::lgc"
+    "conn-lgc-ags": "Apollo11::LMAscent::lgc",
+    "scs--cmc--src": "Apollo11::CM::scs",
+    "scs--cmc--tgt": "Apollo11::CM::cmc",
+    "conn-scs-cmc": "Apollo11::CM::scs",
+    "pngs--lgc--src": "Apollo11::LMAscent::pngs",
+    "pngs--lgc--tgt": "Apollo11::LMAscent::lgc",
+    "conn-pngs-lgc": "Apollo11::LMAscent::pngs"
   },
   "nodes": {
     "cmDsky1": {
@@ -44,12 +52,20 @@
       "label": "CM DSKY 2",
       "style": "part.gnc"
     },
+    "scs": {
+      "label": "CM SCS",
+      "style": "part.gnc"
+    },
     "cmc": {
       "label": "CMC (Colossus)",
       "style": "part.gnc"
     },
     "ems": {
       "label": "EMS",
+      "style": "part.gnc"
+    },
+    "pngs": {
+      "label": "LM PNGS",
       "style": "part.gnc"
     },
     "lgc": {
@@ -70,6 +86,18 @@
     }
   },
   "edges": [
+    {
+      "from": "scs",
+      "to": "cmc",
+      "label": "backup / CMC",
+      "model_ref": "conn-scs-cmc"
+    },
+    {
+      "from": "pngs",
+      "to": "lgc",
+      "label": "computer",
+      "model_ref": "conn-pngs-lgc"
+    },
     {
       "from": "cmDsky1",
       "to": "cmc",

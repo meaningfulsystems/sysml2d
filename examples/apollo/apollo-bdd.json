@@ -32,7 +32,9 @@
     "rec": "Apollo11::RecoveryForces",
     "cdr": "Apollo11::Commander",
     "cmp": "Apollo11::CommandModulePilot",
-    "lmp": "Apollo11::LunarModulePilot"
+    "lmp": "Apollo11::LunarModulePilot",
+    "scsDef": "Apollo11::SCS",
+    "pngsDef": "Apollo11::PNGS"
   },
   "roots": [
     {
@@ -75,7 +77,14 @@
         {
           "id": "cm",
           "label": "CM",
-          "model_ref": "cm"
+          "model_ref": "cm",
+          "children": [
+            {
+              "id": "scs",
+              "label": "SCS",
+              "model_ref": "scsDef"
+            }
+          ]
         },
         {
           "id": "sm",
@@ -90,7 +99,14 @@
         {
           "id": "lmAscent",
           "label": "LM Ascent",
-          "model_ref": "lma"
+          "model_ref": "lma",
+          "children": [
+            {
+              "id": "pngs",
+              "label": "PNGS",
+              "model_ref": "pngsDef"
+            }
+          ]
         },
         {
           "id": "mcc",

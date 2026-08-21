@@ -25,7 +25,9 @@
     "rec": "Apollo11::RecoveryForces",
     "cdr": "Apollo11::Commander",
     "cmp": "Apollo11::CommandModulePilot",
-    "lmp": "Apollo11::LunarModulePilot"
+    "lmp": "Apollo11::LunarModulePilot",
+    "scsDef": "Apollo11::SCS",
+    "pngsDef": "Apollo11::PNGS"
   },
   "diagram": {
     "id": "apollo-bdd",
@@ -193,6 +195,25 @@
         "style": "part.definition"
       },
       {
+        "id": "scs",
+        "model_ref": "scsDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 301,
+          "y": 416,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "SCS",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
         "id": "sm",
         "model_ref": "sm",
         "symbol": "part_definition",
@@ -242,6 +263,25 @@
           "z": 10
         },
         "label": "LM Ascent",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "pngs",
+        "model_ref": "pngsDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 823,
+          "y": 416,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "PNGS",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -1219,6 +1259,74 @@
             "position": {
               "segment": 2,
               "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-cm-scs",
+        "model_ref": "scsDef",
+        "source": {
+          "element": "cm",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "scs",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-lmAscent-pngs",
+        "model_ref": "pngsDef",
+        "source": {
+          "element": "lmAscent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "pngs",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
+              "offset": 0.82,
               "dx": 10,
               "dy": -4
             }

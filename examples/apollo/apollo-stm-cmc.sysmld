@@ -1,0 +1,476 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "cmcMajorMode": "Apollo11::CmcMajorMode",
+    "p00": "Apollo11::CmcMajorMode::p00",
+    "p11": "Apollo11::CmcMajorMode::p11",
+    "p27": "Apollo11::CmcMajorMode::p27",
+    "p40": "Apollo11::CmcMajorMode::p40",
+    "p61": "Apollo11::CmcMajorMode::p61",
+    "p62": "Apollo11::CmcMajorMode::p62",
+    "p67": "Apollo11::CmcMajorMode::p67",
+    "toP11": "Apollo11::CmcMajorMode::toP11",
+    "toP27": "Apollo11::CmcMajorMode::toP27",
+    "toP40": "Apollo11::CmcMajorMode::toP40",
+    "toP61": "Apollo11::CmcMajorMode::toP61",
+    "toP62": "Apollo11::CmcMajorMode::toP62",
+    "toP67": "Apollo11::CmcMajorMode::toP67"
+  },
+  "diagram": {
+    "id": "apollo-stm-cmc",
+    "kind": "StateView",
+    "name": "Apollo 11 CMC Programs",
+    "canvas": {
+      "width": 861,
+      "height": 759,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "cmcMajorMode",
+        "symbol": "boundary",
+        "layout": {
+          "x": 54,
+          "y": 119,
+          "width": 767,
+          "height": 600,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 428,
+          "y": 155,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "p00",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 363,
+          "y": 260,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p00",
+        "label": "P00 idle",
+        "style": "state.default"
+      },
+      {
+        "id": "p11",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 90,
+          "y": 382,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p11",
+        "label": "P11 earth orbit",
+        "style": "state.default"
+      },
+      {
+        "id": "p27",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 272,
+          "y": 382,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p27",
+        "label": "P27 uplink (V70\u2013V73)",
+        "style": "state.default"
+      },
+      {
+        "id": "p40",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 454,
+          "y": 382,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p40",
+        "label": "P40 SPS",
+        "style": "state.default"
+      },
+      {
+        "id": "p61",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 635,
+          "y": 382,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p61",
+        "label": "P61 entry prep",
+        "style": "state.default"
+      },
+      {
+        "id": "p62",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 363,
+          "y": 504,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p62",
+        "label": "P62 CM/SM sep",
+        "style": "state.default"
+      },
+      {
+        "id": "p67",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 363,
+          "y": 619,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "p67",
+        "label": "P67 final\n(P63\u2013P66 TBD)",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--p00",
+        "model_ref": "cmcMajorMode",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p00",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p00--p11",
+        "model_ref": "toP11",
+        "source": {
+          "element": "p00",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.2
+          }
+        },
+        "target": {
+          "element": "p11",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 393,
+              "y": 332
+            },
+            {
+              "x": 165,
+              "y": 332
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "orbit",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p00--p27",
+        "model_ref": "toP27",
+        "source": {
+          "element": "p00",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.4
+          }
+        },
+        "target": {
+          "element": "p27",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 423,
+              "y": 352
+            },
+            {
+              "x": 347,
+              "y": 352
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "uplink",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p00--p40",
+        "model_ref": "toP40",
+        "source": {
+          "element": "p00",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.6
+          }
+        },
+        "target": {
+          "element": "p40",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 453,
+              "y": 372
+            },
+            {
+              "x": 529,
+              "y": 372
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "SPS",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p00--p61",
+        "model_ref": "toP61",
+        "source": {
+          "element": "p00",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.8
+          }
+        },
+        "target": {
+          "element": "p61",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 483,
+              "y": 392
+            },
+            {
+              "x": 710,
+              "y": 392
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "entry",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p61--p62",
+        "model_ref": "toP62",
+        "source": {
+          "element": "p61",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p62",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 710,
+              "y": 469
+            },
+            {
+              "x": 438,
+              "y": 469
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "sep",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p62--p67",
+        "model_ref": "toP67",
+        "source": {
+          "element": "p62",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p67",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "P63\u2013P66 collapsed",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "cmcMajorMode"
+  }
+}

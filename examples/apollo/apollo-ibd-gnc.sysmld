@@ -15,6 +15,8 @@
     "lmDsky": "Apollo11::LMAscent::lmDsky",
     "ags": "Apollo11::LMAscent::ags",
     "lvdc": "Apollo11::IU::lvdc",
+    "scs": "Apollo11::CM::scs",
+    "pngs": "Apollo11::LMAscent::pngs",
     "cmDsky1--cmc--src": "Apollo11::CM::cmDsky1",
     "cmDsky1--cmc--tgt": "Apollo11::CM::cmc",
     "conn-cmDsky1-cmc": "Apollo11::CM::cmDsky1",
@@ -26,15 +28,21 @@
     "conn-lmDsky-lgc": "Apollo11::LMAscent::lmDsky",
     "lgc--ags--src": "Apollo11::LMAscent::lgc",
     "lgc--ags--tgt": "Apollo11::LMAscent::ags",
-    "conn-lgc-ags": "Apollo11::LMAscent::lgc"
+    "conn-lgc-ags": "Apollo11::LMAscent::lgc",
+    "scs--cmc--src": "Apollo11::CM::scs",
+    "scs--cmc--tgt": "Apollo11::CM::cmc",
+    "conn-scs-cmc": "Apollo11::CM::scs",
+    "pngs--lgc--src": "Apollo11::LMAscent::pngs",
+    "pngs--lgc--tgt": "Apollo11::LMAscent::lgc",
+    "conn-pngs-lgc": "Apollo11::LMAscent::pngs"
   },
   "diagram": {
     "id": "apollo-ibd-gnc",
     "kind": "InterconnectionView",
     "name": "Apollo 11 AGC / GNC (do not merge)",
     "canvas": {
-      "width": 892,
-      "height": 712,
+      "width": 1004,
+      "height": 960,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -48,8 +56,8 @@
         "layout": {
           "x": 40,
           "y": 40,
-          "width": 812,
-          "height": 632,
+          "width": 924,
+          "height": 880,
           "z": 0
         },
         "compartments": {
@@ -98,12 +106,31 @@
         "style": "part.gnc"
       },
       {
+        "id": "scs",
+        "model_ref": "scs",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 820,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "CM SCS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
         "id": "cmc",
         "model_ref": "cmc",
         "symbol": "part_usage",
         "layout": {
-          "x": 376,
-          "y": 262,
+          "x": 432,
+          "y": 386,
           "width": 140,
           "height": 64,
           "z": 10
@@ -136,12 +163,31 @@
         "style": "part.gnc"
       },
       {
+        "id": "pngs",
+        "model_ref": "pngs",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 696,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "LM PNGS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
         "id": "lgc",
         "model_ref": "lgc",
         "symbol": "part_usage",
         "layout": {
-          "x": 376,
-          "y": 386,
+          "x": 432,
+          "y": 510,
           "width": 140,
           "height": 64,
           "z": 10
@@ -178,8 +224,8 @@
         "model_ref": "ags",
         "symbol": "part_usage",
         "layout": {
-          "x": 676,
-          "y": 324,
+          "x": 788,
+          "y": 448,
           "width": 140,
           "height": 64,
           "z": 10
@@ -234,13 +280,24 @@
         "label": ""
       },
       {
+        "id": "scs--cmc--src",
+        "model_ref": "scs--cmc--src",
+        "symbol": "port",
+        "owner": "scs",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
         "id": "cmDsky1--cmc--tgt",
         "model_ref": "cmDsky1--cmc--tgt",
         "symbol": "port",
         "owner": "cmc",
         "placement": {
           "side": "left",
-          "offset": 0.3333
+          "offset": 0.25
         },
         "label": ""
       },
@@ -251,7 +308,29 @@
         "owner": "cmc",
         "placement": {
           "side": "left",
-          "offset": 0.6667
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "scs--cmc--tgt",
+        "model_ref": "scs--cmc--tgt",
+        "symbol": "port",
+        "owner": "cmc",
+        "placement": {
+          "side": "left",
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "pngs--lgc--src",
+        "model_ref": "pngs--lgc--src",
+        "symbol": "port",
+        "owner": "pngs",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
         },
         "label": ""
       },
@@ -262,7 +341,18 @@
         "owner": "lgc",
         "placement": {
           "side": "left",
-          "offset": 0.5
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "pngs--lgc--tgt",
+        "model_ref": "pngs--lgc--tgt",
+        "symbol": "port",
+        "owner": "lgc",
+        "placement": {
+          "side": "left",
+          "offset": 0.6667
         },
         "label": ""
       },
@@ -302,6 +392,86 @@
     ],
     "connections": [
       {
+        "id": "conn-scs-cmc",
+        "model_ref": "conn-scs-cmc",
+        "source": {
+          "element": "scs--cmc--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "scs--cmc--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 240,
+              "y": 884
+            },
+            {
+              "x": 240,
+              "y": 536
+            },
+            {
+              "x": 432,
+              "y": 536
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "backup / CMC",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-pngs-lgc",
+        "model_ref": "conn-pngs-lgc",
+        "source": {
+          "element": "pngs--lgc--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "pngs--lgc--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 432,
+              "y": 760
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "computer",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
         "id": "conn-cmDsky1-cmc",
         "model_ref": "conn-cmDsky1-cmc",
         "source": {
@@ -322,8 +492,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 376,
-              "y": 140
+              "x": 146,
+              "y": 176
+            },
+            {
+              "x": 240,
+              "y": 176
+            },
+            {
+              "x": 240,
+              "y": 300
+            },
+            {
+              "x": 432,
+              "y": 300
             }
           ]
         },
@@ -359,7 +541,15 @@
           "waypoints": [
             {
               "x": 146,
-              "y": 304.669
+              "y": 300
+            },
+            {
+              "x": 240,
+              "y": 300
+            },
+            {
+              "x": 240,
+              "y": 418
             }
           ]
         },
@@ -395,7 +585,7 @@
           "waypoints": [
             {
               "x": 146,
-              "y": 418
+              "y": 531.331
             }
           ]
         },
@@ -430,12 +620,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 596,
-              "y": 418
+              "x": 680,
+              "y": 542
             },
             {
-              "x": 596,
-              "y": 356
+              "x": 680,
+              "y": 480
             }
           ]
         },

@@ -1,0 +1,507 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "lgcMajorMode": "Apollo11::LgcMajorMode",
+    "p00": "Apollo11::LgcMajorMode::p00",
+    "p63": "Apollo11::LgcMajorMode::p63",
+    "p64": "Apollo11::LgcMajorMode::p64",
+    "p66": "Apollo11::LgcMajorMode::p66",
+    "p68": "Apollo11::LgcMajorMode::p68",
+    "p70": "Apollo11::LgcMajorMode::p70",
+    "p71": "Apollo11::LgcMajorMode::p71",
+    "p12": "Apollo11::LgcMajorMode::p12",
+    "toP63": "Apollo11::LgcMajorMode::toP63",
+    "toP64": "Apollo11::LgcMajorMode::toP64",
+    "toP66": "Apollo11::LgcMajorMode::toP66",
+    "toP68": "Apollo11::LgcMajorMode::toP68",
+    "toP70": "Apollo11::LgcMajorMode::toP70",
+    "toP71": "Apollo11::LgcMajorMode::toP71",
+    "toP12": "Apollo11::LgcMajorMode::toP12"
+  },
+  "diagram": {
+    "id": "apollo-stm-lgc",
+    "kind": "StateView",
+    "name": "Apollo 11 LGC Programs (A11-flown landing path)",
+    "canvas": {
+      "width": 500,
+      "height": 998,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "lgcMajorMode",
+        "symbol": "boundary",
+        "layout": {
+          "x": 54,
+          "y": 119,
+          "width": 406,
+          "height": 839,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 247,
+          "y": 155,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "p00",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 182,
+          "y": 261,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p00",
+        "label": "P00 idle",
+        "style": "state.default"
+      },
+      {
+        "id": "p63",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 182,
+          "y": 383,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p63",
+        "label": "P63 braking",
+        "style": "state.default"
+      },
+      {
+        "id": "p64",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 90,
+          "y": 504,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p64",
+        "label": "P64 approach",
+        "style": "state.default"
+      },
+      {
+        "id": "p66",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 90,
+          "y": 620,
+          "width": 150,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "p66",
+        "label": "P66 rate-of-descent\n(A11-flown landing)",
+        "style": "state.default"
+      },
+      {
+        "id": "p68",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 182,
+          "y": 748,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p68",
+        "label": "P68 landing confirm",
+        "style": "state.default"
+      },
+      {
+        "id": "p70",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 274,
+          "y": 504,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p70",
+        "label": "P70 DPS abort",
+        "style": "state.default"
+      },
+      {
+        "id": "p71",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 274,
+          "y": 626,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p71",
+        "label": "P71 APS abort",
+        "style": "state.default"
+      },
+      {
+        "id": "p12",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 182,
+          "y": 870,
+          "width": 150,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p12",
+        "label": "P12 ascent",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--p00",
+        "model_ref": "lgcMajorMode",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p00",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p00--p63",
+        "model_ref": "toP63",
+        "source": {
+          "element": "p00",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p63",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "DOI / PDI",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p63--p64",
+        "model_ref": "toP64",
+        "source": {
+          "element": "p63",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.3333
+          }
+        },
+        "target": {
+          "element": "p64",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 232,
+              "y": 458
+            },
+            {
+              "x": 165,
+              "y": 458
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "approach",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p64--p66",
+        "model_ref": "toP66",
+        "source": {
+          "element": "p64",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p66",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "A11 takeover",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p66--p68",
+        "model_ref": "toP68",
+        "source": {
+          "element": "p66",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p68",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 165,
+              "y": 713
+            },
+            {
+              "x": 257,
+              "y": 713
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "contact",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p63--p70",
+        "model_ref": "toP70",
+        "source": {
+          "element": "p63",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.6667
+          }
+        },
+        "target": {
+          "element": "p70",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 282,
+              "y": 481
+            },
+            {
+              "x": 349,
+              "y": 481
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "abort",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p70--p71",
+        "model_ref": "toP71",
+        "source": {
+          "element": "p70",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p71",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "APS",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p68--p12",
+        "model_ref": "toP12",
+        "source": {
+          "element": "p68",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p12",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "ascent",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "lgcMajorMode"
+  }
+}

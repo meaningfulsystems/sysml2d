@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="504" height="1040" viewBox="0 0 504 1040">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="504" height="1040" fill="#FFFFFF"/>
+<rect x="2" y="38" width="500" height="998" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 712 L 728 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[stv.mb] Apollo 11 LGC Programs (A11-flown landing path) [lgcMajorMode : LgcMajorMode]</text>
+<rect x="2" y="38" width="500" height="1000" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="54" y="119" width="406" height="839" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="64" y="141">lgcMajorMode</text>
+<circle id="initial" cx="257" cy="165" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="p00" x="182" y="261" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="257" y="287">P00 idle</text>
+<rect id="p63" x="182" y="383" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="257" y="409">P63 braking</text>
+<rect id="p64" x="90" y="504" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="165" y="530">P64 approach</text>
+<rect id="p66" x="90" y="620" width="150" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="165" y="644.5">P66 rate-of-descent</tspan><tspan x="165" dy="15">(A11-flown landing)</tspan></text>
+<rect id="p68" x="182" y="748" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="257" y="774">P68 landing confirm</text>
+<rect id="p70" x="274" y="504" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="349" y="530">P70 DPS abort</text>
+<rect id="p71" x="274" y="626" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="349" y="652">P71 APS abort</text>
+<rect id="p12" x="182" y="870" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="257" y="896">P12 ascent</text>
+<path d="M 257,175 L 257,261" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 257,313 L 257,383" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 231.995,435 L 231.998,450 Q 232,458 224,458 L 173,458 Q 165,458 165,466 L 165,504" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 165,556 L 165,620" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 165,684 L 165,705 Q 165,713 173,713 L 249,713 Q 257,713 257,721 L 257,748" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 282.005,435 L 282.001,473 Q 282,481 290,481 L 341,481 Q 349,481 349,489 L 349,504" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 349,556 L 349,626" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 257,800 L 257,870" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="257" y="356">DOI / PDI</text>
+<text class="small" text-anchor="middle" x="198.5" y="466">approach</text>
+<text class="small" text-anchor="middle" x="165" y="596">A11 takeover</text>
+<text class="small" text-anchor="middle" x="211" y="721">contact</text>
+<text class="small" text-anchor="middle" x="315.5" y="489">abort</text>
+<text class="small" text-anchor="middle" x="349" y="599">APS</text>
+<text class="small" text-anchor="middle" x="257" y="843">ascent</text>
+</g>
+</svg>

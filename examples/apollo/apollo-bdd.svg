@@ -27,12 +27,16 @@
 <text class="label" text-anchor="middle" x="202" y="298">LES</text>
 <rect id="cm" x="301" y="270" width="150" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="376" y="298">CM</text>
+<rect id="scs" x="301" y="416" width="150" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="376" y="444">SCS</text>
 <rect id="sm" x="475" y="270" width="150" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="550" y="298">SM</text>
 <rect id="lmDescent" x="649" y="270" width="150" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="724" y="298">LM Descent</text>
 <rect id="lmAscent" x="823" y="270" width="150" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="898" y="298">LM Ascent</text>
+<rect id="pngs" x="823" y="416" width="150" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="898" y="444">PNGS</text>
 <rect id="mcc" x="40" y="354" width="150" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="115" y="382">MCC-H</text>
 <rect id="gsfc" x="214" y="354" width="150" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
@@ -70,6 +74,8 @@
 <path d="M 463,96 L 463,410 L 376,410 L 376,438" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 463,96 L 463,410 L 550,410 L 550,438" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 463,96 L 463,410 L 724,410 L 724,438" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 376,326 L 376,416" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 898,326 L 898,416" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text class="small" x="125" y="173.9">1</text>
 <text class="small" x="299" y="173.9">1</text>
 <text class="small" x="473" y="165.8">1</text>
@@ -89,5 +95,7 @@
 <text class="small" x="386" y="432.32">1</text>
 <text class="small" x="560" y="432.32">1</text>
 <text class="small" x="734" y="432.32">1</text>
+<text class="small" x="386" y="395.8">1</text>
+<text class="small" x="908" y="395.8">1</text>
 </g>
 </svg>
