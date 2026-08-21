@@ -7,148 +7,52 @@
     "apollo.sysml"
   ],
   "direction": "top-down",
-  "default_w": 250,
-  "default_h": 110,
-  "sibling_gap": 36,
-  "rank_gap": 56,
-  "max_per_row": 5,
+  "default_w": 260,
+  "default_h": 118,
+  "sibling_gap": 40,
+  "rank_gap": 64,
+  "max_per_row": 4,
   "nodes": {
     "agcRequirement": {
       "label": "«requirement»\nTwo Block II guidance computers.\nCommand Module entry programs\nare not Lunar Module landing\nprograms.",
       "rank": 0,
       "order": 0
     },
-    "p27Requirement": {
-      "label": "«requirement»\nP27 accepts verbs V70 through\nV73 only. That path is not\nthe ground CCATS uplink.",
-      "rank": 1,
-      "order": 0
-    },
-    "cmEcsRequirement": {
-      "label": "«requirement»\nCommand Module cabin is five\npounds per square inch of\noxygen. The specification is\nthree crew for fourteen days.",
-      "rank": 0,
-      "order": 1
-    },
-    "a11AtypicalRequirement": {
-      "label": "«requirement»\nThis instance is atypical:\ncontrol room two, cryogenic\ntankage two plus two, P66\nlanding, sourced ropes.",
-      "rank": 1,
-      "order": 1
-    },
-    "usbCsmRequirement": {
-      "label": "«requirement»\nCommand/Service Module Unified\nS-Band uses the sourced uplink\nand the two sourced downlinks.\nRates stay in the Press Kit.",
-      "rank": 0,
-      "order": 2
-    },
-    "usbLmRequirement": {
-      "label": "«requirement»\nLunar Module Unified S-Band\nuses a different frequency\npair. Phase and frequency\nmodulation do not run together.",
-      "rank": 0,
-      "order": 3
-    },
     "rsoRequirement": {
-      "label": "«requirement»\nThe Range Safety Officer sits\noutside Mission Control Center.\nDestruct is ultra-high frequency\nand is safed after Earth orbit.",
+      "label": "«requirement»\nCrew safety is not Launch\nEscape System only. The Range\nSafety Officer sits outside\nMission Control.",
       "rank": 0,
-      "order": 4
-    },
-    "a7lRequirement": {
-      "label": "«requirement»\nThe A7L pressure garment holds\na sourced suit differential.\nPortable life-support oxygen\nand heat loads stay cited.",
-      "rank": 2,
-      "order": 0
-    },
-    "a11MassRequirement": {
-      "label": "«requirement»\nSerials and Press Kit tank loads\nare documentation, not a\nrequired-mass shall. Propellant\nload and lunar Δv stay unmarked.",
-      "rank": 2,
       "order": 1
-    },
-    "scsRequirement": {
-      "label": "«requirement»\nStabilization and Control is\nthe analog backup. The crew\nselects between the guidance\ncomputer and that analog path.",
-      "rank": 2,
-      "order": 2
-    },
-    "pngsRequirement": {
-      "label": "«requirement»\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. The computer, inertial\nunit, and radars belong to it.",
-      "rank": 2,
-      "order": 3
-    },
-    "eclssLoopRequirement": {
-      "label": "«requirement»\nLife support supplies oxygen,\nwater, and lithium hydroxide.\nCabin carbon dioxide stays at\nor below the sourced limit.",
-      "rank": 2,
-      "order": 4
-    },
-    "epsRequirement": {
-      "label": "«requirement»\nElectrical power is three\nService Module fuel cells plus\nsilver-zinc batteries. There is\nno stage-to-stage power.",
-      "rank": 3,
-      "order": 0
-    },
-    "agsRequirement": {
-      "label": "«requirement»\nAbort Guidance is the electronics\nassembly, sensor assembly, and\ndata-entry display. It is not\na landing computer.",
-      "rank": 3,
-      "order": 1
-    },
-    "dockingRequirement": {
-      "label": "«requirement»\nDocking is Command Module probe\nto Lunar Module drogue, then\ntwelve ring latches. Soft dock\nprecedes hard dock.",
-      "rank": 3,
-      "order": 2
-    },
-    "rcsRequirement": {
-      "label": "«requirement»\nService Module and Lunar Module\nreaction-control engines share\none sourced thrust. Command\nModule engines use another.",
-      "rank": 3,
-      "order": 3
     },
     "spsRequirement": {
-      "label": "«requirement»\nService Propulsion System\nsources disagree on vacuum\nthrust.\nThere is no required thrust.\nLoaded mass stays unmarked.",
-      "rank": 3,
-      "order": 4
+      "label": "«requirement»\nService Propulsion sources\ndisagree on vacuum thrust.\nThere is no required thrust.",
+      "rank": 0,
+      "order": 2
     },
     "dpsRequirement": {
-      "label": "«requirement»\nDescent Propulsion System\nsources disagree on thrust\nand throttle.\nThere is no required thrust.",
-      "rank": 4,
+      "label": "«requirement»\nDescent Propulsion sources\ndisagree on thrust and throttle.\nThere is no required thrust.",
+      "rank": 0,
+      "order": 3
+    },
+    "lm5ConsumableRequirement": {
+      "label": "«requirement»\nLunar Module descent oxygen\nis a teaching figure.\nThere is no required pressure.",
+      "rank": 1,
       "order": 0
     },
-    "pipaRequirement": {
-      "label": "«requirement»\nPulse Integrating Pendulous\nAccelerometer scale differs\nbetween Command Module and\nLunar Module.",
-      "rank": 4,
+    "recoveryRequirement": {
+      "label": "«requirement»\nSplash is the flown Ground\nElapsed Time. Distance is from\nthe recovery ship, not the\ntarget.",
+      "rank": 1,
       "order": 1
     },
-    "vhfRequirement": {
-      "label": "«requirement»\nVery High Frequency voice uses\ntwo sourced channels. Recovery\nuses the sourced guard\nfrequency.",
-      "rank": 4,
+    "pngsRequirement": {
+      "label": "«requirement»\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. Landing radar is on\ndescent; rendezvous radar is\non ascent.",
+      "rank": 1,
       "order": 2
     },
     "isolationRequirement": {
-      "label": "«requirement»\nThere is no stage-to-stage\nelectrical power. There is no\nCommand/Service Module to Lunar\nModule propellant crossfeed.",
-      "rank": 4,
+      "label": "«requirement»\nThere is no stage-to-stage\nelectrical power and no\npropellant crossfeed.",
+      "rank": 1,
       "order": 3
-    },
-    "recoveryRequirement": {
-      "label": "«requirement»\nSplash is the flown Ground\nElapsed Time from the Mission\nReport. Distance is from the\nrecovery ship, not the target.",
-      "rank": 4,
-      "order": 4
-    },
-    "kscRequirement": {
-      "label": "«requirement»\nKennedy Space Center Launch\nControl owns commit from Firing\nRoom 1. Voice hands to Mission\nControl at tower clear.",
-      "rank": 5,
-      "order": 0
-    },
-    "lm5ConsumableRequirement": {
-      "label": "«requirement»\nLunar Module descent oxygen is\na teaching figure. Another\ntechnical note prints a different\ntank pressure.\nThere is no required pressure.",
-      "rank": 5,
-      "order": 1
-    },
-    "apsRequirement": {
-      "label": "«requirement»\nAscent Propulsion System thrust,\nrise time, and cant stay as the\ncited experience report states\nthem.",
-      "rank": 5,
-      "order": 2
     }
   },
-  "edges": [
-    {
-      "from": "agcRequirement",
-      "to": "p27Requirement",
-      "label": "refine"
-    },
-    {
-      "from": "cmEcsRequirement",
-      "to": "a11AtypicalRequirement",
-      "label": "A11 instance"
-    }
-  ]
+  "edges": []
 }

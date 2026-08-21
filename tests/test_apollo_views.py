@@ -151,8 +151,11 @@ class ApolloViewTests(unittest.TestCase):
             )
         }
         self.assertLess(sizes["apollo-req"]["width"], 2500)
-        self.assertGreater(sizes["apollo-req"]["height"], 600)
+        self.assertGreater(sizes["apollo-req"]["height"], 200)
+        self.assertLess(sizes["apollo-req"]["height"], 900)
         req = json.loads((APOLLO / "apollo-req.json").read_text(encoding="utf-8"))
+        self.assertGreaterEqual(len(req["nodes"]), 6)
+        self.assertLessEqual(len(req["nodes"]), 10)
         o2 = req["nodes"]["lm5ConsumableRequirement"]["label"]
         dps = req["nodes"]["dpsRequirement"]["label"]
         sps = req["nodes"]["spsRequirement"]["label"]
@@ -167,6 +170,8 @@ class ApolloViewTests(unittest.TestCase):
         self.assertNotIn("10,500", dps)
         self.assertNotIn("shall", sps.lower())
         self.assertIn("no required thrust", sps.lower())
+        self.assertNotIn("20,500", sps)
+        self.assertNotIn("21,500", sps)
         self.assertLess(sizes["apollo-stm"]["width"], 2500)
         self.assertGreater(sizes["apollo-stm"]["height"], 600)
         self.assertLess(sizes["apollo-bdd"]["width"], 2800)

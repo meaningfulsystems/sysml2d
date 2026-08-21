@@ -87,7 +87,7 @@ TLI Ground Elapsed Time (GET) has three labels only.
 
 Planned LOI-1 is 75:54:28 GET. A11-FP is the **only planned source**. Flown LOI-1 is ~075:49:50 GET (PAD / Mission Report). Two LOI-1 numbers only.
 
-The requirements figure follows that model text. A view label is not a requirement. The boxes are English statements. Locked numbers stay in the prose and in the engine table, not as a dump inside a box.
+The requirements figure follows that model text. Eight English boxes. A view label is not a requirement. Locked numbers stay in the prose and in the engine table, not as a dump inside a box.
 
 ![Apollo requirements](apollo-req.svg)
 

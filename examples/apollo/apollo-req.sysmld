@@ -11,8 +11,8 @@
     "kind": "RequirementView",
     "name": "Apollo 11 Sourced Requirements",
     "canvas": {
-      "width": 1536,
-      "height": 1132,
+      "width": 1247,
+      "height": 444,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -34,213 +34,17 @@
         "style": "requirement"
       },
       {
-        "id": "cmEcsRequirement",
-        "model_ref": "cmEcsRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 366,
-          "y": 72,
-          "width": 237,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nCommand Module cabin is five\npounds per square inch of\noxygen. The specification is\nthree crew for fourteen days.",
-        "style": "requirement"
-      },
-      {
-        "id": "usbCsmRequirement",
-        "model_ref": "usbCsmRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 639,
-          "y": 72,
-          "width": 244,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nCommand/Service Module Unified\nS-Band uses the sourced uplink\nand the two sourced downlinks.\nRates stay in the Press Kit.",
-        "style": "requirement"
-      },
-      {
-        "id": "usbLmRequirement",
-        "model_ref": "usbLmRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 919,
-          "y": 72,
-          "width": 251,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nLunar Module Unified S-Band\nuses a different frequency\npair. Phase and frequency\nmodulation do not run together.",
-        "style": "requirement"
-      },
-      {
         "id": "rsoRequirement",
         "model_ref": "rsoRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1206,
+          "x": 370,
           "y": 72,
-          "width": 258,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nThe Range Safety Officer sits\noutside Mission Control Center.\nDestruct is ultra-high frequency\nand is safed after Earth orbit.",
-        "style": "requirement"
-      },
-      {
-        "id": "p27Requirement",
-        "model_ref": "p27Requirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 82.5,
-          "y": 216,
-          "width": 237,
-          "height": 88,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nP27 accepts verbs V70 through\nV73 only. That path is not\nthe ground CCATS uplink.",
-        "style": "requirement"
-      },
-      {
-        "id": "a11AtypicalRequirement",
-        "model_ref": "a11AtypicalRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 373,
-          "y": 231,
-          "width": 223,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nThis instance is atypical:\ncontrol room two, cryogenic\ntankage two plus two, P66\nlanding, sourced ropes.",
-        "style": "requirement"
-      },
-      {
-        "id": "a7lRequirement",
-        "model_ref": "a7lRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 72,
-          "y": 390,
-          "width": 244,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nThe A7L pressure garment holds\na sourced suit differential.\nPortable life-support oxygen\nand heat loads stay cited.",
-        "style": "requirement"
-      },
-      {
-        "id": "a11MassRequirement",
-        "model_ref": "a11MassRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 352,
-          "y": 390,
-          "width": 258,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nSerials and Press Kit tank loads\nare documentation, not a\nrequired-mass shall. Propellant\nload and lunar \u0394v stay unmarked.",
-        "style": "requirement"
-      },
-      {
-        "id": "scsRequirement",
-        "model_ref": "scsRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 646,
-          "y": 390,
-          "width": 244,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nStabilization and Control is\nthe analog backup. The crew\nselects between the guidance\ncomputer and that analog path.",
-        "style": "requirement"
-      },
-      {
-        "id": "pngsRequirement",
-        "model_ref": "pngsRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 926,
-          "y": 390,
-          "width": 258,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. The computer, inertial\nunit, and radars belong to it.",
-        "style": "requirement"
-      },
-      {
-        "id": "eclssLoopRequirement",
-        "model_ref": "eclssLoopRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 1220,
-          "y": 390,
           "width": 237,
           "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nLife support supplies oxygen,\nwater, and lithium hydroxide.\nCabin carbon dioxide stays at\nor below the sourced limit.",
-        "style": "requirement"
-      },
-      {
-        "id": "epsRequirement",
-        "model_ref": "epsRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 72,
-          "y": 549,
-          "width": 251,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nElectrical power is three\nService Module fuel cells plus\nsilver-zinc batteries. There is\nno stage-to-stage power.",
-        "style": "requirement"
-      },
-      {
-        "id": "agsRequirement",
-        "model_ref": "agsRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 359,
-          "y": 549,
-          "width": 265,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nAbort Guidance is the electronics\nassembly, sensor assembly, and\ndata-entry display. It is not\na landing computer.",
-        "style": "requirement"
-      },
-      {
-        "id": "dockingRequirement",
-        "model_ref": "dockingRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 660,
-          "y": 549,
-          "width": 251,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nDocking is Command Module probe\nto Lunar Module drogue, then\ntwelve ring latches. Soft dock\nprecedes hard dock.",
-        "style": "requirement"
-      },
-      {
-        "id": "rcsRequirement",
-        "model_ref": "rcsRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 947,
-          "y": 549,
-          "width": 251,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nService Module and Lunar Module\nreaction-control engines share\none sourced thrust. Command\nModule engines use another.",
+        "label": "\u00abrequirement\u00bb\nCrew safety is not Launch\nEscape System only. The Range\nSafety Officer sits outside\nMission Control.",
         "style": "requirement"
       },
       {
@@ -248,13 +52,13 @@
         "model_ref": "spsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1234,
-          "y": 594,
+          "x": 647,
+          "y": 72,
           "width": 230,
-          "height": 118,
+          "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nService Propulsion System\nsources disagree on vacuum\nthrust.\nThere is no required thrust.\nLoaded mass stays unmarked.",
+        "label": "\u00abrequirement\u00bb\nService Propulsion sources\ndisagree on vacuum thrust.\nThere is no required thrust.",
         "style": "requirement"
       },
       {
@@ -262,83 +66,13 @@
         "model_ref": "dpsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 72,
-          "y": 708,
-          "width": 230,
-          "height": 103,
+          "x": 917,
+          "y": 72,
+          "width": 258,
+          "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nDescent Propulsion System\nsources disagree on thrust\nand throttle.\nThere is no required thrust.",
-        "style": "requirement"
-      },
-      {
-        "id": "pipaRequirement",
-        "model_ref": "pipaRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 338,
-          "y": 708,
-          "width": 223,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nPulse Integrating Pendulous\nAccelerometer scale differs\nbetween Command Module and\nLunar Module.",
-        "style": "requirement"
-      },
-      {
-        "id": "vhfRequirement",
-        "model_ref": "vhfRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 597,
-          "y": 708,
-          "width": 244,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nVery High Frequency voice uses\ntwo sourced channels. Recovery\nuses the sourced guard\nfrequency.",
-        "style": "requirement"
-      },
-      {
-        "id": "isolationRequirement",
-        "model_ref": "isolationRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 877,
-          "y": 708,
-          "width": 251,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nThere is no stage-to-stage\nelectrical power. There is no\nCommand/Service Module to Lunar\nModule propellant crossfeed.",
-        "style": "requirement"
-      },
-      {
-        "id": "recoveryRequirement",
-        "model_ref": "recoveryRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 1164,
-          "y": 708,
-          "width": 244,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nSplash is the flown Ground\nElapsed Time from the Mission\nReport. Distance is from the\nrecovery ship, not the target.",
-        "style": "requirement"
-      },
-      {
-        "id": "kscRequirement",
-        "model_ref": "kscRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 72,
-          "y": 867,
-          "width": 251,
-          "height": 103,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nKennedy Space Center Launch\nControl owns commit from Firing\nRoom 1. Voice hands to Mission\nControl at tower clear.",
+        "label": "\u00abrequirement\u00bb\nDescent Propulsion sources\ndisagree on thrust and throttle.\nThere is no required thrust.",
         "style": "requirement"
       },
       {
@@ -346,94 +80,59 @@
         "model_ref": "lm5ConsumableRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 359,
-          "y": 942,
-          "width": 265,
-          "height": 118,
+          "x": 72,
+          "y": 224,
+          "width": 244,
+          "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nLunar Module descent oxygen is\na teaching figure. Another\ntechnical note prints a different\ntank pressure.\nThere is no required pressure.",
+        "label": "\u00abrequirement\u00bb\nLunar Module descent oxygen\nis a teaching figure.\nThere is no required pressure.",
         "style": "requirement"
       },
       {
-        "id": "apsRequirement",
-        "model_ref": "apsRequirement",
+        "id": "recoveryRequirement",
+        "model_ref": "recoveryRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 660,
-          "y": 867,
-          "width": 258,
+          "x": 356,
+          "y": 239,
+          "width": 244,
           "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nAscent Propulsion System thrust,\nrise time, and cant stay as the\ncited experience report states\nthem.",
+        "label": "\u00abrequirement\u00bb\nSplash is the flown Ground\nElapsed Time. Distance is from\nthe recovery ship, not the\ntarget.",
+        "style": "requirement"
+      },
+      {
+        "id": "pngsRequirement",
+        "model_ref": "pngsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 640,
+          "y": 254,
+          "width": 237,
+          "height": 118,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. Landing radar is on\ndescent; rendezvous radar is\non ascent.",
+        "style": "requirement"
+      },
+      {
+        "id": "isolationRequirement",
+        "model_ref": "isolationRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 917,
+          "y": 224,
+          "width": 216,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nThere is no stage-to-stage\nelectrical power and no\npropellant crossfeed.",
         "style": "requirement"
       }
     ],
-    "connections": [
-      {
-        "id": "conn-agcRequirement-p27Requirement",
-        "model_ref": "agcRequirement",
-        "source": {
-          "element": "agcRequirement",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "p27Requirement",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "polyline",
-          "waypoints": []
-        },
-        "labels": [
-          {
-            "text": "refine",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.default"
-      },
-      {
-        "id": "conn-cmEcsRequirement-a11AtypicalRequirement",
-        "model_ref": "cmEcsRequirement",
-        "source": {
-          "element": "cmEcsRequirement",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "a11AtypicalRequirement",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "polyline",
-          "waypoints": []
-        },
-        "labels": [
-          {
-            "text": "A11 instance",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.default"
-      }
-    ],
+    "connections": [],
     "annotations": [],
     "styles": {},
     "subject": "Apollo11"
