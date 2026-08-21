@@ -15,7 +15,7 @@ MagicGrid separates **what the system must do for someone** from **how the desig
 **Problem domain**
 
 1. Purpose / mission — why the system exists, in plain language.
-2. Stakeholders and use cases — every actor, include/extend, and the analysis and verification *names*.
+2. Stakeholders and use cases — every actor, named use cases, and the analysis and verification *names*.
 3. Requirements — model text wins. Quantitative targets appear only when they are bound in the `.sysml`. Sources appear only when the model already cites them.
 
 **Solution domain**
@@ -29,18 +29,18 @@ Sections 8 and 9 walk every generated figure and then list unmarked items and ou
 
 ### NASA systems engineering (NPR 7123) mapped onto MagicGrid
 
-NASA Procedural Requirements (NPR) 7123.1, *NASA Systems Engineering Processes and Requirements*, is taught here as a **mapping onto MagicGrid**, not as a second framework.
+NASA Procedural Requirements (NPR) 7123.1, *NASA Systems Engineering Processes and Requirements*, is taught here as a **mapping onto MagicGrid**, not as a second framework. The left column is plain-language NASA process ideas. The right column uses MagicGrid section names. These rows are not NPR 7123 product titles.
 
-| NPR 7123.1 process | MagicGrid layer in this note |
-|--------------------|------------------------------|
-| Stakeholder | §§1–2 purpose, stakeholders, operating context |
-| Requirements | §3 technical requirements (model text; sourced numbers; unmarked left unmarked) |
-| Use Cases | §2 every actor, include/extend, analysis and verification *names* |
-| Functional | §5 behavior — mission State Machine (STM) and named functions / actions / abort |
-| Logical | §4 part tree and interfaces (what connects to what) |
-| Physical-subsystem | §4 serialed hardware: S-IC-6, CSM-107, landing radar on descent, IU as Launch Vehicle Digital Computer (LVDC) + ST-124 + Flight Control Computer (FCC) |
-| Parametrics | §6 named constraints; no invented equations |
-| Verification | analysis and verification *names* — no part, port, or effect is bound unless the model says so |
+| NASA process idea | MagicGrid section in this note |
+|-------------------|--------------------------------|
+| Who needs what | §§1–2 purpose, stakeholders, operating context |
+| The shalls | §3 requirements (model text; sourced numbers; unmarked left unmarked) |
+| Jobs asked of the stack | §2 named use cases |
+| What the design does in time | §5 behavior — mission State Machine (STM) and named functions / actions / abort |
+| The parts | §4 part tree and interfaces (what connects to what) |
+| The serialed hardware | §4 S-IC-6, CSM-107, landing radar on descent, IU as Launch Vehicle Digital Computer (LVDC) + ST-124 + Flight Control Computer (FCC) |
+| Sourced numbers | §3 and §6 named constraints; no invented equations |
+| Named checks | analysis and verification *names* — no part, port, or effect is bound unless the model says so |
 
 Crew safety, range safety, and recovery sit in stakeholder expectations and later-mode abort, not only in the Launch Escape System (LES).
 
@@ -77,7 +77,7 @@ Handoff is KSC → MCC at tower clear — **Mission Rule 1-21**. RSO is not MCC.
 - **Fly Mission** — primary. CDR and MCC associate. **Includes** Lunar EVA.
 - **Lunar EVA** — CDR. One surface EVA.
 - **Recover Crew** — MCC.
-- **Range Safety** — RSO. No include/extend to Fly Mission.
+- **Range Safety** — RSO. Separate from Fly Mission.
 
 **Analysis cases:** USB link analysis (`usbLinkAnalysis`; `usbCsmLink` → CSM USB requirement); consumable analysis (`consumableAnalysis`; CM ECLSS requirement).
 

@@ -13,7 +13,7 @@ MagicGrid separates **what the system must do for someone** from **how the desig
 **Problem domain**
 
 1. Purpose / mission — why the system exists, in plain language.
-2. Stakeholders and use cases — every actor and named use case (include/extend only when the `.sysml` has it), and the analysis and verification *names*.
+2. Stakeholders and use cases — every actor, named use cases, and the analysis and verification *names*.
 3. Requirements — model text wins. Quantitative targets appear only when they are bound in the `.sysml`.
 
 **Solution domain**
@@ -39,14 +39,14 @@ The only named stakeholder is the user.
 
 **Use cases**
 
-- **Make Smoothie** — primary named use case.
-- **Stop Blend** — named use case. The `.sysml` has no extend relationship.
-- **Clean Container** — named use case. The `.sysml` has no include relationship.
+- **Make Smoothie** — named use case.
+- **Stop Blend** — named use case.
+- **Clean Container** — named use case.
 
-**Analysis cases** (named studies; they bind named constraints, not measured results)
+**Analysis cases** (names only — no equations and no results)
 
-- **Motor Load** (`motorLoadAnalysis`) — `torqueSpeedLoadEstimate` against motor control.
-- **Smoothness Detection** (`smoothnessDetectionAnalysis`) — `smoothnessThresholdEstimate` against the smoothness-detection requirement.
+- **Motor Load** (`motorLoadAnalysis`) — named study; named constraint `torqueSpeedLoadEstimate`.
+- **Smoothness Detection** (`smoothnessDetectionAnalysis`) — named study; named constraint `smoothnessThresholdEstimate`.
 
 **Verification cases** (names only — no part, port, or effect is bound)
 
@@ -163,7 +163,7 @@ User start → control panel speed command → motor torque → coupling rotatio
 
 ## 6. Parametrics / constraints
 
-Constraint names: `torqueSpeedLoadEstimate`, `motorPowerLimit`, `blendTimingEstimate`, `interlockStopTiming`, `smoothnessThresholdEstimate`, `noisePowerTradeoff`. The model has **no equations**.
+Constraint names: `torqueSpeedLoadEstimate`, `motorPowerLimit`, `blendTimingEstimate`, `interlockStopTiming`, `smoothnessThresholdEstimate`, `noisePowerTradeoff`. Names only — no equations and no results.
 
 System-level attributes are declared without values: `commandedSpeed`, `motorTorque`, `blendDuration`, `smoothnessIndex`, `motorSpeed`, `interlockLatency`, `motorPower`, `noiseLevel`.
 
@@ -190,7 +190,6 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 - Stick figure — actor.
 - Ellipse — use case.
-- Dashed arrow labeled `include` / `extend` — use-case dependency on a view. Teach it only when the `.sysml` has the relationship.
 - Rectangle with `«requirement»` — a requirement node (view identifier only).
 - Rectangle — part usage.
 - Small square on a box edge — port.
@@ -208,7 +207,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Who uses the blender, and which jobs can they ask of it?
 
-**How to read it:** The User actor associates with three named ellipses inside the Blender boundary: Make Smoothie, Stop Blend, Clean Container. The `.sysml` has no include or extend. A generated view may still draw those arrows; that is a view, not the model.
+**How to read it:** The User actor associates with three named ellipses inside the Blender boundary: Make Smoothie, Stop Blend, Clean Container.
 
 **Symbols:** actor, use-case ellipses, system boundary.
 
@@ -220,7 +219,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Which named studies exist?
 
-**How to read it:** Motor Load and Smoothness Detection sit against named constraints. They do not publish measured results.
+**How to read it:** Motor Load and Smoothness Detection sit against named constraints. Names only — no equations and no results.
 
 **Symbols:** analysis-case nodes and constraint names.
 

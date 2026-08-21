@@ -13,7 +13,7 @@ MagicGrid separates **what the system must do for someone** from **how the desig
 **Problem domain**
 
 1. Purpose / mission — why the system exists, in plain language.
-2. Stakeholders and use cases — every actor and named use case (include/extend only when the `.sysml` has it), and the analysis and verification *names*.
+2. Stakeholders and use cases — every actor, named use cases, and the analysis and verification *names*.
 3. Requirements — model text wins. Quantitative targets appear only when they are bound in the `.sysml`.
 
 **Solution domain**
@@ -39,14 +39,14 @@ The only named stakeholder is the user. A service technician is implied by a ser
 
 **Use cases**
 
-- **Toast Bread** — primary named use case. The user inserts bread, selects browning, and receives toast.
-- **Cancel Toast** — named use case. The user can abort a heating cycle. The `.sysml` has no extend relationship.
-- **Empty Crumb Tray** — named use case. The tray is removable without tools. The `.sysml` has no include relationship.
+- **Toast Bread** — named use case. The user inserts bread, selects browning, and receives toast.
+- **Cancel Toast** — named use case. The user can abort a heating cycle.
+- **Empty Crumb Tray** — named use case. The tray is removable without tools.
 
-**Analysis cases** (named studies; they bind named constraints, not measured results)
+**Analysis cases** (names only — no equations and no results)
 
-- **Thermal Performance** (`thermalPerformanceAnalysis`) — uses `heatEnergyBalance` against browning.
-- **Electrical Load** (`electricalLoadAnalysis`) — uses `electricalPowerLimit` against electrical safety.
+- **Thermal Performance** (`thermalPerformanceAnalysis`) — named study; named constraint `heatEnergyBalance`.
+- **Electrical Load** (`electricalLoadAnalysis`) — named study; named constraint `electricalPowerLimit`.
 
 **Verification cases** (names only — no part, port, or effect is bound)
 
@@ -159,7 +159,7 @@ The user lowers the lever. The lever requests toast from power and control. Powe
 
 ## 6. Parametrics / constraints
 
-Constraint definitions exist as **names only** — `heatEnergyBalance`, `toastTimingEstimate`, `electricalPowerLimit`, `browningTemperatureEstimate`, `surfaceTemperatureLimit`, `carriageReleaseTiming`. The model has no equations.
+Constraint definitions exist as **names only** — `heatEnergyBalance`, `toastTimingEstimate`, `electricalPowerLimit`, `browningTemperatureEstimate`, `surfaceTemperatureLimit`, `carriageReleaseTiming`. No equations and no results.
 
 Attributes declared without values: `targetBrowning`, `inputPower`, `toastDuration`, `toastTemperature`, `surfaceTemperature`, `releaseTime`, `trayRemovalForce`.
 
@@ -188,7 +188,6 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 - Stick figure — actor (a stakeholder outside the system).
 - Ellipse — use case.
-- Dashed arrow labeled `include` / `extend` — use-case dependency on a view. Teach it only when the `.sysml` has the relationship.
 - Rectangle with `«requirement»` — a requirement node (view identifier only).
 - Rectangle — part usage (a piece of the toaster).
 - Small square on a box edge — port.
@@ -206,7 +205,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Who uses the toaster, and which jobs can they ask of it?
 
-**How to read it:** The User actor associates with three named ellipses inside the Toaster boundary: Toast Bread, Cancel Toast, Empty Crumb Tray. The `.sysml` has no include or extend. A generated view may still draw those arrows; that is a view, not the model.
+**How to read it:** The User actor associates with three named ellipses inside the Toaster boundary: Toast Bread, Cancel Toast, Empty Crumb Tray.
 
 **Symbols:** actor, use-case ellipses, system boundary.
 
@@ -218,7 +217,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Which named studies exist, and which constraints do they use?
 
-**How to read it:** Two analysis-case names sit against thermal and electrical constraints. They do not publish measured results.
+**How to read it:** Two analysis-case names sit against thermal and electrical constraint names. Names only — no equations and no results.
 
 **Symbols:** analysis-case nodes and constraint names.
 

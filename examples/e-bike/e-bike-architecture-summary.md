@@ -13,7 +13,7 @@ MagicGrid separates **what the system must do for someone** from **how the desig
 **Problem domain**
 
 1. Purpose / mission — why the system exists, in plain language.
-2. Stakeholders and use cases — every actor, include/extend, and the analysis and verification *names*.
+2. Stakeholders and use cases — every actor, named use cases, and the analysis and verification *names*.
 3. Requirements — model text wins. Quantitative targets appear only when they are bound in the `.sysml`. Sources appear only when the model already cites them.
 
 **Solution domain**
