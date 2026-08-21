@@ -14,7 +14,7 @@
   "max_per_row": 3,
   "aliases": {
     "safety": "rsoRequirement",
-    "land": "recoveryRequirement",
+    "land": "a11AtypicalRequirement",
     "talk": "isolationRequirement",
     "abort": "agsRequirement",
     "air": "lm5ConsumableRequirement",
@@ -29,7 +29,7 @@
       "model_ref": "safety"
     },
     "land": {
-      "label": "«requirement»\nLand\nSplash is the flown Ground\nElapsed Time. Distance is from\nthe recovery ship, not the\ntarget.",
+      "label": "«requirement»\nLand\nTwo crew land. The flown\nlanding program is P66.\nPrimary Guidance lands;\nAbort Guidance does not.",
       "rank": 0,
       "order": 1,
       "h": 148,

@@ -156,6 +156,13 @@ class ApolloViewTests(unittest.TestCase):
         req = json.loads((APOLLO / "apollo-req.json").read_text(encoding="utf-8"))
         self.assertEqual(list(req["nodes"]), ["safety", "land", "talk", "abort", "air", "guide"])
         joined = "\n".join(node["label"] for node in req["nodes"].values())
+        land = req["nodes"]["land"]["label"]
+        self.assertIn("Two crew land", land)
+        self.assertIn("P66", land)
+        self.assertIn("Primary Guidance", land)
+        self.assertNotIn("Splash", land)
+        self.assertNotIn("195:18:35", joined)
+        self.assertNotIn("Hornet", joined)
         air = req["nodes"]["air"]["label"]
         self.assertIn("teaching figure", air)
         self.assertIn("required pressure", air)
@@ -174,7 +181,7 @@ class ApolloViewTests(unittest.TestCase):
         self.assertNotRegex(joined, r"(?i)required thrust")
         self.assertLess(sizes["apollo-stm"]["width"], 2800)
         self.assertGreater(sizes["apollo-stm"]["height"], 200)
-        self.assertLess(sizes["apollo-stm"]["height"], 900)
+        self.assertLess(sizes["apollo-stm"]["height"], 2200)
         self.assertLess(sizes["apollo-bdd"]["width"], 2800)
         self.assertGreater(sizes["apollo-bdd"]["height"], 200)
         self.assertLess(sizes["apollo-bdd"]["height"], 800)
@@ -277,8 +284,48 @@ class ApolloViewTests(unittest.TestCase):
         stm_spec = json.loads((APOLLO / "apollo-stm.json").read_text(encoding="utf-8"))
         self.assertIn("dockEject", stm_spec["states"])
         self.assertEqual(stm_spec["states"]["dockEject"]["label"], "dock/eject")
-        earth_states = [sid for sid, state in stm_spec["states"].items() if not state.get("initial")]
-        self.assertLessEqual(len(earth_states), 10)
+        self.assertTrue(stm_spec["states"]["earthCoast"].get("composite"))
+        self.assertTrue(stm_spec["states"]["lunarReturn"].get("composite"))
+        self.assertTrue(stm_spec["states"]["flight"].get("concurrent"))
+        self.assertTrue(stm_spec["states"]["afterUndock"].get("concurrent"))
+        self.assertEqual(stm_spec["states"]["earthCoast"]["parent"], "flight")
+        self.assertEqual(stm_spec["states"]["earthCoast"]["region"], "mission")
+        self.assertEqual(stm_spec["states"]["lunarReturn"]["region"], "mission")
+        self.assertEqual(stm_spec["states"]["abortMode"]["region"], "abort")
+        self.assertEqual(stm_spec["states"]["rangeSafety"]["region"], "rangeSafety")
+        self.assertEqual(stm_spec["states"]["p66Landing"]["region"], "guidance")
+        self.assertEqual(stm_spec["states"]["agsFollow"]["region"], "guidance")
+        self.assertEqual(stm_spec["states"]["TLI"]["parent"], "earthCoast")
+        self.assertEqual(stm_spec["states"]["dockEject"]["parent"], "earthCoast")
+        self.assertEqual(stm_spec["states"]["recovery"]["parent"], "lunarReturn")
+        self.assertEqual(stm_spec["states"]["pad"]["parent"], "abortMode")
+        top_states = [
+            sid
+            for sid, state in stm_spec["states"].items()
+            if not state.get("initial") and not state.get("parent")
+        ]
+        self.assertLessEqual(len(top_states), 10)
+        self.assertEqual(set(top_states), {"flight"})
+        earth_children = [
+            sid
+            for sid, state in stm_spec["states"].items()
+            if state.get("parent") == "earthCoast" and not state.get("initial")
+        ]
+        self.assertLessEqual(len(earth_children), 8)
+        lunar_children = [
+            sid
+            for sid, state in stm_spec["states"].items()
+            if state.get("parent") == "lunarReturn" and not state.get("initial")
+        ]
+        self.assertLessEqual(len(lunar_children), 8)
+        abort_children = [
+            sid
+            for sid, state in stm_spec["states"].items()
+            if state.get("parent") == "abortMode" and not state.get("initial")
+        ]
+        self.assertLessEqual(len(abort_children), 8)
+        self.assertIn("pad", abort_children)
+        self.assertIn("SPS", abort_children)
         hops = {(edge["from"], edge["to"]) for edge in stm_spec["transitions"]}
         earth = [
             "countdown",
@@ -540,6 +587,10 @@ class ApolloViewTests(unittest.TestCase):
             return ids
         lm_ids = _tree_ids(bdd["roots"][0])
         self.assertLessEqual(len(lm_ids), 8)
+        self.assertEqual({child["id"] for child in bdd["roots"][0]["children"]}, {"descent", "ascent"})
+        self.assertTrue(descent_node.get("children"))
+        self.assertTrue(ascent_node.get("children"))
+        self.assertNotIn("PNGS", {child["id"] for child in bdd["roots"][0]["children"]})
         self.assertNotIn("AgZn1", lm_ids)
         self.assertNotIn("AEA", lm_ids)
         self.assertNotIn("drogue", lm_ids)

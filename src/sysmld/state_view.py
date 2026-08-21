@@ -179,19 +179,105 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
 
     layout_edges = [{"from": f, "to": t} for f, t in fwd_set]
 
-    # ── Sugiyama layout ───────────────────────────────────────────────────────
-    vertical = direction in ("top-down", "bottom-up")
-    avg_w = sum(sw(s) for s in layout_ids) / max(len(layout_ids), 1)
-    avg_h = sum(sh(s) for s in layout_ids) / max(len(layout_ids), 1)
-    lo = _layout(
-        layout_ids, layout_edges, direction,
-        col_gap  = col_gap  + (avg_w if vertical else avg_h),
-        rank_gap = rank_gap + (avg_h if vertical else avg_w),
-        margin   = CANVAS_MARGIN + BND_PAD + max(default_w, default_h) // 2,
-        rank_wrap=spec.get("rank_wrap"),
-        target_aspect=float(spec.get("target_aspect", 1.618)),
+    def _region_of(sid: str) -> str:
+        seen = {sid}
+        current = sid
+        inherited = ""
+        while current in states_spec:
+            region = states_spec[current].get("region")
+            if region:
+                inherited = str(region)
+            parent = states_spec[current].get("parent")
+            if parent == concurrent_id:
+                return str(states_spec[current].get("region") or inherited)
+            if not parent or parent in seen:
+                break
+            seen.add(str(parent))
+            current = str(parent)
+        return inherited
+
+    concurrent_candidates = [
+        sid
+        for sid, state in states_spec.items()
+        if state.get("concurrent") or state.get("regions")
+    ]
+    concurrent_id = next(
+        (
+            sid
+            for sid in concurrent_candidates
+            if not states_spec[sid].get("parent")
+            or states_spec[sid].get("parent") not in concurrent_candidates
+        ),
+        concurrent_candidates[0] if concurrent_candidates else None,
     )
-    cx_map, cy_map, rank = lo.cx, lo.cy, lo.rank
+    region_ids = [
+        region_id
+        for region_id, _label in _ordered_regions(
+            states_spec.get(concurrent_id, {}),
+            children_by_parent.get(concurrent_id, []),
+            states_spec,
+        )
+    ] if concurrent_id else []
+    if len(region_ids) >= 2:
+        groups = []
+        assigned = set()
+        leftover = [sid for sid in layout_ids if _region_of(sid) not in region_ids]
+        if leftover:
+            groups.append(leftover)
+            assigned.update(leftover)
+        for region_id in region_ids:
+            group = [sid for sid in layout_ids if _region_of(sid) == region_id]
+            if group:
+                groups.append(group)
+                assigned.update(group)
+        groups.extend([[sid] for sid in layout_ids if sid not in assigned])
+    else:
+        groups = [layout_ids] if layout_ids else []
+
+    # ── Sugiyama layout, one pass per concurrent region ───────────────────────
+    vertical = direction in ("top-down", "bottom-up")
+
+    def _layout_group(group: list[str]):
+        group_set = set(group)
+        group_edges = [
+            edge for edge in layout_edges
+            if edge["from"] in group_set and edge["to"] in group_set
+        ]
+        avg_w = sum(sw(s) for s in group) / max(len(group), 1)
+        avg_h = sum(sh(s) for s in group) / max(len(group), 1)
+        return _layout(
+            group, group_edges, direction,
+            col_gap  = col_gap  + (avg_w if vertical else avg_h),
+            rank_gap = rank_gap + (avg_h if vertical else avg_w),
+            margin   = CANVAS_MARGIN + BND_PAD + max(default_w, default_h) // 2,
+            rank_wrap=spec.get("rank_wrap"),
+            target_aspect=float(spec.get("target_aspect", 1.618)),
+        )
+
+    if len(groups) <= 1:
+        lo = _layout_group(layout_ids)
+        cx_map, cy_map, rank = lo.cx, lo.cy, lo.rank
+    else:
+        cx_map = {}
+        cy_map = {}
+        rank = {}
+        cursor_x = 0.0
+        cursor_y = 0.0
+        region_gap = 180
+        for group in groups:
+            lo = _layout_group(group)
+            min_x = min(lo.cx[sid] - sw(sid) / 2 for sid in group)
+            min_y = min(lo.cy[sid] - sh(sid) / 2 for sid in group)
+            for sid in group:
+                cx_map[sid] = lo.cx[sid] - min_x + cursor_x
+                cy_map[sid] = lo.cy[sid] - min_y + cursor_y
+                rank[sid] = lo.rank[sid]
+            width = max(lo.cx[sid] - min_x + sw(sid) / 2 for sid in group)
+            height = max(lo.cy[sid] - min_y + sh(sid) / 2 for sid in group)
+            if vertical:
+                cursor_y += height + region_gap
+            else:
+                cursor_x += width + region_gap
 
     # ── Element boxes ─────────────────────────────────────────────────────────
     boxes: dict[str, tuple[int, int, int, int]] = {

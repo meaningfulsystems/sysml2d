@@ -394,38 +394,46 @@ package Apollo11 {
     port def RecoveryPort;
 
     state def MissionPhase {
-        entry; then countdown;
-        state countdown;
-        state boost;
-        state earthOrbit;
-        state TLI;
-        state dockEject;
-        state translunar;
-        state LOI;
-        state undock;
-        state DOI;
-        state descent;
-        state surfaceEVA;
-        state ascent;
-        state rendezvous;
-        state TEI;
-        state entry;
-        state recovery;
-        transition liftoff first countdown accept towerClear then boost;
-        transition seoi first boost accept orbitalInsertion then earthOrbit;
-        transition startTLI first earthOrbit accept tliBurn then TLI;
-        transition startDockEject first TLI accept tliComplete then dockEject;
-        transition startTranslunar first dockEject accept lmExtract then translunar;
-        transition startLOI first translunar accept loiBurn then LOI;
+        entry; then earthCoast;
+        state earthCoast {
+            entry; then countdown;
+            state countdown;
+            state boost;
+            state earthOrbit;
+            state TLI;
+            state dockEject;
+            state translunar;
+            state LOI;
+            transition liftoff first countdown accept towerClear then boost;
+            transition seoi first boost accept orbitalInsertion then earthOrbit;
+            transition startTLI first earthOrbit accept tliBurn then TLI;
+            transition startDockEject first TLI accept tliComplete then dockEject;
+            transition startTranslunar first dockEject accept lmExtract then translunar;
+            transition startLOI first translunar accept loiBurn then LOI;
+        }
+        state lunarReturn {
+            entry; then undock;
+            state undock;
+            state csmOrbit;
+            state afterUndock;
+            state DOI;
+            state descent;
+            state surfaceEVA;
+            state ascent;
+            state rendezvous;
+            state TEI;
+            state entry;
+            state recovery;
+            transition startDOI first undock accept doiBurn then DOI;
+            transition startDescent first DOI accept p63 then descent;
+            transition touchdown first descent accept p68 then surfaceEVA;
+            transition startAscent first surfaceEVA accept p12 then ascent;
+            transition startRndz first ascent accept p30 then rendezvous;
+            transition startTEI first rendezvous accept teiBurn then TEI;
+            transition startEntry first TEI accept ei then entry;
+            transition splashdown first entry accept recoveryForce then recovery;
+        }
         transition LOICutoff first LOI accept lunarOrbit then undock;
-        transition startDOI first undock accept doiBurn then DOI;
-        transition startDescent first DOI accept p63 then descent;
-        transition touchdown first descent accept p68 then surfaceEVA;
-        transition startAscent first surfaceEVA accept p12 then ascent;
-        transition startRndz first ascent accept p30 then rendezvous;
-        transition startTEI first rendezvous accept teiBurn then TEI;
-        transition startEntry first TEI accept ei then entry;
-        transition splashdown first entry accept recoveryForce then recovery;
     }
 
     state def AbortMode {
@@ -447,6 +455,15 @@ package Apollo11 {
         transition abortTLI first nominal accept contingencyTli then contingencyTLI;
         transition abortLunar first nominal accept lunarAbort then lunar;
         transition abortSPS first nominal accept spsAbort then SPS;
+    }
+
+    state def Flight;
+
+    state def RangeSafety {
+        entry; then armed;
+        state armed;
+        state safed;
+        transition safeAfterOrbit first armed accept earthOrbit then safed;
     }
 
     state def AGC_LM_Mode {

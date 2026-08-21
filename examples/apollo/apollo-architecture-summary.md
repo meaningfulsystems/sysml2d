@@ -46,17 +46,15 @@ Context flows keep their model names. MCC talks to MSFN on Path A and voice. RSO
 
 A generated box is not a shall. Engine thrust conflicts are cited with no silent winner and no required thrust.
 
-The Press Kit printed the tank loads on page 109 (NASA, 1969b). Read that page as a snapshot. It is not a required-mass shall.
+The first stage had to lift the whole stack. Press Kit page 109 printed that load for S-IC-6 (NASA, 1969b). Fueled, the stage is 5,022,674 lb. Dry, it is 288,750 lb. Most of the fueled mass is liquid oxygen (LOX): 3,307,855 lb. The kerosene (RP-1) is 1,426,069 lb. Liftoff thrust on that page is 7,653,854 lbf. Those loads are a snapshot. They are not a required-mass shall.
 
-S-IC-6 sat on the pad at 5,022,674 lb fueled and 288,750 lb dry. Liquid oxygen (LOX) on that stage is 3,307,855 lb. RP-1 is 1,426,069 lb. Liftoff thrust is 7,653,854 lbf.
+The second stage burns after the first drops away. S-II-6 is 1,059,171 lb fueled. Dry, it is 79,918 lb. Its LOX is 821,022 lb. Its liquid hydrogen (LH2) is 158,221 lb.
 
-The second stage, S-II-6, is 1,059,171 lb fueled and 79,918 lb dry. It carries LOX 821,022 lb and liquid hydrogen (LH2) 158,221 lb.
+The third stage parks the stack in Earth orbit and later does Translunar Injection. S-IVB-6N is 260,523 lb fueled. Dry, it is 25,000 lb. Its LOX is 192,023 lb. Its LH2 is 43,500 lb.
 
-S-IVB-6N is 260,523 lb fueled and 25,000 lb dry. That stage carries LOX 192,023 lb and LH2 43,500 lb.
+The Instrument Unit sits above that stage. IU-6 is 4,306 lb. The Command Module that comes home is 12,250 lb. The Service Module that pushes it is 51,243 lb.
 
-IU-6 is 4,306 lb. The Command Module is 12,250 lb. The Service Module is 51,243 lb.
-
-The same kit also lists ignition 6,484,280 lb and first motion 6,398,535 lb. Launch Escape System mass is 8,930 lb. Lunar Module descent dry mass is 4,483 lb. Lunar Module Reaction Control System (RCS) load is 604 lb. Descent Propulsion System (DPS) load is 18,100 lb. Lunar Module Ascent Propulsion System (APS) load is 5,214 lb. That last figure is the LM engine, not the S-IVB Auxiliary Propulsion System ullage motors.
+The same page also printed the stack at the moment of ignition. That figure is 6,484,280 lb. The stack is lighter at first motion: 6,398,535 lb. The escape tower that can pull the crew off is 8,930 lb. The Lunar Module descent stage, empty of propellant, is 4,483 lb. The Lunar Module Reaction Control System (RCS) propellant on that page is 604 lb. The landing engine carries propellant on that page. Descent Propulsion System (DPS) load is 18,100 lb. The Lunar Module Ascent Propulsion System (APS) that leaves the Moon is 5,214 lb. That last figure is the LM engine. It is not the S-IVB Auxiliary Propulsion System ullage motors.
 
 The engine table is the number fight. There is no required thrust. SPS and DPS cites stay; the model does not pick a winner and does not add a shall. LMA790 (a Grumman Lunar Module document number) is the third DPS cite (NASA, 1969b; NASA, 1973c; NASA, 1973b).
 
@@ -77,25 +75,25 @@ PNGS is AGC_LM + Inertial Measurement Unit (IMU) + radars, not AGS. Physical `la
 
 Electrical power in the Press Kit is three Service Module fuel cells, FC1 through FC3, with cryogenic tankage 2+2 (NASA, 1969b). The Command Module carries three silver-zinc (AgZn) batteries plus a charger and two 117 V 400 Hz inverters. The Lunar Module carries six AgZn batteries: four on descent and two on ascent. Each LM battery string has an Electrical Control Assembly (ECA). The bus is 28 V DC. There is no stage-to-stage electrical power. There is no Command/Service Module to Lunar Module propellant crossfeed.
 
-Houston talks to the stack on Unified S-Band. The Command/Service Module uplink is 2106.40625 MHz. Phase modulation (PM) downlink is 2287.5 MHz. Frequency modulation (FM) downlink is 2272.5 MHz.
+Houston has to talk to the stack across a quarter million miles. That path is Unified S-Band. The Command/Service Module uplink is 2106.40625 MHz. The quiet downlink is phase modulation (PM) at 2287.5 MHz. The television downlink is frequency modulation (FM) at 2272.5 MHz.
 
-Telemetry is pulse-code modulation (PCM) at 51.2 or 1.6 kbps. Uplink digital is about 2 kbps. Pseudo-random noise (PRN) range is 992 kbps, ±15 m, about 540,000 mi unambiguous.
+Telemetry comes back as pulse-code modulation (PCM). The rate is 51.2 or 1.6 kbps. The uplink digital rate is about 2 kbps. Ranging uses pseudo-random noise (PRN) at 992 kbps. That range is good to ±15 m. The unambiguous distance is about 540,000 mi.
 
-The Lunar Module uses a different pair. Uplink is 2101.802 MHz. Downlink is 2282.5 MHz. The steerable antenna is 20.5 dB transmit. The amplitron is 20 W. The LM does not run PM and FM at the same time.
+The Lunar Module cannot share the Command Module pair. Its uplink is 2101.802 MHz. Its downlink is 2282.5 MHz. The steerable antenna is 20.5 dB transmit. The amplitron is 20 W. The LM does not run PM and FM at the same time.
 
-Command/Service Module High-Gain Antenna (HGA) gains are wide 8.0 dB, medium 18.0 dB, and narrow 25.7 dB. Power amplifier is 11.2 W PM and 12.6 W FM. That path is crew-selected, not ground-commandable on Block II.
+The High-Gain Antenna has three beam widths. Wide is 8.0 dB. Medium is 18.0 dB. Narrow is 25.7 dB. The power amplifier is 11.2 W on PM and 12.6 W on FM. The crew picks the beam. The ground cannot command it on Block II.
 
-Path A is Flight Controller (FC) to Command and Communications Controller (CCC) to RTCC to Communications, Command, and Telemetry System (CCATS) to site 642B to USB 70 kHz. P27 is verbs V70–V73 only. That path is separate from CCATS. Very High Frequency (VHF) is 296.8 MHz and 259.7 MHz. Recovery is 243.0 MHz.
+A command from a Flight Controller (FC) has to walk a path before the stack hears it. That path is Path A. It goes to the Command and Communications Controller (CCC), then the RTCC, then Communications, Command, and Telemetry System (CCATS), then site 642B, then USB at 70 kHz. P27 is a different door. It accepts verbs V70–V73 only. Close-in voice uses Very High Frequency (VHF). Those frequencies are 296.8 MHz and 259.7 MHz. Recovery uses 243.0 MHz.
 
-The Command Module cabin is 5.0 psia of 100% oxygen. Carbon dioxide (CO2) stays at or below 7.6 torr. The specification is three crew for fourteen days. Apollo 11 flew 196 h against a 336 h specification.
+Three men breathe one cabin. That cabin is 5.0 psia of 100% oxygen. Carbon dioxide (CO2) has to stay at or below 7.6 torr. The specification was written for three crew for fourteen days. Apollo 11 flew 196 h. The specification was 336 h.
 
-The Service Module holds 640 lb of oxygen. Potable water is 36 lb. Waste water is 56 lb. Lithium hydroxide (LiOH) is 1.5 man-day, swapped every 12 h.
+The Service Module carries the stores. Oxygen there is 640 lb. Potable water is 36 lb. Waste water is 56 lb. Lithium hydroxide (LiOH) cans last 1.5 man-day. The crew swaps them every 12 h.
 
-Lunar Module-5 descent oxygen is about 48 lb. That load is a teaching figure 2800 psi. 3000 psi D-6724 is the other text. There is no required pressure (NASA, 1972, Technical Note D-6724).
+The Lunar Module has its own tanks. Descent oxygen on LM-5 is about 48 lb. That load is a teaching figure 2800 psi. 3000 psi D-6724 is the other text. There is no required pressure (NASA, 1972, Technical Note D-6724).
 
-Ascent oxygen is about 2.4 lb times two. Descent water is 332 lb. Ascent water is 42 lb times two.
+Ascent oxygen is the short stay after liftoff from the Moon. That load is about 2.4 lb times two. The Lunar Module also carries water. Descent water is 332 lb. Ascent water is 42 lb times two.
 
-The Liquid Cooling Garment (LCG) is 1200 Btu/man-h steady. The A7L holds 3.75±0.25 psid. Extravehicular mass is 19.69 kg. Portable Life Support System usable oxygen is 1.04 lb for 4 h at 1200 Btu/h.
+The Liquid Cooling Garment (LCG) dumps heat from a walking crewman. Steady load is 1200 Btu/man-h. The A7L suit holds pressure at 3.75±0.25 psid. Walking outside the cabin adds mass. Extravehicular mass is 19.69 kg. The backpack has to last the walk. Portable Life Support System usable oxygen is 1.04 lb for 4 h at 1200 Btu/h.
 
 Food is TN D-7720 April 1967 plan baseline: 2800 kcal/man/day CM, 3200 kcal/man/day LM, not A11 flown intake (Smith et al., 1974). Earth parking orbit is 100 nmi planned. One surface EVA: CDR 2:48 / LMP 2:40 (Technical Note D-8093 Table I). Not the Public Affairs Office (PAO) hatch-to-hatch 2:31:40 (Lutz et al., 1975). Transposition, docking, and extraction (TD&E) is about 03:20–04:09 planned, CMP-owned, SM RCS, CM probe / LM drogue + 12 ring latches. The LM stays in the SLA — 8 panels (4 jettison / 4 stay) — until `dockEject` after TLI and before translunar coast. Landing program is P66 flown.
 
@@ -123,7 +121,7 @@ The pad stack from the ground up is S-IC-6, S-II-6, S-IVB-6N, IU-6, SLA-14 with 
 
 PNGS is the model name for PGNCS and is not AGS. SCS is the Block II analog backup to AGC_CM.
 
-The Lunar Module definition and the Lunar Module interconnection figure have to stand alone. The split is the stage mate. The definition figure keeps eight boxes: Lunar Module, Descent stage, Descent Propulsion System, Landing radar, Ascent stage, Primary Guidance Navigation and Control, Abort Guidance System, and Rendezvous radar.
+The Lunar Module definition and the Lunar Module interconnection figure have to stand alone. The split is the stage mate. The definition figure keeps eight boxes and keeps the nest. Descent stage holds Descent Propulsion System and Landing radar. Ascent stage holds Primary Guidance Navigation and Control, Abort Guidance System, and Rendezvous radar. Those children sit under the stage. They are not eight siblings of Lunar Module.
 
 Batteries, the Electrical Control Assembly, the drogue, and the Abort Guidance assemblies stay in the sentences. Descent holds four silver-zinc batteries and the Electrical Control Assembly with the radar: descent → DPS, AgZn1–4, ECA, landingRadar. Ascent holds the Lunar Module guidance computer, the Ascent Propulsion System, reaction control, and the drogue. PNGS → IMU on ascent. Physical `landingRadar` lives on descent only. One `rendezvousRadar` lives on ascent only. Primary Guidance sits on ascent. It connects across the mate to landing radar on descent and to rendezvous radar on ascent. It nests neither radar. Abort Guidance is Abort Electronics Assembly, Abort Sensor Assembly, and Data Entry and Display Assembly. It is not a landing computer.
 
@@ -143,23 +141,23 @@ countdown → boost → earthOrbit → TLI → dockEject → translunar → LOI 
 
 Tower clear starts boost. SECO is orbital insertion. The TLI burn, then `tliComplete`, then LM extract, then the SPS LOI burn. DPS does DOI. P66 is the flown landing program. P12 is ascent. SPS does TEI. The recovery force closes the book.
 
-The mission is two figures so each stays at or under ten states. Earth coast runs countdown through Lunar Orbit Insertion. The locked hop sits on that page: TLI → dockEject → translunar → LOI. TLI boxes carry the three GET labels. LOI-1 boxes carry planned 75:54:28 GET and flown ~075:49:50 GET.
+The mission figure is one concurrent machine. The AND regions are sourced only. Abort runs beside the mission clock. After undock, the Command Module Pilot stays in lunar orbit while the Lunar Module flies DOI through ascent. Range Safety destruct runs beside Mission Control until it is safed after Earth orbit. Abort Guidance operate and follow-PNGS run beside Primary Guidance; Abort Guidance still does not land. There is no fourth computer region and no concurrent Δv table. Earth coast holds countdown through Lunar Orbit Insertion. Lunar return holds undock through recovery. Each nest stays at or under eight boxes. The locked hop sits inside Earth coast: TLI → dockEject → translunar → LOI. TLI boxes carry the three GET labels. LOI-1 boxes carry planned 75:54:28 GET and flown ~075:49:50 GET.
 
-![Apollo earth-coast states](apollo-stm.svg)
+![Apollo mission states](apollo-stm.svg)
 
-*Apollo earth coast. The locked hop is Translunar Injection, then dock/eject, then translunar coast, then Lunar Orbit Insertion.*
+*Apollo mission. Flight is concurrent. Earth coast and Lunar return stay nested. After undock, CSM and LM run together. The locked hop is Translunar Injection, then dock/eject, then translunar coast, then Lunar Orbit Insertion.*
 
-The lunar figure picks up at Lunar Orbit Insertion and walks undock through recovery.
+The lunar figure is a detail view of the Lunar return nest. It picks up at Lunar Orbit Insertion and walks undock through recovery.
 
 ![Apollo lunar states](apollo-stm-lunar.svg)
 
-*Apollo lunar return. Descent Orbit Insertion, surface EVA, Trans-Earth Injection, and recovery sit on this page.*
+*Apollo lunar return, as a detail view. Descent Orbit Insertion, surface EVA, Trans-Earth Injection, and recovery sit on this page.*
 
-Abort runs beside the nominal machine: pad, I, II, III, IV, contingency TLI, lunar, SPS. LES covers pad / Mode I only. Later modes are not LES. Crew safety is not the tower alone. Arrows into the right-hand states match the left-hand entries.
+Abort runs beside the nominal machine: pad, I, II, III, IV, contingency TLI, lunar, SPS. LES covers pad / Mode I only. Later modes are not LES. Crew safety is not the tower alone. The abort figure is the fan detail. Arrows into the right-hand states match the left-hand entries.
 
 ![Apollo abort modes](apollo-stm-abort.svg)
 
-*Apollo abort modes. Pad and Mode I sit with LES; later modes do not. Right-side arrows match the left.*
+*Apollo abort modes, as a detail view. Pad and Mode I sit with LES; later modes do not. Right-side arrows match the left.*
 
 Computer mode machines stay separate. CMC entry is P61 → P62 → P63 → P64 → P65 → P66 → P67 (entry only). LGC landing is P63 → P64 → {P65 | P66} → P67 → P68 (landing only). Apollo 11 flew P66. AGS goes idle → operate (R47 from PNGS) → follow PNGS → idle and does not land. ECLSS goes cabin → suit → EVA (PLSS) → cabin. Docking mode, which is not the mission `dockEject` state, is undocked → soft → hard (twelve latches) → hardware off.
 
