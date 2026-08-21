@@ -1,0 +1,358 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-req",
+    "kind": "RequirementView",
+    "name": "Electric Bike Requirements",
+    "canvas": {
+      "width": 1371,
+      "height": 628,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "rideSafetyRequirement",
+        "model_ref": "rideSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 560,
+          "y": 72,
+          "width": 251,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-001 Ride Safety\nBrake input cuts motor torque\nbefore the wheel keeps driving.",
+        "style": "requirement"
+      },
+      {
+        "id": "rangeRequirement",
+        "model_ref": "rangeRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 93,
+          "y": 270,
+          "width": 209,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-002 Range\n>= 60 km PAS-1 range on a\n500 Wh pack.",
+        "style": "requirement"
+      },
+      {
+        "id": "assistLimitRequirement",
+        "model_ref": "assistLimitRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 423,
+          "y": 270,
+          "width": 209,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-003 Assist Limit\nCut assist at 25 km/h for\nthe certified class.",
+        "style": "requirement"
+      },
+      {
+        "id": "chargeSafetyRequirement",
+        "model_ref": "chargeSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 732,
+          "y": 270,
+          "width": 258,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-004 Charge Safety\nStop on over-temp, over-voltage,\nor charger disconnect.",
+        "style": "requirement"
+      },
+      {
+        "id": "brakeOverrideRequirement",
+        "model_ref": "brakeOverrideRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1062,
+          "y": 270,
+          "width": 237,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-010 Brake Override\nInhibit motor within 50 ms of\neither brake lever.",
+        "style": "requirement"
+      },
+      {
+        "id": "batteryCutoffRequirement",
+        "model_ref": "batteryCutoffRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 739,
+          "y": 468,
+          "width": 244,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-011 Battery Cutoff\nOpen the pack contactor before\nany cell exceeds its limit.",
+        "style": "requirement"
+      },
+      {
+        "id": "displayRequirement",
+        "model_ref": "displayRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 395,
+          "y": 468,
+          "width": 265,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-020 Display\nShow speed, assist, and remaining\nrange on the bar display.",
+        "style": "requirement"
+      },
+      {
+        "id": "structuralRequirement",
+        "model_ref": "structuralRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 468,
+          "width": 251,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-030 Structure\nFrame carries rider, cargo, and\nbattery loads without yield.",
+        "style": "requirement"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-rideSafetyRequirement-rangeRequirement",
+        "model_ref": "rideSafetyRequirement",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.2
+          }
+        },
+        "target": {
+          "element": "rangeRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "derive",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-rideSafetyRequirement-assistLimitRequirement",
+        "model_ref": "rideSafetyRequirement",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.4
+          }
+        },
+        "target": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "derive",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-rideSafetyRequirement-chargeSafetyRequirement",
+        "model_ref": "rideSafetyRequirement",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.6
+          }
+        },
+        "target": {
+          "element": "chargeSafetyRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "derive",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-rideSafetyRequirement-brakeOverrideRequirement",
+        "model_ref": "rideSafetyRequirement",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.8
+          }
+        },
+        "target": {
+          "element": "brakeOverrideRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-chargeSafetyRequirement-batteryCutoffRequirement",
+        "model_ref": "chargeSafetyRequirement",
+        "source": {
+          "element": "chargeSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "batteryCutoffRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-assistLimitRequirement-displayRequirement",
+        "model_ref": "assistLimitRequirement",
+        "source": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "displayRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-rangeRequirement-structuralRequirement",
+        "model_ref": "rangeRequirement",
+        "source": {
+          "element": "rangeRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "structuralRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "trace",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

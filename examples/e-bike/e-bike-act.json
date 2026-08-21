@@ -1,0 +1,35 @@
+{
+  "diagram": "e-bike-act",
+  "kind": "ActionView",
+  "name": "Start Ride Cycle",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "top-down",
+  "default_w": 160,
+  "default_h": 64,
+  "rank_gap": 72,
+  "nodes": {
+    "rideStart": {"label": "", "symbol": "initial_state", "model_ref": null, "rank": 0, "order": 0},
+    "powerOnBike": {"label": "Power On", "rank": 1, "order": 0},
+    "selectAssist": {"label": "Select Assist", "rank": 2, "order": 0},
+    "pedalAndThrottle": {"label": "Pedal / Throttle", "rank": 3, "order": 0},
+    "deliverTorque": {"label": "Deliver Torque", "rank": 4, "order": 0},
+    "brakeDecision": {"label": "brake?", "symbol": "decision_node", "model_ref": null, "rank": 5, "order": 0},
+    "applyBrake": {"label": "Apply Brake", "rank": 6, "order": 0},
+    "inhibitMotor": {"label": "Inhibit Motor", "rank": 7, "order": 0},
+    "rideEnd": {"label": "", "symbol": "activity_final_node", "model_ref": null, "rank": 8, "order": 0}
+  },
+  "edges": [
+    {"from": "rideStart", "to": "powerOnBike", "model_ref": "powerOnBike"},
+    {"from": "powerOnBike", "to": "selectAssist"},
+    {"from": "selectAssist", "to": "pedalAndThrottle"},
+    {"from": "pedalAndThrottle", "to": "deliverTorque", "model_ref": "deliverTorque"},
+    {"from": "deliverTorque", "to": "brakeDecision"},
+    {"from": "brakeDecision", "to": "applyBrake", "label": "yes", "model_ref": "applyBrake"},
+    {"from": "brakeDecision", "to": "pedalAndThrottle", "label": "no", "model_ref": "pedalAndThrottle"},
+    {"from": "applyBrake", "to": "inhibitMotor", "model_ref": "inhibitMotor"},
+    {"from": "inhibitMotor", "to": "rideEnd"}
+  ]
+}

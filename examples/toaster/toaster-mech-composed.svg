@@ -49,21 +49,21 @@
 <path d="M 595.984,482 L 596,458" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 155.96,46 L 156,70" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 376.016,46 L 376,70" fill="none" stroke="#2E7D32" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" text-anchor="middle" x="595.984" y="515">lever input</text>
-<text class="small" text-anchor="middle" x="155.96" y="24">button press</text>
-<text class="small" text-anchor="middle" x="376.016" y="24">pull/remove</text>
-<text class="small" text-anchor="middle" x="376" y="356">guide</text>
-<text class="small" text-anchor="middle" x="402.672" y="339">mount</text>
-<text class="small" text-anchor="middle" x="429.328" y="356">guide</text>
-<text class="small" text-anchor="end" x="280" y="396">mount</text>
-<text class="small" x="692" y="396">lift</text>
-<text class="small" text-anchor="end" x="580" y="479">lever input</text>
-<text class="small" text-anchor="end" x="140" y="183">mount</text>
-<text class="small" x="172" y="60">button press</text>
-<text class="small" text-anchor="end" x="773.328" y="183">guide</text>
-<text class="small" text-anchor="end" x="826.672" y="183">lift</text>
-<text class="small" text-anchor="end" x="360" y="183">guide</text>
-<text class="small" text-anchor="end" x="360" y="60">pull/remove</text>
-<text class="small" text-anchor="end" x="580" y="183">mount</text>
+<text class="small" text-anchor="middle" x="595.984" y="517">lever input</text>
+<text class="small" text-anchor="middle" x="155.96" y="22">button press</text>
+<text class="small" text-anchor="middle" x="376.016" y="22">pull/remove</text>
+<text class="small" text-anchor="middle" x="376" y="354">guide</text>
+<text class="small" text-anchor="middle" x="402.672" y="337">mount</text>
+<text class="small" text-anchor="middle" x="429.328" y="354">guide</text>
+<text class="small" text-anchor="end" x="278" y="394">mount</text>
+<text class="small" x="694" y="394">lift</text>
+<text class="small" text-anchor="end" x="578" y="481">lever input</text>
+<text class="small" text-anchor="end" x="138" y="185">mount</text>
+<text class="small" x="174" y="58">button press</text>
+<text class="small" text-anchor="end" x="771.328" y="185">guide</text>
+<text class="small" text-anchor="end" x="824.672" y="185">lift</text>
+<text class="small" text-anchor="end" x="358" y="185">guide</text>
+<text class="small" text-anchor="end" x="358" y="58">pull/remove</text>
+<text class="small" text-anchor="end" x="578" y="185">mount</text>
 </g>
 </svg>

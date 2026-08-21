@@ -1,0 +1,70 @@
+{
+  "diagram": "e-bike-context",
+  "kind": "GeneralView",
+  "name": "Electric Bike Operating Context",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "nodes": {
+    "rider": {
+      "label": "Rider",
+      "symbol": "actor",
+      "rank": 0,
+      "order": 0
+    },
+    "charger": {
+      "label": "Charger",
+      "symbol": "part_usage",
+      "rank": 0,
+      "order": 1
+    },
+    "ElectricBike": {
+      "label": "Electric Bike",
+      "symbol": "part_usage",
+      "rank": 1,
+      "order": 0,
+      "w": 190,
+      "h": 90
+    },
+    "road": {
+      "label": "Road",
+      "symbol": "part_usage",
+      "rank": 2,
+      "order": 0
+    },
+    "WheelTorque": {
+      "label": "Wheel Torque",
+      "symbol": "item",
+      "rank": 2,
+      "order": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "rider",
+      "to": "ElectricBike",
+      "label": "commands",
+      "model_ref": "riderCommandFlow"
+    },
+    {
+      "from": "charger",
+      "to": "ElectricBike",
+      "label": "charge",
+      "model_ref": "chargeEnergyFlow"
+    },
+    {
+      "from": "ElectricBike",
+      "to": "road",
+      "label": "tractive",
+      "model_ref": "roadLoadFlow"
+    },
+    {
+      "from": "ElectricBike",
+      "to": "WheelTorque",
+      "label": "torque",
+      "model_ref": "motorTorqueFlow"
+    }
+  ]
+}

@@ -1,0 +1,454 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {
+    "bikeDef": "ElectricBike::ElectricBike",
+    "frameDef": "ElectricBike::Frame",
+    "batteryDef": "ElectricBike::BatteryPack",
+    "controllerDef": "ElectricBike::MotorController",
+    "motorDef": "ElectricBike::HubMotor",
+    "interfaceDef": "ElectricBike::HumanInterface",
+    "brakeDef": "ElectricBike::BrakeSystem",
+    "framePart": "ElectricBike::ElectricBike::frame",
+    "batteryPart": "ElectricBike::ElectricBike::batteryPack",
+    "controllerPart": "ElectricBike::ElectricBike::motorController",
+    "motorPart": "ElectricBike::ElectricBike::hubMotor",
+    "interfacePart": "ElectricBike::ElectricBike::humanInterface",
+    "brakePart": "ElectricBike::ElectricBike::brakeSystem"
+  },
+  "diagram": {
+    "id": "e-bike-bdd",
+    "kind": "DefinitionView",
+    "name": "Electric Bike Definition Tree",
+    "canvas": {
+      "width": 1400,
+      "height": 334,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "bike",
+        "model_ref": "bikeDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 595,
+          "y": 40,
+          "width": 210,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Electric Bike",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      },
+      {
+        "id": "frame",
+        "model_ref": "frameDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 40,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Frame",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "batteryPack",
+        "model_ref": "batteryDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 266,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Battery Pack",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "motorController",
+        "model_ref": "controllerDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 492,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Motor Controller",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "hubMotor",
+        "model_ref": "motorDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 718,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Hub Motor",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "humanInterface",
+        "model_ref": "interfaceDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 944,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Human Interface",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "brakeSystem",
+        "model_ref": "brakeDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1170,
+          "y": 222,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Brake System",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-bike-frame",
+        "model_ref": "framePart",
+        "source": {
+          "element": "bike",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "frame",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 700,
+              "y": 167
+            },
+            {
+              "x": 135,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-bike-batteryPack",
+        "model_ref": "batteryPart",
+        "source": {
+          "element": "bike",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "batteryPack",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 700,
+              "y": 167
+            },
+            {
+              "x": 361,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-bike-motorController",
+        "model_ref": "controllerPart",
+        "source": {
+          "element": "bike",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 700,
+              "y": 167
+            },
+            {
+              "x": 587,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-bike-hubMotor",
+        "model_ref": "motorPart",
+        "source": {
+          "element": "bike",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "hubMotor",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 700,
+              "y": 167
+            },
+            {
+              "x": 813,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-bike-humanInterface",
+        "model_ref": "interfacePart",
+        "source": {
+          "element": "bike",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "humanInterface",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 700,
+              "y": 167
+            },
+            {
+              "x": 1039,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-bike-brakeSystem",
+        "model_ref": "brakePart",
+        "source": {
+          "element": "bike",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "brakeSystem",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 700,
+              "y": 167
+            },
+            {
+              "x": 1265,
+              "y": 167
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "part.definition.root": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "part.definition": {
+        "fill": "#F8FAFC",
+        "stroke": "#475569",
+        "stroke_width": 2,
+        "corner_radius": 10
+      },
+      "connector.definition": {
+        "stroke": "#64748B",
+        "stroke_width": 2,
+        "corner_radius": 8,
+        "marker_start": "composition",
+        "label_offset": 12
+      }
+    },
+    "subject": "ElectricBike::ElectricBike"
+  }
+}

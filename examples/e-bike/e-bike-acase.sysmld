@@ -1,0 +1,237 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-acase",
+    "kind": "AnalysisCaseView",
+    "name": "Electric Bike Analysis Cases",
+    "canvas": {
+      "width": 951,
+      "height": 418,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "rangeAnalysis",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 78,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Range Analysis",
+        "style": "case",
+        "model_ref": "rangeAnalysis"
+      },
+      {
+        "id": "brakeLatencyAnalysis",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 270,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Brake Latency",
+        "style": "case",
+        "model_ref": "brakeLatencyAnalysis"
+      },
+      {
+        "id": "energyBalance",
+        "symbol": "constraint",
+        "layout": {
+          "x": 382,
+          "y": 75,
+          "width": 160,
+          "height": 76,
+          "z": 10
+        },
+        "label": "Energy Balance",
+        "style": "constraint",
+        "model_ref": "energyBalance"
+      },
+      {
+        "id": "brakeLatencyLimit",
+        "symbol": "constraint",
+        "layout": {
+          "x": 382,
+          "y": 267,
+          "width": 167,
+          "height": 76,
+          "z": 10
+        },
+        "label": "Brake Latency Limit",
+        "style": "constraint",
+        "model_ref": "brakeLatencyLimit"
+      },
+      {
+        "id": "rangeRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 709,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Range Req",
+        "style": "requirement",
+        "model_ref": "rangeRequirement"
+      },
+      {
+        "id": "brakeOverrideRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 709,
+          "y": 264,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Brake Override Req",
+        "style": "requirement",
+        "model_ref": "brakeOverrideRequirement"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-rangeAnalysis-energyBalance",
+        "source": {
+          "element": "rangeAnalysis",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "energyBalance",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "method",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "rangeAnalysis"
+      },
+      {
+        "id": "conn-brakeLatencyAnalysis-brakeLatencyLimit",
+        "source": {
+          "element": "brakeLatencyAnalysis",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "brakeLatencyLimit",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "method",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "brakeLatencyAnalysis"
+      },
+      {
+        "id": "conn-energyBalance-rangeRequirement",
+        "source": {
+          "element": "energyBalance",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rangeRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "evaluates",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "energyBalance"
+      },
+      {
+        "id": "conn-brakeLatencyLimit-brakeOverrideRequirement",
+        "source": {
+          "element": "brakeLatencyLimit",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "brakeOverrideRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "evaluates",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "brakeLatencyLimit"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

@@ -1,0 +1,232 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-general",
+    "kind": "GeneralView",
+    "name": "Electric Bike Cross-View Trace",
+    "canvas": {
+      "width": 594,
+      "height": 922,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "rideBikeUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 82,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Ride Bike",
+        "style": "use_case",
+        "model_ref": "rideBikeUseCase"
+      },
+      {
+        "id": "rideSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 302,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Ride Safety",
+        "style": "requirement",
+        "model_ref": "rideSafetyRequirement"
+      },
+      {
+        "id": "applyBrake",
+        "symbol": "action",
+        "layout": {
+          "x": 82,
+          "y": 544,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Apply Brake",
+        "style": "action",
+        "model_ref": "applyBrake"
+      },
+      {
+        "id": "verifyBrakeCutoff",
+        "symbol": "case",
+        "layout": {
+          "x": 352,
+          "y": 544,
+          "width": 170,
+          "height": 76,
+          "z": 10
+        },
+        "label": "Verify Brake Cutoff",
+        "style": "case",
+        "model_ref": "verifyBrakeCutoff"
+      },
+      {
+        "id": "brakeSystem",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 82,
+          "y": 780,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Brake System",
+        "style": "part_usage",
+        "model_ref": "brakeSystem"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-rideBikeUseCase-rideSafetyRequirement",
+        "source": {
+          "element": "rideBikeUseCase",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "rideBikeUseCase"
+      },
+      {
+        "id": "conn-rideSafetyRequirement-applyBrake",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "applyBrake",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "rideSafetyRequirement"
+      },
+      {
+        "id": "conn-applyBrake-brakeSystem",
+        "source": {
+          "element": "applyBrake",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "brakeSystem",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "performed by",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "applyBrake"
+      },
+      {
+        "id": "conn-verifyBrakeCutoff-rideSafetyRequirement",
+        "source": {
+          "element": "verifyBrakeCutoff",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 437,
+              "y": 464
+            },
+            {
+              "x": 157,
+              "y": 464
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "verify",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "verifyBrakeCutoff"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

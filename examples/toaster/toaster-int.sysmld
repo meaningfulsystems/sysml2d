@@ -12,7 +12,7 @@
     "name": "Toaster User Interaction",
     "canvas": {
       "width": 1132,
-      "height": 450,
+      "height": 438,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -21,73 +21,73 @@
     "elements": [
       {
         "id": "user",
-        "model_ref": "user",
         "symbol": "lifeline",
         "layout": {
           "x": 70,
           "y": 70,
           "width": 110,
-          "height": 340,
+          "height": 328,
           "z": 10
         },
         "label": "User",
-        "style": "lifeline"
+        "style": "lifeline",
+        "model_ref": "user"
       },
       {
         "id": "lever",
-        "model_ref": "lever",
         "symbol": "lifeline",
         "layout": {
           "x": 270,
           "y": 70,
           "width": 110,
-          "height": 340,
+          "height": 328,
           "z": 10
         },
         "label": "Lever",
-        "style": "lifeline"
+        "style": "lifeline",
+        "model_ref": "lever"
       },
       {
         "id": "powerAndControlSubsystem",
-        "model_ref": "powerAndControlSubsystem",
         "symbol": "lifeline",
         "layout": {
           "x": 470,
           "y": 70,
           "width": 151,
-          "height": 340,
+          "height": 328,
           "z": 10
         },
         "label": "Power & Control",
-        "style": "lifeline"
+        "style": "lifeline",
+        "model_ref": "powerAndControlSubsystem"
       },
       {
         "id": "heatingElement",
-        "model_ref": "heatingElement",
         "symbol": "lifeline",
         "layout": {
           "x": 711,
           "y": 70,
           "width": 151,
-          "height": 340,
+          "height": 328,
           "z": 10
         },
         "label": "Heating Element",
-        "style": "lifeline"
+        "style": "lifeline",
+        "model_ref": "heatingElement"
       },
       {
         "id": "carriage",
-        "model_ref": "carriage",
         "symbol": "lifeline",
         "layout": {
           "x": 952,
           "y": 70,
           "width": 110,
-          "height": 340,
+          "height": 328,
           "z": 10
         },
         "label": "Carriage",
-        "style": "lifeline"
+        "style": "lifeline",
+        "model_ref": "carriage"
       }
     ],
     "connections": [
@@ -98,14 +98,14 @@
           "element": "user",
           "anchor": {
             "side": "right",
-            "offset": 0.206
+            "offset": 0.213
           }
         },
         "target": {
           "element": "lever",
           "anchor": {
             "side": "left",
-            "offset": 0.206
+            "offset": 0.213
           }
         },
         "route": {
@@ -130,14 +130,14 @@
           "element": "lever",
           "anchor": {
             "side": "right",
-            "offset": 0.365
+            "offset": 0.378
           }
         },
         "target": {
           "element": "powerAndControlSubsystem",
           "anchor": {
             "side": "left",
-            "offset": 0.365
+            "offset": 0.378
           }
         },
         "route": {
@@ -162,14 +162,14 @@
           "element": "powerAndControlSubsystem",
           "anchor": {
             "side": "right",
-            "offset": 0.524
+            "offset": 0.543
           }
         },
         "target": {
           "element": "heatingElement",
           "anchor": {
             "side": "left",
-            "offset": 0.524
+            "offset": 0.543
           }
         },
         "route": {
@@ -194,14 +194,14 @@
           "element": "powerAndControlSubsystem",
           "anchor": {
             "side": "right",
-            "offset": 0.682
+            "offset": 0.707
           }
         },
         "target": {
           "element": "carriage",
           "anchor": {
             "side": "left",
-            "offset": 0.682
+            "offset": 0.707
           }
         },
         "route": {
@@ -226,14 +226,14 @@
           "element": "carriage",
           "anchor": {
             "side": "left",
-            "offset": 0.841
+            "offset": 0.872
           }
         },
         "target": {
           "element": "user",
           "anchor": {
             "side": "right",
-            "offset": 0.841
+            "offset": 0.872
           }
         },
         "route": {

@@ -11,8 +11,8 @@
     "kind": "UseCaseView",
     "name": "Blender Use Cases",
     "canvas": {
-      "width": 566,
-      "height": 658,
+      "width": 568,
+      "height": 838,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -21,35 +21,34 @@
     "elements": [
       {
         "id": "blenderBoundary",
-        "model_ref": "Blender",
         "symbol": "boundary",
         "layout": {
           "x": 260,
           "y": 72,
           "width": 234.0,
-          "height": 514.0,
+          "height": 694.0,
           "z": 0
         },
         "label": "Blender",
-        "style": "boundary.system"
+        "style": "boundary.system",
+        "model_ref": "Blender"
       },
       {
         "id": "user",
-        "model_ref": "user",
         "symbol": "actor",
         "layout": {
           "x": 72,
-          "y": 284,
+          "y": 104,
           "width": 70,
           "height": 90,
           "z": 10
         },
         "label": "User",
-        "style": "actor"
+        "style": "actor",
+        "model_ref": "user"
       },
       {
         "id": "makeSmoothieUseCase",
-        "model_ref": "makeSmoothieUseCase",
         "symbol": "use_case",
         "layout": {
           "x": 302,
@@ -59,41 +58,41 @@
           "z": 10
         },
         "label": "Make Smoothie",
-        "style": "use_case"
+        "style": "use_case",
+        "model_ref": "makeSmoothieUseCase"
       },
       {
         "id": "stopBlendUseCase",
-        "model_ref": "stopBlendUseCase",
         "symbol": "use_case",
         "layout": {
           "x": 302,
-          "y": 294,
+          "y": 384,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Stop Blend",
-        "style": "use_case"
+        "style": "use_case",
+        "model_ref": "stopBlendUseCase"
       },
       {
         "id": "cleanContainerUseCase",
-        "model_ref": "cleanContainerUseCase",
         "symbol": "use_case",
         "layout": {
           "x": 302,
-          "y": 474,
+          "y": 654,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Clean Container",
-        "style": "use_case"
+        "style": "use_case",
+        "model_ref": "cleanContainerUseCase"
       }
     ],
     "connections": [
       {
         "id": "conn-user-makeSmoothieUseCase",
-        "model_ref": "user",
         "source": {
           "element": "user",
           "anchor": {
@@ -112,29 +111,21 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 198,
-              "y": 315.5
+              "x": 179.5,
+              "y": 135.5
             },
             {
-              "x": 198,
+              "x": 179.5,
               "y": 149
             }
           ]
         },
-        "labels": [
-          {
-            "text": "uses",
-            "position": {
-              "offset": 0.5,
-              "placement": "centerline"
-            }
-          }
-        ],
-        "style": "connector.default"
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "user"
       },
       {
         "id": "conn-user-stopBlendUseCase",
-        "model_ref": "user",
         "source": {
           "element": "user",
           "anchor": {
@@ -151,22 +142,23 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
-        },
-        "labels": [
-          {
-            "text": "uses",
-            "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+          "waypoints": [
+            {
+              "x": 201,
+              "y": 149
+            },
+            {
+              "x": 201,
+              "y": 419
             }
-          }
-        ],
-        "style": "connector.default"
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "user"
       },
       {
         "id": "conn-user-cleanContainerUseCase",
-        "model_ref": "user",
         "source": {
           "element": "user",
           "anchor": {
@@ -185,29 +177,21 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 198,
-              "y": 342.5
+              "x": 222.5,
+              "y": 162.5
             },
             {
-              "x": 198,
-              "y": 509
+              "x": 222.5,
+              "y": 689
             }
           ]
         },
-        "labels": [
-          {
-            "text": "uses",
-            "position": {
-              "offset": 0.5,
-              "placement": "centerline"
-            }
-          }
-        ],
-        "style": "connector.default"
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "user"
       },
       {
         "id": "conn-stopBlendUseCase-makeSmoothieUseCase",
-        "model_ref": "stopBlendUseCase",
         "source": {
           "element": "stopBlendUseCase",
           "anchor": {
@@ -230,16 +214,15 @@
           {
             "text": "extend",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.extend"
+        "style": "connector.extend",
+        "model_ref": "stopBlendUseCase"
       },
       {
         "id": "conn-cleanContainerUseCase-makeSmoothieUseCase",
-        "model_ref": "cleanContainerUseCase",
         "source": {
           "element": "cleanContainerUseCase",
           "anchor": {
@@ -258,11 +241,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 281,
-              "y": 474
+              "x": 496,
+              "y": 654
             },
             {
-              "x": 281,
+              "x": 496,
               "y": 184
             }
           ]
@@ -271,12 +254,12 @@
           {
             "text": "include",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.include"
+        "style": "connector.include",
+        "model_ref": "cleanContainerUseCase"
       }
     ],
     "annotations": [],

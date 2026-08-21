@@ -355,9 +355,9 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
             tf, to_ = ta[0], ta[1]
             ax, ay = _anchor_xy(t["from"], sf, so)
             ex, ey = _anchor_xy(t["to"],   tf, to_)   # ex/ey avoids shadowing boundary bx/by
-            if vertical and abs(ax - ex) < 2:
+            if vertical and abs(ax - ex) < 8:
                 conn_waypoints[i] = []
-            elif not vertical and abs(ay - ey) < 2:
+            elif not vertical and abs(ay - ey) < 8:
                 conn_waypoints[i] = []
             else:
                 track = chan_lo + step * (pos + 1)
@@ -591,6 +591,7 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
 
     top_lane = 0
     bottom_lane = 0
+    used_bottom_rails: list[float] = []
     for members in local_back.values():
         n = len(members)
         for pos, (idx, t, mode) in enumerate(members):
@@ -612,13 +613,30 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
             elif mode in ("bottom", "bottom_span") and not (mode == "bottom" and t["from"] in local_bottom_targets):
                 src_bottom = boxes[t["from"]][1] + boxes[t["from"]][3]
                 tgt_bottom = boxes[t["to"]][1] + boxes[t["to"]][3]
-                local_y = max(src_bottom, tgt_bottom) + SELF_LOOP_H + bottom_lane * BACK_ARC_STEP
-                bottom_lane += 1
                 if mode == "bottom_span":
                     soff = bottom_endpoint_offset.get((idx, "src"), soff)
                     toff = bottom_endpoint_offset.get((idx, "tgt"), toff)
                 source_x = round(_anchor_xy(t["from"], "bottom", soff)[0])
                 target_x = round(_anchor_xy(t["to"], "bottom", toff)[0])
+                local_y = _clear_horizontal_rail(
+                    max(src_bottom, tgt_bottom) + SELF_LOOP_H + bottom_lane * BACK_ARC_STEP,
+                    source_x,
+                    target_x,
+                    boxes,
+                    {t["from"], t["to"]},
+                    SELF_LOOP_H,
+                )
+                while any(abs(local_y - used) < BACK_ARC_STEP for used in used_bottom_rails):
+                    local_y = _clear_horizontal_rail(
+                        local_y + BACK_ARC_STEP,
+                        source_x,
+                        target_x,
+                        boxes,
+                        {t["from"], t["to"]},
+                        SELF_LOOP_H,
+                    )
+                used_bottom_rails.append(local_y)
+                bottom_lane += 1
                 wps = [
                     {"x": source_x, "y": round(local_y)},
                     {"x": target_x, "y": round(local_y)},
@@ -846,6 +864,46 @@ def _container_peer_pairs(transition: dict[str, Any], container_ids: set[str]) -
     if tgt in container_ids and src not in container_ids:
         pairs.append((tgt, src))
     return pairs
+
+
+def _clear_horizontal_rail(
+    y: float,
+    x1: float,
+    x2: float,
+    boxes: dict[str, tuple[float, float, float, float]],
+    skip: set[str],
+    pad: float,
+) -> float:
+    left, right = sorted((x1, x2))
+    parents = {
+        node_id
+        for node_id, box in boxes.items()
+        if node_id not in skip and all(_box_contains(box, boxes[other]) for other in skip if other in boxes)
+    }
+    changed = True
+    while changed:
+        changed = False
+        for node_id, (bx, by, bw, bh) in boxes.items():
+            if node_id in skip or node_id in parents:
+                continue
+            if bx + bw < left or bx > right:
+                continue
+            if by - pad < y < by + bh + pad:
+                y = by + bh + pad
+                changed = True
+    return y
+
+
+def _box_contains(
+    outer: tuple[float, float, float, float],
+    inner: tuple[float, float, float, float],
+) -> bool:
+    return (
+        outer[0] <= inner[0]
+        and outer[1] <= inner[1]
+        and outer[0] + outer[2] >= inner[0] + inner[2]
+        and outer[1] + outer[3] >= inner[1] + inner[3]
+    )
 
 
 def _same_container_scope(src: str, tgt: str, container_id: str, states_spec: dict[str, Any]) -> bool:

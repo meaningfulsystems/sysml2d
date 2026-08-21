@@ -31,7 +31,7 @@
 <path d="M 904,297.002 L 932,297 Q 940,297 940,305 L 940,373 Q 940,381 932,381 L 372,381 Q 364,381 363.969,373 L 363.5,251" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <text class="small" text-anchor="middle" x="497" y="229">lever down</text>
 <text class="small" text-anchor="middle" x="709" y="174.2">timer expired</text>
-<text class="small" x="751" y="242.2">fault: overheat / jam / power</text>
+<text class="small" x="753" y="242.2">fault: overheat / jam / power</text>
 <text class="small" text-anchor="middle" x="497" y="287">carriage up abort</text>
 <text class="small" text-anchor="middle" x="656" y="417">carriage up</text>
 <text class="small" text-anchor="middle" x="652" y="389">reset</text>

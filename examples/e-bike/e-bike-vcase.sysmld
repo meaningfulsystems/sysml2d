@@ -1,0 +1,265 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-vcase",
+    "kind": "VerificationCaseView",
+    "name": "Electric Bike Verification Cases",
+    "canvas": {
+      "width": 668,
+      "height": 622,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "verifyRange",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 78,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Verify Range",
+        "style": "case",
+        "model_ref": "verifyRange"
+      },
+      {
+        "id": "verifyBrakeCutoff",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 210,
+          "width": 167,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Verify Brake Cutoff",
+        "style": "case",
+        "model_ref": "verifyBrakeCutoff"
+      },
+      {
+        "id": "verifyChargeSafety",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 342,
+          "width": 174,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Verify Charge Safety",
+        "style": "case",
+        "model_ref": "verifyChargeSafety"
+      },
+      {
+        "id": "verifyAssistLimit",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 474,
+          "width": 167,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Verify Assist Limit",
+        "style": "case",
+        "model_ref": "verifyAssistLimit"
+      },
+      {
+        "id": "rangeRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 426,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Range Req",
+        "style": "requirement",
+        "model_ref": "rangeRequirement"
+      },
+      {
+        "id": "brakeOverrideRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 426,
+          "y": 204,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Brake Override Req",
+        "style": "requirement",
+        "model_ref": "brakeOverrideRequirement"
+      },
+      {
+        "id": "chargeSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 426,
+          "y": 336,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Charge Safety Req",
+        "style": "requirement",
+        "model_ref": "chargeSafetyRequirement"
+      },
+      {
+        "id": "assistLimitRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 426,
+          "y": 468,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Assist Limit Req",
+        "style": "requirement",
+        "model_ref": "assistLimitRequirement"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-verifyRange-rangeRequirement",
+        "source": {
+          "element": "verifyRange",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rangeRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "verifies",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "verifyRange"
+      },
+      {
+        "id": "conn-verifyBrakeCutoff-brakeOverrideRequirement",
+        "source": {
+          "element": "verifyBrakeCutoff",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "brakeOverrideRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "verifies",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "verifyBrakeCutoff"
+      },
+      {
+        "id": "conn-verifyChargeSafety-chargeSafetyRequirement",
+        "source": {
+          "element": "verifyChargeSafety",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "chargeSafetyRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "verifies",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "verifyChargeSafety"
+      },
+      {
+        "id": "conn-verifyAssistLimit-assistLimitRequirement",
+        "source": {
+          "element": "verifyAssistLimit",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "verifies",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "verifyAssistLimit"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

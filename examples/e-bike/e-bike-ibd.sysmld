@@ -1,0 +1,858 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {
+    "bike": "ElectricBike::ElectricBike",
+    "boundary": "ElectricBike::ElectricBike",
+    "frame": "ElectricBike::ElectricBike::frame",
+    "batteryPack": "ElectricBike::ElectricBike::batteryPack",
+    "motorController": "ElectricBike::ElectricBike::motorController",
+    "hubMotor": "ElectricBike::ElectricBike::hubMotor",
+    "humanInterface": "ElectricBike::ElectricBike::humanInterface",
+    "brakeSystem": "ElectricBike::ElectricBike::brakeSystem",
+    "frame--batteryPack--src": "ElectricBike::ElectricBike::frameBatteryMountOut",
+    "frame--batteryPack--tgt": "ElectricBike::ElectricBike::batteryMountIn",
+    "frame--hubMotor--src": "ElectricBike::ElectricBike::frameMotorMountOut",
+    "frame--hubMotor--tgt": "ElectricBike::ElectricBike::motorMountIn",
+    "frame--humanInterface--src": "ElectricBike::ElectricBike::frameInterfaceMountOut",
+    "frame--humanInterface--tgt": "ElectricBike::ElectricBike::interfaceMountIn",
+    "frame--brakeSystem--src": "ElectricBike::ElectricBike::frameBrakeMountOut",
+    "frame--brakeSystem--tgt": "ElectricBike::ElectricBike::brakeMountIn",
+    "batteryPack--motorController--src": "ElectricBike::ElectricBike::batteryPowerOut",
+    "batteryPack--motorController--tgt": "ElectricBike::ElectricBike::controllerPowerIn",
+    "motorController--hubMotor--src": "ElectricBike::ElectricBike::controllerDriveOut",
+    "motorController--hubMotor--tgt": "ElectricBike::ElectricBike::motorDriveIn",
+    "humanInterface--motorController--src": "ElectricBike::ElectricBike::interfaceCommandOut",
+    "humanInterface--motorController--tgt": "ElectricBike::ElectricBike::controllerCommandIn",
+    "brakeSystem--motorController--src": "ElectricBike::ElectricBike::brakeInhibitOut",
+    "brakeSystem--motorController--tgt": "ElectricBike::ElectricBike::controllerInhibitIn",
+    "bnd--humanInterface": "ElectricBike::ElectricBike::riderCommandIn",
+    "humanInterface--bnd--tgt": "ElectricBike::ElectricBike::riderInputIn",
+    "bnd--batteryPack": "ElectricBike::ElectricBike::chargerIn",
+    "batteryPack--bnd--tgt": "ElectricBike::ElectricBike::chargeInputIn",
+    "bnd--hubMotor": "ElectricBike::ElectricBike::roadLoadIn",
+    "hubMotor--bnd--tgt": "ElectricBike::ElectricBike::wheelLoadIn",
+    "conn-frame-batteryPack": "ElectricBike::ElectricBike::frameToBattery",
+    "conn-frame-hubMotor": "ElectricBike::ElectricBike::frameToMotor",
+    "conn-frame-humanInterface": "ElectricBike::ElectricBike::frameToInterface",
+    "conn-frame-brakeSystem": "ElectricBike::ElectricBike::frameToBrakes",
+    "conn-batteryPack-motorController": "ElectricBike::ElectricBike::batteryToController",
+    "conn-motorController-hubMotor": "ElectricBike::ElectricBike::controllerToMotor",
+    "conn-humanInterface-motorController": "ElectricBike::ElectricBike::interfaceToController",
+    "conn-brakeSystem-motorController": "ElectricBike::ElectricBike::brakesToController",
+    "conn-bnd-humanInterface": "ElectricBike::ElectricBike::riderToInterface",
+    "conn-bnd-batteryPack": "ElectricBike::ElectricBike::chargerToBattery",
+    "conn-bnd-hubMotor": "ElectricBike::ElectricBike::roadToMotor"
+  },
+  "diagram": {
+    "id": "e-bike-ibd",
+    "kind": "InterconnectionView",
+    "name": "Electric Bike Interconnection",
+    "canvas": {
+      "width": 1396,
+      "height": 526,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "bike",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 1316,
+          "height": 446,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "humanInterface",
+        "model_ref": "humanInterface",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 434,
+          "y": 76,
+          "width": 170,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Human Interface",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.control"
+      },
+      {
+        "id": "brakeSystem",
+        "model_ref": "brakeSystem",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 434,
+          "y": 224,
+          "width": 170,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Brake System",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.mechanical"
+      },
+      {
+        "id": "batteryPack",
+        "model_ref": "batteryPack",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 434,
+          "y": 372,
+          "width": 170,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Battery Pack",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.power"
+      },
+      {
+        "id": "motorController",
+        "model_ref": "motorController",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 792,
+          "y": 224,
+          "width": 170,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Motor Controller",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.control"
+      },
+      {
+        "id": "hubMotor",
+        "model_ref": "hubMotor",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 1150,
+          "y": 224,
+          "width": 170,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Hub Motor",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.mechanical"
+      },
+      {
+        "id": "frame",
+        "model_ref": "frame",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 224,
+          "width": 170,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Frame",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.structure"
+      },
+      {
+        "id": "humanInterface--bnd--tgt",
+        "model_ref": "humanInterface--bnd--tgt",
+        "symbol": "port",
+        "owner": "humanInterface",
+        "placement": {
+          "side": "left",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "frame--humanInterface--tgt",
+        "model_ref": "frame--humanInterface--tgt",
+        "symbol": "port",
+        "owner": "humanInterface",
+        "placement": {
+          "side": "left",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "humanInterface--motorController--src",
+        "model_ref": "humanInterface--motorController--src",
+        "symbol": "port",
+        "owner": "humanInterface",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "frame--brakeSystem--tgt",
+        "model_ref": "frame--brakeSystem--tgt",
+        "symbol": "port",
+        "owner": "brakeSystem",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "brakeSystem--motorController--src",
+        "model_ref": "brakeSystem--motorController--src",
+        "symbol": "port",
+        "owner": "brakeSystem",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "frame--batteryPack--tgt",
+        "model_ref": "frame--batteryPack--tgt",
+        "symbol": "port",
+        "owner": "batteryPack",
+        "placement": {
+          "side": "left",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "batteryPack--bnd--tgt",
+        "model_ref": "batteryPack--bnd--tgt",
+        "symbol": "port",
+        "owner": "batteryPack",
+        "placement": {
+          "side": "left",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "batteryPack--motorController--src",
+        "model_ref": "batteryPack--motorController--src",
+        "symbol": "port",
+        "owner": "batteryPack",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "humanInterface--motorController--tgt",
+        "model_ref": "humanInterface--motorController--tgt",
+        "symbol": "port",
+        "owner": "motorController",
+        "placement": {
+          "side": "left",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "brakeSystem--motorController--tgt",
+        "model_ref": "brakeSystem--motorController--tgt",
+        "symbol": "port",
+        "owner": "motorController",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "batteryPack--motorController--tgt",
+        "model_ref": "batteryPack--motorController--tgt",
+        "symbol": "port",
+        "owner": "motorController",
+        "placement": {
+          "side": "left",
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "motorController--hubMotor--src",
+        "model_ref": "motorController--hubMotor--src",
+        "symbol": "port",
+        "owner": "motorController",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "frame--hubMotor--tgt",
+        "model_ref": "frame--hubMotor--tgt",
+        "symbol": "port",
+        "owner": "hubMotor",
+        "placement": {
+          "side": "left",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "motorController--hubMotor--tgt",
+        "model_ref": "motorController--hubMotor--tgt",
+        "symbol": "port",
+        "owner": "hubMotor",
+        "placement": {
+          "side": "left",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "hubMotor--bnd--tgt",
+        "model_ref": "hubMotor--bnd--tgt",
+        "symbol": "port",
+        "owner": "hubMotor",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "frame--humanInterface--src",
+        "model_ref": "frame--humanInterface--src",
+        "symbol": "port",
+        "owner": "frame",
+        "placement": {
+          "side": "right",
+          "offset": 0.2
+        },
+        "label": ""
+      },
+      {
+        "id": "frame--brakeSystem--src",
+        "model_ref": "frame--brakeSystem--src",
+        "symbol": "port",
+        "owner": "frame",
+        "placement": {
+          "side": "right",
+          "offset": 0.4
+        },
+        "label": ""
+      },
+      {
+        "id": "frame--hubMotor--src",
+        "model_ref": "frame--hubMotor--src",
+        "symbol": "port",
+        "owner": "frame",
+        "placement": {
+          "side": "right",
+          "offset": 0.6
+        },
+        "label": ""
+      },
+      {
+        "id": "frame--batteryPack--src",
+        "model_ref": "frame--batteryPack--src",
+        "symbol": "port",
+        "owner": "frame",
+        "placement": {
+          "side": "right",
+          "offset": 0.8
+        },
+        "label": ""
+      },
+      {
+        "id": "bnd--humanInterface",
+        "model_ref": "bnd--humanInterface",
+        "symbol": "port",
+        "owner": "boundary",
+        "placement": {
+          "side": "left",
+          "offset": 0.139
+        },
+        "label": "rider"
+      },
+      {
+        "id": "bnd--batteryPack",
+        "model_ref": "bnd--batteryPack",
+        "symbol": "port",
+        "owner": "boundary",
+        "placement": {
+          "side": "left",
+          "offset": 0.861
+        },
+        "label": "charger"
+      },
+      {
+        "id": "bnd--hubMotor",
+        "model_ref": "bnd--hubMotor",
+        "symbol": "port",
+        "owner": "boundary",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": "road load"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-frame-batteryPack",
+        "model_ref": "conn-frame-batteryPack",
+        "source": {
+          "element": "frame--batteryPack--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "frame--batteryPack--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 375,
+              "y": 286.4
+            },
+            {
+              "x": 375,
+              "y": 397.997
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "mount",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-frame-hubMotor",
+        "model_ref": "conn-frame-hubMotor",
+        "source": {
+          "element": "frame--hubMotor--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "frame--hubMotor--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 298,
+              "y": 270.8
+            },
+            {
+              "x": 298,
+              "y": 249.997
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "mount",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-frame-humanInterface",
+        "model_ref": "conn-frame-humanInterface",
+        "source": {
+          "element": "frame--humanInterface--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "frame--humanInterface--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 305,
+              "y": 239.6
+            },
+            {
+              "x": 305,
+              "y": 128.003
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "mount",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-frame-brakeSystem",
+        "model_ref": "conn-frame-brakeSystem",
+        "source": {
+          "element": "frame--brakeSystem--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "frame--brakeSystem--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 340,
+              "y": 255.2
+            },
+            {
+              "x": 340,
+              "y": 263
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "mount",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-batteryPack-motorController",
+        "model_ref": "conn-batteryPack-motorController",
+        "source": {
+          "element": "batteryPack--motorController--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "batteryPack--motorController--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 733,
+              "y": 411
+            },
+            {
+              "x": 733,
+              "y": 282.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "pack power",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-motorController-hubMotor",
+        "model_ref": "conn-motorController-hubMotor",
+        "source": {
+          "element": "motorController--hubMotor--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorController--hubMotor--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1056,
+              "y": 263
+            },
+            {
+              "x": 1056,
+              "y": 276.003
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "phase drive",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-humanInterface-motorController",
+        "model_ref": "conn-humanInterface-motorController",
+        "source": {
+          "element": "humanInterface--motorController--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "humanInterface--motorController--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 663,
+              "y": 115
+            },
+            {
+              "x": 663,
+              "y": 243.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "assist command",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-brakeSystem-motorController",
+        "model_ref": "conn-brakeSystem-motorController",
+        "source": {
+          "element": "brakeSystem--motorController--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "brakeSystem--motorController--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "inhibit",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-bnd-humanInterface",
+        "model_ref": "conn-bnd-humanInterface",
+        "source": {
+          "element": "bnd--humanInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "humanInterface--bnd--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-bnd-batteryPack",
+        "model_ref": "conn-bnd-batteryPack",
+        "source": {
+          "element": "bnd--batteryPack",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "batteryPack--bnd--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-bnd-hubMotor",
+        "model_ref": "conn-bnd-hubMotor",
+        "source": {
+          "element": "bnd--hubMotor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "hubMotor--bnd--tgt",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.structure": {
+        "fill": "#F5F5F5",
+        "stroke": "#616161",
+        "stroke_width": 2
+      },
+      "part.mechanical": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.control": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.power": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "bike"
+  }
+}

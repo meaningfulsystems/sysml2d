@@ -1,0 +1,291 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-int",
+    "kind": "InteractionView",
+    "name": "Rider Assist Interaction",
+    "canvas": {
+      "width": 1097,
+      "height": 492,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "rider",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 70,
+          "y": 70,
+          "width": 110,
+          "height": 382,
+          "z": 10
+        },
+        "label": "Rider",
+        "style": "lifeline",
+        "model_ref": "rider"
+      },
+      {
+        "id": "humanInterface",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 270,
+          "y": 70,
+          "width": 151,
+          "height": 382,
+          "z": 10
+        },
+        "label": "Human Interface",
+        "style": "lifeline",
+        "model_ref": "humanInterface"
+      },
+      {
+        "id": "motorController",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 511,
+          "y": 70,
+          "width": 116,
+          "height": 382,
+          "z": 10
+        },
+        "label": "Controller",
+        "style": "lifeline",
+        "model_ref": "motorController"
+      },
+      {
+        "id": "hubMotor",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 717,
+          "y": 70,
+          "width": 110,
+          "height": 382,
+          "z": 10
+        },
+        "label": "Hub Motor",
+        "style": "lifeline",
+        "model_ref": "hubMotor"
+      },
+      {
+        "id": "brakeSystem",
+        "symbol": "lifeline",
+        "layout": {
+          "x": 917,
+          "y": 70,
+          "width": 110,
+          "height": 382,
+          "z": 10
+        },
+        "label": "Brakes",
+        "style": "lifeline",
+        "model_ref": "brakeSystem"
+      }
+    ],
+    "connections": [
+      {
+        "id": "msgPower",
+        "model_ref": "powerOnBike",
+        "source": {
+          "element": "rider",
+          "anchor": {
+            "side": "right",
+            "offset": 0.183
+          }
+        },
+        "target": {
+          "element": "humanInterface",
+          "anchor": {
+            "side": "left",
+            "offset": 0.183
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "power on",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgAssist",
+        "model_ref": "interfaceToController",
+        "source": {
+          "element": "humanInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.325
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "left",
+            "offset": 0.325
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "assist level",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgTorque",
+        "model_ref": "controllerToMotor",
+        "source": {
+          "element": "motorController",
+          "anchor": {
+            "side": "right",
+            "offset": 0.466
+          }
+        },
+        "target": {
+          "element": "hubMotor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.466
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "phase current",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgBrake",
+        "model_ref": "applyBrake",
+        "source": {
+          "element": "rider",
+          "anchor": {
+            "side": "right",
+            "offset": 0.607
+          }
+        },
+        "target": {
+          "element": "brakeSystem",
+          "anchor": {
+            "side": "left",
+            "offset": 0.607
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "lever",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgInhibit",
+        "model_ref": "brakesToController",
+        "source": {
+          "element": "brakeSystem",
+          "anchor": {
+            "side": "left",
+            "offset": 0.749
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "right",
+            "offset": 0.749
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "inhibit",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      },
+      {
+        "id": "msgStop",
+        "model_ref": "inhibitMotor",
+        "source": {
+          "element": "motorController",
+          "anchor": {
+            "side": "right",
+            "offset": 0.89
+          }
+        },
+        "target": {
+          "element": "hubMotor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.89
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "torque off",
+            "position": {
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "message"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "diagram": "e-bike-uc",
+  "kind": "UseCaseView",
+  "name": "Electric Bike Use Cases",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "col_gap": 80,
+  "rank_gap": 180,
+  "nodes": {
+    "rider": {
+      "label": "Rider",
+      "symbol": "actor",
+      "rank": 0,
+      "order": 0
+    },
+    "rideBikeUseCase": {
+      "label": "Ride Bike",
+      "rank": 1,
+      "order": 0
+    },
+    "adjustAssistUseCase": {
+      "label": "Adjust Assist",
+      "rank": 1,
+      "order": 1
+    },
+    "chargeBikeUseCase": {
+      "label": "Charge Bike",
+      "rank": 1,
+      "order": 2
+    },
+    "lockBikeUseCase": {
+      "label": "Lock Bike",
+      "rank": 1,
+      "order": 3
+    }
+  },
+  "groups": [
+    {
+      "id": "bikeBoundary",
+      "label": "Electric Bike",
+      "model_ref": "ElectricBike",
+      "members": [
+        "rideBikeUseCase",
+        "adjustAssistUseCase",
+        "chargeBikeUseCase",
+        "lockBikeUseCase"
+      ],
+      "pad_x": 70,
+      "pad_y": 50
+    }
+  ],
+  "edges": [
+    {
+      "from": "rider",
+      "to": "rideBikeUseCase",
+      "source_offset": 0.3
+    },
+    {
+      "from": "rider",
+      "to": "adjustAssistUseCase",
+      "source_offset": 0.45
+    },
+    {
+      "from": "rider",
+      "to": "chargeBikeUseCase",
+      "source_offset": 0.6
+    },
+    {
+      "from": "rider",
+      "to": "lockBikeUseCase",
+      "source_offset": 0.75
+    },
+    {
+      "from": "adjustAssistUseCase",
+      "to": "rideBikeUseCase",
+      "label": "include",
+      "style": "connector.include"
+    }
+  ]
+}

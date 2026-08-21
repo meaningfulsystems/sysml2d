@@ -41,18 +41,18 @@
 <path d="M 613,261 L 727,261" fill="none" stroke="#333333" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 46,112.002 L 70,112" fill="none" stroke="#333333" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 46,409.998 L 75,410" fill="none" stroke="#6D4C41" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" x="56" y="139.002">Button Input</text>
-<text class="small" x="56" y="436.998">Mains Power</text>
-<text class="small" x="252" y="96">ctrl</text>
-<text class="small" text-anchor="end" x="60" y="96">press</text>
-<text class="small" x="247" y="245">ctrl</text>
-<text class="small" x="247" y="394">out</text>
-<text class="small" text-anchor="end" x="65" y="394">in</text>
-<text class="small" text-anchor="end" x="361" y="222.5">button</text>
-<text class="small" text-anchor="end" x="361" y="265.5">ctrl</text>
-<text class="small" text-anchor="end" x="361" y="310.5">power</text>
-<text class="small" x="623" y="245">cmd</text>
-<text class="small" text-anchor="end" x="717" y="245">cmd</text>
+<text class="small" x="58" y="94.0018">Button Input</text>
+<text class="small" x="58" y="391.998">Mains Power</text>
+<text class="small" x="254" y="94">ctrl</text>
+<text class="small" text-anchor="end" x="58" y="94">press</text>
+<text class="small" x="249" y="243">ctrl</text>
+<text class="small" x="249" y="392">out</text>
+<text class="small" text-anchor="end" x="63" y="439">in</text>
+<text class="small" text-anchor="end" x="359" y="220.5">button</text>
+<text class="small" text-anchor="end" x="359" y="265.5">ctrl</text>
+<text class="small" text-anchor="end" x="359" y="312.5">power</text>
+<text class="small" x="625" y="243">cmd</text>
+<text class="small" text-anchor="end" x="715" y="243">cmd</text>
 <text class="small" x="293.25" y="175.25">button control</text>
 <text class="small" text-anchor="middle" x="283.9" y="282">control</text>
 <text class="small" x="339.75" y="346.75">line power</text>

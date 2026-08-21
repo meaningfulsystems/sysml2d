@@ -10,8 +10,8 @@
     "ToasterStructure": {"label": "Structure", "rank": 1, "order": 0},
     "ToasterBehavior": {"label": "Behavior", "rank": 1, "order": 1},
     "ToasterRequirements": {"label": "Requirements", "rank": 1, "order": 2},
-    "ToasterAnalysis": {"label": "Analysis", "rank": 2, "order": 0},
-    "ToasterVerification": {"label": "Verification", "rank": 2, "order": 1}
+    "ToasterAnalysis": {"label": "Analysis", "rank": 1, "order": 3},
+    "ToasterVerification": {"label": "Verification", "rank": 1, "order": 4}
   },
   "edges": [
     {"from": "ToasterModel", "to": "ToasterStructure", "label": "contains"},

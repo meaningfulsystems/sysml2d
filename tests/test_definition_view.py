@@ -73,7 +73,7 @@ class TreeComposerTests(unittest.TestCase):
         }
         first_row_bus_y = connections["conn-root-child-0"]["route"]["waypoints"][0]["y"]
         second_row_bus_y = connections["conn-root-child-4"]["route"]["waypoints"][0]["y"]
-        self.assertEqual(second_row_bus_y, first_row_bus_y)
+        self.assertGreater(second_row_bus_y, first_row_bus_y)
 
         second_row_label = connections["conn-root-child-4"]["labels"][0]["position"]
         self.assertGreater(second_row_label["offset"], 0.9)

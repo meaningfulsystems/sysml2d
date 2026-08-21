@@ -1,0 +1,112 @@
+{
+  "diagram": "e-bike-cst",
+  "kind": "ConstraintView",
+  "name": "Electric Bike Parametrics",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 180,
+  "default_h": 78,
+  "nodes": {
+    "packEnergy": {
+      "label": "packEnergy\n500 Wh",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 0
+    },
+    "riderPower": {
+      "label": "riderPower\npedal input",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 1
+    },
+    "cutoffSpeed": {
+      "label": "cutoffSpeed\n25 km/h",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 2
+    },
+    "energyBalance": {
+      "label": "Energy\nBalance",
+      "rank": 1,
+      "order": 0
+    },
+    "assistPowerLimit": {
+      "label": "Assist Power\nLimit",
+      "rank": 1,
+      "order": 1
+    },
+    "brakeLatencyLimit": {
+      "label": "Brake Latency\n<= 50 ms",
+      "rank": 1,
+      "order": 2
+    },
+    "rangeEstimate": {
+      "label": "Range\nEstimate",
+      "rank": 2,
+      "order": 0
+    },
+    "assistPower": {
+      "label": "assistPower\nlimited",
+      "symbol": "value_property",
+      "rank": 2,
+      "order": 1
+    },
+    "brakeLatency": {
+      "label": "brakeLatency\nmeasured",
+      "symbol": "value_property",
+      "rank": 2,
+      "order": 2
+    },
+    "rangeKm": {
+      "label": "rangeKm\n>= 60 km",
+      "symbol": "value_property",
+      "rank": 3,
+      "order": 0
+    }
+  },
+  "edges": [
+    {
+      "from": "packEnergy",
+      "to": "energyBalance",
+      "label": "bind"
+    },
+    {
+      "from": "riderPower",
+      "to": "energyBalance",
+      "label": "bind"
+    },
+    {
+      "from": "cutoffSpeed",
+      "to": "assistPowerLimit",
+      "label": "bind"
+    },
+    {
+      "from": "energyBalance",
+      "to": "rangeEstimate",
+      "label": "feeds"
+    },
+    {
+      "from": "assistPowerLimit",
+      "to": "rangeEstimate",
+      "label": "bounds"
+    },
+    {
+      "from": "rangeEstimate",
+      "to": "rangeKm",
+      "label": "result"
+    },
+    {
+      "from": "assistPowerLimit",
+      "to": "assistPower",
+      "label": "result"
+    },
+    {
+      "from": "brakeLatencyLimit",
+      "to": "brakeLatency",
+      "label": "limit"
+    }
+  ]
+}

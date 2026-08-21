@@ -343,7 +343,13 @@ def _connection(
     source_point = _anchor_point(boxes[parent.id], source_side)
     target_point = _anchor_point(boxes[child.id], target_side)
     primary_target = _primary_child_anchor(parent, boxes, target_side, direction)
-    waypoints = _tree_waypoints(source_point, target_point, direction, primary_target)
+    waypoints = _tree_waypoints(
+        source_point,
+        target_point,
+        direction,
+        primary_target,
+        child_box=boxes[child.id],
+    )
     labels = []
     if child.multiplicity:
         labels.append({
@@ -411,18 +417,29 @@ def _tree_waypoints(
     target: tuple[float, float],
     direction: str,
     primary_target: tuple[float, float] | None = None,
+    child_box: tuple[int, int, int, int] | None = None,
 ) -> list[dict[str, float]]:
     if direction in {"top-down", "bottom-up"}:
-        bus_target = primary_target or target
-        mid_y = (source[1] + bus_target[1]) / 2
+        first_row = primary_target or target
+        later_row = child_box is not None and abs(target[1] - first_row[1]) > 20
+        bus_y = (source[1] + first_row[1]) / 2
+        if later_row:
+            gap = (target[1] - source[1]) if direction == "top-down" else (source[1] - target[1])
+            stub = min(28, max(16, abs(gap) * 0.2))
+            bus_y = target[1] - stub if direction == "top-down" else target[1] + stub
         if source[0] == target[0]:
-            return [] if target[1] == bus_target[1] else _clean_waypoints([(source[0], mid_y)])
-        return _clean_waypoints([(source[0], mid_y), (target[0], mid_y)])
-    bus_target = primary_target or target
-    mid_x = (source[0] + bus_target[0]) / 2
+            return [] if not later_row and target[1] == first_row[1] else _clean_waypoints([(source[0], bus_y)])
+        return _clean_waypoints([(source[0], bus_y), (target[0], bus_y)])
+    first_row = primary_target or target
+    later_row = child_box is not None and abs(target[0] - first_row[0]) > 20
+    bus_x = (source[0] + first_row[0]) / 2
+    if later_row:
+        gap = (target[0] - source[0]) if direction == "left-right" else (source[0] - target[0])
+        stub = min(28, max(16, abs(gap) * 0.2))
+        bus_x = target[0] - stub if direction == "left-right" else target[0] + stub
     if source[1] == target[1]:
-        return [] if target[0] == bus_target[0] else _clean_waypoints([(mid_x, source[1])])
-    return _clean_waypoints([(mid_x, source[1]), (mid_x, target[1])])
+        return [] if not later_row and target[0] == first_row[0] else _clean_waypoints([(bus_x, source[1])])
+    return _clean_waypoints([(bus_x, source[1]), (bus_x, target[1])])
 
 
 def _clean_waypoints(points: list[tuple[float, float]]) -> list[dict[str, float]]:

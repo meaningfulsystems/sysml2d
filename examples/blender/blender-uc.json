@@ -5,6 +5,7 @@
   "subject": "Blender",
   "model_files": ["blender.sysml"],
   "direction": "left-right",
+  "col_gap": 180,
   "nodes": {
     "user": {"label": "User", "symbol": "actor", "rank": 0, "order": 0},
     "makeSmoothieUseCase": {"label": "Make Smoothie", "rank": 1, "order": 0},
@@ -15,9 +16,9 @@
     {"id": "blenderBoundary", "label": "Blender", "model_ref": "Blender", "members": ["makeSmoothieUseCase", "stopBlendUseCase", "cleanContainerUseCase"]}
   ],
   "edges": [
-    {"from": "user", "to": "makeSmoothieUseCase", "label": "uses", "source_offset": 0.35},
-    {"from": "user", "to": "stopBlendUseCase", "label": "uses", "source_offset": 0.5},
-    {"from": "user", "to": "cleanContainerUseCase", "label": "uses", "source_offset": 0.65},
+    {"from": "user", "to": "makeSmoothieUseCase", "source_offset": 0.35},
+    {"from": "user", "to": "stopBlendUseCase", "source_offset": 0.5},
+    {"from": "user", "to": "cleanContainerUseCase", "source_offset": 0.65},
     {"from": "stopBlendUseCase", "to": "makeSmoothieUseCase", "label": "extend", "style": "connector.extend"},
     {"from": "cleanContainerUseCase", "to": "makeSmoothieUseCase", "label": "include", "style": "connector.include"}
   ]

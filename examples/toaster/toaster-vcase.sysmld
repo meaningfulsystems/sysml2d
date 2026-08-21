@@ -21,77 +21,76 @@
     "elements": [
       {
         "id": "verifyToastBrowning",
-        "model_ref": "verifyToastBrowning",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 486,
+          "y": 78,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Verify Browning",
-        "style": "case"
+        "style": "case",
+        "model_ref": "verifyToastBrowning"
       },
       {
         "id": "verifyElectricalSafety",
-        "model_ref": "verifyElectricalSafety",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 666,
+          "y": 270,
           "width": 202,
           "height": 70,
           "z": 10
         },
         "label": "Verify Electrical Safety",
-        "style": "case"
+        "style": "case",
+        "model_ref": "verifyElectricalSafety"
       },
       {
         "id": "verifyCrumbTrayRemoval",
-        "model_ref": "verifyCrumbTrayRemoval",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 846,
+          "y": 462,
           "width": 153,
           "height": 70,
           "z": 10
         },
         "label": "Verify Crumb Tray",
-        "style": "case"
+        "style": "case",
+        "model_ref": "verifyCrumbTrayRemoval"
       },
       {
         "id": "verifyCarriageRelease",
-        "model_ref": "verifyCarriageRelease",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 1026,
+          "y": 654,
           "width": 195,
           "height": 70,
           "z": 10
         },
         "label": "Verify Carriage Release",
-        "style": "case"
+        "style": "case",
+        "model_ref": "verifyCarriageRelease"
       },
       {
         "id": "verifySurfaceTemperature",
-        "model_ref": "verifySurfaceTemperature",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 1206,
+          "y": 846,
           "width": 167,
           "height": 70,
           "z": 10
         },
         "label": "Verify Surface Temp",
-        "style": "case"
+        "style": "case",
+        "model_ref": "verifySurfaceTemperature"
       },
       {
         "id": "browningRequirement",
-        "model_ref": "browningRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 434,
@@ -101,11 +100,11 @@
           "z": 10
         },
         "label": "Browning Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "browningRequirement"
       },
       {
         "id": "browningLevelsRequirement",
-        "model_ref": "browningLevelsRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 434,
@@ -115,11 +114,11 @@
           "z": 10
         },
         "label": "Browning Levels Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "browningLevelsRequirement"
       },
       {
         "id": "electricalSafetyRequirement",
-        "model_ref": "electricalSafetyRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 434,
@@ -129,11 +128,11 @@
           "z": 10
         },
         "label": "Electrical Safety Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "electricalSafetyRequirement"
       },
       {
         "id": "powerRatingRequirement",
-        "model_ref": "powerRatingRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 434,
@@ -143,11 +142,11 @@
           "z": 10
         },
         "label": "Power Rating Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "powerRatingRequirement"
       },
       {
         "id": "thermalCutoffRequirement",
-        "model_ref": "thermalCutoffRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 434,
@@ -157,11 +156,11 @@
           "z": 10
         },
         "label": "Thermal Cutoff Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "thermalCutoffRequirement"
       },
       {
         "id": "crumbTrayForceRequirement",
-        "model_ref": "crumbTrayForceRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 434,
@@ -171,11 +170,11 @@
           "z": 10
         },
         "label": "Crumb Tray Force Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "crumbTrayForceRequirement"
       },
       {
         "id": "cleanabilityRequirement",
-        "model_ref": "cleanabilityRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 434,
@@ -185,11 +184,11 @@
           "z": 10
         },
         "label": "Cleanability Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "cleanabilityRequirement"
       },
       {
         "id": "carriageReleaseRequirement",
-        "model_ref": "carriageReleaseRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 434,
@@ -199,11 +198,11 @@
           "z": 10
         },
         "label": "Carriage Release Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "carriageReleaseRequirement"
       },
       {
         "id": "surfaceTemperatureRequirement",
-        "model_ref": "surfaceTemperatureRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 434,
@@ -213,13 +212,13 @@
           "z": 10
         },
         "label": "Surface Temp Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "surfaceTemperatureRequirement"
       }
     ],
     "connections": [
       {
         "id": "conn-verifyToastBrowning-browningRequirement",
-        "model_ref": "verifyToastBrowning",
         "source": {
           "element": "verifyToastBrowning",
           "anchor": {
@@ -236,31 +235,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 278,
-              "y": 521
-            },
-            {
-              "x": 278,
-              "y": 113
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyToastBrowning"
       },
       {
         "id": "conn-verifyToastBrowning-browningLevelsRequirement",
-        "model_ref": "verifyToastBrowning",
         "source": {
           "element": "verifyToastBrowning",
           "anchor": {
@@ -279,11 +268,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 278,
-              "y": 521
+              "x": 315.6,
+              "y": 113
             },
             {
-              "x": 278,
+              "x": 315.6,
               "y": 305
             }
           ]
@@ -292,16 +281,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyToastBrowning"
       },
       {
         "id": "conn-verifyElectricalSafety-electricalSafetyRequirement",
-        "model_ref": "verifyElectricalSafety",
         "source": {
           "element": "verifyElectricalSafety",
           "anchor": {
@@ -320,11 +308,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 330,
-              "y": 701
+              "x": 328.4,
+              "y": 305
             },
             {
-              "x": 330,
+              "x": 328.4,
               "y": 497
             }
           ]
@@ -333,16 +321,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyElectricalSafety"
       },
       {
         "id": "conn-verifyElectricalSafety-powerRatingRequirement",
-        "model_ref": "verifyElectricalSafety",
         "source": {
           "element": "verifyElectricalSafety",
           "anchor": {
@@ -361,11 +348,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 330,
-              "y": 701
+              "x": 341.2,
+              "y": 305
             },
             {
-              "x": 330,
+              "x": 341.2,
               "y": 689
             }
           ]
@@ -374,16 +361,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyElectricalSafety"
       },
       {
         "id": "conn-verifyElectricalSafety-thermalCutoffRequirement",
-        "model_ref": "verifyElectricalSafety",
         "source": {
           "element": "verifyElectricalSafety",
           "anchor": {
@@ -402,11 +388,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 330,
-              "y": 701
+              "x": 354,
+              "y": 305
             },
             {
-              "x": 330,
+              "x": 354,
               "y": 881
             }
           ]
@@ -415,16 +401,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyElectricalSafety"
       },
       {
         "id": "conn-verifyCrumbTrayRemoval-crumbTrayForceRequirement",
-        "model_ref": "verifyCrumbTrayRemoval",
         "source": {
           "element": "verifyCrumbTrayRemoval",
           "anchor": {
@@ -443,11 +428,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 281,
-              "y": 881
+              "x": 366.8,
+              "y": 497
             },
             {
-              "x": 281,
+              "x": 366.8,
               "y": 1073
             }
           ]
@@ -456,16 +441,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyCrumbTrayRemoval"
       },
       {
         "id": "conn-verifyCrumbTrayRemoval-cleanabilityRequirement",
-        "model_ref": "verifyCrumbTrayRemoval",
         "source": {
           "element": "verifyCrumbTrayRemoval",
           "anchor": {
@@ -484,11 +468,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 281,
-              "y": 881
+              "x": 379.6,
+              "y": 497
             },
             {
-              "x": 281,
+              "x": 379.6,
               "y": 1265
             }
           ]
@@ -497,16 +481,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyCrumbTrayRemoval"
       },
       {
         "id": "conn-verifyCarriageRelease-carriageReleaseRequirement",
-        "model_ref": "verifyCarriageRelease",
         "source": {
           "element": "verifyCarriageRelease",
           "anchor": {
@@ -525,11 +508,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 323,
-              "y": 1061
+              "x": 392.4,
+              "y": 689
             },
             {
-              "x": 323,
+              "x": 392.4,
               "y": 1457
             }
           ]
@@ -538,16 +521,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyCarriageRelease"
       },
       {
         "id": "conn-verifySurfaceTemperature-surfaceTemperatureRequirement",
-        "model_ref": "verifySurfaceTemperature",
         "source": {
           "element": "verifySurfaceTemperature",
           "anchor": {
@@ -566,11 +548,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 295,
-              "y": 1241
+              "x": 405.2,
+              "y": 881
             },
             {
-              "x": 295,
+              "x": 405.2,
               "y": 1649
             }
           ]
@@ -579,12 +561,12 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifySurfaceTemperature"
       }
     ],
     "annotations": [],

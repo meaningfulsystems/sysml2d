@@ -12,7 +12,7 @@
     "name": "Blender Allocations",
     "canvas": {
       "width": 937,
-      "height": 654,
+      "height": 650,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -21,7 +21,6 @@
     "elements": [
       {
         "id": "lidInterlockRequirement",
-        "model_ref": "lidInterlockRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 72,
@@ -31,11 +30,11 @@
           "z": 10
         },
         "label": "Lid Interlock Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "lidInterlockRequirement"
       },
       {
         "id": "motorControlRequirement",
-        "model_ref": "motorControlRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 72,
@@ -45,11 +44,11 @@
           "z": 10
         },
         "label": "Motor Control Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "motorControlRequirement"
       },
       {
         "id": "smoothnessDetectionRequirement",
-        "model_ref": "smoothnessDetectionRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 72,
@@ -59,25 +58,25 @@
           "z": 10
         },
         "label": "Smoothness Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "smoothnessDetectionRequirement"
       },
       {
         "id": "controlPanel",
-        "model_ref": "controlPanel",
         "symbol": "part_usage",
         "layout": {
           "x": 402,
-          "y": 90,
+          "y": 78,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Control Panel",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "controlPanel"
       },
       {
         "id": "motor",
-        "model_ref": "motor",
         "symbol": "part_usage",
         "layout": {
           "x": 402,
@@ -87,41 +86,41 @@
           "z": 10
         },
         "label": "Motor",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "motor"
       },
       {
         "id": "smoothnessSensor",
-        "model_ref": "smoothnessSensor",
         "symbol": "part_usage",
         "layout": {
           "x": 402,
-          "y": 450,
+          "y": 462,
           "width": 153,
           "height": 70,
           "z": 10
         },
         "label": "Smoothness Sensor",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "smoothnessSensor"
       },
       {
         "id": "spinBladeAssembly",
-        "model_ref": "spinBladeAssembly",
         "symbol": "action",
         "layout": {
           "x": 715,
-          "y": 270,
+          "y": 78,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Spin Blades",
-        "style": "action"
+        "style": "action",
+        "model_ref": "spinBladeAssembly"
       }
     ],
     "connections": [
       {
         "id": "conn-lidInterlockRequirement-controlPanel",
-        "model_ref": "allocateInterlockToControlPanel",
         "source": {
           "element": "lidInterlockRequirement",
           "anchor": {
@@ -138,31 +137,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 298,
-              "y": 113
-            },
-            {
-              "x": 298,
-              "y": 125
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "allocate",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.allocation"
+        "style": "connector.allocation",
+        "model_ref": "allocateInterlockToControlPanel"
       },
       {
         "id": "conn-motorControlRequirement-motor",
-        "model_ref": "allocateTorqueToMotor",
         "source": {
           "element": "motorControlRequirement",
           "anchor": {
@@ -185,16 +174,15 @@
           {
             "text": "allocate",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.allocation"
+        "style": "connector.allocation",
+        "model_ref": "allocateTorqueToMotor"
       },
       {
         "id": "conn-smoothnessDetectionRequirement-smoothnessSensor",
-        "model_ref": "allocateSmoothnessToSensor",
         "source": {
           "element": "smoothnessDetectionRequirement",
           "anchor": {
@@ -211,42 +199,32 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 298,
-              "y": 497
-            },
-            {
-              "x": 298,
-              "y": 485
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "allocate",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.allocation"
+        "style": "connector.allocation",
+        "model_ref": "allocateSmoothnessToSensor"
       },
       {
         "id": "conn-motorControlRequirement-spinBladeAssembly",
-        "model_ref": "allocateTorqueToMotor",
         "source": {
           "element": "motorControlRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "spinBladeAssembly",
           "anchor": {
-            "side": "left",
+            "side": "bottom",
             "offset": 0.5
           }
         },
@@ -254,12 +232,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 242,
-              "y": 582
+              "x": 157,
+              "y": 578
             },
             {
-              "x": 715,
-              "y": 582
+              "x": 790,
+              "y": 578
             }
           ]
         },
@@ -267,12 +245,12 @@
           {
             "text": "allocate",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.allocation"
+        "style": "connector.allocation",
+        "model_ref": "allocateTorqueToMotor"
       }
     ],
     "annotations": [],

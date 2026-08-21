@@ -1,0 +1,241 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-context",
+    "kind": "GeneralView",
+    "name": "Electric Bike Operating Context",
+    "canvas": {
+      "width": 954,
+      "height": 424,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "rider",
+        "symbol": "actor",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 70,
+          "height": 90,
+          "z": 10
+        },
+        "label": "Rider",
+        "style": "actor",
+        "model_ref": "rider"
+      },
+      {
+        "id": "charger",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 72,
+          "y": 282,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Charger",
+        "style": "part_usage",
+        "model_ref": "charger"
+      },
+      {
+        "id": "ElectricBike",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 382,
+          "y": 72,
+          "width": 190,
+          "height": 90,
+          "z": 10
+        },
+        "label": "Electric Bike",
+        "style": "part_usage",
+        "model_ref": "ElectricBike"
+      },
+      {
+        "id": "road",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 732,
+          "y": 82,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Road",
+        "style": "part_usage",
+        "model_ref": "road"
+      },
+      {
+        "id": "WheelTorque",
+        "symbol": "item",
+        "layout": {
+          "x": 732,
+          "y": 282,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Wheel Torque",
+        "style": "item",
+        "model_ref": "WheelTorque"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-rider-ElectricBike",
+        "source": {
+          "element": "rider",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ElectricBike",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "commands",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "riderCommandFlow"
+      },
+      {
+        "id": "conn-charger-ElectricBike",
+        "source": {
+          "element": "charger",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ElectricBike",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 323.333,
+              "y": 317
+            },
+            {
+              "x": 323.333,
+              "y": 117
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "charge",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "chargeEnergyFlow"
+      },
+      {
+        "id": "conn-ElectricBike-road",
+        "source": {
+          "element": "ElectricBike",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "road",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "tractive",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "roadLoadFlow"
+      },
+      {
+        "id": "conn-ElectricBike-WheelTorque",
+        "source": {
+          "element": "ElectricBike",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "WheelTorque",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 673.333,
+              "y": 117
+            },
+            {
+              "x": 673.333,
+              "y": 317
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "torque",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "motorTorqueFlow"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

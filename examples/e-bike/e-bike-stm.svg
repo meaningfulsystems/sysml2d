@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1361" height="570" viewBox="0 0 1361 570">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1361" height="570" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1357" height="528" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 528 L 544 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[stv.mb] Ride Control State Machine [rideControl : RideControl]</text>
+<rect x="2" y="38" width="1357" height="530" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="95" y="75" width="1222" height="413" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="105" y="97">rideControl</text>
+<circle id="initial" cx="155" cy="222" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="off" x="322" y="192" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="387" y="222">Off</text>
+<rect id="standby" x="553" y="125" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="618" y="155">Standby</text>
+<rect id="assist" x="785" y="192" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="850" y="222">Assist</text>
+<rect id="charging" x="553" y="258" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="618" y="288">Charging</text>
+<rect id="fault" x="1017" y="192" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1082" y="222">Fault</text>
+<path d="M 165,222 L 322,222" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 452,211.998 L 478,212 Q 486,212 486,204 L 486,163 Q 486,155 494,155 L 553,155" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 683,155 L 726,155 Q 734,155 734,163 L 734,214 Q 734,222 742,222 L 785,222" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 452,232.002 L 511,232 Q 519,232 519,240 L 519,280 Q 519,288 527,288 L 553,288" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 915,222 L 1017,222" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 850,252 L 850,272 Q 850,280 842,280 L 626,280 Q 618,280 618,272 L 618,185" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 618,318 L 618,338 Q 618,346 610,346 L 395,346 Q 387,346 387,338 L 387,252" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 618,125 L 618,105 Q 618,97 610,97 L 373,97 Q 365,97 365.028,105 L 365.329,192" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1082,192 L 1082,144 Q 1082,136 1074,136 L 417,136 Q 409,136 408.953,144 L 408.671,192" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="486" y="174.4">power button</text>
+<text class="small" x="746" y="178.45">cadence / throttle</text>
+<text class="small" x="531" y="243.2">charger in</text>
+<text class="small" text-anchor="middle" x="966" y="230">overcurrent</text>
+<text class="small" text-anchor="middle" x="768.8" y="288">no pedal / brake</text>
+<text class="small" text-anchor="middle" x="502.5" y="354">full / unplug</text>
+<text class="small" text-anchor="middle" x="491.5" y="105">power button</text>
+<text class="small" text-anchor="middle" x="745.5" y="144">reset</text>
+</g>
+</svg>

@@ -1,0 +1,69 @@
+{
+  "diagram": "e-bike-pkg",
+  "kind": "PackageView",
+  "name": "Electric Bike Packages",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "top-down",
+  "nodes": {
+    "BikeModel": {
+      "label": "Bike Model",
+      "rank": 0,
+      "order": 0
+    },
+    "BikeStructure": {
+      "label": "Structure",
+      "rank": 1,
+      "order": 0
+    },
+    "BikeBehavior": {
+      "label": "Behavior",
+      "rank": 1,
+      "order": 1
+    },
+    "BikeRequirements": {
+      "label": "Requirements",
+      "rank": 1,
+      "order": 2
+    },
+    "BikeAnalysis": {
+      "label": "Analysis",
+      "rank": 1,
+      "order": 3
+    },
+    "BikeVerification": {
+      "label": "Verification",
+      "rank": 1,
+      "order": 4
+    }
+  },
+  "edges": [
+    {
+      "from": "BikeModel",
+      "to": "BikeStructure",
+      "label": "contains"
+    },
+    {
+      "from": "BikeModel",
+      "to": "BikeBehavior",
+      "label": "contains"
+    },
+    {
+      "from": "BikeModel",
+      "to": "BikeRequirements",
+      "label": "contains"
+    },
+    {
+      "from": "BikeModel",
+      "to": "BikeAnalysis",
+      "label": "contains"
+    },
+    {
+      "from": "BikeModel",
+      "to": "BikeVerification",
+      "label": "contains"
+    }
+  ]
+}

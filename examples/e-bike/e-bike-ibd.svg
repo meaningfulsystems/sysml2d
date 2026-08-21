@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="568" viewBox="0 0 1400 568">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1400" height="568" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1396" height="526" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 504 L 520 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] Electric Bike Interconnection [bike : ElectricBike]</text>
+<rect x="2" y="38" width="1396" height="528" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="1316" height="446" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">bike</text>
+<rect id="bnd--humanInterface" x="34" y="95.994" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="bnd--batteryPack" x="34" y="418.006" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="bnd--hubMotor" x="1350" y="257" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="humanInterface" x="434" y="76" width="170" height="78" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="519" y="115">Human Interface</text>
+<rect id="brakeSystem" x="434" y="224" width="170" height="78" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="519" y="263">Brake System</text>
+<rect id="batteryPack" x="434" y="372" width="170" height="78" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="519" y="411">Battery Pack</text>
+<rect id="motorController" x="792" y="224" width="170" height="78" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="877" y="263">Motor Controller</text>
+<rect id="hubMotor" x="1150" y="224" width="170" height="78" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1235" y="263">Hub Motor</text>
+<rect id="frame" x="76" y="224" width="170" height="78" rx="4" fill="#F5F5F5" stroke="#616161" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="161" y="263">Frame</text>
+<rect id="humanInterface--bnd--tgt" x="428" y="95.9974" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--humanInterface--tgt" x="428" y="122.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="humanInterface--motorController--src" x="598" y="109" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--brakeSystem--tgt" x="428" y="257" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="brakeSystem--motorController--src" x="598" y="257" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--batteryPack--tgt" x="428" y="391.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="batteryPack--bnd--tgt" x="428" y="418.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="batteryPack--motorController--src" x="598" y="405" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="humanInterface--motorController--tgt" x="786" y="237.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="brakeSystem--motorController--tgt" x="786" y="257" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="batteryPack--motorController--tgt" x="786" y="276.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="motorController--hubMotor--src" x="956" y="257" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--hubMotor--tgt" x="1144" y="243.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="motorController--hubMotor--tgt" x="1144" y="270.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="hubMotor--bnd--tgt" x="1314" y="257" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--humanInterface--src" x="240" y="233.6" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--brakeSystem--src" x="240" y="249.2" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--hubMotor--src" x="240" y="264.8" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--batteryPack--src" x="240" y="280.4" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 252,286.4 L 375,286.4 L 375,397.997 L 428,397.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 252,270.8 L 298,270.8 L 298,249.997 L 1144,249.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 252,239.6 L 305,239.6 L 305,128.003 L 428,128.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 252,255.2 L 291,255.2 A 7 7 0 0 0 305,255.2 L 340,255.2 L 340,263 L 428,263" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 610,411 L 733,411 L 733,282.5 L 786,282.5" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 968,263 L 1056,263 L 1056,276.003 L 1144,276.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 610,115 L 663,115 L 663,243.5 L 786,243.5" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 610,263 L 786,263" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 46,101.994 L 428,101.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 46,424.006 L 428,424.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1350,263 L 1326,263" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="58" y="83.994">rider</text>
+<text class="small" x="58" y="406.006">charger</text>
+<text class="small" text-anchor="end" x="1338" y="245">road load</text>
+<text class="small" text-anchor="middle" x="313.5" y="309.4">mount</text>
+<text class="small" text-anchor="middle" x="721" y="237.997">mount</text>
+<text class="small" text-anchor="middle" x="366.5" y="116.003">mount</text>
+<text class="small" text-anchor="middle" x="322.4" y="278.2">mount</text>
+<text class="small" x="745" y="346.75">pack power</text>
+<text class="small" text-anchor="middle" x="1086.8" y="264.003">phase drive</text>
+<text class="small" x="675" y="179.25">assist command</text>
+<text class="small" text-anchor="middle" x="698" y="286">inhibit</text>
+</g>
+</svg>

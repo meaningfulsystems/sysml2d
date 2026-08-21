@@ -21,7 +21,6 @@
     "elements": [
       {
         "id": "blendStart",
-        "model_ref": null,
         "symbol": "initial_state",
         "layout": {
           "x": 137,
@@ -35,7 +34,6 @@
       },
       {
         "id": "loadIngredients",
-        "model_ref": "loadIngredients",
         "symbol": "action",
         "layout": {
           "x": 72,
@@ -45,11 +43,11 @@
           "z": 10
         },
         "label": "Load Ingredients",
-        "style": "action"
+        "style": "action",
+        "model_ref": "loadIngredients"
       },
       {
         "id": "closeLid",
-        "model_ref": "closeLid",
         "symbol": "action",
         "layout": {
           "x": 72,
@@ -59,11 +57,11 @@
           "z": 10
         },
         "label": "Close Lid",
-        "style": "action"
+        "style": "action",
+        "model_ref": "closeLid"
       },
       {
         "id": "powerOnBlender",
-        "model_ref": "powerOnBlender",
         "symbol": "action",
         "layout": {
           "x": 72,
@@ -73,11 +71,11 @@
           "z": 10
         },
         "label": "Power On",
-        "style": "action"
+        "style": "action",
+        "model_ref": "powerOnBlender"
       },
       {
         "id": "startBlendProgram",
-        "model_ref": "startBlendProgram",
         "symbol": "action",
         "layout": {
           "x": 72,
@@ -87,11 +85,11 @@
           "z": 10
         },
         "label": "Start Program",
-        "style": "action"
+        "style": "action",
+        "model_ref": "startBlendProgram"
       },
       {
         "id": "spinBladeAssembly",
-        "model_ref": "spinBladeAssembly",
         "symbol": "action",
         "layout": {
           "x": 72,
@@ -101,11 +99,11 @@
           "z": 10
         },
         "label": "Spin Blades",
-        "style": "action"
+        "style": "action",
+        "model_ref": "spinBladeAssembly"
       },
       {
         "id": "senseSmoothness",
-        "model_ref": "senseSmoothness",
         "symbol": "action",
         "layout": {
           "x": 72,
@@ -115,11 +113,11 @@
           "z": 10
         },
         "label": "Sense Smoothness",
-        "style": "action"
+        "style": "action",
+        "model_ref": "senseSmoothness"
       },
       {
         "id": "smoothEnough",
-        "model_ref": null,
         "symbol": "decision_node",
         "layout": {
           "x": 105.5,
@@ -133,7 +131,6 @@
       },
       {
         "id": "stopMotor",
-        "model_ref": "stopMotor",
         "symbol": "action",
         "layout": {
           "x": 72,
@@ -143,11 +140,11 @@
           "z": 10
         },
         "label": "Stop Motor",
-        "style": "action"
+        "style": "action",
+        "model_ref": "stopMotor"
       },
       {
         "id": "pourSmoothie",
-        "model_ref": "pourSmoothie",
         "symbol": "action",
         "layout": {
           "x": 72,
@@ -157,11 +154,11 @@
           "z": 10
         },
         "label": "Pour Smoothie",
-        "style": "action"
+        "style": "action",
+        "model_ref": "pourSmoothie"
       },
       {
         "id": "blendEnd",
-        "model_ref": null,
         "symbol": "activity_final_node",
         "layout": {
           "x": 135,
@@ -177,7 +174,6 @@
     "connections": [
       {
         "id": "conn-blendStart-loadIngredients",
-        "model_ref": "loadIngredients",
         "source": {
           "element": "blendStart",
           "anchor": {
@@ -197,11 +193,11 @@
           "waypoints": []
         },
         "labels": [],
-        "style": "connector.control_flow"
+        "style": "connector.control_flow",
+        "model_ref": "loadIngredients"
       },
       {
         "id": "conn-loadIngredients-closeLid",
-        "model_ref": "loadIngredients",
         "source": {
           "element": "loadIngredients",
           "anchor": {
@@ -221,11 +217,11 @@
           "waypoints": []
         },
         "labels": [],
-        "style": "connector.control_flow"
+        "style": "connector.control_flow",
+        "model_ref": "loadIngredients"
       },
       {
         "id": "conn-closeLid-powerOnBlender",
-        "model_ref": "closeLid",
         "source": {
           "element": "closeLid",
           "anchor": {
@@ -245,11 +241,11 @@
           "waypoints": []
         },
         "labels": [],
-        "style": "connector.control_flow"
+        "style": "connector.control_flow",
+        "model_ref": "closeLid"
       },
       {
         "id": "conn-powerOnBlender-startBlendProgram",
-        "model_ref": "powerOnBlender",
         "source": {
           "element": "powerOnBlender",
           "anchor": {
@@ -269,11 +265,11 @@
           "waypoints": []
         },
         "labels": [],
-        "style": "connector.control_flow"
+        "style": "connector.control_flow",
+        "model_ref": "powerOnBlender"
       },
       {
         "id": "conn-startBlendProgram-spinBladeAssembly",
-        "model_ref": "startBlendProgram",
         "source": {
           "element": "startBlendProgram",
           "anchor": {
@@ -293,11 +289,11 @@
           "waypoints": []
         },
         "labels": [],
-        "style": "connector.control_flow"
+        "style": "connector.control_flow",
+        "model_ref": "startBlendProgram"
       },
       {
         "id": "conn-spinBladeAssembly-senseSmoothness",
-        "model_ref": "spinBladeAssembly",
         "source": {
           "element": "spinBladeAssembly",
           "anchor": {
@@ -317,11 +313,11 @@
           "waypoints": []
         },
         "labels": [],
-        "style": "connector.control_flow"
+        "style": "connector.control_flow",
+        "model_ref": "spinBladeAssembly"
       },
       {
         "id": "conn-senseSmoothness-smoothEnough",
-        "model_ref": "senseSmoothness",
         "source": {
           "element": "senseSmoothness",
           "anchor": {
@@ -341,11 +337,11 @@
           "waypoints": []
         },
         "labels": [],
-        "style": "connector.control_flow"
+        "style": "connector.control_flow",
+        "model_ref": "senseSmoothness"
       },
       {
         "id": "conn-smoothEnough-spinBladeAssembly",
-        "model_ref": "senseSmoothness",
         "source": {
           "element": "smoothEnough",
           "anchor": {
@@ -377,16 +373,15 @@
           {
             "text": "not yet",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.control_flow"
+        "style": "connector.control_flow",
+        "model_ref": "senseSmoothness"
       },
       {
         "id": "conn-smoothEnough-stopMotor",
-        "model_ref": "stopMotor",
         "source": {
           "element": "smoothEnough",
           "anchor": {
@@ -409,16 +404,15 @@
           {
             "text": "complete",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.control_flow"
+        "style": "connector.control_flow",
+        "model_ref": "stopMotor"
       },
       {
         "id": "conn-stopMotor-pourSmoothie",
-        "model_ref": "stopMotor",
         "source": {
           "element": "stopMotor",
           "anchor": {
@@ -438,11 +432,11 @@
           "waypoints": []
         },
         "labels": [],
-        "style": "connector.control_flow"
+        "style": "connector.control_flow",
+        "model_ref": "stopMotor"
       },
       {
         "id": "conn-pourSmoothie-blendEnd",
-        "model_ref": "pourSmoothie",
         "source": {
           "element": "pourSmoothie",
           "anchor": {
@@ -462,7 +456,8 @@
           "waypoints": []
         },
         "labels": [],
-        "style": "connector.control_flow"
+        "style": "connector.control_flow",
+        "model_ref": "pourSmoothie"
       }
     ],
     "annotations": [],

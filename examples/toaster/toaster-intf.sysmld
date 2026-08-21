@@ -21,7 +21,6 @@
     "elements": [
       {
         "id": "UserInterface",
-        "model_ref": "UserInterface",
         "symbol": "interface",
         "layout": {
           "x": 72,
@@ -31,11 +30,11 @@
           "z": 10
         },
         "label": "User Interface",
-        "style": "interface"
+        "style": "interface",
+        "model_ref": "UserInterface"
       },
       {
         "id": "PowerInterface",
-        "model_ref": "PowerInterface",
         "symbol": "interface",
         "layout": {
           "x": 72,
@@ -45,11 +44,11 @@
           "z": 10
         },
         "label": "Power Interface",
-        "style": "interface"
+        "style": "interface",
+        "model_ref": "PowerInterface"
       },
       {
         "id": "MechanicalInterface",
-        "model_ref": "MechanicalInterface",
         "symbol": "interface",
         "layout": {
           "x": 72,
@@ -59,11 +58,11 @@
           "z": 10
         },
         "label": "Mechanical Interface",
-        "style": "interface"
+        "style": "interface",
+        "model_ref": "MechanicalInterface"
       },
       {
         "id": "ThermalInterface",
-        "model_ref": "ThermalInterface",
         "symbol": "interface",
         "layout": {
           "x": 72,
@@ -73,11 +72,11 @@
           "z": 10
         },
         "label": "Thermal Interface",
-        "style": "interface"
+        "style": "interface",
+        "model_ref": "ThermalInterface"
       },
       {
         "id": "UserCommand",
-        "model_ref": "UserCommand",
         "symbol": "item",
         "layout": {
           "x": 406,
@@ -87,11 +86,11 @@
           "z": 10
         },
         "label": "UserCommand",
-        "style": "item"
+        "style": "item",
+        "model_ref": "UserCommand"
       },
       {
         "id": "ElectricalEnergy",
-        "model_ref": "ElectricalEnergy",
         "symbol": "item",
         "layout": {
           "x": 406,
@@ -101,11 +100,11 @@
           "z": 10
         },
         "label": "ElectricalEnergy",
-        "style": "item"
+        "style": "item",
+        "model_ref": "ElectricalEnergy"
       },
       {
         "id": "BreadSlice",
-        "model_ref": "BreadSlice",
         "symbol": "item",
         "layout": {
           "x": 406,
@@ -115,11 +114,11 @@
           "z": 10
         },
         "label": "BreadSlice",
-        "style": "item"
+        "style": "item",
+        "model_ref": "BreadSlice"
       },
       {
         "id": "HeatEnergy",
-        "model_ref": "HeatEnergy",
         "symbol": "item",
         "layout": {
           "x": 406,
@@ -129,13 +128,13 @@
           "z": 10
         },
         "label": "HeatEnergy",
-        "style": "item"
+        "style": "item",
+        "model_ref": "HeatEnergy"
       }
     ],
     "connections": [
       {
         "id": "conn-UserInterface-UserCommand",
-        "model_ref": "UserInterface",
         "source": {
           "element": "UserInterface",
           "anchor": {
@@ -158,16 +157,15 @@
           {
             "text": "carries",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "UserInterface"
       },
       {
         "id": "conn-PowerInterface-ElectricalEnergy",
-        "model_ref": "PowerInterface",
         "source": {
           "element": "PowerInterface",
           "anchor": {
@@ -190,16 +188,15 @@
           {
             "text": "carries",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "PowerInterface"
       },
       {
         "id": "conn-MechanicalInterface-BreadSlice",
-        "model_ref": "MechanicalInterface",
         "source": {
           "element": "MechanicalInterface",
           "anchor": {
@@ -222,16 +219,15 @@
           {
             "text": "positions",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "MechanicalInterface"
       },
       {
         "id": "conn-ThermalInterface-HeatEnergy",
-        "model_ref": "ThermalInterface",
         "source": {
           "element": "ThermalInterface",
           "anchor": {
@@ -254,12 +250,12 @@
           {
             "text": "carries",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "ThermalInterface"
       }
     ],
     "annotations": [],

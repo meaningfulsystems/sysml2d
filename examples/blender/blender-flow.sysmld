@@ -12,7 +12,7 @@
     "name": "Blender Item, Power, and Signal Flows",
     "canvas": {
       "width": 1537,
-      "height": 414,
+      "height": 424,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -21,7 +21,6 @@
     "elements": [
       {
         "id": "user",
-        "model_ref": "user",
         "symbol": "actor",
         "layout": {
           "x": 72,
@@ -31,25 +30,25 @@
           "z": 10
         },
         "label": "User",
-        "style": "actor"
+        "style": "actor",
+        "model_ref": "user"
       },
       {
         "id": "mainsSupply",
-        "model_ref": "mainsSupply",
         "symbol": "part_usage",
         "layout": {
           "x": 72,
-          "y": 272,
+          "y": 282,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Mains Supply",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "mainsSupply"
       },
       {
         "id": "container",
-        "model_ref": "container",
         "symbol": "part_usage",
         "layout": {
           "x": 382,
@@ -59,53 +58,53 @@
           "z": 10
         },
         "label": "Container",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "container"
       },
       {
         "id": "controlPanel",
-        "model_ref": "controlPanel",
         "symbol": "part_usage",
         "layout": {
           "x": 382,
-          "y": 262,
+          "y": 282,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Control Panel",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "controlPanel"
       },
       {
         "id": "motor",
-        "model_ref": "motor",
         "symbol": "part_usage",
         "layout": {
           "x": 692,
-          "y": 172,
+          "y": 82,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Motor",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "motor"
       },
       {
         "id": "driveCoupling",
-        "model_ref": "driveCoupling",
         "symbol": "part_usage",
         "layout": {
           "x": 1002,
-          "y": 172,
+          "y": 82,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Drive Coupling",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "driveCoupling"
       },
       {
         "id": "bladeAssembly",
-        "model_ref": "bladeAssembly",
         "symbol": "part_usage",
         "layout": {
           "x": 1312,
@@ -115,27 +114,27 @@
           "z": 10
         },
         "label": "Blade Assembly",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "bladeAssembly"
       },
       {
         "id": "smoothnessSensor",
-        "model_ref": "smoothnessSensor",
         "symbol": "part_usage",
         "layout": {
           "x": 1312,
-          "y": 262,
+          "y": 282,
           "width": 153,
           "height": 70,
           "z": 10
         },
         "label": "Smoothness Sensor",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "smoothnessSensor"
       }
     ],
     "connections": [
       {
         "id": "conn-user-container",
-        "model_ref": "ingredientsIntoContainer",
         "source": {
           "element": "user",
           "anchor": {
@@ -158,16 +157,15 @@
           {
             "text": "ingredients",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.flow"
+        "style": "connector.flow",
+        "model_ref": "ingredientsIntoContainer"
       },
       {
         "id": "conn-user-controlPanel",
-        "model_ref": "commandToControlPanel",
         "source": {
           "element": "user",
           "anchor": {
@@ -186,12 +184,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 226,
+              "x": 302,
               "y": 117
             },
             {
-              "x": 226,
-              "y": 297
+              "x": 302,
+              "y": 317
             }
           ]
         },
@@ -199,16 +197,15 @@
           {
             "text": "command",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.flow"
+        "style": "connector.flow",
+        "model_ref": "commandToControlPanel"
       },
       {
         "id": "conn-mainsSupply-controlPanel",
-        "model_ref": "mainsPowerFlow",
         "source": {
           "element": "mainsSupply",
           "anchor": {
@@ -225,31 +222,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 278,
-              "y": 307
-            },
-            {
-              "x": 278,
-              "y": 297
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "power",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.flow"
+        "style": "connector.flow",
+        "model_ref": "mainsPowerFlow"
       },
       {
         "id": "conn-controlPanel-motor",
-        "model_ref": "commandToControlPanel",
         "source": {
           "element": "controlPanel",
           "anchor": {
@@ -268,12 +255,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 588,
-              "y": 297
+              "x": 612,
+              "y": 317
             },
             {
-              "x": 588,
-              "y": 207
+              "x": 612,
+              "y": 117
             }
           ]
         },
@@ -281,16 +268,15 @@
           {
             "text": "drive command",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.flow"
+        "style": "connector.flow",
+        "model_ref": "commandToControlPanel"
       },
       {
         "id": "conn-motor-driveCoupling",
-        "model_ref": "motorTorqueFlow",
         "source": {
           "element": "motor",
           "anchor": {
@@ -313,16 +299,15 @@
           {
             "text": "torque",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.flow"
+        "style": "connector.flow",
+        "model_ref": "motorTorqueFlow"
       },
       {
         "id": "conn-driveCoupling-bladeAssembly",
-        "model_ref": "bladeShearFlow",
         "source": {
           "element": "driveCoupling",
           "anchor": {
@@ -339,31 +324,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 1208,
-              "y": 207
-            },
-            {
-              "x": 1208,
-              "y": 117
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "rotation",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.flow"
+        "style": "connector.flow",
+        "model_ref": "bladeShearFlow"
       },
       {
         "id": "conn-driveCoupling-smoothnessSensor",
-        "model_ref": "smoothnessFeedbackFlow",
         "source": {
           "element": "driveCoupling",
           "anchor": {
@@ -382,12 +357,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1208,
-              "y": 207
+              "x": 1253.333,
+              "y": 117
             },
             {
-              "x": 1208,
-              "y": 297
+              "x": 1253.333,
+              "y": 317
             }
           ]
         },
@@ -395,12 +370,12 @@
           {
             "text": "feedback",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.flow"
+        "style": "connector.flow",
+        "model_ref": "smoothnessFeedbackFlow"
       }
     ],
     "annotations": [],

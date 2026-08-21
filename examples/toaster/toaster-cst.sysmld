@@ -12,7 +12,7 @@
     "name": "Toaster Parametrics",
     "canvas": {
       "width": 1311,
-      "height": 598,
+      "height": 638,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -21,21 +21,20 @@
     "elements": [
       {
         "id": "targetBrowning",
-        "model_ref": "targetBrowning",
         "symbol": "value_property",
         "layout": {
           "x": 72,
-          "y": 102,
+          "y": 82,
           "width": 132,
           "height": 58,
           "z": 10
         },
         "label": "targetBrowning\n7 levels",
-        "style": "value_property"
+        "style": "value_property",
+        "model_ref": "targetBrowning"
       },
       {
         "id": "inputPower",
-        "model_ref": "inputPower",
         "symbol": "value_property",
         "layout": {
           "x": 72,
@@ -45,25 +44,25 @@
           "z": 10
         },
         "label": "inputPower\n900-1200 W",
-        "style": "value_property"
+        "style": "value_property",
+        "model_ref": "inputPower"
       },
       {
         "id": "toastDuration",
-        "model_ref": "toastDuration",
         "symbol": "value_property",
         "layout": {
           "x": 72,
-          "y": 438,
+          "y": 458,
           "width": 167,
           "height": 58,
           "z": 10
         },
         "label": "toastDuration\n90-150 s at level 4",
-        "style": "value_property"
+        "style": "value_property",
+        "model_ref": "toastDuration"
       },
       {
         "id": "heatEnergyBalance",
-        "model_ref": "heatEnergyBalance",
         "symbol": "constraint",
         "layout": {
           "x": 399,
@@ -73,11 +72,11 @@
           "z": 10
         },
         "label": "Heat Energy\nBalance",
-        "style": "constraint"
+        "style": "constraint",
+        "model_ref": "heatEnergyBalance"
       },
       {
         "id": "electricalPowerLimit",
-        "model_ref": "electricalPowerLimit",
         "symbol": "constraint",
         "layout": {
           "x": 399,
@@ -87,11 +86,11 @@
           "z": 10
         },
         "label": "Electrical Power\nLimit <= 1200 W",
-        "style": "constraint"
+        "style": "constraint",
+        "model_ref": "electricalPowerLimit"
       },
       {
         "id": "toastTimingEstimate",
-        "model_ref": "toastTimingEstimate",
         "symbol": "constraint",
         "layout": {
           "x": 399,
@@ -101,11 +100,11 @@
           "z": 10
         },
         "label": "Toast Timing\nEstimate",
-        "style": "constraint"
+        "style": "constraint",
+        "model_ref": "toastTimingEstimate"
       },
       {
         "id": "browningTemperatureEstimate",
-        "model_ref": "browningTemperatureEstimate",
         "symbol": "constraint",
         "layout": {
           "x": 739,
@@ -115,11 +114,11 @@
           "z": 10
         },
         "label": "Browning Temp\nEstimate",
-        "style": "constraint"
+        "style": "constraint",
+        "model_ref": "browningTemperatureEstimate"
       },
       {
         "id": "surfaceTemperatureLimit",
-        "model_ref": "surfaceTemperatureLimit",
         "symbol": "constraint",
         "layout": {
           "x": 739,
@@ -129,11 +128,11 @@
           "z": 10
         },
         "label": "Surface Temp\nLimit <= 60 C",
-        "style": "constraint"
+        "style": "constraint",
+        "model_ref": "surfaceTemperatureLimit"
       },
       {
         "id": "carriageReleaseTiming",
-        "model_ref": "carriageReleaseTiming",
         "symbol": "constraint",
         "layout": {
           "x": 739,
@@ -143,25 +142,25 @@
           "z": 10
         },
         "label": "Carriage Release\n<= 2 s",
-        "style": "constraint"
+        "style": "constraint",
+        "model_ref": "carriageReleaseTiming"
       },
       {
         "id": "toastTemperature",
-        "model_ref": "toastTemperature",
         "symbol": "value_property",
         "layout": {
           "x": 1079,
-          "y": 102,
+          "y": 82,
           "width": 146,
           "height": 58,
           "z": 10
         },
         "label": "toastTemperature\ncontrolled range",
-        "style": "value_property"
+        "style": "value_property",
+        "model_ref": "toastTemperature"
       },
       {
         "id": "surfaceTemperature",
-        "model_ref": "surfaceTemperature",
         "symbol": "value_property",
         "layout": {
           "x": 1079,
@@ -171,27 +170,27 @@
           "z": 10
         },
         "label": "surfaceTemperature\nexternal touch",
-        "style": "value_property"
+        "style": "value_property",
+        "model_ref": "surfaceTemperature"
       },
       {
         "id": "releaseTime",
-        "model_ref": "releaseTime",
         "symbol": "value_property",
         "layout": {
           "x": 1079,
-          "y": 438,
+          "y": 458,
           "width": 130,
           "height": 58,
           "z": 10
         },
         "label": "releaseTime\n<= 2 s",
-        "style": "value_property"
+        "style": "value_property",
+        "model_ref": "releaseTime"
       }
     ],
     "connections": [
       {
         "id": "conn-inputPower-heatEnergyBalance",
-        "model_ref": "inputPower",
         "source": {
           "element": "inputPower",
           "anchor": {
@@ -207,23 +206,31 @@
           }
         },
         "route": {
-          "kind": "polyline",
-          "waypoints": []
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 300.5,
+              "y": 299
+            },
+            {
+              "x": 300.5,
+              "y": 111
+            }
+          ]
         },
         "labels": [
           {
             "text": "bind",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "inputPower"
       },
       {
         "id": "conn-toastDuration-toastTimingEstimate",
-        "model_ref": "toastDuration",
         "source": {
           "element": "toastDuration",
           "anchor": {
@@ -239,55 +246,62 @@
           }
         },
         "route": {
-          "kind": "polyline",
+          "kind": "orthogonal",
           "waypoints": []
         },
         "labels": [
           {
             "text": "bind",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "toastDuration"
       },
       {
         "id": "conn-targetBrowning-browningTemperatureEstimate",
-        "model_ref": "targetBrowning",
         "source": {
           "element": "targetBrowning",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "browningTemperatureEstimate",
           "anchor": {
-            "side": "left",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "route": {
-          "kind": "polyline",
-          "waypoints": []
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 138,
+              "y": 566
+            },
+            {
+              "x": 829,
+              "y": 566
+            }
+          ]
         },
         "labels": [
           {
             "text": "bind",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "targetBrowning"
       },
       {
         "id": "conn-heatEnergyBalance-browningTemperatureEstimate",
-        "model_ref": "heatEnergyBalance",
         "source": {
           "element": "heatEnergyBalance",
           "anchor": {
@@ -303,23 +317,22 @@
           }
         },
         "route": {
-          "kind": "polyline",
+          "kind": "orthogonal",
           "waypoints": []
         },
         "labels": [
           {
             "text": "bind",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "heatEnergyBalance"
       },
       {
         "id": "conn-electricalPowerLimit-inputPower",
-        "model_ref": "electricalPowerLimit",
         "source": {
           "element": "electricalPowerLimit",
           "anchor": {
@@ -342,16 +355,15 @@
           {
             "text": "limit",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "electricalPowerLimit"
       },
       {
         "id": "conn-browningTemperatureEstimate-toastTemperature",
-        "model_ref": "browningTemperatureEstimate",
         "source": {
           "element": "browningTemperatureEstimate",
           "anchor": {
@@ -368,31 +380,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 975,
-              "y": 111
-            },
-            {
-              "x": 975,
-              "y": 131
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "result",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "browningTemperatureEstimate"
       },
       {
         "id": "conn-heatEnergyBalance-surfaceTemperatureLimit",
-        "model_ref": "heatEnergyBalance",
         "source": {
           "element": "heatEnergyBalance",
           "anchor": {
@@ -411,11 +413,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 635,
+              "x": 680.333,
               "y": 111
             },
             {
-              "x": 635,
+              "x": 680.333,
               "y": 299
             }
           ]
@@ -424,16 +426,15 @@
           {
             "text": "bounds",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "heatEnergyBalance"
       },
       {
         "id": "conn-surfaceTemperatureLimit-surfaceTemperature",
-        "model_ref": "surfaceTemperatureLimit",
         "source": {
           "element": "surfaceTemperatureLimit",
           "anchor": {
@@ -456,16 +457,15 @@
           {
             "text": "result",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "surfaceTemperatureLimit"
       },
       {
         "id": "conn-toastTimingEstimate-carriageReleaseTiming",
-        "model_ref": "toastTimingEstimate",
         "source": {
           "element": "toastTimingEstimate",
           "anchor": {
@@ -488,16 +488,15 @@
           {
             "text": "bounds",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "toastTimingEstimate"
       },
       {
         "id": "conn-carriageReleaseTiming-releaseTime",
-        "model_ref": "carriageReleaseTiming",
         "source": {
           "element": "carriageReleaseTiming",
           "anchor": {
@@ -514,27 +513,18 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 975,
-              "y": 487
-            },
-            {
-              "x": 975,
-              "y": 467
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "result",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "carriageReleaseTiming"
       }
     ],
     "annotations": [],

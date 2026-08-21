@@ -31,9 +31,9 @@
 <path d="M 222,287 L 406,287" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 246,467 L 406,467" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 225,647 L 406,647" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" text-anchor="middle" x="314" y="115">carries</text>
-<text class="small" text-anchor="middle" x="314" y="295">carries</text>
-<text class="small" text-anchor="middle" x="326" y="475">positions</text>
-<text class="small" text-anchor="middle" x="315.5" y="655">carries</text>
+<text class="small" text-anchor="middle" x="314" y="95">carries</text>
+<text class="small" text-anchor="middle" x="314" y="275">carries</text>
+<text class="small" text-anchor="middle" x="326" y="455">positions</text>
+<text class="small" text-anchor="middle" x="315.5" y="635">carries</text>
 </g>
 </svg>

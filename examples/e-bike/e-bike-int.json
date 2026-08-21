@@ -1,0 +1,70 @@
+{
+  "diagram": "e-bike-int",
+  "kind": "InteractionView",
+  "name": "Rider Assist Interaction",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "lifelines": {
+    "rider": {
+      "label": "Rider"
+    },
+    "humanInterface": {
+      "label": "Human Interface"
+    },
+    "motorController": {
+      "label": "Controller"
+    },
+    "hubMotor": {
+      "label": "Hub Motor"
+    },
+    "brakeSystem": {
+      "label": "Brakes"
+    }
+  },
+  "messages": [
+    {
+      "id": "msgPower",
+      "from": "rider",
+      "to": "humanInterface",
+      "label": "power on",
+      "model_ref": "powerOnBike"
+    },
+    {
+      "id": "msgAssist",
+      "from": "humanInterface",
+      "to": "motorController",
+      "label": "assist level",
+      "model_ref": "interfaceToController"
+    },
+    {
+      "id": "msgTorque",
+      "from": "motorController",
+      "to": "hubMotor",
+      "label": "phase current",
+      "model_ref": "controllerToMotor"
+    },
+    {
+      "id": "msgBrake",
+      "from": "rider",
+      "to": "brakeSystem",
+      "label": "lever",
+      "model_ref": "applyBrake"
+    },
+    {
+      "id": "msgInhibit",
+      "from": "brakeSystem",
+      "to": "motorController",
+      "label": "inhibit",
+      "model_ref": "brakesToController"
+    },
+    {
+      "id": "msgStop",
+      "from": "motorController",
+      "to": "hubMotor",
+      "label": "torque off",
+      "model_ref": "inhibitMotor"
+    }
+  ]
+}

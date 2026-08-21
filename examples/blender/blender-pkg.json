@@ -10,8 +10,8 @@
     "BlenderStructure": {"label": "Structure", "rank": 1, "order": 0},
     "BlenderBehavior": {"label": "Behavior", "rank": 1, "order": 1},
     "BlenderRequirements": {"label": "Requirements", "rank": 1, "order": 2},
-    "BlenderAnalysis": {"label": "Analysis", "rank": 2, "order": 0},
-    "BlenderVerification": {"label": "Verification", "rank": 2, "order": 1}
+    "BlenderAnalysis": {"label": "Analysis", "rank": 1, "order": 3},
+    "BlenderVerification": {"label": "Verification", "rank": 1, "order": 4}
   },
   "edges": [
     {"from": "BlenderModel", "to": "BlenderStructure", "label": "contains"},

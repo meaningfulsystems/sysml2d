@@ -1,0 +1,68 @@
+{
+  "diagram": "e-bike-acase",
+  "kind": "AnalysisCaseView",
+  "name": "Electric Bike Analysis Cases",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "nodes": {
+    "rangeAnalysis": {
+      "label": "Range Analysis",
+      "rank": 0,
+      "order": 0
+    },
+    "brakeLatencyAnalysis": {
+      "label": "Brake Latency",
+      "rank": 0,
+      "order": 1
+    },
+    "energyBalance": {
+      "label": "Energy Balance",
+      "symbol": "constraint",
+      "rank": 1,
+      "order": 0
+    },
+    "brakeLatencyLimit": {
+      "label": "Brake Latency Limit",
+      "symbol": "constraint",
+      "rank": 1,
+      "order": 1
+    },
+    "rangeRequirement": {
+      "label": "Range Req",
+      "symbol": "requirement",
+      "rank": 2,
+      "order": 0
+    },
+    "brakeOverrideRequirement": {
+      "label": "Brake Override Req",
+      "symbol": "requirement",
+      "rank": 2,
+      "order": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "rangeAnalysis",
+      "to": "energyBalance",
+      "label": "method"
+    },
+    {
+      "from": "brakeLatencyAnalysis",
+      "to": "brakeLatencyLimit",
+      "label": "method"
+    },
+    {
+      "from": "energyBalance",
+      "to": "rangeRequirement",
+      "label": "evaluates"
+    },
+    {
+      "from": "brakeLatencyLimit",
+      "to": "brakeOverrideRequirement",
+      "label": "evaluates"
+    }
+  ]
+}

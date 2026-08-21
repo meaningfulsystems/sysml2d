@@ -2,6 +2,21 @@
 
 All notable changes to SysMLD are documented here.
 
+## Unreleased
+
+### Added
+
+- Shared orthogonal autorouting helpers (`src/sysmld/routing.py`): unique channel tracks for adjacent-rank edges, outside rails for skip-rank edges, and renderer hop-overs as small half-circle arcs where later connections cross earlier ones
+- `examples/e-bike/` — a street-legal class e-bike model with intents, `.sysmld`, and SVG for all 15 view kinds plus an operating-context general view
+
+### Changed
+
+- Generic view routing now keeps fan-out/fan-in on separated tracks, snaps exclusive 1:1 pairs to a straight line, and places association rails outside system-boundary groups
+- Crossing hop-overs are drawn at true interior crossings, including near route corners (still skipped at shared connection endpoints)
+- Connection labels on generic, action, and requirement views sit beside the line instead of on the centerline
+- Toaster, blender, and e-bike example artifacts regenerated from the composers
+- README / CONTRIBUTING test counts updated for the new routing and e-bike coverage
+
 ## [0.1.0] — 2026-05-22
 
 First public release.

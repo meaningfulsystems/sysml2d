@@ -228,7 +228,7 @@ def _requirement_connection(
     waypoints: list[dict[str, float]] = []
     labels = []
     if edge.get("label", ""):
-        labels.append({"text": edge["label"], "position": {"offset": 0.5, "placement": "centerline"}})
+        labels.append({"text": edge["label"], "position": {"offset": 0.5}})
     return {
         "id": edge.get("id", f"conn-{src}-{tgt}"),
         "model_ref": edge.get("model_ref", src),

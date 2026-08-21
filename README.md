@@ -59,7 +59,7 @@ This is the core idea that inspired the [MSML project](https://github.com/meanin
 
 ![Toaster Control State Machine](examples/toaster/toaster-stm.svg)
 
-See the full [toaster](examples/toaster) and [blender](examples/blender) example sets for all 15 supported view types.
+See the full [toaster](examples/toaster), [blender](examples/blender), and [e-bike](examples/e-bike) example sets for all 15 supported view types.
 
 ## Quick Start
 
@@ -140,8 +140,9 @@ src/sysmld/              Python package — view composers, layout engine, rende
 schemas/                 SysMLD JSON Schema (authoritative for .sysmld document shape)
 examples/toaster/        Toaster appliance model and all diagram examples
 examples/blender/        Blender appliance model and all diagram examples
+examples/e-bike/         Electric-bike model covering all 15 view kinds
 skills/                  Prompt templates for AI-assisted modeling
-tests/                   Unit and regression tests (66 tests)
+tests/                   Unit and regression tests
 sysmld-specification.md  Human-readable SysMLD specification
 QUICKSTART.md            Step-by-step guide for new users
 ```

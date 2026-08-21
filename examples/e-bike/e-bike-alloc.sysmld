@@ -1,0 +1,269 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-alloc",
+    "kind": "AllocationView",
+    "name": "Electric Bike Allocations",
+    "canvas": {
+      "width": 624,
+      "height": 802,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "rideSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Ride Safety",
+        "style": "requirement",
+        "model_ref": "rideSafetyRequirement"
+      },
+      {
+        "id": "rangeRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 264,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Range",
+        "style": "requirement",
+        "model_ref": "rangeRequirement"
+      },
+      {
+        "id": "chargeSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 456,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Charge Safety",
+        "style": "requirement",
+        "model_ref": "chargeSafetyRequirement"
+      },
+      {
+        "id": "assistLimitRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 648,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Assist Limit",
+        "style": "requirement",
+        "model_ref": "assistLimitRequirement"
+      },
+      {
+        "id": "brakeSystem",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 78,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Brake System",
+        "style": "part_usage",
+        "model_ref": "brakeSystem"
+      },
+      {
+        "id": "batteryPack",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 270,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Battery Pack",
+        "style": "part_usage",
+        "model_ref": "batteryPack"
+      },
+      {
+        "id": "motorController",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 462,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Controller",
+        "style": "part_usage",
+        "model_ref": "motorController"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-rideSafetyRequirement-brakeSystem",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "brakeSystem",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateSafetyToBrakes"
+      },
+      {
+        "id": "conn-rangeRequirement-batteryPack",
+        "source": {
+          "element": "rangeRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "batteryPack",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateRangeToBattery"
+      },
+      {
+        "id": "conn-assistLimitRequirement-motorController",
+        "source": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 354,
+              "y": 689
+            },
+            {
+              "x": 354,
+              "y": 497
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateAssistToController"
+      },
+      {
+        "id": "conn-chargeSafetyRequirement-batteryPack",
+        "source": {
+          "element": "chargeSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "batteryPack",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 322,
+              "y": 497
+            },
+            {
+              "x": 322,
+              "y": 305
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateChargeToBms"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "diagram": "e-bike-vcase",
+  "kind": "VerificationCaseView",
+  "name": "Electric Bike Verification Cases",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "rank_gap": 180,
+  "col_gap": 50,
+  "nodes": {
+    "verifyRange": {
+      "label": "Verify Range",
+      "rank": 0,
+      "order": 0
+    },
+    "verifyBrakeCutoff": {
+      "label": "Verify Brake Cutoff",
+      "rank": 0,
+      "order": 1
+    },
+    "verifyChargeSafety": {
+      "label": "Verify Charge Safety",
+      "rank": 0,
+      "order": 2
+    },
+    "verifyAssistLimit": {
+      "label": "Verify Assist Limit",
+      "rank": 0,
+      "order": 3
+    },
+    "rangeRequirement": {
+      "label": "Range Req",
+      "symbol": "requirement",
+      "rank": 1,
+      "order": 0
+    },
+    "brakeOverrideRequirement": {
+      "label": "Brake Override Req",
+      "symbol": "requirement",
+      "rank": 1,
+      "order": 1
+    },
+    "chargeSafetyRequirement": {
+      "label": "Charge Safety Req",
+      "symbol": "requirement",
+      "rank": 1,
+      "order": 2
+    },
+    "assistLimitRequirement": {
+      "label": "Assist Limit Req",
+      "symbol": "requirement",
+      "rank": 1,
+      "order": 3
+    }
+  },
+  "edges": [
+    {
+      "from": "verifyRange",
+      "to": "rangeRequirement",
+      "label": "verifies"
+    },
+    {
+      "from": "verifyBrakeCutoff",
+      "to": "brakeOverrideRequirement",
+      "label": "verifies"
+    },
+    {
+      "from": "verifyChargeSafety",
+      "to": "chargeSafetyRequirement",
+      "label": "verifies"
+    },
+    {
+      "from": "verifyAssistLimit",
+      "to": "assistLimitRequirement",
+      "label": "verifies"
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "diagram": "e-bike-ibd",
+  "kind": "InterconnectionView",
+  "name": "Electric Bike Interconnection",
+  "subject": "bike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {
+    "bike": "ElectricBike::ElectricBike",
+    "boundary": "ElectricBike::ElectricBike",
+    "frame": "ElectricBike::ElectricBike::frame",
+    "batteryPack": "ElectricBike::ElectricBike::batteryPack",
+    "motorController": "ElectricBike::ElectricBike::motorController",
+    "hubMotor": "ElectricBike::ElectricBike::hubMotor",
+    "humanInterface": "ElectricBike::ElectricBike::humanInterface",
+    "brakeSystem": "ElectricBike::ElectricBike::brakeSystem",
+    "frame--batteryPack--src": "ElectricBike::ElectricBike::frameBatteryMountOut",
+    "frame--batteryPack--tgt": "ElectricBike::ElectricBike::batteryMountIn",
+    "frame--hubMotor--src": "ElectricBike::ElectricBike::frameMotorMountOut",
+    "frame--hubMotor--tgt": "ElectricBike::ElectricBike::motorMountIn",
+    "frame--humanInterface--src": "ElectricBike::ElectricBike::frameInterfaceMountOut",
+    "frame--humanInterface--tgt": "ElectricBike::ElectricBike::interfaceMountIn",
+    "frame--brakeSystem--src": "ElectricBike::ElectricBike::frameBrakeMountOut",
+    "frame--brakeSystem--tgt": "ElectricBike::ElectricBike::brakeMountIn",
+    "batteryPack--motorController--src": "ElectricBike::ElectricBike::batteryPowerOut",
+    "batteryPack--motorController--tgt": "ElectricBike::ElectricBike::controllerPowerIn",
+    "motorController--hubMotor--src": "ElectricBike::ElectricBike::controllerDriveOut",
+    "motorController--hubMotor--tgt": "ElectricBike::ElectricBike::motorDriveIn",
+    "humanInterface--motorController--src": "ElectricBike::ElectricBike::interfaceCommandOut",
+    "humanInterface--motorController--tgt": "ElectricBike::ElectricBike::controllerCommandIn",
+    "brakeSystem--motorController--src": "ElectricBike::ElectricBike::brakeInhibitOut",
+    "brakeSystem--motorController--tgt": "ElectricBike::ElectricBike::controllerInhibitIn",
+    "bnd--humanInterface": "ElectricBike::ElectricBike::riderCommandIn",
+    "humanInterface--bnd--tgt": "ElectricBike::ElectricBike::riderInputIn",
+    "bnd--batteryPack": "ElectricBike::ElectricBike::chargerIn",
+    "batteryPack--bnd--tgt": "ElectricBike::ElectricBike::chargeInputIn",
+    "bnd--hubMotor": "ElectricBike::ElectricBike::roadLoadIn",
+    "hubMotor--bnd--tgt": "ElectricBike::ElectricBike::wheelLoadIn",
+    "conn-frame-batteryPack": "ElectricBike::ElectricBike::frameToBattery",
+    "conn-frame-hubMotor": "ElectricBike::ElectricBike::frameToMotor",
+    "conn-frame-humanInterface": "ElectricBike::ElectricBike::frameToInterface",
+    "conn-frame-brakeSystem": "ElectricBike::ElectricBike::frameToBrakes",
+    "conn-batteryPack-motorController": "ElectricBike::ElectricBike::batteryToController",
+    "conn-motorController-hubMotor": "ElectricBike::ElectricBike::controllerToMotor",
+    "conn-humanInterface-motorController": "ElectricBike::ElectricBike::interfaceToController",
+    "conn-brakeSystem-motorController": "ElectricBike::ElectricBike::brakesToController",
+    "conn-bnd-humanInterface": "ElectricBike::ElectricBike::riderToInterface",
+    "conn-bnd-batteryPack": "ElectricBike::ElectricBike::chargerToBattery",
+    "conn-bnd-hubMotor": "ElectricBike::ElectricBike::roadToMotor"
+  },
+  "direction": "left-right",
+  "default_w": 170,
+  "default_h": 78,
+  "col_gap": 70,
+  "rank_gap": 140,
+  "label_mode": "connection",
+  "nodes": {
+    "humanInterface": {
+      "label": "Human Interface",
+      "style": "part.control"
+    },
+    "brakeSystem": {
+      "label": "Brake System",
+      "style": "part.mechanical"
+    },
+    "batteryPack": {
+      "label": "Battery Pack",
+      "style": "part.power"
+    },
+    "motorController": {
+      "label": "Motor Controller",
+      "style": "part.control"
+    },
+    "hubMotor": {
+      "label": "Hub Motor",
+      "style": "part.mechanical"
+    },
+    "frame": {
+      "label": "Frame",
+      "style": "part.structure"
+    }
+  },
+  "edges": [
+    {
+      "from": "frame",
+      "to": "batteryPack",
+      "label": "mount",
+      "model_ref": "conn-frame-batteryPack"
+    },
+    {
+      "from": "frame",
+      "to": "hubMotor",
+      "label": "mount",
+      "model_ref": "conn-frame-hubMotor"
+    },
+    {
+      "from": "frame",
+      "to": "humanInterface",
+      "label": "mount",
+      "model_ref": "conn-frame-humanInterface"
+    },
+    {
+      "from": "frame",
+      "to": "brakeSystem",
+      "label": "mount",
+      "model_ref": "conn-frame-brakeSystem"
+    },
+    {
+      "from": "batteryPack",
+      "to": "motorController",
+      "label": "pack power",
+      "model_ref": "conn-batteryPack-motorController"
+    },
+    {
+      "from": "motorController",
+      "to": "hubMotor",
+      "label": "phase drive",
+      "model_ref": "conn-motorController-hubMotor"
+    },
+    {
+      "from": "humanInterface",
+      "to": "motorController",
+      "label": "assist command",
+      "model_ref": "conn-humanInterface-motorController"
+    },
+    {
+      "from": "brakeSystem",
+      "to": "motorController",
+      "label": "inhibit",
+      "model_ref": "conn-brakeSystem-motorController"
+    }
+  ],
+  "boundary_inputs": [
+    {
+      "to": "humanInterface",
+      "label": "rider",
+      "model_ref": "conn-bnd-humanInterface"
+    },
+    {
+      "to": "batteryPack",
+      "label": "charger",
+      "model_ref": "conn-bnd-batteryPack"
+    },
+    {
+      "to": "hubMotor",
+      "label": "road load",
+      "model_ref": "conn-bnd-hubMotor"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.structure": {
+      "fill": "#F5F5F5",
+      "stroke": "#616161",
+      "stroke_width": 2
+    },
+    "part.mechanical": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.control": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.power": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "diagram": "e-bike-bdd",
+  "kind": "DefinitionView",
+  "name": "Electric Bike Definition Tree",
+  "subject": "ElectricBike::ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {
+    "bikeDef": "ElectricBike::ElectricBike",
+    "frameDef": "ElectricBike::Frame",
+    "batteryDef": "ElectricBike::BatteryPack",
+    "controllerDef": "ElectricBike::MotorController",
+    "motorDef": "ElectricBike::HubMotor",
+    "interfaceDef": "ElectricBike::HumanInterface",
+    "brakeDef": "ElectricBike::BrakeSystem",
+    "framePart": "ElectricBike::ElectricBike::frame",
+    "batteryPart": "ElectricBike::ElectricBike::batteryPack",
+    "controllerPart": "ElectricBike::ElectricBike::motorController",
+    "motorPart": "ElectricBike::ElectricBike::hubMotor",
+    "interfacePart": "ElectricBike::ElectricBike::humanInterface",
+    "brakePart": "ElectricBike::ElectricBike::brakeSystem"
+  },
+  "direction": "top-down",
+  "default_w": 190,
+  "default_h": 72,
+  "sibling_gap": 36,
+  "rank_gap": 110,
+  "max_siblings_per_row": 6,
+  "roots": [
+    {
+      "id": "bike",
+      "label": "Electric Bike",
+      "model_ref": "bikeDef",
+      "style": "part.definition.root",
+      "w": 210,
+      "children": [
+        {
+          "id": "frame",
+          "label": "Frame",
+          "model_ref": "frameDef",
+          "part_ref": "framePart"
+        },
+        {
+          "id": "batteryPack",
+          "label": "Battery Pack",
+          "model_ref": "batteryDef",
+          "part_ref": "batteryPart"
+        },
+        {
+          "id": "motorController",
+          "label": "Motor Controller",
+          "model_ref": "controllerDef",
+          "part_ref": "controllerPart"
+        },
+        {
+          "id": "hubMotor",
+          "label": "Hub Motor",
+          "model_ref": "motorDef",
+          "part_ref": "motorPart"
+        },
+        {
+          "id": "humanInterface",
+          "label": "Human Interface",
+          "model_ref": "interfaceDef",
+          "part_ref": "interfacePart"
+        },
+        {
+          "id": "brakeSystem",
+          "label": "Brake System",
+          "model_ref": "brakeDef",
+          "part_ref": "brakePart"
+        }
+      ]
+    }
+  ],
+  "styles": {
+    "part.definition.root": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "part.definition": {
+      "fill": "#F8FAFC",
+      "stroke": "#475569",
+      "stroke_width": 2,
+      "corner_radius": 10
+    },
+    "connector.definition": {
+      "stroke": "#64748B",
+      "stroke_width": 2,
+      "corner_radius": 8,
+      "marker_start": "composition",
+      "label_offset": 12
+    }
+  }
+}

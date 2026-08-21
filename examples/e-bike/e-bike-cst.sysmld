@@ -1,0 +1,444 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-cst",
+    "kind": "ConstraintView",
+    "name": "Electric Bike Parametrics",
+    "canvas": {
+      "width": 1244,
+      "height": 598,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "packEnergy",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 82,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "packEnergy\n500 Wh",
+        "style": "value_property",
+        "model_ref": "packEnergy"
+      },
+      {
+        "id": "riderPower",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 270,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "riderPower\npedal input",
+        "style": "value_property",
+        "model_ref": "riderPower"
+      },
+      {
+        "id": "cutoffSpeed",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 458,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "cutoffSpeed\n25 km/h",
+        "style": "value_property",
+        "model_ref": "cutoffSpeed"
+      },
+      {
+        "id": "energyBalance",
+        "symbol": "constraint",
+        "layout": {
+          "x": 362,
+          "y": 72,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Energy\nBalance",
+        "style": "constraint",
+        "model_ref": "energyBalance"
+      },
+      {
+        "id": "assistPowerLimit",
+        "symbol": "constraint",
+        "layout": {
+          "x": 362,
+          "y": 260,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Assist Power\nLimit",
+        "style": "constraint",
+        "model_ref": "assistPowerLimit"
+      },
+      {
+        "id": "brakeLatencyLimit",
+        "symbol": "constraint",
+        "layout": {
+          "x": 362,
+          "y": 448,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Brake Latency\n<= 50 ms",
+        "style": "constraint",
+        "model_ref": "brakeLatencyLimit"
+      },
+      {
+        "id": "rangeEstimate",
+        "symbol": "constraint",
+        "layout": {
+          "x": 702,
+          "y": 72,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Range\nEstimate",
+        "style": "constraint",
+        "model_ref": "rangeEstimate"
+      },
+      {
+        "id": "assistPower",
+        "symbol": "value_property",
+        "layout": {
+          "x": 702,
+          "y": 270,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "assistPower\nlimited",
+        "style": "value_property",
+        "model_ref": "assistPower"
+      },
+      {
+        "id": "brakeLatency",
+        "symbol": "value_property",
+        "layout": {
+          "x": 702,
+          "y": 458,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "brakeLatency\nmeasured",
+        "style": "value_property",
+        "model_ref": "brakeLatency"
+      },
+      {
+        "id": "rangeKm",
+        "symbol": "value_property",
+        "layout": {
+          "x": 1042,
+          "y": 82,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "rangeKm\n>= 60 km",
+        "style": "value_property",
+        "model_ref": "rangeKm"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-packEnergy-energyBalance",
+        "source": {
+          "element": "packEnergy",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "energyBalance",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "packEnergy"
+      },
+      {
+        "id": "conn-riderPower-energyBalance",
+        "source": {
+          "element": "riderPower",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "energyBalance",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 282,
+              "y": 299
+            },
+            {
+              "x": 282,
+              "y": 111
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "riderPower"
+      },
+      {
+        "id": "conn-cutoffSpeed-assistPowerLimit",
+        "source": {
+          "element": "cutoffSpeed",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "assistPowerLimit",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 314,
+              "y": 487
+            },
+            {
+              "x": 314,
+              "y": 299
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "cutoffSpeed"
+      },
+      {
+        "id": "conn-energyBalance-rangeEstimate",
+        "source": {
+          "element": "energyBalance",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rangeEstimate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "feeds",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "energyBalance"
+      },
+      {
+        "id": "conn-assistPowerLimit-rangeEstimate",
+        "source": {
+          "element": "assistPowerLimit",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rangeEstimate",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 622,
+              "y": 299
+            },
+            {
+              "x": 622,
+              "y": 111
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bounds",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "assistPowerLimit"
+      },
+      {
+        "id": "conn-rangeEstimate-rangeKm",
+        "source": {
+          "element": "rangeEstimate",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rangeKm",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "result",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "rangeEstimate"
+      },
+      {
+        "id": "conn-assistPowerLimit-assistPower",
+        "source": {
+          "element": "assistPowerLimit",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "assistPower",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "result",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "assistPowerLimit"
+      },
+      {
+        "id": "conn-brakeLatencyLimit-brakeLatency",
+        "source": {
+          "element": "brakeLatencyLimit",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "brakeLatency",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "limit",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "brakeLatencyLimit"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

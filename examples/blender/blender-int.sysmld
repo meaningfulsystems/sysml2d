@@ -12,7 +12,7 @@
     "name": "Blender Smoothness Interaction",
     "canvas": {
       "width": 1400,
-      "height": 558,
+      "height": 546,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -21,87 +21,87 @@
     "elements": [
       {
         "id": "user",
-        "model_ref": "user",
         "symbol": "lifeline",
         "layout": {
           "x": 70,
           "y": 70,
           "width": 110,
-          "height": 448,
+          "height": 436,
           "z": 10
         },
         "label": "User",
-        "style": "lifeline"
+        "style": "lifeline",
+        "model_ref": "user"
       },
       {
         "id": "controlPanel",
-        "model_ref": "controlPanel",
         "symbol": "lifeline",
         "layout": {
           "x": 270,
           "y": 70,
           "width": 137,
-          "height": 448,
+          "height": 436,
           "z": 10
         },
         "label": "Control Panel",
-        "style": "lifeline"
+        "style": "lifeline",
+        "model_ref": "controlPanel"
       },
       {
         "id": "motor",
-        "model_ref": "motor",
         "symbol": "lifeline",
         "layout": {
           "x": 497,
           "y": 70,
           "width": 110,
-          "height": 448,
+          "height": 436,
           "z": 10
         },
         "label": "Motor",
-        "style": "lifeline"
+        "style": "lifeline",
+        "model_ref": "motor"
       },
       {
         "id": "driveCoupling",
-        "model_ref": "driveCoupling",
         "symbol": "lifeline",
         "layout": {
           "x": 697,
           "y": 70,
           "width": 144,
-          "height": 448,
+          "height": 436,
           "z": 10
         },
         "label": "Drive Coupling",
-        "style": "lifeline"
+        "style": "lifeline",
+        "model_ref": "driveCoupling"
       },
       {
         "id": "bladeAssembly",
-        "model_ref": "bladeAssembly",
         "symbol": "lifeline",
         "layout": {
           "x": 931,
           "y": 70,
           "width": 144,
-          "height": 448,
+          "height": 436,
           "z": 10
         },
         "label": "Blade Assembly",
-        "style": "lifeline"
+        "style": "lifeline",
+        "model_ref": "bladeAssembly"
       },
       {
         "id": "smoothnessSensor",
-        "model_ref": "smoothnessSensor",
         "symbol": "lifeline",
         "layout": {
           "x": 1165,
           "y": 70,
           "width": 165,
-          "height": 448,
+          "height": 436,
           "z": 10
         },
         "label": "Smoothness Sensor",
-        "style": "lifeline"
+        "style": "lifeline",
+        "model_ref": "smoothnessSensor"
       }
     ],
     "connections": [
@@ -112,14 +112,14 @@
           "element": "user",
           "anchor": {
             "side": "right",
-            "offset": 0.156
+            "offset": 0.161
           }
         },
         "target": {
           "element": "controlPanel",
           "anchor": {
             "side": "left",
-            "offset": 0.156
+            "offset": 0.161
           }
         },
         "route": {
@@ -144,14 +144,14 @@
           "element": "controlPanel",
           "anchor": {
             "side": "right",
-            "offset": 0.277
+            "offset": 0.284
           }
         },
         "target": {
           "element": "motor",
           "anchor": {
             "side": "left",
-            "offset": 0.277
+            "offset": 0.284
           }
         },
         "route": {
@@ -176,14 +176,14 @@
           "element": "motor",
           "anchor": {
             "side": "right",
-            "offset": 0.397
+            "offset": 0.408
           }
         },
         "target": {
           "element": "driveCoupling",
           "anchor": {
             "side": "left",
-            "offset": 0.397
+            "offset": 0.408
           }
         },
         "route": {
@@ -208,14 +208,14 @@
           "element": "driveCoupling",
           "anchor": {
             "side": "right",
-            "offset": 0.518
+            "offset": 0.532
           }
         },
         "target": {
           "element": "bladeAssembly",
           "anchor": {
             "side": "left",
-            "offset": 0.518
+            "offset": 0.532
           }
         },
         "route": {
@@ -240,14 +240,14 @@
           "element": "driveCoupling",
           "anchor": {
             "side": "right",
-            "offset": 0.638
+            "offset": 0.656
           }
         },
         "target": {
           "element": "smoothnessSensor",
           "anchor": {
             "side": "left",
-            "offset": 0.638
+            "offset": 0.656
           }
         },
         "route": {
@@ -272,14 +272,14 @@
           "element": "smoothnessSensor",
           "anchor": {
             "side": "left",
-            "offset": 0.759
+            "offset": 0.78
           }
         },
         "target": {
           "element": "controlPanel",
           "anchor": {
             "side": "right",
-            "offset": 0.759
+            "offset": 0.78
           }
         },
         "route": {
@@ -304,14 +304,14 @@
           "element": "controlPanel",
           "anchor": {
             "side": "right",
-            "offset": 0.879
+            "offset": 0.904
           }
         },
         "target": {
           "element": "motor",
           "anchor": {
             "side": "left",
-            "offset": 0.879
+            "offset": 0.904
           }
         },
         "route": {

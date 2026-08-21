@@ -1,0 +1,92 @@
+{
+  "diagram": "e-bike-flow",
+  "kind": "FlowView",
+  "name": "Electric Bike Energy and Control Flows",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "nodes": {
+    "rider": {
+      "label": "Rider",
+      "symbol": "actor",
+      "rank": 0,
+      "order": 0
+    },
+    "charger": {
+      "label": "Charger",
+      "symbol": "part_usage",
+      "rank": 0,
+      "order": 1
+    },
+    "humanInterface": {
+      "label": "Human Interface",
+      "symbol": "part_usage",
+      "rank": 1,
+      "order": 0
+    },
+    "batteryPack": {
+      "label": "Battery Pack",
+      "symbol": "part_usage",
+      "rank": 1,
+      "order": 1
+    },
+    "motorController": {
+      "label": "Controller",
+      "symbol": "part_usage",
+      "rank": 2,
+      "order": 0
+    },
+    "hubMotor": {
+      "label": "Hub Motor",
+      "symbol": "part_usage",
+      "rank": 2,
+      "order": 1
+    },
+    "road": {
+      "label": "Road",
+      "symbol": "part_usage",
+      "rank": 3,
+      "order": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "rider",
+      "to": "humanInterface",
+      "label": "command",
+      "model_ref": "riderCommandFlow"
+    },
+    {
+      "from": "charger",
+      "to": "batteryPack",
+      "label": "charge",
+      "model_ref": "chargeEnergyFlow"
+    },
+    {
+      "from": "batteryPack",
+      "to": "motorController",
+      "label": "dc power",
+      "model_ref": "batteryPowerFlow"
+    },
+    {
+      "from": "humanInterface",
+      "to": "motorController",
+      "label": "assist",
+      "model_ref": "riderCommandFlow"
+    },
+    {
+      "from": "motorController",
+      "to": "hubMotor",
+      "label": "torque",
+      "model_ref": "motorTorqueFlow"
+    },
+    {
+      "from": "hubMotor",
+      "to": "road",
+      "label": "tractive",
+      "model_ref": "roadLoadFlow"
+    }
+  ]
+}

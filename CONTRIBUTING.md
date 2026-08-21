@@ -14,7 +14,7 @@ python -m pip install pytest
 pytest
 ```
 
-All 66 tests should pass on a clean checkout.
+All tests should pass on a clean checkout (`pytest`).
 
 ## Project Structure
 
@@ -56,7 +56,7 @@ tests/
   test_cli.py                   CLI command coverage tests
 ```
 
-Each view type has a dedicated `*_view.py` module in `src/sysmld/` and a corresponding `test_*_view.py` in `tests/`. Thin wrappers (most views) call `views.py`. Full composers (`interconnection_view.py`, `state_view.py`, `definition_view.py`, `requirement_view.py`) contain view-specific layout logic.
+Each view type has a dedicated `*_view.py` module in `src/sysmld/`. Thin wrappers (most views) call `views.py`. Full composers (`interconnection_view.py`, `state_view.py`, `definition_view.py`, `requirement_view.py`) contain view-specific layout logic. Shared routing lives in `routing.py`. Tests cover composers, routing, examples, and the renderer.
 
 ## Adding a New View Type
 

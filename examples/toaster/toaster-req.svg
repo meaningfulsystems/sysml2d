@@ -43,15 +43,15 @@
 <path d="M 1484.26,358 L 1377.5,468" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 1558.74,358 L 1669,468" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 1377.5,556 L 1377.5,666" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" text-anchor="middle" x="678.875" y="223">derive</text>
-<text class="small" text-anchor="middle" x="1003.5" y="223">derive</text>
-<text class="small" text-anchor="middle" x="1249.12" y="223">derive</text>
-<text class="small" text-anchor="middle" x="301.375" y="421">refine</text>
-<text class="small" text-anchor="middle" x="475" y="421">refine</text>
-<text class="small" text-anchor="middle" x="659.125" y="421">refine</text>
-<text class="small" text-anchor="middle" x="1082.5" y="421">refine</text>
-<text class="small" text-anchor="middle" x="1430.88" y="421">refine</text>
-<text class="small" text-anchor="middle" x="1613.87" y="421">trace</text>
-<text class="small" text-anchor="middle" x="1377.5" y="619">trace</text>
+<text class="small" text-anchor="middle" x="678.875" y="203">derive</text>
+<text class="small" text-anchor="middle" x="1003.5" y="203">derive</text>
+<text class="small" text-anchor="middle" x="1249.12" y="203">derive</text>
+<text class="small" text-anchor="middle" x="301.375" y="401">refine</text>
+<text class="small" x="487" y="413">refine</text>
+<text class="small" text-anchor="middle" x="659.125" y="401">refine</text>
+<text class="small" x="1094.5" y="413">refine</text>
+<text class="small" x="1442.88" y="413">refine</text>
+<text class="small" text-anchor="middle" x="1613.87" y="401">trace</text>
+<text class="small" x="1389.5" y="611">trace</text>
 </g>
 </svg>

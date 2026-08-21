@@ -1,0 +1,80 @@
+{
+  "diagram": "e-bike-alloc",
+  "kind": "AllocationView",
+  "name": "Electric Bike Allocations",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "nodes": {
+    "rideSafetyRequirement": {
+      "label": "Ride Safety",
+      "symbol": "requirement",
+      "rank": 0,
+      "order": 0
+    },
+    "rangeRequirement": {
+      "label": "Range",
+      "symbol": "requirement",
+      "rank": 0,
+      "order": 1
+    },
+    "chargeSafetyRequirement": {
+      "label": "Charge Safety",
+      "symbol": "requirement",
+      "rank": 0,
+      "order": 2
+    },
+    "assistLimitRequirement": {
+      "label": "Assist Limit",
+      "symbol": "requirement",
+      "rank": 0,
+      "order": 3
+    },
+    "brakeSystem": {
+      "label": "Brake System",
+      "symbol": "part_usage",
+      "rank": 1,
+      "order": 0
+    },
+    "batteryPack": {
+      "label": "Battery Pack",
+      "symbol": "part_usage",
+      "rank": 1,
+      "order": 1
+    },
+    "motorController": {
+      "label": "Controller",
+      "symbol": "part_usage",
+      "rank": 1,
+      "order": 2
+    }
+  },
+  "edges": [
+    {
+      "from": "rideSafetyRequirement",
+      "to": "brakeSystem",
+      "label": "allocate",
+      "model_ref": "allocateSafetyToBrakes"
+    },
+    {
+      "from": "rangeRequirement",
+      "to": "batteryPack",
+      "label": "allocate",
+      "model_ref": "allocateRangeToBattery"
+    },
+    {
+      "from": "assistLimitRequirement",
+      "to": "motorController",
+      "label": "allocate",
+      "model_ref": "allocateAssistToController"
+    },
+    {
+      "from": "chargeSafetyRequirement",
+      "to": "batteryPack",
+      "label": "allocate",
+      "model_ref": "allocateChargeToBms"
+    }
+  ]
+}

@@ -36,8 +36,8 @@
 <path d="M 903,190 L 903,266 Q 903,274 895,274 L 605,274 Q 597,274 597,266 L 597,190" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 1104,130 L 1104,110 Q 1104,102 1096,102 L 640,102 Q 632,102 632,110 L 632,130" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <text class="small" text-anchor="middle" x="750" y="168">start command</text>
-<text class="small" text-anchor="middle" x="971.6" y="181">fault: lid / jam / overcurrent / sensor</text>
-<text class="small" text-anchor="middle" x="472" y="140.002">power on</text>
+<text class="small" text-anchor="middle" x="971.6" y="183">fault: lid / jam / overcurrent / sensor</text>
+<text class="small" text-anchor="middle" x="472" y="138.002">power on</text>
 <text class="small" text-anchor="middle" x="472" y="177.998">power off</text>
 <text class="small" text-anchor="middle" x="750" y="226">smoothness signal [smooth] / stop</text>
 <text class="small" text-anchor="middle" x="750" y="254">stop command / stop motor</text>
