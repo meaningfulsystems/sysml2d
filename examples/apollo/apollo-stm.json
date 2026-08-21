@@ -63,7 +63,7 @@
       "h": 88
     },
     "dockEject": {
-      "label": "dock/eject",
+      "label": "dock and eject",
       "model_ref": "dockEject",
       "parent": "earthCoast"
     },

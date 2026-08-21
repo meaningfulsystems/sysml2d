@@ -68,7 +68,7 @@
       "parent": "lunarReturn"
     },
     "surfaceEVA": {
-      "label": "Surface\nExtravehicular Activity",
+      "label": "Surface\nextravehicular activity",
       "model_ref": "surfaceEVA",
       "parent": "lunarReturn",
       "w": 200,
@@ -122,25 +122,25 @@
     {
       "from": "DOI",
       "to": "descent",
-      "label": "P63",
+      "label": "braking",
       "model_ref": "startDescent"
     },
     {
       "from": "descent",
       "to": "surfaceEVA",
-      "label": "P68",
+      "label": "landing confirmation",
       "model_ref": "touchdown"
     },
     {
       "from": "surfaceEVA",
       "to": "ascent",
-      "label": "P12",
+      "label": "ascent",
       "model_ref": "startAscent"
     },
     {
       "from": "ascent",
       "to": "rendezvous",
-      "label": "P30",
+      "label": "rendezvous",
       "model_ref": "startRndz"
     },
     {

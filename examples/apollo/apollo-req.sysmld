@@ -47,11 +47,11 @@
         "layout": {
           "x": 324,
           "y": 72,
-          "width": 237,
+          "width": 223,
           "height": 156,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nLand\nThe Lunar Module shall land\ntwo crew on the Moon under\nPrimary Guidance program P66.",
+        "label": "\u00abrequirement\u00bb\nLand\nThe Lunar Module shall land\ntwo crew on the Moon under\nrate of descent.",
         "style": "requirement"
       },
       {
@@ -59,7 +59,7 @@
         "model_ref": "talk",
         "symbol": "requirement",
         "layout": {
-          "x": 597,
+          "x": 583,
           "y": 72,
           "width": 223,
           "height": 156,

@@ -151,7 +151,7 @@
           "z": 10
         },
         "model_ref": "surfaceEVA",
-        "label": "Surface\nExtravehicular Activity",
+        "label": "Surface\nextravehicular activity",
         "style": "state.default"
       },
       {
@@ -339,7 +339,7 @@
         },
         "labels": [
           {
-            "text": "P63",
+            "text": "braking",
             "position": {
               "segment": 1,
               "offset": 0.5,
@@ -372,7 +372,7 @@
         },
         "labels": [
           {
-            "text": "P68",
+            "text": "landing confirmation",
             "position": {
               "segment": 0,
               "offset": 0.5,
@@ -405,7 +405,7 @@
         },
         "labels": [
           {
-            "text": "P12",
+            "text": "ascent",
             "position": {
               "segment": 0,
               "offset": 0.5,
@@ -447,7 +447,7 @@
         },
         "labels": [
           {
-            "text": "P30",
+            "text": "rendezvous",
             "position": {
               "segment": 1,
               "offset": 0.5,

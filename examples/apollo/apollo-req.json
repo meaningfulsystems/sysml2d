@@ -29,7 +29,7 @@
       "model_ref": "safety"
     },
     "land": {
-      "label": "«requirement»\nLand\nThe Lunar Module shall land\ntwo crew on the Moon under\nPrimary Guidance program P66.",
+      "label": "«requirement»\nLand\nThe Lunar Module shall land\ntwo crew on the Moon under\nrate of descent.",
       "rank": 0,
       "order": 1,
       "h": 156,

@@ -8,17 +8,15 @@ Look at the photograph first. NASA 69-HC-620 is Saturn-Apollo 506 (SA-506) rolli
 
 This is a Systems Modeling Language version 2 (SysML v2) example rendered in SysML2d. The source is `apollo.sysml`. When a generated view disagrees with the model, the model wins. Numbers appear only when the model already has them. This is an **example model, not a certifiable** vehicle.
 
-Three crew fly. Two land. All three come home. That thread is lunar-orbit rendezvous. Saturn V puts the Command/Service Module (CSM) and the Lunar Module (LM) in Earth parking orbit. Translunar Injection (TLI) sends the stack toward the Moon. After transposition, docking, and LM extract (`dockEject`), the docked vehicles coast. The CSM burns Lunar Orbit Insertion (LOI) and later Trans-Earth Injection (TEI). The LM undocks, burns Descent Orbit Insertion (DOI), lands two crew, supports one surface Extravehicular Activity (EVA), ascends, and meets the CSM. The Command Module (CM) brings all three home.
+Three crew fly. Two land. All three come home. That thread is lunar-orbit rendezvous. Saturn V puts the Command/Service Module (CSM) and the Lunar Module (LM) in Earth parking orbit. Translunar Injection (TLI) sends the stack toward the Moon. After transposition, dock and eject, the docked vehicles coast. The CSM burns Lunar Orbit Insertion (LOI) and later Trans-Earth Injection (TEI). The LM undocks, burns Descent Orbit Insertion (DOI), lands two crew, supports one surface extravehicular activity, ascends, and meets the CSM. The Command Module (CM) brings all three home.
 
 The instance is Apollo 11 / Apollo-Saturn 506 (AS-506), as-flown July 1969. Launch is from the Kennedy Space Center (KSC). After tower clear, Mission Control Center (MCC) Houston sits in Mission Operations Control Room (MOCR) 2. The Manned Space Flight Network (MSFN) talks to the stack. The Range Safety Officer (RSO) sits outside MCC. Recovery is to USS *Hornet*. Earth and Moon are context, not extras.
 
-The serials on that crawler are Saturn V S-IC-6 / S-II-6 / S-IVB-6N / Instrument Unit (IU)-6 / Spacecraft-LM Adapter (SLA)-14, Command/Service Module CSM-107 *Columbia*, and Lunar Module LM-5 *Eagle*. In scope: first landing, one short surface EVA, model PNGS (cockpit/switch label Primary Guidance, Navigation, and Control System (PGNCS)) program P66 as the flown landing program, and Service Module (SM) cryogenic tankage 2+2. Out of scope: later J-mission variants, Lunar Roving Vehicle (LRV), Scientific Instrument Module (SIM) bay, extended EVA, and invented change-in-velocity (Δv) tables.
+The serials on that crawler are Saturn first stage S-IC-6 / S-II-6 / S-IVB-6N / Instrument Unit (IU)-6 / Spacecraft-LM Adapter (SLA)-14, Command/Service Module CSM-107 *Columbia*, and Lunar Module LM-5 *Eagle*. In scope: first landing, one short surface extravehicular activity, model PNGS (cockpit/switch label Primary Guidance, Navigation, and Control System (PGNCS)), and Service Module (SM) cryogenic tankage 2+2. Out of scope: later J-mission variants, Lunar Roving Vehicle (LRV), Scientific Instrument Module (SIM) bay, extended EVA, and invented change-in-velocity (Δv) tables.
 
 The work starts with the problem first, then the design. That spine is simplified MagicGrid. NASA Procedural Requirements (NPR 7123.1) maps onto it as Who needs what, The shalls, Jobs asked of the stack, What the design does in time, The parts, The serialed hardware, Sourced numbers, and Named checks. Those rows are not NPR 7123 product titles.
 
-Hyphens are not legal identifiers in the model. S-IC / S-II / S-IVB appear as `SIC`, `SII`, `SIVB`. ST-124 appears as `ST124`. Surface EVA is `surfaceEVA`.
-
-The national job is to land two people on the Moon and return three. This instance is Apollo 11 only: first landing, one short EVA, no rover, no SIM bay. The flown landing program is P66. MCC sits in MOCR 2. SM cryo is 2+2, not the later J-mission 3+3.
+The national job is to land two people on the Moon and return three. This instance is Apollo 11 only: first landing, one short surface extravehicular activity, no rover, no SIM bay. Apollo 11 flew rate of descent (P66). MCC sits in MOCR 2. SM cryo is 2+2, not the later J-mission 3+3.
 
 Crew safety is not Launch Escape System (LES)-only. LES is the pad and Mode I escape tower. Later-mode safety that the model actually has includes `AbortMode` (pad, I–IV, contingency TLI, lunar, Service Propulsion System (SPS)); RSO ultra-high-frequency (UHF) destruct outside MCC, safed after Earth orbit; the CM heat shield; Environmental Control and Life Support System (ECLSS); A7L pressure garment; Portable Life Support System (PLSS); and recover-crew to *Hornet*. There is no single `crewSafetyRequirement` element.
 
@@ -95,7 +93,7 @@ Ascent oxygen is the short stay after liftoff from the Moon. That load is about 
 
 The Liquid Cooling Garment (LCG) dumps heat from a walking crewman. Steady load is 1200 Btu/man-h. The A7L suit holds pressure at 3.75±0.25 psid. Walking outside the cabin adds mass. Extravehicular mass is 19.69 kg. The backpack has to last the walk. Portable Life Support System usable oxygen is 1.04 lb for 4 h at 1200 Btu/h.
 
-Food is TN D-7720 April 1967 plan baseline: 2800 kcal/man/day CM, 3200 kcal/man/day LM, not A11 flown intake (Smith et al., 1974). Earth parking orbit is 100 nmi planned. One surface EVA: CDR 2:48 / LMP 2:40 (Technical Note D-8093 Table I). Not the Public Affairs Office (PAO) hatch-to-hatch 2:31:40 (Lutz et al., 1975). Transposition, docking, and extraction (TD&E) is about 03:20–04:09 planned, CMP-owned, SM RCS, CM probe / LM drogue + 12 ring latches. The LM stays in the SLA — 8 panels (4 jettison / 4 stay) — until `dockEject` after TLI and before translunar coast. Landing program is P66 flown.
+Food is TN D-7720 April 1967 plan baseline: 2800 kcal/man/day CM, 3200 kcal/man/day LM, not A11 flown intake (Smith et al., 1974). Earth parking orbit is 100 nmi planned. One surface extravehicular activity: CDR 2:48 / LMP 2:40 (Technical Note D-8093 Table I). Not the Public Affairs Office (PAO) hatch-to-hatch 2:31:40 (Lutz et al., 1975). Transposition, docking, and extraction (TD&E) is about 03:20–04:09 planned, CMP-owned, SM RCS, CM probe / LM drogue + 12 ring latches. The LM stays in the SLA — 8 panels (4 jettison / 4 stay) — until dock and eject after TLI and before translunar coast.
 
 TLI Ground Elapsed Time (GET) has three labels only.
 
@@ -113,7 +111,7 @@ The requirements figure is six INCOSE shalls, one per job box: safety, land, tal
 
 *Apollo requirements. The six boxes are INCOSE shalls. They do not invent a number or a third LOI-1 time.*
 
-The pad stack from the ground up is S-IC-6, S-II-6, S-IVB-6N, IU-6, SLA-14 with LM-5 inside, SM, CM, and LES. The system-definition figure is seven top-level parts under Apollo 11 AS-506: Saturn V, Command/Service Module, Lunar Module, Crew, Ground, Range Safety Officer, and Recovery. Stage, Instrument Unit, and guidance detail stay on the child figures. The Instrument Unit is IU → LVDC, ST-124, FCC. SLA is eight-panel. Descent and ascent stay separate. Two AGCs stay separate.
+The pad stack from the ground up is Saturn first stage S-IC-6, S-II-6, S-IVB-6N, IU-6, SLA-14 with LM-5 inside, SM, CM, and LES. The system-definition figure is seven top-level parts under Apollo 11 AS-506: Saturn V, Command/Service Module, Lunar Module, Crew, Ground, Range Safety Officer, and Recovery. Stage, Instrument Unit, and guidance detail stay on the child figures. The Instrument Unit is IU → LVDC, ST-124, FCC. SLA is eight-panel. Descent and ascent stay separate. Two AGCs stay separate.
 
 ![Apollo system definition](apollo-bdd.svg)
 
@@ -133,27 +131,27 @@ Batteries, the Electrical Control Assembly, the drogue, and the Abort Guidance a
 
 *LM internals. PNGS crosses the mate to both radars and does not own either one as a child.*
 
-The mechanical stack is SIC → SII → SIVB → IU → SLA → SM, with LES → CM → SM, SLA → LM descent, CM probe to LM drogue, and descent mated to ascent. RSO talks UHF destruct to S-IC, outside MCC. KSC_LCC talks umbilicals to S-IC and hands voice to MCC at tower clear (Mission Rule 1-21). IU LVDC guides S-IC, S-II, and S-IVB for boost and TLI. MSFN talks USB to CM and LM. NASCOM is wideband to Ground and MCC. MCC CCATS talks Path A to MSFN 642B. The separate P27 path is V70–V73 only. Recovery talks 243.0 MHz to the CM. Isolation stays: no stage-to-stage electrical power and no CSM–LM propellant crossfeed.
+The mechanical stack is Saturn first stage to second stage to third stage to Instrument Unit to the adapter to the Service Module, with the Launch Escape System on the Command Module, the Lunar Module in the adapter on the descent stage, Command Module probe to Lunar Module drogue, and descent mated to ascent. The Range Safety Officer talks ultra-high-frequency destruct to the Saturn first stage, outside Mission Control. Launch Control talks umbilicals to the Saturn first stage and hands voice to Mission Control at tower clear (Mission Rule 1-21). The Instrument Unit guides the three stages for boost and Translunar Injection. The tracking net talks Unified S-Band to the Command Module and Lunar Module. NASCOM is wideband to Ground and Mission Control. Mission Control talks Path A to the tracking-net site. The separate P27 path is V70–V73 only. Recovery talks 243.0 MHz to the Command Module. Isolation stays: no stage-to-stage electrical power and no Command/Service Module to Lunar Module propellant crossfeed.
 
-The hop that must stay is TLI → dockEject → translunar → LOI. There is no TLI→translunar hop. `dockEject` is after TLI and before translunar coast.
+The hop that must stay is Translunar Injection → dock and eject → translunar coast → Lunar Orbit Insertion. There is no hop from Translunar Injection straight to translunar coast. Dock and eject is after Translunar Injection and before translunar coast.
 
-countdown → boost → earthOrbit → TLI → dockEject → translunar → LOI → undock → DOI → descent → surfaceEVA → ascent → rendezvous → TEI → entry → recovery
+countdown → boost → Earth orbit → Translunar Injection → dock and eject → translunar coast → Lunar Orbit Insertion → undock → Descent Orbit Insertion → descent → surface extravehicular activity → ascent → rendezvous → Trans-Earth Injection → entry → recovery
 
-Tower clear starts boost. SECO is orbital insertion. The TLI burn, then `tliComplete`, then LM extract, then the SPS LOI burn. DPS does DOI. P66 is the flown landing program. P12 is ascent. SPS does TEI. The recovery force closes the book.
+Tower clear starts boost. Orbital insertion follows engine cutoff. The Translunar Injection burn, then Lunar Module extract, then the Service Propulsion Lunar Orbit Insertion burn. Descent Propulsion does Descent Orbit Insertion. Apollo 11 lands under rate of descent. Ascent follows surface extravehicular activity. Service Propulsion does Trans-Earth Injection. The recovery force closes the book.
 
 The mission clock is two pages so each stays printable. The model still nests Earth coast and Lunar return. The four sourced concurrent regions stay in the model. They are not flattened onto a forced note page.
 
-Earth coast holds countdown through Lunar Orbit Insertion. The locked hop sits on that page: TLI → dockEject → translunar → LOI. TLI boxes carry the three GET labels. LOI-1 boxes carry planned 75:54:28 GET and flown ~075:49:50 GET.
+Earth coast holds countdown through Lunar Orbit Insertion. The locked hop sits on that page: Translunar Injection → dock and eject → translunar coast → Lunar Orbit Insertion. Translunar Injection boxes carry the three GET labels. Lunar Orbit Insertion boxes carry planned 75:54:28 GET and flown ~075:49:50 GET.
 
 ![Apollo earth-coast states](apollo-stm.svg)
 
-*Apollo earth coast. The locked hop is Translunar Injection, then dock/eject, then translunar coast, then Lunar Orbit Insertion.*
+*Apollo earth coast. The locked hop is Translunar Injection, then dock and eject, then translunar coast, then Lunar Orbit Insertion.*
 
-Lunar return holds Lunar Orbit Insertion through recovery.
+Lunar return holds Lunar Orbit Insertion through recovery. Arrows on that page are English: braking, landing confirmation, ascent, and rendezvous.
 
 ![Apollo lunar states](apollo-stm-lunar.svg)
 
-*Apollo lunar return. Descent Orbit Insertion, surface EVA, Trans-Earth Injection, and recovery sit on this page.*
+*Apollo lunar return. Descent Orbit Insertion, surface extravehicular activity, Trans-Earth Injection, and recovery sit on this page.*
 
 The model keeps four concurrent regions. Abort runs beside the nominal clock. After undock, the Command/Service Module stays in lunar orbit while the Lunar Module flies Descent Orbit Insertion through ascent. Range Safety runs beside Mission Control until destruct is safed after Earth orbit. Abort Guidance runs beside Primary Guidance in operate and follow-PNGS; Abort Guidance does not land. There is no fourth computer and no concurrent Δv table.
 
@@ -163,7 +161,7 @@ Abort runs beside the nominal machine: Pad, Mode I, Mode II, Mode III, Mode IV, 
 
 *Apollo abort modes. Pad and Mode I sit with the Launch Escape System; Mode II, Mode III, Mode IV, Contingency Translunar Injection, Lunar, and Service Propulsion System do not.*
 
-Computer mode machines stay separate. CMC entry is P61 → P62 → P63 → P64 → P65 → P66 → P67 (entry only). LGC landing is P63 → P64 → {P65 | P66} → P67 → P68 (landing only). Apollo 11 flew P66. AGS goes idle → operate (R47 from PNGS) → follow PNGS → idle and does not land. ECLSS goes cabin → suit → EVA (PLSS) → cabin. Docking mode, which is not the mission `dockEject` state, is undocked → soft → hard (twelve latches) → hardware off.
+Computer mode machines stay separate. Command Module Computer entry is P61 → P62 → P63 → P64 → P65 → P66 → P67 (entry only). Lunar Module Guidance Computer landing is P63 → P64 → {P65 | P66} → P67 → P68 (landing only). Apollo 11 flew rate of descent. Abort Guidance goes idle → operate (R47 from Primary Guidance) → follow Primary Guidance → idle and does not land. Life support goes cabin → suit → extravehicular activity → cabin. Docking mode, which is not the mission dock-and-eject state, is undocked → soft → hard (twelve latches) → hardware off.
 
 Named constraints are `usbCsmLink`, `usbLmLink`, `lunarDelay`, `f1Thrust`, `agcCycle`, and `a11IgnitionMass`. Names only: no equations and no results, and not taught as studies. F-1 1,530,000 lbf remains an SA-507 citation, not an AS-506 requirement.
 
@@ -177,7 +175,7 @@ Unmarked stays unmarked. The model does not invent a number to close a gap: CSM 
 
 In scope: Apollo 11 / Block II / AS-506. Out of scope: J-mission 3+3 cryo, LRV, SIM bay, extended EVA. Verification cases remain names only. This remains an example model, not a certifiable product.
 
-Which cut of the stack is hardest to drop — the two AGCs, the radar split, or the TLI → dockEject hop — and which number must stay unmarked?
+Which cut of the stack is hardest to drop — the two guidance computers, the radar split, or the Translunar Injection → dock and eject hop — and which number must stay unmarked?
 
 ## References
 

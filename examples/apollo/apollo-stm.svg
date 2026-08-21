@@ -25,7 +25,7 @@
 <rect id="TLI" x="385" y="540" width="200" height="88" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle"><tspan x="485" y="561.5">Translunar Injection</tspan><tspan x="485" dy="15">PK 02:44:15</tspan><tspan x="485" dy="15">A11-FP 2:44:26</tspan><tspan x="485" dy="15">flown 02:44:16</tspan></text>
 <rect id="dockEject" x="401" y="351" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="485" y="379">dock/eject</text>
+<text class="label" text-anchor="middle" x="485" y="379">dock and eject</text>
 <rect id="translunar" x="401" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="485" y="174">Translunar coast</text>
 <rect id="LOI" x="697" y="134" width="200" height="80" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
@@ -33,10 +33,10 @@
 <path d="M 174,131 L 174,146" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 174,202 L 174,351" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 174,407 L 174,552" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 258,584 L 258,581 Q 258,578 261,578 L 382,578 Q 385,578 385,581 L 385,584" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 258,584 L 258,581 Q 258,578 261,578 L 385,578" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 485,540 L 485,407" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 485,351 L 485,202" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 569,174 L 569,171 Q 569,168 572,168 L 694,168 Q 697,168 697,171 L 697,174" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 569,174 L 569,171 Q 569,168 572,168 L 697,168" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <text class="small" text-anchor="middle" x="174" y="284.5">tower clear</text>
 <text class="small" text-anchor="middle" x="174" y="487.5">engine cutoff</text>
 <text class="small" text-anchor="middle" x="321.5" y="586">IU / S-IVB</text>

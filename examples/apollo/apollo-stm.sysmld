@@ -145,7 +145,7 @@
           "z": 10
         },
         "model_ref": "dockEject",
-        "label": "dock/eject",
+        "label": "dock and eject",
         "style": "state.default"
       },
       {

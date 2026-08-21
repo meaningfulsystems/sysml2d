@@ -25,7 +25,7 @@
 <rect id="descent" x="388" y="543" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="472" y="571">Descent</text>
 <rect id="surfaceEVA" x="372" y="340" width="200" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="472" y="364.5">Surface</tspan><tspan x="472" dy="15">Extravehicular Activity</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="472" y="364.5">Surface</tspan><tspan x="472" dy="15">extravehicular activity</tspan></text>
 <rect id="ascent" x="388" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="472" y="174">Ascent</text>
 <rect id="rendezvous" x="686" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
@@ -47,10 +47,10 @@
 <path d="M 770,404 L 770,543" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 854,571 L 854,571 L 984,571" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <text class="small" text-anchor="middle" x="174" y="477.5">Descent Propulsion</text>
-<text class="small" text-anchor="middle" x="323" y="581">P63</text>
-<text class="small" text-anchor="middle" x="472" y="481.5">P68</text>
-<text class="small" text-anchor="middle" x="472" y="279">P12</text>
-<text class="small" text-anchor="middle" x="621" y="182">P30</text>
+<text class="small" text-anchor="middle" x="323" y="581">braking</text>
+<text class="small" text-anchor="middle" x="472" y="481.5">landing confirmation</text>
+<text class="small" text-anchor="middle" x="472" y="279">ascent</text>
+<text class="small" text-anchor="middle" x="621" y="182">rendezvous</text>
 <text class="small" text-anchor="middle" x="770" y="279">Service Propulsion</text>
 <text class="small" text-anchor="middle" x="770" y="481.5">entry interface</text>
 <text class="small" text-anchor="middle" x="919" y="579">splashdown</text>
