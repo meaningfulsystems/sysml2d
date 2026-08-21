@@ -141,17 +141,25 @@ countdown → boost → earthOrbit → TLI → dockEject → translunar → LOI 
 
 Tower clear starts boost. SECO is orbital insertion. The TLI burn, then `tliComplete`, then LM extract, then the SPS LOI burn. DPS does DOI. P66 is the flown landing program. P12 is ascent. SPS does TEI. The recovery force closes the book.
 
-The mission figure is one concurrent machine. The AND regions are sourced only. Abort runs beside the mission clock. After undock, the Command Module Pilot stays in lunar orbit while the Lunar Module flies DOI through ascent. Range Safety destruct runs beside Mission Control until it is safed after Earth orbit. Abort Guidance operate and follow-PNGS run beside Primary Guidance; Abort Guidance still does not land. There is no fourth computer region and no concurrent Δv table. Earth coast holds countdown through Lunar Orbit Insertion. Lunar return holds undock through recovery. Each nest stays at or under eight boxes. The locked hop sits inside Earth coast: TLI → dockEject → translunar → LOI. TLI boxes carry the three GET labels. LOI-1 boxes carry planned 75:54:28 GET and flown ~075:49:50 GET.
+The mission clock is two pages so each stays printable. The model still nests Earth coast and Lunar return. The four sourced AND regions sit on a third small page. They are not flattened and they are not a 2000-pixel wallpaper.
 
-![Apollo mission states](apollo-stm.svg)
+Earth coast holds countdown through Lunar Orbit Insertion. The locked hop sits on that page: TLI → dockEject → translunar → LOI. TLI boxes carry the three GET labels. LOI-1 boxes carry planned 75:54:28 GET and flown ~075:49:50 GET.
 
-*Apollo mission. Flight is concurrent. Earth coast and Lunar return stay nested. After undock, CSM and LM run together. The locked hop is Translunar Injection, then dock/eject, then translunar coast, then Lunar Orbit Insertion.*
+![Apollo earth-coast states](apollo-stm.svg)
 
-The lunar figure is a detail view of the Lunar return nest. It picks up at Lunar Orbit Insertion and walks undock through recovery.
+*Apollo earth coast. The locked hop is Translunar Injection, then dock/eject, then translunar coast, then Lunar Orbit Insertion.*
+
+Lunar return holds Lunar Orbit Insertion through recovery.
 
 ![Apollo lunar states](apollo-stm-lunar.svg)
 
-*Apollo lunar return, as a detail view. Descent Orbit Insertion, surface EVA, Trans-Earth Injection, and recovery sit on this page.*
+*Apollo lunar return. Descent Orbit Insertion, surface EVA, Trans-Earth Injection, and recovery sit on this page.*
+
+The concurrency page keeps the four sourced AND regions only. Abort runs beside the mission clock. After undock, the Command Module Pilot stays in lunar orbit while the Lunar Module flies DOI through ascent. Range Safety destruct runs beside Mission Control until it is safed after Earth orbit. Abort Guidance runs beside Primary Guidance; Abort Guidance still does not land. There is no fourth computer region and no concurrent Δv table.
+
+![Apollo sourced concurrency](apollo-stm-and.svg)
+
+*Apollo sourced concurrency. Four AND pairs only. The abort fan and the computer-mode machines stay on their own pages.*
 
 Abort runs beside the nominal machine: pad, I, II, III, IV, contingency TLI, lunar, SPS. LES covers pad / Mode I only. Later modes are not LES. Crew safety is not the tower alone. The abort figure is the fan detail. Arrows into the right-hand states match the left-hand entries.
 

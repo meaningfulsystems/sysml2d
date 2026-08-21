@@ -2,7 +2,7 @@
   "diagram": "apollo-stm-lunar",
   "kind": "StateView",
   "name": "Apollo 11 Lunar Return",
-  "subject": "missionPhase",
+  "subject": "lunarReturn",
   "model_files": [
     "apollo.sysml"
   ],
@@ -13,7 +13,7 @@
   "rank_gap": 140,
   "col_gap": 64,
   "aliases": {
-    "missionPhase": "Apollo11::MissionPhase",
+    "lunarReturn": "Apollo11::MissionPhase::lunarReturn",
     "LOI": "Apollo11::MissionPhase::earthCoast::LOI",
     "undock": "Apollo11::MissionPhase::lunarReturn::undock",
     "DOI": "Apollo11::MissionPhase::lunarReturn::DOI",
@@ -38,53 +38,78 @@
     "initial": {
       "initial": true
     },
+    "lunarReturn": {
+      "label": "Lunar return",
+      "composite": true,
+      "style": "state.composite",
+      "model_ref": "lunarReturn"
+    },
+    "lunarInitial": {
+      "initial": true,
+      "parent": "lunarReturn"
+    },
     "LOI": {
       "label": "Lunar Orbit Insertion",
       "model_ref": "LOI",
+      "parent": "lunarReturn",
       "w": 200
     },
     "undock": {
       "label": "Undock",
-      "model_ref": "undock"
+      "model_ref": "undock",
+      "parent": "lunarReturn"
     },
     "DOI": {
       "label": "Descent Orbit\nInsertion",
       "model_ref": "DOI",
+      "parent": "lunarReturn",
       "h": 64
     },
     "descent": {
       "label": "Descent",
-      "model_ref": "descent"
+      "model_ref": "descent",
+      "parent": "lunarReturn"
     },
     "surfaceEVA": {
       "label": "Surface EVA",
-      "model_ref": "surfaceEVA"
+      "model_ref": "surfaceEVA",
+      "parent": "lunarReturn"
     },
     "ascent": {
       "label": "Ascent",
-      "model_ref": "ascent"
+      "model_ref": "ascent",
+      "parent": "lunarReturn"
     },
     "rendezvous": {
       "label": "Rendezvous",
-      "model_ref": "rendezvous"
+      "model_ref": "rendezvous",
+      "parent": "lunarReturn"
     },
     "TEI": {
       "label": "Trans-Earth\nInjection",
       "model_ref": "TEI",
+      "parent": "lunarReturn",
       "h": 64
     },
     "entry": {
       "label": "Entry",
-      "model_ref": "entry"
+      "model_ref": "entry",
+      "parent": "lunarReturn"
     },
     "recovery": {
       "label": "Recovery",
-      "model_ref": "recovery"
+      "model_ref": "recovery",
+      "parent": "lunarReturn"
     }
   },
   "transitions": [
     {
       "from": "initial",
+      "to": "lunarReturn",
+      "label": ""
+    },
+    {
+      "from": "lunarInitial",
       "to": "LOI",
       "label": ""
     },

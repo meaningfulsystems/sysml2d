@@ -1,8 +1,8 @@
 {
   "diagram": "apollo-stm",
   "kind": "StateView",
-  "name": "Apollo 11 Mission",
-  "subject": "flight",
+  "name": "Apollo 11 Earth Coast",
+  "subject": "earthCoast",
   "model_files": [
     "apollo.sysml"
   ],
@@ -10,12 +10,10 @@
   "rank_wrap": "snake",
   "default_w": 168,
   "default_h": 56,
-  "rank_gap": 120,
-  "col_gap": 56,
+  "rank_gap": 140,
+  "col_gap": 72,
   "aliases": {
-    "missionPhase": "Apollo11::MissionPhase",
     "earthCoast": "Apollo11::MissionPhase::earthCoast",
-    "lunarReturn": "Apollo11::MissionPhase::lunarReturn",
     "countdown": "Apollo11::MissionPhase::earthCoast::countdown",
     "boost": "Apollo11::MissionPhase::earthCoast::boost",
     "earthOrbit": "Apollo11::MissionPhase::earthCoast::earthOrbit",
@@ -23,59 +21,12 @@
     "dockEject": "Apollo11::MissionPhase::earthCoast::dockEject",
     "translunar": "Apollo11::MissionPhase::earthCoast::translunar",
     "LOI": "Apollo11::MissionPhase::earthCoast::LOI",
-    "undock": "Apollo11::MissionPhase::lunarReturn::undock",
-    "DOI": "Apollo11::MissionPhase::lunarReturn::DOI",
-    "descent": "Apollo11::MissionPhase::lunarReturn::descent",
-    "surfaceEVA": "Apollo11::MissionPhase::lunarReturn::surfaceEVA",
-    "ascent": "Apollo11::MissionPhase::lunarReturn::ascent",
-    "rendezvous": "Apollo11::MissionPhase::lunarReturn::rendezvous",
-    "TEI": "Apollo11::MissionPhase::lunarReturn::TEI",
-    "entry": "Apollo11::MissionPhase::lunarReturn::entry",
-    "recovery": "Apollo11::MissionPhase::lunarReturn::recovery",
     "liftoff": "Apollo11::MissionPhase::earthCoast::liftoff",
     "seoi": "Apollo11::MissionPhase::earthCoast::seoi",
     "startTLI": "Apollo11::MissionPhase::earthCoast::startTLI",
     "startDockEject": "Apollo11::MissionPhase::earthCoast::startDockEject",
     "startTranslunar": "Apollo11::MissionPhase::earthCoast::startTranslunar",
-    "startLOI": "Apollo11::MissionPhase::earthCoast::startLOI",
-    "LOICutoff": "Apollo11::MissionPhase::LOICutoff",
-    "startDOI": "Apollo11::MissionPhase::lunarReturn::startDOI",
-    "startDescent": "Apollo11::MissionPhase::lunarReturn::startDescent",
-    "touchdown": "Apollo11::MissionPhase::lunarReturn::touchdown",
-    "startAscent": "Apollo11::MissionPhase::lunarReturn::startAscent",
-    "startRndz": "Apollo11::MissionPhase::lunarReturn::startRndz",
-    "startTEI": "Apollo11::MissionPhase::lunarReturn::startTEI",
-    "startEntry": "Apollo11::MissionPhase::lunarReturn::startEntry",
-    "splashdown": "Apollo11::MissionPhase::lunarReturn::splashdown",
-    "flight": "Apollo11::Flight",
-    "abortMode": "Apollo11::AbortMode",
-    "nominal": "Apollo11::AbortMode::nominal",
-    "pad": "Apollo11::AbortMode::pad",
-    "I": "Apollo11::AbortMode::I",
-    "II": "Apollo11::AbortMode::II",
-    "III": "Apollo11::AbortMode::III",
-    "IV": "Apollo11::AbortMode::IV",
-    "contingencyTLI": "Apollo11::AbortMode::contingencyTLI",
-    "lunar": "Apollo11::AbortMode::lunar",
-    "SPS": "Apollo11::AbortMode::SPS",
-    "abortPad": "Apollo11::AbortMode::abortPad",
-    "abortI": "Apollo11::AbortMode::abortI",
-    "abortII": "Apollo11::AbortMode::abortII",
-    "abortIII": "Apollo11::AbortMode::abortIII",
-    "abortIV": "Apollo11::AbortMode::abortIV",
-    "abortTLI": "Apollo11::AbortMode::abortTLI",
-    "abortLunar": "Apollo11::AbortMode::abortLunar",
-    "abortSPS": "Apollo11::AbortMode::abortSPS",
-    "rangeSafety": "Apollo11::RangeSafety",
-    "rsArmed": "Apollo11::RangeSafety::armed",
-    "rsSafed": "Apollo11::RangeSafety::safed",
-    "safeAfterOrbit": "Apollo11::RangeSafety::safeAfterOrbit",
-    "agsOperate": "Apollo11::AGSMode::operate",
-    "agsFollow": "Apollo11::AGSMode::followPNGS",
-    "r47": "Apollo11::AGSMode::r47",
-    "p66Landing": "Apollo11::LGC_Landing::p66",
-    "csmOrbit": "Apollo11::MissionPhase::lunarReturn::csmOrbit",
-    "afterUndock": "Apollo11::MissionPhase::lunarReturn::afterUndock"
+    "startLOI": "Apollo11::MissionPhase::earthCoast::startLOI"
   },
   "states": {
     "initial": {
@@ -85,9 +36,7 @@
       "label": "Earth coast",
       "composite": true,
       "style": "state.composite",
-      "model_ref": "earthCoast",
-      "parent": "flight",
-      "region": "mission"
+      "model_ref": "earthCoast"
     },
     "earthInitial": {
       "initial": true,
@@ -132,218 +81,12 @@
       "parent": "earthCoast",
       "w": 200,
       "h": 80
-    },
-    "lunarReturn": {
-      "label": "Lunar return",
-      "composite": true,
-      "style": "state.composite",
-      "model_ref": "lunarReturn",
-      "parent": "flight",
-      "region": "mission"
-    },
-    "lunarInitial": {
-      "initial": true,
-      "parent": "lunarReturn"
-    },
-    "undock": {
-      "label": "Undock",
-      "model_ref": "undock",
-      "parent": "lunarReturn"
-    },
-    "DOI": {
-      "label": "Descent Orbit\nInsertion",
-      "model_ref": "DOI",
-      "parent": "afterUndock",
-      "h": 64,
-      "region": "lm"
-    },
-    "descent": {
-      "label": "Descent",
-      "model_ref": "descent",
-      "parent": "afterUndock",
-      "region": "lm"
-    },
-    "surfaceEVA": {
-      "label": "Surface EVA",
-      "model_ref": "surfaceEVA",
-      "parent": "afterUndock",
-      "region": "lm"
-    },
-    "ascent": {
-      "label": "Ascent",
-      "model_ref": "ascent",
-      "parent": "afterUndock",
-      "region": "lm"
-    },
-    "rendezvous": {
-      "label": "Rendezvous",
-      "model_ref": "rendezvous",
-      "parent": "lunarReturn"
-    },
-    "TEI": {
-      "label": "Trans-Earth\nInjection",
-      "model_ref": "TEI",
-      "parent": "lunarReturn",
-      "h": 64
-    },
-    "entry": {
-      "label": "Entry",
-      "model_ref": "entry",
-      "parent": "lunarReturn"
-    },
-    "recovery": {
-      "label": "Recovery",
-      "model_ref": "recovery",
-      "parent": "lunarReturn"
-    },
-    "flight": {
-      "label": "Flight",
-      "composite": true,
-      "concurrent": true,
-      "style": "state.composite",
-      "model_ref": "flight",
-      "regions": [
-        {
-          "id": "mission",
-          "label": "Mission"
-        },
-        {
-          "id": "abort",
-          "label": "Abort"
-        },
-        {
-          "id": "rangeSafety",
-          "label": "Range Safety"
-        },
-        {
-          "id": "guidance",
-          "label": "Guidance"
-        }
-      ]
-    },
-    "abortMode": {
-      "label": "Abort",
-      "composite": true,
-      "style": "state.composite",
-      "model_ref": "abortMode",
-      "parent": "flight",
-      "region": "abort"
-    },
-    "pad": {
-      "label": "Pad abort",
-      "model_ref": "pad",
-      "parent": "abortMode"
-    },
-    "I": {
-      "label": "Mode I",
-      "model_ref": "I",
-      "parent": "abortMode"
-    },
-    "II": {
-      "label": "Mode II",
-      "model_ref": "II",
-      "parent": "abortMode"
-    },
-    "III": {
-      "label": "Mode III",
-      "model_ref": "III",
-      "parent": "abortMode"
-    },
-    "IV": {
-      "label": "Mode IV",
-      "model_ref": "IV",
-      "parent": "abortMode"
-    },
-    "contingencyTLI": {
-      "label": "Contingency TLI",
-      "model_ref": "contingencyTLI",
-      "parent": "abortMode"
-    },
-    "lunar": {
-      "label": "Lunar abort",
-      "model_ref": "lunar",
-      "parent": "abortMode"
-    },
-    "SPS": {
-      "label": "Service Propulsion\nSystem",
-      "model_ref": "SPS",
-      "parent": "abortMode",
-      "h": 64
-    },
-    "csmOrbit": {
-      "label": "CMP in lunar orbit",
-      "parent": "afterUndock",
-      "region": "csm",
-      "h": 64,
-      "model_ref": "csmOrbit"
-    },
-    "rangeSafety": {
-      "label": "Range Safety",
-      "composite": true,
-      "style": "state.composite",
-      "model_ref": "rangeSafety",
-      "parent": "flight",
-      "region": "rangeSafety"
-    },
-    "rsInitial": {
-      "initial": true,
-      "parent": "rangeSafety"
-    },
-    "rsArmed": {
-      "label": "Destruct armed",
-      "model_ref": "rsArmed",
-      "parent": "rangeSafety"
-    },
-    "rsSafed": {
-      "label": "Safed after\nEarth orbit",
-      "model_ref": "rsSafed",
-      "parent": "rangeSafety",
-      "h": 64
-    },
-    "p66Landing": {
-      "label": "Primary Guidance\nP66 lands",
-      "model_ref": "p66Landing",
-      "parent": "flight",
-      "region": "guidance",
-      "h": 64
-    },
-    "agsOperate": {
-      "label": "Abort Guidance\noperate",
-      "model_ref": "agsOperate",
-      "parent": "flight",
-      "region": "guidance",
-      "h": 64
-    },
-    "agsFollow": {
-      "label": "Follow PNGS\nAGS does not land",
-      "model_ref": "agsFollow",
-      "parent": "flight",
-      "region": "guidance",
-      "h": 64
-    },
-    "afterUndock": {
-      "label": "After undock",
-      "composite": true,
-      "concurrent": true,
-      "style": "state.composite",
-      "model_ref": "afterUndock",
-      "parent": "lunarReturn",
-      "regions": [
-        {
-          "id": "csm",
-          "label": "CSM"
-        },
-        {
-          "id": "lm",
-          "label": "LM"
-        }
-      ]
     }
   },
   "transitions": [
     {
       "from": "initial",
-      "to": "flight",
+      "to": "earthCoast",
       "label": ""
     },
     {
@@ -372,7 +115,7 @@
     {
       "from": "TLI",
       "to": "dockEject",
-      "label": "TDE ~03:20\u201304:09",
+      "label": "TDE ~03:20–04:09",
       "model_ref": "startDockEject"
     },
     {
@@ -386,92 +129,6 @@
       "to": "LOI",
       "label": "Service Propulsion",
       "model_ref": "startLOI"
-    },
-    {
-      "from": "LOI",
-      "to": "undock",
-      "label": "",
-      "model_ref": "LOICutoff"
-    },
-    {
-      "from": "lunarInitial",
-      "to": "undock",
-      "label": ""
-    },
-    {
-      "from": "undock",
-      "to": "DOI",
-      "label": "Descent Propulsion",
-      "model_ref": "startDOI"
-    },
-    {
-      "from": "DOI",
-      "to": "descent",
-      "label": "P63",
-      "model_ref": "startDescent"
-    },
-    {
-      "from": "descent",
-      "to": "surfaceEVA",
-      "label": "P68",
-      "model_ref": "touchdown"
-    },
-    {
-      "from": "surfaceEVA",
-      "to": "ascent",
-      "label": "P12",
-      "model_ref": "startAscent"
-    },
-    {
-      "from": "ascent",
-      "to": "rendezvous",
-      "label": "P30",
-      "model_ref": "startRndz"
-    },
-    {
-      "from": "rendezvous",
-      "to": "TEI",
-      "label": "Service Propulsion",
-      "model_ref": "startTEI"
-    },
-    {
-      "from": "TEI",
-      "to": "entry",
-      "label": "entry interface",
-      "model_ref": "startEntry"
-    },
-    {
-      "from": "entry",
-      "to": "recovery",
-      "label": "splashdown",
-      "model_ref": "splashdown"
-    },
-    {
-      "from": "undock",
-      "to": "csmOrbit",
-      "label": "CMP stays"
-    },
-    {
-      "from": "csmOrbit",
-      "to": "rendezvous",
-      "label": ""
-    },
-    {
-      "from": "rsInitial",
-      "to": "rsArmed",
-      "label": ""
-    },
-    {
-      "from": "rsArmed",
-      "to": "rsSafed",
-      "label": "Earth orbit",
-      "model_ref": "safeAfterOrbit"
-    },
-    {
-      "from": "agsOperate",
-      "to": "agsFollow",
-      "label": "R47",
-      "model_ref": "r47"
     }
   ]
 }

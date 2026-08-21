@@ -1,0 +1,374 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "flight": "Apollo11::Flight",
+    "earthCoast": "Apollo11::MissionPhase::earthCoast",
+    "lunarReturn": "Apollo11::MissionPhase::lunarReturn",
+    "abortMode": "Apollo11::AbortMode",
+    "afterUndock": "Apollo11::MissionPhase::lunarReturn::afterUndock",
+    "csmOrbit": "Apollo11::MissionPhase::lunarReturn::csmOrbit",
+    "DOI": "Apollo11::MissionPhase::lunarReturn::DOI",
+    "rangeSafety": "Apollo11::RangeSafety",
+    "rsArmed": "Apollo11::RangeSafety::armed",
+    "rsSafed": "Apollo11::RangeSafety::safed",
+    "safeAfterOrbit": "Apollo11::RangeSafety::safeAfterOrbit",
+    "p66Landing": "Apollo11::LGC_Landing::p66",
+    "agsFollow": "Apollo11::AGSMode::followPNGS"
+  },
+  "diagram": {
+    "id": "apollo-stm-and",
+    "kind": "StateView",
+    "name": "Apollo 11 Sourced Concurrency",
+    "canvas": {
+      "width": 529,
+      "height": 1405,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "flight",
+        "symbol": "boundary",
+        "layout": {
+          "x": -81,
+          "y": -36,
+          "width": 570,
+          "height": 1401,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 0,
+          "y": 0,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "flight",
+        "symbol": "state_usage",
+        "layout": {
+          "x": -45,
+          "y": 130,
+          "width": 498,
+          "height": 1199,
+          "z": 4
+        },
+        "model_ref": "flight",
+        "label": "Flight",
+        "style": "state.composite"
+      },
+      {
+        "id": "earthCoast",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 228,
+          "y": 200,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "earthCoast",
+        "label": "Earth coast",
+        "style": "state.default"
+      },
+      {
+        "id": "lunarReturn",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 114,
+          "y": 344,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "lunarReturn",
+        "label": "Lunar return",
+        "style": "state.default"
+      },
+      {
+        "id": "abortMode",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 0,
+          "y": 200,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "abortMode",
+        "label": "Abort family",
+        "style": "state.default"
+      },
+      {
+        "id": "csmOrbit",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 228,
+          "y": 588,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "csmOrbit",
+        "label": "CMP in lunar orbit",
+        "style": "state.default"
+      },
+      {
+        "id": "DOI",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 0,
+          "y": 588,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "DOI",
+        "label": "LM DOI through ascent",
+        "style": "state.default"
+      },
+      {
+        "id": "rsArmed",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 0,
+          "y": 832,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "rsArmed",
+        "label": "Destruct armed",
+        "style": "state.default"
+      },
+      {
+        "id": "rsSafed",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 0,
+          "y": 976,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "rsSafed",
+        "label": "Safed after\nEarth orbit",
+        "style": "state.default"
+      },
+      {
+        "id": "p66Landing",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 228,
+          "y": 1220,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "p66Landing",
+        "label": "Primary Guidance\nP66 lands",
+        "style": "state.default"
+      },
+      {
+        "id": "agsFollow",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 0,
+          "y": 1220,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "agsFollow",
+        "label": "Abort Guidance\ndoes not land",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "earthCoast--lunarReturn",
+        "model_ref": "flight",
+        "source": {
+          "element": "earthCoast",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lunarReturn",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 318,
+              "y": 1285
+            },
+            {
+              "x": 204,
+              "y": 1285
+            }
+          ]
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "rsArmed--rsSafed",
+        "model_ref": "safeAfterOrbit",
+        "source": {
+          "element": "rsArmed",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rsSafed",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "Earth orbit",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "initial--flight",
+        "model_ref": "flight",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.4
+          }
+        },
+        "target": {
+          "element": "flight",
+          "anchor": {
+            "side": "top",
+            "offset": 0.1064
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      }
+    ],
+    "annotations": [
+      {
+        "id": "flight-region-divider-1",
+        "type": "state_region_divider",
+        "x1": -33,
+        "y1": 498,
+        "x2": 441,
+        "y2": 498,
+        "label": "After undock",
+        "label_x": -27,
+        "label_y": 514
+      },
+      {
+        "id": "flight-region-divider-2",
+        "type": "state_region_divider",
+        "x1": -33,
+        "y1": 742,
+        "x2": 441,
+        "y2": 742,
+        "label": "Range Safety",
+        "label_x": -27,
+        "label_y": 758
+      },
+      {
+        "id": "flight-region-divider-3",
+        "type": "state_region_divider",
+        "x1": -33,
+        "y1": 1130,
+        "x2": 441,
+        "y2": 1130,
+        "label": "Guidance",
+        "label_x": -27,
+        "label_y": 1146
+      }
+    ],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "flight"
+  }
+}

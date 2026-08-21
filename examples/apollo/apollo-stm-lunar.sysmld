@@ -6,7 +6,7 @@
     "apollo.sysml"
   ],
   "aliases": {
-    "missionPhase": "Apollo11::MissionPhase",
+    "lunarReturn": "Apollo11::MissionPhase::lunarReturn",
     "LOI": "Apollo11::MissionPhase::earthCoast::LOI",
     "undock": "Apollo11::MissionPhase::lunarReturn::undock",
     "DOI": "Apollo11::MissionPhase::lunarReturn::DOI",
@@ -32,8 +32,8 @@
     "kind": "StateView",
     "name": "Apollo 11 Lunar Return",
     "canvas": {
-      "width": 1164,
-      "height": 670,
+      "width": 1209,
+      "height": 715,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -42,13 +42,13 @@
     "elements": [
       {
         "id": "boundary",
-        "model_ref": "missionPhase",
+        "model_ref": "lunarReturn",
         "symbol": "boundary",
         "layout": {
-          "x": 38,
-          "y": 110,
-          "width": 1086,
-          "height": 520,
+          "x": -7,
+          "y": 40,
+          "width": 1176,
+          "height": 635,
           "z": 0
         },
         "compartments": {
@@ -64,6 +64,32 @@
         "layout": {
           "x": 164,
           "y": 164,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "lunarReturn",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 29,
+          "y": 76,
+          "width": 1104,
+          "height": 563,
+          "z": 4
+        },
+        "model_ref": "lunarReturn",
+        "label": "Lunar return",
+        "style": "state.composite"
+      },
+      {
+        "id": "lunarInitial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 164,
+          "y": 305,
           "width": 20,
           "height": 20,
           "z": 10
@@ -213,10 +239,10 @@
     ],
     "connections": [
       {
-        "id": "initial--LOI",
-        "model_ref": "missionPhase",
+        "id": "lunarInitial--LOI",
+        "model_ref": "lunarReturn",
         "source": {
-          "element": "initial",
+          "element": "lunarInitial",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
@@ -550,6 +576,35 @@
           }
         ],
         "style": "transition"
+      },
+      {
+        "id": "initial--lunarReturn",
+        "model_ref": "lunarReturn",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.4
+          }
+        },
+        "target": {
+          "element": "lunarReturn",
+          "anchor": {
+            "side": "left",
+            "offset": 0.1705
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 106,
+              "y": 172
+            }
+          ]
+        },
+        "labels": [],
+        "style": "transition"
       }
     ],
     "annotations": [],
@@ -591,6 +646,6 @@
         "container": true
       }
     },
-    "subject": "missionPhase"
+    "subject": "lunarReturn"
   }
 }

@@ -15,7 +15,7 @@
   "aliases": {
     "safety": "rsoRequirement",
     "land": "a11AtypicalRequirement",
-    "talk": "isolationRequirement",
+    "talk": "usbCsmRequirement",
     "abort": "agsRequirement",
     "air": "lm5ConsumableRequirement",
     "guide": "pngsRequirement"
@@ -36,7 +36,7 @@
       "model_ref": "land"
     },
     "talk": {
-      "label": "«requirement»\nTalk\nMission Control talks to the\nstack on Unified S-Band. There\nis no stage-to-stage electrical\npower and no propellant\ncrossfeed.",
+      "label": "«requirement»\nTalk\nMission Control talks to the\nstack on Unified S-Band.",
       "rank": 0,
       "order": 2,
       "h": 148,

@@ -1,0 +1,124 @@
+{
+  "diagram": "apollo-stm-and",
+  "kind": "StateView",
+  "name": "Apollo 11 Sourced Concurrency",
+  "subject": "flight",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "top-down",
+  "default_w": 180,
+  "default_h": 64,
+  "rank_gap": 80,
+  "col_gap": 48,
+  "aliases": {
+    "flight": "Apollo11::Flight",
+    "earthCoast": "Apollo11::MissionPhase::earthCoast",
+    "lunarReturn": "Apollo11::MissionPhase::lunarReturn",
+    "abortMode": "Apollo11::AbortMode",
+    "afterUndock": "Apollo11::MissionPhase::lunarReturn::afterUndock",
+    "csmOrbit": "Apollo11::MissionPhase::lunarReturn::csmOrbit",
+    "DOI": "Apollo11::MissionPhase::lunarReturn::DOI",
+    "rangeSafety": "Apollo11::RangeSafety",
+    "rsArmed": "Apollo11::RangeSafety::armed",
+    "rsSafed": "Apollo11::RangeSafety::safed",
+    "safeAfterOrbit": "Apollo11::RangeSafety::safeAfterOrbit",
+    "p66Landing": "Apollo11::LGC_Landing::p66",
+    "agsFollow": "Apollo11::AGSMode::followPNGS"
+  },
+  "states": {
+    "initial": {
+      "initial": true
+    },
+    "flight": {
+      "label": "Flight",
+      "composite": true,
+      "concurrent": true,
+      "style": "state.composite",
+      "model_ref": "flight",
+      "regions": [
+        {"id": "clockAbort", "label": "Clock / Abort"},
+        {"id": "afterUndock", "label": "After undock"},
+        {"id": "rangeSafety", "label": "Range Safety"},
+        {"id": "guidance", "label": "Guidance"}
+      ]
+    },
+    "earthCoast": {
+      "label": "Earth coast",
+      "model_ref": "earthCoast",
+      "parent": "flight",
+      "region": "clockAbort"
+    },
+    "lunarReturn": {
+      "label": "Lunar return",
+      "model_ref": "lunarReturn",
+      "parent": "flight",
+      "region": "clockAbort"
+    },
+    "abortMode": {
+      "label": "Abort family",
+      "model_ref": "abortMode",
+      "parent": "flight",
+      "region": "clockAbort"
+    },
+    "csmOrbit": {
+      "label": "CMP in lunar orbit",
+      "model_ref": "csmOrbit",
+      "parent": "flight",
+      "region": "afterUndock",
+      "h": 64
+    },
+    "DOI": {
+      "label": "LM DOI through ascent",
+      "model_ref": "DOI",
+      "parent": "flight",
+      "region": "afterUndock",
+      "h": 64
+    },
+    "rsArmed": {
+      "label": "Destruct armed",
+      "model_ref": "rsArmed",
+      "parent": "flight",
+      "region": "rangeSafety"
+    },
+    "rsSafed": {
+      "label": "Safed after\nEarth orbit",
+      "model_ref": "rsSafed",
+      "parent": "flight",
+      "region": "rangeSafety",
+      "h": 64
+    },
+    "p66Landing": {
+      "label": "Primary Guidance\nP66 lands",
+      "model_ref": "p66Landing",
+      "parent": "flight",
+      "region": "guidance",
+      "h": 64
+    },
+    "agsFollow": {
+      "label": "Abort Guidance\ndoes not land",
+      "model_ref": "agsFollow",
+      "parent": "flight",
+      "region": "guidance",
+      "h": 64
+    }
+  },
+  "transitions": [
+    {
+      "from": "initial",
+      "to": "flight",
+      "label": ""
+    },
+    {
+      "from": "earthCoast",
+      "to": "lunarReturn",
+      "label": ""
+    },
+    {
+      "from": "rsArmed",
+      "to": "rsSafed",
+      "label": "Earth orbit",
+      "model_ref": "safeAfterOrbit"
+    }
+  ]
+}

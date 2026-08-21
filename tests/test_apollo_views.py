@@ -179,9 +179,19 @@ class ApolloViewTests(unittest.TestCase):
         self.assertNotIn("21,500", joined)
         self.assertNotIn("LMA790", joined)
         self.assertNotRegex(joined, r"(?i)required thrust")
-        self.assertLess(sizes["apollo-stm"]["width"], 2800)
+        talk = req["nodes"]["talk"]["label"]
+        self.assertIn("Unified S-Band", talk)
+        self.assertNotIn("stage-to-stage", talk)
+        self.assertNotIn("crossfeed", talk)
+        self.assertLess(sizes["apollo-stm"]["width"], 1600)
         self.assertGreater(sizes["apollo-stm"]["height"], 200)
-        self.assertLess(sizes["apollo-stm"]["height"], 2200)
+        self.assertLess(sizes["apollo-stm"]["height"], 1000)
+        lunar_canvas = json.loads((APOLLO / "apollo-stm-lunar.sysmld").read_text(encoding="utf-8"))["diagram"]["canvas"]
+        and_canvas = json.loads((APOLLO / "apollo-stm-and.sysmld").read_text(encoding="utf-8"))["diagram"]["canvas"]
+        self.assertLess(lunar_canvas["width"], 1600)
+        self.assertLess(lunar_canvas["height"], 1000)
+        self.assertLess(and_canvas["width"], 900)
+        self.assertLess(and_canvas["height"], 1600)
         self.assertLess(sizes["apollo-bdd"]["width"], 2800)
         self.assertGreater(sizes["apollo-bdd"]["height"], 200)
         self.assertLess(sizes["apollo-bdd"]["height"], 800)
@@ -285,47 +295,45 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("dockEject", stm_spec["states"])
         self.assertEqual(stm_spec["states"]["dockEject"]["label"], "dock/eject")
         self.assertTrue(stm_spec["states"]["earthCoast"].get("composite"))
-        self.assertTrue(stm_spec["states"]["lunarReturn"].get("composite"))
-        self.assertTrue(stm_spec["states"]["flight"].get("concurrent"))
-        self.assertTrue(stm_spec["states"]["afterUndock"].get("concurrent"))
-        self.assertEqual(stm_spec["states"]["earthCoast"]["parent"], "flight")
-        self.assertEqual(stm_spec["states"]["earthCoast"]["region"], "mission")
-        self.assertEqual(stm_spec["states"]["lunarReturn"]["region"], "mission")
-        self.assertEqual(stm_spec["states"]["abortMode"]["region"], "abort")
-        self.assertEqual(stm_spec["states"]["rangeSafety"]["region"], "rangeSafety")
-        self.assertEqual(stm_spec["states"]["p66Landing"]["region"], "guidance")
-        self.assertEqual(stm_spec["states"]["agsFollow"]["region"], "guidance")
+        self.assertNotIn("lunarReturn", stm_spec["states"])
+        self.assertNotIn("flight", stm_spec["states"])
         self.assertEqual(stm_spec["states"]["TLI"]["parent"], "earthCoast")
         self.assertEqual(stm_spec["states"]["dockEject"]["parent"], "earthCoast")
-        self.assertEqual(stm_spec["states"]["recovery"]["parent"], "lunarReturn")
-        self.assertEqual(stm_spec["states"]["pad"]["parent"], "abortMode")
-        top_states = [
+        earth_top = [
             sid
             for sid, state in stm_spec["states"].items()
             if not state.get("initial") and not state.get("parent")
         ]
-        self.assertLessEqual(len(top_states), 10)
-        self.assertEqual(set(top_states), {"flight"})
+        self.assertLessEqual(len(earth_top), 10)
         earth_children = [
             sid
             for sid, state in stm_spec["states"].items()
             if state.get("parent") == "earthCoast" and not state.get("initial")
         ]
         self.assertLessEqual(len(earth_children), 8)
-        lunar_children = [
+        self.assertEqual(
+            set(earth_children),
+            {"countdown", "boost", "earthOrbit", "TLI", "dockEject", "translunar", "LOI"},
+        )
+        self.assertIn("state earthCoast {", text)
+        self.assertIn("state lunarReturn {", text)
+        self.assertIn("state def Flight", text)
+        self.assertIn("state def RangeSafety", text)
+        self.assertIn("state csmOrbit", text)
+        self.assertIn("state afterUndock", text)
+        self.assertIn("state followPNGS", text)
+        and_spec = json.loads((APOLLO / "apollo-stm-and.json").read_text(encoding="utf-8"))
+        self.assertTrue(and_spec["states"]["flight"].get("concurrent"))
+        self.assertEqual(and_spec["states"]["abortMode"]["region"], "clockAbort")
+        self.assertEqual(and_spec["states"]["csmOrbit"]["region"], "afterUndock")
+        self.assertEqual(and_spec["states"]["rsSafed"]["region"], "rangeSafety")
+        self.assertEqual(and_spec["states"]["agsFollow"]["region"], "guidance")
+        and_leaves = [
             sid
-            for sid, state in stm_spec["states"].items()
-            if state.get("parent") == "lunarReturn" and not state.get("initial")
+            for sid, state in and_spec["states"].items()
+            if not state.get("initial") and state.get("parent") == "flight"
         ]
-        self.assertLessEqual(len(lunar_children), 8)
-        abort_children = [
-            sid
-            for sid, state in stm_spec["states"].items()
-            if state.get("parent") == "abortMode" and not state.get("initial")
-        ]
-        self.assertLessEqual(len(abort_children), 8)
-        self.assertIn("pad", abort_children)
-        self.assertIn("SPS", abort_children)
+        self.assertLessEqual(len(and_leaves), 10)
         hops = {(edge["from"], edge["to"]) for edge in stm_spec["transitions"]}
         earth = [
             "countdown",
@@ -356,8 +364,13 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("~075:49:50", loi_label)
         self.assertNotIn("Press Kit", loi_label)
         lunar_spec = json.loads((APOLLO / "apollo-stm-lunar.json").read_text(encoding="utf-8"))
-        lunar_states = [sid for sid, state in lunar_spec["states"].items() if not state.get("initial")]
-        self.assertLessEqual(len(lunar_states), 10)
+        self.assertTrue(lunar_spec["states"]["lunarReturn"].get("composite"))
+        lunar_children = [
+            sid
+            for sid, state in lunar_spec["states"].items()
+            if state.get("parent") == "lunarReturn" and not state.get("initial")
+        ]
+        self.assertLessEqual(len(lunar_children), 10)
         lunar_hops = {(edge["from"], edge["to"]) for edge in lunar_spec["transitions"]}
         lunar = [
             "LOI",
