@@ -197,7 +197,7 @@ open          coffee-maker-stm.svg
 
 ## Next Steps
 
-- Start a project of your own from [template/new-project/](template/new-project/) rather than cloning toaster. Pick SysML2d **or** [MSML](https://github.com/meaningfulsystems/msml) for a project — do not mix `.sysml` and `.msml`.
+- Start a project of your own from [templates/new-project/](templates/new-project/) rather than cloning toaster. Pick SysML2d **or** [MSML](https://github.com/meaningfulsystems/msml) for a project — do not mix `.sysml` and `.msml`.
 - Browse all 15 view types in [examples/toaster](examples/toaster), [examples/blender](examples/blender), and [examples/e-bike](examples/e-bike)
 - Read [sysmld-specification.md](sysmld-specification.md) for the complete format reference
 - Point an agent at [AGENTS.md](AGENTS.md) and the skills in [skills/](skills/) (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`)

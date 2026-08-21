@@ -18,8 +18,8 @@ intent.json  →  sysmld <command> intent.json  →  diagram.sysmld  →  sysmld
 | Kind | Command | Aliases | Example intent |
 | --- | --- | --- | --- |
 | `DefinitionView` | `sysmld definition` | `bdd`, `tree` | `examples/e-bike/e-bike-bdd.json` |
-| `InterconnectionView` | `sysmld interconnection` | `compose`, `ibd` | `examples/e-bike/e-bike-ibd.json`, `template/new-project/starter-ibd.json` |
-| `StateView` | `sysmld state` | `stm` | `examples/e-bike/e-bike-stm.json`, `template/new-project/starter-stm.json` |
+| `InterconnectionView` | `sysmld interconnection` | `compose`, `ibd` | `examples/e-bike/e-bike-ibd.json`, `templates/new-project/starter-ibd.json` |
+| `StateView` | `sysmld state` | `stm` | `examples/e-bike/e-bike-stm.json`, `templates/new-project/starter-stm.json` |
 | `ActionView` | `sysmld action` | | `examples/e-bike/e-bike-act.json` |
 | `InteractionView` | `sysmld interaction` | | `examples/e-bike/e-bike-int.json` |
 | `UseCaseView` | `sysmld usecase` | | `examples/e-bike/e-bike-uc.json` |

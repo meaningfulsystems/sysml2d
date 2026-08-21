@@ -26,12 +26,12 @@ Hero path: study [examples/e-bike/](examples/e-bike/), then start a new system w
 .sysml  →  intent.json  →  sysmld <kind>  →  .sysmld  →  sysmld render / validate --strict
 ```
 
-- New user project: [skills/bootstrap-project/SKILL.md](skills/bootstrap-project/SKILL.md) and [template/new-project/](template/new-project/).
+- New user project: [skills/bootstrap-project/SKILL.md](skills/bootstrap-project/SKILL.md) and [templates/new-project/](templates/new-project/).
 - Write or edit textual SysML v2: [skills/author-model/SKILL.md](skills/author-model/SKILL.md).
 - Intent JSON + composer command: [skills/compose-views/SKILL.md](skills/compose-views/SKILL.md).
 - Visual / meaning QA: [skills/vision-review/SKILL.md](skills/vision-review/SKILL.md).
 
-Copy `template/new-project/` for a greenfield model. Skill folder stems match MSML (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`); language-specific bits (`.sysml`, `sysmld` CLI) stay in the skill body.
+Copy `templates/new-project/` for a greenfield model. Skill folder stems match MSML (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`); language-specific bits (`.sysml`, `sysmld` CLI) stay in the skill body.
 
 ## Checks
 

@@ -47,7 +47,7 @@ package SystemName {
 
 - **ElectricBike ids are frozen.** Do not rename that package, its parts, or `examples/e-bike/` stems.
 - Do not invent a second name for an existing element so a diagram “looks nicer.”
-- New systems get a **new** package name. Copy [template/new-project/starter.sysml](../../template/new-project/starter.sysml).
+- New systems get a **new** package name. Copy [templates/new-project/starter.sysml](../../templates/new-project/starter.sysml).
 
 ## After edits
 
