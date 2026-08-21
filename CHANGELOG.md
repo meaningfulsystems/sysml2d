@@ -10,7 +10,7 @@ All notable changes to SysMLD are documented here.
 - `examples/e-bike/` — a street-legal class e-bike model with intents, `.sysmld`, and SVG for all 15 view kinds plus an operating-context general view
 - Adoption pack: [AGENTS.md](AGENTS.md), four installable skills (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`), and [templates/new-project/](templates/new-project/) (copy-this `.sysml` + IBD + STM)
 - `examples/apollo/` — Apollo 11 / Block II (AS-506) whole-stack model: ground/crew, vehicles, two AGCs, AGS, IU LVDC, USB, mission + abort STMs. Sourced numbers only; UNKNOWN marked
-- Apollo morning delta: SM three fuel cells; CM AgZn + charger + two 117 V 400 Hz inverters; LM six AgZn + ECA; AGS AEA/ASA/DEDA (TN-7990); CM probe / LM drogue / 12 latches; SM/LM RCS 100 lbf per engine, CM 93 lbf
+- Apollo morning delta: SM three fuel cells; CM AgZn + charger + two 117 V 400 Hz inverters; LM six AgZn + ECA; AGS AEA/ASA/DEDA (TN-7990); CM probe / LM drogue / 12 latches; SM/LM RCS 100 lbf (PK p.93 / p.106), CM 93 lbf; loaded SM/CM RCS propellant mass UNKNOWN
 - Apollo Press Kit p.109 tank loads filled; A11 ropes Comanche 055 + Luminary 1A LMY99/1; CMC ENTRY vs LGC LANDING split; SPS/DPS cited as PK vs TN conflicts. SPS loaded mass and CSM lunar Δv stay UNKNOWN
 
 ### Changed

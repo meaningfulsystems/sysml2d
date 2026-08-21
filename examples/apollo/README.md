@@ -29,7 +29,7 @@ Sourced numbers only. SPS loaded mass and CSM lunar Δv stay UNKNOWN — do not 
 - **Electrical (A11 Press Kit):** SM `FC1` `FC2` `FC3`; CM `AgZn1`–`AgZn3` + `charger`; LM six AgZn (4 descent / 2 ascent) + `ECA` each; 28 V DC; `inverter1` `inverter2` at 117 V 400 Hz.
 - **AGS (TN-7990):** `AEA` + `ASA` + `DEDA`. AEA 4096 × 18-bit, half/half, 5 μs, 32.7 lb. Not a landing computer.
 - **Docking:** CM `probe` / LM `drogue`, `ringLatches` (12), soft then hard, hardware removed for transfer (`hardwareOff`).
-- **RCS:** SM and LM 100 lbf per engine; CM 93 lbf. SM `quadA`–`quadD`. CM `systemA` / `systemB` (two × six 93 lbf); no auto translation. Δv table still UNKNOWN.
+- **RCS:** SM 100 lbf/engine (A11 PK p.93); LM 100 lbf/engine (A11 PK p.106); CM 93 lbf. SM `quadA`–`quadD`. CM `systemA` / `systemB` (two × six 93 lbf); no auto translation. Loaded SM/CM RCS propellant mass UNKNOWN — do not invent. Δv table still UNKNOWN.
 
 ## Mission STM
 

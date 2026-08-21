@@ -187,7 +187,7 @@ package Apollo11 {
         part def IMU;
         part def DSKY;
         part def SPS;
-        part def RCS { doc /* SM: 100 lbf per engine, four quads. CM: 93 lbf per engine. */ }
+        part def RCS { doc /* SM: 100 lbf per engine (A11 PK p.93), four quads. CM: 93 lbf per engine. Loaded SM/CM RCS propellant mass UNKNOWN — do not invent. */ }
         part def ECLSS {
             part oxygenLoop : OxygenLoop;
             part waterLoop : WaterLoop;
@@ -204,9 +204,9 @@ package Apollo11 {
         part def inverter;
         part def probe;
         part def ringLatches;
-        part def RCSSystem { doc /* CM RCS: two × six 93 lbf engines. No auto translation. */ }
+        part def RCSSystem { doc /* CM RCS: two × six 93 lbf engines. No auto translation. Loaded CM RCS propellant mass UNKNOWN. */ }
         part def FC;
-        part def quad { doc /* SM RCS quad: 100 lbf per engine. No longer UNKNOWN. */ }
+        part def quad { doc /* SM RCS quad: 100 lbf per engine (A11 PK p.93). Loaded SM RCS propellant mass UNKNOWN. */ }
         part def BMAG;
         part def TVC;
         part def RHC;
@@ -291,7 +291,7 @@ package Apollo11 {
         part def drogue;
         part def DPS;
         part def APS;
-        part def RCS { doc /* LM RCS: 100 lbf per engine. */ }
+        part def RCS { doc /* LM RCS: 100 lbf per engine (A11 PK p.106). */ }
         part def IMU;
         part def DSKY;
         part def landingRadar;
@@ -625,7 +625,7 @@ package Apollo11 {
     requirement pipaRequirement { doc /* PIPA scale: CM 5.85 cm/s/pulse vs LM 1.0 cm/s/pulse. */ }
     requirement epsRequirement { doc /* A11 Press Kit electrical: SM three fuel cells; CM three AgZn + charger; LM six AgZn (4 descent / 2 ascent) + ECA each; 28 V DC; two 117 V 400 Hz inverters. */ }
     requirement dockingRequirement { doc /* CM probe / LM drogue; 12 ring latches; soft then hard dock; hardware removed for transfer. */ }
-    requirement rcsRequirement { doc /* RCS thrust sourced: SM and LM 100 lbf per engine; CM 93 lbf. SM four quads. CM two × six 93 lbf engines; no auto translation. SM quad per-engine lbf is no longer UNKNOWN. Δv table still UNKNOWN. */ }
+    requirement rcsRequirement { doc /* RCS thrust: SM 100 lbf per engine (A11 PK p.93); LM 100 lbf per engine (A11 PK p.106); CM 93 lbf. SM four quads. CM two × six 93 lbf engines; no auto translation. Loaded SM/CM RCS propellant mass UNKNOWN — do not invent. Δv table still UNKNOWN. */ }
     requirement iuGncRequirement { doc /* IU LVDC stays separate from AGC. LVDC 82.03125 µs, 26+2 bits. No digital AGC↔LVDC. IU owns boost+TLI. */ }
     requirement rsoRequirement { doc /* RSO is OUTSIDE MCC. UHF destruct, safed after Earth orbit. */ }
     requirement a11AtypicalRequirement { doc /* A11 vs generic lunar stack: (1) first landing, one short EVA, 196 h vs 336 h ECLSS spec; (2) no LRV, no SIM bay; (3) P66 was the A11-flown landing program; (4) Parkes + Goldstone 210-ft is A11 coverage; (5) F-1 1,530,000 lbf sourced as SA-507, not AS-506; (6) PK p.109 tank loads A11-only; SPS loaded mass UNKNOWN; CSM lunar Δv UNKNOWN; (7) ropes Comanche 055 + Luminary 1A LMY99/1; AGS flight-program name UNKNOWN. */ }
