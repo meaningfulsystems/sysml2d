@@ -1,6 +1,6 @@
 # Apollo 11 / Block II (AS-506)
 
-Architecture walkthrough: [apollo-architecture-summary.md](apollo-architecture-summary.md).
+Architecture: [apollo-architecture-summary.md](apollo-architecture-summary.md).
 
 This folder is a SysML v2 model of the flown Apollo 11 stack (`.sysml` / `.sysmld` / SVG). Hyphens are not legal identifiers, so S-IC / S-II / S-IVB appear as `SIC`, `SII`, `SIVB`. The mission phase surface/EVA is `surfaceEVA`.
 

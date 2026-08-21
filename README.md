@@ -69,13 +69,13 @@ The same idea — models, diagrams, and history as text — also drives the pair
 
 ![Electric Bike Interconnection](examples/e-bike/e-bike-ibd.svg)
 
-Model and compose commands: [examples/e-bike/](examples/e-bike/). View walkthrough: [e-bike architecture summary](examples/e-bike/e-bike-architecture-summary.md).
+Model and compose commands: [examples/e-bike/](examples/e-bike/). Architecture: [e-bike architecture](examples/e-bike/e-bike-architecture-summary.md).
 
 **Apollo** is a full lunar-orbit-rendezvous example: Saturn V, Block II CSM, LM-5, crew, and the ground network for Apollo 11 (AS-506). It is meant to be read as a system-of-systems model — launch vehicle, two spacecraft computers plus AGS, MCC/MSFN, and the mission state machine through splashdown. Numbers are from NASA primary sources; a few values (including an official CSM lunar Δv table) are intentionally left unmarked.
 
-Model and compose commands: [examples/apollo/](examples/apollo/). View walkthrough: [Apollo architecture summary](examples/apollo/apollo-architecture-summary.md).
+Model and compose commands: [examples/apollo/](examples/apollo/). Architecture: [Apollo architecture](examples/apollo/apollo-architecture-summary.md).
 
-Appliance extras: [toaster](examples/toaster/) ([summary](examples/toaster/toaster-architecture-summary.md)), [blender](examples/blender/) ([summary](examples/blender/blender-architecture-summary.md)).
+Appliance extras: [toaster](examples/toaster/) ([architecture](examples/toaster/toaster-architecture-summary.md)), [blender](examples/blender/) ([architecture](examples/blender/blender-architecture-summary.md)).
 
 ## Quick Start
 
@@ -170,10 +170,10 @@ sysmld render examples/toaster/toaster-stm.sysmld --png --scale 3.0  # higher re
 ```text
 src/sysmld/              Python package — view composers, layout engine, renderer, validator
 schemas/                 SysMLD JSON Schema (authoritative for .sysmld document shape)
-examples/toaster/        Toaster appliance model and all diagram examples
-examples/blender/        Blender appliance model and all diagram examples
-examples/e-bike/         EPAC hero example (all 15 views + architecture summary)
-examples/apollo/         Apollo 11 / AS-506 / Block II full-stack example + architecture summary
+examples/toaster/        Toaster appliance model, views, and architecture document
+examples/blender/        Blender appliance model, views, and architecture document
+examples/e-bike/         EPAC hero example (all 15 views + architecture document)
+examples/apollo/         Apollo 11 / AS-506 / Block II full-stack example + architecture document
 templates/new-project/   Copy-this starter (model stub + IBD + STM intents)
 skills/                  Installable agent skills plus leftover one-shot prompts
 AGENTS.md                How an agent should work in this repo

@@ -1,10 +1,181 @@
-# Toaster Architecture Summary
+# Toaster Architecture
 
-This document summarizes the toaster SysML model and its generated SysMLD views. The model covers user-facing cases, quantitative requirements, structure, behavior, interfaces, flows, analyses, verification, and traceability.
+This document is the architecture and system-design description of the two-slice household toaster modeled in `toaster.sysml`. A reviewer should be able to understand purpose, context, requirements, structure, interfaces, behavior, and allocations without opening the model. Generated views appear after the written architecture.
 
-## Cases
+Requirement text and numbers in this document come from the SysML model unless marked as view-only. View labels sometimes add targets that the model does not state; those are called out rather than treated as model facts. The model does not cite external standards.
 
-The toaster cases focus on the primary user workflows: toasting bread, cancelling a toast cycle, and removing crumbs through the tray. Analysis cases evaluate thermal performance and electrical load. Verification cases check browning quality, electrical safety, and crumb-tray removal.
+## 1. Purpose and Mission
+
+The system is a countertop two-slice toaster. Its mission is to accept bread, apply controlled heat for a selected browning level, present toast, and allow the user to cancel a cycle or empty crumbs without tools.
+
+The model is a single baseline product, not a product line. Four-slice, bagel, defrost, and wide-slot variants are not modeled.
+
+## 2. Operating Context
+
+The toaster sits in a kitchen among three external parts: the user, a mains supply, and the kitchen environment. Bread enters the slots; toast and crumbs leave; heat and noise go to the surroundings.
+
+| External part | Role |
+|---------------|------|
+| User | Inserts bread, lowers the lever, sets browning, cancels, pulls the crumb tray |
+| Mains supply | Electrical energy into the power cord |
+| Kitchen environment | Receives waste heat and noise |
+
+Items that cross the boundary: `BreadSlice`, `ToastSlice`, `ElectricalEnergy`, `HeatEnergy`, `UserCommand`, `CrumbDebris`.
+
+External-facing ports on the toaster are user inputs (lever, buttons, tray pull) and mains power. The model does not give a voltage or frequency on `MainsSupply`. The context view labels the outlet 120 VAC; that number is view-only.
+
+## 3. Stakeholders and Use Cases
+
+The only named stakeholder is the user. A service technician is implied by a serviceability requirement but is not modeled as an actor.
+
+**Use cases**
+
+- **Toast Bread** — primary cycle.
+- **Cancel Toast** — extends Toast Bread.
+- **Empty Crumb Tray** — included by Toast Bread; tray is removable without tools.
+
+**Analysis cases**
+
+- **Thermal Performance** — uses the heat-energy constraint against browning.
+- **Electrical Load** — uses the electrical-power constraint against electrical safety.
+
+**Verification cases**
+
+- Verify browning (browning and browning-level requirements).
+- Verify electrical safety (electrical safety, power rating, thermal cutoff).
+- Verify crumb-tray removal (tray force and cleanability).
+- Verify carriage release.
+- Verify surface temperature.
+
+User-interface, serviceability, timing, toast-safety, and cycle-life requirements have no verification case in the model.
+
+## 4. Requirements
+
+The model states fourteen requirements. IDs such as REQ-T-xxx appear only on views and are listed here for cross-reference.
+
+| ID (view) | Requirement | Quantitative target in the model |
+|-----------|-------------|----------------------------------|
+| REQ-T-001 | Toast safety — no burns, shock, or fire under normal use | none |
+| REQ-T-002 | Electrical safety — comply with applicable household-appliance electrical safety standards | none (no standard named in the model) |
+| REQ-T-003 | Uniform browning across the bread surface at each setting | none |
+| REQ-T-004 | Timer accuracy | **±5%** of the selected setting |
+| — | User interface — insert bread, select browning, cancel, without tools | none |
+| — | Cleanability — crumb tray removable and washable without tools | none |
+| — | Serviceability — serviceable by a qualified technician without specialized equipment | none |
+| REQ-T-010 | Operate within rated power under normal use | rated value **not in model** |
+| REQ-T-011 | Exterior accessible surfaces shall not exceed safe touch temperature | limit **not in model** |
+| REQ-T-012 | Thermal cutoff disables heating if internal temperature exceeds a safe threshold | threshold **not in model** |
+| REQ-T-020 | Distinct, repeatable browning levels | **at least three** |
+| REQ-T-021 | Carriage releases on timer expiry or cancel | release time **not in model** |
+| REQ-T-030 | Crumb-tray removal force | **no more than 10 N** |
+| REQ-T-040 | Cycle life before maintenance | **at least 10,000** toast cycles |
+
+**View-only numbers** (not in the model; do not treat as sourced): 900–1200 W on 120 VAC / 60 Hz; touchable surfaces ≤ 60 °C at 25 °C ambient; cutoff before external surface exceeds 90 °C; seven browning levels and slot ΔE ≤ 1.5; carriage pop-up within 2 s; tray force 5–15 N and ≥ 90% crumb capture; toast duration 90–150 s at level 4; UL 1026 / IEC 60335-2-9 on the electrical-safety label.
+
+Where the view disagrees with the model (seven levels vs at least three; 5–15 N vs ≤ 10 N), the model text is the requirement.
+
+## 5. Structure
+
+The toaster is a single-level composition. Part definitions have no nested internals.
+
+```
+Toaster
+├── chassis
+├── lever
+├── buttons
+├── powerAndControlSubsystem
+├── heatingElement
+├── carriage
+├── crumbTray
+└── powerCord
+```
+
+The definition view marks crumb tray `0..1` and the others `1`. Multiplicity is not written in the SysML source.
+
+Port types used on the toaster: user-interface, power, control, heat, and mechanical. Ports are declared on the toaster, not on the empty child part definitions.
+
+## 6. Interfaces and Interconnections
+
+**Why the connections exist:** the user starts and stops the cycle through the lever and buttons; mains energy reaches the control subsystem through the cord; the subsystem commands the heater; the heater heats the carriage; the chassis locates the moving and mounted parts.
+
+| Connection | From → to | Why |
+|------------|-----------|-----|
+| Lever / button / tray inputs | Boundary → lever, buttons, crumb tray | User actuation |
+| Mains → cord → power and control | Power | Energize control and heater switching |
+| Lever → power and control | Control | Toast request / latch |
+| Buttons → power and control | Control | Browning and cancel |
+| Power and control → heater | Control | Heat command |
+| Heater → carriage | Thermal | Heat to bread |
+| Lever → carriage | Mechanical | Lift / release |
+| Chassis → carriage, buttons, power and control, crumb tray | Mechanical | Guide and mount |
+
+The electrical interconnection view shows buttons, lever, cord, power and control, and heater. The mechanical interconnection view shows chassis, lever, buttons, carriage, crumb tray, and the control-subsystem mount. Those two views split the same model connections by domain.
+
+Interface definitions (`UserInterface`, `PowerInterface`, `ThermalInterface`, `MechanicalInterface`) are stubs. They do not declare carried features in the model.
+
+## 7. Behavior
+
+### States (`ToasterControl`)
+
+Initial state is Idle.
+
+| From | Trigger | To |
+|------|---------|-----|
+| Idle | lever down | Heating |
+| Heating | timer expired | Done |
+| Done | carriage up | Idle |
+| Heating | carriage up | Idle (cancel / early release) |
+| Heating | overheat | Error |
+| Heating | carriage jam | Error |
+| Heating | power fault | Error |
+| Error | reset | Idle |
+
+Done is a normal state, not a final node: cycle complete is distinct from bread removal. The three heating-to-error transitions are separate in the model; the state view collapses them to one fault edge.
+
+### Toast cycle (actions)
+
+Insert bread → lower lever → latch carriage → energize heater → monitor timer (loop until done) → release carriage → present toast.
+
+Emptying the crumb tray is a use case; it is not an action on the toast-cycle diagram.
+
+### Interaction
+
+User lowers the lever; the lever requests toast from power and control; power and control commands the heater and later releases the carriage; toast is available to the user.
+
+## 8. Allocations
+
+Allocation elements exist in the model; most endpoints are only on the allocation view.
+
+| Allocation | Source | Target (view) |
+|------------|--------|---------------|
+| Safety to power and control | Toast safety | Power and control subsystem |
+| Heat to heater | Browning | Heating element |
+| Browning to toast cycle | Browning | Energize-heater action |
+| Cleanability to crumb tray | Cleanability | Crumb tray |
+| Carriage release to mechanism | name only | endpoints **not in model** |
+| Surface temperature to chassis | name only | endpoints **not in model** |
+
+Timing, user interface, serviceability, power rating, thermal cutoff, browning-level count, tray force, and cycle life have no allocation in the model or views.
+
+## 9. Parameters, Constraints, and Scope
+
+Constraint definitions exist as names only — `heatEnergyBalance`, `toastTimingEstimate`, `electricalPowerLimit`, `browningTemperatureEstimate`, `surfaceTemperatureLimit`, `carriageReleaseTiming`. The model has no equations.
+
+Attributes declared without values: `targetBrowning`, `inputPower`, `toastDuration`, `toastTemperature`, `surfaceTemperature`, `releaseTime`, `trayRemovalForce`.
+
+**Out of scope:** 4-slice, bagel, defrost, and wide-slot variants; coil, thermostat, and latch geometry; constraint equations; named electrical standards in the model.
+
+**Unmarked / not in the model:** rated watts, mains voltage and frequency, touch-temperature and cutoff thresholds, carriage-release time, toast duration and temperature, crumb-capture fraction. There are no `UNKNOWN` literals in this example.
+
+---
+
+## Generated Views
+
+The figures below are the generated SysMLD views for this model. They illustrate the architecture above; they do not replace it.
+
+### Cases
+
+The toaster cases focus on toasting bread, cancelling a toast cycle, and removing crumbs. Analysis cases evaluate thermal performance and electrical load. Verification cases check browning, electrical safety, and crumb-tray removal.
 
 ![Toaster Use Cases](toaster-uc.svg)
 
@@ -12,74 +183,70 @@ The toaster cases focus on the primary user workflows: toasting bread, cancellin
 
 ![Toaster Verification Cases](toaster-vcase.svg)
 
-## Operating Context
+### Operating Context
 
-The toaster interacts with the user, bread, a 120 VAC outlet, the kitchen environment, finished toast, and crumb debris. The context view makes the external interfaces explicit before decomposing the toaster internals.
+The toaster interacts with the user, bread, the mains outlet, the kitchen environment, finished toast, and crumb debris.
 
 ![Toaster Operating Context](toaster-context.svg)
 
-## Requirements
+### Requirements
 
-The requirement view now embeds requirement intent and quantitative targets in each requirement node. The root safety requirement derives electrical, browning, and timing requirements. Detailed targets include 900-1200 W operation, touchable surface temperature at or below 60 C, thermal cutoff before external surfaces exceed 90 C, seven browning levels, carriage release within 2 s, crumb tray removal force of 5-15 N, and 10,000 mechanism cycles.
+Requirement nodes carry intent and any quantitative labels drawn for the view.
 
 ![Toaster Requirements](toaster-req.svg)
 
-## Hierarchical Structure
+### Hierarchical Structure
 
-The definition tree identifies the toaster as a composition of chassis, lever, buttons, power and control subsystem, heating element, carriage, crumb tray, and power cord. Multiplicity and composition diamonds show part ownership.
+The definition tree composes chassis, lever, buttons, power and control, heating element, carriage, crumb tray, and power cord.
 
 ![Toaster Definition Tree](toaster-bdd.svg)
 
-## Interaction
+### Interaction
 
-The interaction view shows the user lowering the lever, the control subsystem commanding heat, the carriage being released, and toast becoming available to the user.
+The interaction view shows the user lowering the lever, the control subsystem commanding heat, the carriage being released, and toast becoming available.
 
 ![Toaster Interaction](toaster-int.svg)
 
-## State Behavior
+### State Behavior
 
-The state machine captures Idle, Heating, Done, and Error as distinct operating states. Done is a normal state, not a final node, so the model distinguishes toast completion from bread removal. The Error state now covers overheating, carriage jam, and power fault conditions, with reset returning to Idle.
+Idle, Heating, Done, and Error. Done is a normal state. Error covers overheat, jam, and power fault, with reset to Idle.
 
 ![Toaster State Machine](toaster-stm.svg)
 
-## Action Behavior
+### Action Behavior
 
-The action view describes the toast cycle from bread insertion through lever actuation, carriage latching, heater energizing, timer monitoring, decision looping, carriage release, and toast presentation.
+The toast cycle from bread insertion through lever, latch, heat, timer, release, and presentation.
 
 ![Toaster Toast Cycle](toaster-act.svg)
 
-## Interconnection Views
+### Interconnection Views
 
-The electrical interconnection view separates user controls, cord power, power/control logic, and the heater command. The mechanical interconnection view separates chassis mounting, lever lift, button mounting, carriage guidance, and crumb tray guidance.
+Electrical interconnection separates user controls, cord power, power and control logic, and the heater command. Mechanical interconnection separates chassis mounting, lever lift, button mounting, carriage guidance, and crumb-tray guidance.
 
 ![Toaster Electrical Interconnection](toaster-electrical-icn.svg)
 
 ![Toaster Mechanical Interconnection](toaster-mech-composed.svg)
 
-## Interfaces and Flows
+### Interfaces and Flows
 
-The interface view captures user, power, mechanical, and thermal interfaces. The flow view shows bread, toast, mains power, heat, user commands, and crumbs moving through the system.
+User, power, mechanical, and thermal interfaces. Flows are bread, toast, mains energy, heat, user commands, and crumbs.
 
 ![Toaster Interfaces](toaster-intf.svg)
 
 ![Toaster Flows](toaster-flow.svg)
 
-## Constraints and Allocations
+### Constraints and Allocations
 
-The constraint view captures heat energy, timing, electrical power, browning, external surface temperature, and carriage-release timing estimates. The allocation view maps requirements onto parts and behavior responsible for satisfying them.
+Named energy, timing, power, browning, surface-temperature, and release constraints. Allocations map the requirements that the view binds onto parts and actions.
 
 ![Toaster Constraints](toaster-cst.svg)
 
 ![Toaster Allocations](toaster-alloc.svg)
 
-## Package and Trace Overview
+### Package and Trace Overview
 
-The package view organizes the model into structure, behavior, requirements, analysis, and verification packages. The general trace view ties use case, requirement, action, part, and verification case together.
+Packages are structure, behavior, requirements, analysis, and verification. The general view traces a use case, requirement, action, part, and verification case.
 
 ![Toaster Packages](toaster-pkg.svg)
 
 ![Toaster Cross-View Trace](toaster-general.svg)
-
-## Scope
-
-Product-line variants such as 4-slice, bagel, defrost, and wide-slot versions are not modeled. This example is a reference architecture for one 2-slice baseline, not a product line.

@@ -1,6 +1,6 @@
 # Electric Bike
 
-Architecture walkthrough: [e-bike-architecture-summary.md](e-bike-architecture-summary.md).
+Architecture: [e-bike-architecture-summary.md](e-bike-architecture-summary.md).
 
 Street-legal EPAC (EN 15194): cadence PAS, no certified throttle, 25 km/h cutoff, walk assist ≤ 6 km/h. Rear geared hub, no regeneration. **250 W is the EU continuous rating.** **40 N·m is hub peak torque, not continuous** — it does not sit with 250 W at 25 km/h as a continuous operating point. Charge path is charger → BMS → pack.
 
