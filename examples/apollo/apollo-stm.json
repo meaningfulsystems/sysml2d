@@ -58,11 +58,11 @@
       "model_ref": "boost"
     },
     "earthOrbit": {
-      "label": "earthOrbit\n100 nmi",
+      "label": "earthOrbit\n100 nmi planned",
       "model_ref": "earthOrbit"
     },
     "TLI": {
-      "label": "TLI\n02:44:15 GET",
+      "label": "TLI\n02:44:15 GET planned",
       "model_ref": "TLI"
     },
     "dockEject": {
@@ -74,7 +74,7 @@
       "model_ref": "translunar"
     },
     "LOI": {
-      "label": "LOI\n75:54:28 GET",
+      "label": "LOI\n75:54:28 GET planned",
       "model_ref": "LOI"
     },
     "undock": {

@@ -19,15 +19,15 @@
 <rect id="boost" x="490" y="123" width="118" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="549" y="149">boost</text>
 <rect id="earthOrbit" x="691" y="123" width="118" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="750" y="141.5">earthOrbit</tspan><tspan x="750" dy="15">100 nmi</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="750" y="141.5">earthOrbit</tspan><tspan x="750" dy="15">100 nmi planned</tspan></text>
 <rect id="TLI" x="891" y="123" width="118" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="950" y="141.5">TLI</tspan><tspan x="950" dy="15">02:44:15 GET</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="950" y="141.5">TLI</tspan><tspan x="950" dy="15">02:44:15 GET planned</tspan></text>
 <rect id="dockEject" x="1091" y="123" width="118" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1150" y="149">dock/eject</text>
 <rect id="translunar" x="1291" y="123" width="118" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1350" y="149">translunar</text>
 <rect id="LOI" x="1492" y="123" width="118" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1551" y="141.5">LOI</tspan><tspan x="1551" dy="15">75:54:28 GET</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="1551" y="141.5">LOI</tspan><tspan x="1551" dy="15">75:54:28 GET planned</tspan></text>
 <rect id="undock" x="1692" y="123" width="118" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1751" y="149">undock</text>
 <rect id="DOI" x="1892" y="123" width="118" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
@@ -64,8 +64,8 @@
 <path d="M 3212,149 L 3294,149" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <text class="small" text-anchor="middle" x="449" y="157">tower clear</text>
 <text class="small" text-anchor="middle" x="649.5" y="157">SECO</text>
-<text class="small" text-anchor="middle" x="850" y="157">IU / S-IVB</text>
-<text class="small" text-anchor="middle" x="1050" y="157">TDE ~03:20–04:09</text>
+<text class="small" text-anchor="middle" x="850" y="137">IU / S-IVB</text>
+<text class="small" text-anchor="middle" x="1062.3" y="172">TDE ~03:20–04:09</text>
 <text class="small" text-anchor="middle" x="1250" y="157">LM extract</text>
 <text class="small" text-anchor="middle" x="1450.5" y="157">SPS</text>
 <text class="small" text-anchor="middle" x="1851" y="157">DPS</text>

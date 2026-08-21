@@ -32,7 +32,7 @@
       "order": 3
     },
     "brakeOverrideRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-010 Brake Override\nElectronic inhibit <= 50 ms.\n~10x tighter than EN 15194 m.",
+      "label": "\u00abrequirement\u00bb\nREQ-E-010 Brake Override\nElectronic inhibit <= 50 ms.\nNot the EN 15194 2 m / 5 m cut.",
       "rank": 1,
       "order": 0
     },
@@ -62,7 +62,7 @@
       "order": 5
     },
     "en15194DistanceRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194 Distance\nCut assist within 5 m after\npedaling stops (2 m if tighter).",
+      "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194 4.2.13\nAssist ceases 5 m after pedaling\nstops (2 m if tighter). Not brakes.",
       "rank": 1,
       "order": 2
     },

@@ -121,7 +121,7 @@
           "z": 10
         },
         "model_ref": "earthOrbit",
-        "label": "earthOrbit\n100 nmi",
+        "label": "earthOrbit\n100 nmi planned",
         "style": "state.default"
       },
       {
@@ -135,7 +135,7 @@
           "z": 10
         },
         "model_ref": "TLI",
-        "label": "TLI\n02:44:15 GET",
+        "label": "TLI\n02:44:15 GET planned",
         "style": "state.default"
       },
       {
@@ -177,7 +177,7 @@
           "z": 10
         },
         "model_ref": "LOI",
-        "label": "LOI\n75:54:28 GET",
+        "label": "LOI\n75:54:28 GET planned",
         "style": "state.default"
       },
       {

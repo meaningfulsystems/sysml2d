@@ -12,6 +12,8 @@ Apollo 11 is a lunar-orbit-rendezvous (LOR) mission. Saturn V places the CSM and
 
 This is Apollo 11 only — first landing, one short EVA, no LRV, no SIM bay, P66 as the flown landing program, MOCR 2, SM cryo 2+2. J-mission variants are out of scope.
 
+Crew safety in this model is not LES-only. LES is the pad / Mode I escape tower on the stack. Later-mode crew safety that is actually modeled: `AbortMode` (pad, I–IV, contingency TLI, lunar, SPS); RSO UHF destruct (outside MCC, safed after Earth orbit); CM heat shield for entry; ECLSS / A7L / PLSS; and recover-crew to *Hornet*. There is no single `crewSafetyRequirement` element.
+
 ## 2. Operating Context
 
 The stack sits among first-class parts, not one Ground actor.
@@ -120,11 +122,12 @@ SM: FC1–FC3; cryo **2+2** (not J-mission 3+3). CM: AgZn1–3 + charger; two 11
 | A7L | 3.75±0.25 psid; EV 19.69 kg |
 | PLSS | usable O2 1.04 lb / 4 h at 1200 Btu/h |
 | Food plan | 2200±300 kcal/d (A11 actual intake unmarked) |
-| Earth parking orbit | 100 nmi planned |
+| Earth parking orbit | **100 nmi planned** |
 | Lunar delay | range/c ≈ 1.3 s |
-| EVA | one surface EVA; CDR 2:48 / LMP 2:40 |
-| TLI / dock / extract / LOI-1 | 02:44:15 GET; dock ~03:20; extract ~04:09; LOI-1 75:54:28 |
-| Splash | 195:18:35 MET, 13 nmi, *Hornet* |
+| EVA | one surface EVA; CDR 2:48 / LMP 2:40 (**flown** A11 instance) |
+| TLI / dock / extract / LOI-1 | **planned GET** (A11 Press Kit): TLI 02:44:15; dock ~03:20; extract ~04:09; LOI-1 75:54:28 |
+| Splash | 195:18:35 MET, 13 nmi, *Hornet* — model does not mark planned or flown |
+| Landing program | **P66 flown** |
 
 Docking: TD&E is its own GO/NO-GO, CMP-owned, SM RCS. CM probe / LM drogue + 12 ring latches. LM stays in the SLA until `dockEject` (after TLI, before translunar coast).
 
@@ -232,7 +235,7 @@ countdown → boost → earthOrbit → TLI → dockEject → translunar → LOI 
 | `ei` | TEI → entry |
 | `recoveryForce` | entry → recovery |
 
-`dockEject` is after TLI and before translunar coast. Official GET: TLI 02:44:15, dock ~03:20, extract ~04:09, then coast, LOI-1 75:54:28.
+`dockEject` is after TLI and before translunar coast. **Planned GET** (A11 Press Kit): TLI 02:44:15, dock ~03:20, extract ~04:09, then coast, LOI-1 75:54:28. Those times are not labeled flown. P66 is the flown landing program.
 
 ### Abort modes (`AbortMode`)
 
@@ -268,7 +271,9 @@ AGC power-up (CM and LM), antenna selection, Path A load, P27 load, R47 AGS init
 | RF | MSFN |
 | Launch commit | KSC_LCC |
 | Flight direction after handoff | FLIGHT (MOCR) |
-| Heat shield | CM only |
+| Heat shield | CM only (entry) |
+| Pad / Mode I escape | LES |
+| Later-mode abort | `AbortMode` I–IV, contingency TLI, lunar, SPS — not LES |
 | Path A | CCATS |
 | Path B | P27 |
 | EPS | SM fuel cells, CM AgZn, LM descent AgZn |

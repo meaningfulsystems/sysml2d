@@ -32,6 +32,12 @@
       "rank": 0,
       "order": 3
     },
+    "en15194DistanceRequirement": {
+      "label": "EN 15194 2 m / 5 m\n(after pedaling stops)",
+      "symbol": "requirement",
+      "rank": 0,
+      "order": 4
+    },
     "brakeSystem": {
       "label": "Brake System",
       "symbol": "part_usage",
@@ -117,6 +123,24 @@
       "to": "wheelSpeedSensor",
       "label": "allocate",
       "model_ref": "allocateAssistToWheelSpeed"
+    },
+    {
+      "from": "en15194DistanceRequirement",
+      "to": "motorController",
+      "label": "allocate",
+      "model_ref": "allocateDistanceToController"
+    },
+    {
+      "from": "en15194DistanceRequirement",
+      "to": "cadenceSensor",
+      "label": "allocate",
+      "model_ref": "allocateDistanceToCadence"
+    },
+    {
+      "from": "en15194DistanceRequirement",
+      "to": "wheelSpeedSensor",
+      "label": "allocate",
+      "model_ref": "allocateDistanceToWheelSpeed"
     },
     {
       "from": "chargeSafetyRequirement",

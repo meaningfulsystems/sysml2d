@@ -38,7 +38,7 @@ MCC is MOCR 2; handoff at tower clear is Mission Rule 1-21. VHF 296.8 / 259.7 MH
 
 countdown → boost → earthOrbit → TLI → dock/eject → translunar → LOI → undock → DOI → descent → surface/EVA → ascent → rendezvous → TEI → entry → recovery
 
-TD&E is a GO/NO-GO after TLI and before translunar coast (CMP, SM RCS, probe/drogue + 12 latches). Official GET: TLI 02:44:15, sep/dock ~03:20, LM extract ~04:09, LOI-1 75:54:28.
+TD&E is a GO/NO-GO after TLI and before translunar coast (CMP, SM RCS, probe/drogue + 12 latches). Planned GET (A11 Press Kit): TLI 02:44:15, sep/dock ~03:20, LM extract ~04:09, LOI-1 75:54:28. P66 is the flown landing program.
 
 Abort machine (parallel): pad, I–IV, contingency TLI, lunar, SPS.
 

@@ -12,7 +12,7 @@ Street-legal EPAC (EN 15194): cadence PAS, no certified throttle, 25 km/h cutoff
 Bindings used in the views:
 
 - Tour 60 km uses `usableWh` (500 Wh) and `energyPerKm` (~8.3 Wh/km), not Eco / PAS-1.
-- 50 ms brake inhibit is the electronic order. EN 15194 also has the 5 m / 2 m distance cutoff.
+- 50 ms brake inhibit is electronic cut from either lever. EN 15194 2 m / 5 m is assist cutoff after pedaling stops (4.2.13), not brake stopping distance. That clause allocates to the controller and sensors, not `brakeSystem`.
 - Charge safety is allocated to `BatteryPack::bms`.
 - Ride safety and assist limit allocate to brakes, controller, cadence sensor, wheel-speed sensor, and BMS. Cadence alone cannot enforce 25 km/h.
 - Lighting is StVZO / ISO 6742, not UN ECE R113.

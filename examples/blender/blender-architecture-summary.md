@@ -23,7 +23,7 @@ The blender sits on a counter among the user, ingredients, and a mains supply. A
 
 Items that cross the boundary: `ElectricalEnergy`, `RotationalEnergy`, `SmoothnessSignal`, `UserCommand`. `Fruit` and `Liquid` are declared and unused.
 
-External interface defs: user controls, power, drive, sensing. `ContainerInterface` is declared and not wired. `MainsSupply` has no voltage in the model.
+Mains is modeled as `MainsSupply`, item `ElectricalEnergy`, flow `mainsPowerFlow`, and a stub `PowerInterface`. There is **no** `PowerPort`. `MainsSupply` has no voltage in the model. `ContainerInterface` is declared and not wired.
 
 ## 3. Stakeholders and Use Cases
 
@@ -64,7 +64,7 @@ The model states thirteen requirements. IDs such as REQ-B-xxx appear only on vie
 | REQ-B-040 | Noise during normal use | **below 85 dB(A) at the operator position** (model wording; not a blender certification) |
 | REQ-B-050 | Container locks to the motor base with positive mechanical engagement and deliberate release | none |
 
-The model requires pause. The state machine has no pause state or transition. There is no interlock part; lid-to-container is a mechanical connection, and `interlockLatencyRequirement` is a requirement on that behavior. Power claims in this note refer to the modeled mains → control panel → motor path.
+The model requires pause. The state machine has no pause state or transition. There is no interlock part; lid-to-container is a mechanical connection, and `interlockLatencyRequirement` is a requirement on that behavior. This note does not claim a mains `PowerPort`; only `MainsSupply`, `ElectricalEnergy`, `mainsPowerFlow`, and the stub `PowerInterface` exist.
 
 ## 5. Structure
 
@@ -101,7 +101,7 @@ The definition view marks tamper `0..1`; the SysML source does not state multipl
 | Sensor → control panel | Control | Blend-complete |
 | Control panel → motor | Control | Speed / stop |
 
-Flows: ingredients into the container; user command and mains energy to the control panel; torque motor → coupling; rotation coupling → blades; smoothness feedback coupling → sensor.
+Flows (item/flow names, not ports): `ingredientsIntoContainer`; `commandToControlPanel`; `mainsPowerFlow` from `MainsSupply` (no `PowerPort`); `motorTorqueFlow`; `bladeShearFlow`; `smoothnessFeedbackFlow`.
 
 ## 7. Behavior
 
@@ -155,6 +155,7 @@ Constraint names: `torqueSpeedLoadEstimate`, `motorPowerLimit`, `blendTimingEsti
 
 ## 10. Open Risks
 
+- There is no `PowerPort`; mains energy is only an item/flow (`ElectricalEnergy` / `mainsPowerFlow`).
 - Rated power magnitude, blend timeout duration, and overcurrent trip time are unmarked.
 - Pause is required in `motorControlRequirement` and `userControlsRequirement` but has no state or transition.
 - There is no interlock part; only the lid–container mechanical connection and the 50 ms requirement.

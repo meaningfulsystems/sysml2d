@@ -57,9 +57,9 @@ IDs are from the requirement view; text and numbers are from the model.
 | REQ-E-002 | Tour-mode range | Tour-scenario `usableWh` binding: **500 Wh** / `energyPerKm` **~8.3 Wh/km** ≥ **60 km**. Not pack nameplate. Not Eco / PAS-1 | `rangeRequirement` / `tourRangeBind` |
 | REQ-E-003 | Assist limit — cadence PAS only, no certified throttle | Assist cut **25 km/h**; walk assist **≤ 6 km/h** | **EN 15194** |
 | REQ-E-004 | Charge safety — stop on over-temperature, over-voltage, or charger disconnect. BMS opens the pack contactor | qualitative | **UL 2849** |
-| REQ-E-010 | Electronic brake inhibit | **≤ 50 ms** from either lever (~10× tighter than the EN 15194 distance test) | design target vs EN 15194 distance test |
+| REQ-E-010 | Electronic brake inhibit | **≤ 50 ms** from either lever. Separate from the EN 15194 2 m / 5 m pedal-cutoff | `brakeOverrideRequirement` |
 | REQ-E-011 | BMS opens the pack contactor before any cell exceeds voltage or temperature limits | qualitative | UL 2849 (via charge safety) |
-| REQ-E-012 | Assistance ceases after pedaling stops | **5 m**, and **2 m** where that tighter clause applies | **EN 15194** |
+| REQ-E-012 | EN 15194 4.2.13 power management — assistance ceases after pedaling stops. Motor cut-off, **not** brake stopping distance | **5 m**, and **2 m** where that tighter clause applies | **EN 15194** |
 | REQ-E-013 | Walk assist is not a throttle | **≤ 6 km/h** | **EN 15194** |
 | REQ-E-014 | Continuous assist power | **250 W EU continuous** — distinct from hub peak torque **40 N·m** | **EN 15194** |
 | REQ-E-020 | Display speed, assist level, and remaining range without removing hands from the bars | qualitative | not cited |
@@ -151,9 +151,10 @@ Power on → select assist → pedal → apply brake → inhibit motor → deliv
 | Ride safety | `brakeSystem`, `motorController`, `cadenceSensor`, **`wheelSpeedSensor`**, `bms` |
 | Range | `batteryPack` |
 | Assist limit | `motorController`, **`wheelSpeedSensor`** |
+| EN 15194 2 m / 5 m (after pedaling stops) | `motorController`, `cadenceSensor`, `wheelSpeedSensor` — **not** `brakeSystem` |
 | Charge safety | `bms` |
 
-Ride safety and assist limit both allocate to the wheel-speed sensor. Cadence-only cannot enforce 25 km/h.
+Ride safety and assist limit both allocate to the wheel-speed sensor. Cadence-only cannot enforce 25 km/h. The 2 m / 5 m clause is motor cut-off after pedaling stops; it is not allocated to the brake system.
 
 ## 9. Parameters, Constraints, and Scope
 
@@ -166,8 +167,8 @@ Ride safety and assist limit both allocate to the wheel-speed sensor. Cadence-on
 | Walk assist | ≤ 6 km/h |
 | EU continuous power | 250 W |
 | Hub peak torque | 40 N·m (not a continuous pair with 250 W at 25 km/h) |
-| Electronic brake inhibit | ≤ 50 ms |
-| EN 15194 distance cutoff | 5 m / 2 m |
+| Electronic brake inhibit | ≤ 50 ms (brake levers; not the 2 m / 5 m pedal-cutoff) |
+| EN 15194 assist cutoff after pedaling stops | 5 m / 2 m (4.2.13; not brake stopping distance) |
 
 `energyBalance` is pack electrical energy only. Rider pedal watts use `riderInputBalance`. Do not add rider watts to pack `usableWh`. `tourRangeBind` is `usableWh / energyPerKm` for the Tour 60 km scenario — not Eco / PAS-1. `packEnergy` and `packVoltage` are unmarked.
 
@@ -207,7 +208,7 @@ The bike interacts with the rider, an off-board charger, and the road. Those ext
 
 ### Requirements
 
-Tour-scenario `usableWh` 500 Wh / `energyPerKm` ~8.3 Wh/km for 60 km, 50 ms electronic brake inhibit plus the EN 15194 5 m / 2 m distance cutoff, 25 km/h assist cut, walk assist ≤ 6 km/h, EU continuous 250 W, StVZO / ISO 6742 lighting.
+Tour-scenario `usableWh` 500 Wh / `energyPerKm` ~8.3 Wh/km for 60 km, 50 ms electronic brake inhibit, EN 15194 2 m / 5 m assist cutoff after pedaling stops, 25 km/h assist cut, walk assist ≤ 6 km/h, EU continuous 250 W, StVZO / ISO 6742 lighting.
 
 ![Electric Bike Requirements](e-bike-req.svg)
 

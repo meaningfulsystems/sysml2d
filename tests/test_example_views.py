@@ -141,6 +141,11 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("allocateSafetyToController", model)
         self.assertIn("allocateSafetyToSensors", model)
         self.assertIn("allocateSafetyToBms", model)
+        self.assertIn("allocateDistanceToController", model)
+        self.assertIn("allocateDistanceToCadence", model)
+        self.assertIn("allocateDistanceToWheelSpeed", model)
+        self.assertIn("Motor cut-off after pedaling stops", model)
+        self.assertNotIn("tighter than the EN 15194 distance test", model)
         for name in (
             "frame",
             "batteryPack",
@@ -173,6 +178,16 @@ class ExampleViewTests(unittest.TestCase):
         }
         self.assertIn("wheelSpeedSensor", assist_targets)
         self.assertIn("motorController", assist_targets)
+        distance_targets = {
+            edge["to"]
+            for edge in alloc["edges"]
+            if edge.get("from") == "en15194DistanceRequirement"
+        }
+        self.assertEqual(
+            distance_targets,
+            {"motorController", "cadenceSensor", "wheelSpeedSensor"},
+        )
+        self.assertNotIn("brakeSystem", distance_targets)
         charge_edges = [edge for edge in alloc["edges"] if edge.get("model_ref") == "allocateChargeToBms"]
         self.assertEqual(len(charge_edges), 1)
         self.assertEqual(charge_edges[0]["to"], "bms")

@@ -11,7 +11,7 @@
     "kind": "RequirementView",
     "name": "Electric Bike Requirements",
     "canvas": {
-      "width": 2735,
+      "width": 2756,
       "height": 430,
       "background": "#FFFFFF"
     },
@@ -52,7 +52,7 @@
         "model_ref": "assistLimitRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 965,
+          "x": 975.5,
           "y": 72,
           "width": 244,
           "height": 88,
@@ -66,7 +66,7 @@
         "model_ref": "chargeSafetyRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1551,
+          "x": 1572,
           "y": 72,
           "width": 258,
           "height": 88,
@@ -80,7 +80,7 @@
         "model_ref": "structuralRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1865,
+          "x": 1886,
           "y": 72,
           "width": 251,
           "height": 88,
@@ -94,7 +94,7 @@
         "model_ref": "displayRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 2172,
+          "x": 2193,
           "y": 72,
           "width": 265,
           "height": 88,
@@ -108,7 +108,7 @@
         "model_ref": "lightingRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 2493,
+          "x": 2514,
           "y": 72,
           "width": 170,
           "height": 88,
@@ -122,13 +122,13 @@
         "model_ref": "brakeOverrideRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 82.5,
+          "x": 75.5,
           "y": 270,
-          "width": 237,
+          "width": 251,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-E-010 Brake Override\nElectronic inhibit <= 50 ms.\n~10x tighter than EN 15194 m.",
+        "label": "\u00abrequirement\u00bb\nREQ-E-010 Brake Override\nElectronic inhibit <= 50 ms.\nNot the EN 15194 2 m / 5 m cut.",
         "style": "requirement"
       },
       {
@@ -138,11 +138,11 @@
         "layout": {
           "x": 679,
           "y": 270,
-          "width": 258,
+          "width": 279,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194 Distance\nCut assist within 5 m after\npedaling stops (2 m if tighter).",
+        "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194 4.2.13\nAssist ceases 5 m after pedaling\nstops (2 m if tighter). Not brakes.",
         "style": "requirement"
       },
       {
@@ -150,7 +150,7 @@
         "model_ref": "batteryCutoffRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1561.5,
+          "x": 1582.5,
           "y": 270,
           "width": 237,
           "height": 88,
@@ -164,7 +164,7 @@
         "model_ref": "walkAssistRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 993,
+          "x": 1014,
           "y": 270,
           "width": 195,
           "height": 88,
@@ -178,7 +178,7 @@
         "model_ref": "continuousPowerRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1244,
+          "x": 1265,
           "y": 270,
           "width": 251,
           "height": 88,
