@@ -155,19 +155,23 @@ class ApolloViewTests(unittest.TestCase):
         req = json.loads((APOLLO / "apollo-req.json").read_text(encoding="utf-8"))
         o2 = req["nodes"]["lm5ConsumableRequirement"]["label"]
         dps = req["nodes"]["dpsRequirement"]["label"]
-        self.assertIn("teaching figure 2800 psi", o2)
-        self.assertIn("3000 psi D-6724 mentioned", o2)
+        sps = req["nodes"]["spsRequirement"]["label"]
         self.assertIn("no required pressure", o2)
         self.assertNotIn("cite both", o2)
         self.assertNotIn("2800 psi vs 3000 psi", o2)
-        self.assertIn("9,870 / 1,050–6,300 PK", dps)
-        self.assertIn("10,500 10:1 D-7143", dps)
-        self.assertIn("9,870 / 1,050–6,800 LMA790", dps)
+        self.assertNotIn("2800 psi", o2)
+        self.assertNotIn("3000 psi", o2)
         self.assertNotIn("shall", dps.lower())
+        self.assertIn("no required thrust", dps.lower())
+        self.assertNotIn("9,870", dps)
+        self.assertNotIn("10,500", dps)
+        self.assertNotIn("shall", sps.lower())
+        self.assertIn("no required thrust", sps.lower())
         self.assertLess(sizes["apollo-stm"]["width"], 2500)
         self.assertGreater(sizes["apollo-stm"]["height"], 600)
         self.assertLess(sizes["apollo-bdd"]["width"], 2800)
-        self.assertGreater(sizes["apollo-bdd"]["height"], 800)
+        self.assertGreater(sizes["apollo-bdd"]["height"], 200)
+        self.assertLess(sizes["apollo-bdd"]["height"], 800)
         self.assertLess(sizes["apollo-alloc"]["height"], 900)
         self.assertEqual(kinds, set(COMPOSERS))
 
@@ -216,36 +220,44 @@ class ApolloViewTests(unittest.TestCase):
 
         bdd = compose_tree(json.loads((APOLLO / "apollo-bdd.json").read_text(encoding="utf-8")))
         bdd_boxes = {element["id"]: element["layout"] for element in bdd["diagram"]["elements"]}
-        bdd_conns = {connection["id"]: connection for connection in bdd["diagram"]["connections"]}
-        sic_left = bdd_boxes["SIC"]["x"]
-        self.assertEqual(bdd_conns["conn-SaturnV-IU"]["target"]["anchor"]["side"], "left")
-        self.assertEqual(bdd_conns["conn-IU-ST124"]["target"]["anchor"]["side"], "left")
-        self.assertEqual(bdd_conns["conn-IU-ST124"]["source"]["anchor"]["side"], "left")
-        self.assertFalse(_column_centerline_spine(bdd, "SIC", ("IU", "ST124")))
-        col_top = bdd_boxes["SIC"]["y"]
-        col_bottom = bdd_boxes["ST124"]["y"] + bdd_boxes["ST124"]["height"]
-        for conn_id in ("conn-SaturnV-IU", "conn-IU-ST124"):
-            points = _definition_connection_points(bdd, bdd_conns[conn_id])
-            for start, end in zip(points, points[1:]):
-                if abs(start[0] - end[0]) >= 0.6:
-                    continue
-                lo, hi = sorted((start[1], end[1]))
-                if hi < col_top or lo > col_bottom:
-                    continue
-                self.assertLess(start[0], sic_left, f"{conn_id} vertical {start[0]} is not left of S-IC")
-        self.assertEqual(bdd_conns["conn-recovery-Hornet"]["route"]["waypoints"], [])
-        rso = bdd_conns["conn-apollo-RSO"]["route"]["waypoints"]
-        self.assertEqual(len(rso), 2)
-        self.assertEqual(rso[0]["x"], rso[1]["x"])
-        sla_conn = bdd_conns["conn-SaturnV-SLA"]
-        self.assertEqual(sla_conn["target"]["anchor"]["side"], "top")
-        sla = bdd_boxes["SLA"]
-        sla_points = _definition_connection_points(bdd, sla_conn)
-        for start, end in zip(sla_points, sla_points[1:]):
-            self.assertFalse(
-                _segment_crosses_interior(start, end, sla),
-                f"SaturnV→SLA segment {start}->{end} goes through SLA",
-            )
+        part_boxes = {
+            element["id"]: element
+            for element in bdd["diagram"]["elements"]
+            if element.get("symbol") != "boundary"
+        }
+        self.assertGreaterEqual(len(part_boxes), 7)
+        self.assertLessEqual(len(part_boxes), 10)
+        self.assertNotIn("SIC", bdd_boxes)
+        self.assertNotIn("PNGS", bdd_boxes)
+        self.assertIn("SaturnV", bdd_boxes)
+        self.assertIn("RSO", bdd_boxes)
+        self.assertIn("recovery", bdd_boxes)
+        self.assertEqual(_definition_route_box_hits(bdd), [])
+
+        from sysmld.views import view
+        uc = view(json.loads((APOLLO / "apollo-uc.json").read_text(encoding="utf-8")), kind="UseCaseView")
+        uc_boxes = {element["id"]: element["layout"] for element in uc["diagram"]["elements"]}
+        self.assertGreater(
+            uc_boxes["MCC"]["x"],
+            uc_boxes["flyMissionUseCase"]["x"] + uc_boxes["flyMissionUseCase"]["width"],
+        )
+        self.assertLess(
+            uc_boxes["CDR"]["x"] + uc_boxes["CDR"]["width"],
+            uc_boxes["flyMissionUseCase"]["x"],
+        )
+
+        from sysmld.state_view import compose_stm
+        abort_doc = compose_stm(json.loads((APOLLO / "apollo-stm-abort.json").read_text(encoding="utf-8")))
+        abort_tracks = {}
+        for connection in abort_doc["diagram"]["connections"]:
+            target = connection["target"]["element"]
+            waypoints = connection["route"].get("waypoints") or []
+            if len(waypoints) >= 2 and abs(waypoints[0]["y"] - waypoints[1]["y"]) < 0.6:
+                abort_tracks[target] = waypoints[0]["y"]
+        self.assertAlmostEqual(abort_tracks["pad"], abort_tracks["SPS"], delta=1)
+        self.assertAlmostEqual(abort_tracks["I"], abort_tracks["lunar"], delta=1)
+        self.assertAlmostEqual(abort_tracks["II"], abort_tracks["contingencyTLI"], delta=1)
+        self.assertAlmostEqual(abort_tracks["III"], abort_tracks["IV"], delta=1)
 
     def test_apollo_locked_msml_names(self):
         text = (APOLLO / "apollo.sysml").read_text(encoding="utf-8")
@@ -414,6 +426,11 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("IU → LVDC, ST-124, FCC", note)
         self.assertIn("8 panels (4 jettison / 4 stay)", note)
         self.assertNotIn("four petals", note)
+        self.assertNotIn("DoDAF", note)
+        self.assertNotIn("ninth-grade", note)
+        self.assertNotIn("ninth grade", note)
+        self.assertNotIn("├──", note)
+        self.assertNotIn("\n*Saturn V SA-506", note)
         self.assertIn("Stakeholder", note)
         self.assertIn("The serialed hardware", note)
         self.assertIn("Who needs what", note)
@@ -458,7 +475,15 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("RSO", top_ids)
         self.assertIn("recovery", top_ids)
         recovery_node = next(child for child in system["roots"][0]["children"] if child["id"] == "recovery")
-        self.assertIn("Hornet", {child["id"] for child in recovery_node["children"]})
+        self.assertFalse(recovery_node.get("children"))
+        labels = {child["id"]: child["label"] for child in system["roots"][0]["children"]}
+        self.assertEqual(labels["SaturnV"], "Saturn V")
+        self.assertEqual(labels["CSM"], "Command/Service Module")
+        self.assertEqual(labels["LM"], "Lunar Module")
+        self.assertEqual(labels["RSO"], "Range Safety Officer")
+        self.assertEqual(labels["recovery"], "Recovery")
+        self.assertGreaterEqual(len(system["roots"][0]["children"]), 6)
+        self.assertLessEqual(len(system["roots"][0]["children"]), 8)
         bdd = json.loads((APOLLO / "apollo-bdd-lm.json").read_text(encoding="utf-8"))
         descent_node = bdd["roots"][0]["children"][0]
         ascent_node = bdd["roots"][0]["children"][1]

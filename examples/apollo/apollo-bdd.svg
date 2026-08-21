@@ -1,177 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2436" height="1344" viewBox="0 0 2436 1344">
+<svg xmlns="http://www.w3.org/2000/svg" width="1724" height="314" viewBox="0 0 1724 314">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="2436" height="1344" fill="#FFFFFF"/>
-<rect x="2" y="38" width="2432" height="1302" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1724" height="314" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1720" height="272" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 440 L 456 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[def.mb] Apollo 11 System Definition Tree [Apollo11]</text>
-<rect x="2" y="38" width="2432" height="1304" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1720" height="274" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="apollo" x="1116" y="40" width="200" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1216" y="66">Apollo 11 AS-506</text>
-<rect id="SaturnV" x="356" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="426" y="196">SaturnV</text>
-<rect id="SIC" x="198" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="268" y="326">S-IC</text>
-<rect id="SII" x="356" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="426" y="326">S-II</text>
-<rect id="SIVB" x="514" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="584" y="326">S-IVB</text>
-<rect id="IU" x="198" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="268" y="456">IU</text>
-<rect id="LVDC" x="40" y="560" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="110" y="586">LVDC</text>
-<rect id="ST124" x="198" y="560" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="268" y="586">ST-124</text>
-<rect id="FCC" x="356" y="560" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="426" y="586">FCC</text>
-<rect id="SLA" x="514" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="584" y="456">SLA 8-panel</text>
-<rect id="LES" x="672" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="742" y="456">LES</text>
-<rect id="CSM" x="1067" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1137" y="196">CSM</text>
-<rect id="CM" x="909" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="979" y="326">CM</text>
-<rect id="AGC_CM" x="830" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="900" y="456">AGC_CM</text>
-<rect id="SCS" x="988" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1058" y="456">SCS</text>
-<rect id="SM" x="1225" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1295" y="326">SM</text>
-<rect id="SPS" x="1146" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1216" y="456">SPS</text>
-<rect id="FC1" x="1304" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1374" y="456">FC1</text>
-<rect id="LM" x="1857" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1927" y="196">LM</text>
-<rect id="descent" x="1462" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1532" y="326">descent</text>
-<rect id="ascent" x="1936" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="2006" y="326">ascent</text>
-<rect id="PNGS" x="1620" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1690" y="456">PNGS</text>
-<rect id="AGC_LM" x="1778" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1848" y="456">AGC_LM</text>
-<rect id="AGS" x="2094" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="2164" y="456">AGS</text>
-<rect id="AEA" x="1936" y="560" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="2006" y="586">AEA</text>
-<rect id="ASA" x="2094" y="560" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="2164" y="586">ASA</text>
-<rect id="DEDA" x="2252" y="560" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="2322" y="586">DEDA</text>
-<rect id="Crew" x="830" y="690" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="900" y="716">Crew</text>
-<rect id="CDR" x="672" y="820" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="742" y="846">CDR</text>
-<rect id="CMP" x="830" y="820" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="900" y="846">CMP</text>
-<rect id="LMP" x="988" y="820" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1058" y="846">LMP</text>
-<rect id="Ground" x="1304" y="690" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1374" y="716">Ground</text>
-<rect id="KSC_LCC" x="1146" y="820" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1216" y="846">KSC_LCC</text>
-<rect id="MCC" x="1304" y="820" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1374" y="846">MCC</text>
-<rect id="MOCR2" x="1304" y="950" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1374" y="976">MOCR 2</text>
-<rect id="RTCC" x="1462" y="820" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1532" y="846">RTCC</text>
-<rect id="MSFN" x="1225" y="900" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1295" y="926">MSFN</text>
-<rect id="NASCOM" x="1383" y="900" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1453" y="926">NASCOM</text>
-<rect id="RSO" x="1620" y="690" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1690" y="716">RSO</text>
-<rect id="recovery" x="1146" y="1080" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1216" y="1106">recovery</text>
-<rect id="Hornet" x="1146" y="1210" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1216" y="1236">Hornet</text>
-<path d="M 1216,92 L 1216,131 L 426,131 L 426,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1216,92 L 1216,131 L 1137,131 L 1137,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1216,92 L 1216,131 L 1927,131 L 1927,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1216,92 L 1051,92 L 1051,124 A 7 7 0 0 1 1051,138 L 1051,368 L 972,368 L 972,690 L 900,690" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1216,92 L 1223,92 L 1223,124 A 7 7 0 0 1 1223,138 L 1223,368 L 1302,368 L 1302,498 L 1374,498 L 1374,690" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1216,92 L 1618,92 L 1618,124 A 7 7 0 0 1 1618,138 L 1618,690 L 1690,690" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1216,92 L 1209,92 L 1209,124 A 7 7 0 0 1 1209,138 L 1209,414 L 1144,414 L 1144,888 L 1216,888 L 1216,1080" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 426,222 L 426,261 L 268,261 L 268,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 426,222 L 426,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 426,222 L 426,261 L 584,261 L 584,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 426,222 L 426,250 L 170,250 L 170,456 L 198,456" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 426,222 L 426,250 L 682,250 L 682,402 L 584,402 L 584,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 426,222 L 426,250 L 682,250 L 682,402 L 742,402 L 742,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 198,456 L 198,508 L 110,508 L 110,560" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 198,456 L 186,456 L 186,501 A 7 7 0 0 1 186,515 L 186,586 L 198,586" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 338,456 L 338,508 L 426,508 L 426,560" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1137,222 L 1137,261 L 1058,261 A 7 7 0 0 1 1044,261 L 979,261 L 979,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1137,222 L 1137,261 L 1202,261 A 7 7 0 0 0 1216,261 L 1216,261 A 7 7 0 0 0 1230,261 L 1295,261 L 1295,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 979,352 L 979,361 A 7 7 0 0 1 979,375 L 979,391 L 900,391 L 900,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 979,352 L 979,361 A 7 7 0 0 1 979,375 L 979,391 L 1058,391 L 1058,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1295,352 L 1295,361 A 7 7 0 0 1 1295,375 L 1295,391 L 1216,391 L 1216,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1295,352 L 1295,361 A 7 7 0 0 1 1295,375 L 1295,391 L 1374,391 L 1374,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1927,222 L 1927,261 L 1625,261 A 7 7 0 0 1 1611,261 L 1532,261 L 1532,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1927,222 L 1927,261 L 2006,261 L 2006,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 2006,352 L 2006,391 L 1690,391 L 1690,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 2006,352 L 2006,391 L 1848,391 L 1848,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 2006,352 L 2006,391 L 2164,391 L 2164,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 2164,482 L 2164,521 L 2006,521 L 2006,560" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 2164,482 L 2164,560" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 2164,482 L 2164,521 L 2322,521 L 2322,560" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 900,742 L 900,781 L 742,781 L 742,820" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 900,742 L 900,820" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 900,742 L 900,781 L 1058,781 L 1058,820" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1374,742 L 1374,781 L 1216,781 L 1216,820" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1374,742 L 1374,820" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1374,742 L 1374,781 L 1532,781 L 1532,820" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1374,742 L 1367,742 L 1367,758 L 1302,758 L 1302,774 A 7 7 0 0 1 1302,788 L 1302,888 L 1295,888 L 1295,900" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1374,742 L 1374,770 L 1630,770 L 1630,872 L 1453,872 L 1453,900" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1374,872 L 1374,950" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1216,1132 L 1216,1210" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" x="436" y="158.98">1</text>
-<text class="small" x="1147" y="158.98">1</text>
-<text class="small" x="1937" y="158.98">1</text>
-<text class="small" x="914.32" y="686">1</text>
-<text class="small" x="1384" y="674.48">1</text>
-<text class="small" x="1695.68" y="686">1</text>
-<text class="small" x="1226" y="1064.48">1</text>
-<text class="small" x="278" y="288.98">1</text>
-<text class="small" x="436" y="281.96">1</text>
-<text class="small" x="594" y="288.98">1</text>
-<text class="small" x="206.32" y="452">1</text>
-<text class="small" x="594" y="424.32">1</text>
-<text class="small" x="752" y="424.32">1</text>
-<text class="small" x="120" y="546.64">1</text>
-<text class="small" x="207.28" y="582">1</text>
-<text class="small" x="436" y="546.64">1</text>
-<text class="small" x="989" y="288.98">1</text>
-<text class="small" x="1305" y="288.98">1</text>
-<text class="small" x="910" y="418.98">1</text>
-<text class="small" x="1068" y="418.98">1</text>
-<text class="small" x="1226" y="418.98">1</text>
-<text class="small" x="1384" y="418.98">1</text>
-<text class="small" x="1542" y="288.98">1</text>
-<text class="small" x="2016" y="288.98">1</text>
-<text class="small" x="1700" y="418.98">1</text>
-<text class="small" x="1858" y="418.98">1</text>
-<text class="small" x="2174" y="418.98">1</text>
-<text class="small" x="2016" y="548.98">1</text>
-<text class="small" x="2174" y="541.96">1</text>
-<text class="small" x="2332" y="548.98">1</text>
-<text class="small" x="752" y="808.98">1</text>
-<text class="small" x="910" y="801.96">1</text>
-<text class="small" x="1068" y="808.98">1</text>
-<text class="small" x="1226" y="808.98">1</text>
-<text class="small" x="1384" y="801.96">1</text>
-<text class="small" x="1542" y="808.98">1</text>
-<text class="small" x="1305" y="895.28">1</text>
-<text class="small" x="1463" y="894.32">1</text>
-<text class="small" x="1384" y="931.96">1</text>
-<text class="small" x="1226" y="1191.96">1</text>
+<rect id="apollo" x="750" y="40" width="220" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="860" y="68">Apollo 11 AS-506</text>
+<rect id="SaturnV" x="40" y="176" width="210" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="145" y="204">Saturn V</text>
+<rect id="CSM" x="278" y="176" width="212" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="384" y="204">Command/Service Module</text>
+<rect id="LM" x="518" y="176" width="210" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="623" y="204">Lunar Module</text>
+<rect id="Crew" x="756" y="176" width="210" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="861" y="204">Crew</text>
+<rect id="Ground" x="994" y="176" width="210" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1099" y="204">Ground</text>
+<rect id="RSO" x="1232" y="176" width="210" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1337" y="204">Range Safety Officer</text>
+<rect id="recovery" x="1470" y="176" width="210" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1575" y="204">Recovery</text>
+<path d="M 860,96 L 860,136 L 145,136 L 145,176" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 860,96 L 860,136 L 384,136 L 384,176" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 860,96 L 860,136 L 623,136 L 623,176" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 860,96 L 860,136 L 861,136 L 861,176" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 860,96 L 860,136 L 1099,136 L 1099,176" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 860,96 L 860,136 L 1337,136 L 1337,176" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 860,96 L 860,136 L 1575,136 L 1575,176" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="155" y="164.8">1</text>
+<text class="small" x="394" y="164.8">1</text>
+<text class="small" x="633" y="164.8">1</text>
+<text class="small" x="871" y="164.8">1</text>
+<text class="small" x="1109" y="164.8">1</text>
+<text class="small" x="1347" y="164.8">1</text>
+<text class="small" x="1585" y="164.8">1</text>
 </g>
 </svg>

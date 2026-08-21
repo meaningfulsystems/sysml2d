@@ -11,8 +11,8 @@
     "kind": "UseCaseView",
     "name": "Apollo 11 Use Cases",
     "canvas": {
-      "width": 594,
-      "height": 782,
+      "width": 1056,
+      "height": 820,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -23,10 +23,10 @@
         "id": "mission",
         "symbol": "boundary",
         "layout": {
-          "x": 252,
+          "x": 376,
           "y": 72,
-          "width": 270.0,
-          "height": 638.0,
+          "width": 290.0,
+          "height": 676.0,
           "z": 0
         },
         "label": "Apollo 11",
@@ -38,40 +38,26 @@
         "symbol": "actor",
         "layout": {
           "x": 72,
-          "y": 106,
-          "width": 70,
+          "y": 110,
+          "width": 97,
           "height": 90,
           "z": 10
         },
-        "label": "CDR",
+        "label": "Commander",
         "style": "actor",
         "model_ref": "CDR"
-      },
-      {
-        "id": "MCC",
-        "symbol": "actor",
-        "layout": {
-          "x": 72,
-          "y": 266,
-          "width": 70,
-          "height": 90,
-          "z": 10
-        },
-        "label": "MCC",
-        "style": "actor",
-        "model_ref": "MCC"
       },
       {
         "id": "RSO",
         "symbol": "actor",
         "layout": {
           "x": 72,
-          "y": 426,
-          "width": 70,
+          "y": 280,
+          "width": 174,
           "height": 90,
           "z": 10
         },
-        "label": "RSO",
+        "label": "Range Safety Officer",
         "style": "actor",
         "model_ref": "RSO"
       },
@@ -79,8 +65,8 @@
         "id": "flyMissionUseCase",
         "symbol": "use_case",
         "layout": {
-          "x": 312,
-          "y": 116,
+          "x": 446,
+          "y": 120,
           "width": 150,
           "height": 70,
           "z": 10
@@ -93,8 +79,8 @@
         "id": "lunarEvaUseCase",
         "symbol": "use_case",
         "layout": {
-          "x": 312,
-          "y": 276,
+          "x": 446,
+          "y": 290,
           "width": 150,
           "height": 70,
           "z": 10
@@ -107,8 +93,8 @@
         "id": "recoverCrewUseCase",
         "symbol": "use_case",
         "layout": {
-          "x": 312,
-          "y": 436,
+          "x": 446,
+          "y": 460,
           "width": 150,
           "height": 70,
           "z": 10
@@ -121,8 +107,8 @@
         "id": "rangeSafetyUseCase",
         "symbol": "use_case",
         "layout": {
-          "x": 312,
-          "y": 596,
+          "x": 446,
+          "y": 630,
           "width": 150,
           "height": 70,
           "z": 10
@@ -130,6 +116,20 @@
         "label": "Range safety",
         "style": "use_case",
         "model_ref": "rangeSafetyUseCase"
+      },
+      {
+        "id": "MCC",
+        "symbol": "actor",
+        "layout": {
+          "x": 796,
+          "y": 110,
+          "width": 188,
+          "height": 90,
+          "z": 10
+        },
+        "label": "Mission Control Center",
+        "style": "actor",
+        "model_ref": "MCC"
       }
     ],
     "connections": [
@@ -153,12 +153,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 171,
-              "y": 133
+              "x": 286.5,
+              "y": 137
             },
             {
-              "x": 171,
-              "y": 151
+              "x": 286.5,
+              "y": 155
             }
           ]
         },
@@ -186,12 +186,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 184,
-              "y": 155.5
+              "x": 311,
+              "y": 159.5
             },
             {
-              "x": 184,
-              "y": 311
+              "x": 311,
+              "y": 325
             }
           ]
         },
@@ -204,14 +204,14 @@
         "source": {
           "element": "MCC",
           "anchor": {
-            "side": "right",
-            "offset": 0.45
+            "side": "left",
+            "offset": 0.35
           }
         },
         "target": {
           "element": "flyMissionUseCase",
           "anchor": {
-            "side": "left",
+            "side": "right",
             "offset": 0.5
           }
         },
@@ -219,12 +219,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 197,
-              "y": 306.5
+              "x": 702,
+              "y": 141.5
             },
             {
-              "x": 197,
-              "y": 151
+              "x": 702,
+              "y": 155
             }
           ]
         },
@@ -237,14 +237,14 @@
         "source": {
           "element": "MCC",
           "anchor": {
-            "side": "right",
-            "offset": 0.7
+            "side": "left",
+            "offset": 0.65
           }
         },
         "target": {
           "element": "recoverCrewUseCase",
           "anchor": {
-            "side": "left",
+            "side": "right",
             "offset": 0.5
           }
         },
@@ -252,12 +252,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 210,
-              "y": 329
+              "x": 702,
+              "y": 168.5
             },
             {
-              "x": 210,
-              "y": 471
+              "x": 702,
+              "y": 495
             }
           ]
         },
@@ -271,7 +271,7 @@
           "element": "RSO",
           "anchor": {
             "side": "right",
-            "offset": 0.5
+            "offset": 0.8
           }
         },
         "target": {
@@ -285,12 +285,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 223,
-              "y": 471
+              "x": 335.5,
+              "y": 352
             },
             {
-              "x": 223,
-              "y": 631
+              "x": 335.5,
+              "y": 665
             }
           ]
         },

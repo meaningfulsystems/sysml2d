@@ -29,8 +29,8 @@
     "kind": "DefinitionView",
     "name": "LM Definition Tree",
     "canvas": {
-      "width": 1153,
-      "height": 782,
+      "width": 1481,
+      "height": 818,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -42,13 +42,13 @@
         "model_ref": "LM",
         "symbol": "part_definition",
         "layout": {
-          "x": 471,
+          "x": 593,
           "y": 40,
-          "width": 140,
-          "height": 52,
+          "width": 190,
+          "height": 56,
           "z": 10
         },
-        "label": "LM",
+        "label": "Lunar Module",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -61,13 +61,13 @@
         "model_ref": "descent",
         "symbol": "part_definition",
         "layout": {
-          "x": 226,
-          "y": 170,
-          "width": 140,
-          "height": 52,
+          "x": 278,
+          "y": 174,
+          "width": 190,
+          "height": 56,
           "z": 10
         },
-        "label": "descent",
+        "label": "Descent stage",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -81,12 +81,12 @@
         "symbol": "part_definition",
         "layout": {
           "x": 68,
-          "y": 300,
-          "width": 140,
-          "height": 52,
+          "y": 312,
+          "width": 190,
+          "height": 58,
           "z": 10
         },
-        "label": "DPS",
+        "label": "Descent Propulsion\nSystem",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -99,13 +99,13 @@
         "model_ref": "AgZn",
         "symbol": "part_definition",
         "layout": {
-          "x": 226,
-          "y": 300,
-          "width": 140,
-          "height": 52,
+          "x": 278,
+          "y": 308,
+          "width": 190,
+          "height": 56,
           "z": 10
         },
-        "label": "AgZn1",
+        "label": "Silver-zinc 1",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -118,13 +118,13 @@
         "model_ref": "AgZn",
         "symbol": "part_definition",
         "layout": {
-          "x": 384,
-          "y": 300,
-          "width": 140,
-          "height": 52,
+          "x": 488,
+          "y": 308,
+          "width": 190,
+          "height": 56,
           "z": 10
         },
-        "label": "AgZn2",
+        "label": "Silver-zinc 2",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -137,13 +137,13 @@
         "model_ref": "AgZn",
         "symbol": "part_definition",
         "layout": {
-          "x": 147,
-          "y": 380,
-          "width": 140,
-          "height": 52,
+          "x": 173,
+          "y": 392,
+          "width": 190,
+          "height": 56,
           "z": 10
         },
-        "label": "AgZn3",
+        "label": "Silver-zinc 3",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -156,13 +156,13 @@
         "model_ref": "AgZn",
         "symbol": "part_definition",
         "layout": {
-          "x": 305,
-          "y": 380,
-          "width": 140,
-          "height": 52,
+          "x": 383,
+          "y": 392,
+          "width": 190,
+          "height": 56,
           "z": 10
         },
-        "label": "AgZn4",
+        "label": "Silver-zinc 4",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -175,13 +175,13 @@
         "model_ref": "ECA",
         "symbol": "part_definition",
         "layout": {
-          "x": 463,
-          "y": 380,
-          "width": 140,
-          "height": 52,
+          "x": 593,
+          "y": 397,
+          "width": 190,
+          "height": 58,
           "z": 10
         },
-        "label": "ECA",
+        "label": "Electrical Control\nAssembly",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -194,13 +194,13 @@
         "model_ref": "landingRadar",
         "symbol": "part_definition",
         "layout": {
-          "x": 226,
-          "y": 460,
-          "width": 140,
-          "height": 52,
+          "x": 278,
+          "y": 476,
+          "width": 190,
+          "height": 56,
           "z": 10
         },
-        "label": "landingRadar",
+        "label": "Landing radar",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -213,13 +213,13 @@
         "model_ref": "ascent",
         "symbol": "part_definition",
         "layout": {
-          "x": 787,
-          "y": 170,
-          "width": 140,
-          "height": 52,
+          "x": 1013,
+          "y": 174,
+          "width": 190,
+          "height": 56,
           "z": 10
         },
-        "label": "ascent",
+        "label": "Ascent stage",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -232,13 +232,13 @@
         "model_ref": "PNGS",
         "symbol": "part_definition",
         "layout": {
-          "x": 629,
-          "y": 300,
-          "width": 140,
-          "height": 52,
+          "x": 803,
+          "y": 312,
+          "width": 190,
+          "height": 58,
           "z": 10
         },
-        "label": "PNGS",
+        "label": "Primary Guidance\n(PNGS)",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -251,13 +251,13 @@
         "model_ref": "AGC_LM",
         "symbol": "part_definition",
         "layout": {
-          "x": 787,
-          "y": 300,
-          "width": 140,
-          "height": 52,
+          "x": 1013,
+          "y": 312,
+          "width": 190,
+          "height": 58,
           "z": 10
         },
-        "label": "AGC_LM",
+        "label": "LM guidance\ncomputer",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -270,13 +270,13 @@
         "model_ref": "APS",
         "symbol": "part_definition",
         "layout": {
-          "x": 945,
-          "y": 300,
-          "width": 140,
-          "height": 52,
+          "x": 1223,
+          "y": 312,
+          "width": 190,
+          "height": 58,
           "z": 10
         },
-        "label": "APS",
+        "label": "Ascent Propulsion\nSystem",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -289,13 +289,13 @@
         "model_ref": "RCS",
         "symbol": "part_definition",
         "layout": {
-          "x": 621,
-          "y": 430,
-          "width": 140,
-          "height": 52,
+          "x": 803,
+          "y": 448,
+          "width": 190,
+          "height": 58,
           "z": 10
         },
-        "label": "RCS 100 lbf",
+        "label": "Reaction control\n(100 lbf)",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -308,13 +308,13 @@
         "model_ref": "rendezvousRadar",
         "symbol": "part_definition",
         "layout": {
-          "x": 779,
-          "y": 430,
-          "width": 156,
-          "height": 52,
+          "x": 1013,
+          "y": 442,
+          "width": 190,
+          "height": 56,
           "z": 10
         },
-        "label": "rendezvousRadar",
+        "label": "Rendezvous radar",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -327,13 +327,13 @@
         "model_ref": "drogue",
         "symbol": "part_definition",
         "layout": {
-          "x": 953,
-          "y": 430,
-          "width": 140,
-          "height": 52,
+          "x": 1223,
+          "y": 442,
+          "width": 190,
+          "height": 56,
           "z": 10
         },
-        "label": "drogue",
+        "label": "Drogue",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -346,13 +346,13 @@
         "model_ref": "AGS",
         "symbol": "part_definition",
         "layout": {
-          "x": 787,
-          "y": 560,
-          "width": 140,
-          "height": 52,
+          "x": 1013,
+          "y": 584,
+          "width": 190,
+          "height": 58,
           "z": 10
         },
-        "label": "AGS",
+        "label": "Abort Guidance\nSystem",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -365,13 +365,13 @@
         "model_ref": "AEA",
         "symbol": "part_definition",
         "layout": {
-          "x": 629,
-          "y": 690,
-          "width": 140,
-          "height": 52,
+          "x": 803,
+          "y": 720,
+          "width": 190,
+          "height": 58,
           "z": 10
         },
-        "label": "AEA",
+        "label": "Abort Electronics\nAssembly",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -384,13 +384,13 @@
         "model_ref": "ASA",
         "symbol": "part_definition",
         "layout": {
-          "x": 787,
-          "y": 690,
-          "width": 140,
-          "height": 52,
+          "x": 1013,
+          "y": 720,
+          "width": 190,
+          "height": 58,
           "z": 10
         },
-        "label": "ASA",
+        "label": "Abort Sensor\nAssembly",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -403,13 +403,13 @@
         "model_ref": "DEDA",
         "symbol": "part_definition",
         "layout": {
-          "x": 945,
-          "y": 690,
-          "width": 140,
-          "height": 52,
+          "x": 1223,
+          "y": 720,
+          "width": 190,
+          "height": 58,
           "z": 10
         },
-        "label": "DEDA",
+        "label": "Data Entry and\nDisplay Assembly",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -440,12 +440,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 541,
-              "y": 131
+              "x": 688,
+              "y": 135
             },
             {
-              "x": 296,
-              "y": 131
+              "x": 373,
+              "y": 135
             }
           ]
         },
@@ -483,12 +483,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 541,
-              "y": 131
+              "x": 688,
+              "y": 135
             },
             {
-              "x": 857,
-              "y": 131
+              "x": 1108,
+              "y": 135
             }
           ]
         },
@@ -526,12 +526,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 296,
-              "y": 261
+              "x": 373,
+              "y": 269
             },
             {
-              "x": 138,
-              "y": 261
+              "x": 163,
+              "y": 269
             }
           ]
         },
@@ -603,12 +603,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 296,
-              "y": 261
+              "x": 373,
+              "y": 269
             },
             {
-              "x": 454,
-              "y": 261
+              "x": 583,
+              "y": 269
             }
           ]
         },
@@ -646,20 +646,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 296,
-              "y": 250
+              "x": 373,
+              "y": 296
             },
             {
-              "x": 40,
-              "y": 250
+              "x": 274,
+              "y": 296
             },
             {
-              "x": 40,
-              "y": 352
+              "x": 274,
+              "y": 386
             },
             {
-              "x": 217,
-              "y": 352
+              "x": 268,
+              "y": 386
             }
           ]
         },
@@ -697,20 +697,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 296,
-              "y": 250
+              "x": 373,
+              "y": 258
             },
             {
-              "x": 552,
-              "y": 250
+              "x": 706,
+              "y": 258
             },
             {
-              "x": 552,
-              "y": 352
+              "x": 706,
+              "y": 364
             },
             {
-              "x": 375,
-              "y": 352
+              "x": 478,
+              "y": 364
             }
           ]
         },
@@ -748,20 +748,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 296,
-              "y": 250
+              "x": 373,
+              "y": 258
             },
             {
-              "x": 552,
-              "y": 250
+              "x": 706,
+              "y": 258
             },
             {
-              "x": 552,
-              "y": 352
+              "x": 706,
+              "y": 369
             },
             {
-              "x": 533,
-              "y": 352
+              "x": 688,
+              "y": 369
             }
           ]
         },
@@ -799,20 +799,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 296,
-              "y": 250
+              "x": 373,
+              "y": 258
             },
             {
               "x": 40,
-              "y": 250
+              "y": 258
             },
             {
               "x": 40,
-              "y": 432
+              "y": 448
             },
             {
-              "x": 296,
-              "y": 432
+              "x": 373,
+              "y": 448
             }
           ]
         },
@@ -850,12 +850,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 857,
-              "y": 261
+              "x": 1108,
+              "y": 271
             },
             {
-              "x": 699,
-              "y": 261
+              "x": 898,
+              "y": 271
             }
           ]
         },
@@ -927,12 +927,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 857,
-              "y": 261
+              "x": 1108,
+              "y": 271
             },
             {
-              "x": 1015,
-              "y": 261
+              "x": 1318,
+              "y": 271
             }
           ]
         },
@@ -970,24 +970,24 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 857,
-              "y": 284
+              "x": 1108,
+              "y": 296
             },
             {
-              "x": 785,
-              "y": 284
+              "x": 1009,
+              "y": 296
             },
             {
-              "x": 785,
-              "y": 368
+              "x": 1009,
+              "y": 432
             },
             {
-              "x": 763,
-              "y": 368
+              "x": 997,
+              "y": 432
             },
             {
-              "x": 763,
-              "y": 430
+              "x": 997,
+              "y": 448
             }
           ]
         },
@@ -1025,16 +1025,16 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 857,
-              "y": 284
+              "x": 1108,
+              "y": 296
             },
             {
-              "x": 785,
-              "y": 284
+              "x": 1009,
+              "y": 296
             },
             {
-              "x": 785,
-              "y": 430
+              "x": 1009,
+              "y": 442
             }
           ]
         },
@@ -1072,20 +1072,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 857,
-              "y": 250
+              "x": 1108,
+              "y": 258
             },
             {
-              "x": 1113,
-              "y": 250
+              "x": 1441,
+              "y": 258
             },
             {
-              "x": 1113,
-              "y": 402
+              "x": 1441,
+              "y": 414
             },
             {
-              "x": 1023,
-              "y": 402
+              "x": 1318,
+              "y": 414
             }
           ]
         },
@@ -1123,32 +1123,16 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 857,
-              "y": 284
+              "x": 1108,
+              "y": 296
             },
             {
-              "x": 785,
-              "y": 284
+              "x": 1009,
+              "y": 296
             },
             {
-              "x": 785,
-              "y": 368
-            },
-            {
-              "x": 777,
-              "y": 368
-            },
-            {
-              "x": 777,
-              "y": 498
-            },
-            {
-              "x": 785,
-              "y": 498
-            },
-            {
-              "x": 785,
-              "y": 560
+              "x": 1009,
+              "y": 584
             }
           ]
         },
@@ -1156,7 +1140,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 7,
+              "segment": 3,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1186,12 +1170,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 857,
-              "y": 651
+              "x": 1108,
+              "y": 681
             },
             {
-              "x": 699,
-              "y": 651
+              "x": 898,
+              "y": 681
             }
           ]
         },
@@ -1263,12 +1247,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 857,
-              "y": 651
+              "x": 1108,
+              "y": 681
             },
             {
-              "x": 1015,
-              "y": 651
+              "x": 1318,
+              "y": 681
             }
           ]
         },

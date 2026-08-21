@@ -7,8 +7,8 @@
     "apollo.sysml"
   ],
   "direction": "left-right",
-  "default_w": 140,
-  "default_h": 58,
+  "default_w": 180,
+  "default_h": 64,
   "col_gap": 52,
   "rank_gap": 120,
   "label_mode": "connection",
@@ -47,39 +47,39 @@
   },
   "nodes": {
     "PNGS": {
-      "label": "PNGS",
+      "label": "Primary Guidance\n(PNGS)",
       "style": "part.gnc"
     },
     "AGC_LM": {
-      "label": "AGC_LM",
+      "label": "LM guidance\ncomputer",
       "style": "part.gnc"
     },
     "DSKY": {
-      "label": "DSKY",
+      "label": "Display and\nKeyboard",
       "style": "part.gnc"
     },
     "AGS": {
-      "label": "AGS",
+      "label": "Abort Guidance\nSystem",
       "style": "part.gnc"
     },
     "landingRadar": {
-      "label": "landingRadar",
+      "label": "Landing radar",
       "style": "part.gnc"
     },
     "rendezvousRadar": {
-      "label": "rendezvousRadar",
+      "label": "Rendezvous radar",
       "style": "part.gnc"
     },
     "DPS": {
-      "label": "DPS",
+      "label": "Descent Propulsion\nSystem",
       "style": "part.prop"
     },
     "APS": {
-      "label": "APS",
+      "label": "Ascent Propulsion\nSystem",
       "style": "part.prop"
     },
     "RCS": {
-      "label": "RCS",
+      "label": "Reaction control",
       "style": "part.prop"
     }
   },

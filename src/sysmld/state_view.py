@@ -346,6 +346,9 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
         n = len(sorted_idxs)
         usable = max(chan_hi - chan_lo, 1)
         step = usable / (n + 1)
+        mirror_fan = spec.get("fan_tracks") == "mirror"
+        pair_count = max((n + 1) // 2, 1)
+        pair_step = usable / (pair_count + 1)
 
         for pos, i in enumerate(sorted_idxs):
             t = forward_trans[i]
@@ -360,7 +363,11 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
             elif not vertical and abs(ay - ey) < 8:
                 conn_waypoints[i] = []
             else:
-                track = chan_lo + step * (pos + 1)
+                if mirror_fan:
+                    pair = min(pos, n - 1 - pos)
+                    track = chan_lo + pair_step * (pair + 1)
+                else:
+                    track = chan_lo + step * (pos + 1)
                 conn_waypoints[i] = (
                     [{"x": round(ax), "y": round(track)}, {"x": round(ex), "y": round(track)}]
                     if vertical else

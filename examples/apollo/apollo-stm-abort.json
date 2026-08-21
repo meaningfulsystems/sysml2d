@@ -7,10 +7,11 @@
     "apollo.sysml"
   ],
   "direction": "top-down",
-  "default_w": 150,
+  "default_w": 190,
   "default_h": 56,
   "rank_gap": 180,
   "col_gap": 80,
+  "fan_tracks": "mirror",
   "aliases": {
     "abortMode": "Apollo11::AbortMode",
     "nominal": "Apollo11::AbortMode::nominal",
@@ -36,39 +37,39 @@
       "initial": true
     },
     "nominal": {
-      "label": "nominal",
+      "label": "Nominal",
       "model_ref": "nominal"
     },
     "pad": {
-      "label": "pad",
+      "label": "Pad abort",
       "model_ref": "pad"
     },
     "I": {
-      "label": "I",
+      "label": "Mode I",
       "model_ref": "I"
     },
     "II": {
-      "label": "II",
+      "label": "Mode II",
       "model_ref": "II"
     },
     "III": {
-      "label": "III",
+      "label": "Mode III",
       "model_ref": "III"
     },
     "IV": {
-      "label": "IV",
+      "label": "Mode IV",
       "model_ref": "IV"
     },
     "contingencyTLI": {
-      "label": "contingency TLI",
+      "label": "Contingency TLI",
       "model_ref": "contingencyTLI"
     },
     "lunar": {
-      "label": "lunar",
+      "label": "Lunar abort",
       "model_ref": "lunar"
     },
     "SPS": {
-      "label": "SPS",
+      "label": "Service Propulsion\nSystem",
       "model_ref": "SPS"
     }
   },

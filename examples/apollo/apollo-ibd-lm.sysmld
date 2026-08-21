@@ -43,8 +43,8 @@
     "kind": "InterconnectionView",
     "name": "LM PNGS / AGC_LM / AGS",
     "canvas": {
-      "width": 948,
-      "height": 540,
+      "width": 1068,
+      "height": 564,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -58,8 +58,8 @@
         "layout": {
           "x": 40,
           "y": 40,
-          "width": 868,
-          "height": 460,
+          "width": 988,
+          "height": 484,
           "z": 0
         },
         "compartments": {
@@ -75,12 +75,12 @@
         "symbol": "part_usage",
         "layout": {
           "x": 76,
-          "y": 296,
-          "width": 140,
-          "height": 58,
+          "y": 308,
+          "width": 180,
+          "height": 64,
           "z": 10
         },
-        "label": "PNGS",
+        "label": "Primary Guidance\n(PNGS)",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -93,13 +93,13 @@
         "model_ref": "AGC_LM",
         "symbol": "part_usage",
         "layout": {
-          "x": 404,
-          "y": 131,
-          "width": 140,
-          "height": 58,
+          "x": 444,
+          "y": 134,
+          "width": 180,
+          "height": 64,
           "z": 10
         },
-        "label": "AGC_LM",
+        "label": "LM guidance\ncomputer",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -112,13 +112,13 @@
         "model_ref": "DSKY",
         "symbol": "part_usage",
         "layout": {
-          "x": 732,
+          "x": 812,
           "y": 76,
-          "width": 140,
-          "height": 58,
+          "width": 180,
+          "height": 64,
           "z": 10
         },
-        "label": "DSKY",
+        "label": "Display and\nKeyboard",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -131,13 +131,13 @@
         "model_ref": "AGS",
         "symbol": "part_usage",
         "layout": {
-          "x": 732,
-          "y": 186,
-          "width": 140,
-          "height": 58,
+          "x": 812,
+          "y": 192,
+          "width": 180,
+          "height": 64,
           "z": 10
         },
-        "label": "AGS",
+        "label": "Abort Guidance\nSystem",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -150,13 +150,13 @@
         "model_ref": "landingRadar",
         "symbol": "part_usage",
         "layout": {
-          "x": 404,
-          "y": 241,
-          "width": 140,
-          "height": 58,
+          "x": 444,
+          "y": 250,
+          "width": 180,
+          "height": 64,
           "z": 10
         },
-        "label": "landingRadar",
+        "label": "Landing radar",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -169,13 +169,13 @@
         "model_ref": "rendezvousRadar",
         "symbol": "part_usage",
         "layout": {
-          "x": 404,
-          "y": 351,
-          "width": 140,
-          "height": 58,
+          "x": 444,
+          "y": 366,
+          "width": 180,
+          "height": 64,
           "z": 10
         },
-        "label": "rendezvousRadar",
+        "label": "Rendezvous radar",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -189,12 +189,12 @@
         "symbol": "part_usage",
         "layout": {
           "x": 76,
-          "y": 186,
-          "width": 140,
-          "height": 58,
+          "y": 192,
+          "width": 180,
+          "height": 64,
           "z": 10
         },
-        "label": "DPS",
+        "label": "Descent Propulsion\nSystem",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -207,13 +207,13 @@
         "model_ref": "APS",
         "symbol": "part_usage",
         "layout": {
-          "x": 732,
-          "y": 296,
-          "width": 140,
-          "height": 58,
+          "x": 812,
+          "y": 308,
+          "width": 180,
+          "height": 64,
           "z": 10
         },
-        "label": "APS",
+        "label": "Ascent Propulsion\nSystem",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -226,13 +226,13 @@
         "model_ref": "RCS",
         "symbol": "part_usage",
         "layout": {
-          "x": 732,
-          "y": 406,
-          "width": 140,
-          "height": 58,
+          "x": 812,
+          "y": 424,
+          "width": 180,
+          "height": 64,
           "z": 10
         },
-        "label": "RCS",
+        "label": "Reaction control",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -417,12 +417,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 275,
-              "y": 310.5
+              "x": 315,
+              "y": 324
             },
             {
-              "x": 275,
-              "y": 160
+              "x": 315,
+              "y": 166
             }
           ]
         },
@@ -457,12 +457,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 596,
-              "y": 142.6
+              "x": 676,
+              "y": 146.8
             },
             {
-              "x": 596,
-              "y": 105
+              "x": 676,
+              "y": 108
             }
           ]
         },
@@ -497,12 +497,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 680,
-              "y": 154.2
+              "x": 760,
+              "y": 159.6
             },
             {
-              "x": 680,
-              "y": 215
+              "x": 760,
+              "y": 224
             }
           ]
         },
@@ -537,12 +537,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 652,
-              "y": 165.8
+              "x": 732,
+              "y": 172.4
             },
             {
-              "x": 652,
-              "y": 325
+              "x": 732,
+              "y": 340
             }
           ]
         },
@@ -577,12 +577,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 624,
-              "y": 177.4
+              "x": 704,
+              "y": 185.2
             },
             {
-              "x": 624,
-              "y": 435
+              "x": 704,
+              "y": 456
             }
           ]
         },
@@ -617,12 +617,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 310,
-              "y": 325
+              "x": 350,
+              "y": 340
             },
             {
-              "x": 310,
-              "y": 270
+              "x": 350,
+              "y": 282
             }
           ]
         },
@@ -657,12 +657,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 345,
-              "y": 339.5
+              "x": 385,
+              "y": 356
             },
             {
-              "x": 345,
-              "y": 380
+              "x": 385,
+              "y": 398
             }
           ]
         },

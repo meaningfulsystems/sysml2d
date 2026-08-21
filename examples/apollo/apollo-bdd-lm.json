@@ -5,9 +5,9 @@
   "subject": "Apollo11::LM::LM",
   "model_files": ["apollo.sysml"],
   "direction": "top-down",
-  "default_w": 140,
-  "default_h": 52,
-  "sibling_gap": 18,
+  "default_w": 190,
+  "default_h": 56,
+  "sibling_gap": 20,
   "rank_gap": 78,
   "max_siblings_per_row": 7,
   "route_around_boxes": true,
@@ -32,30 +32,30 @@
   },
   "roots": [{
     "id": "LM",
-    "label": "LM",
+    "label": "Lunar Module",
     "model_ref": "LM",
     "style": "part.definition.root",
     "children": [
-      {"id": "descent", "label": "descent", "model_ref": "descent", "max_siblings_per_row": 3, "children": [
-        {"id": "DPS", "label": "DPS", "model_ref": "DPS"},
-        {"id": "AgZn1", "label": "AgZn1", "model_ref": "AgZn"},
-        {"id": "AgZn2", "label": "AgZn2", "model_ref": "AgZn"},
-        {"id": "AgZn3", "label": "AgZn3", "model_ref": "AgZn"},
-        {"id": "AgZn4", "label": "AgZn4", "model_ref": "AgZn"},
-        {"id": "ECA", "label": "ECA", "model_ref": "ECA"},
-        {"id": "landingRadar", "label": "landingRadar", "model_ref": "landingRadar"}
+      {"id": "descent", "label": "Descent stage", "model_ref": "descent", "max_siblings_per_row": 3, "children": [
+        {"id": "DPS", "label": "Descent Propulsion\nSystem", "model_ref": "DPS"},
+        {"id": "AgZn1", "label": "Silver-zinc 1", "model_ref": "AgZn"},
+        {"id": "AgZn2", "label": "Silver-zinc 2", "model_ref": "AgZn"},
+        {"id": "AgZn3", "label": "Silver-zinc 3", "model_ref": "AgZn"},
+        {"id": "AgZn4", "label": "Silver-zinc 4", "model_ref": "AgZn"},
+        {"id": "ECA", "label": "Electrical Control\nAssembly", "model_ref": "ECA"},
+        {"id": "landingRadar", "label": "Landing radar", "model_ref": "landingRadar"}
       ]},
-      {"id": "ascent", "label": "ascent", "model_ref": "ascent", "max_siblings_per_row": 3, "children": [
-        {"id": "PNGS", "label": "PNGS", "model_ref": "PNGS"},
-        {"id": "AGC_LM", "label": "AGC_LM", "model_ref": "AGC_LM"},
-        {"id": "APS", "label": "APS", "model_ref": "APS"},
-        {"id": "RCS", "label": "RCS 100 lbf", "model_ref": "RCS"},
-        {"id": "rendezvousRadar", "label": "rendezvousRadar", "model_ref": "rendezvousRadar"},
-        {"id": "drogue", "label": "drogue", "model_ref": "drogue"},
-        {"id": "AGS", "label": "AGS", "model_ref": "AGS", "children": [
-          {"id": "AEA", "label": "AEA", "model_ref": "AEA"},
-          {"id": "ASA", "label": "ASA", "model_ref": "ASA"},
-          {"id": "DEDA", "label": "DEDA", "model_ref": "DEDA"}
+      {"id": "ascent", "label": "Ascent stage", "model_ref": "ascent", "max_siblings_per_row": 3, "children": [
+        {"id": "PNGS", "label": "Primary Guidance\n(PNGS)", "model_ref": "PNGS"},
+        {"id": "AGC_LM", "label": "LM guidance\ncomputer", "model_ref": "AGC_LM"},
+        {"id": "APS", "label": "Ascent Propulsion\nSystem", "model_ref": "APS"},
+        {"id": "RCS", "label": "Reaction control\n(100 lbf)", "model_ref": "RCS"},
+        {"id": "rendezvousRadar", "label": "Rendezvous radar", "model_ref": "rendezvousRadar"},
+        {"id": "drogue", "label": "Drogue", "model_ref": "drogue"},
+        {"id": "AGS", "label": "Abort Guidance\nSystem", "model_ref": "AGS", "children": [
+          {"id": "AEA", "label": "Abort Electronics\nAssembly", "model_ref": "AEA"},
+          {"id": "ASA", "label": "Abort Sensor\nAssembly", "model_ref": "ASA"},
+          {"id": "DEDA", "label": "Data Entry and\nDisplay Assembly", "model_ref": "DEDA"}
         ]}
       ]}
     ]

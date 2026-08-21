@@ -291,7 +291,13 @@ class ExampleViewTests(unittest.TestCase):
             text = path.read_text(encoding="utf-8")
             with self.subTest(name=name):
                 self.assertIn("simplified MagicGrid", text)
-                self.assertIn("Department of Defense Architecture Framework (DoDAF)", text)
+                if name == "apollo":
+                    self.assertNotIn("DoDAF", text)
+                    self.assertNotIn("ninth-grade", text)
+                    self.assertNotIn("ninth grade", text)
+                    self.assertNotIn("├──", text)
+                else:
+                    self.assertIn("Department of Defense Architecture Framework (DoDAF)", text)
                 self.assertIn("example model, not a certifiable", text)
                 self.assertNotIn("Grok", text)
                 self.assertNotIn("we locked", text)
@@ -339,6 +345,11 @@ class ExampleViewTests(unittest.TestCase):
         apollo = notes["apollo"].read_text(encoding="utf-8")
         self.assertNotIn("All Viewpoint 1", apollo)
         self.assertNotIn("DoDAF overview card", apollo)
+        self.assertNotIn("DoDAF", apollo)
+        self.assertNotIn("ninth-grade", apollo)
+        self.assertNotIn("ninth grade", apollo)
+        self.assertNotIn("├──", apollo)
+        self.assertNotIn("\n*Saturn V SA-506", apollo)
         self.assertNotIn("MagicGrid layer:", apollo)
         self.assertNotIn("This note teaches", apollo)
         self.assertNotIn("This note uses", apollo)

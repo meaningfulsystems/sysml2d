@@ -1,53 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1839" height="776" viewBox="0 0 1839 776">
+<svg xmlns="http://www.w3.org/2000/svg" width="2131" height="796" viewBox="0 0 2131 796">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1839" height="776" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1835" height="734" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="2131" height="796" fill="#FFFFFF"/>
+<rect x="2" y="38" width="2127" height="754" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 456 L 472 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[stv.mb] Apollo 11 Abort Modes [abortMode : AbortMode]</text>
-<rect x="2" y="38" width="1835" height="736" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="2127" height="756" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="boundary" x="54" y="119" width="1741" height="575" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
-<text class="label" x="64" y="141">abortMode</text>
-<circle id="initial" cx="924" cy="165" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
-<rect id="nominal" x="850" y="369" width="150" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="925" y="397">nominal</text>
-<rect id="pad" x="90" y="602" width="150" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="165" y="630">pad</text>
-<rect id="I" x="307" y="602" width="150" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="382" y="630">I</text>
-<rect id="II" x="524" y="602" width="150" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="599" y="630">II</text>
-<rect id="III" x="741" y="602" width="150" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="816" y="630">III</text>
-<rect id="IV" x="958" y="602" width="150" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1033" y="630">IV</text>
-<rect id="contingencyTLI" x="1175" y="602" width="150" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1250" y="630">contingency TLI</text>
-<rect id="lunar" x="1392" y="602" width="150" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1467" y="630">lunar</text>
-<rect id="SPS" x="1609" y="602" width="150" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1684" y="630">SPS</text>
-<path d="M 924,175 L 925,369" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 866.665,425 L 866.866,437.001 Q 867,445 859,445 L 173,445 Q 165,445 165,453 L 165,602" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 883.33,425 L 883.068,456 Q 883,464 875,464 L 390,464 Q 382,464 382,472 L 382,602" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 899.995,425 L 899.999,476 Q 900,484 892,484 L 607,484 Q 599,484 599,492 L 599,602" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 916.66,425 L 916.966,496 Q 917,504 909,504 L 824,504 Q 816,504 816,512 L 816,602" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 933.34,425 L 933.028,515 Q 933,523 941,523 L 1025,523 Q 1033,523 1033,531 L 1033,602" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 950.005,425 L 950.005,516 A 7 7 0 0 1 950.005,530 L 950,535 Q 950,543 958,543 L 1026,543 A 7 7 0 0 0 1040,543 L 1242,543 Q 1250,543 1250,551 L 1250,602" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 966.67,425 L 966.67,516 A 7 7 0 0 1 966.67,530 L 966.67,536 A 7 7 0 0 1 966.67,550 L 966.981,555 Q 967,563 975,563 L 1026,563 A 7 7 0 0 0 1040,563 L 1243,563 A 7 7 0 0 0 1257,563 L 1459,563 Q 1467,563 1467,571 L 1467,602" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 983.335,425 L 983.335,516 A 7 7 0 0 1 983.335,530 L 983.335,536 A 7 7 0 0 1 983.335,550 L 983.335,556 A 7 7 0 0 1 983.335,570 L 983.017,574 Q 983,582 991,582 L 1026,582 A 7 7 0 0 0 1040,582 L 1243,582 A 7 7 0 0 0 1257,582 L 1460,582 A 7 7 0 0 0 1474,582 L 1676,582 Q 1684,582 1684,590 L 1684,602" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<text class="small" text-anchor="middle" x="516" y="453">pad</text>
-<text class="small" text-anchor="middle" x="632.5" y="472">I</text>
-<text class="small" text-anchor="middle" x="749.5" y="492">II</text>
-<text class="small" text-anchor="middle" x="866.5" y="512">III</text>
-<text class="small" text-anchor="middle" x="998" y="531">IV</text>
-<text class="small" text-anchor="middle" x="1100" y="551">TLI</text>
-<text class="small" text-anchor="middle" x="1217" y="571">lunar</text>
-<text class="small" text-anchor="middle" x="1333.5" y="590">SPS</text>
+<rect id="boundary" x="54" y="139" width="2033" height="575" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="64" y="161">abortMode</text>
+<circle id="initial" cx="1070" cy="185" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="nominal" x="976" y="389" width="190" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1071" y="417">Nominal</text>
+<rect id="pad" x="90" y="622" width="190" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="185" y="650">Pad abort</text>
+<rect id="I" x="343" y="622" width="190" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="438" y="650">Mode I</text>
+<rect id="II" x="596" y="622" width="190" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="691" y="650">Mode II</text>
+<rect id="III" x="849" y="622" width="190" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="944" y="650">Mode III</text>
+<rect id="IV" x="1102" y="622" width="190" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1197" y="650">Mode IV</text>
+<rect id="contingencyTLI" x="1355" y="622" width="190" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1450" y="650">Contingency TLI</text>
+<rect id="lunar" x="1608" y="622" width="190" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1703" y="650">Lunar abort</text>
+<rect id="SPS" x="1861" y="622" width="190" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1956" y="642.5">Service Propulsion</tspan><tspan x="1956" dy="15">System</tspan></text>
+<path d="M 1070,195 L 1071,389" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 997.109,445 L 997.025,472 Q 997,480 989,480 L 193,480 Q 185,480 185,488 L 185,622" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1018.22,445 L 1018.02,508 Q 1018,516 1010,516 L 446,516 Q 438,516 438,524 L 438,622" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1039.33,445 L 1039.02,543 Q 1039,551 1031,551 L 699,551 Q 691,551 691,559 L 691,622" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1060.44,445 L 1060.02,579 Q 1060,587 1052,587 L 952,587 Q 944,587 944,595 L 944,622" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1081.56,445 L 1081.98,579 Q 1082,587 1090,587 L 1189,587 Q 1197,587 1197,595 L 1197,622" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1102.67,445 L 1102.98,543 Q 1103,551 1111,551 L 1442,551 Q 1450,551 1450,559 L 1450,622" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1123.78,445 L 1123.98,508 Q 1124,516 1132,516 L 1695,516 Q 1703,516 1703,524 L 1703,622" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1144.89,445 L 1144.98,472 Q 1145,480 1153,480 L 1948,480 Q 1956,480 1956,488 L 1956,622" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="591" y="488">pad</text>
+<text class="small" text-anchor="middle" x="728" y="524">I</text>
+<text class="small" text-anchor="middle" x="865" y="559">II</text>
+<text class="small" text-anchor="middle" x="1002" y="595">III</text>
+<text class="small" text-anchor="middle" x="1139.5" y="595">IV</text>
+<text class="small" text-anchor="middle" x="1276.5" y="559">TLI</text>
+<text class="small" text-anchor="middle" x="1413.5" y="524">lunar</text>
+<text class="small" text-anchor="middle" x="1550.5" y="488">SPS</text>
 </g>
 </svg>

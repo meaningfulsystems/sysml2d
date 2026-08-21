@@ -7,26 +7,20 @@
     "apollo.sysml"
   ],
   "direction": "left-right",
-  "col_gap": 70,
-  "rank_gap": 170,
+  "col_gap": 80,
+  "rank_gap": 200,
   "nodes": {
     "CDR": {
-      "label": "CDR",
+      "label": "Commander",
       "symbol": "actor",
       "rank": 0,
       "order": 0
     },
-    "MCC": {
-      "label": "MCC",
+    "RSO": {
+      "label": "Range Safety Officer",
       "symbol": "actor",
       "rank": 0,
       "order": 1
-    },
-    "RSO": {
-      "label": "RSO",
-      "symbol": "actor",
-      "rank": 0,
-      "order": 2
     },
     "flyMissionUseCase": {
       "label": "Fly mission",
@@ -47,6 +41,12 @@
       "label": "Range safety",
       "rank": 1,
       "order": 3
+    },
+    "MCC": {
+      "label": "Mission Control Center",
+      "symbol": "actor",
+      "rank": 2,
+      "order": 0
     }
   },
   "groups": [
@@ -60,8 +60,8 @@
         "recoverCrewUseCase",
         "rangeSafetyUseCase"
       ],
-      "pad_x": 60,
-      "pad_y": 44
+      "pad_x": 70,
+      "pad_y": 48
     }
   ],
   "edges": [
@@ -78,17 +78,17 @@
     {
       "from": "MCC",
       "to": "flyMissionUseCase",
-      "source_offset": 0.45
+      "source_offset": 0.35
     },
     {
       "from": "MCC",
       "to": "recoverCrewUseCase",
-      "source_offset": 0.7
+      "source_offset": 0.65
     },
     {
       "from": "RSO",
       "to": "rangeSafetyUseCase",
-      "source_offset": 0.5
+      "source_offset": 0.8
     },
     {
       "from": "flyMissionUseCase",

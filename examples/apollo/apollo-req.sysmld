@@ -11,8 +11,8 @@
     "kind": "RequirementView",
     "name": "Apollo 11 Sourced Requirements",
     "canvas": {
-      "width": 1403,
-      "height": 1042,
+      "width": 1536,
+      "height": 1132,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -26,11 +26,11 @@
         "layout": {
           "x": 72,
           "y": 72,
-          "width": 195,
-          "height": 88,
+          "width": 258,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nTwo AGCs Block II\nComanche 055 + LMY99/1\nCMC ENTRY \u2260 LGC LANDING",
+        "label": "\u00abrequirement\u00bb\nTwo Block II guidance computers.\nCommand Module entry programs\nare not Lunar Module landing\nprograms.",
         "style": "requirement"
       },
       {
@@ -38,13 +38,13 @@
         "model_ref": "cmEcsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 327.5,
+          "x": 366,
           "y": 72,
-          "width": 195,
-          "height": 88,
+          "width": 237,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nCM ECS 5.0 psia 100% O2\n3 crew / 14 d spec\nA11 196 h vs 336 h spec",
+        "label": "\u00abrequirement\u00bb\nCommand Module cabin is five\npounds per square inch of\noxygen. The specification is\nthree crew for fourteen days.",
         "style": "requirement"
       },
       {
@@ -52,13 +52,13 @@
         "model_ref": "usbCsmRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 583,
+          "x": 639,
           "y": 72,
-          "width": 237,
-          "height": 88,
+          "width": 244,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nUSB CSM\n2106.40625 \u2191 / 2287.5 PM \u2193\n2272.5 FM \u00b7 PCM 51.2/1.6 kbps",
+        "label": "\u00abrequirement\u00bb\nCommand/Service Module Unified\nS-Band uses the sourced uplink\nand the two sourced downlinks.\nRates stay in the Press Kit.",
         "style": "requirement"
       },
       {
@@ -66,13 +66,13 @@
         "model_ref": "usbLmRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 856,
+          "x": 919,
           "y": 72,
-          "width": 209,
-          "height": 88,
+          "width": 251,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nUSB LM\n2101.802 \u2191 / 2282.5\n20.5 dB \u00b7 20 W \u00b7 no PM+FM",
+        "label": "\u00abrequirement\u00bb\nLunar Module Unified S-Band\nuses a different frequency\npair. Phase and frequency\nmodulation do not run together.",
         "style": "requirement"
       },
       {
@@ -80,13 +80,13 @@
         "model_ref": "rsoRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1101,
+          "x": 1206,
           "y": 72,
-          "width": 230,
-          "height": 82,
+          "width": 258,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nRSO outside MCC\nUHF destruct; safed after EO",
+        "label": "\u00abrequirement\u00bb\nThe Range Safety Officer sits\noutside Mission Control Center.\nDestruct is ultra-high frequency\nand is safed after Earth orbit.",
         "style": "requirement"
       },
       {
@@ -94,13 +94,13 @@
         "model_ref": "p27Requirement",
         "symbol": "requirement",
         "layout": {
-          "x": 75.5,
-          "y": 210,
-          "width": 188,
-          "height": 82,
+          "x": 82.5,
+          "y": 216,
+          "width": 237,
+          "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nP27 verbs V70\u2013V73 only\nNot the CCATS path",
+        "label": "\u00abrequirement\u00bb\nP27 accepts verbs V70 through\nV73 only. That path is not\nthe ground CCATS uplink.",
         "style": "requirement"
       },
       {
@@ -108,13 +108,13 @@
         "model_ref": "a11AtypicalRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 303,
-          "y": 216,
-          "width": 244,
-          "height": 88,
+          "x": 373,
+          "y": 231,
+          "width": 223,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nA11 atypical: MOCR 2; cryo 2+2\nEVA CDR 2:48 / LMP 2:40\nP66 landing; ropes sourced",
+        "label": "\u00abrequirement\u00bb\nThis instance is atypical:\ncontrol room two, cryogenic\ntankage two plus two, P66\nlanding, sourced ropes.",
         "style": "requirement"
       },
       {
@@ -123,12 +123,12 @@
         "symbol": "requirement",
         "layout": {
           "x": 72,
-          "y": 348,
-          "width": 258,
-          "height": 82,
+          "y": 390,
+          "width": 244,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nA7L 3.75\u00b10.25 psid\nEV 19.69 kg \u00b7 PLSS 1.04 lb / 4 h",
+        "label": "\u00abrequirement\u00bb\nThe A7L pressure garment holds\na sourced suit differential.\nPortable life-support oxygen\nand heat loads stay cited.",
         "style": "requirement"
       },
       {
@@ -136,13 +136,13 @@
         "model_ref": "a11MassRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 366,
-          "y": 360,
-          "width": 272,
-          "height": 88,
+          "x": 352,
+          "y": 390,
+          "width": 258,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nSerials S-IC-6 / S-II-6 / S-IVB-6N\nIU-6 / SLA-14; PK p.109 loads\nSPS load / CSM \u0394v UNKNOWN",
+        "label": "\u00abrequirement\u00bb\nSerials and Press Kit tank loads\nare documentation, not a\nrequired-mass shall. Propellant\nload and lunar \u0394v stay unmarked.",
         "style": "requirement"
       },
       {
@@ -150,13 +150,13 @@
         "model_ref": "scsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 674,
-          "y": 360,
-          "width": 209,
-          "height": 88,
+          "x": 646,
+          "y": 390,
+          "width": 244,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nCSM SCS analog backup\nAGC_CM vs SCS crew-select\nFull switch deck TBD",
+        "label": "\u00abrequirement\u00bb\nStabilization and Control is\nthe analog backup. The crew\nselects between the guidance\ncomputer and that analog path.",
         "style": "requirement"
       },
       {
@@ -164,13 +164,13 @@
         "model_ref": "pngsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 919,
-          "y": 360,
-          "width": 181,
-          "height": 88,
+          "x": 926,
+          "y": 390,
+          "width": 258,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nPNGS \u2260 AGS\nAGC_LM + IMU + radars\nR47 inits AGS",
+        "label": "\u00abrequirement\u00bb\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. The computer, inertial\nunit, and radars belong to it.",
         "style": "requirement"
       },
       {
@@ -178,13 +178,13 @@
         "model_ref": "eclssLoopRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1136,
-          "y": 360,
-          "width": 170,
-          "height": 88,
+          "x": 1220,
+          "y": 390,
+          "width": 237,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nECLSS O2/H2O/LiOH\n5.0 psia 100% O2\nCO2 \u22647.6 torr",
+        "label": "\u00abrequirement\u00bb\nLife support supplies oxygen,\nwater, and lithium hydroxide.\nCabin carbon dioxide stays at\nor below the sourced limit.",
         "style": "requirement"
       },
       {
@@ -193,12 +193,12 @@
         "symbol": "requirement",
         "layout": {
           "x": 72,
-          "y": 504,
-          "width": 195,
-          "height": 88,
+          "y": 549,
+          "width": 251,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nEPS A11 Press Kit\nSM 3 FC; cryo 2+2 not J\nno stage-to-stage power",
+        "label": "\u00abrequirement\u00bb\nElectrical power is three\nService Module fuel cells plus\nsilver-zinc batteries. There is\nno stage-to-stage power.",
         "style": "requirement"
       },
       {
@@ -206,13 +206,13 @@
         "model_ref": "agsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 303,
-          "y": 504,
-          "width": 216,
-          "height": 88,
+          "x": 359,
+          "y": 549,
+          "width": 265,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nAGS AEA+ASA+DEDA\nAEA 4096\u00d718, 5 \u03bcs, 32.7 lb\nNot a landing computer",
+        "label": "\u00abrequirement\u00bb\nAbort Guidance is the electronics\nassembly, sensor assembly, and\ndata-entry display. It is not\na landing computer.",
         "style": "requirement"
       },
       {
@@ -220,13 +220,13 @@
         "model_ref": "dockingRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 555,
-          "y": 504,
-          "width": 188,
-          "height": 88,
+          "x": 660,
+          "y": 549,
+          "width": 251,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nCM probe / LM drogue\n12 ring latches\nsoft then hard; hw off",
+        "label": "\u00abrequirement\u00bb\nDocking is Command Module probe\nto Lunar Module drogue, then\ntwelve ring latches. Soft dock\nprecedes hard dock.",
         "style": "requirement"
       },
       {
@@ -234,13 +234,13 @@
         "model_ref": "rcsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 779,
-          "y": 504,
-          "width": 209,
-          "height": 88,
+          "x": 947,
+          "y": 549,
+          "width": 251,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nRCS SM PK p.93 / LM p.106\n100 lbf; CM 93 lbf\nSM/CM RCS load UNKNOWN",
+        "label": "\u00abrequirement\u00bb\nService Module and Lunar Module\nreaction-control engines share\none sourced thrust. Command\nModule engines use another.",
         "style": "requirement"
       },
       {
@@ -248,13 +248,13 @@
         "model_ref": "spsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1024,
-          "y": 504,
-          "width": 216,
-          "height": 88,
+          "x": 1234,
+          "y": 594,
+          "width": 230,
+          "height": 118,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nSPS conflict\n20,500 PK vs 21,500 D-7375\nloaded mass UNKNOWN",
+        "label": "\u00abrequirement\u00bb\nService Propulsion System\nsources disagree on vacuum\nthrust. There is no required\nthrust and no loaded-mass\nrequirement.",
         "style": "requirement"
       },
       {
@@ -264,11 +264,11 @@
         "layout": {
           "x": 72,
           "y": 708,
-          "width": 237,
+          "width": 216,
           "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nDPS conflict\n9,870 / 1,050\u20136,300 PK\nvs 10,500 10:1 D-7143\nvs 9,870 / 1,050\u20136,800 LMA790",
+        "label": "\u00abrequirement\u00bb\nDescent Propulsion System\nsources disagree on thrust\nand throttle. There is no\nrequired thrust.",
         "style": "requirement"
       },
       {
@@ -276,13 +276,13 @@
         "model_ref": "pipaRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 345,
-          "y": 648,
-          "width": 170,
-          "height": 88,
+          "x": 324,
+          "y": 708,
+          "width": 223,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nPIPA scale\nCM 5.85 cm/s/pulse\nLM 1.0 cm/s/pulse",
+        "label": "\u00abrequirement\u00bb\nPulse Integrating Pendulous\nAccelerometer scale differs\nbetween Command Module and\nLunar Module.",
         "style": "requirement"
       },
       {
@@ -290,13 +290,13 @@
         "model_ref": "vhfRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 551,
-          "y": 624,
-          "width": 181,
-          "height": 82,
+          "x": 583,
+          "y": 708,
+          "width": 244,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nVHF 296.8 / 259.7 MHz\nRecovery 243.0 MHz",
+        "label": "\u00abrequirement\u00bb\nVery High Frequency voice uses\ntwo sourced channels. Recovery\nuses the sourced guard\nfrequency.",
         "style": "requirement"
       },
       {
@@ -304,13 +304,13 @@
         "model_ref": "isolationRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 768,
-          "y": 624,
-          "width": 244,
-          "height": 82,
+          "x": 863,
+          "y": 708,
+          "width": 251,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nNo stage-to-stage power\nNo CSM\u2013LM propellant crossfeed",
+        "label": "\u00abrequirement\u00bb\nThere is no stage-to-stage\nelectrical power. There is no\nCommand/Service Module to Lunar\nModule propellant crossfeed.",
         "style": "requirement"
       },
       {
@@ -318,13 +318,13 @@
         "model_ref": "recoveryRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1048,
-          "y": 624,
-          "width": 174,
-          "height": 82,
+          "x": 1150,
+          "y": 708,
+          "width": 244,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nSplash 195:18:35 GET\n13 nmi \u00b7 USS Hornet",
+        "label": "\u00abrequirement\u00bb\nSplash is the flown Ground\nElapsed Time from the Mission\nReport. Distance is from the\nrecovery ship, not the target.",
         "style": "requirement"
       },
       {
@@ -333,12 +333,12 @@
         "symbol": "requirement",
         "layout": {
           "x": 72,
-          "y": 792,
-          "width": 216,
-          "height": 88,
+          "y": 867,
+          "width": 251,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nKSC_LCC Firing Room 1\nHandoff MCC at tower clear\nMission Rule 1-21",
+        "label": "\u00abrequirement\u00bb\nKennedy Space Center Launch\nControl owns commit from Firing\nRoom 1. Voice hands to Mission\nControl at tower clear.",
         "style": "requirement"
       },
       {
@@ -346,13 +346,13 @@
         "model_ref": "lm5ConsumableRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 324,
-          "y": 867,
-          "width": 209,
-          "height": 103,
+          "x": 359,
+          "y": 942,
+          "width": 265,
+          "height": 118,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nLM-5 descent O2 ~48 lb\nteaching figure 2800 psi\n3000 psi D-6724 mentioned\nno required pressure",
+        "label": "\u00abrequirement\u00bb\nLunar Module descent oxygen is\na teaching figure. Another\ntechnical note prints a different\ntank pressure. There is no\nrequired pressure.",
         "style": "requirement"
       },
       {
@@ -360,13 +360,13 @@
         "model_ref": "apsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 569,
-          "y": 792,
-          "width": 170,
-          "height": 88,
+          "x": 660,
+          "y": 867,
+          "width": 258,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nAPS 3,500 lbf\n90% in 0.450 s\n1.5\u00b0 cant",
+        "label": "\u00abrequirement\u00bb\nAscent Propulsion System thrust,\nrise time, and cant stay as the\ncited experience report states\nthem.",
         "style": "requirement"
       }
     ],

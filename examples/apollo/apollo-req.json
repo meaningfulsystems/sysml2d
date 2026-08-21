@@ -7,134 +7,134 @@
     "apollo.sysml"
   ],
   "direction": "top-down",
-  "default_w": 240,
-  "default_h": 100,
+  "default_w": 250,
+  "default_h": 110,
   "sibling_gap": 36,
   "rank_gap": 56,
   "max_per_row": 5,
   "nodes": {
     "agcRequirement": {
-      "label": "\u00abrequirement\u00bb\nTwo AGCs Block II\nComanche 055 + LMY99/1\nCMC ENTRY \u2260 LGC LANDING",
+      "label": "«requirement»\nTwo Block II guidance computers.\nCommand Module entry programs\nare not Lunar Module landing\nprograms.",
       "rank": 0,
       "order": 0
     },
     "p27Requirement": {
-      "label": "\u00abrequirement\u00bb\nP27 verbs V70\u2013V73 only\nNot the CCATS path",
+      "label": "«requirement»\nP27 accepts verbs V70 through\nV73 only. That path is not\nthe ground CCATS uplink.",
       "rank": 1,
       "order": 0
     },
     "cmEcsRequirement": {
-      "label": "\u00abrequirement\u00bb\nCM ECS 5.0 psia 100% O2\n3 crew / 14 d spec\nA11 196 h vs 336 h spec",
+      "label": "«requirement»\nCommand Module cabin is five\npounds per square inch of\noxygen. The specification is\nthree crew for fourteen days.",
       "rank": 0,
       "order": 1
     },
     "a11AtypicalRequirement": {
-      "label": "\u00abrequirement\u00bb\nA11 atypical: MOCR 2; cryo 2+2\nEVA CDR 2:48 / LMP 2:40\nP66 landing; ropes sourced",
+      "label": "«requirement»\nThis instance is atypical:\ncontrol room two, cryogenic\ntankage two plus two, P66\nlanding, sourced ropes.",
       "rank": 1,
       "order": 1
     },
     "usbCsmRequirement": {
-      "label": "\u00abrequirement\u00bb\nUSB CSM\n2106.40625 \u2191 / 2287.5 PM \u2193\n2272.5 FM \u00b7 PCM 51.2/1.6 kbps",
+      "label": "«requirement»\nCommand/Service Module Unified\nS-Band uses the sourced uplink\nand the two sourced downlinks.\nRates stay in the Press Kit.",
       "rank": 0,
       "order": 2
     },
     "usbLmRequirement": {
-      "label": "\u00abrequirement\u00bb\nUSB LM\n2101.802 \u2191 / 2282.5\n20.5 dB \u00b7 20 W \u00b7 no PM+FM",
+      "label": "«requirement»\nLunar Module Unified S-Band\nuses a different frequency\npair. Phase and frequency\nmodulation do not run together.",
       "rank": 0,
       "order": 3
     },
     "rsoRequirement": {
-      "label": "\u00abrequirement\u00bb\nRSO outside MCC\nUHF destruct; safed after EO",
+      "label": "«requirement»\nThe Range Safety Officer sits\noutside Mission Control Center.\nDestruct is ultra-high frequency\nand is safed after Earth orbit.",
       "rank": 0,
       "order": 4
     },
     "a7lRequirement": {
-      "label": "\u00abrequirement\u00bb\nA7L 3.75\u00b10.25 psid\nEV 19.69 kg \u00b7 PLSS 1.04 lb / 4 h",
+      "label": "«requirement»\nThe A7L pressure garment holds\na sourced suit differential.\nPortable life-support oxygen\nand heat loads stay cited.",
       "rank": 2,
       "order": 0
     },
     "a11MassRequirement": {
-      "label": "\u00abrequirement\u00bb\nSerials S-IC-6 / S-II-6 / S-IVB-6N\nIU-6 / SLA-14; PK p.109 loads\nSPS load / CSM \u0394v UNKNOWN",
+      "label": "«requirement»\nSerials and Press Kit tank loads\nare documentation, not a\nrequired-mass shall. Propellant\nload and lunar Δv stay unmarked.",
       "rank": 2,
       "order": 1
     },
     "scsRequirement": {
-      "label": "\u00abrequirement\u00bb\nCSM SCS analog backup\nAGC_CM vs SCS crew-select\nFull switch deck TBD",
+      "label": "«requirement»\nStabilization and Control is\nthe analog backup. The crew\nselects between the guidance\ncomputer and that analog path.",
       "rank": 2,
       "order": 2
     },
     "pngsRequirement": {
-      "label": "\u00abrequirement\u00bb\nPNGS \u2260 AGS\nAGC_LM + IMU + radars\nR47 inits AGS",
+      "label": "«requirement»\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. The computer, inertial\nunit, and radars belong to it.",
       "rank": 2,
       "order": 3
     },
     "eclssLoopRequirement": {
-      "label": "\u00abrequirement\u00bb\nECLSS O2/H2O/LiOH\n5.0 psia 100% O2\nCO2 \u22647.6 torr",
+      "label": "«requirement»\nLife support supplies oxygen,\nwater, and lithium hydroxide.\nCabin carbon dioxide stays at\nor below the sourced limit.",
       "rank": 2,
       "order": 4
     },
     "epsRequirement": {
-      "label": "\u00abrequirement\u00bb\nEPS A11 Press Kit\nSM 3 FC; cryo 2+2 not J\nno stage-to-stage power",
+      "label": "«requirement»\nElectrical power is three\nService Module fuel cells plus\nsilver-zinc batteries. There is\nno stage-to-stage power.",
       "rank": 3,
       "order": 0
     },
     "agsRequirement": {
-      "label": "\u00abrequirement\u00bb\nAGS AEA+ASA+DEDA\nAEA 4096\u00d718, 5 \u03bcs, 32.7 lb\nNot a landing computer",
+      "label": "«requirement»\nAbort Guidance is the electronics\nassembly, sensor assembly, and\ndata-entry display. It is not\na landing computer.",
       "rank": 3,
       "order": 1
     },
     "dockingRequirement": {
-      "label": "\u00abrequirement\u00bb\nCM probe / LM drogue\n12 ring latches\nsoft then hard; hw off",
+      "label": "«requirement»\nDocking is Command Module probe\nto Lunar Module drogue, then\ntwelve ring latches. Soft dock\nprecedes hard dock.",
       "rank": 3,
       "order": 2
     },
     "rcsRequirement": {
-      "label": "\u00abrequirement\u00bb\nRCS SM PK p.93 / LM p.106\n100 lbf; CM 93 lbf\nSM/CM RCS load UNKNOWN",
+      "label": "«requirement»\nService Module and Lunar Module\nreaction-control engines share\none sourced thrust. Command\nModule engines use another.",
       "rank": 3,
       "order": 3
     },
     "spsRequirement": {
-      "label": "\u00abrequirement\u00bb\nSPS conflict\n20,500 PK vs 21,500 D-7375\nloaded mass UNKNOWN",
+      "label": "«requirement»\nService Propulsion System\nsources disagree on vacuum\nthrust. There is no required\nthrust and no loaded-mass\nrequirement.",
       "rank": 3,
       "order": 4
     },
     "dpsRequirement": {
-      "label": "\u00abrequirement\u00bb\nDPS conflict\n9,870 / 1,050\u20136,300 PK\nvs 10,500 10:1 D-7143\nvs 9,870 / 1,050\u20136,800 LMA790",
+      "label": "«requirement»\nDescent Propulsion System\nsources disagree on thrust\nand throttle. There is no\nrequired thrust.",
       "rank": 4,
       "order": 0
     },
     "pipaRequirement": {
-      "label": "\u00abrequirement\u00bb\nPIPA scale\nCM 5.85 cm/s/pulse\nLM 1.0 cm/s/pulse",
+      "label": "«requirement»\nPulse Integrating Pendulous\nAccelerometer scale differs\nbetween Command Module and\nLunar Module.",
       "rank": 4,
       "order": 1
     },
     "vhfRequirement": {
-      "label": "\u00abrequirement\u00bb\nVHF 296.8 / 259.7 MHz\nRecovery 243.0 MHz",
+      "label": "«requirement»\nVery High Frequency voice uses\ntwo sourced channels. Recovery\nuses the sourced guard\nfrequency.",
       "rank": 4,
       "order": 2
     },
     "isolationRequirement": {
-      "label": "\u00abrequirement\u00bb\nNo stage-to-stage power\nNo CSM\u2013LM propellant crossfeed",
+      "label": "«requirement»\nThere is no stage-to-stage\nelectrical power. There is no\nCommand/Service Module to Lunar\nModule propellant crossfeed.",
       "rank": 4,
       "order": 3
     },
     "recoveryRequirement": {
-      "label": "\u00abrequirement\u00bb\nSplash 195:18:35 GET\n13 nmi \u00b7 USS Hornet",
+      "label": "«requirement»\nSplash is the flown Ground\nElapsed Time from the Mission\nReport. Distance is from the\nrecovery ship, not the target.",
       "rank": 4,
       "order": 4
     },
     "kscRequirement": {
-      "label": "\u00abrequirement\u00bb\nKSC_LCC Firing Room 1\nHandoff MCC at tower clear\nMission Rule 1-21",
+      "label": "«requirement»\nKennedy Space Center Launch\nControl owns commit from Firing\nRoom 1. Voice hands to Mission\nControl at tower clear.",
       "rank": 5,
       "order": 0
     },
     "lm5ConsumableRequirement": {
-      "label": "\u00abrequirement\u00bb\nLM-5 descent O2 ~48 lb\nteaching figure 2800 psi\n3000 psi D-6724 mentioned\nno required pressure",
+      "label": "«requirement»\nLunar Module descent oxygen is\na teaching figure. Another\ntechnical note prints a different\ntank pressure. There is no\nrequired pressure.",
       "rank": 5,
       "order": 1
     },
     "apsRequirement": {
-      "label": "\u00abrequirement\u00bb\nAPS 3,500 lbf\n90% in 0.450 s\n1.5\u00b0 cant",
+      "label": "«requirement»\nAscent Propulsion System thrust,\nrise time, and cant stay as the\ncited experience report states\nthem.",
       "rank": 5,
       "order": 2
     }
