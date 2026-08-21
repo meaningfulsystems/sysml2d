@@ -11,21 +11,21 @@
 <text class="header" x="12" y="24">[req.mb] Apollo 11 Sourced Requirements [Apollo11]</text>
 <rect x="2" y="38" width="1247" height="446" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="agcRequirement" x="72" y="72" width="258" height="103" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="201" y="93.5">«requirement»</tspan><tspan x="201" dy="15">Two Block II guidance computers.</tspan><tspan x="201" dy="15">Command Module entry programs</tspan><tspan x="201" dy="15">are not Lunar Module landing</tspan><tspan x="201" dy="15">programs.</tspan></text>
-<rect id="rsoRequirement" x="370" y="72" width="237" height="103" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="488.5" y="93.5">«requirement»</tspan><tspan x="488.5" dy="15">Crew safety is not Launch</tspan><tspan x="488.5" dy="15">Escape System only. The Range</tspan><tspan x="488.5" dy="15">Safety Officer sits outside</tspan><tspan x="488.5" dy="15">Mission Control.</tspan></text>
-<rect id="spsRequirement" x="647" y="72" width="230" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="762" y="93.5">«requirement»</tspan><tspan x="762" dy="15">Service Propulsion sources</tspan><tspan x="762" dy="15">disagree on vacuum thrust.</tspan><tspan x="762" dy="15">There is no required thrust.</tspan></text>
-<rect id="dpsRequirement" x="917" y="72" width="258" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1046" y="93.5">«requirement»</tspan><tspan x="1046" dy="15">Descent Propulsion sources</tspan><tspan x="1046" dy="15">disagree on thrust and throttle.</tspan><tspan x="1046" dy="15">There is no required thrust.</tspan></text>
-<rect id="lm5ConsumableRequirement" x="72" y="224" width="244" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="194" y="245.5">«requirement»</tspan><tspan x="194" dy="15">Lunar Module descent oxygen</tspan><tspan x="194" dy="15">is a teaching figure.</tspan><tspan x="194" dy="15">There is no required pressure.</tspan></text>
-<rect id="recoveryRequirement" x="356" y="239" width="244" height="103" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="478" y="260.5">«requirement»</tspan><tspan x="478" dy="15">Splash is the flown Ground</tspan><tspan x="478" dy="15">Elapsed Time. Distance is from</tspan><tspan x="478" dy="15">the recovery ship, not the</tspan><tspan x="478" dy="15">target.</tspan></text>
+<rect id="agcRequirement" x="72" y="72" width="258" height="118" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="201" y="101">«requirement»</tspan><tspan x="201" dy="15">Two Block II guidance computers.</tspan><tspan x="201" dy="15">Command Module entry programs</tspan><tspan x="201" dy="15">are not Lunar Module landing</tspan><tspan x="201" dy="15">programs.</tspan></text>
+<rect id="rsoRequirement" x="370" y="72" width="237" height="118" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="488.5" y="101">«requirement»</tspan><tspan x="488.5" dy="15">Crew safety is not Launch</tspan><tspan x="488.5" dy="15">Escape System only. The Range</tspan><tspan x="488.5" dy="15">Safety Officer sits outside</tspan><tspan x="488.5" dy="15">Mission Control.</tspan></text>
+<rect id="spsRequirement" x="647" y="72" width="230" height="118" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="762" y="108.5">«requirement»</tspan><tspan x="762" dy="15">Service Propulsion sources</tspan><tspan x="762" dy="15">disagree on vacuum thrust.</tspan><tspan x="762" dy="15">There is no required thrust.</tspan></text>
+<rect id="dpsRequirement" x="917" y="72" width="258" height="118" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1046" y="108.5">«requirement»</tspan><tspan x="1046" dy="15">Descent Propulsion sources</tspan><tspan x="1046" dy="15">disagree on thrust and throttle.</tspan><tspan x="1046" dy="15">There is no required thrust.</tspan></text>
+<rect id="lm5ConsumableRequirement" x="72" y="254" width="244" height="118" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="194" y="290.5">«requirement»</tspan><tspan x="194" dy="15">Lunar Module descent oxygen</tspan><tspan x="194" dy="15">is a teaching figure.</tspan><tspan x="194" dy="15">There is no required pressure.</tspan></text>
+<rect id="recoveryRequirement" x="356" y="254" width="244" height="118" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="478" y="283">«requirement»</tspan><tspan x="478" dy="15">Splash is the flown Ground</tspan><tspan x="478" dy="15">Elapsed Time. Distance is from</tspan><tspan x="478" dy="15">the recovery ship, not the</tspan><tspan x="478" dy="15">target.</tspan></text>
 <rect id="pngsRequirement" x="640" y="254" width="237" height="118" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle"><tspan x="758.5" y="275.5">«requirement»</tspan><tspan x="758.5" dy="15">Primary Guidance, Navigation,</tspan><tspan x="758.5" dy="15">and Control is not Abort</tspan><tspan x="758.5" dy="15">Guidance. Landing radar is on</tspan><tspan x="758.5" dy="15">descent; rendezvous radar is</tspan><tspan x="758.5" dy="15">on ascent.</tspan></text>
-<rect id="isolationRequirement" x="917" y="224" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1025" y="245.5">«requirement»</tspan><tspan x="1025" dy="15">There is no stage-to-stage</tspan><tspan x="1025" dy="15">electrical power and no</tspan><tspan x="1025" dy="15">propellant crossfeed.</tspan></text>
+<rect id="isolationRequirement" x="917" y="254" width="216" height="118" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1025" y="290.5">«requirement»</tspan><tspan x="1025" dy="15">There is no stage-to-stage</tspan><tspan x="1025" dy="15">electrical power and no</tspan><tspan x="1025" dy="15">propellant crossfeed.</tspan></text>
 </g>
 </svg>

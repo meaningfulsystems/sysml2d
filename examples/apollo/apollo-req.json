@@ -16,42 +16,50 @@
     "agcRequirement": {
       "label": "«requirement»\nTwo Block II guidance computers.\nCommand Module entry programs\nare not Lunar Module landing\nprograms.",
       "rank": 0,
-      "order": 0
+      "order": 0,
+      "h": 118
     },
     "rsoRequirement": {
       "label": "«requirement»\nCrew safety is not Launch\nEscape System only. The Range\nSafety Officer sits outside\nMission Control.",
       "rank": 0,
-      "order": 1
+      "order": 1,
+      "h": 118
     },
     "spsRequirement": {
       "label": "«requirement»\nService Propulsion sources\ndisagree on vacuum thrust.\nThere is no required thrust.",
       "rank": 0,
-      "order": 2
+      "order": 2,
+      "h": 118
     },
     "dpsRequirement": {
       "label": "«requirement»\nDescent Propulsion sources\ndisagree on thrust and throttle.\nThere is no required thrust.",
       "rank": 0,
-      "order": 3
+      "order": 3,
+      "h": 118
     },
     "lm5ConsumableRequirement": {
       "label": "«requirement»\nLunar Module descent oxygen\nis a teaching figure.\nThere is no required pressure.",
       "rank": 1,
-      "order": 0
+      "order": 0,
+      "h": 118
     },
     "recoveryRequirement": {
       "label": "«requirement»\nSplash is the flown Ground\nElapsed Time. Distance is from\nthe recovery ship, not the\ntarget.",
       "rank": 1,
-      "order": 1
+      "order": 1,
+      "h": 118
     },
     "pngsRequirement": {
       "label": "«requirement»\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. Landing radar is on\ndescent; rendezvous radar is\non ascent.",
       "rank": 1,
-      "order": 2
+      "order": 2,
+      "h": 118
     },
     "isolationRequirement": {
       "label": "«requirement»\nThere is no stage-to-stage\nelectrical power and no\npropellant crossfeed.",
       "rank": 1,
-      "order": 3
+      "order": 3,
+      "h": 118
     }
   },
   "edges": []
