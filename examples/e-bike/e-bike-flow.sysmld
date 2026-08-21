@@ -12,7 +12,7 @@
     "name": "Electric Bike Energy and Control Flows",
     "canvas": {
       "width": 1224,
-      "height": 624,
+      "height": 824,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -62,11 +62,25 @@
         "model_ref": "humanInterface"
       },
       {
-        "id": "batteryPack",
+        "id": "bms",
         "symbol": "part_usage",
         "layout": {
           "x": 382,
           "y": 282,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "BMS",
+        "style": "part_usage",
+        "model_ref": "bms"
+      },
+      {
+        "id": "batteryPack",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 382,
+          "y": 482,
           "width": 150,
           "height": 70,
           "z": 10
@@ -80,7 +94,7 @@
         "symbol": "part_usage",
         "layout": {
           "x": 382,
-          "y": 482,
+          "y": 682,
           "width": 150,
           "height": 70,
           "z": 10
@@ -165,7 +179,7 @@
         "model_ref": "riderCommandFlow"
       },
       {
-        "id": "conn-charger-batteryPack",
+        "id": "conn-charger-bms",
         "source": {
           "element": "charger",
           "anchor": {
@@ -174,7 +188,7 @@
           }
         },
         "target": {
-          "element": "batteryPack",
+          "element": "bms",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -193,7 +207,38 @@
           }
         ],
         "style": "connector.flow",
-        "model_ref": "chargeEnergyFlow"
+        "model_ref": "chargerToBms"
+      },
+      {
+        "id": "conn-bms-batteryPack",
+        "source": {
+          "element": "bms",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "batteryPack",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "contactor",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "bmsToPackPower"
       },
       {
         "id": "conn-batteryPack-motorController",
@@ -216,7 +261,7 @@
           "waypoints": [
             {
               "x": 612,
-              "y": 317
+              "y": 517
             },
             {
               "x": 612,
@@ -287,7 +332,7 @@
           "waypoints": [
             {
               "x": 644,
-              "y": 517
+              "y": 717
             },
             {
               "x": 644,

@@ -1,6 +1,6 @@
 # Electric Bike Examples
 
-EPAC (EN 15194) street-legal class: cadence PAS, no certified throttle, 25 km/h cutoff. Rear geared hub (no regen). BMS lives inside the battery pack (UL 2849).
+EPAC (EN 15194) street-legal class: cadence PAS, no certified throttle, 25 km/h cutoff. Rear geared hub (`peakPower` 250 W, `wheelTorque` 40 N·m, regen none). Charge path is charger → bms → pack. BMS lives inside the battery pack (UL 2849).
 
 - `e-bike.sysml` is the SysML v2 model. ElectricBike qualified names are frozen.
 - `*.json` files are deterministic composer intent files.

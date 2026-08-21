@@ -54,7 +54,7 @@
     "conn-humanInterface-motorController": "ElectricBike::ElectricBike::interfaceToController",
     "conn-brakeSystem-motorController": "ElectricBike::ElectricBike::brakesToController",
     "conn-bnd-humanInterface": "ElectricBike::ElectricBike::riderToInterface",
-    "conn-bnd-bms": "ElectricBike::ElectricBike::chargerToBattery",
+    "conn-bnd-bms": "ElectricBike::ElectricBike::chargerToBms",
     "conn-bms-batteryPack": "ElectricBike::BatteryPack::bmsToPackPower",
     "conn-cadenceSensor-motorController": "ElectricBike::ElectricBike::cadenceToController",
     "conn-wheelSpeedSensor-motorController": "ElectricBike::ElectricBike::wheelSpeedToController",

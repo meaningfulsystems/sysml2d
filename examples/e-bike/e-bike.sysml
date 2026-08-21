@@ -20,7 +20,7 @@ package ElectricBike {
         connection cadenceToController connect cadenceSensor.cadenceOut to motorController.sensorIn;
         connection wheelSpeedToController connect wheelSpeedSensor.speedOut to motorController.sensorIn;
         connection riderToInterface connect humanInterface.riderIn to humanInterface.commandOut;
-        connection chargerToBattery connect batteryPack.bms.chargerIn to batteryPack.powerOut;
+        connection chargerToBms connect charger to batteryPack.bms;
         connection roadToMotor connect hubMotor.roadLoadIn to hubMotor.driveIn;
     }
 
@@ -48,7 +48,9 @@ package ElectricBike {
         port sensorIn : ControlPort;
     }
     part def HubMotor {
-        doc /* Rear geared hub. No regenerative braking. */
+        doc /* Rear geared hub. No regenerative braking. peakPower 250 W; wheelTorque 40 N·m; regen none. */
+        attribute peakPower;
+        attribute wheelTorque;
         port mountIn : MechanicalPort;
         port driveIn : DrivePort;
         port roadLoadIn : MechanicalPort;

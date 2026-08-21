@@ -26,17 +26,23 @@
       "rank": 1,
       "order": 0
     },
+    "bms": {
+      "label": "BMS",
+      "symbol": "part_usage",
+      "rank": 1,
+      "order": 1
+    },
     "batteryPack": {
       "label": "Battery Pack",
       "symbol": "part_usage",
       "rank": 1,
-      "order": 1
+      "order": 2
     },
     "brakeSystem": {
       "label": "Brake System",
       "symbol": "part_usage",
       "rank": 1,
-      "order": 2
+      "order": 3
     },
     "motorController": {
       "label": "Controller",
@@ -66,9 +72,15 @@
     },
     {
       "from": "charger",
-      "to": "batteryPack",
+      "to": "bms",
       "label": "charge",
-      "model_ref": "chargeEnergyFlow"
+      "model_ref": "chargerToBms"
+    },
+    {
+      "from": "bms",
+      "to": "batteryPack",
+      "label": "contactor",
+      "model_ref": "bmsToPackPower"
     },
     {
       "from": "batteryPack",
