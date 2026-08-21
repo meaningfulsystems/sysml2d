@@ -26,8 +26,8 @@
     "kind": "StateView",
     "name": "Apollo 11 Earth Coast",
     "canvas": {
-      "width": 969,
-      "height": 726,
+      "width": 1018,
+      "height": 749,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -40,9 +40,9 @@
         "symbol": "boundary",
         "layout": {
           "x": 9,
-          "y": 40,
-          "width": 920,
-          "height": 646,
+          "y": 5,
+          "width": 969,
+          "height": 704,
           "z": 0
         },
         "compartments": {
@@ -53,25 +53,13 @@
         "style": "boundary.system"
       },
       {
-        "id": "initial",
-        "symbol": "initial_state",
-        "layout": {
-          "x": 164,
-          "y": 164,
-          "width": 20,
-          "height": 20,
-          "z": 10
-        },
-        "style": "initial_state"
-      },
-      {
         "id": "earthCoast",
         "symbol": "state_usage",
         "layout": {
           "x": 45,
-          "y": 76,
-          "width": 848,
-          "height": 574,
+          "y": 41,
+          "width": 897,
+          "height": 632,
           "z": 4
         },
         "model_ref": "earthCoast",
@@ -83,7 +71,7 @@
         "symbol": "initial_state",
         "layout": {
           "x": 164,
-          "y": 311,
+          "y": 111,
           "width": 20,
           "height": 20,
           "z": 10
@@ -95,7 +83,7 @@
         "symbol": "state_usage",
         "layout": {
           "x": 90,
-          "y": 346,
+          "y": 146,
           "width": 168,
           "height": 56,
           "z": 10
@@ -109,7 +97,7 @@
         "symbol": "state_usage",
         "layout": {
           "x": 90,
-          "y": 545,
+          "y": 351,
           "width": 168,
           "height": 56,
           "z": 10
@@ -122,8 +110,8 @@
         "id": "earthOrbit",
         "symbol": "state_usage",
         "layout": {
-          "x": 377,
-          "y": 541,
+          "x": 90,
+          "y": 552,
           "width": 168,
           "height": 64,
           "z": 10
@@ -136,8 +124,8 @@
         "id": "TLI",
         "symbol": "state_usage",
         "layout": {
-          "x": 361,
-          "y": 330,
+          "x": 385,
+          "y": 540,
           "width": 200,
           "height": 88,
           "z": 10
@@ -150,8 +138,8 @@
         "id": "dockEject",
         "symbol": "state_usage",
         "layout": {
-          "x": 377,
-          "y": 146,
+          "x": 401,
+          "y": 351,
           "width": 168,
           "height": 56,
           "z": 10
@@ -164,7 +152,7 @@
         "id": "translunar",
         "symbol": "state_usage",
         "layout": {
-          "x": 664,
+          "x": 401,
           "y": 146,
           "width": 168,
           "height": 56,
@@ -178,8 +166,8 @@
         "id": "LOI",
         "symbol": "state_usage",
         "layout": {
-          "x": 648,
-          "y": 334,
+          "x": 697,
+          "y": 134,
           "width": 200,
           "height": 80,
           "z": 10
@@ -253,35 +241,26 @@
         "source": {
           "element": "boost",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "earthOrbit",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 258,
-              "y": 571
-            },
-            {
-              "x": 377,
-              "y": 571
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "engine cutoff",
             "position": {
-              "segment": 1,
+              "segment": 0,
               "offset": 0.5,
               "placement": "centerline"
             }
@@ -295,26 +274,35 @@
         "source": {
           "element": "earthOrbit",
           "anchor": {
-            "side": "top",
+            "side": "right",
             "offset": 0.5
           }
         },
         "target": {
           "element": "TLI",
           "anchor": {
-            "side": "bottom",
+            "side": "left",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 258,
+              "y": 578
+            },
+            {
+              "x": 385,
+              "y": 578
+            }
+          ]
         },
         "labels": [
           {
             "text": "IU / S-IVB",
             "position": {
-              "segment": 0,
+              "segment": 1,
               "offset": 0.5,
               "placement": "centerline"
             }
@@ -361,35 +349,26 @@
         "source": {
           "element": "dockEject",
           "anchor": {
-            "side": "right",
+            "side": "top",
             "offset": 0.5
           }
         },
         "target": {
           "element": "translunar",
           "anchor": {
-            "side": "left",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 545,
-              "y": 174
-            },
-            {
-              "x": 664,
-              "y": 174
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "LM extract",
             "position": {
-              "segment": 1,
+              "segment": 0,
               "offset": 0.5,
               "placement": "centerline"
             }
@@ -403,60 +382,40 @@
         "source": {
           "element": "translunar",
           "anchor": {
-            "side": "bottom",
+            "side": "right",
             "offset": 0.5
           }
         },
         "target": {
           "element": "LOI",
           "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": []
-        },
-        "labels": [
-          {
-            "text": "Service Propulsion",
-            "position": {
-              "segment": 0,
-              "offset": 0.5,
-              "placement": "centerline"
-            }
-          }
-        ],
-        "style": "transition"
-      },
-      {
-        "id": "initial--earthCoast",
-        "model_ref": "earthCoast",
-        "source": {
-          "element": "initial",
-          "anchor": {
-            "side": "right",
-            "offset": 0.4
-          }
-        },
-        "target": {
-          "element": "earthCoast",
-          "anchor": {
             "side": "left",
-            "offset": 0.1672
+            "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 114,
-              "y": 172
+              "x": 569,
+              "y": 168
+            },
+            {
+              "x": 697,
+              "y": 168
             }
           ]
         },
-        "labels": [],
+        "labels": [
+          {
+            "text": "Service Propulsion",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
         "style": "transition"
       }
     ],

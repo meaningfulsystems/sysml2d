@@ -237,7 +237,7 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
     # ── Sugiyama layout, one pass per concurrent region ───────────────────────
     vertical = direction in ("top-down", "bottom-up")
 
-    def _layout_group(group: list[str]):
+    def _layout_group(group: list[str], stack: bool = False):
         group_set = set(group)
         group_edges = [
             edge for edge in layout_edges
@@ -252,6 +252,7 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
             margin   = CANVAS_MARGIN + BND_PAD + max(default_w, default_h) // 2,
             rank_wrap=spec.get("rank_wrap"),
             target_aspect=float(spec.get("target_aspect", 1.618)),
+            fixed_ranks={sid: index for index, sid in enumerate(group)} if stack else None,
         )
 
     if len(groups) <= 1:
@@ -263,9 +264,9 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
         rank = {}
         cursor_x = 0.0
         cursor_y = 0.0
-        region_gap = 180
+        region_gap = 48
         for group in groups:
-            lo = _layout_group(group)
+            lo = _layout_group(group, stack=True)
             min_x = min(lo.cx[sid] - sw(sid) / 2 for sid in group)
             min_y = min(lo.cy[sid] - sh(sid) / 2 for sid in group)
             for sid in group:
@@ -274,10 +275,7 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
                 rank[sid] = lo.rank[sid]
             width = max(lo.cx[sid] - min_x + sw(sid) / 2 for sid in group)
             height = max(lo.cy[sid] - min_y + sh(sid) / 2 for sid in group)
-            if vertical:
-                cursor_y += height + region_gap
-            else:
-                cursor_x += width + region_gap
+            cursor_x += width + region_gap
 
     # ── Element boxes ─────────────────────────────────────────────────────────
     boxes: dict[str, tuple[int, int, int, int]] = {

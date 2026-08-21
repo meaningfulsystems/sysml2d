@@ -7,10 +7,10 @@
     "apollo.sysml"
   ],
   "direction": "top-down",
-  "default_w": 180,
-  "default_h": 64,
-  "rank_gap": 80,
-  "col_gap": 48,
+  "default_w": 156,
+  "default_h": 56,
+  "rank_gap": 36,
+  "col_gap": 28,
   "aliases": {
     "flight": "Apollo11::Flight",
     "earthCoast": "Apollo11::MissionPhase::earthCoast",
@@ -27,9 +27,6 @@
     "agsFollow": "Apollo11::AGSMode::followPNGS"
   },
   "states": {
-    "initial": {
-      "initial": true
-    },
     "flight": {
       "label": "Flight",
       "composite": true,
@@ -104,11 +101,6 @@
     }
   },
   "transitions": [
-    {
-      "from": "initial",
-      "to": "flight",
-      "label": ""
-    },
     {
       "from": "earthCoast",
       "to": "lunarReturn",

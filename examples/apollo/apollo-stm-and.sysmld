@@ -25,8 +25,8 @@
     "kind": "StateView",
     "name": "Apollo 11 Sourced Concurrency",
     "canvas": {
-      "width": 529,
-      "height": 1405,
+      "width": 889,
+      "height": 361,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -39,9 +39,9 @@
         "symbol": "boundary",
         "layout": {
           "x": -81,
-          "y": -36,
-          "width": 570,
-          "height": 1401,
+          "y": -106,
+          "width": 930,
+          "height": 427,
           "z": 0
         },
         "compartments": {
@@ -52,25 +52,13 @@
         "style": "boundary.system"
       },
       {
-        "id": "initial",
-        "symbol": "initial_state",
-        "layout": {
-          "x": 0,
-          "y": 0,
-          "width": 20,
-          "height": 20,
-          "z": 10
-        },
-        "style": "initial_state"
-      },
-      {
         "id": "flight",
         "symbol": "state_usage",
         "layout": {
           "x": -45,
-          "y": 130,
-          "width": 498,
-          "height": 1199,
+          "y": -70,
+          "width": 858,
+          "height": 355,
           "z": 4
         },
         "model_ref": "flight",
@@ -81,10 +69,10 @@
         "id": "earthCoast",
         "symbol": "state_usage",
         "layout": {
-          "x": 228,
-          "y": 200,
-          "width": 180,
-          "height": 64,
+          "x": 0,
+          "y": 0,
+          "width": 156,
+          "height": 56,
           "z": 10
         },
         "model_ref": "earthCoast",
@@ -95,10 +83,10 @@
         "id": "lunarReturn",
         "symbol": "state_usage",
         "layout": {
-          "x": 114,
-          "y": 344,
-          "width": 180,
-          "height": 64,
+          "x": 0,
+          "y": 92,
+          "width": 156,
+          "height": 56,
           "z": 10
         },
         "model_ref": "lunarReturn",
@@ -110,9 +98,9 @@
         "symbol": "state_usage",
         "layout": {
           "x": 0,
-          "y": 200,
-          "width": 180,
-          "height": 64,
+          "y": 184,
+          "width": 156,
+          "height": 56,
           "z": 10
         },
         "model_ref": "abortMode",
@@ -123,9 +111,9 @@
         "id": "csmOrbit",
         "symbol": "state_usage",
         "layout": {
-          "x": 228,
-          "y": 588,
-          "width": 180,
+          "x": 204,
+          "y": 0,
+          "width": 156,
           "height": 64,
           "z": 10
         },
@@ -137,9 +125,9 @@
         "id": "DOI",
         "symbol": "state_usage",
         "layout": {
-          "x": 0,
-          "y": 588,
-          "width": 180,
+          "x": 204,
+          "y": 100,
+          "width": 156,
           "height": 64,
           "z": 10
         },
@@ -151,10 +139,10 @@
         "id": "rsArmed",
         "symbol": "state_usage",
         "layout": {
-          "x": 0,
-          "y": 832,
-          "width": 180,
-          "height": 64,
+          "x": 408,
+          "y": 0,
+          "width": 156,
+          "height": 56,
           "z": 10
         },
         "model_ref": "rsArmed",
@@ -165,9 +153,9 @@
         "id": "rsSafed",
         "symbol": "state_usage",
         "layout": {
-          "x": 0,
-          "y": 976,
-          "width": 180,
+          "x": 408,
+          "y": 92,
+          "width": 156,
           "height": 64,
           "z": 10
         },
@@ -179,9 +167,9 @@
         "id": "p66Landing",
         "symbol": "state_usage",
         "layout": {
-          "x": 228,
-          "y": 1220,
-          "width": 180,
+          "x": 612,
+          "y": 0,
+          "width": 156,
           "height": 64,
           "z": 10
         },
@@ -193,9 +181,9 @@
         "id": "agsFollow",
         "symbol": "state_usage",
         "layout": {
-          "x": 0,
-          "y": 1220,
-          "width": 180,
+          "x": 612,
+          "y": 100,
+          "width": 156,
           "height": 64,
           "z": 10
         },
@@ -224,16 +212,7 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 318,
-              "y": 1285
-            },
-            {
-              "x": 204,
-              "y": 1285
-            }
-          ]
+          "waypoints": []
         },
         "labels": [],
         "style": "transition"
@@ -270,65 +249,41 @@
           }
         ],
         "style": "transition"
-      },
-      {
-        "id": "initial--flight",
-        "model_ref": "flight",
-        "source": {
-          "element": "initial",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.4
-          }
-        },
-        "target": {
-          "element": "flight",
-          "anchor": {
-            "side": "top",
-            "offset": 0.1064
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": []
-        },
-        "labels": [],
-        "style": "transition"
       }
     ],
     "annotations": [
       {
         "id": "flight-region-divider-1",
         "type": "state_region_divider",
-        "x1": -33,
-        "y1": 498,
-        "x2": 441,
-        "y2": 498,
+        "x1": 180,
+        "y1": -34,
+        "x2": 180,
+        "y2": 273,
         "label": "After undock",
-        "label_x": -27,
-        "label_y": 514
+        "label_x": 188,
+        "label_y": -18
       },
       {
         "id": "flight-region-divider-2",
         "type": "state_region_divider",
-        "x1": -33,
-        "y1": 742,
-        "x2": 441,
-        "y2": 742,
+        "x1": 384,
+        "y1": -34,
+        "x2": 384,
+        "y2": 273,
         "label": "Range Safety",
-        "label_x": -27,
-        "label_y": 758
+        "label_x": 392,
+        "label_y": -18
       },
       {
         "id": "flight-region-divider-3",
         "type": "state_region_divider",
-        "x1": -33,
-        "y1": 1130,
-        "x2": 441,
-        "y2": 1130,
+        "x1": 588,
+        "y1": -34,
+        "x2": 588,
+        "y2": 273,
         "label": "Guidance",
-        "label_x": -27,
-        "label_y": 1146
+        "label_x": 596,
+        "label_y": -18
       }
     ],
     "styles": {

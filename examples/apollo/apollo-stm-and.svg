@@ -1,48 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="533" height="1447" viewBox="0 0 533 1447">
+<svg xmlns="http://www.w3.org/2000/svg" width="893" height="403" viewBox="0 0 893 403">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="533" height="1447" fill="#FFFFFF"/>
-<rect x="2" y="38" width="529" height="1405" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="893" height="403" fill="#FFFFFF"/>
+<rect x="2" y="38" width="889" height="361" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 472 L 488 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[stv.mb] Apollo 11 Sourced Concurrency [flight : Flight]</text>
-<rect x="2" y="38" width="529" height="1407" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="889" height="363" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="boundary" x="-81" y="-36" width="570" height="1401" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
-<text class="label" x="-71" y="-14">flight</text>
-<rect id="flight" x="-45" y="130" width="498" height="1199" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" x="-33" y="154">Flight</text>
-<circle id="initial" cx="10" cy="10" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
-<rect id="earthCoast" x="228" y="200" width="180" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="318" y="232">Earth coast</text>
-<rect id="lunarReturn" x="114" y="344" width="180" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="204" y="376">Lunar return</text>
-<rect id="abortMode" x="0" y="200" width="180" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="90" y="232">Abort family</text>
-<rect id="csmOrbit" x="228" y="588" width="180" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="318" y="620">CMP in lunar orbit</text>
-<rect id="DOI" x="0" y="588" width="180" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="90" y="620">LM DOI through ascent</text>
-<rect id="rsArmed" x="0" y="832" width="180" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="90" y="864">Destruct armed</text>
-<rect id="rsSafed" x="0" y="976" width="180" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="90" y="1000.5">Safed after</tspan><tspan x="90" dy="15">Earth orbit</tspan></text>
-<rect id="p66Landing" x="228" y="1220" width="180" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="318" y="1244.5">Primary Guidance</tspan><tspan x="318" dy="15">P66 lands</tspan></text>
-<rect id="agsFollow" x="0" y="1220" width="180" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="90" y="1244.5">Abort Guidance</tspan><tspan x="90" dy="15">does not land</tspan></text>
-<line id="flight-region-divider-1" x1="-33" y1="498" x2="441" y2="498" stroke="#64748B" stroke-width="1.5" stroke-dasharray="6 5"/>
-<text class="small" x="-27" y="514">After undock</text>
-<line id="flight-region-divider-2" x1="-33" y1="742" x2="441" y2="742" stroke="#64748B" stroke-width="1.5" stroke-dasharray="6 5"/>
-<text class="small" x="-27" y="758">Range Safety</text>
-<line id="flight-region-divider-3" x1="-33" y1="1130" x2="441" y2="1130" stroke="#64748B" stroke-width="1.5" stroke-dasharray="6 5"/>
-<text class="small" x="-27" y="1146">Guidance</text>
-<path d="M 318,264 L 318,1277 Q 318,1285 310,1285 L 212,1285 Q 204,1285 204,1277 L 204,344" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 90,896 L 90,976" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 8,20 L 7.9872,130" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<text class="small" text-anchor="middle" x="90" y="944">Earth orbit</text>
+<rect id="boundary" x="-81" y="-106" width="930" height="427" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="-71" y="-84">flight</text>
+<rect id="flight" x="-45" y="-70" width="858" height="355" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" x="-33" y="-46">Flight</text>
+<rect id="earthCoast" x="0" y="0" width="156" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="78" y="28">Earth coast</text>
+<rect id="lunarReturn" x="0" y="92" width="156" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="78" y="120">Lunar return</text>
+<rect id="abortMode" x="0" y="184" width="156" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="78" y="212">Abort family</text>
+<rect id="csmOrbit" x="204" y="0" width="156" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="282" y="32">CMP in lunar orbit</text>
+<rect id="DOI" x="204" y="100" width="156" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="282" y="132">LM DOI through ascent</text>
+<rect id="rsArmed" x="408" y="0" width="156" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="486" y="28">Destruct armed</text>
+<rect id="rsSafed" x="408" y="92" width="156" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="486" y="116.5">Safed after</tspan><tspan x="486" dy="15">Earth orbit</tspan></text>
+<rect id="p66Landing" x="612" y="0" width="156" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="690" y="24.5">Primary Guidance</tspan><tspan x="690" dy="15">P66 lands</tspan></text>
+<rect id="agsFollow" x="612" y="100" width="156" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="690" y="124.5">Abort Guidance</tspan><tspan x="690" dy="15">does not land</tspan></text>
+<line id="flight-region-divider-1" x1="180" y1="-34" x2="180" y2="273" stroke="#64748B" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text class="small" x="188" y="-18">After undock</text>
+<line id="flight-region-divider-2" x1="384" y1="-34" x2="384" y2="273" stroke="#64748B" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text class="small" x="392" y="-18">Range Safety</text>
+<line id="flight-region-divider-3" x1="588" y1="-34" x2="588" y2="273" stroke="#64748B" stroke-width="1.5" stroke-dasharray="6 5"/>
+<text class="small" x="596" y="-18">Guidance</text>
+<path d="M 78,56 L 78,92" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 486,56 L 486,92" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="486" y="82">Earth orbit</text>
 </g>
 </svg>

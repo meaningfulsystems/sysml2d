@@ -29,9 +29,6 @@
     "startLOI": "Apollo11::MissionPhase::earthCoast::startLOI"
   },
   "states": {
-    "initial": {
-      "initial": true
-    },
     "earthCoast": {
       "label": "Earth coast",
       "composite": true,
@@ -84,11 +81,6 @@
     }
   },
   "transitions": [
-    {
-      "from": "initial",
-      "to": "earthCoast",
-      "label": ""
-    },
     {
       "from": "earthInitial",
       "to": "countdown",
