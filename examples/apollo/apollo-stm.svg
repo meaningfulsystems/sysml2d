@@ -27,7 +27,7 @@
 <rect id="translunar" x="1315" y="123" width="118" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1374" y="149">translunar</text>
 <rect id="LOI" x="1501" y="114" width="156" height="70" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1579" y="134">LOI-1</tspan><tspan x="1579" dy="15">A11-FP 75:54:28</tspan><tspan x="1579" dy="15">flown ~075:49:50</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="1579" y="134">LOI-1</tspan><tspan x="1579" dy="15">planned 75:54:28</tspan><tspan x="1579" dy="15">flown ~075:49:50</tspan></text>
 <rect id="undock" x="1724" y="123" width="118" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1783" y="149">undock</text>
 <rect id="DOI" x="1928" y="123" width="118" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>

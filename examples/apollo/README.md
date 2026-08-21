@@ -38,7 +38,7 @@ MCC is MOCR 2; handoff at tower clear is Mission Rule 1-21. VHF 296.8 / 259.7 MH
 
 countdown → boost → earthOrbit → TLI → dock/eject → translunar → LOI → undock → DOI → descent → surface/EVA → ascent → rendezvous → TEI → entry → recovery
 
-TD&E is a GO/NO-GO after TLI and before translunar coast (CMP, SM RCS, probe/drogue + 12 latches). TLI GET — three labels only: PK planned 02:44:15, A11-FP planned 2:44:26, flown 02:44:16 (MSC-00171). TD&E ~03:20–04:09 planned. LOI-1 planned 75:54:28 GET — A11-FP is the control source. Press Kit may print the same string; not a second GET. Flown LOI-1 ~075:49:50 GET (PAD / Mission Report). P66 is the flown landing program.
+TD&E is a GO/NO-GO after TLI and before translunar coast (CMP, SM RCS, probe/drogue + 12 latches). TLI GET — three labels only: PK planned 02:44:15, A11-FP planned 2:44:26, flown 02:44:16 (MSC-00171). TD&E ~03:20–04:09 planned. LOI-1 planned 75:54:28 GET — A11-FP is the control source (Apollo 11 Flight Plan). Press Kit may print the same string; not a second GET. Flown LOI-1 ~075:49:50 GET (PAD / Mission Report). Two LOI-1 numbers only. P66 is the flown landing program.
 
 Abort machine (parallel): pad, I–IV, contingency TLI, lunar, SPS.
 

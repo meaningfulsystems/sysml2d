@@ -350,10 +350,12 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("Flight Control Computer (FCC)", apollo)
         self.assertIn("PGNCS", apollo)
         self.assertIn("A11-FP is the **control source**", apollo)
+        self.assertIn("Apollo 11 Flight Plan", apollo)
         self.assertIn("MSC-00171", apollo)
         self.assertIn("~075:49:50 GET", apollo)
         self.assertIn("2:44:26 GET", apollo)
         self.assertNotIn("02:44:16.2", apollo)
+        self.assertNotIn("flown 75:54:28", apollo.lower())
         self.assertIn("**Includes** Lunar EVA", apollo)
 
     def test_hop_overs_appear_on_crossing_generic_views(self):

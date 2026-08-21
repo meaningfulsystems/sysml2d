@@ -177,7 +177,7 @@
           "z": 10
         },
         "model_ref": "LOI",
-        "label": "LOI-1\nA11-FP 75:54:28\nflown ~075:49:50",
+        "label": "LOI-1\nplanned 75:54:28\nflown ~075:49:50",
         "style": "state.default"
       },
       {

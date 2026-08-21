@@ -167,7 +167,7 @@ SM: fuel cells FC1–FC3; cryo **2+2** (not J-mission 3+3). CM: silver-zinc (AgZ
 | EVA | one surface EVA; CDR 2:48 / LMP 2:40 (**flown** A11 instance) |
 | TLI | PK planned 02:44:15 GET; A11-FP planned 2:44:26 GET; flown 02:44:16 GET (MSC-00171). Three labels only |
 | TD&E | ~03:20–04:09 planned |
-| LOI-1 | Planned 75:54:28 GET — A11-FP is the **control source**. Press Kit may print the same string; not a second GET. Flown ~075:49:50 GET (PAD / Mission Report) |
+| LOI-1 | **Planned** 75:54:28 GET — A11-FP is the **control source** (Apollo 11 Flight Plan). Press Kit may print the same string; not a second GET. **Flown** ~075:49:50 GET (PAD / Mission Report). Two numbers only |
 | Splash | 195:18:35 MET, 13 nmi, *Hornet* — model does not mark planned or flown |
 | Landing program | **P66 flown** |
 
@@ -279,7 +279,7 @@ countdown → boost → earthOrbit → TLI → dockEject → translunar → LOI 
 | `ei` | TEI → entry |
 | `recoveryForce` | entry → recovery |
 
-`dockEject` is after TLI and before translunar coast. TLI GET — three labels only: PK planned 02:44:15, A11-FP planned 2:44:26, flown 02:44:16 (MSC-00171). TD&E ~03:20–04:09 planned. LOI-1 planned 75:54:28 GET — A11-FP is the control source. Press Kit may print the same string; not a second GET. Flown LOI-1 ~075:49:50 GET (PAD / Mission Report). P66 is the flown landing program.
+`dockEject` is after TLI and before translunar coast. TLI GET — three labels only: PK planned 02:44:15, A11-FP planned 2:44:26, flown 02:44:16 (MSC-00171). TD&E ~03:20–04:09 planned. LOI-1 planned 75:54:28 GET — A11-FP is the control source (Apollo 11 Flight Plan). Press Kit may print the same string; not a second GET. Flown LOI-1 ~075:49:50 GET (PAD / Mission Report). Two LOI-1 numbers only. P66 is the flown landing program.
 
 ### Abort modes (`AbortMode`)
 
@@ -743,7 +743,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** What is the nominal mission sequence?
 
-**How to read it:** The STM runs from countdown through recovery. The locked hop is TLI → dockEject → translunar → LOI. There is no TLI→translunar hop. TLI boxes carry PK planned 02:44:15, A11-FP planned 2:44:26, and flown 02:44:16 (MSC-00171). LOI-1 planned 75:54:28 GET cites A11-FP as the control source; flown is ~075:49:50 GET.
+**How to read it:** The STM runs from countdown through recovery. The locked hop is TLI → dockEject → translunar → LOI. There is no TLI→translunar hop. TLI boxes carry PK planned 02:44:15, A11-FP planned 2:44:26, and flown 02:44:16 (MSC-00171). LOI-1 boxes carry planned 75:54:28 GET and flown ~075:49:50 GET. Two LOI-1 numbers only.
 
 **Symbols:** rounded states and labeled transitions.
 
