@@ -194,9 +194,9 @@ Which cut of the stack is hardest to drop — the two AGCs, the radar split, or 
 
 ## References
 
-Kurten. (1975, July). *Technical Note D-7990*.
+Kurten. (1975, July). *Abort Guidance System* (Technical Note D-7990).
 
-Lutz et al. (1975, November). *Technical Note D-8093*.
+Lutz et al. (1975, November). *Development of the Extravehicular Mobility Unit* (Technical Note D-8093).
 
 NASA Manned Spacecraft Center, Flight Planning Branch. (1969, July 1). *Apollo 11 Flight Plan* (Final).
 
@@ -206,12 +206,12 @@ National Aeronautics and Space Administration. (1969b). *Apollo 11 press kit* (6
 
 National Aeronautics and Space Administration. (1969c, November). *Apollo 11 Mission Report* (MSC-00171).
 
-National Aeronautics and Space Administration. (1972). *Technical Note D-6724*.
+National Aeronautics and Space Administration. (1972). *Apollo Experience Report: Lunar Module Environmental Control Subsystem* (Technical Note D-6724).
 
-National Aeronautics and Space Administration. (1973a, March). *Technical Note D-7082*.
+National Aeronautics and Space Administration. (1973a, March). *Apollo Experience Report: Ascent Propulsion System* (Technical Note D-7082).
 
-National Aeronautics and Space Administration. (1973b, March). *Technical Note D-7143*.
+National Aeronautics and Space Administration. (1973b, March). *Apollo Experience Report: Descent Propulsion System* (Technical Note D-7143).
 
-National Aeronautics and Space Administration. (1973c, August). *Technical Note D-7375*.
+National Aeronautics and Space Administration. (1973c, August). *Apollo Experience Report: Service Propulsion Subsystem* (Technical Note D-7375).
 
 Smith et al. (1974, July). *Food Systems* (Technical Note D-7720).
