@@ -71,7 +71,7 @@ The same idea — models, diagrams, and history as text — also drives the pair
 
 Model and compose commands: [examples/e-bike/](examples/e-bike/). View walkthrough: [e-bike architecture summary](examples/e-bike/e-bike-architecture-summary.md).
 
-**Apollo 11** is the full-stack example. The reference instance is Apollo 11 / AS-506 / Block II: Saturn V through CSM and LM, crew, KSC, MCC (MOCR 2), and MSFN. System views sit beside subsystem views for CSM/LM, AGC/GNC, ground, EPS, RCS, docking, and the mission and abort state machines. Figures are sourced; values without a source stay UNKNOWN.
+**Apollo** is a full lunar-orbit-rendezvous example: Saturn V, Block II CSM, LM-5, crew, and the ground network for Apollo 11 (AS-506). It is meant to be read as a system-of-systems model — launch vehicle, two spacecraft computers plus AGS, MCC/MSFN, and the mission state machine through splashdown. Numbers are from NASA primary sources; a few values (including an official CSM lunar Δv table) are intentionally left unmarked.
 
 Model and compose commands: [examples/apollo/](examples/apollo/). View walkthrough: [Apollo architecture summary](examples/apollo/apollo-architecture-summary.md).
 
