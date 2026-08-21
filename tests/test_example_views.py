@@ -279,6 +279,45 @@ class ExampleViewTests(unittest.TestCase):
         pack = next(child for child in children if child["id"] == "batteryPack")
         self.assertEqual(pack["children"][0]["id"], "bms")
 
+    def test_architecture_notes_are_simplified_magicgrid_walkthroughs(self):
+        notes = {
+            "toaster": ROOT / "examples/toaster/toaster-architecture-summary.md",
+            "blender": ROOT / "examples/blender/blender-architecture-summary.md",
+            "e-bike": ROOT / "examples/e-bike/e-bike-architecture-summary.md",
+            "apollo": ROOT / "examples/apollo/apollo-architecture-summary.md",
+        }
+        for name, path in notes.items():
+            text = path.read_text(encoding="utf-8")
+            with self.subTest(name=name):
+                self.assertIn("simplified MagicGrid", text)
+                self.assertIn("Department of Defense Architecture Framework (DoDAF)", text)
+                self.assertIn("example model, not a certifiable", text)
+                self.assertNotIn("Grok", text)
+                self.assertNotIn("we locked", text)
+                self.assertNotIn("HOS", text)
+                self.assertNotIn("2200±300", text)
+        toaster = notes["toaster"].read_text(encoding="utf-8")
+        self.assertIn("±5%", toaster)
+        self.assertIn("at least three", toaster)
+        self.assertIn("no more than 10 N", toaster)
+        self.assertIn("at least 10,000", toaster)
+        blender = notes["blender"].read_text(encoding="utf-8")
+        self.assertIn("within 50 ms", blender)
+        self.assertIn("MainsSupply", blender)
+        self.assertIn("ElectricalEnergy", blender)
+        self.assertIn("mainsPowerFlow", blender)
+        self.assertIn("There is **no** `PowerPort`", blender)
+        ebike = notes["e-bike"].read_text(encoding="utf-8")
+        self.assertIn("EN 15194:2017 clause 4.2.13", ebike)
+        self.assertIn("250 W is the European Union (EU) continuous rating", ebike)
+        self.assertIn("charger → `bms.chargerIn`", ebike)
+        apollo = notes["apollo"].read_text(encoding="utf-8")
+        self.assertIn("NPR 7123.1", apollo)
+        self.assertIn("D-7720 April 1967 plan baseline", apollo)
+        self.assertIn("descent → DPS, AgZn1–4, ECA, landingRadar", apollo)
+        self.assertIn("PNGS → IMU", apollo)
+        self.assertNotIn("PNGS → IMU, rendezvousRadar", apollo)
+
     def test_hop_overs_appear_on_crossing_generic_views(self):
         spec = {
             "kind": "PackageView",
