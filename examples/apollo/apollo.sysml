@@ -400,6 +400,7 @@ package Apollo11 {
         state earthOrbit;
         state TLI;
         state translunar;
+        state dockEject;
         state LOI;
         state undock;
         state DOI;
@@ -414,7 +415,8 @@ package Apollo11 {
         transition seoi first boost accept orbitalInsertion then earthOrbit;
         transition startTLI first earthOrbit accept tliBurn then TLI;
         transition TLICutoff first TLI accept tliComplete then translunar;
-        transition startLOI first translunar accept loiBurn then LOI;
+        transition startDockEject first translunar accept transposition then dockEject;
+        transition startLOI first dockEject accept loiBurn then LOI;
         transition LOICutoff first LOI accept lunarOrbit then undock;
         transition startDOI first undock accept doiBurn then DOI;
         transition startDescent first DOI accept p63 then descent;

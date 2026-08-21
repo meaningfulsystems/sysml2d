@@ -12,6 +12,7 @@
     "earthOrbit": "Apollo11::MissionPhase::earthOrbit",
     "TLI": "Apollo11::MissionPhase::TLI",
     "translunar": "Apollo11::MissionPhase::translunar",
+    "dockEject": "Apollo11::MissionPhase::dockEject",
     "LOI": "Apollo11::MissionPhase::LOI",
     "undock": "Apollo11::MissionPhase::undock",
     "DOI": "Apollo11::MissionPhase::DOI",
@@ -26,6 +27,7 @@
     "seoi": "Apollo11::MissionPhase::seoi",
     "startTLI": "Apollo11::MissionPhase::startTLI",
     "TLICutoff": "Apollo11::MissionPhase::TLICutoff",
+    "startDockEject": "Apollo11::MissionPhase::startDockEject",
     "startLOI": "Apollo11::MissionPhase::startLOI",
     "LOICutoff": "Apollo11::MissionPhase::LOICutoff",
     "startDOI": "Apollo11::MissionPhase::startDOI",
@@ -42,7 +44,7 @@
     "kind": "StateView",
     "name": "Apollo 11 Mission Phases",
     "canvas": {
-      "width": 3282,
+      "width": 3488,
       "height": 251,
       "background": "#FFFFFF"
     },
@@ -57,7 +59,7 @@
         "layout": {
           "x": 103,
           "y": 87,
-          "width": 3139,
+          "width": 3345,
           "height": 124,
           "z": 0
         },
@@ -112,7 +114,7 @@
         "id": "earthOrbit",
         "symbol": "state_usage",
         "layout": {
-          "x": 690,
+          "x": 691,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -126,7 +128,7 @@
         "id": "TLI",
         "symbol": "state_usage",
         "layout": {
-          "x": 890,
+          "x": 891,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -140,7 +142,7 @@
         "id": "translunar",
         "symbol": "state_usage",
         "layout": {
-          "x": 1089,
+          "x": 1091,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -151,10 +153,24 @@
         "style": "state.default"
       },
       {
+        "id": "dockEject",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1291,
+          "y": 123,
+          "width": 118,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "dockEject",
+        "label": "dock/eject",
+        "style": "state.default"
+      },
+      {
         "id": "LOI",
         "symbol": "state_usage",
         "layout": {
-          "x": 1289,
+          "x": 1492,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -168,7 +184,7 @@
         "id": "undock",
         "symbol": "state_usage",
         "layout": {
-          "x": 1489,
+          "x": 1692,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -182,7 +198,7 @@
         "id": "DOI",
         "symbol": "state_usage",
         "layout": {
-          "x": 1689,
+          "x": 1892,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -196,7 +212,7 @@
         "id": "descent",
         "symbol": "state_usage",
         "layout": {
-          "x": 1889,
+          "x": 2092,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -210,7 +226,7 @@
         "id": "surfaceEVA",
         "symbol": "state_usage",
         "layout": {
-          "x": 2089,
+          "x": 2293,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -224,7 +240,7 @@
         "id": "ascent",
         "symbol": "state_usage",
         "layout": {
-          "x": 2289,
+          "x": 2493,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -238,7 +254,7 @@
         "id": "rendezvous",
         "symbol": "state_usage",
         "layout": {
-          "x": 2488,
+          "x": 2693,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -252,7 +268,7 @@
         "id": "TEI",
         "symbol": "state_usage",
         "layout": {
-          "x": 2688,
+          "x": 2893,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -266,7 +282,7 @@
         "id": "entry",
         "symbol": "state_usage",
         "layout": {
-          "x": 2888,
+          "x": 3094,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -280,7 +296,7 @@
         "id": "recovery",
         "symbol": "state_usage",
         "layout": {
-          "x": 3088,
+          "x": 3294,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -440,10 +456,43 @@
         "style": "transition"
       },
       {
-        "id": "translunar--LOI",
-        "model_ref": "startLOI",
+        "id": "translunar--dockEject",
+        "model_ref": "startDockEject",
         "source": {
           "element": "translunar",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "dockEject",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "dock/eject",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "dockEject--LOI",
+        "model_ref": "startLOI",
+        "source": {
+          "element": "dockEject",
           "anchor": {
             "side": "right",
             "offset": 0.5

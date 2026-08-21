@@ -18,6 +18,7 @@
     "earthOrbit": "Apollo11::MissionPhase::earthOrbit",
     "TLI": "Apollo11::MissionPhase::TLI",
     "translunar": "Apollo11::MissionPhase::translunar",
+    "dockEject": "Apollo11::MissionPhase::dockEject",
     "LOI": "Apollo11::MissionPhase::LOI",
     "undock": "Apollo11::MissionPhase::undock",
     "DOI": "Apollo11::MissionPhase::DOI",
@@ -32,6 +33,7 @@
     "seoi": "Apollo11::MissionPhase::seoi",
     "startTLI": "Apollo11::MissionPhase::startTLI",
     "TLICutoff": "Apollo11::MissionPhase::TLICutoff",
+    "startDockEject": "Apollo11::MissionPhase::startDockEject",
     "startLOI": "Apollo11::MissionPhase::startLOI",
     "LOICutoff": "Apollo11::MissionPhase::LOICutoff",
     "startDOI": "Apollo11::MissionPhase::startDOI",
@@ -66,6 +68,10 @@
     "translunar": {
       "label": "translunar",
       "model_ref": "translunar"
+    },
+    "dockEject": {
+      "label": "dock/eject",
+      "model_ref": "dockEject"
     },
     "LOI": {
       "label": "LOI",
@@ -140,6 +146,12 @@
     },
     {
       "from": "translunar",
+      "to": "dockEject",
+      "label": "dock/eject",
+      "model_ref": "startDockEject"
+    },
+    {
+      "from": "dockEject",
       "to": "LOI",
       "label": "SPS",
       "model_ref": "startLOI"

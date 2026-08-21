@@ -93,6 +93,7 @@ LOCKED = (
     "state LOI",
     "state DOI",
     "state TEI",
+    "state dockEject",
     "state surfaceEVA",
     "state pad",
     "state contingencyTLI",
@@ -153,8 +154,11 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("part USB : USB", text)
         self.assertNotIn("part cmc : CMC", text)
         self.assertNotIn("part lgc : LGC", text)
-        self.assertNotIn("state dockEject", text)
         self.assertNotIn("part vanguard", text)
+        stm = (APOLLO / "apollo-stm.json").read_text(encoding="utf-8")
+        self.assertIn('"dockEject"', stm)
+        self.assertLess(stm.find('"translunar"'), stm.find('"dockEject"'))
+        self.assertLess(stm.find('"dockEject"'), stm.find('"LOI"'))
         self.assertIn("SM 100 lbf per engine (A11 PK p.93)", text)
         self.assertIn("LM 100 lbf per engine (A11 PK p.106)", text)
         self.assertIn("Loaded SM/CM RCS propellant mass UNKNOWN", text)

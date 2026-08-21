@@ -40,7 +40,7 @@ Sourced numbers only. SPS loaded mass and CSM lunar Δv stay UNKNOWN — do not 
 
 ## Mission STM
 
-countdown → boost → earthOrbit → TLI → translunar → LOI → undock → DOI → descent → surface/EVA → ascent → rendezvous → TEI → entry → recovery
+countdown → boost → earthOrbit → TLI → translunar → dock/eject (`dockEject`) → LOI → undock → DOI → descent → surface/EVA → ascent → rendezvous → TEI → entry → recovery
 
 Abort machine (parallel): pad, I–IV, contingency TLI, lunar, SPS.
 
