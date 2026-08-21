@@ -254,6 +254,51 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("2800 psi vs 3000 psi", text)
         self.assertIn("part Comanche055 : Rope", text)
         self.assertIn("part Luminary1A : Rope", text)
+        descent = _sysml_block(text, "part def descent")
+        ascent = _sysml_block(text, "part def ascent")
+        pngs = _sysml_block(text, "part def PNGS")
+        lm = _sysml_block(text, "part def LM")
+        self.assertIn("part landingRadar : landingRadar", descent)
+        self.assertNotIn("part landingRadar : landingRadar", ascent)
+        self.assertNotIn("part landingRadar : landingRadar", pngs)
+        self.assertIn("part rendezvousRadar : rendezvousRadar", ascent)
+        self.assertIn("connect ascent.PNGS to descent.landingRadar", lm)
+        self.assertNotIn("IMUToLandingRadar", text)
+        self.assertNotIn("PNGSToLandingRadar connect PNGS to landingRadar", text)
+        note = (APOLLO / "apollo-architecture-summary.md").read_text(encoding="utf-8")
+        self.assertIn("descent → DPS, AgZn1–4, ECA, landingRadar", note)
+        self.assertIn("PNGS → IMU, rendezvousRadar", note)
+        self.assertNotIn("PNGS → IMU, landingRadar, rendezvousRadar", note)
+        ibd = json.loads((APOLLO / "apollo-ibd-lm.json").read_text(encoding="utf-8"))
+        self.assertEqual(ibd["aliases"]["landingRadar"], "Apollo11::LM::descent::landingRadar")
+        self.assertEqual(ibd["aliases"]["rendezvousRadar"], "Apollo11::LM::ascent::rendezvousRadar")
+        self.assertEqual(ibd["aliases"]["PNGS--landingRadar--tgt"], "Apollo11::LM::descent::landingRadar")
+        bdd = json.loads((APOLLO / "apollo-bdd-lm.json").read_text(encoding="utf-8"))
+        descent_node = bdd["roots"][0]["children"][0]
+        ascent_node = bdd["roots"][0]["children"][1]
+        self.assertEqual(descent_node["id"], "descent")
+        self.assertEqual(ascent_node["id"], "ascent")
+        self.assertIn("landingRadar", {child["id"] for child in descent_node["children"]})
+        self.assertNotIn("landingRadar", {child["id"] for child in ascent_node["children"]})
+        self.assertIn("rendezvousRadar", {child["id"] for child in ascent_node["children"]})
+
+
+def _sysml_block(text: str, header: str) -> str:
+    start = text.find(header)
+    if start < 0:
+        raise AssertionError(f"missing {header}")
+    brace = text.find("{", start)
+    if brace < 0:
+        raise AssertionError(f"missing body for {header}")
+    depth = 0
+    for index, char in enumerate(text[brace:], start=brace):
+        if char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return text[brace : index + 1]
+    raise AssertionError(f"unclosed {header}")
 
 
 def _route_box_hits(doc: dict) -> list[tuple[str, str]]:

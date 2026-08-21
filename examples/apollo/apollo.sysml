@@ -224,6 +224,7 @@ package Apollo11 {
         part def LM {
             part descent : descent;
             part ascent : ascent;
+            connection PNGSToLandingRadar connect ascent.PNGS to descent.landingRadar;
         }
         part def descent {
             part DPS : DPS;
@@ -232,6 +233,7 @@ package Apollo11 {
             part AgZn3 : AgZn;
             part AgZn4 : AgZn;
             part ECA : ECA;
+            part landingRadar : landingRadar;
             connection ECAToAgZn1 connect ECA to AgZn1;
             connection ECAToAgZn2 connect ECA to AgZn2;
             connection ECAToAgZn3 connect ECA to AgZn3;
@@ -244,7 +246,6 @@ package Apollo11 {
             part APS : APS;
             part RCS : RCS;
             part DSKY : DSKY;
-            part landingRadar : landingRadar;
             part rendezvousRadar : rendezvousRadar;
             part USB : USB;
             part drogue : drogue;
@@ -256,16 +257,13 @@ package Apollo11 {
             connection AGC_LMToAGS connect AGC_LM to AGS;
             connection AGC_LMToAPS connect AGC_LM to APS;
             connection AGC_LMToRCS connect AGC_LM to RCS;
-            connection PNGSToLandingRadar connect PNGS to landingRadar;
             connection PNGSToRendezvousRadar connect PNGS to rendezvousRadar;
             connection ECAToAgZn1 connect ECA to AgZn1;
             connection ECAToAgZn2 connect ECA to AgZn2;
         }
         part def PNGS {
             part IMU : IMU;
-            part landingRadar : landingRadar;
             part rendezvousRadar : rendezvousRadar;
-            connection IMUToLandingRadar connect IMU to landingRadar;
             connection IMUToRendezvousRadar connect IMU to rendezvousRadar;
         }
         part def AGC_LM {
@@ -639,7 +637,7 @@ package Apollo11 {
     requirement rsoRequirement { doc /* RSO is OUTSIDE MCC. UHF destruct, safed after Earth orbit. */ }
     requirement a11AtypicalRequirement { doc /* A11 vs generic lunar stack: (1) first landing, one short EVA — CDR 2:48 / LMP 2:40 — 196 h vs 336 h ECLSS spec; (2) no LRV, no SIM bay; (3) P66 was the A11-flown landing program; (4) Parkes + Goldstone 210-ft is A11 coverage; (5) F-1 1,530,000 lbf sourced as SA-507, not AS-506; (6) PK p.109 tank loads A11-only; SPS loaded mass UNKNOWN; CSM lunar Δv UNKNOWN; (7) ropes Comanche 055 + Luminary 1A LMY99/1; AGS flight-program name UNKNOWN; (8) A11 MCC is MOCR 2; (9) A11 SM cryo is 2+2, not J-mission. */ }
     requirement scsRequirement { doc /* CSM SCS is the Block II analog backup to AGC_CM. Crew selects AGC_CM vs SCS. Full SCS switch deck TBD. */ }
-    requirement pngsRequirement { doc /* LM PNGS is AGC_LM + IMU + landingRadar + rendezvousRadar. AGS is separate. Do not merge PNGS with AGS. */ }
+    requirement pngsRequirement { doc /* LM PNGS is AGC_LM + IMU + landingRadar + rendezvousRadar. Physical landingRadar is on descent; PNGS on ascent connects to it. AGS is separate. Do not merge PNGS with AGS. */ }
     requirement eclssLoopRequirement { doc /* CM ECLSS loops: O2, water, LiOH CO2 removal, suit circuit. 5.0 psia 100% O2; CO2 ≤7.6 torr; LiOH 1.5 man-day, swap 12 h. SM O2 640 lb; potable 36 lb / waste 56 lb. */ }
     requirement rtccRequirement { doc /* RTCC: five IBM 360/75. MOC+DSC roles; which-is-which on A11 UNKNOWN. */ }
     requirement msfnSiteRequirement { doc /* 3×85-ft USB: Goldstone, Madrid, Honeysuckle + NASCOM. MSFN ships collapsed. Complete 30-ft inventory UNKNOWN. */ }

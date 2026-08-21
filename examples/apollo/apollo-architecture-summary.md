@@ -171,9 +171,9 @@ Apollo11
 │       ├── RCS → quadA–D
 │       └── FC1–FC3
 ├── LM
-│   ├── descent → DPS, AgZn1–4, ECA
+│   ├── descent → DPS, AgZn1–4, ECA, landingRadar
 │   └── ascent
-│       ├── PNGS → IMU, landingRadar, rendezvousRadar
+│       ├── PNGS → IMU, rendezvousRadar
 │       ├── AGC_LM → erasable, fixed, oscillator, Luminary1A
 │       ├── AGS → AEA, ASA, DEDA
 │       ├── APS, RCS, DSKY, USB, drogue
@@ -186,7 +186,7 @@ Apollo11
 
 Pad stack: S-IC-6, S-II-6, S-IVB-6N, IU-6, SLA-14 (LM-5), SM, CM, LES.
 
-Keep two AGCs, AGS, IU LVDC, LES, descent vs ascent, and three crew. PNGS is AGC_LM + IMU + radars — not AGS. SCS is the Block II analog backup to AGC_CM.
+Keep two AGCs, AGS, IU LVDC, LES, descent vs ascent, and three crew. PNGS is AGC_LM + IMU + radars — not AGS. Physical landingRadar is on descent; rendezvousRadar is on ascent. SCS is the Block II analog backup to AGC_CM.
 
 Mechanical stack: SIC → SII → SIVB → IU → SLA → SM; LES → CM → SM; SLA → LM descent; CM probe ↔ LM drogue; descent ↔ ascent mate.
 
@@ -358,7 +358,7 @@ The vehicle interconnection keeps the same stack topology at a coarser grain: RS
 
 ### CSM and LM
 
-CSM structure is CM (SCS, AGC_CM, two DSKYs, ECLSS, probe and latches) and SM (SPS, four RCS quads, three fuel cells). LM structure is descent (DPS, four AgZn, ECA) and ascent (PNGS, AGC_LM, AGS, APS, RCS, radars). The vehicles stay separate; there is no propellant crossfeed.
+CSM structure is CM (SCS, AGC_CM, two DSKYs, ECLSS, probe and latches) and SM (SPS, four RCS quads, three fuel cells). LM structure is descent (DPS, four AgZn, ECA, landingRadar) and ascent (PNGS, AGC_LM, AGS, APS, RCS, rendezvousRadar). The vehicles stay separate; there is no propellant crossfeed.
 
 ![CSM Definition](apollo-bdd-csm.svg)
 

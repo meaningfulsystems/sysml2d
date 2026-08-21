@@ -41,7 +41,8 @@
         {"id": "AgZn2", "label": "AgZn2", "model_ref": "AgZn"},
         {"id": "AgZn3", "label": "AgZn3", "model_ref": "AgZn"},
         {"id": "AgZn4", "label": "AgZn4", "model_ref": "AgZn"},
-        {"id": "ECA", "label": "ECA", "model_ref": "ECA"}
+        {"id": "ECA", "label": "ECA", "model_ref": "ECA"},
+        {"id": "landingRadar", "label": "landingRadar", "model_ref": "landingRadar"}
       ]},
       {"id": "ascent", "label": "ascent", "model_ref": "ascent", "children": [
         {"id": "PNGS", "label": "PNGS", "model_ref": "PNGS"},
@@ -53,7 +54,6 @@
         ]},
         {"id": "APS", "label": "APS", "model_ref": "APS"},
         {"id": "RCS", "label": "RCS 100 lbf", "model_ref": "RCS"},
-        {"id": "landingRadar", "label": "landingRadar", "model_ref": "landingRadar"},
         {"id": "rendezvousRadar", "label": "rendezvousRadar", "model_ref": "rendezvousRadar"},
         {"id": "drogue", "label": "drogue", "model_ref": "drogue"}
       ]}

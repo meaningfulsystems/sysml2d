@@ -29,7 +29,7 @@
     "kind": "DefinitionView",
     "name": "LM Definition Tree",
     "canvas": {
-      "width": 1563,
+      "width": 1642,
       "height": 522,
       "background": "#FFFFFF"
     },
@@ -42,7 +42,7 @@
         "model_ref": "LM",
         "symbol": "part_definition",
         "layout": {
-          "x": 672,
+          "x": 751,
           "y": 40,
           "width": 140,
           "height": 52,
@@ -61,7 +61,7 @@
         "model_ref": "descent",
         "symbol": "part_definition",
         "layout": {
-          "x": 198,
+          "x": 277,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -137,8 +137,8 @@
         "model_ref": "AgZn",
         "symbol": "part_definition",
         "layout": {
-          "x": 119,
-          "y": 380,
+          "x": 514,
+          "y": 300,
           "width": 140,
           "height": 52,
           "z": 10
@@ -156,7 +156,7 @@
         "model_ref": "AgZn",
         "symbol": "part_definition",
         "layout": {
-          "x": 277,
+          "x": 119,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -175,7 +175,7 @@
         "model_ref": "ECA",
         "symbol": "part_definition",
         "layout": {
-          "x": 435,
+          "x": 277,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -190,11 +190,30 @@
         "style": "part.definition"
       },
       {
+        "id": "landingRadar",
+        "model_ref": "landingRadar",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 435,
+          "y": 380,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "landingRadar",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
         "id": "ascent",
         "model_ref": "ascent",
         "symbol": "part_definition",
         "layout": {
-          "x": 988,
+          "x": 1067,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -213,7 +232,7 @@
         "model_ref": "PNGS",
         "symbol": "part_definition",
         "layout": {
-          "x": 593,
+          "x": 672,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -232,7 +251,7 @@
         "model_ref": "AGC_LM",
         "symbol": "part_definition",
         "layout": {
-          "x": 751,
+          "x": 830,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -251,7 +270,7 @@
         "model_ref": "AGS",
         "symbol": "part_definition",
         "layout": {
-          "x": 1067,
+          "x": 1146,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -270,7 +289,7 @@
         "model_ref": "AEA",
         "symbol": "part_definition",
         "layout": {
-          "x": 909,
+          "x": 988,
           "y": 430,
           "width": 140,
           "height": 52,
@@ -289,7 +308,7 @@
         "model_ref": "ASA",
         "symbol": "part_definition",
         "layout": {
-          "x": 1067,
+          "x": 1146,
           "y": 430,
           "width": 140,
           "height": 52,
@@ -308,7 +327,7 @@
         "model_ref": "DEDA",
         "symbol": "part_definition",
         "layout": {
-          "x": 1225,
+          "x": 1304,
           "y": 430,
           "width": 140,
           "height": 52,
@@ -327,7 +346,7 @@
         "model_ref": "APS",
         "symbol": "part_definition",
         "layout": {
-          "x": 1383,
+          "x": 1462,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -346,7 +365,7 @@
         "model_ref": "RCS",
         "symbol": "part_definition",
         "layout": {
-          "x": 824,
+          "x": 901,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -361,30 +380,11 @@
         "style": "part.definition"
       },
       {
-        "id": "landingRadar",
-        "model_ref": "landingRadar",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 982,
-          "y": 380,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "landingRadar",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
         "id": "rendezvousRadar",
         "model_ref": "rendezvousRadar",
         "symbol": "part_definition",
         "layout": {
-          "x": 1140,
+          "x": 1059,
           "y": 380,
           "width": 156,
           "height": 52,
@@ -403,7 +403,7 @@
         "model_ref": "drogue",
         "symbol": "part_definition",
         "layout": {
-          "x": 1314,
+          "x": 1233,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -440,11 +440,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 742,
+              "x": 821,
               "y": 131
             },
             {
-              "x": 268,
+              "x": 347,
               "y": 131
             }
           ]
@@ -483,11 +483,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 742,
+              "x": 821,
               "y": 131
             },
             {
-              "x": 1058,
+              "x": 1137,
               "y": 131
             }
           ]
@@ -526,7 +526,7 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 268,
+              "x": 347,
               "y": 261
             },
             {
@@ -567,13 +567,22 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 347,
+              "y": 261
+            },
+            {
+              "x": 268,
+              "y": 261
+            }
+          ]
         },
         "labels": [
           {
             "text": "1",
             "position": {
-              "segment": 0,
+              "segment": 2,
               "offset": 0.82,
               "dx": 10,
               "dy": -4
@@ -603,7 +612,7 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 268,
+              "x": 347,
               "y": 261
             },
             {
@@ -646,12 +655,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 268,
-              "y": 352
+              "x": 347,
+              "y": 261
             },
             {
-              "x": 189,
-              "y": 352
+              "x": 584,
+              "y": 261
             }
           ]
         },
@@ -660,7 +669,7 @@
             "text": "1",
             "position": {
               "segment": 2,
-              "offset": 0.94,
+              "offset": 0.82,
               "dx": 10,
               "dy": -4
             }
@@ -689,11 +698,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 268,
+              "x": 347,
               "y": 352
             },
             {
-              "x": 347,
+              "x": 189,
               "y": 352
             }
           ]
@@ -732,7 +741,46 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 268,
+              "x": 347,
+              "y": 352
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 1,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-descent-landingRadar",
+        "model_ref": "landingRadar",
+        "source": {
+          "element": "descent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "landingRadar",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 347,
               "y": 352
             },
             {
@@ -775,11 +823,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1058,
+              "x": 1137,
               "y": 261
             },
             {
-              "x": 663,
+              "x": 742,
               "y": 261
             }
           ]
@@ -818,11 +866,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1058,
+              "x": 1137,
               "y": 261
             },
             {
-              "x": 821,
+              "x": 900,
               "y": 261
             }
           ]
@@ -861,11 +909,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1058,
+              "x": 1137,
               "y": 261
             },
             {
-              "x": 1137,
+              "x": 1216,
               "y": 261
             }
           ]
@@ -904,11 +952,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1058,
+              "x": 1137,
               "y": 261
             },
             {
-              "x": 1453,
+              "x": 1532,
               "y": 261
             }
           ]
@@ -947,54 +995,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1058,
+              "x": 1137,
               "y": 352
             },
             {
-              "x": 894,
-              "y": 352
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-ascent-landingRadar",
-        "model_ref": "landingRadar",
-        "source": {
-          "element": "ascent",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "landingRadar",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 1058,
-              "y": 352
-            },
-            {
-              "x": 1052,
+              "x": 971,
               "y": 352
             }
           ]
@@ -1033,11 +1038,7 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1058,
-              "y": 352
-            },
-            {
-              "x": 1218,
+              "x": 1137,
               "y": 352
             }
           ]
@@ -1046,7 +1047,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 1,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1076,11 +1077,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1058,
+              "x": 1137,
               "y": 352
             },
             {
-              "x": 1384,
+              "x": 1303,
               "y": 352
             }
           ]
@@ -1119,11 +1120,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1137,
+              "x": 1216,
               "y": 391
             },
             {
-              "x": 979,
+              "x": 1058,
               "y": 391
             }
           ]
@@ -1196,11 +1197,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1137,
+              "x": 1216,
               "y": 391
             },
             {
-              "x": 1295,
+              "x": 1374,
               "y": 391
             }
           ]
