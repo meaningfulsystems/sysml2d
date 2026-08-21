@@ -84,7 +84,7 @@ class TreeComposerTests(unittest.TestCase):
             "kind": "DefinitionView",
             "name": "Around Tree",
             "route_around_boxes": True,
-            "max_siblings_per_row": 2,
+            "max_siblings_per_row": 1,
             "default_w": 80,
             "default_h": 40,
             "rank_gap": 40,
@@ -92,19 +92,26 @@ class TreeComposerTests(unittest.TestCase):
             "roots": [
                 {
                     "id": "root",
+                    "w": 80,
                     "children": [
-                        {"id": "left"},
-                        {"id": "mid"},
-                        {"id": "tail"},
+                        {"id": "blocker", "w": 200},
+                        {"id": "tail", "w": 80},
                     ],
                 }
             ],
         })
         hits = _definition_box_hits(doc)
         self.assertEqual(hits, [])
+        self.assertNotIn(("conn-root-tail", "blocker"), hits)
         connections = {connection["id"]: connection for connection in doc["diagram"]["connections"]}
         wrap = connections["conn-root-tail"]["route"]["waypoints"]
         self.assertGreaterEqual(len(wrap), 2)
+        blocker = next(element["layout"] for element in doc["diagram"]["elements"] if element["id"] == "blocker")
+        rail_x = wrap[1]["x"]
+        self.assertTrue(
+            rail_x <= blocker["x"] or rail_x >= blocker["x"] + blocker["width"],
+            f"wrap rail {rail_x} still crosses blocker",
+        )
 
     def test_wrapped_rows_with_grandchildren_do_not_overlap(self):
         doc = compose_tree({
