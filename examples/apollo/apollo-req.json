@@ -22,10 +22,10 @@
   },
   "nodes": {
     "safety": {
-      "label": "«requirement»\nSafety\nThe Range Safety Officer\nshall command UHF destruct\nfrom outside Mission Control\nuntil that command is safed\nafter Earth orbit.",
+      "label": "«requirement»\nSafety\nThe Range Safety Officer\nshall command\nultra-high-frequency (UHF)\ndestruct from outside\nMission Control until that\ncommand is safed after\nEarth orbit.",
       "rank": 0,
       "order": 0,
-      "h": 156,
+      "h": 168,
       "model_ref": "safety"
     },
     "land": {

@@ -33,11 +33,11 @@
         "layout": {
           "x": 72,
           "y": 72,
-          "width": 230,
-          "height": 156,
+          "width": 216,
+          "height": 168,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nSafety\nThe Range Safety Officer\nshall command UHF destruct\nfrom outside Mission Control\nuntil that command is safed\nafter Earth orbit.",
+        "label": "\u00abrequirement\u00bb\nSafety\nThe Range Safety Officer\nshall command\nultra-high-frequency (UHF)\ndestruct from outside\nMission Control until that\ncommand is safed after\nEarth orbit.",
         "style": "requirement"
       },
       {
@@ -45,7 +45,7 @@
         "model_ref": "land",
         "symbol": "requirement",
         "layout": {
-          "x": 338,
+          "x": 324,
           "y": 72,
           "width": 237,
           "height": 156,
@@ -59,7 +59,7 @@
         "model_ref": "talk",
         "symbol": "requirement",
         "layout": {
-          "x": 611,
+          "x": 597,
           "y": 72,
           "width": 223,
           "height": 156,
