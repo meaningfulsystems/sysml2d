@@ -78,7 +78,7 @@ A Stakeholder here is a person or organization that asks a job of the stack. The
 | Goddard Space Flight Center (GSFC) / NASA Communications Network (NASCOM) | Ground wideband network | context |
 | MSFN | Goldstone / Madrid / Honeysuckle 85-ft Unified S-Band (USB) triad, plus named 30-ft, ships (collapsed), Apollo Range Instrumentation Aircraft (ARIA) | context |
 | Air Force Eastern Test Range (AFETR) RSO | UHF destruct, **outside MCC**, safed after Earth orbit | Range Safety |
-| TF-130 / USS *Hornet* (CV-12) | Recovery. Splash 195:18:35 Mission Elapsed Time (MET), 13 nmi from target | Recover Crew (MCC-owned) |
+| TF-130 / USS *Hornet* (CV-12) | Recovery. Splash is the flown Ground Elapsed Time (GET): flown 195:18:35 GET. 13 nmi from USS *Hornet*, not from the target. Weather-revised miss ~1.7 nmi | Recover Crew (MCC-owned) |
 | Earth / Moon | Celestial context | — |
 
 Handoff is KSC → MCC at tower clear — **Mission Rule 1-21**. RSO is not MCC.
@@ -191,11 +191,11 @@ SM: fuel cells FC1–FC3; cryo **2+2**. CM: silver-zinc (AgZn) 1–3 + charger; 
 | Food plan | **TN D-7720 April 1967 plan baseline:** 2800 kcal/man/day CM, 3200 kcal/man/day LM. Not A11 flown intake. Flown kcal unmarked |
 | Earth parking orbit | **100 nmi planned** |
 | Lunar delay | range/c ≈ 1.3 s |
-| EVA | one surface EVA; CDR 2:48 / LMP 2:40 (**flown** A11 instance) |
+| EVA | one surface EVA; CDR 2:48 / LMP 2:40 (Technical Note D-8093 Table I). Not the Public Affairs Office (PAO) hatch-to-hatch 2:31:40 |
 | TLI | PK planned 02:44:15 GET; A11-FP planned 2:44:26 GET; flown 02:44:16 GET (MSC-00171). Three labels only |
 | Transposition, docking, and extraction (TD&E) | ~03:20–04:09 planned |
 | LOI-1 | **Planned** 75:54:28 GET. A11-FP is the **only planned source**. **Flown** ~075:49:50 GET (PAD / Mission Report). Two numbers only |
-| Splash | 195:18:35 MET, 13 nmi, *Hornet* — model does not mark planned or flown |
+| Splash | flown 195:18:35 GET. 13 nmi from USS *Hornet*, not from the target. Weather-revised miss ~1.7 nmi |
 | Landing program | **P66 flown** |
 
 Docking: TD&E is its own GO/NO-GO, CMP-owned, SM RCS. CM probe / LM drogue + 12 ring latches. LM stays in the SLA — 8 panels (4 jettison / 4 stay) — until `dockEject` (after TLI, before translunar coast).
