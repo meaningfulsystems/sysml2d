@@ -73,10 +73,10 @@ Then see [QUICKSTART.md](QUICKSTART.md) for a step-by-step guide to creating you
 
 ## Start your own system
 
-Copy [templates/new-system/](templates/new-system/) — a stub `.sysml`, one IBD intent, and one state-machine intent. Rename the `StarterSystem` package and aliases; do not clone toaster as the starter.
+Copy [template/new-project/](template/new-project/) — a stub `.sysml`, one IBD intent, and one state-machine intent. Rename the `StarterSystem` package and aliases; do not clone toaster as the starter.
 
 ```bash
-cp -R templates/new-system/ ../my-system
+cp -R template/new-project/ ../my-system
 cd ../my-system
 sysmld interconnection starter-ibd.json
 sysmld state           starter-stm.json
@@ -85,7 +85,7 @@ sysmld render          starter-stm.sysmld
 sysmld validate        starter-ibd.sysmld --strict
 ```
 
-AI agents: [AGENTS.md](AGENTS.md) and the installable skills under [skills/](skills/) (`sysmld-bootstrap`, `sysmld-author-model`, `sysmld-compose-views`, `sysmld-review-views`). Connections must never pass over boxes.
+AI agents: [AGENTS.md](AGENTS.md) and the installable skills under [skills/](skills/) (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`). Connections must never pass over boxes.
 
 ## Supported Views
 
@@ -157,7 +157,7 @@ schemas/                 SysMLD JSON Schema (authoritative for .sysmld document 
 examples/toaster/        Toaster appliance model and all diagram examples
 examples/blender/        Blender appliance model and all diagram examples
 examples/e-bike/         Electric-bike model covering all 15 view kinds
-templates/new-system/    Copy-this starter (model stub + IBD + STM intents)
+template/new-project/    Copy-this starter (model stub + IBD + STM intents)
 skills/                  Installable agent skills plus leftover one-shot prompts
 AGENTS.md                How an agent should work in this repo
 tests/                   Unit and regression tests

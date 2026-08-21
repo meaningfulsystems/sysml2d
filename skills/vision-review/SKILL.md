@@ -1,6 +1,6 @@
 ---
-name: sysmld-review-views
-description: Vision QA for SysMLD diagrams — no line through boxes, hop-overs only for line crossings, human-readable layout, and MSML-style meaning checks.
+name: vision-review
+description: Vision QA for diagrams — no line through boxes, hop-overs only for line crossings, human-readable layout, and MSML-style meaning checks.
 ---
 
 # Review SysMLD views

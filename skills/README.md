@@ -1,15 +1,15 @@
 # SysMLD Skills
 
-Installable Cursor-style skills for taking SysMLD onto a new project. One skill per job — **not** one file per view kind.
+Installable Cursor-style skills for taking SysMLD onto a new project. Stems match the MSML skill pack — **not** one file per view kind, and **no** `sysmld-` prefix.
 
 | Skill | When to use it |
 | --- | --- |
-| [sysmld-bootstrap](sysmld-bootstrap/SKILL.md) | Start a new user project from [templates/new-system/](../templates/new-system/) |
-| [sysmld-author-model](sysmld-author-model/SKILL.md) | Write or update SysML v2 textual models in this style |
-| [sysmld-compose-views](sysmld-compose-views/SKILL.md) | Write intent JSON and run the right `sysmld` command (all 15 kinds) |
-| [sysmld-review-views](sysmld-review-views/SKILL.md) | Vision QA: no line through a box, hop-overs only for line crossings, meaning checks |
+| [bootstrap-project](bootstrap-project/SKILL.md) | Start a new user project from [template/new-project/](../template/new-project/) |
+| [author-model](author-model/SKILL.md) | Write or update SysML v2 textual models in this style |
+| [compose-views](compose-views/SKILL.md) | Write intent JSON and run the right `sysmld` command (all 15 kinds) |
+| [vision-review](vision-review/SKILL.md) | Vision QA: no line through a box, hop-overs only for line crossings, meaning checks |
 
-Repo working rules for agents: [AGENTS.md](../AGENTS.md).
+Repo working rules for agents: [AGENTS.md](../AGENTS.md). Language-specific bits (`.sysml`, `sysmld` CLI) stay in the skill body.
 
 ## One-shot leftovers
 

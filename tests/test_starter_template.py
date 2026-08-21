@@ -14,13 +14,13 @@ from sysmld.validate import validate_file
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TEMPLATE = ROOT / "templates" / "new-system"
+TEMPLATE = ROOT / "template" / "new-project"
 
 
 class StarterTemplateTests(unittest.TestCase):
     def test_starter_ibd_and_stm_compose_validate_and_clear_boxes(self):
         with TemporaryDirectory() as tmp:
-            dest = Path(tmp) / "new-system"
+            dest = Path(tmp) / "new-project"
             shutil.copytree(TEMPLATE, dest)
             ibd = dest / "starter-ibd.json"
             stm = dest / "starter-stm.json"

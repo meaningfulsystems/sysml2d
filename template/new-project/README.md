@@ -1,4 +1,4 @@
-# New system starter
+# New project starter
 
 Copy this folder onto your own project. Rename the `StarterSystem` package, aliases, and file stems. Do not clone toaster or e-bike as the starter.
 
@@ -15,4 +15,4 @@ sysmld validate        starter-stm.sysmld --strict
 
 Open the SVGs. An IBD is not done if any connector crosses a box.
 
-Agent path: [AGENTS.md](../../AGENTS.md) and the four skills under [skills/](../../skills/).
+Agent path: [AGENTS.md](../../AGENTS.md) and the four skills (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`) under [skills/](../../skills/).

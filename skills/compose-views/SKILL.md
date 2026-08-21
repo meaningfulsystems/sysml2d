@@ -1,6 +1,6 @@
 ---
-name: sysmld-compose-views
-description: Write SysMLD intent JSON and run the matching sysmld command for any of the 15 view kinds. Use when adding or regenerating a diagram from a model.
+name: compose-views
+description: Write intent JSON and run the matching sysmld command for any of the 15 view kinds. Use when adding or regenerating a diagram from a model.
 ---
 
 # Compose SysMLD views
@@ -18,8 +18,8 @@ intent.json  →  sysmld <command> intent.json  →  diagram.sysmld  →  sysmld
 | Kind | Command | Aliases | Example intent |
 | --- | --- | --- | --- |
 | `DefinitionView` | `sysmld definition` | `bdd`, `tree` | `examples/e-bike/e-bike-bdd.json` |
-| `InterconnectionView` | `sysmld interconnection` | `compose`, `ibd` | `examples/e-bike/e-bike-ibd.json`, `templates/new-system/starter-ibd.json` |
-| `StateView` | `sysmld state` | `stm` | `examples/e-bike/e-bike-stm.json`, `templates/new-system/starter-stm.json` |
+| `InterconnectionView` | `sysmld interconnection` | `compose`, `ibd` | `examples/e-bike/e-bike-ibd.json`, `template/new-project/starter-ibd.json` |
+| `StateView` | `sysmld state` | `stm` | `examples/e-bike/e-bike-stm.json`, `template/new-project/starter-stm.json` |
 | `ActionView` | `sysmld action` | | `examples/e-bike/e-bike-act.json` |
 | `InteractionView` | `sysmld interaction` | | `examples/e-bike/e-bike-int.json` |
 | `UseCaseView` | `sysmld usecase` | | `examples/e-bike/e-bike-uc.json` |
@@ -68,6 +68,6 @@ sysmld render   my-ibd.sysmld
 sysmld validate my-ibd.sysmld --strict
 ```
 
-Then [sysmld-review-views](../sysmld-review-views/SKILL.md). IBD is not done if any connector crosses a box.
+Then [vision-review](../vision-review/SKILL.md). IBD is not done if any connector crosses a box.
 
 Focused one-shot prompts: [new-interconnection.md](../new-interconnection.md), [new-state-machine.md](../new-state-machine.md), [new-requirement-view.md](../new-requirement-view.md).

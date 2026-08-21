@@ -1,6 +1,6 @@
 ---
-name: sysmld-author-model
-description: Write or update SysML v2 textual models in the SysMLD style. Use when adding packages, parts, ports, connections, states, or requirements to a .sysml file.
+name: author-model
+description: Write or update SysML v2 textual models in this style. Use when adding packages, parts, ports, connections, states, or requirements to a .sysml file.
 ---
 
 # Author a SysML v2 textual model
@@ -47,7 +47,7 @@ package SystemName {
 
 - **ElectricBike ids are frozen.** Do not rename that package, its parts, or `examples/e-bike/` stems.
 - Do not invent a second name for an existing element so a diagram “looks nicer.”
-- New systems get a **new** package name. Copy [templates/new-system/starter.sysml](../../templates/new-system/starter.sysml).
+- New systems get a **new** package name. Copy [template/new-project/starter.sysml](../../template/new-project/starter.sysml).
 
 ## After edits
 

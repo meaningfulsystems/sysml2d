@@ -1,6 +1,6 @@
 ---
-name: sysmld-bootstrap
-description: Start a new SysMLD project from the starter template — folder layout, first .sysml, first IBD+STM intents, and compose/render/validate commands.
+name: bootstrap-project
+description: Start a new user project from the starter template — folder layout, first .sysml, first IBD+STM intents, and compose/render/validate commands.
 ---
 
 # Bootstrap a new SysMLD system
@@ -10,7 +10,7 @@ Use this when someone wants **their own** system, not a fork of toaster/blender/
 ## Copy the starter
 
 ```bash
-cp -R templates/new-system/ ../my-system
+cp -R template/new-project/ ../my-system
 cd ../my-system
 ```
 
@@ -51,8 +51,8 @@ Open the SVGs. Do not call IBD done if any connector crosses a box.
 
 ## Next
 
-- Grow the `.sysml` with [sysmld-author-model](../sysmld-author-model/SKILL.md).
-- Add more view kinds with [sysmld-compose-views](../sysmld-compose-views/SKILL.md).
-- QA with [sysmld-review-views](../sysmld-review-views/SKILL.md).
+- Grow the `.sysml` with [author-model](../author-model/SKILL.md).
+- Add more view kinds with [compose-views](../compose-views/SKILL.md).
+- QA with [vision-review](../vision-review/SKILL.md).
 
 One-shot prompt leftovers (not per-view agent files): [new-model.md](../new-model.md), [new-interconnection.md](../new-interconnection.md), [new-state-machine.md](../new-state-machine.md).
