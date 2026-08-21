@@ -10,23 +10,21 @@ This note teaches that system. It is a technical paper written as a history of o
 
 *Saturn V SA-506 / Apollo 11 rolled out to Pad 39-A, 20 May 1969. Credit: NASA photo 69-HC-620 (public domain). This is the system portrait, not a generated SysMLD view.*
 
-### AV-1 (All Viewpoint 1 — Overview and Summary Information)
+### One-page overview
 
-AV-1 is the Department of Defense Architecture Framework (DoDAF) overview card. This note uses that one product in the executive summary. It does **not** add a DoDAF suite. There is no Operational View / Systems View / Technical View (OV / SV / TV) catalog and no capability taxonomy.
+This is **not** a Department of Defense Architecture Framework (DoDAF) product set. There are no Operational View / Systems View / Technical View (OV / SV / TV) products and no capability taxonomies.
 
-| AV-1 field | This note |
-|------------|-----------|
-| Identification | Apollo 11 / AS-506 (SA-506). Saturn V serials S-IC-6 / S-II-6 / S-IVB-6N / Instrument Unit (IU)-6 / Spacecraft-LM Adapter (SLA)-14. CSM-107 *Columbia*. LM-5 *Eagle*. |
-| Purpose | Teach how the as-flown Apollo 11 system worked, and how a **simplified MagicGrid** architecture note is read. |
-| Scope in | First landing. One short surface Extravehicular Activity (EVA). Model PNGS (cockpit/switch label Primary Guidance, Navigation, and Control System (PGNCS)) program P66 as the flown landing program. Mission Operations Control Room (MOCR) 2. Service Module (SM) cryogenic tankage 2+2. |
-| Scope out | Later J-mission variants. Lunar Roving Vehicle (LRV). Scientific Instrument Module (SIM) bay. Extended EVA. Invented change-in-velocity (Δv) tables. |
-| Context | KSC launch. Mission Control Center (MCC) Houston after tower clear. Manned Space Flight Network (MSFN). Range Safety Officer (RSO) outside MCC. Recovery to USS *Hornet*. Earth and Moon. |
-| Timeframe | As-flown July 1969. |
-| Audience | A new systems engineer, and any careful reader who can follow a ninth-grade history paper. |
-| Status | This is an **example model, not a certifiable** vehicle. |
-| How to read | AV-1 first. Then the problem domain. Then the solution domain. Then unmarked items. Generated figures sit in the story. They are not a catalog at the end. |
+The block below is an AV-1 only in the classroom sense: one page that says who, why, the stack, and the mission thread. It is not a DoDAF All Viewpoint product, and it is not a viewpoint set.
 
-After this card, the spine is still simplified MagicGrid, not DoDAF. MagicGrid splits **what someone needs** from **how the design does it**. NASA Procedural Requirements (NPR 7123.1), *NASA Systems Engineering Processes and Requirements*, is a mapping onto that spine. The left column is plain-language NASA process ideas. The right column uses MagicGrid section names. These rows are not NPR 7123 product titles.
+**Who.** The instance is Apollo 11 / AS-506 (SA-506), as-flown July 1969. The readers are a new systems engineer and any careful reader who can follow a ninth-grade history paper. Launch is from KSC. Flight control after tower clear is Mission Control Center (MCC) Houston in Mission Operations Control Room (MOCR) 2. The Manned Space Flight Network (MSFN) talks to the stack. The Range Safety Officer (RSO) sits outside MCC. Recovery is to USS *Hornet*. Earth and Moon are context.
+
+**Why.** This note teaches how that as-flown system worked, and how a **simplified MagicGrid** architecture note is read. This is an **example model, not a certifiable** vehicle. After this page, read the problem domain, then the solution domain, then unmarked items. Generated figures sit in the story. They are not a catalog at the end.
+
+**The stack.** Saturn V serials S-IC-6 / S-II-6 / S-IVB-6N / Instrument Unit (IU)-6 / Spacecraft-LM Adapter (SLA)-14. CSM-107 *Columbia*. LM-5 *Eagle*. In scope: first landing, one short surface Extravehicular Activity (EVA), model PNGS (cockpit/switch label Primary Guidance, Navigation, and Control System (PGNCS)) program P66 as the flown landing program, SM cryogenic tankage 2+2. Out of scope: later J-mission variants, Lunar Roving Vehicle (LRV), Scientific Instrument Module (SIM) bay, extended EVA, invented change-in-velocity (Δv) tables.
+
+**The mission thread.** Lunar-orbit rendezvous. Three crew. Land two. Bring all three home.
+
+The spine after this page is still simplified MagicGrid, not DoDAF. MagicGrid splits **what someone needs** from **how the design does it**. NASA Procedural Requirements (NPR 7123.1), *NASA Systems Engineering Processes and Requirements*, is a mapping onto that spine. The left column is plain-language NASA process ideas. The right column uses MagicGrid section names. These rows are not NPR 7123 product titles.
 
 | NASA process idea | MagicGrid section in this note |
 |-------------------|--------------------------------|

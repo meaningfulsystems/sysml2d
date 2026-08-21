@@ -336,6 +336,8 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("Ride Bike **includes** Adjust Assist", ebike)
         self.assertNotIn("every actor, include/extend", ebike)
         apollo = notes["apollo"].read_text(encoding="utf-8")
+        self.assertNotIn("All Viewpoint 1", apollo)
+        self.assertNotIn("DoDAF overview card", apollo)
         self.assertIn("NPR 7123.1", apollo)
         self.assertNotIn("NPR 7123 stakeholder expectations", apollo)
         self.assertNotIn("NPR 7123 product verification", apollo)
