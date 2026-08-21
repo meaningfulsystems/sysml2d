@@ -45,8 +45,8 @@ The only named stakeholder is the user. A service technician is implied by a ser
 
 **Analysis cases** (names only — no equations and no results)
 
-- **Thermal Performance** (`thermalPerformanceAnalysis`) — named study; named constraint `heatEnergyBalance`.
-- **Electrical Load** (`electricalLoadAnalysis`) — named study; named constraint `electricalPowerLimit`.
+- **Thermal Performance** (`thermalPerformanceAnalysis`)
+- **Electrical Load** (`electricalLoadAnalysis`)
 
 **Verification cases** (names only — no part, port, or effect is bound)
 
@@ -215,11 +215,11 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **MagicGrid layer:** problem / analysis (supports later verification).
 
-**Question:** Which named studies exist, and which constraints do they use?
+**Question:** Which analysis-case names exist?
 
-**How to read it:** Two analysis-case names sit against thermal and electrical constraint names. Names only — no equations and no results.
+**How to read it:** Two analysis-case names: Thermal Performance and Electrical Load. Names only — no equations and no results.
 
-**Symbols:** analysis-case nodes and constraint names.
+**Symbols:** analysis-case nodes.
 
 ![Toaster Analysis Cases](toaster-acase.svg)
 

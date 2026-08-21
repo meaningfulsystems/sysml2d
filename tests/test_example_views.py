@@ -308,6 +308,9 @@ class ExampleViewTests(unittest.TestCase):
         self.assertNotIn("include or extend", toaster)
         self.assertIn("Error is event names only", toaster)
         self.assertIn("no equations and no results", toaster)
+        self.assertNotIn("uses heatEnergyBalance against browning", toaster)
+        self.assertNotIn("named constraint `heatEnergyBalance`", toaster)
+        self.assertNotIn("named constraint `electricalPowerLimit`", toaster)
         blender = notes["blender"].read_text(encoding="utf-8")
         self.assertIn("within 50 ms", blender)
         self.assertIn("MainsSupply", blender)
@@ -349,14 +352,18 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("ST-124", apollo)
         self.assertIn("Flight Control Computer (FCC)", apollo)
         self.assertIn("PGNCS", apollo)
-        self.assertIn("A11-FP is the **control source**", apollo)
-        self.assertIn("Apollo 11 Flight Plan", apollo)
+        self.assertIn("A11-FP is the **only planned source**", apollo)
+        self.assertNotIn("Apollo 11 Flight Plan", apollo)
         self.assertIn("MSC-00171", apollo)
         self.assertIn("~075:49:50 GET", apollo)
         self.assertIn("2:44:26 GET", apollo)
         self.assertNotIn("02:44:16.2", apollo)
         self.assertNotIn("flown 75:54:28", apollo.lower())
         self.assertIn("**Includes** Lunar EVA", apollo)
+        for sent in apollo.replace(";", ".").split("."):
+            if "75:54:28" in sent:
+                self.assertNotIn("Press Kit", sent)
+                self.assertNotRegex(sent, r"\bPK\b")
 
     def test_hop_overs_appear_on_crossing_generic_views(self):
         spec = {

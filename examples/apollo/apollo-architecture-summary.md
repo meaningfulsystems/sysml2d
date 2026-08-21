@@ -167,7 +167,7 @@ SM: fuel cells FC1–FC3; cryo **2+2** (not J-mission 3+3). CM: silver-zinc (AgZ
 | EVA | one surface EVA; CDR 2:48 / LMP 2:40 (**flown** A11 instance) |
 | TLI | PK planned 02:44:15 GET; A11-FP planned 2:44:26 GET; flown 02:44:16 GET (MSC-00171). Three labels only |
 | TD&E | ~03:20–04:09 planned |
-| LOI-1 | **Planned** 75:54:28 GET — A11-FP is the **control source** (Apollo 11 Flight Plan). Press Kit may print the same string; not a second GET. **Flown** ~075:49:50 GET (PAD / Mission Report). Two numbers only |
+| LOI-1 | **Planned** 75:54:28 GET — A11-FP is the **only planned source**. **Flown** ~075:49:50 GET (PAD / Mission Report). Two numbers only |
 | Splash | 195:18:35 MET, 13 nmi, *Hornet* — model does not mark planned or flown |
 | Landing program | **P66 flown** |
 
@@ -279,7 +279,9 @@ countdown → boost → earthOrbit → TLI → dockEject → translunar → LOI 
 | `ei` | TEI → entry |
 | `recoveryForce` | entry → recovery |
 
-`dockEject` is after TLI and before translunar coast. TLI GET — three labels only: PK planned 02:44:15, A11-FP planned 2:44:26, flown 02:44:16 (MSC-00171). TD&E ~03:20–04:09 planned. LOI-1 planned 75:54:28 GET — A11-FP is the control source (Apollo 11 Flight Plan). Press Kit may print the same string; not a second GET. Flown LOI-1 ~075:49:50 GET (PAD / Mission Report). Two LOI-1 numbers only. P66 is the flown landing program.
+`dockEject` is after TLI and before translunar coast. TLI GET — three labels only: PK planned 02:44:15, A11-FP planned 2:44:26, flown 02:44:16 (MSC-00171). TD&E ~03:20–04:09 planned.
+
+LOI-1 planned 75:54:28 GET — A11-FP is the only planned source. Flown LOI-1 ~075:49:50 GET (PAD / Mission Report). Two LOI-1 numbers only. P66 is the flown landing program.
 
 ### Abort modes (`AbortMode`)
 
@@ -425,7 +427,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Which sourced shalls are modeled?
 
-**How to read it:** Boxes follow model text. TLI GET has three labels (PK 02:44:15, A11-FP 2:44:26, flown 02:44:16 MSC-00171). LOI-1 planned 75:54:28 GET cites A11-FP as the control source; Press Kit may print the same string. Flown LOI-1 is ~075:49:50 GET. Flown P66/EVA, SA-507 F-1, D-7720 2800/3200 plan baseline, and unmarked Δv / SPS / RCS load stay as the model states them. A view label is not a requirement.
+**How to read it:** Boxes follow model text. TLI GET has three labels (PK 02:44:15, A11-FP 2:44:26, flown 02:44:16 MSC-00171). LOI-1 planned 75:54:28 GET cites A11-FP as the only planned source. Flown LOI-1 is ~075:49:50 GET. Flown P66/EVA, SA-507 F-1, D-7720 2800/3200 plan baseline, and unmarked Δv / SPS / RCS load stay as the model states them. A view label is not a requirement.
 
 **Symbols:** `«requirement»` rectangles.
 

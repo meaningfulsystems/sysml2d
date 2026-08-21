@@ -200,13 +200,15 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("02:44:16 GET (MSC-00171)", text)
         self.assertNotIn("02:44:16.2", text)
         self.assertIn("75:54:28 GET", text)
-        self.assertIn("A11-FP is the control source", text)
-        self.assertIn("Apollo 11 Flight Plan", text)
+        self.assertIn("A11-FP is the only planned source", text)
         self.assertIn("~075:49:50 GET", text)
-        self.assertIn("Press Kit may print the same string", text)
         self.assertIn("Two LOI-1 numbers only", text)
         self.assertNotIn("A11 PK planned GET:", text)
         self.assertNotIn("flown 75:54:28", text)
+        for sent in text.replace(";", ".").split("."):
+            if "75:54:28" in sent:
+                self.assertNotIn("Press Kit", sent)
+                self.assertNotRegex(sent, r"\bPK\b")
         self.assertIn("LM remains in the SLA until dockEject", text)
         self.assertIn("SM 100 lbf per engine (A11 PK p.93)", text)
         self.assertIn("LM 100 lbf per engine (A11 PK p.106)", text)
