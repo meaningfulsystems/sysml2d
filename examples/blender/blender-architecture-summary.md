@@ -45,8 +45,8 @@ The only named stakeholder is the user.
 
 **Analysis cases** (names only — no equations and no results)
 
-- **Motor Load** (`motorLoadAnalysis`) — named study; named constraint `torqueSpeedLoadEstimate`.
-- **Smoothness Detection** (`smoothnessDetectionAnalysis`) — named study; named constraint `smoothnessThresholdEstimate`.
+- **Motor Load** (`motorLoadAnalysis`)
+- **Smoothness Detection** (`smoothnessDetectionAnalysis`)
 
 **Verification cases** (names only — no part, port, or effect is bound)
 
@@ -217,11 +217,11 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **MagicGrid layer:** problem / analysis.
 
-**Question:** Which named studies exist?
+**Question:** Which analysis-case names exist?
 
-**How to read it:** Motor Load and Smoothness Detection sit against named constraints. Names only — no equations and no results.
+**How to read it:** Two analysis-case names: Motor Load and Smoothness Detection. Names only — no equations and no results.
 
-**Symbols:** analysis-case nodes and constraint names.
+**Symbols:** analysis-case nodes.
 
 ![Blender Analysis Cases](blender-acase.svg)
 

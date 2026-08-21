@@ -375,7 +375,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 #### Use cases — `apollo-uc.svg`
 
-**MagicGrid layer:** problem / stakeholders (NPR 7123 stakeholder expectations).
+**MagicGrid layer:** problem / stakeholders.
 
 **Question:** Who asks what of Apollo 11?
 
@@ -399,7 +399,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 #### Verification cases — `apollo-vcase.svg`
 
-**MagicGrid layer:** problem / verification (NPR 7123 product verification — names only).
+**MagicGrid layer:** problem / verification (names only).
 
 **Question:** Which checks are named?
 
@@ -423,7 +423,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 #### Requirements — `apollo-req.svg`
 
-**MagicGrid layer:** problem / requirements (NPR 7123 technical requirements).
+**MagicGrid layer:** problem / requirements.
 
 **Question:** Which sourced shalls are modeled?
 
@@ -437,7 +437,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 #### System definition tree (Block Definition Diagram) — `apollo-bdd.svg`
 
-**MagicGrid layer:** solution / structure (NPR 7123 logical decomposition at system grain).
+**MagicGrid layer:** solution / structure.
 
 **Question:** What composes Apollo 11 at pad-stack grain?
 
@@ -899,7 +899,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 #### Allocations — `apollo-alloc.svg`
 
-**MagicGrid layer:** solution / allocations (NPR 7123 design solution).
+**MagicGrid layer:** solution / allocations.
 
 **Question:** Which technical requirements land on which existing parts?
 
