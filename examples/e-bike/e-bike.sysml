@@ -194,8 +194,8 @@ package ElectricBike {
     requirement walkAssistRequirement       { doc /* EPAC walk assist shall not exceed 6 km/h. Walk assist is not a throttle. */ }
     requirement continuousPowerRequirement  { doc /* EU continuous rating: assist shall not exceed 250 W (EN 15194). Distinct from hub peak torque 40 N·m. */ }
     requirement chargeSafetyRequirement     { doc /* Charging shall stop on over-temperature, over-voltage, or charger disconnect. UL 2849: the BMS inside the pack opens the contactor. */ }
-    requirement brakeOverrideRequirement    { doc /* Electronic inhibit shall assert within 50 ms of either brake lever. Separate from EN 15194 2 m / 5 m assistance cutoff after pedaling stops. */ }
-    requirement en15194DistanceRequirement  { doc /* EN 15194 4.2.13 power management: assistance shall cease within 5 m after pedaling stops, and within 2 m where that tighter clause applies. Motor cut-off after pedaling stops — not brake stopping distance. */ }
+    requirement brakeOverrideRequirement    { doc /* Electronic inhibit shall assert within 50 ms of either brake lever. Separate design target — not a comparison to the EN 15194 distance test. */ }
+    requirement en15194DistanceRequirement  { doc /* EN 15194:2017 clause 4.2.13 Power management: motor-assist cut-off after pedaling stops, not vehicle brake distance. Assistance shall cease within 2 m after pedaling stops; brake lever switches only relax the cut-off from 2 m to 5 m. Cite on power management (motorController / cadence / wheel speed), not BrakeSystem. */ }
     requirement batteryCutoffRequirement    { doc /* The BMS shall open the pack contactor before any cell exceeds its voltage or temperature limit. */ }
     requirement displayRequirement          { doc /* The rider shall see speed, assist level, and remaining range without removing hands from the bars. */ }
     requirement structuralRequirement       { doc /* The frame shall carry rider, cargo, and battery loads without yielding. */ }

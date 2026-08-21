@@ -33,7 +33,7 @@
       "order": 3
     },
     "en15194DistanceRequirement": {
-      "label": "EN 15194 2 m / 5 m\n(after pedaling stops)",
+      "label": "EN 15194:2017 4.2.13\n2 m; levers relax to 5 m",
       "symbol": "requirement",
       "rank": 0,
       "order": 4

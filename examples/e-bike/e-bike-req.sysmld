@@ -11,7 +11,7 @@
     "kind": "RequirementView",
     "name": "Electric Bike Requirements",
     "canvas": {
-      "width": 2756,
+      "width": 2791,
       "height": 430,
       "background": "#FFFFFF"
     },
@@ -52,7 +52,7 @@
         "model_ref": "assistLimitRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 975.5,
+          "x": 993,
           "y": 72,
           "width": 244,
           "height": 88,
@@ -66,7 +66,7 @@
         "model_ref": "chargeSafetyRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1572,
+          "x": 1607,
           "y": 72,
           "width": 258,
           "height": 88,
@@ -80,7 +80,7 @@
         "model_ref": "structuralRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1886,
+          "x": 1921,
           "y": 72,
           "width": 251,
           "height": 88,
@@ -94,7 +94,7 @@
         "model_ref": "displayRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 2193,
+          "x": 2228,
           "y": 72,
           "width": 265,
           "height": 88,
@@ -108,7 +108,7 @@
         "model_ref": "lightingRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 2514,
+          "x": 2549,
           "y": 72,
           "width": 170,
           "height": 88,
@@ -138,11 +138,11 @@
         "layout": {
           "x": 679,
           "y": 270,
-          "width": 279,
+          "width": 314,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194 4.2.13\nAssist ceases 5 m after pedaling\nstops (2 m if tighter). Not brakes.",
+        "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194:2017 4.2.13\nPower mgmt: cut-off after pedaling\nstops. 2 m; lever switches relax to 5 m.",
         "style": "requirement"
       },
       {
@@ -150,7 +150,7 @@
         "model_ref": "batteryCutoffRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1582.5,
+          "x": 1617.5,
           "y": 270,
           "width": 237,
           "height": 88,
@@ -164,7 +164,7 @@
         "model_ref": "walkAssistRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1014,
+          "x": 1049,
           "y": 270,
           "width": 195,
           "height": 88,
@@ -178,7 +178,7 @@
         "model_ref": "continuousPowerRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1265,
+          "x": 1300,
           "y": 270,
           "width": 251,
           "height": 88,

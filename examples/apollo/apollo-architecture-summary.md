@@ -2,7 +2,7 @@
 
 This document is the architecture and system-design description of the Apollo 11 / Block II system modeled in `apollo.sysml`. The example instance is Apollo 11 / AS-506 (SA-506): Saturn V serials S-IC-6 / S-II-6 / S-IVB-6N / IU-6 / SLA-14, CSM-107 *Columbia*, LM-5 *Eagle*. A reviewer should be able to understand purpose, context, requirements, structure, interfaces, behavior, and allocations without opening the model. Generated views appear after the written architecture.
 
-This is an example model, not a certifiable vehicle. Numbers are from NASA primary sources cited in the model (Apollo 11 Press Kit 69-83K, Saturn V Flight Manual, Apollo Experience Reports, AGCIS / MIT IL, TN D-6718 / D-6724 / D-7082 / D-7143 / D-7375 / D-8093 / D-8227 / TN-7990). Values not in those extracts are left unmarked. There is no official CSM lunar Δv table in the sources used here — that table is not invented.
+This is an example model, not a certifiable vehicle. Numbers are from NASA primary sources cited in the model (Apollo 11 Press Kit 69-83K, Saturn V Flight Manual, Apollo Experience Reports, AGCIS / MIT IL, TN D-6718 / D-6724 / D-7082 / D-7143 / D-7375 / D-7720 / D-8093 / D-8227 / TN-7990). Values not in those extracts are left unmarked. There is no official CSM lunar Δv table in the sources used here — that table is not invented.
 
 Hyphens are not legal identifiers: S-IC / S-II / S-IVB appear as `SIC`, `SII`, `SIVB`. The mission phase surface/EVA is `surfaceEVA`.
 
@@ -121,7 +121,7 @@ SM: FC1–FC3; cryo **2+2** (not J-mission 3+3). CM: AgZn1–3 + charger; two 11
 | LCG | 1200 Btu/man-h steady |
 | A7L | 3.75±0.25 psid; EV 19.69 kg |
 | PLSS | usable O2 1.04 lb / 4 h at 1200 Btu/h |
-| Food plan | 2200±300 kcal/d (A11 actual intake unmarked) |
+| Food plan | **D-7720 April 1967 plan baseline:** 2800 kcal/man/day CM, 3200 kcal/man/day LM. Not A11 flown intake. Flown kcal unmarked |
 | Earth parking orbit | **100 nmi planned** |
 | Lunar delay | range/c ≈ 1.3 s |
 | EVA | one surface EVA; CDR 2:48 / LMP 2:40 (**flown** A11 instance) |
@@ -138,7 +138,7 @@ Docking: TD&E is its own GO/NO-GO, CMP-owned, SM RCS. CM probe / LM drogue + 12 
 - SM/CM RCS loaded propellant mass
 - RCS Δv table
 - A11 AGS flight-program name
-- A11 actual food intake (kcal)
+- A11 flown food intake (kcal)
 - Entry blackout duration
 - RTCC MOC vs DSC which-is-which on A11
 - Complete MSFN 30-ft inventory (ships collapsed)
@@ -301,13 +301,13 @@ Named constraints: `usbCsmLink`, `usbLmLink`, `lunarDelay`, `f1Thrust`, `agcCycl
 
 **Out of scope:** J-mission 3+3 cryo, LRV, SIM bay, extended EVA. F-1 1,530,000 lbf is an SA-507 citation, not an AS-506 figure.
 
-**Unmarked / TBD:** CSM lunar Δv, SPS loaded mass, SM/CM RCS loaded propellant mass. See also §4 (AGS flight-program name, A11 food intake, entry blackout, RTCC MOC/DSC, 30-ft MSFN inventory, SCS switch deck).
+**Unmarked / TBD:** CSM lunar Δv, SPS loaded mass, SM/CM RCS loaded propellant mass. See also §4 (AGS flight-program name, A11 flown food intake, entry blackout, RTCC MOC/DSC, 30-ft MSFN inventory, SCS switch deck). D-7720 2800/3200 is the 1967 plan baseline, not flown kcal.
 
 ## 10. Open Risks
 
 - CSM lunar Δv, SPS loaded mass, and SM/CM RCS loaded propellant mass stay unmarked. There is no official CSM lunar Δv table in the sources used here.
 - F-1 1,530,000 lbf is an SA-507 citation. It is not an AS-506 requirement.
-- A11 AGS flight-program name, A11 actual food intake, entry blackout duration, RTCC MOC vs DSC on A11, and the complete 30-ft MSFN inventory stay unmarked.
+- A11 AGS flight-program name, A11 flown food intake (kcal), entry blackout duration, RTCC MOC vs DSC on A11, and the complete 30-ft MSFN inventory stay unmarked. D-7720 2800 CM / 3200 LM is the 1967 plan baseline only.
 - Verification cases are names only.
 
 ---

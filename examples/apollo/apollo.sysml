@@ -620,7 +620,7 @@ package Apollo11 {
     requirement cmEcsRequirement { doc /* CM ECLSS: 3 crew / 14 d spec; 5.0 psia 100% O2; CO2 ≤7.6 torr; SM O2 640 lb; potable 36 lb / waste 56 lb; LiOH 1.5 man-day, swap 12 h. A11 mission 196 h vs 336 h spec. */ }
     requirement lm5ConsumableRequirement { doc /* LM-5: descent O2 ~48 lb — 2800 psi vs 3000 psi (cite both, no silent winner); ascent O2 ~2.4 lb ×2; descent water 332 lb; ascent water 42 lb ×2; LCG 1200 Btu/man-h steady. */ }
     requirement a7lRequirement { doc /* A7L: 3.75±0.25 psid; EV 19.69 kg; PLSS usable O2 1.04 lb / 4 h at 1200 Btu/h. */ }
-    requirement foodRequirement { doc /* Food plan 2200±300 kcal/d. A11 actual intake UNKNOWN. */ }
+    requirement foodRequirement { doc /* D-7720 April 1967 plan baseline: 2800 kcal/man/day CM, 3200 kcal/man/day LM. Not A11 flown intake. A11 actual intake UNKNOWN. */ }
     requirement delayRequirement { doc /* Lunar delay = range/c (~1.3 s). Entry blackout duration UNKNOWN. */ }
     requirement earthOrbitRequirement { doc /* Earth parking orbit 100 nmi planned. */ }
     requirement f1Requirement { doc /* F-1 ×5 @ 1,530,000 lbf each (SA-507). F-1 hydraulics collapsed. */ }

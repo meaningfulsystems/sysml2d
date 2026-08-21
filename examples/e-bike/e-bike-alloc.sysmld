@@ -11,7 +11,7 @@
     "kind": "AllocationView",
     "name": "Electric Bike Allocations",
     "canvas": {
-      "width": 652,
+      "width": 666,
       "height": 1180,
       "background": "#FFFFFF"
     },
@@ -81,11 +81,11 @@
         "layout": {
           "x": 72,
           "y": 840,
-          "width": 188,
+          "width": 202,
           "height": 82,
           "z": 10
         },
-        "label": "EN 15194 2 m / 5 m\n(after pedaling stops)",
+        "label": "EN 15194:2017 4.2.13\n2 m; levers relax to 5 m",
         "style": "requirement",
         "model_ref": "en15194DistanceRequirement"
       },
@@ -93,7 +93,7 @@
         "id": "brakeSystem",
         "symbol": "part_usage",
         "layout": {
-          "x": 420,
+          "x": 434,
           "y": 78,
           "width": 150,
           "height": 70,
@@ -107,7 +107,7 @@
         "id": "motorController",
         "symbol": "part_usage",
         "layout": {
-          "x": 420,
+          "x": 434,
           "y": 270,
           "width": 150,
           "height": 70,
@@ -121,7 +121,7 @@
         "id": "cadenceSensor",
         "symbol": "part_usage",
         "layout": {
-          "x": 420,
+          "x": 434,
           "y": 462,
           "width": 150,
           "height": 70,
@@ -135,7 +135,7 @@
         "id": "wheelSpeedSensor",
         "symbol": "part_usage",
         "layout": {
-          "x": 420,
+          "x": 434,
           "y": 654,
           "width": 160,
           "height": 70,
@@ -149,7 +149,7 @@
         "id": "bms",
         "symbol": "part_usage",
         "layout": {
-          "x": 420,
+          "x": 434,
           "y": 846,
           "width": 150,
           "height": 70,
@@ -163,7 +163,7 @@
         "id": "batteryPack",
         "symbol": "part_usage",
         "layout": {
-          "x": 420,
+          "x": 434,
           "y": 1038,
           "width": 150,
           "height": 70,
@@ -226,11 +226,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 295.692,
+              "x": 309.692,
               "y": 113
             },
             {
-              "x": 295.692,
+              "x": 309.692,
               "y": 305
             }
           ]
@@ -266,11 +266,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 305.538,
+              "x": 319.538,
               "y": 113
             },
             {
-              "x": 305.538,
+              "x": 319.538,
               "y": 497
             }
           ]
@@ -306,11 +306,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 315.385,
+              "x": 329.385,
               "y": 113
             },
             {
-              "x": 315.385,
+              "x": 329.385,
               "y": 689
             }
           ]
@@ -346,11 +346,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 325.231,
+              "x": 339.231,
               "y": 113
             },
             {
-              "x": 325.231,
+              "x": 339.231,
               "y": 881
             }
           ]
@@ -386,11 +386,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 354.769,
+              "x": 368.769,
               "y": 305
             },
             {
-              "x": 354.769,
+              "x": 368.769,
               "y": 1073
             }
           ]
@@ -426,11 +426,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 335.077,
+              "x": 349.077,
               "y": 689
             },
             {
-              "x": 335.077,
+              "x": 349.077,
               "y": 305
             }
           ]
@@ -497,11 +497,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 344.923,
+              "x": 358.923,
               "y": 881
             },
             {
-              "x": 344.923,
+              "x": 358.923,
               "y": 305
             }
           ]
@@ -537,11 +537,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 374.462,
+              "x": 388.462,
               "y": 881
             },
             {
-              "x": 374.462,
+              "x": 388.462,
               "y": 497
             }
           ]
@@ -577,11 +577,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 394.154,
+              "x": 408.154,
               "y": 881
             },
             {
-              "x": 394.154,
+              "x": 408.154,
               "y": 689
             }
           ]
@@ -617,11 +617,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 384.308,
+              "x": 398.308,
               "y": 497
             },
             {
-              "x": 384.308,
+              "x": 398.308,
               "y": 881
             }
           ]

@@ -62,7 +62,7 @@
       "order": 5
     },
     "en15194DistanceRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194 4.2.13\nAssist ceases 5 m after pedaling\nstops (2 m if tighter). Not brakes.",
+      "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194:2017 4.2.13\nPower mgmt: cut-off after pedaling\nstops. 2 m; lever switches relax to 5 m.",
       "rank": 1,
       "order": 2
     },

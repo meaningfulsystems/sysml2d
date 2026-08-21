@@ -100,8 +100,11 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("Not Eco / PAS-1", model)
         self.assertIn("within 50 ms", model)
         self.assertIn("en15194DistanceRequirement", model)
-        self.assertIn("within 5 m after pedaling stops", model)
-        self.assertIn("within 2 m", model)
+        self.assertIn("EN 15194:2017 clause 4.2.13", model)
+        self.assertIn("Power management", model)
+        self.assertIn("not vehicle brake distance", model)
+        self.assertIn("within 2 m after pedaling stops", model)
+        self.assertIn("relax the cut-off from 2 m to 5 m", model)
         self.assertIn("no certified throttle", model)
         self.assertIn("25 km/h", model)
         self.assertIn("Rear geared hub. No regenerative braking.", model)
@@ -144,7 +147,7 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("allocateDistanceToController", model)
         self.assertIn("allocateDistanceToCadence", model)
         self.assertIn("allocateDistanceToWheelSpeed", model)
-        self.assertIn("Motor cut-off after pedaling stops", model)
+        self.assertIn("motor-assist cut-off after pedaling stops", model)
         self.assertNotIn("tighter than the EN 15194 distance test", model)
         for name in (
             "frame",
