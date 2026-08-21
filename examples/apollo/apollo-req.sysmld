@@ -5,14 +5,21 @@
   "model_files": [
     "apollo.sysml"
   ],
-  "aliases": {},
+  "aliases": {
+    "safety": "rsoRequirement",
+    "land": "recoveryRequirement",
+    "talk": "isolationRequirement",
+    "abort": "agsRequirement",
+    "air": "lm5ConsumableRequirement",
+    "guide": "pngsRequirement"
+  },
   "diagram": {
     "id": "apollo-req",
     "kind": "RequirementView",
     "name": "Apollo 11 Sourced Requirements",
     "canvas": {
-      "width": 1247,
-      "height": 444,
+      "width": 969,
+      "height": 496,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -20,115 +27,87 @@
     },
     "elements": [
       {
-        "id": "agcRequirement",
-        "model_ref": "agcRequirement",
+        "id": "safety",
+        "model_ref": "safety",
         "symbol": "requirement",
         "layout": {
           "x": 72,
           "y": 72,
-          "width": 258,
-          "height": 118,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nTwo Block II guidance computers.\nCommand Module entry programs\nare not Lunar Module landing\nprograms.",
-        "style": "requirement"
-      },
-      {
-        "id": "rsoRequirement",
-        "model_ref": "rsoRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 370,
-          "y": 72,
           "width": 237,
-          "height": 118,
+          "height": 148,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nCrew safety is not Launch\nEscape System only. The Range\nSafety Officer sits outside\nMission Control.",
+        "label": "\u00abrequirement\u00bb\nSafety\nCrew safety is not Launch\nEscape System only. The Range\nSafety Officer sits outside\nMission Control.",
         "style": "requirement"
       },
       {
-        "id": "spsRequirement",
-        "model_ref": "spsRequirement",
+        "id": "land",
+        "model_ref": "land",
         "symbol": "requirement",
         "layout": {
-          "x": 647,
+          "x": 345,
           "y": 72,
-          "width": 230,
-          "height": 118,
+          "width": 244,
+          "height": 148,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nService Propulsion sources\ndisagree on vacuum thrust.\nThere is no required thrust.",
+        "label": "\u00abrequirement\u00bb\nLand\nSplash is the flown Ground\nElapsed Time. Distance is from\nthe recovery ship, not the\ntarget.",
         "style": "requirement"
       },
       {
-        "id": "dpsRequirement",
-        "model_ref": "dpsRequirement",
+        "id": "talk",
+        "model_ref": "talk",
         "symbol": "requirement",
         "layout": {
-          "x": 917,
+          "x": 625,
           "y": 72,
-          "width": 258,
-          "height": 118,
+          "width": 251,
+          "height": 148,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nDescent Propulsion sources\ndisagree on thrust and throttle.\nThere is no required thrust.",
+        "label": "\u00abrequirement\u00bb\nTalk\nMission Control talks to the\nstack on Unified S-Band. There\nis no stage-to-stage electrical\npower and no propellant\ncrossfeed.",
         "style": "requirement"
       },
       {
-        "id": "lm5ConsumableRequirement",
-        "model_ref": "lm5ConsumableRequirement",
+        "id": "abort",
+        "model_ref": "abort",
         "symbol": "requirement",
         "layout": {
           "x": 72,
-          "y": 254,
+          "y": 276,
+          "width": 251,
+          "height": 148,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nAbort\nAbort Guidance is not a landing\ncomputer. Pad and Mode I sit\nwith the escape tower; later\nmodes do not.",
+        "style": "requirement"
+      },
+      {
+        "id": "air",
+        "model_ref": "air",
+        "symbol": "requirement",
+        "layout": {
+          "x": 359,
+          "y": 276,
           "width": 244,
-          "height": 118,
+          "height": 148,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nLunar Module descent oxygen\nis a teaching figure.\nThere is no required pressure.",
+        "label": "\u00abrequirement\u00bb\nAir\nLife support is oxygen, water,\nand lithium hydroxide. Lunar\nModule descent oxygen is a\nteaching figure, not a\nrequired pressure.",
         "style": "requirement"
       },
       {
-        "id": "recoveryRequirement",
-        "model_ref": "recoveryRequirement",
+        "id": "guide",
+        "model_ref": "guide",
         "symbol": "requirement",
         "layout": {
-          "x": 356,
-          "y": 254,
-          "width": 244,
-          "height": 118,
+          "x": 639,
+          "y": 276,
+          "width": 258,
+          "height": 148,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nSplash is the flown Ground\nElapsed Time. Distance is from\nthe recovery ship, not the\ntarget.",
-        "style": "requirement"
-      },
-      {
-        "id": "pngsRequirement",
-        "model_ref": "pngsRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 640,
-          "y": 254,
-          "width": 237,
-          "height": 118,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. Landing radar is on\ndescent; rendezvous radar is\non ascent.",
-        "style": "requirement"
-      },
-      {
-        "id": "isolationRequirement",
-        "model_ref": "isolationRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 917,
-          "y": 254,
-          "width": 216,
-          "height": 118,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nThere is no stage-to-stage\nelectrical power and no\npropellant crossfeed.",
+        "label": "\u00abrequirement\u00bb\nGuide\nTwo Block II guidance computers.\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. Landing radar is on\ndescent; rendezvous radar is\non ascent.",
         "style": "requirement"
       }
     ],

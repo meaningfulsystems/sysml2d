@@ -7,59 +7,61 @@
     "apollo.sysml"
   ],
   "direction": "top-down",
-  "default_w": 260,
-  "default_h": 118,
-  "sibling_gap": 40,
-  "rank_gap": 64,
-  "max_per_row": 4,
+  "default_w": 280,
+  "default_h": 148,
+  "sibling_gap": 36,
+  "rank_gap": 56,
+  "max_per_row": 3,
+  "aliases": {
+    "safety": "rsoRequirement",
+    "land": "recoveryRequirement",
+    "talk": "isolationRequirement",
+    "abort": "agsRequirement",
+    "air": "lm5ConsumableRequirement",
+    "guide": "pngsRequirement"
+  },
   "nodes": {
-    "agcRequirement": {
-      "label": "«requirement»\nTwo Block II guidance computers.\nCommand Module entry programs\nare not Lunar Module landing\nprograms.",
+    "safety": {
+      "label": "«requirement»\nSafety\nCrew safety is not Launch\nEscape System only. The Range\nSafety Officer sits outside\nMission Control.",
       "rank": 0,
       "order": 0,
-      "h": 118
+      "h": 148,
+      "model_ref": "safety"
     },
-    "rsoRequirement": {
-      "label": "«requirement»\nCrew safety is not Launch\nEscape System only. The Range\nSafety Officer sits outside\nMission Control.",
+    "land": {
+      "label": "«requirement»\nLand\nSplash is the flown Ground\nElapsed Time. Distance is from\nthe recovery ship, not the\ntarget.",
       "rank": 0,
       "order": 1,
-      "h": 118
+      "h": 148,
+      "model_ref": "land"
     },
-    "spsRequirement": {
-      "label": "«requirement»\nService Propulsion sources\ndisagree on vacuum thrust.\nThere is no required thrust.",
+    "talk": {
+      "label": "«requirement»\nTalk\nMission Control talks to the\nstack on Unified S-Band. There\nis no stage-to-stage electrical\npower and no propellant\ncrossfeed.",
       "rank": 0,
       "order": 2,
-      "h": 118
+      "h": 148,
+      "model_ref": "talk"
     },
-    "dpsRequirement": {
-      "label": "«requirement»\nDescent Propulsion sources\ndisagree on thrust and throttle.\nThere is no required thrust.",
-      "rank": 0,
-      "order": 3,
-      "h": 118
-    },
-    "lm5ConsumableRequirement": {
-      "label": "«requirement»\nLunar Module descent oxygen\nis a teaching figure.\nThere is no required pressure.",
+    "abort": {
+      "label": "«requirement»\nAbort\nAbort Guidance is not a landing\ncomputer. Pad and Mode I sit\nwith the escape tower; later\nmodes do not.",
       "rank": 1,
       "order": 0,
-      "h": 118
+      "h": 148,
+      "model_ref": "abort"
     },
-    "recoveryRequirement": {
-      "label": "«requirement»\nSplash is the flown Ground\nElapsed Time. Distance is from\nthe recovery ship, not the\ntarget.",
+    "air": {
+      "label": "«requirement»\nAir\nLife support is oxygen, water,\nand lithium hydroxide. Lunar\nModule descent oxygen is a\nteaching figure, not a\nrequired pressure.",
       "rank": 1,
       "order": 1,
-      "h": 118
+      "h": 148,
+      "model_ref": "air"
     },
-    "pngsRequirement": {
-      "label": "«requirement»\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. Landing radar is on\ndescent; rendezvous radar is\non ascent.",
+    "guide": {
+      "label": "«requirement»\nGuide\nTwo Block II guidance computers.\nPrimary Guidance, Navigation,\nand Control is not Abort\nGuidance. Landing radar is on\ndescent; rendezvous radar is\non ascent.",
       "rank": 1,
       "order": 2,
-      "h": 118
-    },
-    "isolationRequirement": {
-      "label": "«requirement»\nThere is no stage-to-stage\nelectrical power and no\npropellant crossfeed.",
-      "rank": 1,
-      "order": 3,
-      "h": 118
+      "h": 148,
+      "model_ref": "guide"
     }
   },
   "edges": []
