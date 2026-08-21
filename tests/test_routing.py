@@ -3,7 +3,13 @@ from __future__ import annotations
 import unittest
 
 from sysmld.render_svg import _connection_path
-from sysmld.routing import hop_crossings, orthogonal_intersection, rank_route_assignments
+from sysmld.routing import (
+    hop_crossings,
+    orthogonal_intersection,
+    orthogonal_path_avoiding_boxes,
+    path_crosses_boxes,
+    rank_route_assignments,
+)
 from sysmld.views import view
 
 
@@ -119,6 +125,34 @@ class RoutingTests(unittest.TestCase):
         doc = view(spec, kind="AnalysisCaseView")
         for connection in doc["diagram"]["connections"]:
             self.assertEqual(connection["route"]["waypoints"], [])
+
+    def test_preferred_clear_path_is_unchanged(self):
+        start = (0.0, 10.0)
+        end = (80.0, 10.0)
+        boxes = {"block": (20.0, 30.0, 20.0, 20.0)}
+        preferred = [start, end]
+        self.assertEqual(
+            orthogonal_path_avoiding_boxes(start, end, boxes, preferred=preferred),
+            [],
+        )
+
+    def test_route_goes_around_box_not_through_it(self):
+        start = (0.0, 50.0)
+        end = (200.0, 50.0)
+        boxes = {"mid": (80.0, 20.0, 40.0, 60.0)}
+        preferred = [start, end]
+        self.assertTrue(path_crosses_boxes(preferred, boxes))
+        waypoints = orthogonal_path_avoiding_boxes(
+            start, end, boxes, preferred=preferred, clearance=8.0
+        )
+        full = [start, *waypoints, end]
+        self.assertTrue(waypoints)
+        self.assertFalse(path_crosses_boxes(full, boxes))
+        for start_pt, end_pt in zip(full, full[1:]):
+            self.assertTrue(
+                round(start_pt[0], 3) == round(end_pt[0], 3)
+                or round(start_pt[1], 3) == round(end_pt[1], 3)
+            )
 
     def test_use_case_channels_stay_outside_system_boundary(self):
         spec = {

@@ -179,7 +179,9 @@ package ElectricBike {
     action stopCharge;
 
     interaction startRideInteraction;
-    use case rideBikeUseCase;
+    use case rideBikeUseCase {
+        include adjustAssistUseCase;
+    }
     use case chargeBikeUseCase;
     use case lockBikeUseCase;
     use case adjustAssistUseCase;

@@ -12,7 +12,7 @@
     "name": "Electric Bike Operating Context",
     "canvas": {
       "width": 954,
-      "height": 424,
+      "height": 434,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -24,7 +24,7 @@
         "symbol": "actor",
         "layout": {
           "x": 72,
-          "y": 72,
+          "y": 82,
           "width": 70,
           "height": 90,
           "z": 10
@@ -38,7 +38,7 @@
         "symbol": "part_usage",
         "layout": {
           "x": 72,
-          "y": 282,
+          "y": 292,
           "width": 150,
           "height": 70,
           "z": 10
@@ -54,7 +54,7 @@
           "x": 382,
           "y": 72,
           "width": 190,
-          "height": 90,
+          "height": 110,
           "z": 10
         },
         "label": "Electric Bike",
@@ -66,7 +66,7 @@
         "symbol": "part_usage",
         "layout": {
           "x": 732,
-          "y": 82,
+          "y": 92,
           "width": 150,
           "height": 70,
           "z": 10
@@ -74,20 +74,6 @@
         "label": "Road",
         "style": "part_usage",
         "model_ref": "road"
-      },
-      {
-        "id": "WheelTorque",
-        "symbol": "item",
-        "layout": {
-          "x": 732,
-          "y": 282,
-          "width": 150,
-          "height": 70,
-          "z": 10
-        },
-        "label": "Wheel Torque",
-        "style": "item",
-        "model_ref": "WheelTorque"
       }
     ],
     "connections": [
@@ -104,12 +90,21 @@
           "element": "ElectricBike",
           "anchor": {
             "side": "left",
-            "offset": 0.5
+            "offset": 0.3
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 280.667,
+              "y": 127
+            },
+            {
+              "x": 280.667,
+              "y": 105
+            }
+          ]
         },
         "labels": [
           {
@@ -135,19 +130,19 @@
           "element": "ElectricBike",
           "anchor": {
             "side": "left",
-            "offset": 0.5
+            "offset": 0.7
           }
         },
         "route": {
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 346,
-              "y": 317
+              "x": 323.333,
+              "y": 327
             },
             {
-              "x": 346,
-              "y": 117
+              "x": 323.333,
+              "y": 149
             }
           ]
         },
@@ -192,46 +187,6 @@
         ],
         "style": "connector.directed",
         "model_ref": "roadLoadFlow"
-      },
-      {
-        "id": "conn-ElectricBike-WheelTorque",
-        "source": {
-          "element": "ElectricBike",
-          "anchor": {
-            "side": "right",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "WheelTorque",
-          "anchor": {
-            "side": "left",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 608,
-              "y": 117
-            },
-            {
-              "x": 608,
-              "y": 317
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "torque",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.directed",
-        "model_ref": "motorTorqueFlow"
       }
     ],
     "annotations": [],

@@ -68,6 +68,8 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
     direction   = spec.get("direction", "left-right")
     default_w   = int(spec.get("default_w", DEFAULT_W))
     default_h   = int(spec.get("default_h", DEFAULT_H))
+    col_gap     = int(spec.get("col_gap", COL_GAP))
+    rank_gap    = int(spec.get("rank_gap", RANK_GAP))
     states_spec = spec.get("states", {})
     trans_spec  = spec.get("transitions", [])
     aliases     = spec.get("aliases", {})
@@ -182,8 +184,8 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
     avg_h = sum(sh(s) for s in layout_ids) / max(len(layout_ids), 1)
     lo = _layout(
         layout_ids, layout_edges, direction,
-        col_gap  = COL_GAP  + (avg_w if vertical else avg_h),
-        rank_gap = RANK_GAP + (avg_h if vertical else avg_w),
+        col_gap  = col_gap  + (avg_w if vertical else avg_h),
+        rank_gap = rank_gap + (avg_h if vertical else avg_w),
         margin   = CANVAS_MARGIN + BND_PAD + max(default_w, default_h) // 2,
     )
     cx_map, cy_map, rank = lo.cx, lo.cy, lo.rank
@@ -647,13 +649,21 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
                 src_box = boxes[t["from"]]
                 tgt_box = boxes[t["to"]]
                 if mode in ("over_top", "top_span", "bottom"):
-                    local_y = min(src_box[1], tgt_box[1]) - SELF_LOOP_H - top_lane * BACK_ARC_STEP
-                    top_lane += 1
                     src_face, tgt_face = "top", "top"
                     soff = top_endpoint_offset.get((idx, "src"), soff)
                     toff = top_endpoint_offset.get((idx, "tgt"), toff)
                     source_x = round(_anchor_xy(t["from"], src_face, soff)[0])
                     target_x = round(_anchor_xy(t["to"], tgt_face, toff)[0])
+                    local_y = _clear_horizontal_rail(
+                        min(src_box[1], tgt_box[1]) - SELF_LOOP_H * 2 - top_lane * BACK_ARC_STEP,
+                        source_x,
+                        target_x,
+                        boxes,
+                        {t["from"], t["to"]},
+                        SELF_LOOP_H,
+                        prefer="above",
+                    )
+                    top_lane += 1
                 else:
                     src_face, tgt_face = "bottom", "bottom"
                     source_x = round(_anchor_xy(t["from"], src_face, soff)[0])
@@ -910,6 +920,7 @@ def _clear_horizontal_rail(
     boxes: dict[str, tuple[float, float, float, float]],
     skip: set[str],
     pad: float,
+    prefer: str = "below",
 ) -> float:
     left, right = sorted((x1, x2))
     parents = {
@@ -926,7 +937,7 @@ def _clear_horizontal_rail(
             if bx + bw < left or bx > right:
                 continue
             if by - pad < y < by + bh + pad:
-                y = by + bh + pad
+                y = by - pad if prefer == "above" else by + bh + pad
                 changed = True
     return y
 

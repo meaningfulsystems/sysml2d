@@ -12,7 +12,7 @@
     "name": "Electric Bike Energy and Control Flows",
     "canvas": {
       "width": 1224,
-      "height": 424,
+      "height": 624,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -74,6 +74,20 @@
         "label": "Battery Pack",
         "style": "part_usage",
         "model_ref": "batteryPack"
+      },
+      {
+        "id": "brakeSystem",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 382,
+          "y": 482,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Brake System",
+        "style": "part_usage",
+        "model_ref": "brakeSystem"
       },
       {
         "id": "motorController",
@@ -201,11 +215,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 656,
+              "x": 612,
               "y": 317
             },
             {
-              "x": 656,
+              "x": 612,
               "y": 117
             }
           ]
@@ -251,6 +265,46 @@
         ],
         "style": "connector.flow",
         "model_ref": "riderCommandFlow"
+      },
+      {
+        "id": "conn-brakeSystem-motorController",
+        "source": {
+          "element": "brakeSystem",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 644,
+              "y": 517
+            },
+            {
+              "x": 644,
+              "y": 117
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "inhibit",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "brakeInhibitFlow"
       },
       {
         "id": "conn-motorController-hubMotor",
@@ -303,11 +357,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 878,
+              "x": 922,
               "y": 317
             },
             {
-              "x": 878,
+              "x": 922,
               "y": 117
             }
           ]

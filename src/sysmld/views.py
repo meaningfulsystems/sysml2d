@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from .layout import compute as _layout
-from .routing import ALIGN_SNAP, rank_route_assignments
+from .routing import ALIGN_SNAP, orthogonal_path_avoiding_boxes, path_crosses_boxes, rank_route_assignments
 
 
 VIEW_DEFAULT_SYMBOL = {
@@ -176,7 +176,7 @@ def interaction(spec: dict[str, Any]) -> dict[str, Any]:
     message_gap = int(spec.get("message_gap", 54))
     top = int(spec.get("top", 70))
     left = int(spec.get("left", 70))
-    height = top + 70 + max(1, len(messages)) * message_gap + 28
+    height = top + 70 + max(1, len(messages)) * message_gap + 8
     elements = []
     centers: dict[str, float] = {}
     cursor_x = left
@@ -707,6 +707,17 @@ def _edge_connection(
         waypoints = _assigned_waypoints(source_point, target_point, source_side, target_side, assignment)
         if waypoints is None:
             waypoints = _orthogonal_waypoints_avoiding_boxes(source_point, target_point, source_side, target_side, boxes, src, tgt)
+        else:
+            points = [source_point, *[(point["x"], point["y"]) for point in waypoints], target_point]
+            if path_crosses_boxes(points, boxes, {src, tgt}):
+                avoided = orthogonal_path_avoiding_boxes(
+                    source_point,
+                    target_point,
+                    boxes,
+                    ignore={src, tgt},
+                    preferred=points,
+                )
+                waypoints = _clean_waypoints(avoided)
     labels = []
     if edge.get("label", ""):
         labels.append({"text": edge["label"], "position": {"offset": 0.5}})
@@ -902,7 +913,16 @@ def _orthogonal_waypoints_avoiding_boxes(
         for elbow in candidates:
             if not _route_crosses_obstacle([src, elbow, tgt], obstacles):
                 return _clean_waypoints([elbow])
-    return _orthogonal_waypoints(src, tgt, source_side, target_side)
+    fallback = _orthogonal_waypoints(src, tgt, source_side, target_side)
+    preferred = [src, *[(point["x"], point["y"]) for point in fallback], tgt]
+    avoided = orthogonal_path_avoiding_boxes(
+        src,
+        tgt,
+        boxes,
+        ignore={source_id, target_id},
+        preferred=preferred,
+    )
+    return _clean_waypoints(avoided)
 
 
 def _detour_candidates(

@@ -28,8 +28,8 @@
     "kind": "StateView",
     "name": "Ride Control State Machine",
     "canvas": {
-      "width": 1357,
-      "height": 528,
+      "width": 1557,
+      "height": 538,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -43,8 +43,8 @@
         "layout": {
           "x": 95,
           "y": 75,
-          "width": 1222,
-          "height": 413,
+          "width": 1422,
+          "height": 423,
           "z": 0
         },
         "compartments": {
@@ -59,7 +59,7 @@
         "symbol": "initial_state",
         "layout": {
           "x": 145,
-          "y": 212,
+          "y": 217,
           "width": 20,
           "height": 20,
           "z": 10
@@ -70,8 +70,8 @@
         "id": "off",
         "symbol": "state_usage",
         "layout": {
-          "x": 322,
-          "y": 192,
+          "x": 372,
+          "y": 197,
           "width": 130,
           "height": 60,
           "z": 10
@@ -84,7 +84,7 @@
         "id": "standby",
         "symbol": "state_usage",
         "layout": {
-          "x": 553,
+          "x": 653,
           "y": 125,
           "width": 130,
           "height": 60,
@@ -98,8 +98,8 @@
         "id": "assist",
         "symbol": "state_usage",
         "layout": {
-          "x": 785,
-          "y": 192,
+          "x": 935,
+          "y": 197,
           "width": 130,
           "height": 60,
           "z": 10
@@ -112,8 +112,8 @@
         "id": "charging",
         "symbol": "state_usage",
         "layout": {
-          "x": 553,
-          "y": 258,
+          "x": 653,
+          "y": 268,
           "width": 130,
           "height": 60,
           "z": 10
@@ -126,8 +126,8 @@
         "id": "fault",
         "symbol": "state_usage",
         "layout": {
-          "x": 1017,
-          "y": 192,
+          "x": 1217,
+          "y": 197,
           "width": 130,
           "height": 60,
           "z": 10
@@ -183,11 +183,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 486,
-              "y": 212
+              "x": 552,
+              "y": 217
             },
             {
-              "x": 486,
+              "x": 552,
               "y": 155
             }
           ]
@@ -225,12 +225,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 734,
+              "x": 859,
               "y": 155
             },
             {
-              "x": 734,
-              "y": 222
+              "x": 859,
+              "y": 227
             }
           ]
         },
@@ -267,12 +267,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 519,
-              "y": 232
+              "x": 603,
+              "y": 237
             },
             {
-              "x": 519,
-              "y": 288
+              "x": 603,
+              "y": 298
             }
           ]
         },
@@ -342,15 +342,15 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 850,
-              "y": 346
+              "x": 1000,
+              "y": 356
             },
             {
-              "x": 525,
-              "y": 346
+              "x": 625,
+              "y": 356
             },
             {
-              "x": 525,
+              "x": 625,
               "y": 185
             }
           ]
@@ -388,12 +388,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 618,
-              "y": 374
+              "x": 718,
+              "y": 384
             },
             {
-              "x": 387,
-              "y": 374
+              "x": 437,
+              "y": 384
             }
           ]
         },
@@ -430,12 +430,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 618,
-              "y": 97
+              "x": 718,
+              "y": 69
             },
             {
-              "x": 365,
-              "y": 97
+              "x": 415,
+              "y": 69
             }
           ]
         },
@@ -472,12 +472,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1082,
-              "y": 136
+              "x": 1282,
+              "y": 97
             },
             {
-              "x": 409,
-              "y": 136
+              "x": 459,
+              "y": 97
             }
           ]
         },

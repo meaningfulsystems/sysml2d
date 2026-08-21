@@ -35,6 +35,12 @@
       "label": "Lock Bike",
       "rank": 1,
       "order": 3
+    },
+    "charger": {
+      "label": "Charger",
+      "symbol": "actor",
+      "rank": 0,
+      "order": 1
     }
   },
   "groups": [
@@ -65,17 +71,17 @@
     },
     {
       "from": "rider",
-      "to": "chargeBikeUseCase",
-      "source_offset": 0.6
-    },
-    {
-      "from": "rider",
       "to": "lockBikeUseCase",
-      "source_offset": 0.75
+      "source_offset": 0.7
     },
     {
-      "from": "adjustAssistUseCase",
-      "to": "rideBikeUseCase",
+      "from": "charger",
+      "to": "chargeBikeUseCase",
+      "source_offset": 0.5
+    },
+    {
+      "from": "rideBikeUseCase",
+      "to": "adjustAssistUseCase",
       "label": "include",
       "style": "connector.include"
     }

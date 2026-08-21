@@ -30,7 +30,6 @@
 <path d="M 147,142 L 147,178 L 1187,178 L 1187,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text class="small" x="159" y="222">contains</text>
 <text class="small" text-anchor="middle" x="277" y="166">contains</text>
-<text class="small" text-anchor="middle" x="407" y="166">contains</text>
 <text class="small" text-anchor="middle" x="537" y="166">contains</text>
 <text class="small" text-anchor="middle" x="667" y="166">contains</text>
 </g>

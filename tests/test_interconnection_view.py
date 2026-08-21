@@ -158,6 +158,13 @@ class ComposeTests(unittest.TestCase):
 
         self.assertEqual(_route_crossings(doc), [])
 
+    def test_ebike_composed_routes_do_not_cross_element_interiors(self):
+        spec_path = ROOT / "examples" / "e-bike" / "e-bike-ibd.json"
+        spec = json.loads(spec_path.read_text(encoding="utf-8"))
+        doc = compose(spec)
+
+        self.assertEqual(_route_box_hits(doc), [])
+
     def test_blender_composed_routes_do_not_cross_element_interiors(self):
         spec_path = ROOT / "examples" / "blender" / "blender-ibd-composed.json"
         spec = json.loads(spec_path.read_text(encoding="utf-8"))

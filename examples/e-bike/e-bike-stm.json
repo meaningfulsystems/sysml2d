@@ -9,6 +9,8 @@
   "direction": "left-right",
   "default_w": 130,
   "default_h": 60,
+  "rank_gap": 170,
+  "col_gap": 90,
   "aliases": {
     "rideControl": "ElectricBike::RideControl",
     "off": "ElectricBike::RideControl::off",

@@ -34,23 +34,35 @@
       "rank": 1,
       "order": 0
     },
+    "ThrottleCommand": {
+      "label": "ThrottleCommand",
+      "symbol": "item",
+      "rank": 1,
+      "order": 1
+    },
     "ChargeEnergy": {
       "label": "ChargeEnergy",
       "symbol": "item",
       "rank": 1,
-      "order": 1
+      "order": 2
+    },
+    "ElectricalEnergy": {
+      "label": "ElectricalEnergy",
+      "symbol": "item",
+      "rank": 1,
+      "order": 3
     },
     "WheelTorque": {
       "label": "WheelTorque",
       "symbol": "item",
       "rank": 1,
-      "order": 2
+      "order": 4
     },
     "BrakeInhibit": {
       "label": "BrakeInhibit",
       "symbol": "item",
       "rank": 1,
-      "order": 3
+      "order": 5
     }
   },
   "edges": [
@@ -60,8 +72,18 @@
       "label": "carries"
     },
     {
+      "from": "RiderInterface",
+      "to": "ThrottleCommand",
+      "label": "carries"
+    },
+    {
       "from": "ChargeInterface",
       "to": "ChargeEnergy",
+      "label": "carries"
+    },
+    {
+      "from": "ChargeInterface",
+      "to": "ElectricalEnergy",
       "label": "carries"
     },
     {

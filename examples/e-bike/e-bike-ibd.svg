@@ -40,20 +40,20 @@
 <rect id="brakeSystem--motorController--tgt" x="786" y="257" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="batteryPack--motorController--tgt" x="786" y="276.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="motorController--hubMotor--src" x="956" y="257" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--hubMotor--tgt" x="1144" y="243.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="motorController--hubMotor--tgt" x="1144" y="270.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--hubMotor--tgt" x="1229" y="218" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="motorController--hubMotor--tgt" x="1144" y="257" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="hubMotor--bnd--tgt" x="1314" y="257" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--humanInterface--src" x="240" y="233.6" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--brakeSystem--src" x="240" y="249.2" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--hubMotor--src" x="240" y="264.8" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--batteryPack--src" x="240" y="280.4" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<path d="M 252,286.4 L 375,286.4 L 375,397.997 L 428,397.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 252,270.8 L 298,270.8 L 298,249.997 L 1144,249.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 252,239.6 L 305,239.6 L 305,128.003 L 428,128.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 252,255.2 L 291,255.2 A 7 7 0 0 0 305,255.2 L 340,255.2 L 340,263 L 428,263" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<rect id="frame--humanInterface--src" x="240" y="237.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--brakeSystem--src" x="240" y="257" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--batteryPack--src" x="240" y="276.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--hubMotor--src" x="155" y="218" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 252,282.5 L 375,282.5 L 375,397.997 L 428,397.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 161,218 L 161,200 L 1235,200 L 1235,218" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 252,243.5 L 305,243.5 L 305,207 A 7 7 0 0 0 305,193 L 305,128.003 L 428,128.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 252,263 L 428,263" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 610,411 L 733,411 L 733,282.5 L 786,282.5" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 968,263 L 1056,263 L 1056,276.003 L 1144,276.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 610,115 L 663,115 L 663,243.5 L 786,243.5" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 968,263 L 1144,263" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 610,115 L 663,115 L 663,193 A 7 7 0 0 1 663,207 L 663,243.5 L 786,243.5" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 610,263 L 786,263" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 46,101.994 L 428,101.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 46,424.006 L 428,424.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
@@ -61,13 +61,13 @@
 <text class="small" x="58" y="83.994">rider</text>
 <text class="small" x="58" y="406.006">charger</text>
 <text class="small" text-anchor="end" x="1338" y="245">road load</text>
-<text class="small" text-anchor="middle" x="313.5" y="309.4">mount</text>
-<text class="small" text-anchor="middle" x="721" y="237.997">mount</text>
+<text class="small" text-anchor="middle" x="313.5" y="305.5">mount</text>
+<text class="small" text-anchor="middle" x="698" y="188">mount</text>
 <text class="small" text-anchor="middle" x="366.5" y="116.003">mount</text>
-<text class="small" text-anchor="middle" x="322.4" y="278.2">mount</text>
+<text class="small" text-anchor="middle" x="340" y="251">mount</text>
 <text class="small" x="745" y="346.75">pack power</text>
-<text class="small" text-anchor="middle" x="1086.8" y="264.003">phase drive</text>
-<text class="small" x="675" y="179.25">assist command</text>
+<text class="small" text-anchor="middle" x="1056" y="251">phase drive</text>
+<text class="small" text-anchor="end" x="651" y="179.25">assist command</text>
 <text class="small" text-anchor="middle" x="698" y="286">inhibit</text>
 </g>
 </svg>

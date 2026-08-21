@@ -9,6 +9,7 @@
   "direction": "top-down",
   "default_w": 250,
   "default_h": 118,
+  "sibling_gap": 56,
   "nodes": {
     "rideSafetyRequirement": {
       "label": "\u00abrequirement\u00bb\nREQ-E-001 Ride Safety\nBrake input cuts motor torque\nbefore the wheel keeps driving.",
@@ -17,65 +18,50 @@
     },
     "rangeRequirement": {
       "label": "\u00abrequirement\u00bb\nREQ-E-002 Range\n>= 60 km PAS-1 range on a\n500 Wh pack.",
-      "rank": 1,
-      "order": 0
+      "rank": 0,
+      "order": 1
     },
     "assistLimitRequirement": {
       "label": "\u00abrequirement\u00bb\nREQ-E-003 Assist Limit\nCut assist at 25 km/h for\nthe certified class.",
-      "rank": 1,
-      "order": 1
+      "rank": 0,
+      "order": 2
     },
     "chargeSafetyRequirement": {
       "label": "\u00abrequirement\u00bb\nREQ-E-004 Charge Safety\nStop on over-temp, over-voltage,\nor charger disconnect.",
-      "rank": 1,
-      "order": 2
+      "rank": 0,
+      "order": 3
     },
     "brakeOverrideRequirement": {
       "label": "\u00abrequirement\u00bb\nREQ-E-010 Brake Override\nInhibit motor within 50 ms of\neither brake lever.",
-      "rank": 2,
+      "rank": 1,
       "order": 0
     },
-    "batteryCutoffRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-011 Battery Cutoff\nOpen the pack contactor before\nany cell exceeds its limit.",
-      "rank": 2,
+    "structuralRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-030 Structure\nFrame carries rider, cargo, and\nbattery loads without yield.",
+      "rank": 1,
       "order": 1
     },
     "displayRequirement": {
       "label": "\u00abrequirement\u00bb\nREQ-E-020 Display\nShow speed, assist, and remaining\nrange on the bar display.",
-      "rank": 2,
+      "rank": 1,
       "order": 2
     },
-    "structuralRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-030 Structure\nFrame carries rider, cargo, and\nbattery loads without yield.",
-      "rank": 2,
+    "batteryCutoffRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-011 Battery Cutoff\nOpen the pack contactor before\nany cell exceeds its limit.",
+      "rank": 1,
       "order": 3
     }
   },
   "edges": [
     {
       "from": "rideSafetyRequirement",
-      "to": "rangeRequirement",
-      "label": "derive"
-    },
-    {
-      "from": "rideSafetyRequirement",
-      "to": "assistLimitRequirement",
-      "label": "derive"
-    },
-    {
-      "from": "rideSafetyRequirement",
-      "to": "chargeSafetyRequirement",
-      "label": "derive"
-    },
-    {
-      "from": "rideSafetyRequirement",
       "to": "brakeOverrideRequirement",
       "label": "refine"
     },
     {
-      "from": "chargeSafetyRequirement",
-      "to": "batteryCutoffRequirement",
-      "label": "refine"
+      "from": "rangeRequirement",
+      "to": "structuralRequirement",
+      "label": "trace"
     },
     {
       "from": "assistLimitRequirement",
@@ -83,9 +69,9 @@
       "label": "refine"
     },
     {
-      "from": "rangeRequirement",
-      "to": "structuralRequirement",
-      "label": "trace"
+      "from": "chargeSafetyRequirement",
+      "to": "batteryCutoffRequirement",
+      "label": "refine"
     }
   ]
 }

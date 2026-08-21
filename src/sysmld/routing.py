@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections import defaultdict
+from heapq import heappop, heappush
 from typing import Any
 
 
@@ -12,6 +13,7 @@ TRACK_PAD = 16.0
 RAIL_PAD = 40.0
 RAIL_GAP = 18.0
 ALIGN_SNAP = 14.0
+BOX_CLEAR = 16.0
 
 
 def clean(value: float) -> float:
@@ -186,9 +188,8 @@ def _assign_channel(
     span = gap_hi - gap_lo
     sources = {edges[index]["from"] for index in ordered}
     targets = {edges[index]["to"] for index in ordered}
-    if len(sources) == 1 or len(targets) == 1:
-        inset = min(20.0, span / 4)
-        track = gap_hi - inset if len(targets) == 1 and len(sources) > 1 else gap_lo + inset
+    if len(sources) == 1 and len(targets) > 1:
+        track = clean(gap_lo + min(20.0, span / 4))
         for index in ordered:
             assignments[index] = ("channel", clean(track))
         return
@@ -298,3 +299,171 @@ def _dist(a: tuple[float, float], b: tuple[float, float]) -> float:
 def _strict_between(value: float, start: float, end: float) -> bool:
     low, high = (start, end) if start <= end else (end, start)
     return low + 0.6 < value < high - 0.6
+
+
+def segment_crosses_box_interior(
+    start: tuple[float, float],
+    end: tuple[float, float],
+    box: tuple[float, float, float, float],
+) -> bool:
+    """True when an orthogonal segment passes through a rectangle interior."""
+
+    x1, y1 = start
+    x2, y2 = end
+    left, top, width, height = box
+    right = left + width
+    bottom = top + height
+    if round(x1, 3) == round(x2, 3):
+        return left < x1 < right and max(y1, y2) > top and min(y1, y2) < bottom
+    if round(y1, 3) == round(y2, 3):
+        return top < y1 < bottom and max(x1, x2) > left and min(x1, x2) < right
+    return False
+
+
+def path_crosses_boxes(
+    points: list[tuple[float, float]],
+    boxes: dict[str, tuple[float, float, float, float]],
+    ignore: set[str] | None = None,
+) -> bool:
+    skip = ignore or set()
+    for start, end in zip(points, points[1:]):
+        for node_id, box in boxes.items():
+            if node_id in skip:
+                continue
+            if segment_crosses_box_interior(start, end, box):
+                return True
+    return False
+
+
+def orthogonal_path_avoiding_boxes(
+    start: tuple[float, float],
+    end: tuple[float, float],
+    boxes: dict[str, tuple[float, float, float, float]],
+    *,
+    ignore: set[str] | None = None,
+    clearance: float = BOX_CLEAR,
+    preferred: list[tuple[float, float]] | None = None,
+) -> list[tuple[float, float]]:
+    """Return intermediate orthogonal points from start to end that miss box interiors.
+
+    Hop-overs are never used here. If `preferred` (a full path including the
+    endpoints) is already clear, its intermediate points are returned unchanged.
+    """
+
+    skip = ignore or set()
+    if preferred is None:
+        preferred = [start, end]
+    if not path_crosses_boxes(preferred, boxes, skip):
+        return list(preferred[1:-1])
+
+    obstacles = [box for node_id, box in boxes.items() if node_id not in skip]
+    found = _grid_path(start, end, obstacles, clearance)
+    if found is None:
+        found = _grid_path(start, end, list(boxes.values()), clearance)
+    if found is None:
+        return list(preferred[1:-1])
+    return found[1:-1]
+
+
+def _grid_path(
+    start: tuple[float, float],
+    end: tuple[float, float],
+    obstacles: list[tuple[float, float, float, float]],
+    clearance: float,
+) -> list[tuple[float, float]] | None:
+    start_n = (clean(start[0]), clean(start[1]))
+    end_n = (clean(end[0]), clean(end[1]))
+    xs = {start_n[0], end_n[0]}
+    ys = {start_n[1], end_n[1]}
+    for x, y, width, height in obstacles:
+        xs.add(clean(x - clearance))
+        xs.add(clean(x + width + clearance))
+        ys.add(clean(y - clearance))
+        ys.add(clean(y + height + clearance))
+    xs_list = sorted(xs)
+    ys_list = sorted(ys)
+
+    def inside(point: tuple[float, float]) -> bool:
+        px, py = point
+        for x, y, width, height in obstacles:
+            if x < px < x + width and y < py < y + height:
+                return True
+        return False
+
+    def blocked(first: tuple[float, float], second: tuple[float, float]) -> bool:
+        return any(segment_crosses_box_interior(first, second, box) for box in obstacles)
+
+    nodes = {(x, y) for x in xs_list for y in ys_list if not inside((x, y))}
+    nodes.add(start_n)
+    nodes.add(end_n)
+    x_index = {value: index for index, value in enumerate(xs_list)}
+    y_index = {value: index for index, value in enumerate(ys_list)}
+
+    def neighbors(point: tuple[float, float]) -> list[tuple[float, float]]:
+        x, y = point
+        result: list[tuple[float, float]] = []
+        if x in x_index:
+            index = x_index[x]
+            for other in (index - 1, index + 1):
+                if 0 <= other < len(xs_list):
+                    nxt = (xs_list[other], y)
+                    if nxt in nodes and not blocked(point, nxt):
+                        result.append(nxt)
+        if y in y_index:
+            index = y_index[y]
+            for other in (index - 1, index + 1):
+                if 0 <= other < len(ys_list):
+                    nxt = (x, ys_list[other])
+                    if nxt in nodes and not blocked(point, nxt):
+                        result.append(nxt)
+        result.sort()
+        return result
+
+    infinite = (10**12, 10**12)
+    best: dict[tuple[float, float], tuple[float, int]] = {start_n: (0.0, 0)}
+    came: dict[tuple[float, float], tuple[float, float]] = {}
+    incoming: dict[tuple[float, float], tuple[float, float] | None] = {start_n: None}
+    heap: list[tuple[float, int, float, float]] = [(0.0, 0, start_n[0], start_n[1])]
+    while heap:
+        length, bends, x, y = heappop(heap)
+        point = (x, y)
+        if best.get(point) != (length, bends):
+            continue
+        if point == end_n:
+            break
+        previous_dir = incoming[point]
+        for nxt in neighbors(point):
+            step = abs(nxt[0] - x) + abs(nxt[1] - y)
+            direction = (nxt[0] - x, nxt[1] - y)
+            next_bends = bends if previous_dir in (None, direction) else bends + 1
+            score = (length + step, next_bends)
+            if score < best.get(nxt, infinite):
+                best[nxt] = score
+                came[nxt] = point
+                incoming[nxt] = direction
+                heappush(heap, (score[0], score[1], nxt[0], nxt[1]))
+
+    if end_n not in came and end_n != start_n:
+        return None
+    path = [end_n]
+    cursor = end_n
+    while cursor != start_n:
+        cursor = came[cursor]
+        path.append(cursor)
+    path.reverse()
+    return _compress_collinear(path)
+
+
+def _compress_collinear(points: list[tuple[float, float]]) -> list[tuple[float, float]]:
+    cleaned: list[tuple[float, float]] = []
+    for point in points:
+        if cleaned and cleaned[-1] == point:
+            continue
+        if len(cleaned) >= 2:
+            first = cleaned[-2]
+            mid = cleaned[-1]
+            if (first[0] == mid[0] == point[0]) or (first[1] == mid[1] == point[1]):
+                cleaned[-1] = point
+                continue
+        cleaned.append(point)
+    return cleaned

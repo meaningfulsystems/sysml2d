@@ -1,45 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1375" height="670" viewBox="0 0 1375 670">
+<svg xmlns="http://www.w3.org/2000/svg" width="1341" height="472" viewBox="0 0 1341 472">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1375" height="670" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1371" height="628" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1341" height="472" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1337" height="430" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 424 L 440 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[req.mb] Electric Bike Requirements [ElectricBike]</text>
-<rect x="2" y="38" width="1371" height="630" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1337" height="432" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="rideSafetyRequirement" x="560" y="72" width="251" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="685.5" y="93.5">«requirement»</tspan><tspan x="685.5" dy="15">REQ-E-001 Ride Safety</tspan><tspan x="685.5" dy="15">Brake input cuts motor torque</tspan><tspan x="685.5" dy="15">before the wheel keeps driving.</tspan></text>
-<rect id="rangeRequirement" x="93" y="270" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="197.5" y="291.5">«requirement»</tspan><tspan x="197.5" dy="15">REQ-E-002 Range</tspan><tspan x="197.5" dy="15">&gt;= 60 km PAS-1 range on a</tspan><tspan x="197.5" dy="15">500 Wh pack.</tspan></text>
-<rect id="assistLimitRequirement" x="423" y="270" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="527.5" y="291.5">«requirement»</tspan><tspan x="527.5" dy="15">REQ-E-003 Assist Limit</tspan><tspan x="527.5" dy="15">Cut assist at 25 km/h for</tspan><tspan x="527.5" dy="15">the certified class.</tspan></text>
-<rect id="chargeSafetyRequirement" x="732" y="270" width="258" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="861" y="291.5">«requirement»</tspan><tspan x="861" dy="15">REQ-E-004 Charge Safety</tspan><tspan x="861" dy="15">Stop on over-temp, over-voltage,</tspan><tspan x="861" dy="15">or charger disconnect.</tspan></text>
-<rect id="brakeOverrideRequirement" x="1062" y="270" width="237" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1180.5" y="291.5">«requirement»</tspan><tspan x="1180.5" dy="15">REQ-E-010 Brake Override</tspan><tspan x="1180.5" dy="15">Inhibit motor within 50 ms of</tspan><tspan x="1180.5" dy="15">either brake lever.</tspan></text>
-<rect id="batteryCutoffRequirement" x="739" y="468" width="244" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="861" y="489.5">«requirement»</tspan><tspan x="861" dy="15">REQ-E-011 Battery Cutoff</tspan><tspan x="861" dy="15">Open the pack contactor before</tspan><tspan x="861" dy="15">any cell exceeds its limit.</tspan></text>
-<rect id="displayRequirement" x="395" y="468" width="265" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="527.5" y="489.5">«requirement»</tspan><tspan x="527.5" dy="15">REQ-E-020 Display</tspan><tspan x="527.5" dy="15">Show speed, assist, and remaining</tspan><tspan x="527.5" dy="15">range on the bar display.</tspan></text>
-<rect id="structuralRequirement" x="72" y="468" width="251" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="197.5" y="489.5">«requirement»</tspan><tspan x="197.5" dy="15">REQ-E-030 Structure</tspan><tspan x="197.5" dy="15">Frame carries rider, cargo, and</tspan><tspan x="197.5" dy="15">battery loads without yield.</tspan></text>
-<path d="M 610.2,160 L 197.5,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 660.4,160 L 527.5,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 710.6,160 L 861,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 760.8,160 L 1180.5,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 861,358 L 861,468" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 527.5,358 L 527.5,468" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 197.5,358 L 197.5,468" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" text-anchor="middle" x="403.85" y="203">derive</text>
-<text class="small" text-anchor="middle" x="593.95" y="203">derive</text>
-<text class="small" text-anchor="middle" x="785.8" y="203">derive</text>
-<text class="small" text-anchor="middle" x="970.65" y="203">refine</text>
-<text class="small" x="873" y="413">refine</text>
-<text class="small" x="539.5" y="413">refine</text>
-<text class="small" x="209.5" y="413">trace</text>
+<rect id="rideSafetyRequirement" x="72" y="72" width="251" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="197.5" y="93.5">«requirement»</tspan><tspan x="197.5" dy="15">REQ-E-001 Ride Safety</tspan><tspan x="197.5" dy="15">Brake input cuts motor torque</tspan><tspan x="197.5" dy="15">before the wheel keeps driving.</tspan></text>
+<rect id="rangeRequirement" x="400" y="72" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="504.5" y="93.5">«requirement»</tspan><tspan x="504.5" dy="15">REQ-E-002 Range</tspan><tspan x="504.5" dy="15">&gt;= 60 km PAS-1 range on a</tspan><tspan x="504.5" dy="15">500 Wh pack.</tspan></text>
+<rect id="assistLimitRequirement" x="714" y="72" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="818.5" y="93.5">«requirement»</tspan><tspan x="818.5" dy="15">REQ-E-003 Assist Limit</tspan><tspan x="818.5" dy="15">Cut assist at 25 km/h for</tspan><tspan x="818.5" dy="15">the certified class.</tspan></text>
+<rect id="chargeSafetyRequirement" x="1007" y="72" width="258" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1136" y="93.5">«requirement»</tspan><tspan x="1136" dy="15">REQ-E-004 Charge Safety</tspan><tspan x="1136" dy="15">Stop on over-temp, over-voltage,</tspan><tspan x="1136" dy="15">or charger disconnect.</tspan></text>
+<rect id="brakeOverrideRequirement" x="79" y="270" width="237" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="197.5" y="291.5">«requirement»</tspan><tspan x="197.5" dy="15">REQ-E-010 Brake Override</tspan><tspan x="197.5" dy="15">Inhibit motor within 50 ms of</tspan><tspan x="197.5" dy="15">either brake lever.</tspan></text>
+<rect id="structuralRequirement" x="379" y="270" width="251" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="504.5" y="291.5">«requirement»</tspan><tspan x="504.5" dy="15">REQ-E-030 Structure</tspan><tspan x="504.5" dy="15">Frame carries rider, cargo, and</tspan><tspan x="504.5" dy="15">battery loads without yield.</tspan></text>
+<rect id="displayRequirement" x="686" y="270" width="265" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="818.5" y="291.5">«requirement»</tspan><tspan x="818.5" dy="15">REQ-E-020 Display</tspan><tspan x="818.5" dy="15">Show speed, assist, and remaining</tspan><tspan x="818.5" dy="15">range on the bar display.</tspan></text>
+<rect id="batteryCutoffRequirement" x="1014" y="270" width="244" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1136" y="291.5">«requirement»</tspan><tspan x="1136" dy="15">REQ-E-011 Battery Cutoff</tspan><tspan x="1136" dy="15">Open the pack contactor before</tspan><tspan x="1136" dy="15">any cell exceeds its limit.</tspan></text>
+<path d="M 197.5,160 L 197.5,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 504.5,160 L 504.5,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 818.5,160 L 818.5,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1136,160 L 1136,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="209.5" y="215">refine</text>
+<text class="small" x="516.5" y="215">trace</text>
+<text class="small" x="830.5" y="215">refine</text>
+<text class="small" x="1148" y="215">refine</text>
 </g>
 </svg>

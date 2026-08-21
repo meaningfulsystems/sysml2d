@@ -7,6 +7,8 @@
     "e-bike.sysml"
   ],
   "direction": "left-right",
+  "rank_gap": 160,
+  "col_gap": 90,
   "nodes": {
     "rider": {
       "label": "Rider",
@@ -26,19 +28,13 @@
       "rank": 1,
       "order": 0,
       "w": 190,
-      "h": 90
+      "h": 110
     },
     "road": {
       "label": "Road",
       "symbol": "part_usage",
       "rank": 2,
       "order": 0
-    },
-    "WheelTorque": {
-      "label": "Wheel Torque",
-      "symbol": "item",
-      "rank": 2,
-      "order": 1
     }
   },
   "edges": [
@@ -46,25 +42,27 @@
       "from": "rider",
       "to": "ElectricBike",
       "label": "commands",
-      "model_ref": "riderCommandFlow"
+      "model_ref": "riderCommandFlow",
+      "source_side": "right",
+      "target_side": "left",
+      "target_offset": 0.3
     },
     {
       "from": "charger",
       "to": "ElectricBike",
       "label": "charge",
-      "model_ref": "chargeEnergyFlow"
+      "model_ref": "chargeEnergyFlow",
+      "source_side": "right",
+      "target_side": "left",
+      "target_offset": 0.7
     },
     {
       "from": "ElectricBike",
       "to": "road",
       "label": "tractive",
-      "model_ref": "roadLoadFlow"
-    },
-    {
-      "from": "ElectricBike",
-      "to": "WheelTorque",
-      "label": "torque",
-      "model_ref": "motorTorqueFlow"
+      "model_ref": "roadLoadFlow",
+      "source_side": "right",
+      "target_side": "left"
     }
   ]
 }

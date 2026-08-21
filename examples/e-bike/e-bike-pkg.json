@@ -52,8 +52,7 @@
     },
     {
       "from": "BikeModel",
-      "to": "BikeRequirements",
-      "label": "contains"
+      "to": "BikeRequirements"
     },
     {
       "from": "BikeModel",

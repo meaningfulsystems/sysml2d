@@ -32,6 +32,12 @@
       "rank": 1,
       "order": 1
     },
+    "brakeSystem": {
+      "label": "Brake System",
+      "symbol": "part_usage",
+      "rank": 1,
+      "order": 2
+    },
     "motorController": {
       "label": "Controller",
       "symbol": "part_usage",
@@ -75,6 +81,12 @@
       "to": "motorController",
       "label": "assist",
       "model_ref": "riderCommandFlow"
+    },
+    {
+      "from": "brakeSystem",
+      "to": "motorController",
+      "label": "inhibit",
+      "model_ref": "brakeInhibitFlow"
     },
     {
       "from": "motorController",

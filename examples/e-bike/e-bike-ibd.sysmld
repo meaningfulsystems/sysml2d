@@ -331,8 +331,8 @@
         "symbol": "port",
         "owner": "hubMotor",
         "placement": {
-          "side": "left",
-          "offset": 0.3333
+          "side": "top",
+          "offset": 0.5
         },
         "label": ""
       },
@@ -343,7 +343,7 @@
         "owner": "hubMotor",
         "placement": {
           "side": "left",
-          "offset": 0.6667
+          "offset": 0.5
         },
         "label": ""
       },
@@ -365,7 +365,7 @@
         "owner": "frame",
         "placement": {
           "side": "right",
-          "offset": 0.2
+          "offset": 0.25
         },
         "label": ""
       },
@@ -376,18 +376,7 @@
         "owner": "frame",
         "placement": {
           "side": "right",
-          "offset": 0.4
-        },
-        "label": ""
-      },
-      {
-        "id": "frame--hubMotor--src",
-        "model_ref": "frame--hubMotor--src",
-        "symbol": "port",
-        "owner": "frame",
-        "placement": {
-          "side": "right",
-          "offset": 0.6
+          "offset": 0.5
         },
         "label": ""
       },
@@ -398,7 +387,18 @@
         "owner": "frame",
         "placement": {
           "side": "right",
-          "offset": 0.8
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "frame--hubMotor--src",
+        "model_ref": "frame--hubMotor--src",
+        "symbol": "port",
+        "owner": "frame",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
         },
         "label": ""
       },
@@ -459,7 +459,7 @@
           "waypoints": [
             {
               "x": 375,
-              "y": 286.4
+              "y": 282.5
             },
             {
               "x": 375,
@@ -483,14 +483,14 @@
         "source": {
           "element": "frame--hubMotor--src",
           "anchor": {
-            "side": "right",
+            "side": "top",
             "offset": 0.5
           }
         },
         "target": {
           "element": "frame--hubMotor--tgt",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -498,12 +498,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 298,
-              "y": 270.8
+              "x": 161,
+              "y": 200
             },
             {
-              "x": 298,
-              "y": 249.997
+              "x": 1235,
+              "y": 200
             }
           ]
         },
@@ -539,7 +539,7 @@
           "waypoints": [
             {
               "x": 305,
-              "y": 239.6
+              "y": 243.5
             },
             {
               "x": 305,
@@ -576,16 +576,7 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 340,
-              "y": 255.2
-            },
-            {
-              "x": 340,
-              "y": 263
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
@@ -656,16 +647,7 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 1056,
-              "y": 263
-            },
-            {
-              "x": 1056,
-              "y": 276.003
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {

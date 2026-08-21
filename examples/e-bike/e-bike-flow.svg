@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1228" height="466" viewBox="0 0 1228 466">
+<svg xmlns="http://www.w3.org/2000/svg" width="1228" height="666" viewBox="0 0 1228 666">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1228" height="466" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1224" height="424" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1228" height="666" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1224" height="624" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 528 L 544 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[flow.mb] Electric Bike Energy and Control Flows [ElectricBike]</text>
-<rect x="2" y="38" width="1224" height="426" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1224" height="626" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
 <circle id="rider" cx="107" cy="87.2" r="11.2" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
 <line x1="107" y1="98.4" x2="107" y2="127.8" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
@@ -23,6 +23,8 @@
 <text class="label" text-anchor="middle" x="457" y="117">Human Interface</text>
 <rect id="batteryPack" x="382" y="282" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="457" y="317">Battery Pack</text>
+<rect id="brakeSystem" x="382" y="482" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="457" y="517">Brake System</text>
 <rect id="motorController" x="692" y="82" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="767" y="117">Controller</text>
 <rect id="hubMotor" x="692" y="282" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
@@ -31,15 +33,17 @@
 <text class="label" text-anchor="middle" x="1077" y="117">Road</text>
 <path d="M 142,117 L 382,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 222,317 L 382,317" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 532,317 L 656,317 L 656,117 L 692,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 532,317 L 612,317 L 612,117 L 692,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 532,117 L 692,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 532,517 L 644,517 L 644,117 L 692,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 767,152 L 767,282" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 842,317 L 878,317 L 878,117 L 1002,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 842,317 L 922,317 L 922,117 L 1002,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <text class="small" text-anchor="middle" x="262" y="105">command</text>
 <text class="small" text-anchor="middle" x="302" y="305">charge</text>
-<text class="small" x="668" y="217">dc power</text>
+<text class="small" text-anchor="end" x="600" y="217">dc power</text>
 <text class="small" text-anchor="middle" x="612" y="105">assist</text>
+<text class="small" x="656" y="377">inhibit</text>
 <text class="small" x="779" y="217">torque</text>
-<text class="small" x="890" y="217">tractive</text>
+<text class="small" x="934" y="217">tractive</text>
 </g>
 </svg>
