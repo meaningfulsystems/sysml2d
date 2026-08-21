@@ -12,7 +12,7 @@
     "name": "Rider Assist Interaction",
     "canvas": {
       "width": 1097,
-      "height": 472,
+      "height": 442,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -26,7 +26,7 @@
           "x": 70,
           "y": 70,
           "width": 110,
-          "height": 362,
+          "height": 364,
           "z": 10
         },
         "label": "Rider",
@@ -40,7 +40,7 @@
           "x": 270,
           "y": 70,
           "width": 151,
-          "height": 362,
+          "height": 364,
           "z": 10
         },
         "label": "Human Interface",
@@ -54,7 +54,7 @@
           "x": 511,
           "y": 70,
           "width": 116,
-          "height": 362,
+          "height": 364,
           "z": 10
         },
         "label": "Controller",
@@ -68,7 +68,7 @@
           "x": 717,
           "y": 70,
           "width": 110,
-          "height": 362,
+          "height": 364,
           "z": 10
         },
         "label": "Hub Motor",
@@ -82,7 +82,7 @@
           "x": 917,
           "y": 70,
           "width": 110,
-          "height": 362,
+          "height": 364,
           "z": 10
         },
         "label": "Brakes",
@@ -98,14 +98,14 @@
           "element": "rider",
           "anchor": {
             "side": "right",
-            "offset": 0.193
+            "offset": 0.192
           }
         },
         "target": {
           "element": "humanInterface",
           "anchor": {
             "side": "left",
-            "offset": 0.193
+            "offset": 0.192
           }
         },
         "route": {
@@ -130,14 +130,14 @@
           "element": "humanInterface",
           "anchor": {
             "side": "right",
-            "offset": 0.343
+            "offset": 0.341
           }
         },
         "target": {
           "element": "motorController",
           "anchor": {
             "side": "left",
-            "offset": 0.343
+            "offset": 0.341
           }
         },
         "route": {
@@ -162,14 +162,14 @@
           "element": "motorController",
           "anchor": {
             "side": "right",
-            "offset": 0.492
+            "offset": 0.489
           }
         },
         "target": {
           "element": "hubMotor",
           "anchor": {
             "side": "left",
-            "offset": 0.492
+            "offset": 0.489
           }
         },
         "route": {
@@ -194,14 +194,14 @@
           "element": "rider",
           "anchor": {
             "side": "right",
-            "offset": 0.641
+            "offset": 0.637
           }
         },
         "target": {
           "element": "brakeSystem",
           "anchor": {
             "side": "left",
-            "offset": 0.641
+            "offset": 0.637
           }
         },
         "route": {
@@ -226,14 +226,14 @@
           "element": "brakeSystem",
           "anchor": {
             "side": "left",
-            "offset": 0.79
+            "offset": 0.786
           }
         },
         "target": {
           "element": "motorController",
           "anchor": {
             "side": "right",
-            "offset": 0.79
+            "offset": 0.786
           }
         },
         "route": {
@@ -258,14 +258,14 @@
           "element": "motorController",
           "anchor": {
             "side": "right",
-            "offset": 0.939
+            "offset": 0.934
           }
         },
         "target": {
           "element": "hubMotor",
           "anchor": {
             "side": "left",
-            "offset": 0.939
+            "offset": 0.934
           }
         },
         "route": {

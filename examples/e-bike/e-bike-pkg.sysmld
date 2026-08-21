@@ -165,14 +165,7 @@
             }
           ]
         },
-        "labels": [
-          {
-            "text": "contains",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
+        "labels": [],
         "style": "connector.default",
         "model_ref": "BikeModel"
       },
@@ -238,14 +231,7 @@
             }
           ]
         },
-        "labels": [
-          {
-            "text": "contains",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
+        "labels": [],
         "style": "connector.default",
         "model_ref": "BikeModel"
       },
@@ -278,14 +264,7 @@
             }
           ]
         },
-        "labels": [
-          {
-            "text": "contains",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
+        "labels": [],
         "style": "connector.default",
         "model_ref": "BikeModel"
       }

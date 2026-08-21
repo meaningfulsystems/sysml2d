@@ -359,17 +359,6 @@
         "label": ""
       },
       {
-        "id": "frame--humanInterface--src",
-        "model_ref": "frame--humanInterface--src",
-        "symbol": "port",
-        "owner": "frame",
-        "placement": {
-          "side": "right",
-          "offset": 0.25
-        },
-        "label": ""
-      },
-      {
         "id": "frame--brakeSystem--src",
         "model_ref": "frame--brakeSystem--src",
         "symbol": "port",
@@ -392,13 +381,24 @@
         "label": ""
       },
       {
+        "id": "frame--humanInterface--src",
+        "model_ref": "frame--humanInterface--src",
+        "symbol": "port",
+        "owner": "frame",
+        "placement": {
+          "side": "top",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
         "id": "frame--hubMotor--src",
         "model_ref": "frame--hubMotor--src",
         "symbol": "port",
         "owner": "frame",
         "placement": {
           "side": "top",
-          "offset": 0.5
+          "offset": 0.6667
         },
         "label": ""
       },
@@ -458,11 +458,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 375,
+              "x": 363.333,
               "y": 282.5
             },
             {
-              "x": 375,
+              "x": 363.333,
               "y": 397.997
             }
           ]
@@ -498,7 +498,7 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 161,
+              "x": 189.339,
               "y": 200
             },
             {
@@ -523,7 +523,7 @@
         "source": {
           "element": "frame--humanInterface--src",
           "anchor": {
-            "side": "right",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -538,11 +538,7 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 305,
-              "y": 243.5
-            },
-            {
-              "x": 305,
+              "x": 132.661,
               "y": 128.003
             }
           ]

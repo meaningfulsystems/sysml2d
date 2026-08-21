@@ -12,6 +12,7 @@ All notable changes to SysMLD are documented here.
 ### Changed
 
 - Shared router refuses any orthogonal path through a node or part rectangle; hop-overs stay line-on-line only. Interconnection views (e-bike, toaster, blender) detour around boxes
+- State-machine long skip-rank returns can step off the top rail; interaction canvases no longer reserve a blank trailing message row
 - Generic view routing now keeps fan-out/fan-in on separated tracks, snaps exclusive 1:1 pairs to a straight line, and places association rails outside system-boundary groups
 - Crossing hop-overs are drawn at true interior crossings, including near route corners (still skipped at shared connection endpoints)
 - Connection labels on generic, action, and requirement views sit beside the line instead of on the centerline

@@ -165,6 +165,31 @@ class ComposeTests(unittest.TestCase):
 
         self.assertEqual(_route_box_hits(doc), [])
 
+    def test_ebike_frame_mounts_do_not_hop_each_other(self):
+        spec_path = ROOT / "examples" / "e-bike" / "e-bike-ibd.json"
+        spec = json.loads(spec_path.read_text(encoding="utf-8"))
+        doc = compose(spec)
+        elements = {element["id"]: element for element in doc["diagram"]["elements"]}
+        mounts = [
+            connection
+            for connection in doc["diagram"]["connections"]
+            if connection["id"].startswith("conn-frame-")
+        ]
+        from sysmld.routing import hop_crossings
+
+        paths = []
+        for connection in mounts:
+            paths.append([
+                _port_point(elements, connection["source"]["element"]),
+                *[
+                    (point["x"], point["y"])
+                    for point in connection["route"].get("waypoints", [])
+                ],
+                _port_point(elements, connection["target"]["element"]),
+            ])
+        hops = hop_crossings(paths)
+        self.assertEqual([item for group in hops for item in group], [])
+
     def test_blender_composed_routes_do_not_cross_element_interiors(self):
         spec_path = ROOT / "examples" / "blender" / "blender-ibd-composed.json"
         spec = json.loads(spec_path.read_text(encoding="utf-8"))

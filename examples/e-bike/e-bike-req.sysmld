@@ -11,7 +11,7 @@
     "kind": "RequirementView",
     "name": "Electric Bike Requirements",
     "canvas": {
-      "width": 1337,
+      "width": 1867,
       "height": 430,
       "background": "#FFFFFF"
     },
@@ -38,7 +38,7 @@
         "model_ref": "rangeRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 400,
+          "x": 379,
           "y": 72,
           "width": 209,
           "height": 88,
@@ -52,7 +52,7 @@
         "model_ref": "assistLimitRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 714,
+          "x": 644,
           "y": 72,
           "width": 209,
           "height": 88,
@@ -66,13 +66,41 @@
         "model_ref": "chargeSafetyRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1007,
+          "x": 909,
           "y": 72,
           "width": 258,
           "height": 88,
           "z": 10
         },
         "label": "\u00abrequirement\u00bb\nREQ-E-004 Charge Safety\nStop on over-temp, over-voltage,\nor charger disconnect.",
+        "style": "requirement"
+      },
+      {
+        "id": "structuralRequirement",
+        "model_ref": "structuralRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1223,
+          "y": 72,
+          "width": 251,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-030 Structure\nFrame carries rider, cargo, and\nbattery loads without yield.",
+        "style": "requirement"
+      },
+      {
+        "id": "displayRequirement",
+        "model_ref": "displayRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1530,
+          "y": 72,
+          "width": 265,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-020 Display\nShow speed, assist, and remaining\nrange on the bar display.",
         "style": "requirement"
       },
       {
@@ -90,39 +118,11 @@
         "style": "requirement"
       },
       {
-        "id": "structuralRequirement",
-        "model_ref": "structuralRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 379,
-          "y": 270,
-          "width": 251,
-          "height": 88,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nREQ-E-030 Structure\nFrame carries rider, cargo, and\nbattery loads without yield.",
-        "style": "requirement"
-      },
-      {
-        "id": "displayRequirement",
-        "model_ref": "displayRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 686,
-          "y": 270,
-          "width": 265,
-          "height": 88,
-          "z": 10
-        },
-        "label": "\u00abrequirement\u00bb\nREQ-E-020 Display\nShow speed, assist, and remaining\nrange on the bar display.",
-        "style": "requirement"
-      },
-      {
         "id": "batteryCutoffRequirement",
         "model_ref": "batteryCutoffRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1014,
+          "x": 916,
           "y": 270,
           "width": 244,
           "height": 88,
@@ -145,68 +145,6 @@
         },
         "target": {
           "element": "brakeOverrideRequirement",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "polyline",
-          "waypoints": []
-        },
-        "labels": [
-          {
-            "text": "refine",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.default"
-      },
-      {
-        "id": "conn-rangeRequirement-structuralRequirement",
-        "model_ref": "rangeRequirement",
-        "source": {
-          "element": "rangeRequirement",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "structuralRequirement",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "polyline",
-          "waypoints": []
-        },
-        "labels": [
-          {
-            "text": "trace",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.default"
-      },
-      {
-        "id": "conn-assistLimitRequirement-displayRequirement",
-        "model_ref": "assistLimitRequirement",
-        "source": {
-          "element": "assistLimitRequirement",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "displayRequirement",
           "anchor": {
             "side": "top",
             "offset": 0.5

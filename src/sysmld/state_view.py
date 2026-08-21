@@ -48,6 +48,7 @@ from pathlib import Path
 from typing import Any
 
 from .layout import compute as _layout
+from .routing import path_crosses_boxes
 
 # ── Layout constants ──────────────────────────────────────────────────────────
 CANVAS_MARGIN   = 40
@@ -250,12 +251,6 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
     by = min(y     for x, y, w, h in boxes.values()) - BND_PAD
     bw = max(x + w for x, y, w, h in boxes.values()) - bx + BND_PAD
     bh = max(y + h for x, y, w, h in boxes.values()) - by + BND_PAD
-
-    if n_back > 0 and vertical:
-        bw += BACK_ARC_MARGIN + (n_back - 1) * BACK_ARC_STEP
-    elif n_back > 0:
-        bw += BACK_ARC_MARGIN + (n_back - 1) * BACK_ARC_STEP
-        bh += BACK_ARC_MARGIN + (n_back - 1) * BACK_ARC_STEP
 
     canvas_w = bx + bw + CANVAS_MARGIN
     canvas_h = by + bh + CANVAS_MARGIN
@@ -500,7 +495,13 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
             if sy + sh_ <= ty:
                 return "over_top" if sx > tx and rank_delta == 1 else None
             if ty + th_ <= sy:
-                return "under_bottom" if sx > tx and rank_delta == 1 else None
+                if sx > tx and rank_delta == 1:
+                    under_y = max(sy + sh_, ty + th_) + SELF_LOOP_H
+                    under_path = [(sx + sw_ / 2, under_y), (tx + tw_ / 2, under_y)]
+                    if path_crosses_boxes(under_path, boxes, {src, tgt}):
+                        return "over_top"
+                    return "under_bottom"
+                return None
             return None
         if sx <= tx:
             return None
@@ -664,6 +665,15 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
                         prefer="above",
                     )
                     top_lane += 1
+                    if mode == "top_span":
+                        stepped = _stepped_skip_return(
+                            t["from"], t["to"], source_x, local_y, boxes
+                        )
+                        if stepped is not None:
+                            wps, tgt_face, toff = stepped
+                            _append_back(out_conns, t, tid, subject_raw, t["from"], t["to"],
+                                         src_face, soff, tgt_face, toff, wps)
+                            continue
                 else:
                     src_face, tgt_face = "bottom", "bottom"
                     source_x = round(_anchor_xy(t["from"], src_face, soff)[0])
@@ -812,7 +822,117 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
     }
     if subject_raw:
         doc["diagram"]["subject"] = subject_raw
+    _fit_stm_canvas(doc, boxes, out_elems, out_conns)
     return doc
+
+
+def _stepped_skip_return(
+    src: str,
+    tgt: str,
+    source_x: float,
+    rail_y: float,
+    boxes: dict[str, tuple[float, float, float, float]],
+) -> tuple[list[dict[str, float]], str, float] | None:
+    sx, sy, sw, sh = boxes[src]
+    tx, ty, tw, th = boxes[tgt]
+    if abs(source_x - (tx + tw / 2)) < 280:
+        return None
+    skip = {src, tgt}
+    target_y = ty + th / 2
+    target_x = tx + tw
+    candidates = [sx - SELF_LOOP_H]
+    for sid, (x, y, w, h) in boxes.items():
+        if sid in skip:
+            continue
+        if x + w <= tx or x >= sx:
+            continue
+        candidates.append(x - SELF_LOOP_H)
+        candidates.append(x + w + SELF_LOOP_H)
+    for drop_x in sorted(set(round(value, 3) for value in candidates), reverse=True):
+        if drop_x >= sx or drop_x <= tx + tw:
+            continue
+        points = [
+            (source_x, sy),
+            (source_x, rail_y),
+            (drop_x, rail_y),
+            (drop_x, target_y),
+            (target_x, target_y),
+        ]
+        if path_crosses_boxes(points, boxes, skip):
+            continue
+        return (
+            [
+                {"x": round(source_x), "y": round(rail_y)},
+                {"x": round(drop_x), "y": round(rail_y)},
+                {"x": round(drop_x), "y": round(target_y)},
+            ],
+            "right",
+            0.5,
+        )
+    return None
+
+
+def _fit_stm_canvas(
+    doc: dict[str, Any],
+    boxes: dict[str, tuple[float, float, float, float]],
+    elements: list[dict[str, Any]],
+    connections: list[dict[str, Any]],
+) -> None:
+    xs: list[float] = []
+    ys: list[float] = []
+    for sid, (x, y, w, h) in boxes.items():
+        if sid == "boundary":
+            continue
+        xs.extend((x, x + w))
+        ys.extend((y, y + h))
+    by_id = {element["id"]: element for element in elements}
+
+    def _anchor(element_id: str, side: str, offset: float) -> tuple[float, float]:
+        layout = by_id[element_id]["layout"]
+        x, y, w, h = layout["x"], layout["y"], layout["width"], layout["height"]
+        if side == "left":
+            return x, y + h * offset
+        if side == "right":
+            return x + w, y + h * offset
+        if side == "top":
+            return x + w * offset, y
+        return x + w * offset, y + h
+
+    for connection in connections:
+        sx, sy = _anchor(
+            connection["source"]["element"],
+            connection["source"]["anchor"]["side"],
+            float(connection["source"]["anchor"]["offset"]),
+        )
+        tx, ty = _anchor(
+            connection["target"]["element"],
+            connection["target"]["anchor"]["side"],
+            float(connection["target"]["anchor"]["offset"]),
+        )
+        xs.extend((sx, tx))
+        ys.extend((sy, ty))
+        for point in connection["route"].get("waypoints", []):
+            xs.append(float(point["x"]))
+            ys.append(float(point["y"]))
+    if not xs or not ys:
+        return
+    pad = 36
+    raw_bx = min(xs) - pad
+    raw_by = min(ys) - pad
+    raw_br = max(xs) + pad
+    raw_bb = max(ys) + pad
+    for element in elements:
+        if element["id"] == "boundary":
+            element["layout"] = {
+                "x": round(raw_bx),
+                "y": round(raw_by),
+                "width": round(raw_br - raw_bx),
+                "height": round(raw_bb - raw_by),
+                "z": 0,
+            }
+            break
+    doc["diagram"]["canvas"]["width"] = round(max(raw_br, 0) + CANVAS_MARGIN)
+    doc["diagram"]["canvas"]["height"] = round(max(raw_bb, 0) + CANVAS_MARGIN)
 
 
 def _append_back(out_conns, t, tid, subject_raw, src, tgt,

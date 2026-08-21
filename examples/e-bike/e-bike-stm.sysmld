@@ -28,8 +28,8 @@
     "kind": "StateView",
     "name": "Ride Control State Machine",
     "canvas": {
-      "width": 1557,
-      "height": 538,
+      "width": 1423,
+      "height": 432,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -41,10 +41,10 @@
         "model_ref": "rideControl",
         "symbol": "boundary",
         "layout": {
-          "x": 95,
-          "y": 75,
-          "width": 1422,
-          "height": 423,
+          "x": 109,
+          "y": 5,
+          "width": 1274,
+          "height": 387,
           "z": 0
         },
         "compartments": {
@@ -327,15 +327,15 @@
         "source": {
           "element": "assist",
           "anchor": {
-            "side": "bottom",
+            "side": "top",
             "offset": 0.5
           }
         },
         "target": {
           "element": "standby",
           "anchor": {
-            "side": "bottom",
-            "offset": 0.5
+            "side": "top",
+            "offset": 0.3333
           }
         },
         "route": {
@@ -343,15 +343,11 @@
           "waypoints": [
             {
               "x": 1000,
-              "y": 356
+              "y": 69
             },
             {
-              "x": 625,
-              "y": 356
-            },
-            {
-              "x": 625,
-              "y": 185
+              "x": 696,
+              "y": 69
             }
           ]
         },
@@ -359,7 +355,7 @@
           {
             "text": "no pedal / brake",
             "position": {
-              "segment": 2,
+              "segment": 1,
               "offset": 0.5,
               "placement": "centerline"
             }
@@ -389,11 +385,11 @@
           "waypoints": [
             {
               "x": 718,
-              "y": 384
+              "y": 356
             },
             {
               "x": 437,
-              "y": 384
+              "y": 356
             }
           ]
         },
@@ -416,7 +412,7 @@
           "element": "standby",
           "anchor": {
             "side": "top",
-            "offset": 0.5
+            "offset": 0.6667
           }
         },
         "target": {
@@ -430,12 +426,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 718,
-              "y": 69
+              "x": 740,
+              "y": 41
             },
             {
               "x": 415,
-              "y": 69
+              "y": 41
             }
           ]
         },
@@ -464,8 +460,8 @@
         "target": {
           "element": "off",
           "anchor": {
-            "side": "top",
-            "offset": 0.6667
+            "side": "right",
+            "offset": 0.5
           }
         },
         "route": {
@@ -473,11 +469,15 @@
           "waypoints": [
             {
               "x": 1282,
-              "y": 97
+              "y": 85
             },
             {
-              "x": 459,
-              "y": 97
+              "x": 907,
+              "y": 85
+            },
+            {
+              "x": 907,
+              "y": 227
             }
           ]
         },
@@ -485,7 +485,7 @@
           {
             "text": "reset",
             "position": {
-              "segment": 1,
+              "segment": 2,
               "offset": 0.5,
               "placement": "centerline"
             }

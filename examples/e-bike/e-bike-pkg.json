@@ -47,8 +47,7 @@
     },
     {
       "from": "BikeModel",
-      "to": "BikeBehavior",
-      "label": "contains"
+      "to": "BikeBehavior"
     },
     {
       "from": "BikeModel",
@@ -56,13 +55,11 @@
     },
     {
       "from": "BikeModel",
-      "to": "BikeAnalysis",
-      "label": "contains"
+      "to": "BikeAnalysis"
     },
     {
       "from": "BikeModel",
-      "to": "BikeVerification",
-      "label": "contains"
+      "to": "BikeVerification"
     }
   ]
 }

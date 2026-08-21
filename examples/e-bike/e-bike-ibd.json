@@ -92,12 +92,16 @@
       "from": "frame",
       "to": "hubMotor",
       "label": "mount",
+      "source_side": "top",
+      "target_side": "top",
       "model_ref": "conn-frame-hubMotor"
     },
     {
       "from": "frame",
       "to": "humanInterface",
       "label": "mount",
+      "source_side": "top",
+      "target_side": "left",
       "model_ref": "conn-frame-humanInterface"
     },
     {

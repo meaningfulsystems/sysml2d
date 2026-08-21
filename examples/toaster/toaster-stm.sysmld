@@ -23,8 +23,8 @@
     "kind": "StateView",
     "name": "Toaster Control State Machine",
     "canvas": {
-      "width": 1086,
-      "height": 499,
+      "width": 1044,
+      "height": 485,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -36,10 +36,10 @@
         "model_ref": "toasterControl",
         "symbol": "boundary",
         "layout": {
-          "x": 95,
-          "y": 75,
-          "width": 951,
-          "height": 384,
+          "x": 109,
+          "y": 89,
+          "width": 895,
+          "height": 356,
           "z": 0
         },
         "compartments": {

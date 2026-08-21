@@ -38,13 +38,13 @@
     },
     "structuralRequirement": {
       "label": "\u00abrequirement\u00bb\nREQ-E-030 Structure\nFrame carries rider, cargo, and\nbattery loads without yield.",
-      "rank": 1,
-      "order": 1
+      "rank": 0,
+      "order": 4
     },
     "displayRequirement": {
       "label": "\u00abrequirement\u00bb\nREQ-E-020 Display\nShow speed, assist, and remaining\nrange on the bar display.",
-      "rank": 1,
-      "order": 2
+      "rank": 0,
+      "order": 5
     },
     "batteryCutoffRequirement": {
       "label": "\u00abrequirement\u00bb\nREQ-E-011 Battery Cutoff\nOpen the pack contactor before\nany cell exceeds its limit.",
@@ -56,16 +56,6 @@
     {
       "from": "rideSafetyRequirement",
       "to": "brakeOverrideRequirement",
-      "label": "refine"
-    },
-    {
-      "from": "rangeRequirement",
-      "to": "structuralRequirement",
-      "label": "trace"
-    },
-    {
-      "from": "assistLimitRequirement",
-      "to": "displayRequirement",
       "label": "refine"
     },
     {

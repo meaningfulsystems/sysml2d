@@ -176,7 +176,7 @@ def interaction(spec: dict[str, Any]) -> dict[str, Any]:
     message_gap = int(spec.get("message_gap", 54))
     top = int(spec.get("top", 70))
     left = int(spec.get("left", 70))
-    height = top + 70 + max(1, len(messages)) * message_gap + 8
+    height = top + 70 + max(0, len(messages) - 1) * message_gap + 32
     elements = []
     centers: dict[str, float] = {}
     cursor_x = left
@@ -191,7 +191,7 @@ def interaction(spec: dict[str, Any]) -> dict[str, Any]:
         element = {
             "id": line_id,
             "symbol": "lifeline",
-            "layout": {"x": x, "y": top, "width": width, "height": height - top - 40, "z": 10},
+            "layout": {"x": x, "y": top, "width": width, "height": height - top - 8, "z": 10},
             "label": line.get("label", line_id),
             "style": line.get("style", "lifeline"),
         }
@@ -213,11 +213,11 @@ def interaction(spec: dict[str, Any]) -> dict[str, Any]:
                 {"x": _clean(centers[src] + 70), "y": y},
                 {"x": _clean(centers[src] + 70), "y": y + 28},
             ]
-            target_offset = (y + 28 - top) / (height - top - 40)
+            target_offset = (y + 28 - top) / (height - top - 8)
         else:
             waypoints = []
-            target_offset = (y - top) / (height - top - 40)
-        source_offset = (y - top) / (height - top - 40)
+            target_offset = (y - top) / (height - top - 8)
+        source_offset = (y - top) / (height - top - 8)
         connections.append({
             "id": message.get("id", f"msg-{index + 1}"),
             "model_ref": message.get("model_ref", message.get("id", src)),
