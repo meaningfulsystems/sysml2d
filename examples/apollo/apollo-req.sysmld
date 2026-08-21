@@ -254,7 +254,7 @@
           "height": 118,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nService Propulsion System\nsources disagree on vacuum\nthrust. There is no required\nthrust and no loaded-mass\nrequirement.",
+        "label": "\u00abrequirement\u00bb\nService Propulsion System\nsources disagree on vacuum\nthrust.\nThere is no required thrust.\nLoaded mass stays unmarked.",
         "style": "requirement"
       },
       {
@@ -264,11 +264,11 @@
         "layout": {
           "x": 72,
           "y": 708,
-          "width": 216,
+          "width": 230,
           "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nDescent Propulsion System\nsources disagree on thrust\nand throttle. There is no\nrequired thrust.",
+        "label": "\u00abrequirement\u00bb\nDescent Propulsion System\nsources disagree on thrust\nand throttle.\nThere is no required thrust.",
         "style": "requirement"
       },
       {
@@ -276,7 +276,7 @@
         "model_ref": "pipaRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 324,
+          "x": 338,
           "y": 708,
           "width": 223,
           "height": 103,
@@ -290,7 +290,7 @@
         "model_ref": "vhfRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 583,
+          "x": 597,
           "y": 708,
           "width": 244,
           "height": 103,
@@ -304,7 +304,7 @@
         "model_ref": "isolationRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 863,
+          "x": 877,
           "y": 708,
           "width": 251,
           "height": 103,
@@ -318,7 +318,7 @@
         "model_ref": "recoveryRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1150,
+          "x": 1164,
           "y": 708,
           "width": 244,
           "height": 103,
@@ -352,7 +352,7 @@
           "height": 118,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nLunar Module descent oxygen is\na teaching figure. Another\ntechnical note prints a different\ntank pressure. There is no\nrequired pressure.",
+        "label": "\u00abrequirement\u00bb\nLunar Module descent oxygen is\na teaching figure. Another\ntechnical note prints a different\ntank pressure.\nThere is no required pressure.",
         "style": "requirement"
       },
       {

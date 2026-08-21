@@ -94,12 +94,12 @@
       "order": 3
     },
     "spsRequirement": {
-      "label": "«requirement»\nService Propulsion System\nsources disagree on vacuum\nthrust. There is no required\nthrust and no loaded-mass\nrequirement.",
+      "label": "«requirement»\nService Propulsion System\nsources disagree on vacuum\nthrust.\nThere is no required thrust.\nLoaded mass stays unmarked.",
       "rank": 3,
       "order": 4
     },
     "dpsRequirement": {
-      "label": "«requirement»\nDescent Propulsion System\nsources disagree on thrust\nand throttle. There is no\nrequired thrust.",
+      "label": "«requirement»\nDescent Propulsion System\nsources disagree on thrust\nand throttle.\nThere is no required thrust.",
       "rank": 4,
       "order": 0
     },
@@ -129,7 +129,7 @@
       "order": 0
     },
     "lm5ConsumableRequirement": {
-      "label": "«requirement»\nLunar Module descent oxygen is\na teaching figure. Another\ntechnical note prints a different\ntank pressure. There is no\nrequired pressure.",
+      "label": "«requirement»\nLunar Module descent oxygen is\na teaching figure. Another\ntechnical note prints a different\ntank pressure.\nThere is no required pressure.",
       "rank": 5,
       "order": 1
     },
