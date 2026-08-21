@@ -331,11 +331,8 @@ def _definition_box_hits(doc):
             *[(point["x"], point["y"]) for point in connection["route"].get("waypoints", [])],
             _anchor(elements[target["element"]], target["anchor"]["side"]),
         ]
-        own = {source["element"], target["element"]}
         for start, end in zip(points, points[1:]):
             for box_id, box in boxes.items():
-                if box_id in own:
-                    continue
                 if _segment_hits(start, end, box):
                     hits.append((connection["id"], box_id))
     return hits

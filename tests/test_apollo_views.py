@@ -237,6 +237,15 @@ class ApolloViewTests(unittest.TestCase):
         rso = bdd_conns["conn-apollo-RSO"]["route"]["waypoints"]
         self.assertEqual(len(rso), 2)
         self.assertEqual(rso[0]["x"], rso[1]["x"])
+        sla_conn = bdd_conns["conn-SaturnV-SLA"]
+        self.assertEqual(sla_conn["target"]["anchor"]["side"], "top")
+        sla = bdd_boxes["SLA"]
+        sla_points = _definition_connection_points(bdd, sla_conn)
+        for start, end in zip(sla_points, sla_points[1:]):
+            self.assertFalse(
+                _segment_crosses_interior(start, end, sla),
+                f"SaturnV→SLA segment {start}->{end} goes through SLA",
+            )
 
     def test_apollo_locked_msml_names(self):
         text = (APOLLO / "apollo.sysml").read_text(encoding="utf-8")
@@ -472,11 +481,8 @@ def _definition_route_box_hits(doc: dict) -> list[tuple[str, str]]:
             *[(point["x"], point["y"]) for point in connection["route"].get("waypoints", [])],
             _element_anchor(elements[target["element"]], target["anchor"]),
         ]
-        own = {source["element"], target["element"]}
         for start, end in zip(points, points[1:]):
             for box_id, box in boxes.items():
-                if box_id in own:
-                    continue
                 if _segment_crosses_interior(start, end, box):
                     hits.append((connection["id"], box_id))
     return hits

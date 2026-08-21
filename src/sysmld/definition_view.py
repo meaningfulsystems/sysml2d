@@ -396,7 +396,11 @@ def _connection(
     later_row = _is_later_row(boxes[child.id], primary_target, direction)
     side_rail = False
     if avoid_boxes and break_column_spines and direction == "top-down":
-        if later_row and _stacked_under_first_row(boxes[child.id], first_row_boxes):
+        if (
+            later_row
+            and _stacked_under_first_row(boxes[child.id], first_row_boxes)
+            and _same_column_descendant(child, boxes)
+        ):
             target_side = "left" if _center_x(boxes[child.id]) <= _center_x(boxes[parent.id]) else "right"
             side_rail = True
         elif _has_sibling_blocker_above(parent, boxes, parent_of or {}):
@@ -433,13 +437,11 @@ def _connection(
         )
     if avoid_boxes:
         points = [source_point, *[(point["x"], point["y"]) for point in waypoints], target_point]
-        ignore = {parent.id, child.id}
-        if path_crosses_boxes(points, boxes, ignore):
+        if path_crosses_boxes(points, boxes):
             avoided = orthogonal_path_avoiding_boxes(
                 source_point,
                 target_point,
                 boxes,
-                ignore=ignore,
                 preferred=points,
             )
             waypoints = _clean_waypoints(avoided)
@@ -546,6 +548,22 @@ def _is_later_row(
     if direction in {"top-down", "bottom-up"}:
         return abs(_anchor_point(child_box, "top" if direction == "top-down" else "bottom")[1] - primary_target[1]) > 20
     return abs(_anchor_point(child_box, "left" if direction == "left-right" else "right")[0] - primary_target[0]) > 20
+
+
+def _same_column_descendant(
+    node: TreeNode,
+    boxes: dict[str, tuple[int, int, int, int]],
+    tol: float = 8,
+) -> bool:
+    if node.id not in boxes:
+        return False
+    cx = _center_x(boxes[node.id])
+    for child in node.children:
+        if child.id in boxes and abs(_center_x(boxes[child.id]) - cx) <= tol:
+            return True
+        if _same_column_descendant(child, boxes, tol):
+            return True
+    return False
 
 
 def _stacked_under_first_row(

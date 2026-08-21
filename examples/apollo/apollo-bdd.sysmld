@@ -1355,7 +1355,7 @@
         "target": {
           "element": "SLA",
           "anchor": {
-            "side": "right",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -1363,12 +1363,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 512,
-              "y": 222
+              "x": 426,
+              "y": 250
             },
             {
-              "x": 512,
-              "y": 456
+              "x": 682,
+              "y": 250
+            },
+            {
+              "x": 682,
+              "y": 402
+            },
+            {
+              "x": 584,
+              "y": 402
             }
           ]
         },
@@ -1376,7 +1384,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4

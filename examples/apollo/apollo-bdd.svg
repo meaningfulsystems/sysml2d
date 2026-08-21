@@ -104,8 +104,8 @@
 <path d="M 426,222 L 426,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 426,222 L 426,261 L 584,261 L 584,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 426,222 L 426,250 L 170,250 L 170,456 L 198,456" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 426,222 L 512,222 L 512,254 A 7 7 0 0 1 512,268 L 512,456 L 654,456" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 426,222 L 426,250 L 505,250 A 7 7 0 0 0 519,250 L 682,250 L 682,402 L 742,402 L 742,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 426,222 L 426,250 L 682,250 L 682,402 L 584,402 L 584,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 426,222 L 426,250 L 682,250 L 682,402 L 742,402 L 742,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 198,456 L 198,508 L 110,508 L 110,560" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 198,456 L 186,456 L 186,501 A 7 7 0 0 1 186,515 L 186,586 L 198,586" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 338,456 L 338,508 L 426,508 L 426,560" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
@@ -144,7 +144,7 @@
 <text class="small" x="436" y="281.96">1</text>
 <text class="small" x="594" y="288.98">1</text>
 <text class="small" x="206.32" y="452">1</text>
-<text class="small" x="655.48" y="452">1</text>
+<text class="small" x="594" y="424.32">1</text>
 <text class="small" x="752" y="424.32">1</text>
 <text class="small" x="120" y="546.64">1</text>
 <text class="small" x="207.28" y="582">1</text>
