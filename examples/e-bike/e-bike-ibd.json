@@ -73,7 +73,7 @@
       "style": "part.control"
     },
     "hubMotor": {
-      "label": "Hub Motor",
+      "label": "Rear Geared Hub",
       "style": "part.mechanical"
     },
     "frame": {

@@ -12,7 +12,7 @@
     "name": "Electric Bike Allocations",
     "canvas": {
       "width": 624,
-      "height": 802,
+      "height": 988,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -90,7 +90,7 @@
         "model_ref": "brakeSystem"
       },
       {
-        "id": "batteryPack",
+        "id": "motorController",
         "symbol": "part_usage",
         "layout": {
           "x": 402,
@@ -99,12 +99,12 @@
           "height": 70,
           "z": 10
         },
-        "label": "Battery Pack",
+        "label": "Controller",
         "style": "part_usage",
-        "model_ref": "batteryPack"
+        "model_ref": "motorController"
       },
       {
-        "id": "motorController",
+        "id": "cadenceSensor",
         "symbol": "part_usage",
         "layout": {
           "x": 402,
@@ -113,9 +113,37 @@
           "height": 70,
           "z": 10
         },
-        "label": "Controller",
+        "label": "Cadence Sensor",
         "style": "part_usage",
-        "model_ref": "motorController"
+        "model_ref": "cadenceSensor"
+      },
+      {
+        "id": "bms",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 654,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "BMS",
+        "style": "part_usage",
+        "model_ref": "bms"
+      },
+      {
+        "id": "batteryPack",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 846,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Battery Pack",
+        "style": "part_usage",
+        "model_ref": "batteryPack"
       }
     ],
     "connections": [
@@ -151,6 +179,126 @@
         "model_ref": "allocateSafetyToBrakes"
       },
       {
+        "id": "conn-rideSafetyRequirement-motorController",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 290,
+              "y": 113
+            },
+            {
+              "x": 290,
+              "y": 305
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateSafetyToController"
+      },
+      {
+        "id": "conn-rideSafetyRequirement-cadenceSensor",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cadenceSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 306,
+              "y": 113
+            },
+            {
+              "x": 306,
+              "y": 497
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateSafetyToSensors"
+      },
+      {
+        "id": "conn-rideSafetyRequirement-bms",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "bms",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 322,
+              "y": 113
+            },
+            {
+              "x": 322,
+              "y": 689
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateSafetyToBms"
+      },
+      {
         "id": "conn-rangeRequirement-batteryPack",
         "source": {
           "element": "rangeRequirement",
@@ -168,7 +316,16 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 354,
+              "y": 305
+            },
+            {
+              "x": 354,
+              "y": 881
+            }
+          ]
         },
         "labels": [
           {
@@ -201,12 +358,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 354,
+              "x": 338,
               "y": 689
             },
             {
-              "x": 354,
-              "y": 497
+              "x": 338,
+              "y": 305
             }
           ]
         },
@@ -222,7 +379,7 @@
         "model_ref": "allocateAssistToController"
       },
       {
-        "id": "conn-chargeSafetyRequirement-batteryPack",
+        "id": "conn-chargeSafetyRequirement-bms",
         "source": {
           "element": "chargeSafetyRequirement",
           "anchor": {
@@ -231,7 +388,7 @@
           }
         },
         "target": {
-          "element": "batteryPack",
+          "element": "bms",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -241,12 +398,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 322,
+              "x": 370,
               "y": 497
             },
             {
-              "x": 322,
-              "y": 305
+              "x": 370,
+              "y": 689
             }
           ]
         },

@@ -14,7 +14,7 @@
     "rideStart": {"label": "", "symbol": "initial_state", "model_ref": null, "rank": 0, "order": 0},
     "powerOnBike": {"label": "Power On", "rank": 1, "order": 0},
     "selectAssist": {"label": "Select Assist", "rank": 2, "order": 0},
-    "pedalAndThrottle": {"label": "Pedal / Throttle", "rank": 3, "order": 0},
+    "pedalAndThrottle": {"label": "Pedal (EPAC)", "rank": 3, "order": 0},
     "deliverTorque": {"label": "Deliver Torque", "rank": 4, "order": 0},
     "brakeDecision": {"label": "brake?", "symbol": "decision_node", "model_ref": null, "rank": 5, "order": 0},
     "applyBrake": {"label": "Apply Brake", "rank": 6, "order": 0},

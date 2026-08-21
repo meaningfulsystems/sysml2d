@@ -1,11 +1,21 @@
 # Electric Bike Examples
 
-A street-legal class e-bike: frame, battery pack, motor controller, hub motor, rider interface, and brakes.
+EPAC (EN 15194) street-legal class: cadence PAS, no certified throttle, 25 km/h cutoff. Rear geared hub (no regen). BMS lives inside the battery pack (UL 2849).
 
-- `e-bike.sysml` is the SysML v2 model.
+- `e-bike.sysml` is the SysML v2 model. ElectricBike qualified names are frozen.
 - `*.json` files are deterministic composer intent files.
 - `*.sysmld` files are generated diagram layouts.
 - `*.svg` files are rendered output.
+
+Review bindings (do not treat a first-diagram slogan as truth):
+
+- 500 Wh / 60 km is a **Tour-mode** bind (~8.3 Wh/km), not Eco / PAS-1.
+- 50 ms brake inhibit is the electronic order. EN 15194 also carries the 5 m / 2 m distance cutoff.
+- `allocateChargeToBms` targets `BatteryPack::bms`, not the pack box.
+- Ride safety allocates to brakes **and** controller, cadence sensor, and BMS.
+- `lockBikeUseCase` is deleted (commercial, not EN 15194).
+- Lighting is StVZO / ISO 6742, not UN ECE R113.
+- `ThrottleCommand` remains as an id; it is not the certified EPAC control.
 
 ```bash
 sysmld definition      examples/e-bike/e-bike-bdd.json

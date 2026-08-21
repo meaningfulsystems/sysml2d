@@ -113,7 +113,7 @@
           "height": 70,
           "z": 10
         },
-        "label": "Hub Motor",
+        "label": "Rear Geared Hub",
         "style": "part_usage",
         "model_ref": "hubMotor"
       },

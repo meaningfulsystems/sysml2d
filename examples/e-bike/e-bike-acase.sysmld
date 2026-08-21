@@ -12,7 +12,7 @@
     "name": "Electric Bike Analysis Cases",
     "canvas": {
       "width": 951,
-      "height": 418,
+      "height": 607,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -32,6 +32,20 @@
         "label": "Range Analysis",
         "style": "case",
         "model_ref": "rangeAnalysis"
+      },
+      {
+        "id": "tourRangeAnalysis",
+        "symbol": "case",
+        "layout": {
+          "x": 72,
+          "y": 462,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Tour Range Bind",
+        "style": "case",
+        "model_ref": "tourRangeAnalysis"
       },
       {
         "id": "brakeLatencyAnalysis",
@@ -76,6 +90,20 @@
         "model_ref": "brakeLatencyLimit"
       },
       {
+        "id": "tourRangeBind",
+        "symbol": "constraint",
+        "layout": {
+          "x": 382,
+          "y": 459,
+          "width": 160,
+          "height": 76,
+          "z": 10
+        },
+        "label": "Tour Scenario",
+        "style": "constraint",
+        "model_ref": "tourRangeBind"
+      },
+      {
         "id": "rangeRequirement",
         "symbol": "requirement",
         "layout": {
@@ -85,7 +113,7 @@
           "height": 82,
           "z": 10
         },
-        "label": "Range Req",
+        "label": "Range Req (Tour)",
         "style": "requirement",
         "model_ref": "rangeRequirement"
       },
@@ -168,6 +196,77 @@
         "model_ref": "brakeLatencyAnalysis"
       },
       {
+        "id": "conn-rangeAnalysis-tourRangeBind",
+        "source": {
+          "element": "rangeAnalysis",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "tourRangeBind",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 302,
+              "y": 113
+            },
+            {
+              "x": 302,
+              "y": 497
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "scenario",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "rangeAnalysis"
+      },
+      {
+        "id": "conn-tourRangeAnalysis-tourRangeBind",
+        "source": {
+          "element": "tourRangeAnalysis",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "tourRangeBind",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "method",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "tourRangeAnalysis"
+      },
+      {
         "id": "conn-energyBalance-rangeRequirement",
         "source": {
           "element": "energyBalance",
@@ -197,6 +296,46 @@
         ],
         "style": "connector.default",
         "model_ref": "energyBalance"
+      },
+      {
+        "id": "conn-tourRangeBind-rangeRequirement",
+        "source": {
+          "element": "tourRangeBind",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rangeRequirement",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 648,
+              "y": 497
+            },
+            {
+              "x": 648,
+              "y": 113
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "binds",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "tourRangeBind"
       },
       {
         "id": "conn-brakeLatencyLimit-brakeOverrideRequirement",

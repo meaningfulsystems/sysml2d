@@ -11,7 +11,7 @@
     "kind": "InterfaceView",
     "name": "Electric Bike Interfaces",
     "canvas": {
-      "width": 604,
+      "width": 628,
       "height": 1114,
       "background": "#FFFFFF"
     },
@@ -95,11 +95,11 @@
         "layout": {
           "x": 382,
           "y": 252,
-          "width": 150,
+          "width": 174,
           "height": 70,
           "z": 10
         },
-        "label": "ThrottleCommand",
+        "label": "ThrottleCommand\n(not EPAC certified)",
         "style": "item",
         "model_ref": "ThrottleCommand"
       },

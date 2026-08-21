@@ -38,17 +38,29 @@
       "rank": 1,
       "order": 0
     },
-    "batteryPack": {
-      "label": "Battery Pack",
-      "symbol": "part_usage",
-      "rank": 1,
-      "order": 1
-    },
     "motorController": {
       "label": "Controller",
       "symbol": "part_usage",
       "rank": 1,
+      "order": 1
+    },
+    "cadenceSensor": {
+      "label": "Cadence Sensor",
+      "symbol": "part_usage",
+      "rank": 1,
       "order": 2
+    },
+    "bms": {
+      "label": "BMS",
+      "symbol": "part_usage",
+      "rank": 1,
+      "order": 3
+    },
+    "batteryPack": {
+      "label": "Battery Pack",
+      "symbol": "part_usage",
+      "rank": 1,
+      "order": 4
     }
   },
   "edges": [
@@ -57,6 +69,24 @@
       "to": "brakeSystem",
       "label": "allocate",
       "model_ref": "allocateSafetyToBrakes"
+    },
+    {
+      "from": "rideSafetyRequirement",
+      "to": "motorController",
+      "label": "allocate",
+      "model_ref": "allocateSafetyToController"
+    },
+    {
+      "from": "rideSafetyRequirement",
+      "to": "cadenceSensor",
+      "label": "allocate",
+      "model_ref": "allocateSafetyToSensors"
+    },
+    {
+      "from": "rideSafetyRequirement",
+      "to": "bms",
+      "label": "allocate",
+      "model_ref": "allocateSafetyToBms"
     },
     {
       "from": "rangeRequirement",
@@ -72,7 +102,7 @@
     },
     {
       "from": "chargeSafetyRequirement",
-      "to": "batteryPack",
+      "to": "bms",
       "label": "allocate",
       "model_ref": "allocateChargeToBms"
     }

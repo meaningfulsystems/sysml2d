@@ -34,7 +34,7 @@
 <path d="M 739.671,125 L 739.671,76 A 7 7 0 0 0 739.671,62 L 739.969,48.9999 Q 740,41 732,41 L 423,41 Q 415,41 415.017,49 L 415.329,197" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 1282,197 L 1282,93 Q 1282,85 1274,85 L 1007,85 A 7 7 0 0 1 993,85 L 915,85 Q 907,85 907,93 L 907,219 Q 907,227 899,227 L 502,227" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <text class="small" text-anchor="middle" x="552" y="194">power button</text>
-<text class="small" text-anchor="end" x="847" y="212.6">cadence / throttle</text>
+<text class="small" text-anchor="middle" x="859" y="199">cadence (EPAC)</text>
 <text class="small" text-anchor="middle" x="603" y="275.5">charger in</text>
 <text class="small" text-anchor="middle" x="1141" y="235">overcurrent</text>
 <text class="small" text-anchor="middle" x="848" y="77">no pedal / brake</text>

@@ -17,7 +17,7 @@
 <rect id="selectAssist" x="72" y="300" width="160" height="64" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="152" y="332">Select Assist</text>
 <rect id="pedalAndThrottle" x="72" y="436" width="160" height="64" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="152" y="468">Pedal / Throttle</text>
+<text class="label" text-anchor="middle" x="152" y="468">Pedal (EPAC)</text>
 <rect id="deliverTorque" x="72" y="572" width="160" height="64" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="152" y="604">Deliver Torque</text>
 <polygon id="brakeDecision" points="152,708 190,737 152,766 114,737" fill="#FEFCE8" stroke="#A16207" stroke-width="2"/>

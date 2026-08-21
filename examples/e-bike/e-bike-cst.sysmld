@@ -11,8 +11,8 @@
     "kind": "ConstraintView",
     "name": "Electric Bike Parametrics",
     "canvas": {
-      "width": 1244,
-      "height": 598,
+      "width": 1584,
+      "height": 776,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -146,16 +146,44 @@
         "model_ref": "brakeLatency"
       },
       {
+        "id": "tourWhPerKm",
+        "symbol": "value_property",
+        "layout": {
+          "x": 702,
+          "y": 646,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "tourWhPerKm\n~8.3 Wh/km",
+        "style": "value_property",
+        "model_ref": "tourWhPerKm"
+      },
+      {
+        "id": "tourRangeBind",
+        "symbol": "constraint",
+        "layout": {
+          "x": 1042,
+          "y": 72,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Tour Scenario\n(not Eco/PAS-1)",
+        "style": "constraint",
+        "model_ref": "tourRangeBind"
+      },
+      {
         "id": "rangeKm",
         "symbol": "value_property",
         "layout": {
-          "x": 1042,
+          "x": 1382,
           "y": 82,
           "width": 130,
           "height": 58,
           "z": 10
         },
-        "label": "rangeKm\n>= 60 km",
+        "label": "rangeKm\n>= 60 km Tour",
         "style": "value_property",
         "model_ref": "rangeKm"
       }
@@ -344,9 +372,80 @@
         "model_ref": "assistPowerLimit"
       },
       {
-        "id": "conn-rangeEstimate-rangeKm",
+        "id": "conn-rangeEstimate-tourRangeBind",
         "source": {
           "element": "rangeEstimate",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "tourRangeBind",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "feeds",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "rangeEstimate"
+      },
+      {
+        "id": "conn-tourWhPerKm-tourRangeBind",
+        "source": {
+          "element": "tourWhPerKm",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "tourRangeBind",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 983.333,
+              "y": 675
+            },
+            {
+              "x": 983.333,
+              "y": 111
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "tourWhPerKm"
+      },
+      {
+        "id": "conn-tourRangeBind-rangeKm",
+        "source": {
+          "element": "tourRangeBind",
           "anchor": {
             "side": "right",
             "offset": 0.5
@@ -372,7 +471,7 @@
           }
         ],
         "style": "connector.directed",
-        "model_ref": "rangeEstimate"
+        "model_ref": "tourRangeBind"
       },
       {
         "id": "conn-assistPowerLimit-assistPower",

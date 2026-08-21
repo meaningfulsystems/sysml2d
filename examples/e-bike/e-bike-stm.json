@@ -69,7 +69,7 @@
     {
       "from": "standby",
       "to": "assist",
-      "label": "cadence / throttle",
+      "label": "cadence (EPAC)",
       "model_ref": "startAssist"
     },
     {

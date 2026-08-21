@@ -236,7 +236,7 @@
         },
         "labels": [
           {
-            "text": "cadence / throttle",
+            "text": "cadence (EPAC)",
             "position": {
               "segment": 1,
               "offset": 0.5,

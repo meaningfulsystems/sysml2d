@@ -14,12 +14,16 @@
     "motorDef": "ElectricBike::HubMotor",
     "interfaceDef": "ElectricBike::HumanInterface",
     "brakeDef": "ElectricBike::BrakeSystem",
+    "bmsDef": "ElectricBike::BMS",
+    "cadenceDef": "ElectricBike::CadenceSensor",
     "framePart": "ElectricBike::ElectricBike::frame",
     "batteryPart": "ElectricBike::ElectricBike::batteryPack",
     "controllerPart": "ElectricBike::ElectricBike::motorController",
     "motorPart": "ElectricBike::ElectricBike::hubMotor",
     "interfacePart": "ElectricBike::ElectricBike::humanInterface",
-    "brakePart": "ElectricBike::ElectricBike::brakeSystem"
+    "brakePart": "ElectricBike::ElectricBike::brakeSystem",
+    "bmsPart": "ElectricBike::BatteryPack::bms",
+    "cadencePart": "ElectricBike::ElectricBike::cadenceSensor"
   },
   "direction": "top-down",
   "default_w": 190,
@@ -45,7 +49,15 @@
           "id": "batteryPack",
           "label": "Battery Pack",
           "model_ref": "batteryDef",
-          "part_ref": "batteryPart"
+          "part_ref": "batteryPart",
+          "children": [
+            {
+              "id": "bms",
+              "label": "BMS",
+              "model_ref": "bmsDef",
+              "part_ref": "bmsPart"
+            }
+          ]
         },
         {
           "id": "motorController",
@@ -55,7 +67,7 @@
         },
         {
           "id": "hubMotor",
-          "label": "Hub Motor",
+          "label": "Rear Geared Hub",
           "model_ref": "motorDef",
           "part_ref": "motorPart"
         },
@@ -70,6 +82,12 @@
           "label": "Brake System",
           "model_ref": "brakeDef",
           "part_ref": "brakePart"
+        },
+        {
+          "id": "cadenceSensor",
+          "label": "Cadence Sensor",
+          "model_ref": "cadenceDef",
+          "part_ref": "cadencePart"
         }
       ]
     }

@@ -60,10 +60,21 @@
       "rank": 2,
       "order": 2
     },
-    "rangeKm": {
-      "label": "rangeKm\n>= 60 km",
+    "tourWhPerKm": {
+      "label": "tourWhPerKm\n~8.3 Wh/km",
       "symbol": "value_property",
+      "rank": 2,
+      "order": 3
+    },
+    "tourRangeBind": {
+      "label": "Tour Scenario\n(not Eco/PAS-1)",
       "rank": 3,
+      "order": 0
+    },
+    "rangeKm": {
+      "label": "rangeKm\n>= 60 km Tour",
+      "symbol": "value_property",
+      "rank": 4,
       "order": 0
     }
   },
@@ -95,6 +106,16 @@
     },
     {
       "from": "rangeEstimate",
+      "to": "tourRangeBind",
+      "label": "feeds"
+    },
+    {
+      "from": "tourWhPerKm",
+      "to": "tourRangeBind",
+      "label": "bind"
+    },
+    {
+      "from": "tourRangeBind",
       "to": "rangeKm",
       "label": "result"
     },

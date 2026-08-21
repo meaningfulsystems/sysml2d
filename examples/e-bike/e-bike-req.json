@@ -12,17 +12,17 @@
   "sibling_gap": 56,
   "nodes": {
     "rideSafetyRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-001 Ride Safety\nBrake input cuts motor torque\nbefore the wheel keeps driving.",
+      "label": "\u00abrequirement\u00bb\nREQ-E-001 Ride Safety\nFail-silent: brakes, controller,\nsensors, and BMS cut torque.",
       "rank": 0,
       "order": 0
     },
     "rangeRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-002 Range\n>= 60 km PAS-1 range on a\n500 Wh pack.",
+      "label": "\u00abrequirement\u00bb\nREQ-E-002 Range (Tour)\n>= 60 km on 500 Wh at\n~8.3 Wh/km. Not Eco/PAS-1.",
       "rank": 0,
       "order": 1
     },
     "assistLimitRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-003 Assist Limit\nCut assist at 25 km/h for\nthe certified class.",
+      "label": "\u00abrequirement\u00bb\nREQ-E-003 Assist Limit\nEPAC cadence PAS, no throttle.\nCut assist at 25 km/h.",
       "rank": 0,
       "order": 2
     },
@@ -32,7 +32,7 @@
       "order": 3
     },
     "brakeOverrideRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-010 Brake Override\nInhibit motor within 50 ms of\neither brake lever.",
+      "label": "\u00abrequirement\u00bb\nREQ-E-010 Brake Override\nElectronic inhibit <= 50 ms.\n~10x tighter than EN 15194 m.",
       "rank": 1,
       "order": 0
     },
@@ -47,15 +47,30 @@
       "order": 5
     },
     "batteryCutoffRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-011 Battery Cutoff\nOpen the pack contactor before\nany cell exceeds its limit.",
+      "label": "\u00abrequirement\u00bb\nREQ-E-011 Battery Cutoff\nBMS inside the pack opens the\ncontactor (UL 2849).",
       "rank": 1,
       "order": 3
+    },
+    "en15194DistanceRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194 Distance\nCut assist within 5 m after\npedaling stops (2 m if tighter).",
+      "rank": 1,
+      "order": 2
+    },
+    "lightingRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-040 Lighting\nStVZO / ISO 6742.\nNot UN ECE R113.",
+      "rank": 0,
+      "order": 6
     }
   },
   "edges": [
     {
       "from": "rideSafetyRequirement",
       "to": "brakeOverrideRequirement",
+      "label": "refine"
+    },
+    {
+      "from": "assistLimitRequirement",
+      "to": "en15194DistanceRequirement",
       "label": "refine"
     },
     {

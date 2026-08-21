@@ -6,6 +6,7 @@ package ElectricBike {
         part hubMotor : HubMotor;
         part humanInterface : HumanInterface;
         part brakeSystem : BrakeSystem;
+        part cadenceSensor : CadenceSensor;
 
         port riderCommandIn : RiderPort;
         port chargerIn : ChargePort;
@@ -44,11 +45,15 @@ package ElectricBike {
     }
 
     part def Frame;
-    part def BatteryPack;
+    part def BatteryPack {
+        part bms : BMS;
+    }
+    part def BMS;
     part def MotorController;
     part def HubMotor;
     part def HumanInterface;
     part def BrakeSystem;
+    part def CadenceSensor;
 
     port def RiderPort;
     port def ChargePort;
@@ -73,12 +78,12 @@ package ElectricBike {
 
         transition startAssist
             first standby
-            accept cadenceOrThrottle
+            accept cadencePedal
             then assist;
 
         transition stopAssist
             first assist
-            accept noPedalAndClosedThrottle
+            accept noPedal
             then standby;
 
         transition brakeCut
@@ -149,25 +154,29 @@ package ElectricBike {
     flow brakeInhibitFlow;
     flow roadLoadFlow;
 
-    requirement rideSafetyRequirement       { doc /* Brake input shall cut motor torque before the wheel can keep driving the rider. */ }
-    requirement rangeRequirement            { doc /* The bike shall provide at least 60 km of PAS-1 range on a 500 Wh pack. */ }
-    requirement assistLimitRequirement      { doc /* Assist shall cut off at 25 km/h for the EU class being certified. */ }
-    requirement chargeSafetyRequirement     { doc /* Charging shall stop on over-temperature, over-voltage, or charger disconnect. */ }
-    requirement brakeOverrideRequirement    { doc /* Motor inhibit shall assert within 50 ms of either brake lever. */ }
+    requirement rideSafetyRequirement       { doc /* Motor fail-silent: brake input, controller, cadence/speed sensors, and BMS shall cut motor torque before the wheel can keep driving the rider. */ }
+    requirement rangeRequirement            { doc /* Tour-mode scenario only: at least 60 km on a 500 Wh pack (~8.3 Wh/km). Not Eco / PAS-1; undemonstrated unless this scenario is bound. */ }
+    requirement assistLimitRequirement      { doc /* EPAC (EN 15194): cadence PAS only, no certified throttle. Assist shall cut off at 25 km/h. */ }
+    requirement chargeSafetyRequirement     { doc /* Charging shall stop on over-temperature, over-voltage, or charger disconnect. UL 2849: the BMS inside the pack opens the contactor. */ }
+    requirement brakeOverrideRequirement    { doc /* Electronic inhibit shall assert within 50 ms of either brake lever. This is ~10x tighter than the EN 15194 distance test. */ }
+    requirement en15194DistanceRequirement  { doc /* EN 15194 distance cutoff: assistance shall cease within 5 m after pedaling stops, and within 2 m where that tighter clause applies. */ }
     requirement batteryCutoffRequirement    { doc /* The BMS shall open the pack contactor before any cell exceeds its voltage or temperature limit. */ }
     requirement displayRequirement          { doc /* The rider shall see speed, assist level, and remaining range without removing hands from the bars. */ }
     requirement structuralRequirement       { doc /* The frame shall carry rider, cargo, and battery loads without yielding. */ }
+    requirement lightingRequirement         { doc /* Lighting shall follow StVZO / ISO 6742. Not UN ECE R113. */ }
 
     constraint def energyBalance;
     constraint def rangeEstimate;
     constraint def assistPowerLimit;
     constraint def brakeLatencyLimit;
+    constraint def tourRangeBind;
     attribute packEnergy;
     attribute riderPower;
     attribute assistPower;
     attribute rangeKm;
     attribute cutoffSpeed;
     attribute brakeLatency;
+    attribute tourWhPerKm;
 
     action powerOnBike;
     action selectAssist;
@@ -183,9 +192,9 @@ package ElectricBike {
         include adjustAssistUseCase;
     }
     use case chargeBikeUseCase;
-    use case lockBikeUseCase;
     use case adjustAssistUseCase;
     analysis case rangeAnalysis;
+    analysis case tourRangeAnalysis;
     analysis case brakeLatencyAnalysis;
     verification case verifyRange;
     verification case verifyBrakeCutoff;
@@ -193,6 +202,9 @@ package ElectricBike {
     verification case verifyAssistLimit;
 
     allocation allocateSafetyToBrakes;
+    allocation allocateSafetyToController;
+    allocation allocateSafetyToBms;
+    allocation allocateSafetyToSensors;
     allocation allocateRangeToBattery;
     allocation allocateAssistToController;
     allocation allocateChargeToBms;

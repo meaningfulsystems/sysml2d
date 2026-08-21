@@ -28,7 +28,7 @@
 <rect id="motorController" x="692" y="82" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="767" y="117">Controller</text>
 <rect id="hubMotor" x="692" y="282" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="767" y="317">Hub Motor</text>
+<text class="label" text-anchor="middle" x="767" y="317">Rear Geared Hub</text>
 <rect id="road" x="1002" y="82" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1077" y="117">Road</text>
 <path d="M 142,117 L 382,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>

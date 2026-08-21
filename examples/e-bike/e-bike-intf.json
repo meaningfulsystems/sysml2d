@@ -35,7 +35,7 @@
       "order": 0
     },
     "ThrottleCommand": {
-      "label": "ThrottleCommand",
+      "label": "ThrottleCommand\n(not EPAC certified)",
       "symbol": "item",
       "rank": 1,
       "order": 1

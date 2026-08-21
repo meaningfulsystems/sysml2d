@@ -45,7 +45,7 @@
       "order": 0
     },
     "hubMotor": {
-      "label": "Hub Motor",
+      "label": "Rear Geared Hub",
       "symbol": "part_usage",
       "rank": 2,
       "order": 1

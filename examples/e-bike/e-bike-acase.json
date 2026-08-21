@@ -13,6 +13,11 @@
       "rank": 0,
       "order": 0
     },
+    "tourRangeAnalysis": {
+      "label": "Tour Range Bind",
+      "rank": 0,
+      "order": 2
+    },
     "brakeLatencyAnalysis": {
       "label": "Brake Latency",
       "rank": 0,
@@ -30,8 +35,14 @@
       "rank": 1,
       "order": 1
     },
+    "tourRangeBind": {
+      "label": "Tour Scenario",
+      "symbol": "constraint",
+      "rank": 1,
+      "order": 2
+    },
     "rangeRequirement": {
-      "label": "Range Req",
+      "label": "Range Req (Tour)",
       "symbol": "requirement",
       "rank": 2,
       "order": 0
@@ -55,9 +66,24 @@
       "label": "method"
     },
     {
+      "from": "rangeAnalysis",
+      "to": "tourRangeBind",
+      "label": "scenario"
+    },
+    {
+      "from": "tourRangeAnalysis",
+      "to": "tourRangeBind",
+      "label": "method"
+    },
+    {
       "from": "energyBalance",
       "to": "rangeRequirement",
       "label": "evaluates"
+    },
+    {
+      "from": "tourRangeBind",
+      "to": "rangeRequirement",
+      "label": "binds"
     },
     {
       "from": "brakeLatencyLimit",

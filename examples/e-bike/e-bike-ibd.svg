@@ -25,7 +25,7 @@
 <rect id="motorController" x="792" y="224" width="170" height="78" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="877" y="263">Motor Controller</text>
 <rect id="hubMotor" x="1150" y="224" width="170" height="78" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1235" y="263">Hub Motor</text>
+<text class="label" text-anchor="middle" x="1235" y="263">Rear Geared Hub</text>
 <rect id="frame" x="76" y="224" width="170" height="78" rx="4" fill="#F5F5F5" stroke="#616161" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="161" y="263">Frame</text>
 <rect id="humanInterface--bnd--tgt" x="428" y="95.9974" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
