@@ -10,19 +10,19 @@
   "col_gap": 70,
   "rank_gap": 170,
   "nodes": {
-    "cdr": {
+    "CDR": {
       "label": "CDR",
       "symbol": "actor",
       "rank": 0,
       "order": 0
     },
-    "mcc": {
-      "label": "MCC-H",
+    "MCC": {
+      "label": "MCC",
       "symbol": "actor",
       "rank": 0,
       "order": 1
     },
-    "rso": {
+    "RSO": {
       "label": "RSO",
       "symbol": "actor",
       "rank": 0,
@@ -66,27 +66,27 @@
   ],
   "edges": [
     {
-      "from": "cdr",
+      "from": "CDR",
       "to": "flyMissionUseCase",
       "source_offset": 0.3
     },
     {
-      "from": "cdr",
+      "from": "CDR",
       "to": "lunarEvaUseCase",
       "source_offset": 0.55
     },
     {
-      "from": "mcc",
+      "from": "MCC",
       "to": "flyMissionUseCase",
       "source_offset": 0.45
     },
     {
-      "from": "mcc",
+      "from": "MCC",
       "to": "recoverCrewUseCase",
       "source_offset": 0.7
     },
     {
-      "from": "rso",
+      "from": "RSO",
       "to": "rangeSafetyUseCase",
       "source_offset": 0.5
     },

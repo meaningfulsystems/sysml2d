@@ -6,33 +6,28 @@
     "apollo.sysml"
   ],
   "aliases": {
-    "mission": "Apollo11::Apollo11",
-    "oxygenLoop": "Apollo11::CMECS::oxygenLoop",
-    "waterLoop": "Apollo11::CMECS::waterLoop",
-    "suitCircuit": "Apollo11::CMECS::suitCircuit",
-    "co2Removal": "Apollo11::CMECS::co2Removal",
-    "suitLoop": "Apollo11::LMECS::suitLoop",
-    "waterSublimator": "Apollo11::LMECS::waterSublimator",
-    "oxygenLoop--suitCircuit--src": "Apollo11::CMECS::oxygenLoop",
-    "oxygenLoop--suitCircuit--tgt": "Apollo11::CMECS::suitCircuit",
-    "conn-oxygenLoop-suitCircuit": "Apollo11::CMECS::oxygenLoop",
-    "waterLoop--suitCircuit--src": "Apollo11::CMECS::waterLoop",
-    "waterLoop--suitCircuit--tgt": "Apollo11::CMECS::suitCircuit",
-    "conn-waterLoop-suitCircuit": "Apollo11::CMECS::waterLoop",
-    "suitCircuit--co2Removal--src": "Apollo11::CMECS::suitCircuit",
-    "suitCircuit--co2Removal--tgt": "Apollo11::CMECS::co2Removal",
-    "conn-suitCircuit-co2Removal": "Apollo11::CMECS::suitCircuit",
-    "suitLoop--waterSublimator--src": "Apollo11::LMECS::suitLoop",
-    "suitLoop--waterSublimator--tgt": "Apollo11::LMECS::waterSublimator",
-    "conn-suitLoop-waterSublimator": "Apollo11::LMECS::suitLoop"
+    "ECLSS": "Apollo11::CSM::ECLSS",
+    "oxygenLoop": "Apollo11::CSM::ECLSS::oxygenLoop",
+    "waterLoop": "Apollo11::CSM::ECLSS::waterLoop",
+    "suitCircuit": "Apollo11::CSM::ECLSS::suitCircuit",
+    "co2Removal": "Apollo11::CSM::ECLSS::co2Removal",
+    "oxygenLoop--suitCircuit--src": "Apollo11::CSM::ECLSS::oxygenLoop",
+    "oxygenLoop--suitCircuit--tgt": "Apollo11::CSM::ECLSS::suitCircuit",
+    "conn-oxygenLoop-suitCircuit": "Apollo11::CSM::ECLSS::oxygenLoop",
+    "waterLoop--suitCircuit--src": "Apollo11::CSM::ECLSS::waterLoop",
+    "waterLoop--suitCircuit--tgt": "Apollo11::CSM::ECLSS::suitCircuit",
+    "conn-waterLoop-suitCircuit": "Apollo11::CSM::ECLSS::waterLoop",
+    "suitCircuit--co2Removal--src": "Apollo11::CSM::ECLSS::suitCircuit",
+    "suitCircuit--co2Removal--tgt": "Apollo11::CSM::ECLSS::co2Removal",
+    "conn-suitCircuit-co2Removal": "Apollo11::CSM::ECLSS::suitCircuit"
   },
   "diagram": {
     "id": "apollo-ibd-eclss",
     "kind": "InterconnectionView",
-    "name": "CM / LM ECLSS Loops",
+    "name": "ECLSS loops",
     "canvas": {
-      "width": 892,
-      "height": 430,
+      "width": 836,
+      "height": 320,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -41,13 +36,13 @@
     "elements": [
       {
         "id": "boundary",
-        "model_ref": "mission",
+        "model_ref": "ECLSS",
         "symbol": "boundary",
         "layout": {
           "x": 40,
           "y": 40,
-          "width": 812,
-          "height": 350,
+          "width": 756,
+          "height": 240,
           "z": 0
         },
         "compartments": {
@@ -68,7 +63,7 @@
           "height": 58,
           "z": 10
         },
-        "label": "CM O2 loop\n5.0 psia",
+        "label": "O2 5.0 psia",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -82,12 +77,12 @@
         "symbol": "part_usage",
         "layout": {
           "x": 76,
-          "y": 296,
+          "y": 186,
           "width": 140,
           "height": 58,
           "z": 10
         },
-        "label": "CM water\n36 / 56 lb",
+        "label": "water 36/56 lb",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -100,13 +95,13 @@
         "model_ref": "suitCircuit",
         "symbol": "part_usage",
         "layout": {
-          "x": 376,
+          "x": 348,
           "y": 131,
           "width": 140,
           "height": 58,
           "z": 10
         },
-        "label": "Suit circuit",
+        "label": "suit circuit",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -119,51 +114,13 @@
         "model_ref": "co2Removal",
         "symbol": "part_usage",
         "layout": {
-          "x": 676,
-          "y": 186,
+          "x": 620,
+          "y": 131,
           "width": 140,
           "height": 58,
           "z": 10
         },
-        "label": "LiOH\nswap 12 h",
-        "compartments": {
-          "attributes": false,
-          "ports": true,
-          "actions": false
-        },
-        "style": "part.eclss"
-      },
-      {
-        "id": "suitLoop",
-        "model_ref": "suitLoop",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 76,
-          "y": 186,
-          "width": 140,
-          "height": 58,
-          "z": 10
-        },
-        "label": "LM suit loop",
-        "compartments": {
-          "attributes": false,
-          "ports": true,
-          "actions": false
-        },
-        "style": "part.eclss"
-      },
-      {
-        "id": "waterSublimator",
-        "model_ref": "waterSublimator",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 376,
-          "y": 241,
-          "width": 140,
-          "height": 58,
-          "z": 10
-        },
-        "label": "LM sublimator",
+        "label": "LiOH 12 h",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -236,28 +193,6 @@
           "offset": 0.5
         },
         "label": ""
-      },
-      {
-        "id": "suitLoop--waterSublimator--src",
-        "model_ref": "suitLoop--waterSublimator--src",
-        "symbol": "port",
-        "owner": "suitLoop",
-        "placement": {
-          "side": "bottom",
-          "offset": 0.5
-        },
-        "label": ""
-      },
-      {
-        "id": "suitLoop--waterSublimator--tgt",
-        "model_ref": "suitLoop--waterSublimator--tgt",
-        "symbol": "port",
-        "owner": "waterSublimator",
-        "placement": {
-          "side": "left",
-          "offset": 0.5
-        },
-        "label": ""
       }
     ],
     "connections": [
@@ -318,8 +253,8 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 376,
-              "y": 354
+              "x": 146,
+              "y": 169.669
             }
           ]
         },
@@ -352,56 +287,11 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 596,
-              "y": 160
-            },
-            {
-              "x": 596,
-              "y": 215
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "CO2 \u22647.6 torr",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.default"
-      },
-      {
-        "id": "conn-suitLoop-waterSublimator",
-        "model_ref": "conn-suitLoop-waterSublimator",
-        "source": {
-          "element": "suitLoop--waterSublimator--src",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "suitLoop--waterSublimator--tgt",
-          "anchor": {
-            "side": "left",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 146,
-              "y": 270
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "heat",
             "position": {
               "offset": 0.5
             }
@@ -417,7 +307,32 @@
         "stroke": "#333333",
         "stroke_width": 2
       },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
       "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
         "fill": "#E3F2FD",
         "stroke": "#1565C0",
         "stroke_width": 2
@@ -427,6 +342,6 @@
         "stroke_width": 2
       }
     },
-    "subject": "mission"
+    "subject": "ECLSS"
   }
 }

@@ -13,19 +13,19 @@
 <g transform="translate(2,40)">
 <rect id="mission" x="252" y="72" width="270" height="638" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="label" x="262" y="94">Apollo 11</text>
-<circle id="cdr" cx="107" cy="121.2" r="11.2" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<circle id="CDR" cx="107" cy="121.2" r="11.2" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
 <line x1="107" y1="132.4" x2="107" y2="161.8" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
 <line x1="80" y1="140.2" x2="134" y2="140.2" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
 <line x1="107" y1="161.8" x2="82" y2="192" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
 <line x1="107" y1="161.8" x2="132" y2="192" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
 <text class="small" text-anchor="middle" x="107" y="210">CDR</text>
-<circle id="mcc" cx="107" cy="281.2" r="11.2" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<circle id="MCC" cx="107" cy="281.2" r="11.2" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
 <line x1="107" y1="292.4" x2="107" y2="321.8" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
 <line x1="80" y1="300.2" x2="134" y2="300.2" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
 <line x1="107" y1="321.8" x2="82" y2="352" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
 <line x1="107" y1="321.8" x2="132" y2="352" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
-<text class="small" text-anchor="middle" x="107" y="370">MCC-H</text>
-<circle id="rso" cx="107" cy="441.2" r="11.2" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="small" text-anchor="middle" x="107" y="370">MCC</text>
+<circle id="RSO" cx="107" cy="441.2" r="11.2" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
 <line x1="107" y1="452.4" x2="107" y2="481.8" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
 <line x1="80" y1="460.2" x2="134" y2="460.2" stroke="#334155" stroke-width="2" stroke-linecap="round"/>
 <line x1="107" y1="481.8" x2="82" y2="512" stroke="#334155" stroke-width="2" stroke-linecap="round"/>

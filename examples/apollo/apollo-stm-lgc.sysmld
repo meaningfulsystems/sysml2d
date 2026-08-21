@@ -6,30 +6,30 @@
     "apollo.sysml"
   ],
   "aliases": {
-    "lgcMajorMode": "Apollo11::LgcMajorMode",
-    "p00": "Apollo11::LgcMajorMode::p00",
-    "p63": "Apollo11::LgcMajorMode::p63",
-    "p64": "Apollo11::LgcMajorMode::p64",
-    "p66": "Apollo11::LgcMajorMode::p66",
-    "p68": "Apollo11::LgcMajorMode::p68",
-    "p70": "Apollo11::LgcMajorMode::p70",
-    "p71": "Apollo11::LgcMajorMode::p71",
-    "p12": "Apollo11::LgcMajorMode::p12",
-    "toP63": "Apollo11::LgcMajorMode::toP63",
-    "toP64": "Apollo11::LgcMajorMode::toP64",
-    "toP66": "Apollo11::LgcMajorMode::toP66",
-    "toP68": "Apollo11::LgcMajorMode::toP68",
-    "toP70": "Apollo11::LgcMajorMode::toP70",
-    "toP71": "Apollo11::LgcMajorMode::toP71",
-    "toP12": "Apollo11::LgcMajorMode::toP12"
+    "AGC_LM_Mode": "Apollo11::AGC_LM_Mode",
+    "p00": "Apollo11::AGC_LM_Mode::p00",
+    "p63": "Apollo11::AGC_LM_Mode::p63",
+    "p64": "Apollo11::AGC_LM_Mode::p64",
+    "p66": "Apollo11::AGC_LM_Mode::p66",
+    "p68": "Apollo11::AGC_LM_Mode::p68",
+    "p70": "Apollo11::AGC_LM_Mode::p70",
+    "p71": "Apollo11::AGC_LM_Mode::p71",
+    "p12": "Apollo11::AGC_LM_Mode::p12",
+    "toP63": "Apollo11::AGC_LM_Mode::toP63",
+    "toP64": "Apollo11::AGC_LM_Mode::toP64",
+    "toP66": "Apollo11::AGC_LM_Mode::toP66",
+    "toP68": "Apollo11::AGC_LM_Mode::toP68",
+    "toP70": "Apollo11::AGC_LM_Mode::toP70",
+    "toP71": "Apollo11::AGC_LM_Mode::toP71",
+    "toP12": "Apollo11::AGC_LM_Mode::toP12"
   },
   "diagram": {
     "id": "apollo-stm-lgc",
     "kind": "StateView",
-    "name": "Apollo 11 LGC Programs (A11-flown landing path)",
+    "name": "AGC_LM programs (A11-flown path)",
     "canvas": {
-      "width": 500,
-      "height": 998,
+      "width": 532,
+      "height": 1278,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -38,13 +38,13 @@
     "elements": [
       {
         "id": "boundary",
-        "model_ref": "lgcMajorMode",
+        "model_ref": "AGC_LM_Mode",
         "symbol": "boundary",
         "layout": {
           "x": 54,
           "y": 119,
-          "width": 406,
-          "height": 839,
+          "width": 438,
+          "height": 1119,
           "z": 0
         },
         "compartments": {
@@ -58,7 +58,7 @@
         "id": "initial",
         "symbol": "initial_state",
         "layout": {
-          "x": 247,
+          "x": 263,
           "y": 155,
           "width": 20,
           "height": 20,
@@ -70,28 +70,28 @@
         "id": "p00",
         "symbol": "state_usage",
         "layout": {
-          "x": 182,
-          "y": 261,
+          "x": 198,
+          "y": 307,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p00",
-        "label": "P00 idle",
+        "label": "P00",
         "style": "state.default"
       },
       {
         "id": "p63",
         "symbol": "state_usage",
         "layout": {
-          "x": 182,
-          "y": 383,
+          "x": 198,
+          "y": 476,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p63",
-        "label": "P63 braking",
+        "label": "P63",
         "style": "state.default"
       },
       {
@@ -99,13 +99,13 @@
         "symbol": "state_usage",
         "layout": {
           "x": 90,
-          "y": 504,
+          "y": 644,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p64",
-        "label": "P64 approach",
+        "label": "P64",
         "style": "state.default"
       },
       {
@@ -113,76 +113,76 @@
         "symbol": "state_usage",
         "layout": {
           "x": 90,
-          "y": 620,
+          "y": 813,
           "width": 150,
-          "height": 64,
+          "height": 52,
           "z": 10
         },
         "model_ref": "p66",
-        "label": "P66 rate-of-descent\n(A11-flown landing)",
+        "label": "P66 (A11 flown)",
         "style": "state.default"
       },
       {
         "id": "p68",
         "symbol": "state_usage",
         "layout": {
-          "x": 182,
-          "y": 748,
+          "x": 198,
+          "y": 981,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p68",
-        "label": "P68 landing confirm",
+        "label": "P68",
         "style": "state.default"
       },
       {
         "id": "p70",
         "symbol": "state_usage",
         "layout": {
-          "x": 274,
-          "y": 504,
+          "x": 306,
+          "y": 644,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p70",
-        "label": "P70 DPS abort",
+        "label": "P70",
         "style": "state.default"
       },
       {
         "id": "p71",
         "symbol": "state_usage",
         "layout": {
-          "x": 274,
-          "y": 626,
+          "x": 306,
+          "y": 813,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p71",
-        "label": "P71 APS abort",
+        "label": "P71",
         "style": "state.default"
       },
       {
         "id": "p12",
         "symbol": "state_usage",
         "layout": {
-          "x": 182,
-          "y": 870,
+          "x": 198,
+          "y": 1150,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p12",
-        "label": "P12 ascent",
+        "label": "P12",
         "style": "state.default"
       }
     ],
     "connections": [
       {
         "id": "initial--p00",
-        "model_ref": "lgcMajorMode",
+        "model_ref": "AGC_LM_Mode",
         "source": {
           "element": "initial",
           "anchor": {
@@ -258,12 +258,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 232,
-              "y": 458
+              "x": 248,
+              "y": 567
             },
             {
               "x": 165,
-              "y": 458
+              "y": 567
             }
           ]
         },
@@ -334,11 +334,11 @@
           "waypoints": [
             {
               "x": 165,
-              "y": 713
+              "y": 923
             },
             {
-              "x": 257,
-              "y": 713
+              "x": 273,
+              "y": 923
             }
           ]
         },
@@ -375,12 +375,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 282,
-              "y": 481
+              "x": 298,
+              "y": 605
             },
             {
-              "x": 349,
-              "y": 481
+              "x": 381,
+              "y": 605
             }
           ]
         },
@@ -502,6 +502,6 @@
         "container": true
       }
     },
-    "subject": "lgcMajorMode"
+    "subject": "AGC_LM_Mode"
   }
 }

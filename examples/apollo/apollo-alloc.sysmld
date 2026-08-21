@@ -57,7 +57,7 @@
           "height": 82,
           "z": 10
         },
-        "label": "Two AGCs",
+        "label": "AGC_CM + AGC_LM",
         "style": "requirement",
         "model_ref": "agcRequirement"
       },
@@ -76,7 +76,7 @@
         "model_ref": "agsRequirement"
       },
       {
-        "id": "iu",
+        "id": "IU",
         "symbol": "part_usage",
         "layout": {
           "x": 402,
@@ -87,10 +87,10 @@
         },
         "label": "IU",
         "style": "part_usage",
-        "model_ref": "iu"
+        "model_ref": "IU"
       },
       {
-        "id": "rso",
+        "id": "RSO",
         "symbol": "part_usage",
         "layout": {
           "x": 402,
@@ -99,12 +99,12 @@
           "height": 70,
           "z": 10
         },
-        "label": "RSO / AFETR",
+        "label": "RSO",
         "style": "part_usage",
-        "model_ref": "rso"
+        "model_ref": "RSO"
       },
       {
-        "id": "cmc",
+        "id": "AGC_CM",
         "symbol": "part_usage",
         "layout": {
           "x": 402,
@@ -113,12 +113,12 @@
           "height": 70,
           "z": 10
         },
-        "label": "CMC",
+        "label": "AGC_CM",
         "style": "part_usage",
-        "model_ref": "cmc"
+        "model_ref": "AGC_CM"
       },
       {
-        "id": "lgc",
+        "id": "AGC_LM",
         "symbol": "part_usage",
         "layout": {
           "x": 402,
@@ -127,12 +127,12 @@
           "height": 70,
           "z": 10
         },
-        "label": "LGC",
+        "label": "AGC_LM",
         "style": "part_usage",
-        "model_ref": "lgc"
+        "model_ref": "AGC_LM"
       },
       {
-        "id": "ags",
+        "id": "AGS",
         "symbol": "part_usage",
         "layout": {
           "x": 402,
@@ -143,12 +143,12 @@
         },
         "label": "AGS",
         "style": "part_usage",
-        "model_ref": "ags"
+        "model_ref": "AGS"
       }
     ],
     "connections": [
       {
-        "id": "conn-iuGncRequirement-iu",
+        "id": "conn-iuGncRequirement-IU",
         "source": {
           "element": "iuGncRequirement",
           "anchor": {
@@ -157,7 +157,7 @@
           }
         },
         "target": {
-          "element": "iu",
+          "element": "IU",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -176,10 +176,10 @@
           }
         ],
         "style": "connector.allocation",
-        "model_ref": "allocateBoostToIu"
+        "model_ref": "allocateBoostToIU"
       },
       {
-        "id": "conn-rsoRequirement-rso",
+        "id": "conn-rsoRequirement-RSO",
         "source": {
           "element": "rsoRequirement",
           "anchor": {
@@ -188,7 +188,7 @@
           }
         },
         "target": {
-          "element": "rso",
+          "element": "RSO",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -207,10 +207,10 @@
           }
         ],
         "style": "connector.allocation",
-        "model_ref": "allocateDestructToRso"
+        "model_ref": "allocateDestructToRSO"
       },
       {
-        "id": "conn-agcRequirement-cmc",
+        "id": "conn-agcRequirement-AGC_CM",
         "source": {
           "element": "agcRequirement",
           "anchor": {
@@ -219,7 +219,7 @@
           }
         },
         "target": {
-          "element": "cmc",
+          "element": "AGC_CM",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -238,10 +238,10 @@
           }
         ],
         "style": "connector.allocation",
-        "model_ref": "allocateCmcToCm"
+        "model_ref": "allocateAGC_CMToCM"
       },
       {
-        "id": "conn-agcRequirement-lgc",
+        "id": "conn-agcRequirement-AGC_LM",
         "source": {
           "element": "agcRequirement",
           "anchor": {
@@ -250,7 +250,7 @@
           }
         },
         "target": {
-          "element": "lgc",
+          "element": "AGC_LM",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -278,10 +278,10 @@
           }
         ],
         "style": "connector.allocation",
-        "model_ref": "allocateLgcToLm"
+        "model_ref": "allocateAGC_LMToLM"
       },
       {
-        "id": "conn-agsRequirement-ags",
+        "id": "conn-agsRequirement-AGS",
         "source": {
           "element": "agsRequirement",
           "anchor": {
@@ -290,7 +290,7 @@
           }
         },
         "target": {
-          "element": "ags",
+          "element": "AGS",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -318,7 +318,7 @@
           }
         ],
         "style": "connector.allocation",
-        "model_ref": "allocateAgsToLm"
+        "model_ref": "allocateAGSToLM"
       }
     ],
     "annotations": [],

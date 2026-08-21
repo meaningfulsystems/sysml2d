@@ -1,7 +1,7 @@
 {
   "diagram": "apollo-ibd-gnc",
   "kind": "InterconnectionView",
-  "name": "Apollo 11 AGC / GNC (do not merge)",
+  "name": "AGC / GNC (do not merge)",
   "subject": "mission",
   "model_files": [
     "apollo.sysml"
@@ -9,118 +9,132 @@
   "direction": "left-right",
   "default_w": 140,
   "default_h": 64,
-  "col_gap": 60,
+  "col_gap": 56,
   "rank_gap": 120,
   "label_mode": "connection",
   "aliases": {
     "mission": "Apollo11::Apollo11",
-    "cmc": "Apollo11::CM::cmc",
-    "cmDsky1": "Apollo11::CM::cmDsky1",
-    "cmDsky2": "Apollo11::CM::cmDsky2",
-    "ems": "Apollo11::CM::ems",
-    "lgc": "Apollo11::LMAscent::lgc",
-    "lmDsky": "Apollo11::LMAscent::lmDsky",
-    "ags": "Apollo11::LMAscent::ags",
-    "lvdc": "Apollo11::IU::lvdc",
-    "scs": "Apollo11::CM::scs",
-    "pngs": "Apollo11::LMAscent::pngs",
-    "cmDsky1--cmc--src": "Apollo11::CM::cmDsky1",
-    "cmDsky1--cmc--tgt": "Apollo11::CM::cmc",
-    "conn-cmDsky1-cmc": "Apollo11::CM::cmDsky1",
-    "cmDsky2--cmc--src": "Apollo11::CM::cmDsky2",
-    "cmDsky2--cmc--tgt": "Apollo11::CM::cmc",
-    "conn-cmDsky2-cmc": "Apollo11::CM::cmDsky2",
-    "lmDsky--lgc--src": "Apollo11::LMAscent::lmDsky",
-    "lmDsky--lgc--tgt": "Apollo11::LMAscent::lgc",
-    "conn-lmDsky-lgc": "Apollo11::LMAscent::lmDsky",
-    "lgc--ags--src": "Apollo11::LMAscent::lgc",
-    "lgc--ags--tgt": "Apollo11::LMAscent::ags",
-    "conn-lgc-ags": "Apollo11::LMAscent::lgc",
-    "scs--cmc--src": "Apollo11::CM::scs",
-    "scs--cmc--tgt": "Apollo11::CM::cmc",
-    "conn-scs-cmc": "Apollo11::CM::scs",
-    "pngs--lgc--src": "Apollo11::LMAscent::pngs",
-    "pngs--lgc--tgt": "Apollo11::LMAscent::lgc",
-    "conn-pngs-lgc": "Apollo11::LMAscent::pngs"
+    "DSKY": "Apollo11::CSM::CM::DSKY",
+    "DSKY2": "Apollo11::CSM::CM::DSKY2",
+    "SCS": "Apollo11::CSM::CM::SCS",
+    "AGC_CM": "Apollo11::CSM::CM::AGC_CM",
+    "IMU": "Apollo11::CSM::CM::IMU",
+    "USB": "Apollo11::CSM::CM::USB",
+    "PNGS": "Apollo11::LM::ascent::PNGS",
+    "AGC_LM": "Apollo11::LM::ascent::AGC_LM",
+    "DSKY_LM": "Apollo11::LM::ascent::DSKY",
+    "AGS": "Apollo11::LM::ascent::AGS",
+    "LVDC": "Apollo11::SaturnV::IU::LVDC",
+    "DSKY--AGC_CM--src": "Apollo11::CSM::CM::DSKY",
+    "DSKY--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-DSKY-AGC_CM": "Apollo11::CSM::CM::DSKY",
+    "DSKY2--AGC_CM--src": "Apollo11::CSM::CM::DSKY2",
+    "DSKY2--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-DSKY2-AGC_CM": "Apollo11::CSM::CM::DSKY2",
+    "SCS--AGC_CM--src": "Apollo11::CSM::CM::SCS",
+    "SCS--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-SCS-AGC_CM": "Apollo11::CSM::CM::SCS",
+    "AGC_CM--IMU--src": "Apollo11::CSM::CM::AGC_CM",
+    "AGC_CM--IMU--tgt": "Apollo11::CSM::CM::IMU",
+    "conn-AGC_CM-IMU": "Apollo11::CSM::CM::AGC_CM",
+    "PNGS--AGC_LM--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--AGC_LM--tgt": "Apollo11::LM::ascent::AGC_LM",
+    "conn-PNGS-AGC_LM": "Apollo11::LM::ascent::PNGS",
+    "DSKY_LM--AGC_LM--src": "Apollo11::LM::ascent::DSKY",
+    "DSKY_LM--AGC_LM--tgt": "Apollo11::LM::ascent::AGC_LM",
+    "conn-DSKY_LM-AGC_LM": "Apollo11::LM::ascent::DSKY",
+    "AGC_LM--AGS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--AGS--tgt": "Apollo11::LM::ascent::AGS",
+    "conn-AGC_LM-AGS": "Apollo11::LM::ascent::AGC_LM"
   },
   "nodes": {
-    "cmDsky1": {
-      "label": "CM DSKY 1",
+    "DSKY": {
+      "label": "DSKY",
       "style": "part.gnc"
     },
-    "cmDsky2": {
-      "label": "CM DSKY 2",
+    "DSKY2": {
+      "label": "DSKY 2",
       "style": "part.gnc"
     },
-    "scs": {
-      "label": "CM SCS",
+    "SCS": {
+      "label": "SCS",
       "style": "part.gnc"
     },
-    "cmc": {
-      "label": "CMC (Colossus)",
+    "AGC_CM": {
+      "label": "AGC_CM",
       "style": "part.gnc"
     },
-    "ems": {
-      "label": "EMS",
+    "IMU": {
+      "label": "IMU",
       "style": "part.gnc"
     },
-    "pngs": {
-      "label": "LM PNGS",
+    "USB": {
+      "label": "USB",
+      "style": "part.comms"
+    },
+    "PNGS": {
+      "label": "PNGS",
       "style": "part.gnc"
     },
-    "lgc": {
-      "label": "LGC (Luminary)",
+    "AGC_LM": {
+      "label": "AGC_LM",
       "style": "part.gnc"
     },
-    "lmDsky": {
-      "label": "LM DSKY",
+    "DSKY_LM": {
+      "label": "DSKY",
       "style": "part.gnc"
     },
-    "ags": {
-      "label": "AGS (AEA+ASA)",
+    "AGS": {
+      "label": "AGS",
       "style": "part.gnc"
     },
-    "lvdc": {
-      "label": "IU LVDC",
+    "LVDC": {
+      "label": "LVDC",
       "style": "part.gnc"
     }
   },
   "edges": [
     {
-      "from": "scs",
-      "to": "cmc",
-      "label": "backup / CMC",
-      "model_ref": "conn-scs-cmc"
+      "from": "DSKY",
+      "to": "AGC_CM",
+      "label": "DSKY",
+      "model_ref": "conn-DSKY-AGC_CM"
     },
     {
-      "from": "pngs",
-      "to": "lgc",
+      "from": "DSKY2",
+      "to": "AGC_CM",
+      "label": "DSKY",
+      "model_ref": "conn-DSKY2-AGC_CM"
+    },
+    {
+      "from": "SCS",
+      "to": "AGC_CM",
+      "label": "backup",
+      "model_ref": "conn-SCS-AGC_CM"
+    },
+    {
+      "from": "AGC_CM",
+      "to": "IMU",
+      "label": "IMU",
+      "model_ref": "conn-AGC_CM-IMU"
+    },
+    {
+      "from": "PNGS",
+      "to": "AGC_LM",
       "label": "computer",
-      "model_ref": "conn-pngs-lgc"
+      "model_ref": "conn-PNGS-AGC_LM"
     },
     {
-      "from": "cmDsky1",
-      "to": "cmc",
+      "from": "DSKY_LM",
+      "to": "AGC_LM",
       "label": "DSKY",
-      "model_ref": "conn-cmDsky1-cmc"
+      "model_ref": "conn-DSKY_LM-AGC_LM"
     },
     {
-      "from": "cmDsky2",
-      "to": "cmc",
-      "label": "DSKY",
-      "model_ref": "conn-cmDsky2-cmc"
-    },
-    {
-      "from": "lmDsky",
-      "to": "lgc",
-      "label": "DSKY",
-      "model_ref": "conn-lmDsky-lgc"
-    },
-    {
-      "from": "lgc",
-      "to": "ags",
-      "label": "R47 init",
-      "model_ref": "conn-lgc-ags"
+      "from": "AGC_LM",
+      "to": "AGS",
+      "label": "R47",
+      "model_ref": "conn-AGC_LM-AGS"
     }
   ],
   "styles": {
@@ -129,9 +143,34 @@
       "stroke": "#333333",
       "stroke_width": 2
     },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
     "part.gnc": {
       "fill": "#E8F5E9",
       "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
       "stroke_width": 2
     },
     "connector.default": {

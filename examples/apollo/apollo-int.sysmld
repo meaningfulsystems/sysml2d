@@ -20,7 +20,7 @@
     },
     "elements": [
       {
-        "id": "flight",
+        "id": "FLIGHT",
         "symbol": "lifeline",
         "layout": {
           "x": 70,
@@ -31,10 +31,10 @@
         },
         "label": "FLIGHT",
         "style": "lifeline",
-        "model_ref": "flight"
+        "model_ref": "FLIGHT"
       },
       {
-        "id": "ccc",
+        "id": "CCC",
         "symbol": "lifeline",
         "layout": {
           "x": 270,
@@ -45,10 +45,10 @@
         },
         "label": "CCC",
         "style": "lifeline",
-        "model_ref": "ccc"
+        "model_ref": "CCC"
       },
       {
-        "id": "rtcc",
+        "id": "RTCC",
         "symbol": "lifeline",
         "layout": {
           "x": 470,
@@ -59,10 +59,10 @@
         },
         "label": "RTCC",
         "style": "lifeline",
-        "model_ref": "rtcc"
+        "model_ref": "RTCC"
       },
       {
-        "id": "ccats",
+        "id": "CCATS",
         "symbol": "lifeline",
         "layout": {
           "x": 670,
@@ -73,10 +73,10 @@
         },
         "label": "CCATS",
         "style": "lifeline",
-        "model_ref": "ccats"
+        "model_ref": "CCATS"
       },
       {
-        "id": "site642B",
+        "id": "MSFN",
         "symbol": "lifeline",
         "layout": {
           "x": 870,
@@ -85,12 +85,12 @@
           "height": 364,
           "z": 10
         },
-        "label": "Site 642B",
+        "label": "MSFN",
         "style": "lifeline",
-        "model_ref": "site642B"
+        "model_ref": "MSFN"
       },
       {
-        "id": "cmc",
+        "id": "AGC_CM",
         "symbol": "lifeline",
         "layout": {
           "x": 1070,
@@ -99,9 +99,9 @@
           "height": 364,
           "z": 10
         },
-        "label": "CMC",
+        "label": "AGC_CM",
         "style": "lifeline",
-        "model_ref": "cmc"
+        "model_ref": "AGC_CM"
       }
     ],
     "connections": [
@@ -109,14 +109,14 @@
         "id": "m1",
         "model_ref": "sendPathA",
         "source": {
-          "element": "flight",
+          "element": "FLIGHT",
           "anchor": {
             "side": "right",
             "offset": 0.192
           }
         },
         "target": {
-          "element": "ccc",
+          "element": "CCC",
           "anchor": {
             "side": "left",
             "offset": 0.192
@@ -141,14 +141,14 @@
         "id": "m2",
         "model_ref": "commandPathA",
         "source": {
-          "element": "ccc",
+          "element": "CCC",
           "anchor": {
             "side": "right",
             "offset": 0.341
           }
         },
         "target": {
-          "element": "rtcc",
+          "element": "RTCC",
           "anchor": {
             "side": "left",
             "offset": 0.341
@@ -173,14 +173,14 @@
         "id": "m3",
         "model_ref": "commandPathA",
         "source": {
-          "element": "rtcc",
+          "element": "RTCC",
           "anchor": {
             "side": "right",
             "offset": 0.489
           }
         },
         "target": {
-          "element": "ccats",
+          "element": "CCATS",
           "anchor": {
             "side": "left",
             "offset": 0.489
@@ -205,14 +205,14 @@
         "id": "m4",
         "model_ref": "commandPathA",
         "source": {
-          "element": "ccats",
+          "element": "CCATS",
           "anchor": {
             "side": "right",
             "offset": 0.637
           }
         },
         "target": {
-          "element": "site642B",
+          "element": "MSFN",
           "anchor": {
             "side": "left",
             "offset": 0.637
@@ -237,14 +237,14 @@
         "id": "m5",
         "model_ref": "usbCsmFlow",
         "source": {
-          "element": "site642B",
+          "element": "MSFN",
           "anchor": {
             "side": "right",
             "offset": 0.786
           }
         },
         "target": {
-          "element": "cmc",
+          "element": "AGC_CM",
           "anchor": {
             "side": "left",
             "offset": 0.786
@@ -269,14 +269,14 @@
         "id": "m6",
         "model_ref": "sendP27",
         "source": {
-          "element": "flight",
+          "element": "FLIGHT",
           "anchor": {
             "side": "right",
             "offset": 0.934
           }
         },
         "target": {
-          "element": "cmc",
+          "element": "AGC_CM",
           "anchor": {
             "side": "left",
             "offset": 0.934

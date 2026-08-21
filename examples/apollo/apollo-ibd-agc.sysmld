@@ -7,29 +7,29 @@
   ],
   "aliases": {
     "mission": "Apollo11::Apollo11",
-    "cmcOsc": "Apollo11::CMC::oscillator",
-    "cmcE": "Apollo11::CMC::erasable",
-    "cmcF": "Apollo11::CMC::fixed",
-    "lgcOsc": "Apollo11::LGC::oscillator",
-    "lgcE": "Apollo11::LGC::erasable",
-    "lgcF": "Apollo11::LGC::fixed",
-    "cmcOsc--cmcE--src": "Apollo11::CMC::oscillator",
-    "cmcOsc--cmcE--tgt": "Apollo11::CMC::erasable",
-    "conn-cmcOsc-cmcE": "Apollo11::CMC::oscillator",
-    "cmcOsc--cmcF--src": "Apollo11::CMC::oscillator",
-    "cmcOsc--cmcF--tgt": "Apollo11::CMC::fixed",
-    "conn-cmcOsc-cmcF": "Apollo11::CMC::oscillator",
-    "lgcOsc--lgcE--src": "Apollo11::LGC::oscillator",
-    "lgcOsc--lgcE--tgt": "Apollo11::LGC::erasable",
-    "conn-lgcOsc-lgcE": "Apollo11::LGC::oscillator",
-    "lgcOsc--lgcF--src": "Apollo11::LGC::oscillator",
-    "lgcOsc--lgcF--tgt": "Apollo11::LGC::fixed",
-    "conn-lgcOsc-lgcF": "Apollo11::LGC::oscillator"
+    "cmOsc": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmE": "Apollo11::CSM::AGC_CM::erasable",
+    "cmF": "Apollo11::CSM::AGC_CM::fixed",
+    "lmOsc": "Apollo11::LM::AGC_LM::oscillator",
+    "lmE": "Apollo11::LM::AGC_LM::erasable",
+    "lmF": "Apollo11::LM::AGC_LM::fixed",
+    "cmOsc--cmE--src": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmOsc--cmE--tgt": "Apollo11::CSM::AGC_CM::erasable",
+    "conn-cmOsc-cmE": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmOsc--cmF--src": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmOsc--cmF--tgt": "Apollo11::CSM::AGC_CM::fixed",
+    "conn-cmOsc-cmF": "Apollo11::CSM::AGC_CM::oscillator",
+    "lmOsc--lmE--src": "Apollo11::LM::AGC_LM::oscillator",
+    "lmOsc--lmE--tgt": "Apollo11::LM::AGC_LM::erasable",
+    "conn-lmOsc-lmE": "Apollo11::LM::AGC_LM::oscillator",
+    "lmOsc--lmF--src": "Apollo11::LM::AGC_LM::oscillator",
+    "lmOsc--lmF--tgt": "Apollo11::LM::AGC_LM::fixed",
+    "conn-lmOsc-lmF": "Apollo11::LM::AGC_LM::oscillator"
   },
   "diagram": {
     "id": "apollo-ibd-agc",
     "kind": "InterconnectionView",
-    "name": "AGC Block II Memory / Clock",
+    "name": "AGC_CM / AGC_LM hardware",
     "canvas": {
       "width": 620,
       "height": 528,
@@ -58,8 +58,8 @@
         "style": "boundary.system"
       },
       {
-        "id": "cmcOsc",
-        "model_ref": "cmcOsc",
+        "id": "cmOsc",
+        "model_ref": "cmOsc",
         "symbol": "part_usage",
         "layout": {
           "x": 76,
@@ -68,7 +68,7 @@
           "height": 58,
           "z": 10
         },
-        "label": "CMC osc\n1.024 MHz",
+        "label": "AGC_CM osc\n1.024 MHz",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -77,8 +77,8 @@
         "style": "part.gnc"
       },
       {
-        "id": "cmcE",
-        "model_ref": "cmcE",
+        "id": "cmE",
+        "model_ref": "cmE",
         "symbol": "part_usage",
         "layout": {
           "x": 404,
@@ -87,7 +87,7 @@
           "height": 58,
           "z": 10
         },
-        "label": "CMC 2048 E",
+        "label": "AGC_CM 2048 E",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -96,8 +96,8 @@
         "style": "part.gnc"
       },
       {
-        "id": "cmcF",
-        "model_ref": "cmcF",
+        "id": "cmF",
+        "model_ref": "cmF",
         "symbol": "part_usage",
         "layout": {
           "x": 404,
@@ -106,7 +106,7 @@
           "height": 58,
           "z": 10
         },
-        "label": "CMC 36864 F\nrope ID UNKNOWN",
+        "label": "AGC_CM 36864 F",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -115,8 +115,8 @@
         "style": "part.gnc"
       },
       {
-        "id": "lgcOsc",
-        "model_ref": "lgcOsc",
+        "id": "lmOsc",
+        "model_ref": "lmOsc",
         "symbol": "part_usage",
         "layout": {
           "x": 76,
@@ -125,7 +125,7 @@
           "height": 58,
           "z": 10
         },
-        "label": "LGC osc\n1.024 MHz",
+        "label": "AGC_LM osc\n1.024 MHz",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -134,8 +134,8 @@
         "style": "part.gnc"
       },
       {
-        "id": "lgcE",
-        "model_ref": "lgcE",
+        "id": "lmE",
+        "model_ref": "lmE",
         "symbol": "part_usage",
         "layout": {
           "x": 404,
@@ -144,7 +144,7 @@
           "height": 58,
           "z": 10
         },
-        "label": "LGC 2048 E",
+        "label": "AGC_LM 2048 E",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -153,8 +153,8 @@
         "style": "part.gnc"
       },
       {
-        "id": "lgcF",
-        "model_ref": "lgcF",
+        "id": "lmF",
+        "model_ref": "lmF",
         "symbol": "part_usage",
         "layout": {
           "x": 404,
@@ -163,7 +163,7 @@
           "height": 58,
           "z": 10
         },
-        "label": "LGC 36864 F\nrope ID UNKNOWN",
+        "label": "AGC_LM 36864 F",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -172,10 +172,10 @@
         "style": "part.gnc"
       },
       {
-        "id": "cmcOsc--cmcE--src",
-        "model_ref": "cmcOsc--cmcE--src",
+        "id": "cmOsc--cmE--src",
+        "model_ref": "cmOsc--cmE--src",
         "symbol": "port",
-        "owner": "cmcOsc",
+        "owner": "cmOsc",
         "placement": {
           "side": "right",
           "offset": 0.25
@@ -183,10 +183,10 @@
         "label": ""
       },
       {
-        "id": "cmcOsc--cmcF--src",
-        "model_ref": "cmcOsc--cmcF--src",
+        "id": "cmOsc--cmF--src",
+        "model_ref": "cmOsc--cmF--src",
         "symbol": "port",
-        "owner": "cmcOsc",
+        "owner": "cmOsc",
         "placement": {
           "side": "right",
           "offset": 0.5
@@ -194,10 +194,10 @@
         "label": ""
       },
       {
-        "id": "cmcOsc--cmcE--tgt",
-        "model_ref": "cmcOsc--cmcE--tgt",
+        "id": "cmOsc--cmE--tgt",
+        "model_ref": "cmOsc--cmE--tgt",
         "symbol": "port",
-        "owner": "cmcE",
+        "owner": "cmE",
         "placement": {
           "side": "left",
           "offset": 0.5
@@ -205,10 +205,10 @@
         "label": ""
       },
       {
-        "id": "cmcOsc--cmcF--tgt",
-        "model_ref": "cmcOsc--cmcF--tgt",
+        "id": "cmOsc--cmF--tgt",
+        "model_ref": "cmOsc--cmF--tgt",
         "symbol": "port",
-        "owner": "cmcF",
+        "owner": "cmF",
         "placement": {
           "side": "left",
           "offset": 0.5
@@ -216,10 +216,10 @@
         "label": ""
       },
       {
-        "id": "lgcOsc--lgcE--src",
-        "model_ref": "lgcOsc--lgcE--src",
+        "id": "lmOsc--lmE--src",
+        "model_ref": "lmOsc--lmE--src",
         "symbol": "port",
-        "owner": "lgcOsc",
+        "owner": "lmOsc",
         "placement": {
           "side": "right",
           "offset": 0.5
@@ -227,10 +227,10 @@
         "label": ""
       },
       {
-        "id": "lgcOsc--lgcF--src",
-        "model_ref": "lgcOsc--lgcF--src",
+        "id": "lmOsc--lmF--src",
+        "model_ref": "lmOsc--lmF--src",
         "symbol": "port",
-        "owner": "lgcOsc",
+        "owner": "lmOsc",
         "placement": {
           "side": "right",
           "offset": 0.75
@@ -238,10 +238,10 @@
         "label": ""
       },
       {
-        "id": "lgcOsc--lgcE--tgt",
-        "model_ref": "lgcOsc--lgcE--tgt",
+        "id": "lmOsc--lmE--tgt",
+        "model_ref": "lmOsc--lmE--tgt",
         "symbol": "port",
-        "owner": "lgcE",
+        "owner": "lmE",
         "placement": {
           "side": "left",
           "offset": 0.5
@@ -249,10 +249,10 @@
         "label": ""
       },
       {
-        "id": "lgcOsc--lgcF--tgt",
-        "model_ref": "lgcOsc--lgcF--tgt",
+        "id": "lmOsc--lmF--tgt",
+        "model_ref": "lmOsc--lmF--tgt",
         "symbol": "port",
-        "owner": "lgcF",
+        "owner": "lmF",
         "placement": {
           "side": "left",
           "offset": 0.5
@@ -262,17 +262,17 @@
     ],
     "connections": [
       {
-        "id": "conn-cmcOsc-cmcE",
-        "model_ref": "conn-cmcOsc-cmcE",
+        "id": "conn-cmOsc-cmE",
+        "model_ref": "conn-cmOsc-cmE",
         "source": {
-          "element": "cmcOsc--cmcE--src",
+          "element": "cmOsc--cmE--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "cmcOsc--cmcE--tgt",
+          "element": "cmOsc--cmE--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -302,17 +302,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-cmcOsc-cmcF",
-        "model_ref": "conn-cmcOsc-cmcF",
+        "id": "conn-cmOsc-cmF",
+        "model_ref": "conn-cmOsc-cmF",
         "source": {
-          "element": "cmcOsc--cmcF--src",
+          "element": "cmOsc--cmF--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "cmcOsc--cmcF--tgt",
+          "element": "cmOsc--cmF--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -333,17 +333,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-lgcOsc-lgcE",
-        "model_ref": "conn-lgcOsc-lgcE",
+        "id": "conn-lmOsc-lmE",
+        "model_ref": "conn-lmOsc-lmE",
         "source": {
-          "element": "lgcOsc--lgcE--src",
+          "element": "lmOsc--lmE--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "lgcOsc--lgcE--tgt",
+          "element": "lmOsc--lmE--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -364,17 +364,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-lgcOsc-lgcF",
-        "model_ref": "conn-lgcOsc-lgcF",
+        "id": "conn-lmOsc-lmF",
+        "model_ref": "conn-lmOsc-lmF",
         "source": {
-          "element": "lgcOsc--lgcF--src",
+          "element": "lmOsc--lmF--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "lgcOsc--lgcF--tgt",
+          "element": "lmOsc--lmF--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -411,9 +411,34 @@
         "stroke": "#333333",
         "stroke_width": 2
       },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
       "part.gnc": {
         "fill": "#E8F5E9",
         "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
         "stroke_width": 2
       },
       "connector.default": {

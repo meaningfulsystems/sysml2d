@@ -6,20 +6,20 @@
     "apollo.sysml"
   ],
   "aliases": {
-    "agsMode": "Apollo11::AgsMode",
-    "idle": "Apollo11::AgsMode::idle",
-    "operate": "Apollo11::AgsMode::operate",
-    "followPngs": "Apollo11::AgsMode::followPngs",
-    "agsOn": "Apollo11::AgsMode::agsOn",
-    "r47": "Apollo11::AgsMode::r47",
-    "agsOff": "Apollo11::AgsMode::agsOff"
+    "AGSMode": "Apollo11::AGSMode",
+    "idle": "Apollo11::AGSMode::idle",
+    "operate": "Apollo11::AGSMode::operate",
+    "followPNGS": "Apollo11::AGSMode::followPNGS",
+    "agsOn": "Apollo11::AGSMode::agsOn",
+    "r47": "Apollo11::AGSMode::r47",
+    "agsOff": "Apollo11::AGSMode::agsOff"
   },
   "diagram": {
     "id": "apollo-stm-ags",
     "kind": "StateView",
-    "name": "Apollo 11 LM AGS Modes",
+    "name": "AGS modes",
     "canvas": {
-      "width": 900,
+      "width": 996,
       "height": 290,
       "background": "#FFFFFF"
     },
@@ -29,12 +29,12 @@
     "elements": [
       {
         "id": "boundary",
-        "model_ref": "agsMode",
+        "model_ref": "AGSMode",
         "symbol": "boundary",
         "layout": {
           "x": 114,
           "y": 98,
-          "width": 746,
+          "width": 842,
           "height": 152,
           "z": 0
         },
@@ -61,7 +61,7 @@
         "id": "idle",
         "symbol": "state_usage",
         "layout": {
-          "x": 288,
+          "x": 320,
           "y": 134,
           "width": 140,
           "height": 52,
@@ -75,7 +75,7 @@
         "id": "operate",
         "symbol": "state_usage",
         "layout": {
-          "x": 486,
+          "x": 550,
           "y": 134,
           "width": 140,
           "height": 52,
@@ -86,24 +86,24 @@
         "style": "state.default"
       },
       {
-        "id": "followPngs",
+        "id": "followPNGS",
         "symbol": "state_usage",
         "layout": {
-          "x": 684,
+          "x": 780,
           "y": 134,
           "width": 140,
           "height": 52,
           "z": 10
         },
-        "model_ref": "followPngs",
-        "label": "Follow PNGS",
+        "model_ref": "followPNGS",
+        "label": "follow PNGS",
         "style": "state.default"
       }
     ],
     "connections": [
       {
         "id": "initial--idle",
-        "model_ref": "agsMode",
+        "model_ref": "AGSMode",
         "source": {
           "element": "initial",
           "anchor": {
@@ -159,7 +159,7 @@
         "style": "transition"
       },
       {
-        "id": "operate--followPngs",
+        "id": "operate--followPNGS",
         "model_ref": "r47",
         "source": {
           "element": "operate",
@@ -169,7 +169,7 @@
           }
         },
         "target": {
-          "element": "followPngs",
+          "element": "followPNGS",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -181,7 +181,7 @@
         },
         "labels": [
           {
-            "text": "R47 init",
+            "text": "R47",
             "position": {
               "segment": 0,
               "offset": 0.5,
@@ -212,11 +212,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 556,
+              "x": 620,
               "y": 214
             },
             {
-              "x": 358,
+              "x": 390,
               "y": 214
             }
           ]
@@ -273,6 +273,6 @@
         "container": true
       }
     },
-    "subject": "agsMode"
+    "subject": "AGSMode"
   }
 }

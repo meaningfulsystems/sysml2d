@@ -1,33 +1,63 @@
 {
   "diagram": "apollo-stm-ags",
   "kind": "StateView",
-  "name": "Apollo 11 LM AGS Modes",
-  "subject": "agsMode",
-  "model_files": ["apollo.sysml"],
+  "name": "AGS modes",
+  "subject": "AGSMode",
+  "model_files": [
+    "apollo.sysml"
+  ],
   "direction": "left-right",
   "default_w": 140,
   "default_h": 52,
-  "rank_gap": 88,
-  "col_gap": 56,
   "aliases": {
-    "agsMode": "Apollo11::AgsMode",
-    "idle": "Apollo11::AgsMode::idle",
-    "operate": "Apollo11::AgsMode::operate",
-    "followPngs": "Apollo11::AgsMode::followPngs",
-    "agsOn": "Apollo11::AgsMode::agsOn",
-    "r47": "Apollo11::AgsMode::r47",
-    "agsOff": "Apollo11::AgsMode::agsOff"
+    "AGSMode": "Apollo11::AGSMode",
+    "idle": "Apollo11::AGSMode::idle",
+    "operate": "Apollo11::AGSMode::operate",
+    "followPNGS": "Apollo11::AGSMode::followPNGS",
+    "agsOn": "Apollo11::AGSMode::agsOn",
+    "r47": "Apollo11::AGSMode::r47",
+    "agsOff": "Apollo11::AGSMode::agsOff"
   },
   "states": {
-    "initial": {"initial": true},
-    "idle": {"label": "AGS idle", "model_ref": "idle"},
-    "operate": {"label": "AGS operate", "model_ref": "operate"},
-    "followPngs": {"label": "Follow PNGS", "model_ref": "followPngs"}
+    "initial": {
+      "initial": true
+    },
+    "idle": {
+      "label": "AGS idle",
+      "model_ref": "idle"
+    },
+    "operate": {
+      "label": "AGS operate",
+      "model_ref": "operate"
+    },
+    "followPNGS": {
+      "label": "follow PNGS",
+      "model_ref": "followPNGS"
+    }
   },
   "transitions": [
-    {"from": "initial", "to": "idle", "label": ""},
-    {"from": "idle", "to": "operate", "label": "on", "model_ref": "agsOn"},
-    {"from": "operate", "to": "followPngs", "label": "R47 init", "model_ref": "r47"},
-    {"from": "operate", "to": "idle", "label": "standby", "model_ref": "agsOff"}
+    {
+      "from": "initial",
+      "to": "idle",
+      "label": ""
+    },
+    {
+      "from": "idle",
+      "to": "operate",
+      "label": "on",
+      "model_ref": "agsOn"
+    },
+    {
+      "from": "operate",
+      "to": "followPNGS",
+      "label": "R47",
+      "model_ref": "r47"
+    },
+    {
+      "from": "operate",
+      "to": "idle",
+      "label": "standby",
+      "model_ref": "agsOff"
+    }
   ]
 }

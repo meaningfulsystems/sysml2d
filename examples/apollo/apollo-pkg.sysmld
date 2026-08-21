@@ -20,7 +20,7 @@
     },
     "elements": [
       {
-        "id": "ApolloModel",
+        "id": "Apollo11",
         "symbol": "package",
         "layout": {
           "x": 72,
@@ -29,12 +29,12 @@
           "height": 70,
           "z": 10
         },
-        "label": "Apollo Model",
+        "label": "Apollo11",
         "style": "package",
-        "model_ref": "ApolloModel"
+        "model_ref": "Apollo11"
       },
       {
-        "id": "ApolloStructure",
+        "id": "SaturnV",
         "symbol": "package",
         "layout": {
           "x": 72,
@@ -43,12 +43,12 @@
           "height": 70,
           "z": 10
         },
-        "label": "Structure",
+        "label": "SaturnV",
         "style": "package",
-        "model_ref": "ApolloStructure"
+        "model_ref": "SaturnV"
       },
       {
-        "id": "ApolloBehavior",
+        "id": "CSM",
         "symbol": "package",
         "layout": {
           "x": 332,
@@ -57,12 +57,12 @@
           "height": 70,
           "z": 10
         },
-        "label": "Behavior",
+        "label": "CSM",
         "style": "package",
-        "model_ref": "ApolloBehavior"
+        "model_ref": "CSM"
       },
       {
-        "id": "ApolloRequirements",
+        "id": "LM",
         "symbol": "package",
         "layout": {
           "x": 592,
@@ -71,12 +71,12 @@
           "height": 70,
           "z": 10
         },
-        "label": "Requirements",
+        "label": "LM",
         "style": "package",
-        "model_ref": "ApolloRequirements"
+        "model_ref": "LM"
       },
       {
-        "id": "ApolloAnalysis",
+        "id": "Crew",
         "symbol": "package",
         "layout": {
           "x": 852,
@@ -85,12 +85,12 @@
           "height": 70,
           "z": 10
         },
-        "label": "Analysis",
+        "label": "Crew",
         "style": "package",
-        "model_ref": "ApolloAnalysis"
+        "model_ref": "Crew"
       },
       {
-        "id": "ApolloVerification",
+        "id": "Ground",
         "symbol": "package",
         "layout": {
           "x": 1112,
@@ -99,23 +99,23 @@
           "height": 70,
           "z": 10
         },
-        "label": "Verification",
+        "label": "Ground",
         "style": "package",
-        "model_ref": "ApolloVerification"
+        "model_ref": "Ground"
       }
     ],
     "connections": [
       {
-        "id": "conn-ApolloModel-ApolloStructure",
+        "id": "conn-Apollo11-SaturnV",
         "source": {
-          "element": "ApolloModel",
+          "element": "Apollo11",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "ApolloStructure",
+          "element": "SaturnV",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -125,28 +125,21 @@
           "kind": "orthogonal",
           "waypoints": []
         },
-        "labels": [
-          {
-            "text": "contains",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
+        "labels": [],
         "style": "connector.default",
-        "model_ref": "ApolloModel"
+        "model_ref": "Apollo11"
       },
       {
-        "id": "conn-ApolloModel-ApolloBehavior",
+        "id": "conn-Apollo11-CSM",
         "source": {
-          "element": "ApolloModel",
+          "element": "Apollo11",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "ApolloBehavior",
+          "element": "CSM",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -167,19 +160,19 @@
         },
         "labels": [],
         "style": "connector.default",
-        "model_ref": "ApolloModel"
+        "model_ref": "Apollo11"
       },
       {
-        "id": "conn-ApolloModel-ApolloRequirements",
+        "id": "conn-Apollo11-LM",
         "source": {
-          "element": "ApolloModel",
+          "element": "Apollo11",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "ApolloRequirements",
+          "element": "LM",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -200,19 +193,19 @@
         },
         "labels": [],
         "style": "connector.default",
-        "model_ref": "ApolloModel"
+        "model_ref": "Apollo11"
       },
       {
-        "id": "conn-ApolloModel-ApolloAnalysis",
+        "id": "conn-Apollo11-Crew",
         "source": {
-          "element": "ApolloModel",
+          "element": "Apollo11",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "ApolloAnalysis",
+          "element": "Crew",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -233,19 +226,19 @@
         },
         "labels": [],
         "style": "connector.default",
-        "model_ref": "ApolloModel"
+        "model_ref": "Apollo11"
       },
       {
-        "id": "conn-ApolloModel-ApolloVerification",
+        "id": "conn-Apollo11-Ground",
         "source": {
-          "element": "ApolloModel",
+          "element": "Apollo11",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "ApolloVerification",
+          "element": "Ground",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -266,7 +259,7 @@
         },
         "labels": [],
         "style": "connector.default",
-        "model_ref": "ApolloModel"
+        "model_ref": "Apollo11"
       }
     ],
     "annotations": [],

@@ -6,25 +6,22 @@
     "apollo.sysml"
   ],
   "aliases": {
-    "ground": "Apollo11::Ground",
-    "mcc": "Apollo11::MissionControlHouston",
-    "msfn": "Apollo11::MannedSpaceFlightNetwork",
-    "gsfc": "Apollo11::GoddardSpaceFlightCenter",
-    "mocr": "Apollo11::MOCR",
-    "rtcc": "Apollo11::RealTimeComputerComplex",
-    "ccats": "Apollo11::CCATS",
-    "usb85": "Apollo11::USB85ft",
-    "usb210": "Apollo11::USB210ft",
-    "parkes": "Apollo11::Parkes",
-    "ship": "Apollo11::AISShip",
-    "site": "Apollo11::CommandSite"
+    "Ground": "Apollo11::Ground::Ground",
+    "KSC_LCC": "Apollo11::Ground::KSC_LCC",
+    "MCC": "Apollo11::Ground::MCC",
+    "RTCC": "Apollo11::Ground::RTCC",
+    "MSFN": "Apollo11::Ground::MSFN",
+    "NASCOM": "Apollo11::Ground::NASCOM",
+    "Goldstone": "Apollo11::Ground::Goldstone",
+    "Madrid": "Apollo11::Ground::Madrid",
+    "Honeysuckle": "Apollo11::Ground::Honeysuckle"
   },
   "diagram": {
     "id": "apollo-bdd-msfn",
     "kind": "DefinitionView",
-    "name": "MSFN / MCC-H Definition Tree",
+    "name": "Ground / MSFN / MCC",
     "canvas": {
-      "width": 1468,
+      "width": 1000,
       "height": 392,
       "background": "#FFFFFF"
     },
@@ -33,13 +30,13 @@
     },
     "elements": [
       {
-        "id": "ground",
-        "model_ref": "ground",
+        "id": "Ground",
+        "model_ref": "Ground",
         "symbol": "part_definition",
         "layout": {
-          "x": 654,
+          "x": 430,
           "y": 40,
-          "width": 160,
+          "width": 140,
           "height": 52,
           "z": 10
         },
@@ -52,36 +49,17 @@
         "style": "part.definition.root"
       },
       {
-        "id": "mcc",
-        "model_ref": "mcc",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 196,
-          "y": 170,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "MCC-H",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "mocr",
-        "model_ref": "mocr",
+        "id": "KSC_LCC",
+        "model_ref": "KSC_LCC",
         "symbol": "part_definition",
         "layout": {
           "x": 40,
-          "y": 300,
+          "y": 170,
           "width": 140,
           "height": 52,
           "z": 10
         },
-        "label": "MOCR",
+        "label": "KSC_LCC",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -90,8 +68,27 @@
         "style": "part.definition"
       },
       {
-        "id": "rtcc",
-        "model_ref": "rtcc",
+        "id": "MCC",
+        "model_ref": "MCC",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 196,
+          "y": 170,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "MCC",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "RTCC",
+        "model_ref": "RTCC",
         "symbol": "part_definition",
         "layout": {
           "x": 196,
@@ -100,7 +97,7 @@
           "height": 52,
           "z": 10
         },
-        "label": "RTCC 5\u00d7360/75",
+        "label": "RTCC",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -109,49 +106,11 @@
         "style": "part.definition"
       },
       {
-        "id": "ccats",
-        "model_ref": "ccats",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 352,
-          "y": 300,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "CCATS",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "gsfc",
-        "model_ref": "gsfc",
+        "id": "MSFN",
+        "model_ref": "MSFN",
         "symbol": "part_definition",
         "layout": {
           "x": 508,
-          "y": 170,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "GSFC",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "msfn",
-        "model_ref": "msfn",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 976,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -166,8 +125,46 @@
         "style": "part.definition"
       },
       {
-        "id": "usb85",
-        "model_ref": "usb85",
+        "id": "Goldstone",
+        "model_ref": "Goldstone",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 352,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "Goldstone",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "Madrid",
+        "model_ref": "Madrid",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 508,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "Madrid",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "Honeysuckle",
+        "model_ref": "Honeysuckle",
         "symbol": "part_definition",
         "layout": {
           "x": 664,
@@ -176,7 +173,7 @@
           "height": 52,
           "z": 10
         },
-        "label": "85-ft USB",
+        "label": "Honeysuckle",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -185,74 +182,17 @@
         "style": "part.definition"
       },
       {
-        "id": "usb210",
-        "model_ref": "usb210",
+        "id": "NASCOM",
+        "model_ref": "NASCOM",
         "symbol": "part_definition",
         "layout": {
           "x": 820,
-          "y": 300,
+          "y": 170,
           "width": 140,
           "height": 52,
           "z": 10
         },
-        "label": "210-ft (A11)",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "parkes",
-        "model_ref": "parkes",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 976,
-          "y": 300,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "Parkes (A11)",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "ship",
-        "model_ref": "ship",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 1132,
-          "y": 300,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "AIS ship",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "site",
-        "model_ref": "site",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 1288,
-          "y": 300,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "Site 642B",
+        "label": "NASCOM",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -263,17 +203,17 @@
     ],
     "connections": [
       {
-        "id": "conn-ground-mcc",
-        "model_ref": "mcc",
+        "id": "conn-Ground-KSC_LCC",
+        "model_ref": "KSC_LCC",
         "source": {
-          "element": "ground",
+          "element": "Ground",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "mcc",
+          "element": "KSC_LCC",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -283,7 +223,50 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 734,
+              "x": 500,
+              "y": 131
+            },
+            {
+              "x": 110,
+              "y": 131
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-Ground-MCC",
+        "model_ref": "MCC",
+        "source": {
+          "element": "Ground",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "MCC",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 500,
               "y": 131
             },
             {
@@ -306,17 +289,17 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-ground-gsfc",
-        "model_ref": "gsfc",
+        "id": "conn-Ground-MSFN",
+        "model_ref": "MSFN",
         "source": {
-          "element": "ground",
+          "element": "Ground",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "gsfc",
+          "element": "MSFN",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -326,7 +309,7 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 734,
+              "x": 500,
               "y": 131
             },
             {
@@ -349,17 +332,17 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-ground-msfn",
-        "model_ref": "msfn",
+        "id": "conn-Ground-NASCOM",
+        "model_ref": "NASCOM",
         "source": {
-          "element": "ground",
+          "element": "Ground",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "msfn",
+          "element": "NASCOM",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -369,11 +352,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 734,
+              "x": 500,
               "y": 131
             },
             {
-              "x": 1046,
+              "x": 890,
               "y": 131
             }
           ]
@@ -392,60 +375,17 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-mcc-mocr",
-        "model_ref": "mocr",
+        "id": "conn-MCC-RTCC",
+        "model_ref": "RTCC",
         "source": {
-          "element": "mcc",
+          "element": "MCC",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "mocr",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 266,
-              "y": 261
-            },
-            {
-              "x": 110,
-              "y": 261
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-mcc-rtcc",
-        "model_ref": "rtcc",
-        "source": {
-          "element": "mcc",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "rtcc",
+          "element": "RTCC",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -469,17 +409,17 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-mcc-ccats",
-        "model_ref": "ccats",
+        "id": "conn-MSFN-Goldstone",
+        "model_ref": "Goldstone",
         "source": {
-          "element": "mcc",
+          "element": "MSFN",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "ccats",
+          "element": "Goldstone",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -489,7 +429,7 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 266,
+              "x": 578,
               "y": 261
             },
             {
@@ -512,103 +452,17 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-msfn-usb85",
-        "model_ref": "usb85",
+        "id": "conn-MSFN-Madrid",
+        "model_ref": "Madrid",
         "source": {
-          "element": "msfn",
+          "element": "MSFN",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "usb85",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 1046,
-              "y": 261
-            },
-            {
-              "x": 734,
-              "y": 261
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-msfn-usb210",
-        "model_ref": "usb210",
-        "source": {
-          "element": "msfn",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "usb210",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 1046,
-              "y": 261
-            },
-            {
-              "x": 890,
-              "y": 261
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-msfn-parkes",
-        "model_ref": "parkes",
-        "source": {
-          "element": "msfn",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "parkes",
+          "element": "Madrid",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -632,17 +486,17 @@
         "style": "connector.definition"
       },
       {
-        "id": "conn-msfn-ship",
-        "model_ref": "ship",
+        "id": "conn-MSFN-Honeysuckle",
+        "model_ref": "Honeysuckle",
         "source": {
-          "element": "msfn",
+          "element": "MSFN",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "ship",
+          "element": "Honeysuckle",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -652,54 +506,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1046,
+              "x": 578,
               "y": 261
             },
             {
-              "x": 1202,
-              "y": 261
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-msfn-site",
-        "model_ref": "site",
-        "source": {
-          "element": "msfn",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "site",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 1046,
-              "y": 261
-            },
-            {
-              "x": 1358,
+              "x": 734,
               "y": 261
             }
           ]
@@ -720,6 +531,6 @@
     ],
     "annotations": [],
     "styles": {},
-    "subject": "Apollo11::Ground"
+    "subject": "Apollo11::Ground::Ground"
   }
 }

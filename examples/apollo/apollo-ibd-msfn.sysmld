@@ -6,36 +6,28 @@
     "apollo.sysml"
   ],
   "aliases": {
-    "msfn": "Apollo11::MannedSpaceFlightNetwork",
-    "goldstone85": "Apollo11::MannedSpaceFlightNetwork::goldstone85",
-    "madrid85": "Apollo11::MannedSpaceFlightNetwork::madrid85",
-    "honeysuckle85": "Apollo11::MannedSpaceFlightNetwork::honeysuckle85",
-    "site642B": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "goldstone210": "Apollo11::MannedSpaceFlightNetwork::goldstone210",
-    "parkes": "Apollo11::MannedSpaceFlightNetwork::parkes",
-    "goldstone85--site642B--src": "Apollo11::MannedSpaceFlightNetwork::goldstone85",
-    "goldstone85--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "conn-goldstone85-site642B": "Apollo11::MannedSpaceFlightNetwork::goldstone85",
-    "madrid85--site642B--src": "Apollo11::MannedSpaceFlightNetwork::madrid85",
-    "madrid85--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "conn-madrid85-site642B": "Apollo11::MannedSpaceFlightNetwork::madrid85",
-    "honeysuckle85--site642B--src": "Apollo11::MannedSpaceFlightNetwork::honeysuckle85",
-    "honeysuckle85--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "conn-honeysuckle85-site642B": "Apollo11::MannedSpaceFlightNetwork::honeysuckle85",
-    "goldstone210--site642B--src": "Apollo11::MannedSpaceFlightNetwork::goldstone210",
-    "goldstone210--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "conn-goldstone210-site642B": "Apollo11::MannedSpaceFlightNetwork::goldstone210",
-    "parkes--site642B--src": "Apollo11::MannedSpaceFlightNetwork::parkes",
-    "parkes--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "conn-parkes-site642B": "Apollo11::MannedSpaceFlightNetwork::parkes"
+    "MSFN": "Apollo11::Ground::MSFN",
+    "Goldstone": "Apollo11::Ground::MSFN::Goldstone",
+    "Madrid": "Apollo11::Ground::MSFN::Madrid",
+    "Honeysuckle": "Apollo11::Ground::MSFN::Honeysuckle",
+    "NASCOM": "Apollo11::Ground::Ground::NASCOM",
+    "Goldstone--NASCOM--src": "Apollo11::Ground::MSFN::Goldstone",
+    "Goldstone--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Goldstone-NASCOM": "Apollo11::Ground::MSFN::Goldstone",
+    "Madrid--NASCOM--src": "Apollo11::Ground::MSFN::Madrid",
+    "Madrid--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Madrid-NASCOM": "Apollo11::Ground::MSFN::Madrid",
+    "Honeysuckle--NASCOM--src": "Apollo11::Ground::MSFN::Honeysuckle",
+    "Honeysuckle--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Honeysuckle-NASCOM": "Apollo11::Ground::MSFN::Honeysuckle"
   },
   "diagram": {
     "id": "apollo-ibd-msfn",
     "kind": "InterconnectionView",
-    "name": "MSFN USB / A11 coverage",
+    "name": "MSFN Goldstone/Madrid/Honeysuckle + NASCOM",
     "canvas": {
-      "width": 657,
-      "height": 634,
+      "width": 612,
+      "height": 422,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -44,13 +36,13 @@
     "elements": [
       {
         "id": "boundary",
-        "model_ref": "msfn",
+        "model_ref": "MSFN",
         "symbol": "boundary",
         "layout": {
           "x": 40,
           "y": 40,
-          "width": 577,
-          "height": 554,
+          "width": 532,
+          "height": 342,
           "z": 0
         },
         "compartments": {
@@ -61,17 +53,17 @@
         "style": "boundary.system"
       },
       {
-        "id": "goldstone85",
-        "model_ref": "goldstone85",
+        "id": "Goldstone",
+        "model_ref": "Goldstone",
         "symbol": "part_usage",
         "layout": {
-          "x": 82,
-          "y": 182,
-          "width": 140,
+          "x": 76,
+          "y": 76,
+          "width": 150,
           "height": 58,
           "z": 10
         },
-        "label": "Goldstone 85-ft",
+        "label": "Goldstone",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -80,36 +72,17 @@
         "style": "part.comms"
       },
       {
-        "id": "madrid85",
-        "model_ref": "madrid85",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 82,
-          "y": 394,
-          "width": 140,
-          "height": 58,
-          "z": 10
-        },
-        "label": "Madrid 85-ft",
-        "compartments": {
-          "attributes": false,
-          "ports": true,
-          "actions": false
-        },
-        "style": "part.comms"
-      },
-      {
-        "id": "honeysuckle85",
-        "model_ref": "honeysuckle85",
+        "id": "Madrid",
+        "model_ref": "Madrid",
         "symbol": "part_usage",
         "layout": {
           "x": 76,
           "y": 288,
-          "width": 153,
+          "width": 150,
           "height": 58,
           "z": 10
         },
-        "label": "Honeysuckle 85-ft",
+        "label": "Madrid",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -118,17 +91,17 @@
         "style": "part.comms"
       },
       {
-        "id": "site642B",
-        "model_ref": "site642B",
+        "id": "Honeysuckle",
+        "model_ref": "Honeysuckle",
         "symbol": "part_usage",
         "layout": {
-          "x": 441,
-          "y": 288,
-          "width": 140,
+          "x": 76,
+          "y": 182,
+          "width": 150,
           "height": 58,
           "z": 10
         },
-        "label": "Site 642B\n70 kHz path A",
+        "label": "Honeysuckle",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -137,136 +110,29 @@
         "style": "part.comms"
       },
       {
-        "id": "goldstone210",
-        "model_ref": "goldstone210",
+        "id": "NASCOM",
+        "model_ref": "NASCOM",
         "symbol": "part_usage",
         "layout": {
-          "x": 79,
-          "y": 76,
-          "width": 146,
+          "x": 386,
+          "y": 182,
+          "width": 150,
           "height": 58,
           "z": 10
         },
-        "label": "Goldstone 210-ft\nA11 TV",
+        "label": "NASCOM",
         "compartments": {
           "attributes": false,
           "ports": true,
           "actions": false
         },
-        "style": "part.a11"
+        "style": "part.comms"
       },
       {
-        "id": "parkes",
-        "model_ref": "parkes",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 82,
-          "y": 500,
-          "width": 140,
-          "height": 58,
-          "z": 10
-        },
-        "label": "Parkes\nA11 TV",
-        "compartments": {
-          "attributes": false,
-          "ports": true,
-          "actions": false
-        },
-        "style": "part.a11"
-      },
-      {
-        "id": "goldstone85--site642B--src",
-        "model_ref": "goldstone85--site642B--src",
+        "id": "Goldstone--NASCOM--src",
+        "model_ref": "Goldstone--NASCOM--src",
         "symbol": "port",
-        "owner": "goldstone85",
-        "placement": {
-          "side": "bottom",
-          "offset": 0.5
-        },
-        "label": ""
-      },
-      {
-        "id": "madrid85--site642B--src",
-        "model_ref": "madrid85--site642B--src",
-        "symbol": "port",
-        "owner": "madrid85",
-        "placement": {
-          "side": "bottom",
-          "offset": 0.5
-        },
-        "label": ""
-      },
-      {
-        "id": "honeysuckle85--site642B--src",
-        "model_ref": "honeysuckle85--site642B--src",
-        "symbol": "port",
-        "owner": "honeysuckle85",
-        "placement": {
-          "side": "right",
-          "offset": 0.5
-        },
-        "label": ""
-      },
-      {
-        "id": "goldstone210--site642B--tgt",
-        "model_ref": "goldstone210--site642B--tgt",
-        "symbol": "port",
-        "owner": "site642B",
-        "placement": {
-          "side": "left",
-          "offset": 0.1667
-        },
-        "label": ""
-      },
-      {
-        "id": "goldstone85--site642B--tgt",
-        "model_ref": "goldstone85--site642B--tgt",
-        "symbol": "port",
-        "owner": "site642B",
-        "placement": {
-          "side": "left",
-          "offset": 0.3333
-        },
-        "label": ""
-      },
-      {
-        "id": "honeysuckle85--site642B--tgt",
-        "model_ref": "honeysuckle85--site642B--tgt",
-        "symbol": "port",
-        "owner": "site642B",
-        "placement": {
-          "side": "left",
-          "offset": 0.5
-        },
-        "label": ""
-      },
-      {
-        "id": "madrid85--site642B--tgt",
-        "model_ref": "madrid85--site642B--tgt",
-        "symbol": "port",
-        "owner": "site642B",
-        "placement": {
-          "side": "left",
-          "offset": 0.6667
-        },
-        "label": ""
-      },
-      {
-        "id": "parkes--site642B--tgt",
-        "model_ref": "parkes--site642B--tgt",
-        "symbol": "port",
-        "owner": "site642B",
-        "placement": {
-          "side": "left",
-          "offset": 0.8333
-        },
-        "label": ""
-      },
-      {
-        "id": "goldstone210--site642B--src",
-        "model_ref": "goldstone210--site642B--src",
-        "symbol": "port",
-        "owner": "goldstone210",
+        "owner": "Goldstone",
         "placement": {
           "side": "top",
           "offset": 0.5
@@ -274,30 +140,74 @@
         "label": ""
       },
       {
-        "id": "parkes--site642B--src",
-        "model_ref": "parkes--site642B--src",
+        "id": "Madrid--NASCOM--src",
+        "model_ref": "Madrid--NASCOM--src",
         "symbol": "port",
-        "owner": "parkes",
+        "owner": "Madrid",
         "placement": {
           "side": "bottom",
           "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "Honeysuckle--NASCOM--src",
+        "model_ref": "Honeysuckle--NASCOM--src",
+        "symbol": "port",
+        "owner": "Honeysuckle",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "Goldstone--NASCOM--tgt",
+        "model_ref": "Goldstone--NASCOM--tgt",
+        "symbol": "port",
+        "owner": "NASCOM",
+        "placement": {
+          "side": "left",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "Honeysuckle--NASCOM--tgt",
+        "model_ref": "Honeysuckle--NASCOM--tgt",
+        "symbol": "port",
+        "owner": "NASCOM",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "Madrid--NASCOM--tgt",
+        "model_ref": "Madrid--NASCOM--tgt",
+        "symbol": "port",
+        "owner": "NASCOM",
+        "placement": {
+          "side": "left",
+          "offset": 0.75
         },
         "label": ""
       }
     ],
     "connections": [
       {
-        "id": "conn-goldstone85-site642B",
-        "model_ref": "conn-goldstone85-site642B",
+        "id": "conn-Goldstone-NASCOM",
+        "model_ref": "conn-Goldstone-NASCOM",
         "source": {
-          "element": "goldstone85--site642B--src",
+          "element": "Goldstone--NASCOM--src",
           "anchor": {
-            "side": "bottom",
+            "side": "top",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "goldstone85--site642B--tgt",
+          "element": "Goldstone--NASCOM--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -307,16 +217,16 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 152,
-              "y": 211
+              "x": 151,
+              "y": 158
             },
             {
-              "x": 413,
-              "y": 211
+              "x": 358,
+              "y": 158
             },
             {
-              "x": 413,
-              "y": 307.331
+              "x": 358,
+              "y": 196.5
             }
           ]
         },
@@ -331,17 +241,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-madrid85-site642B",
-        "model_ref": "conn-madrid85-site642B",
+        "id": "conn-Madrid-NASCOM",
+        "model_ref": "conn-Madrid-NASCOM",
         "source": {
-          "element": "madrid85--site642B--src",
+          "element": "Madrid--NASCOM--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "madrid85--site642B--tgt",
+          "element": "Madrid--NASCOM--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -351,12 +261,16 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 253,
-              "y": 452
+              "x": 151,
+              "y": 264
             },
             {
-              "x": 253,
-              "y": 326.669
+              "x": 250,
+              "y": 264
+            },
+            {
+              "x": 250,
+              "y": 225.5
             }
           ]
         },
@@ -371,17 +285,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-honeysuckle85-site642B",
-        "model_ref": "conn-honeysuckle85-site642B",
+        "id": "conn-Honeysuckle-NASCOM",
+        "model_ref": "conn-Honeysuckle-NASCOM",
         "source": {
-          "element": "honeysuckle85--site642B--src",
+          "element": "Honeysuckle--NASCOM--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "honeysuckle85--site642B--tgt",
+          "element": "Honeysuckle--NASCOM--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -400,86 +314,6 @@
           }
         ],
         "style": "connector.default"
-      },
-      {
-        "id": "conn-goldstone210-site642B",
-        "model_ref": "conn-goldstone210-site642B",
-        "source": {
-          "element": "goldstone210--site642B--src",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "goldstone210--site642B--tgt",
-          "anchor": {
-            "side": "left",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 253,
-              "y": 76
-            },
-            {
-              "x": 253,
-              "y": 297.669
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "A11 coverage",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.default"
-      },
-      {
-        "id": "conn-parkes-site642B",
-        "model_ref": "conn-parkes-site642B",
-        "source": {
-          "element": "parkes--site642B--src",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "parkes--site642B--tgt",
-          "anchor": {
-            "side": "left",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 253,
-              "y": 558
-            },
-            {
-              "x": 253,
-              "y": 336.331
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "A11 coverage",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.default"
       }
     ],
     "annotations": [],
@@ -489,14 +323,34 @@
         "stroke": "#333333",
         "stroke_width": 2
       },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
       "part.comms": {
         "fill": "#FFF7ED",
         "stroke": "#C2410C",
         "stroke_width": 2
       },
-      "part.a11": {
-        "fill": "#FCE4EC",
-        "stroke": "#AD1457",
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
         "stroke_width": 2
       },
       "connector.default": {
@@ -504,6 +358,6 @@
         "stroke_width": 2
       }
     },
-    "subject": "msfn"
+    "subject": "MSFN"
   }
 }

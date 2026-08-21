@@ -8,82 +8,82 @@
   ],
   "direction": "left-right",
   "nodes": {
-    "flight": {
+    "FLIGHT": {
       "label": "FLIGHT",
       "rank": 0,
       "order": 0
     },
-    "ccc": {
+    "CCC": {
       "label": "CCC",
       "rank": 1,
       "order": 0
     },
-    "rtcc": {
+    "RTCC": {
       "label": "RTCC",
       "rank": 2,
       "order": 0
     },
-    "ccats": {
+    "CCATS": {
       "label": "CCATS",
       "rank": 3,
       "order": 0
     },
-    "site642B": {
-      "label": "Site 642B",
+    "MSFN": {
+      "label": "MSFN",
       "rank": 4,
       "order": 0
     },
-    "cmc": {
-      "label": "CMC",
+    "AGC_CM": {
+      "label": "AGC_CM",
       "rank": 5,
       "order": 0
     },
-    "lgc": {
-      "label": "LGC",
+    "AGC_LM": {
+      "label": "AGC_LM",
       "rank": 5,
       "order": 1
     }
   },
   "edges": [
     {
-      "from": "flight",
-      "to": "ccc",
+      "from": "FLIGHT",
+      "to": "CCC",
       "label": "FC",
       "model_ref": "commandPathA"
     },
     {
-      "from": "ccc",
-      "to": "rtcc",
+      "from": "CCC",
+      "to": "RTCC",
       "label": "path A",
       "model_ref": "commandPathA"
     },
     {
-      "from": "rtcc",
-      "to": "ccats",
+      "from": "RTCC",
+      "to": "CCATS",
       "label": "path A",
       "model_ref": "commandPathA"
     },
     {
-      "from": "ccats",
-      "to": "site642B",
+      "from": "CCATS",
+      "to": "MSFN",
       "label": "70 kHz",
       "model_ref": "commandPathA"
     },
     {
-      "from": "site642B",
-      "to": "cmc",
+      "from": "MSFN",
+      "to": "AGC_CM",
       "label": "USB",
       "model_ref": "usbCsmFlow"
     },
     {
-      "from": "site642B",
-      "to": "lgc",
+      "from": "MSFN",
+      "to": "AGC_LM",
       "label": "USB",
       "model_ref": "usbLmFlow"
     },
     {
-      "from": "flight",
-      "to": "cmc",
+      "from": "FLIGHT",
+      "to": "AGC_CM",
       "label": "P27 V70\u2013V73",
       "model_ref": "commandPathB"
     }

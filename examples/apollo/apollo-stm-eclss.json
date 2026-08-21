@@ -1,35 +1,33 @@
 {
   "diagram": "apollo-stm-eclss",
   "kind": "StateView",
-  "name": "Apollo 11 ECLSS / EVA modes",
-  "subject": "eclssMode",
+  "name": "ECLSS / EVA modes",
+  "subject": "ECLSSMode",
   "model_files": [
     "apollo.sysml"
   ],
   "direction": "left-right",
   "default_w": 140,
   "default_h": 52,
-  "rank_gap": 88,
-  "col_gap": 56,
   "aliases": {
-    "eclssMode": "Apollo11::EclssMode",
-    "cabin": "Apollo11::EclssMode::cabin",
-    "suit": "Apollo11::EclssMode::suit",
-    "eva": "Apollo11::EclssMode::eva",
-    "toSuit": "Apollo11::EclssMode::toSuit",
-    "toEva": "Apollo11::EclssMode::toEva",
-    "toCabin": "Apollo11::EclssMode::toCabin"
+    "ECLSSMode": "Apollo11::ECLSSMode",
+    "cabin": "Apollo11::ECLSSMode::cabin",
+    "suit": "Apollo11::ECLSSMode::suit",
+    "eva": "Apollo11::ECLSSMode::eva",
+    "toSuit": "Apollo11::ECLSSMode::toSuit",
+    "toEva": "Apollo11::ECLSSMode::toEva",
+    "toCabin": "Apollo11::ECLSSMode::toCabin"
   },
   "states": {
     "initial": {
       "initial": true
     },
     "cabin": {
-      "label": "Cabin 5.0 psia",
+      "label": "cabin 5.0 psia",
       "model_ref": "cabin"
     },
     "suit": {
-      "label": "Suit circuit",
+      "label": "suit circuit",
       "model_ref": "suit"
     },
     "eva": {

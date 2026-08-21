@@ -1,57 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1324" height="644" viewBox="0 0 1324 644">
+<svg xmlns="http://www.w3.org/2000/svg" width="1156" height="448" viewBox="0 0 1156 448">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1324" height="644" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1320" height="602" fill="none" stroke="#333333" stroke-width="2"/>
-<path d="M 2 1 H 536 L 552 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
-<text class="header" x="12" y="24">[icn.mb] MCC-H MOCR / RTCC / CCATS [mcc : MissionControlHouston]</text>
-<rect x="2" y="38" width="1320" height="604" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="0" y="0" width="1156" height="448" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1152" height="406" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 272 L 288 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] MCC / RTCC [MCC : MCC]</text>
+<rect x="2" y="38" width="1152" height="408" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="boundary" x="40" y="40" width="1240" height="522" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
-<text class="label" x="50" y="62">mcc</text>
-<rect id="flight" x="76" y="370" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="141" y="399">FLIGHT</text>
-<rect id="capcom" x="76" y="76" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<rect id="boundary" x="40" y="40" width="1072" height="326" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">MCC</text>
+<rect id="FLIGHT" x="76" y="272" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="141" y="301">FLIGHT</text>
+<rect id="CAPCOM" x="76" y="76" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="141" y="105">CAPCOM</text>
-<rect id="eecom" x="76" y="174" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<rect id="EECOM" x="76" y="174" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="141" y="203">EECOM</text>
-<rect id="gncProp" x="76" y="468" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="141" y="497">GNC / prop</text>
-<rect id="fdo" x="76" y="272" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="141" y="301">FDO</text>
-<rect id="ccc" x="422" y="272" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="487" y="301">CCC</text>
-<rect id="rtcc" x="768" y="272" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="833" y="293.5">RTCC</tspan><tspan x="833" dy="15">5× 360/75</tspan></text>
-<rect id="ccats" x="1114" y="272" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1179" y="301">CCATS</text>
-<rect id="flight--ccc--src" x="135" y="422" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="capcom--ccc--src" x="135" y="70" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="eecom--ccc--src" x="135" y="226" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="gncProp--ccc--src" x="135" y="520" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="fdo--ccc--src" x="200" y="295" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="capcom--ccc--tgt" x="416" y="275.669" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="eecom--ccc--tgt" x="416" y="285.331" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="fdo--ccc--tgt" x="416" y="295" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="flight--ccc--tgt" x="416" y="304.669" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="gncProp--ccc--tgt" x="416" y="314.331" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="ccc--rtcc--src" x="546" y="295" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="ccc--rtcc--tgt" x="762" y="295" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="rtcc--ccats--src" x="892" y="295" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="rtcc--ccats--tgt" x="1108" y="295" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<path d="M 141,434 L 141,354 L 230,354 L 230,310.669 L 416,310.669" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 141,70 L 141,150 L 230,150 L 230,281.669 L 416,281.669" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 141,238 L 141,203 L 223,203 A 7 7 0 0 0 237,203 L 394,203 L 394,274.669 A 7 7 0 0 1 394,288.669 L 394,291.331 L 416,291.331" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 141,532 L 141,452 L 230,452 L 230,320.331 L 416,320.331" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 212,301 L 416,301" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 558,301 L 762,301" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 904,301 L 1108,301" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" text-anchor="middle" x="323" y="333.669">FC</text>
-<text class="small" text-anchor="middle" x="660" y="289">path A</text>
-<text class="small" text-anchor="middle" x="1006" y="289">load</text>
+<rect id="CCC" x="366" y="174" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="431" y="203">CCC</text>
+<rect id="RTCC" x="656" y="174" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="721" y="195.5">RTCC</tspan><tspan x="721" dy="15">5× 360/75</tspan></text>
+<rect id="CCATS" x="946" y="174" width="130" height="58" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1011" y="203">CCATS</text>
+<rect id="FLIGHT--CCC--src" x="135" y="324" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CAPCOM--CCC--src" x="135" y="70" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="EECOM--CCC--src" x="200" y="197" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CAPCOM--CCC--tgt" x="360" y="182.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="EECOM--CCC--tgt" x="360" y="197" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="FLIGHT--CCC--tgt" x="360" y="211.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CCC--RTCC--src" x="490" y="197" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CCC--RTCC--tgt" x="650" y="197" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="RTCC--CCATS--src" x="780" y="197" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="RTCC--CCATS--tgt" x="940" y="197" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 141,336 L 141,256 L 230,256 L 230,217.5 L 360,217.5" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 141,70 L 141,154 L 338,154 L 338,188.5 L 360,188.5" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 212,203 L 360,203" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 502,203 L 650,203" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 792,203 L 940,203" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="295" y="240.5">FC</text>
+<text class="small" text-anchor="middle" x="576" y="191">path A</text>
+<text class="small" text-anchor="middle" x="866" y="191">load</text>
 </g>
 </svg>

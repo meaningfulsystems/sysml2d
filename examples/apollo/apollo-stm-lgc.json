@@ -1,51 +1,116 @@
 {
   "diagram": "apollo-stm-lgc",
   "kind": "StateView",
-  "name": "Apollo 11 LGC Programs (A11-flown landing path)",
-  "subject": "lgcMajorMode",
-  "model_files": ["apollo.sysml"],
+  "name": "AGC_LM programs (A11-flown path)",
+  "subject": "AGC_LM_Mode",
+  "model_files": [
+    "apollo.sysml"
+  ],
   "direction": "top-down",
   "default_w": 150,
   "default_h": 52,
-  "rank_gap": 72,
-  "col_gap": 48,
   "aliases": {
-    "lgcMajorMode": "Apollo11::LgcMajorMode",
-    "p00": "Apollo11::LgcMajorMode::p00",
-    "p63": "Apollo11::LgcMajorMode::p63",
-    "p64": "Apollo11::LgcMajorMode::p64",
-    "p66": "Apollo11::LgcMajorMode::p66",
-    "p68": "Apollo11::LgcMajorMode::p68",
-    "p70": "Apollo11::LgcMajorMode::p70",
-    "p71": "Apollo11::LgcMajorMode::p71",
-    "p12": "Apollo11::LgcMajorMode::p12",
-    "toP63": "Apollo11::LgcMajorMode::toP63",
-    "toP64": "Apollo11::LgcMajorMode::toP64",
-    "toP66": "Apollo11::LgcMajorMode::toP66",
-    "toP68": "Apollo11::LgcMajorMode::toP68",
-    "toP70": "Apollo11::LgcMajorMode::toP70",
-    "toP71": "Apollo11::LgcMajorMode::toP71",
-    "toP12": "Apollo11::LgcMajorMode::toP12"
+    "AGC_LM_Mode": "Apollo11::AGC_LM_Mode",
+    "p00": "Apollo11::AGC_LM_Mode::p00",
+    "p63": "Apollo11::AGC_LM_Mode::p63",
+    "p64": "Apollo11::AGC_LM_Mode::p64",
+    "p66": "Apollo11::AGC_LM_Mode::p66",
+    "p68": "Apollo11::AGC_LM_Mode::p68",
+    "p70": "Apollo11::AGC_LM_Mode::p70",
+    "p71": "Apollo11::AGC_LM_Mode::p71",
+    "p12": "Apollo11::AGC_LM_Mode::p12",
+    "toP63": "Apollo11::AGC_LM_Mode::toP63",
+    "toP64": "Apollo11::AGC_LM_Mode::toP64",
+    "toP66": "Apollo11::AGC_LM_Mode::toP66",
+    "toP68": "Apollo11::AGC_LM_Mode::toP68",
+    "toP70": "Apollo11::AGC_LM_Mode::toP70",
+    "toP71": "Apollo11::AGC_LM_Mode::toP71",
+    "toP12": "Apollo11::AGC_LM_Mode::toP12"
   },
   "states": {
-    "initial": {"initial": true},
-    "p00": {"label": "P00 idle", "model_ref": "p00"},
-    "p63": {"label": "P63 braking", "model_ref": "p63"},
-    "p64": {"label": "P64 approach", "model_ref": "p64"},
-    "p66": {"label": "P66 rate-of-descent\n(A11-flown landing)", "model_ref": "p66", "h": 64},
-    "p68": {"label": "P68 landing confirm", "model_ref": "p68"},
-    "p70": {"label": "P70 DPS abort", "model_ref": "p70"},
-    "p71": {"label": "P71 APS abort", "model_ref": "p71"},
-    "p12": {"label": "P12 ascent", "model_ref": "p12"}
+    "initial": {
+      "initial": true
+    },
+    "p00": {
+      "label": "P00",
+      "model_ref": "p00"
+    },
+    "p63": {
+      "label": "P63",
+      "model_ref": "p63"
+    },
+    "p64": {
+      "label": "P64",
+      "model_ref": "p64"
+    },
+    "p66": {
+      "label": "P66 (A11 flown)",
+      "model_ref": "p66"
+    },
+    "p68": {
+      "label": "P68",
+      "model_ref": "p68"
+    },
+    "p70": {
+      "label": "P70",
+      "model_ref": "p70"
+    },
+    "p71": {
+      "label": "P71",
+      "model_ref": "p71"
+    },
+    "p12": {
+      "label": "P12",
+      "model_ref": "p12"
+    }
   },
   "transitions": [
-    {"from": "initial", "to": "p00", "label": ""},
-    {"from": "p00", "to": "p63", "label": "DOI / PDI", "model_ref": "toP63"},
-    {"from": "p63", "to": "p64", "label": "approach", "model_ref": "toP64"},
-    {"from": "p64", "to": "p66", "label": "A11 takeover", "model_ref": "toP66"},
-    {"from": "p66", "to": "p68", "label": "contact", "model_ref": "toP68"},
-    {"from": "p63", "to": "p70", "label": "abort", "model_ref": "toP70"},
-    {"from": "p70", "to": "p71", "label": "APS", "model_ref": "toP71"},
-    {"from": "p68", "to": "p12", "label": "ascent", "model_ref": "toP12"}
+    {
+      "from": "initial",
+      "to": "p00",
+      "label": ""
+    },
+    {
+      "from": "p00",
+      "to": "p63",
+      "label": "DOI / PDI",
+      "model_ref": "toP63"
+    },
+    {
+      "from": "p63",
+      "to": "p64",
+      "label": "approach",
+      "model_ref": "toP64"
+    },
+    {
+      "from": "p64",
+      "to": "p66",
+      "label": "A11 takeover",
+      "model_ref": "toP66"
+    },
+    {
+      "from": "p66",
+      "to": "p68",
+      "label": "contact",
+      "model_ref": "toP68"
+    },
+    {
+      "from": "p63",
+      "to": "p70",
+      "label": "abort",
+      "model_ref": "toP70"
+    },
+    {
+      "from": "p70",
+      "to": "p71",
+      "label": "APS",
+      "model_ref": "toP71"
+    },
+    {
+      "from": "p68",
+      "to": "p12",
+      "label": "ascent",
+      "model_ref": "toP12"
+    }
   ]
 }

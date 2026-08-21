@@ -1,41 +1,89 @@
 {
   "diagram": "apollo-stm-scs",
   "kind": "StateView",
-  "name": "Apollo 11 CM SCS Modes",
-  "subject": "scsMode",
-  "model_files": ["apollo.sysml"],
+  "name": "SCS modes",
+  "subject": "SCSMode",
+  "model_files": [
+    "apollo.sysml"
+  ],
   "direction": "left-right",
   "default_w": 130,
   "default_h": 52,
-  "rank_gap": 88,
-  "col_gap": 48,
   "aliases": {
-    "scsMode": "Apollo11::ScsMode",
-    "cmc": "Apollo11::ScsMode::cmc",
-    "attHold": "Apollo11::ScsMode::attHold",
-    "rateCommand": "Apollo11::ScsMode::rateCommand",
-    "minImpulse": "Apollo11::ScsMode::minImpulse",
-    "scsToHold": "Apollo11::ScsMode::scsToHold",
-    "scsToRate": "Apollo11::ScsMode::scsToRate",
-    "scsToMin": "Apollo11::ScsMode::scsToMin",
-    "scsToCmc": "Apollo11::ScsMode::scsToCmc",
-    "scsRateToCmc": "Apollo11::ScsMode::scsRateToCmc",
-    "scsMinToCmc": "Apollo11::ScsMode::scsMinToCmc"
+    "SCSMode": "Apollo11::SCSMode",
+    "AGC_CM": "Apollo11::SCSMode::AGC_CM",
+    "attHold": "Apollo11::SCSMode::attHold",
+    "rateCommand": "Apollo11::SCSMode::rateCommand",
+    "minImpulse": "Apollo11::SCSMode::minImpulse",
+    "scsToHold": "Apollo11::SCSMode::scsToHold",
+    "scsToRate": "Apollo11::SCSMode::scsToRate",
+    "scsToMin": "Apollo11::SCSMode::scsToMin",
+    "scsToAGC": "Apollo11::SCSMode::scsToAGC",
+    "scsRateToAGC": "Apollo11::SCSMode::scsRateToAGC",
+    "scsMinToAGC": "Apollo11::SCSMode::scsMinToAGC"
   },
   "states": {
-    "initial": {"initial": true},
-    "cmc": {"label": "CMC (digital)", "model_ref": "cmc"},
-    "attHold": {"label": "Attitude hold", "model_ref": "attHold"},
-    "rateCommand": {"label": "Rate command", "model_ref": "rateCommand"},
-    "minImpulse": {"label": "Min impulse", "model_ref": "minImpulse"}
+    "initial": {
+      "initial": true
+    },
+    "AGC_CM": {
+      "label": "AGC_CM",
+      "model_ref": "AGC_CM"
+    },
+    "attHold": {
+      "label": "attitude hold",
+      "model_ref": "attHold"
+    },
+    "rateCommand": {
+      "label": "rate command",
+      "model_ref": "rateCommand"
+    },
+    "minImpulse": {
+      "label": "min impulse",
+      "model_ref": "minImpulse"
+    }
   },
   "transitions": [
-    {"from": "initial", "to": "cmc", "label": ""},
-    {"from": "cmc", "to": "attHold", "label": "SCS hold", "model_ref": "scsToHold"},
-    {"from": "cmc", "to": "rateCommand", "label": "rate", "model_ref": "scsToRate"},
-    {"from": "cmc", "to": "minImpulse", "label": "min", "model_ref": "scsToMin"},
-    {"from": "attHold", "to": "cmc", "label": "CMC", "model_ref": "scsToCmc"},
-    {"from": "rateCommand", "to": "cmc", "label": "CMC", "model_ref": "scsRateToCmc"},
-    {"from": "minImpulse", "to": "cmc", "label": "CMC", "model_ref": "scsMinToCmc"}
+    {
+      "from": "initial",
+      "to": "AGC_CM",
+      "label": ""
+    },
+    {
+      "from": "AGC_CM",
+      "to": "attHold",
+      "label": "SCS hold",
+      "model_ref": "scsToHold"
+    },
+    {
+      "from": "AGC_CM",
+      "to": "rateCommand",
+      "label": "rate",
+      "model_ref": "scsToRate"
+    },
+    {
+      "from": "AGC_CM",
+      "to": "minImpulse",
+      "label": "min",
+      "model_ref": "scsToMin"
+    },
+    {
+      "from": "attHold",
+      "to": "AGC_CM",
+      "label": "AGC_CM",
+      "model_ref": "scsToAGC"
+    },
+    {
+      "from": "rateCommand",
+      "to": "AGC_CM",
+      "label": "AGC_CM",
+      "model_ref": "scsRateToAGC"
+    },
+    {
+      "from": "minImpulse",
+      "to": "AGC_CM",
+      "label": "AGC_CM",
+      "model_ref": "scsMinToAGC"
+    }
   ]
 }

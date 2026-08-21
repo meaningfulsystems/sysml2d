@@ -17,8 +17,8 @@
 <text class="label" text-anchor="middle" x="157" y="343">P27 V70–V73</text>
 <rect id="sendP27" x="82" y="544" width="150" height="70" rx="18" fill="#ECFDF5" stroke="#047857" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="157" y="579">Send P27</text>
-<rect id="cmc" x="82" y="780" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="157" y="815">CMC</text>
+<rect id="AGC_CM" x="82" y="780" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="157" y="815">AGC_CM</text>
 <rect id="verifyP27" x="352" y="544" width="170" height="76" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="437" y="582">Verify P27</text>
 <path d="M 157,142 L 157,302" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>

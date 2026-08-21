@@ -6,36 +6,45 @@
     "apollo.sysml"
   ],
   "aliases": {
-    "lm": "Apollo11::LM",
-    "pngs": "Apollo11::LMAscent::pngs",
-    "lgc": "Apollo11::LMAscent::lgc",
-    "lmDsky": "Apollo11::LMAscent::lmDsky",
-    "ags": "Apollo11::LMAscent::ags",
-    "aps": "Apollo11::LMAscent::aps",
-    "lmRcs": "Apollo11::LMAscent::lmRcs",
-    "pngs--lgc--src": "Apollo11::LMAscent::pngs",
-    "pngs--lgc--tgt": "Apollo11::LMAscent::lgc",
-    "conn-pngs-lgc": "Apollo11::LMAscent::pngs",
-    "lgc--lmDsky--src": "Apollo11::LMAscent::lgc",
-    "lgc--lmDsky--tgt": "Apollo11::LMAscent::lmDsky",
-    "conn-lgc-lmDsky": "Apollo11::LMAscent::lgc",
-    "lgc--ags--src": "Apollo11::LMAscent::lgc",
-    "lgc--ags--tgt": "Apollo11::LMAscent::ags",
-    "conn-lgc-ags": "Apollo11::LMAscent::lgc",
-    "lgc--aps--src": "Apollo11::LMAscent::lgc",
-    "lgc--aps--tgt": "Apollo11::LMAscent::aps",
-    "conn-lgc-aps": "Apollo11::LMAscent::lgc",
-    "lgc--lmRcs--src": "Apollo11::LMAscent::lgc",
-    "lgc--lmRcs--tgt": "Apollo11::LMAscent::lmRcs",
-    "conn-lgc-lmRcs": "Apollo11::LMAscent::lgc"
+    "LM": "Apollo11::LM::LM",
+    "PNGS": "Apollo11::LM::ascent::PNGS",
+    "AGC_LM": "Apollo11::LM::ascent::AGC_LM",
+    "DSKY": "Apollo11::LM::ascent::DSKY",
+    "AGS": "Apollo11::LM::ascent::AGS",
+    "APS": "Apollo11::LM::ascent::APS",
+    "RCS": "Apollo11::LM::ascent::RCS",
+    "landingRadar": "Apollo11::LM::ascent::landingRadar",
+    "rendezvousRadar": "Apollo11::LM::ascent::rendezvousRadar",
+    "DPS": "Apollo11::LM::descent::DPS",
+    "PNGS--AGC_LM--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--AGC_LM--tgt": "Apollo11::LM::ascent::AGC_LM",
+    "conn-PNGS-AGC_LM": "Apollo11::LM::ascent::PNGS",
+    "AGC_LM--DSKY--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--DSKY--tgt": "Apollo11::LM::ascent::DSKY",
+    "conn-AGC_LM-DSKY": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--AGS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--AGS--tgt": "Apollo11::LM::ascent::AGS",
+    "conn-AGC_LM-AGS": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--APS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--APS--tgt": "Apollo11::LM::ascent::APS",
+    "conn-AGC_LM-APS": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--RCS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--RCS--tgt": "Apollo11::LM::ascent::RCS",
+    "conn-AGC_LM-RCS": "Apollo11::LM::ascent::AGC_LM",
+    "PNGS--landingRadar--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--landingRadar--tgt": "Apollo11::LM::ascent::landingRadar",
+    "conn-PNGS-landingRadar": "Apollo11::LM::ascent::PNGS",
+    "PNGS--rendezvousRadar--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--rendezvousRadar--tgt": "Apollo11::LM::ascent::rendezvousRadar",
+    "conn-PNGS-rendezvousRadar": "Apollo11::LM::ascent::PNGS"
   },
   "diagram": {
     "id": "apollo-ibd-lm",
     "kind": "InterconnectionView",
-    "name": "LM-5 PNGS / AGS / Propulsion",
+    "name": "LM PNGS / AGC_LM / AGS",
     "canvas": {
       "width": 948,
-      "height": 552,
+      "height": 540,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -44,13 +53,13 @@
     "elements": [
       {
         "id": "boundary",
-        "model_ref": "lm",
+        "model_ref": "LM",
         "symbol": "boundary",
         "layout": {
           "x": 40,
           "y": 40,
           "width": 868,
-          "height": 472,
+          "height": 460,
           "z": 0
         },
         "compartments": {
@@ -61,17 +70,17 @@
         "style": "boundary.system"
       },
       {
-        "id": "pngs",
-        "model_ref": "pngs",
+        "id": "PNGS",
+        "model_ref": "PNGS",
         "symbol": "part_usage",
         "layout": {
           "x": 76,
-          "y": 247,
+          "y": 296,
           "width": 140,
           "height": 58,
           "z": 10
         },
-        "label": "PNGS\nIMU + radars",
+        "label": "PNGS",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -80,17 +89,17 @@
         "style": "part.gnc"
       },
       {
-        "id": "lgc",
-        "model_ref": "lgc",
+        "id": "AGC_LM",
+        "model_ref": "AGC_LM",
         "symbol": "part_usage",
         "layout": {
           "x": 404,
-          "y": 247,
+          "y": 131,
           "width": 140,
           "height": 58,
           "z": 10
         },
-        "label": "LGC Luminary",
+        "label": "AGC_LM",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -99,8 +108,8 @@
         "style": "part.gnc"
       },
       {
-        "id": "lmDsky",
-        "model_ref": "lmDsky",
+        "id": "DSKY",
+        "model_ref": "DSKY",
         "symbol": "part_usage",
         "layout": {
           "x": 732,
@@ -109,7 +118,7 @@
           "height": 58,
           "z": 10
         },
-        "label": "LM DSKY",
+        "label": "DSKY",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -118,17 +127,17 @@
         "style": "part.gnc"
       },
       {
-        "id": "ags",
-        "model_ref": "ags",
+        "id": "AGS",
+        "model_ref": "AGS",
         "symbol": "part_usage",
         "layout": {
           "x": 732,
-          "y": 190,
+          "y": 186,
           "width": 140,
           "height": 58,
           "z": 10
         },
-        "label": "AGS\nAEA+ASA",
+        "label": "AGS",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -137,17 +146,55 @@
         "style": "part.gnc"
       },
       {
-        "id": "aps",
-        "model_ref": "aps",
+        "id": "landingRadar",
+        "model_ref": "landingRadar",
         "symbol": "part_usage",
         "layout": {
-          "x": 732,
-          "y": 304,
+          "x": 404,
+          "y": 241,
           "width": 140,
           "height": 58,
           "z": 10
         },
-        "label": "APS 3,500 lbf",
+        "label": "landingRadar",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "rendezvousRadar",
+        "model_ref": "rendezvousRadar",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 351,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "rendezvousRadar",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "DPS",
+        "model_ref": "DPS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 186,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "DPS",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -156,17 +203,17 @@
         "style": "part.prop"
       },
       {
-        "id": "lmRcs",
-        "model_ref": "lmRcs",
+        "id": "APS",
+        "model_ref": "APS",
         "symbol": "part_usage",
         "layout": {
           "x": 732,
-          "y": 418,
+          "y": 296,
           "width": 140,
           "height": 58,
           "z": 10
         },
-        "label": "LM RCS\n604 lb PK",
+        "label": "APS",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -175,10 +222,40 @@
         "style": "part.prop"
       },
       {
-        "id": "pngs--lgc--src",
-        "model_ref": "pngs--lgc--src",
+        "id": "RCS",
+        "model_ref": "RCS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 732,
+          "y": 406,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "RCS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "PNGS--AGC_LM--src",
+        "model_ref": "PNGS--AGC_LM--src",
         "symbol": "port",
-        "owner": "pngs",
+        "owner": "PNGS",
+        "placement": {
+          "side": "right",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "PNGS--landingRadar--src",
+        "model_ref": "PNGS--landingRadar--src",
+        "symbol": "port",
+        "owner": "PNGS",
         "placement": {
           "side": "right",
           "offset": 0.5
@@ -186,10 +263,21 @@
         "label": ""
       },
       {
-        "id": "pngs--lgc--tgt",
-        "model_ref": "pngs--lgc--tgt",
+        "id": "PNGS--rendezvousRadar--src",
+        "model_ref": "PNGS--rendezvousRadar--src",
         "symbol": "port",
-        "owner": "lgc",
+        "owner": "PNGS",
+        "placement": {
+          "side": "right",
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "PNGS--AGC_LM--tgt",
+        "model_ref": "PNGS--AGC_LM--tgt",
+        "symbol": "port",
+        "owner": "AGC_LM",
         "placement": {
           "side": "left",
           "offset": 0.5
@@ -197,10 +285,10 @@
         "label": ""
       },
       {
-        "id": "lgc--lmDsky--src",
-        "model_ref": "lgc--lmDsky--src",
+        "id": "AGC_LM--DSKY--src",
+        "model_ref": "AGC_LM--DSKY--src",
         "symbol": "port",
-        "owner": "lgc",
+        "owner": "AGC_LM",
         "placement": {
           "side": "right",
           "offset": 0.2
@@ -208,10 +296,10 @@
         "label": ""
       },
       {
-        "id": "lgc--ags--src",
-        "model_ref": "lgc--ags--src",
+        "id": "AGC_LM--AGS--src",
+        "model_ref": "AGC_LM--AGS--src",
         "symbol": "port",
-        "owner": "lgc",
+        "owner": "AGC_LM",
         "placement": {
           "side": "right",
           "offset": 0.4
@@ -219,10 +307,10 @@
         "label": ""
       },
       {
-        "id": "lgc--aps--src",
-        "model_ref": "lgc--aps--src",
+        "id": "AGC_LM--APS--src",
+        "model_ref": "AGC_LM--APS--src",
         "symbol": "port",
-        "owner": "lgc",
+        "owner": "AGC_LM",
         "placement": {
           "side": "right",
           "offset": 0.6
@@ -230,10 +318,10 @@
         "label": ""
       },
       {
-        "id": "lgc--lmRcs--src",
-        "model_ref": "lgc--lmRcs--src",
+        "id": "AGC_LM--RCS--src",
+        "model_ref": "AGC_LM--RCS--src",
         "symbol": "port",
-        "owner": "lgc",
+        "owner": "AGC_LM",
         "placement": {
           "side": "right",
           "offset": 0.8
@@ -241,10 +329,10 @@
         "label": ""
       },
       {
-        "id": "lgc--lmDsky--tgt",
-        "model_ref": "lgc--lmDsky--tgt",
+        "id": "AGC_LM--DSKY--tgt",
+        "model_ref": "AGC_LM--DSKY--tgt",
         "symbol": "port",
-        "owner": "lmDsky",
+        "owner": "DSKY",
         "placement": {
           "side": "left",
           "offset": 0.5
@@ -252,10 +340,10 @@
         "label": ""
       },
       {
-        "id": "lgc--ags--tgt",
-        "model_ref": "lgc--ags--tgt",
+        "id": "AGC_LM--AGS--tgt",
+        "model_ref": "AGC_LM--AGS--tgt",
         "symbol": "port",
-        "owner": "ags",
+        "owner": "AGS",
         "placement": {
           "side": "left",
           "offset": 0.5
@@ -263,10 +351,10 @@
         "label": ""
       },
       {
-        "id": "lgc--aps--tgt",
-        "model_ref": "lgc--aps--tgt",
+        "id": "PNGS--landingRadar--tgt",
+        "model_ref": "PNGS--landingRadar--tgt",
         "symbol": "port",
-        "owner": "aps",
+        "owner": "landingRadar",
         "placement": {
           "side": "left",
           "offset": 0.5
@@ -274,10 +362,32 @@
         "label": ""
       },
       {
-        "id": "lgc--lmRcs--tgt",
-        "model_ref": "lgc--lmRcs--tgt",
+        "id": "PNGS--rendezvousRadar--tgt",
+        "model_ref": "PNGS--rendezvousRadar--tgt",
         "symbol": "port",
-        "owner": "lmRcs",
+        "owner": "rendezvousRadar",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--APS--tgt",
+        "model_ref": "AGC_LM--APS--tgt",
+        "symbol": "port",
+        "owner": "APS",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--RCS--tgt",
+        "model_ref": "AGC_LM--RCS--tgt",
+        "symbol": "port",
+        "owner": "RCS",
         "placement": {
           "side": "left",
           "offset": 0.5
@@ -287,17 +397,17 @@
     ],
     "connections": [
       {
-        "id": "conn-pngs-lgc",
-        "model_ref": "conn-pngs-lgc",
+        "id": "conn-PNGS-AGC_LM",
+        "model_ref": "conn-PNGS-AGC_LM",
         "source": {
-          "element": "pngs--lgc--src",
+          "element": "PNGS--AGC_LM--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "pngs--lgc--tgt",
+          "element": "PNGS--AGC_LM--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -305,7 +415,16 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 275,
+              "y": 310.5
+            },
+            {
+              "x": 275,
+              "y": 160
+            }
+          ]
         },
         "labels": [
           {
@@ -318,17 +437,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-lgc-lmDsky",
-        "model_ref": "conn-lgc-lmDsky",
+        "id": "conn-AGC_LM-DSKY",
+        "model_ref": "conn-AGC_LM-DSKY",
         "source": {
-          "element": "lgc--lmDsky--src",
+          "element": "AGC_LM--DSKY--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "lgc--lmDsky--tgt",
+          "element": "AGC_LM--DSKY--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -339,7 +458,7 @@
           "waypoints": [
             {
               "x": 596,
-              "y": 258.6
+              "y": 142.6
             },
             {
               "x": 596,
@@ -358,17 +477,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-lgc-ags",
-        "model_ref": "conn-lgc-ags",
+        "id": "conn-AGC_LM-AGS",
+        "model_ref": "conn-AGC_LM-AGS",
         "source": {
-          "element": "lgc--ags--src",
+          "element": "AGC_LM--AGS--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "lgc--ags--tgt",
+          "element": "AGC_LM--AGS--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -378,18 +497,18 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 624,
-              "y": 270.2
+              "x": 680,
+              "y": 154.2
             },
             {
-              "x": 624,
-              "y": 219
+              "x": 680,
+              "y": 215
             }
           ]
         },
         "labels": [
           {
-            "text": "R47 init",
+            "text": "R47",
             "position": {
               "offset": 0.5
             }
@@ -398,17 +517,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-lgc-aps",
-        "model_ref": "conn-lgc-aps",
+        "id": "conn-AGC_LM-APS",
+        "model_ref": "conn-AGC_LM-APS",
         "source": {
-          "element": "lgc--aps--src",
+          "element": "AGC_LM--APS--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "lgc--aps--tgt",
+          "element": "AGC_LM--APS--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -418,12 +537,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 680,
-              "y": 281.8
+              "x": 652,
+              "y": 165.8
             },
             {
-              "x": 680,
-              "y": 333
+              "x": 652,
+              "y": 325
             }
           ]
         },
@@ -438,17 +557,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-lgc-lmRcs",
-        "model_ref": "conn-lgc-lmRcs",
+        "id": "conn-AGC_LM-RCS",
+        "model_ref": "conn-AGC_LM-RCS",
         "source": {
-          "element": "lgc--lmRcs--src",
+          "element": "AGC_LM--RCS--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "lgc--lmRcs--tgt",
+          "element": "AGC_LM--RCS--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -458,18 +577,98 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 652,
-              "y": 293.4
+              "x": 624,
+              "y": 177.4
             },
             {
-              "x": 652,
-              "y": 447
+              "x": 624,
+              "y": 435
             }
           ]
         },
         "labels": [
           {
             "text": "jets",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-PNGS-landingRadar",
+        "model_ref": "conn-PNGS-landingRadar",
+        "source": {
+          "element": "PNGS--landingRadar--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "PNGS--landingRadar--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 310,
+              "y": 325
+            },
+            {
+              "x": 310,
+              "y": 270
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "LR",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-PNGS-rendezvousRadar",
+        "model_ref": "conn-PNGS-rendezvousRadar",
+        "source": {
+          "element": "PNGS--rendezvousRadar--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "PNGS--rendezvousRadar--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 345,
+              "y": 339.5
+            },
+            {
+              "x": 345,
+              "y": 380
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "RR",
             "position": {
               "offset": 0.5
             }
@@ -485,6 +684,11 @@
         "stroke": "#333333",
         "stroke_width": 2
       },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
       "part.gnc": {
         "fill": "#E8F5E9",
         "stroke": "#2E7D32",
@@ -495,11 +699,26 @@
         "stroke": "#E65100",
         "stroke_width": 2
       },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
       "connector.default": {
         "stroke": "#334155",
         "stroke_width": 2
       }
     },
-    "subject": "lm"
+    "subject": "LM"
   }
 }

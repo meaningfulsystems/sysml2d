@@ -7,46 +7,46 @@
   ],
   "aliases": {
     "mission": "Apollo11::Apollo11",
-    "les": "Apollo11::Apollo11::les",
-    "cm": "Apollo11::Apollo11::cm",
-    "sm": "Apollo11::Apollo11::sm",
-    "sla": "Apollo11::Apollo11::sla",
-    "lmDescent": "Apollo11::Apollo11::lmDescent",
-    "lmAscent": "Apollo11::Apollo11::lmAscent",
-    "iu": "Apollo11::Apollo11::iu",
-    "sIvb": "Apollo11::Apollo11::sIvb",
-    "sIi": "Apollo11::Apollo11::sIi",
-    "sIc": "Apollo11::Apollo11::sIc",
-    "les--cm--src": "Apollo11::Apollo11::lesToCmOut",
-    "les--cm--tgt": "Apollo11::Apollo11::cmFromLesIn",
-    "cm--sm--src": "Apollo11::Apollo11::cmToSmOut",
-    "cm--sm--tgt": "Apollo11::Apollo11::smFromCmIn",
-    "sla--sm--src": "Apollo11::Apollo11::slaToSmOut",
-    "sla--sm--tgt": "Apollo11::Apollo11::smFromSlaIn",
-    "iu--sla--src": "Apollo11::Apollo11::iuToSlaOut",
-    "iu--sla--tgt": "Apollo11::Apollo11::slaFromIuIn",
-    "sIvb--iu--src": "Apollo11::Apollo11::sIvbToIuOut",
-    "sIvb--iu--tgt": "Apollo11::Apollo11::iuFromSivbIn",
-    "sIi--sIvb--src": "Apollo11::Apollo11::sIiToSivbOut",
-    "sIi--sIvb--tgt": "Apollo11::Apollo11::sIvbFromSiiIn",
-    "sIc--sIi--src": "Apollo11::Apollo11::sIcToSiiOut",
-    "sIc--sIi--tgt": "Apollo11::Apollo11::sIiFromSicIn",
-    "sla--lmDescent--src": "Apollo11::Apollo11::slaLmOut",
-    "sla--lmDescent--tgt": "Apollo11::Apollo11::lmDescentSlaIn",
-    "lmDescent--lmAscent--src": "Apollo11::Apollo11::lmDescentToAscentOut",
-    "lmDescent--lmAscent--tgt": "Apollo11::Apollo11::lmAscentFromDescentIn",
-    "cm--lmAscent--src": "Apollo11::Apollo11::cmDockOut",
-    "cm--lmAscent--tgt": "Apollo11::Apollo11::lmAscentDockIn",
-    "conn-les-cm": "Apollo11::Apollo11::lesToCm",
-    "conn-cm-sm": "Apollo11::Apollo11::cmToSm",
-    "conn-sla-sm": "Apollo11::Apollo11::slaToSm",
-    "conn-iu-sla": "Apollo11::Apollo11::iuToSla",
-    "conn-sIvb-iu": "Apollo11::Apollo11::sivbToIu",
-    "conn-sIi-sIvb": "Apollo11::Apollo11::siiToSivb",
-    "conn-sIc-sIi": "Apollo11::Apollo11::sicToSii",
-    "conn-sla-lmDescent": "Apollo11::Apollo11::slaToLmDescent",
-    "conn-lmDescent-lmAscent": "Apollo11::Apollo11::lmDescentToAscent",
-    "conn-cm-lmAscent": "Apollo11::Apollo11::cmToLmAscent"
+    "LES": "Apollo11::SaturnV::SaturnV::LES",
+    "CM": "Apollo11::CSM::CSM::CM",
+    "SM": "Apollo11::CSM::CSM::SM",
+    "SLA": "Apollo11::SaturnV::SaturnV::SLA",
+    "descent": "Apollo11::LM::LM::descent",
+    "ascent": "Apollo11::LM::LM::ascent",
+    "IU": "Apollo11::SaturnV::SaturnV::IU",
+    "SIVB": "Apollo11::SaturnV::SaturnV::SIVB",
+    "SII": "Apollo11::SaturnV::SaturnV::SII",
+    "SIC": "Apollo11::SaturnV::SaturnV::SIC",
+    "LES--CM--src": "Apollo11::Apollo11::LESToCMOut",
+    "LES--CM--tgt": "Apollo11::Apollo11::CMFromLESIn",
+    "conn-LES-CM": "Apollo11::Apollo11::LESToCM",
+    "CM--SM--src": "Apollo11::Apollo11::CMToSMOut",
+    "CM--SM--tgt": "Apollo11::Apollo11::SMFromCMIn",
+    "conn-CM-SM": "Apollo11::Apollo11::CMToSM",
+    "SLA--SM--src": "Apollo11::Apollo11::SLAToSMOut",
+    "SLA--SM--tgt": "Apollo11::Apollo11::SMFromSLAIn",
+    "conn-SLA-SM": "Apollo11::Apollo11::SLAToSM",
+    "IU--SLA--src": "Apollo11::Apollo11::IUToSLAOut",
+    "IU--SLA--tgt": "Apollo11::Apollo11::SLAFromIUIn",
+    "conn-IU-SLA": "Apollo11::Apollo11::IUToSLA",
+    "SIVB--IU--src": "Apollo11::Apollo11::SIVBToIUOut",
+    "SIVB--IU--tgt": "Apollo11::Apollo11::IUFromSIVBIn",
+    "conn-SIVB-IU": "Apollo11::Apollo11::SIVBToIU",
+    "SII--SIVB--src": "Apollo11::Apollo11::SIIToSIVBOut",
+    "SII--SIVB--tgt": "Apollo11::Apollo11::SIVBFromSIIIn",
+    "conn-SII-SIVB": "Apollo11::Apollo11::SIIToSIVB",
+    "SIC--SII--src": "Apollo11::Apollo11::SICToSIIOut",
+    "SIC--SII--tgt": "Apollo11::Apollo11::SIIFromSICIn",
+    "conn-SIC-SII": "Apollo11::Apollo11::SICToSII",
+    "SLA--descent--src": "Apollo11::Apollo11::SLALmOut",
+    "SLA--descent--tgt": "Apollo11::Apollo11::descentSlaIn",
+    "conn-SLA-descent": "Apollo11::Apollo11::SLAToDescent",
+    "descent--ascent--src": "Apollo11::Apollo11::descentToAscentOut",
+    "descent--ascent--tgt": "Apollo11::Apollo11::ascentFromDescentIn",
+    "conn-descent-ascent": "Apollo11::Apollo11::descentToAscent",
+    "CM--ascent--src": "Apollo11::Apollo11::CMDockOut",
+    "CM--ascent--tgt": "Apollo11::Apollo11::ascentDockIn",
+    "conn-CM-ascent": "Apollo11::Apollo11::CMToAscent"
   },
   "diagram": {
     "id": "apollo-ibd-vehicle",
@@ -80,8 +80,8 @@
         "style": "boundary.system"
       },
       {
-        "id": "les",
-        "model_ref": "les",
+        "id": "LES",
+        "model_ref": "LES",
         "symbol": "part_usage",
         "layout": {
           "x": 76,
@@ -99,8 +99,8 @@
         "style": "part.vehicle"
       },
       {
-        "id": "cm",
-        "model_ref": "cm",
+        "id": "CM",
+        "model_ref": "CM",
         "symbol": "part_usage",
         "layout": {
           "x": 76,
@@ -118,8 +118,8 @@
         "style": "part.vehicle"
       },
       {
-        "id": "sm",
-        "model_ref": "sm",
+        "id": "SM",
+        "model_ref": "SM",
         "symbol": "part_usage",
         "layout": {
           "x": 76,
@@ -137,8 +137,8 @@
         "style": "part.vehicle"
       },
       {
-        "id": "sla",
-        "model_ref": "sla",
+        "id": "SLA",
+        "model_ref": "SLA",
         "symbol": "part_usage",
         "layout": {
           "x": 170,
@@ -156,8 +156,8 @@
         "style": "part.vehicle"
       },
       {
-        "id": "lmDescent",
-        "model_ref": "lmDescent",
+        "id": "descent",
+        "model_ref": "descent",
         "symbol": "part_usage",
         "layout": {
           "x": 264,
@@ -166,7 +166,7 @@
           "height": 64,
           "z": 10
         },
-        "label": "LM Descent",
+        "label": "descent",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -175,8 +175,8 @@
         "style": "part.vehicle"
       },
       {
-        "id": "lmAscent",
-        "model_ref": "lmAscent",
+        "id": "ascent",
+        "model_ref": "ascent",
         "symbol": "part_usage",
         "layout": {
           "x": 170,
@@ -185,7 +185,7 @@
           "height": 64,
           "z": 10
         },
-        "label": "LM Ascent",
+        "label": "ascent",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -194,8 +194,8 @@
         "style": "part.vehicle"
       },
       {
-        "id": "iu",
-        "model_ref": "iu",
+        "id": "IU",
+        "model_ref": "IU",
         "symbol": "part_usage",
         "layout": {
           "x": 170,
@@ -213,8 +213,8 @@
         "style": "part.gnc"
       },
       {
-        "id": "sIvb",
-        "model_ref": "sIvb",
+        "id": "SIVB",
+        "model_ref": "SIVB",
         "symbol": "part_usage",
         "layout": {
           "x": 170,
@@ -232,8 +232,8 @@
         "style": "part.vehicle"
       },
       {
-        "id": "sIi",
-        "model_ref": "sIi",
+        "id": "SII",
+        "model_ref": "SII",
         "symbol": "part_usage",
         "layout": {
           "x": 264,
@@ -251,8 +251,8 @@
         "style": "part.vehicle"
       },
       {
-        "id": "sIc",
-        "model_ref": "sIc",
+        "id": "SIC",
+        "model_ref": "SIC",
         "symbol": "part_usage",
         "layout": {
           "x": 264,
@@ -270,10 +270,10 @@
         "style": "part.vehicle"
       },
       {
-        "id": "les--cm--src",
-        "model_ref": "les--cm--src",
+        "id": "LES--CM--src",
+        "model_ref": "LES--CM--src",
         "symbol": "port",
-        "owner": "les",
+        "owner": "LES",
         "placement": {
           "side": "bottom",
           "offset": 0.5
@@ -281,10 +281,10 @@
         "label": ""
       },
       {
-        "id": "les--cm--tgt",
-        "model_ref": "les--cm--tgt",
+        "id": "LES--CM--tgt",
+        "model_ref": "LES--CM--tgt",
         "symbol": "port",
-        "owner": "cm",
+        "owner": "CM",
         "placement": {
           "side": "top",
           "offset": 0.5
@@ -292,10 +292,10 @@
         "label": ""
       },
       {
-        "id": "cm--sm--src",
-        "model_ref": "cm--sm--src",
+        "id": "CM--SM--src",
+        "model_ref": "CM--SM--src",
         "symbol": "port",
-        "owner": "cm",
+        "owner": "CM",
         "placement": {
           "side": "bottom",
           "offset": 0.5
@@ -303,10 +303,10 @@
         "label": ""
       },
       {
-        "id": "cm--lmAscent--src",
-        "model_ref": "cm--lmAscent--src",
+        "id": "CM--ascent--src",
+        "model_ref": "CM--ascent--src",
         "symbol": "port",
-        "owner": "cm",
+        "owner": "CM",
         "placement": {
           "side": "right",
           "offset": 0.5
@@ -314,10 +314,10 @@
         "label": ""
       },
       {
-        "id": "cm--sm--tgt",
-        "model_ref": "cm--sm--tgt",
+        "id": "CM--SM--tgt",
+        "model_ref": "CM--SM--tgt",
         "symbol": "port",
-        "owner": "sm",
+        "owner": "SM",
         "placement": {
           "side": "top",
           "offset": 0.5
@@ -325,10 +325,10 @@
         "label": ""
       },
       {
-        "id": "sla--sm--tgt",
-        "model_ref": "sla--sm--tgt",
+        "id": "SLA--SM--tgt",
+        "model_ref": "SLA--SM--tgt",
         "symbol": "port",
-        "owner": "sm",
+        "owner": "SM",
         "placement": {
           "side": "top",
           "offset": 0.75
@@ -336,10 +336,10 @@
         "label": ""
       },
       {
-        "id": "sla--sm--src",
-        "model_ref": "sla--sm--src",
+        "id": "SLA--SM--src",
+        "model_ref": "SLA--SM--src",
         "symbol": "port",
-        "owner": "sla",
+        "owner": "SLA",
         "placement": {
           "side": "bottom",
           "offset": 0.3333
@@ -347,10 +347,10 @@
         "label": ""
       },
       {
-        "id": "sla--lmDescent--src",
-        "model_ref": "sla--lmDescent--src",
+        "id": "SLA--descent--src",
+        "model_ref": "SLA--descent--src",
         "symbol": "port",
-        "owner": "sla",
+        "owner": "SLA",
         "placement": {
           "side": "bottom",
           "offset": 0.6667
@@ -358,10 +358,10 @@
         "label": ""
       },
       {
-        "id": "iu--sla--tgt",
-        "model_ref": "iu--sla--tgt",
+        "id": "IU--SLA--tgt",
+        "model_ref": "IU--SLA--tgt",
         "symbol": "port",
-        "owner": "sla",
+        "owner": "SLA",
         "placement": {
           "side": "top",
           "offset": 0.5
@@ -369,10 +369,10 @@
         "label": ""
       },
       {
-        "id": "sla--lmDescent--tgt",
-        "model_ref": "sla--lmDescent--tgt",
+        "id": "SLA--descent--tgt",
+        "model_ref": "SLA--descent--tgt",
         "symbol": "port",
-        "owner": "lmDescent",
+        "owner": "descent",
         "placement": {
           "side": "top",
           "offset": 0.5
@@ -380,10 +380,10 @@
         "label": ""
       },
       {
-        "id": "lmDescent--lmAscent--src",
-        "model_ref": "lmDescent--lmAscent--src",
+        "id": "descent--ascent--src",
+        "model_ref": "descent--ascent--src",
         "symbol": "port",
-        "owner": "lmDescent",
+        "owner": "descent",
         "placement": {
           "side": "bottom",
           "offset": 0.5
@@ -391,10 +391,10 @@
         "label": ""
       },
       {
-        "id": "lmDescent--lmAscent--tgt",
-        "model_ref": "lmDescent--lmAscent--tgt",
+        "id": "descent--ascent--tgt",
+        "model_ref": "descent--ascent--tgt",
         "symbol": "port",
-        "owner": "lmAscent",
+        "owner": "ascent",
         "placement": {
           "side": "top",
           "offset": 0.5
@@ -402,10 +402,10 @@
         "label": ""
       },
       {
-        "id": "cm--lmAscent--tgt",
-        "model_ref": "cm--lmAscent--tgt",
+        "id": "CM--ascent--tgt",
+        "model_ref": "CM--ascent--tgt",
         "symbol": "port",
-        "owner": "lmAscent",
+        "owner": "ascent",
         "placement": {
           "side": "right",
           "offset": 0.5
@@ -413,10 +413,10 @@
         "label": ""
       },
       {
-        "id": "iu--sla--src",
-        "model_ref": "iu--sla--src",
+        "id": "IU--SLA--src",
+        "model_ref": "IU--SLA--src",
         "symbol": "port",
-        "owner": "iu",
+        "owner": "IU",
         "placement": {
           "side": "bottom",
           "offset": 0.5
@@ -424,10 +424,10 @@
         "label": ""
       },
       {
-        "id": "sIvb--iu--tgt",
-        "model_ref": "sIvb--iu--tgt",
+        "id": "SIVB--IU--tgt",
+        "model_ref": "SIVB--IU--tgt",
         "symbol": "port",
-        "owner": "iu",
+        "owner": "IU",
         "placement": {
           "side": "top",
           "offset": 0.5
@@ -435,10 +435,10 @@
         "label": ""
       },
       {
-        "id": "sIvb--iu--src",
-        "model_ref": "sIvb--iu--src",
+        "id": "SIVB--IU--src",
+        "model_ref": "SIVB--IU--src",
         "symbol": "port",
-        "owner": "sIvb",
+        "owner": "SIVB",
         "placement": {
           "side": "bottom",
           "offset": 0.5
@@ -446,10 +446,10 @@
         "label": ""
       },
       {
-        "id": "sIi--sIvb--tgt",
-        "model_ref": "sIi--sIvb--tgt",
+        "id": "SII--SIVB--tgt",
+        "model_ref": "SII--SIVB--tgt",
         "symbol": "port",
-        "owner": "sIvb",
+        "owner": "SIVB",
         "placement": {
           "side": "top",
           "offset": 0.5
@@ -457,10 +457,10 @@
         "label": ""
       },
       {
-        "id": "sIi--sIvb--src",
-        "model_ref": "sIi--sIvb--src",
+        "id": "SII--SIVB--src",
+        "model_ref": "SII--SIVB--src",
         "symbol": "port",
-        "owner": "sIi",
+        "owner": "SII",
         "placement": {
           "side": "bottom",
           "offset": 0.5
@@ -468,10 +468,10 @@
         "label": ""
       },
       {
-        "id": "sIc--sIi--tgt",
-        "model_ref": "sIc--sIi--tgt",
+        "id": "SIC--SII--tgt",
+        "model_ref": "SIC--SII--tgt",
         "symbol": "port",
-        "owner": "sIi",
+        "owner": "SII",
         "placement": {
           "side": "top",
           "offset": 0.5
@@ -479,10 +479,10 @@
         "label": ""
       },
       {
-        "id": "sIc--sIi--src",
-        "model_ref": "sIc--sIi--src",
+        "id": "SIC--SII--src",
+        "model_ref": "SIC--SII--src",
         "symbol": "port",
-        "owner": "sIc",
+        "owner": "SIC",
         "placement": {
           "side": "bottom",
           "offset": 0.5
@@ -492,17 +492,17 @@
     ],
     "connections": [
       {
-        "id": "conn-les-cm",
-        "model_ref": "conn-les-cm",
+        "id": "conn-LES-CM",
+        "model_ref": "conn-LES-CM",
         "source": {
-          "element": "les--cm--src",
+          "element": "LES--CM--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "les--cm--tgt",
+          "element": "LES--CM--tgt",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -523,17 +523,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-cm-sm",
-        "model_ref": "conn-cm-sm",
+        "id": "conn-CM-SM",
+        "model_ref": "conn-CM-SM",
         "source": {
-          "element": "cm--sm--src",
+          "element": "CM--SM--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "cm--sm--tgt",
+          "element": "CM--SM--tgt",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -554,17 +554,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-sla-sm",
-        "model_ref": "conn-sla-sm",
+        "id": "conn-SLA-SM",
+        "model_ref": "conn-SLA-SM",
         "source": {
-          "element": "sla--sm--src",
+          "element": "SLA--SM--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "sla--sm--tgt",
+          "element": "SLA--SM--tgt",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -594,17 +594,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-iu-sla",
-        "model_ref": "conn-iu-sla",
+        "id": "conn-IU-SLA",
+        "model_ref": "conn-IU-SLA",
         "source": {
-          "element": "iu--sla--src",
+          "element": "IU--SLA--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "iu--sla--tgt",
+          "element": "IU--SLA--tgt",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -625,17 +625,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-sIvb-iu",
-        "model_ref": "conn-sIvb-iu",
+        "id": "conn-SIVB-IU",
+        "model_ref": "conn-SIVB-IU",
         "source": {
-          "element": "sIvb--iu--src",
+          "element": "SIVB--IU--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "sIvb--iu--tgt",
+          "element": "SIVB--IU--tgt",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -656,17 +656,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-sIi-sIvb",
-        "model_ref": "conn-sIi-sIvb",
+        "id": "conn-SII-SIVB",
+        "model_ref": "conn-SII-SIVB",
         "source": {
-          "element": "sIi--sIvb--src",
+          "element": "SII--SIVB--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "sIi--sIvb--tgt",
+          "element": "SII--SIVB--tgt",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -696,17 +696,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-sIc-sIi",
-        "model_ref": "conn-sIc-sIi",
+        "id": "conn-SIC-SII",
+        "model_ref": "conn-SIC-SII",
         "source": {
-          "element": "sIc--sIi--src",
+          "element": "SIC--SII--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "sIc--sIi--tgt",
+          "element": "SIC--SII--tgt",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -727,17 +727,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-sla-lmDescent",
-        "model_ref": "conn-sla-lmDescent",
+        "id": "conn-SLA-descent",
+        "model_ref": "conn-SLA-descent",
         "source": {
-          "element": "sla--lmDescent--src",
+          "element": "SLA--descent--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "sla--lmDescent--tgt",
+          "element": "SLA--descent--tgt",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -767,17 +767,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-lmDescent-lmAscent",
-        "model_ref": "conn-lmDescent-lmAscent",
+        "id": "conn-descent-ascent",
+        "model_ref": "conn-descent-ascent",
         "source": {
-          "element": "lmDescent--lmAscent--src",
+          "element": "descent--ascent--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "lmDescent--lmAscent--tgt",
+          "element": "descent--ascent--tgt",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -807,17 +807,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-cm-lmAscent",
-        "model_ref": "conn-cm-lmAscent",
+        "id": "conn-CM-ascent",
+        "model_ref": "conn-CM-ascent",
         "source": {
-          "element": "cm--lmAscent--src",
+          "element": "CM--ascent--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "cm--lmAscent--tgt",
+          "element": "CM--ascent--tgt",
           "anchor": {
             "side": "right",
             "offset": 0.5
@@ -882,6 +882,26 @@
       "part.gnc": {
         "fill": "#E8F5E9",
         "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
         "stroke_width": 2
       },
       "connector.default": {

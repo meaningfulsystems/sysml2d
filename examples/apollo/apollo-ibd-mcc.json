@@ -1,8 +1,8 @@
 {
   "diagram": "apollo-ibd-mcc",
   "kind": "InterconnectionView",
-  "name": "MCC-H MOCR / RTCC / CCATS",
-  "subject": "mcc",
+  "name": "MCC / RTCC",
+  "subject": "MCC",
   "model_files": [
     "apollo.sysml"
   ],
@@ -11,102 +11,79 @@
   "default_h": 58,
   "col_gap": 40,
   "rank_gap": 110,
+  "label_mode": "connection",
   "aliases": {
-    "mcc": "Apollo11::MissionControlHouston",
-    "flight": "Apollo11::MOCR::flight",
-    "capcom": "Apollo11::MOCR::capcom",
-    "eecom": "Apollo11::MOCR::eecom",
-    "gncProp": "Apollo11::MOCR::gncProp",
-    "fdo": "Apollo11::MOCR::fdo",
-    "ccc": "Apollo11::MOCR::ccc",
-    "rtcc": "Apollo11::MissionControlHouston::rtcc",
-    "ccats": "Apollo11::MissionControlHouston::ccats",
-    "flight--ccc--src": "Apollo11::MOCR::flight",
-    "flight--ccc--tgt": "Apollo11::MOCR::ccc",
-    "conn-flight-ccc": "Apollo11::MOCR::flight",
-    "capcom--ccc--src": "Apollo11::MOCR::capcom",
-    "capcom--ccc--tgt": "Apollo11::MOCR::ccc",
-    "conn-capcom-ccc": "Apollo11::MOCR::capcom",
-    "eecom--ccc--src": "Apollo11::MOCR::eecom",
-    "eecom--ccc--tgt": "Apollo11::MOCR::ccc",
-    "conn-eecom-ccc": "Apollo11::MOCR::eecom",
-    "gncProp--ccc--src": "Apollo11::MOCR::gncProp",
-    "gncProp--ccc--tgt": "Apollo11::MOCR::ccc",
-    "conn-gncProp-ccc": "Apollo11::MOCR::gncProp",
-    "fdo--ccc--src": "Apollo11::MOCR::fdo",
-    "fdo--ccc--tgt": "Apollo11::MOCR::ccc",
-    "conn-fdo-ccc": "Apollo11::MOCR::fdo",
-    "ccc--rtcc--src": "Apollo11::MOCR::ccc",
-    "ccc--rtcc--tgt": "Apollo11::MissionControlHouston::rtcc",
-    "conn-ccc-rtcc": "Apollo11::MOCR::ccc",
-    "rtcc--ccats--src": "Apollo11::MissionControlHouston::rtcc",
-    "rtcc--ccats--tgt": "Apollo11::MissionControlHouston::ccats",
-    "conn-rtcc-ccats": "Apollo11::MissionControlHouston::rtcc"
+    "MCC": "Apollo11::Ground::MCC",
+    "FLIGHT": "Apollo11::Ground::MOCR::FLIGHT",
+    "CAPCOM": "Apollo11::Ground::MOCR::CAPCOM",
+    "EECOM": "Apollo11::Ground::MOCR::EECOM",
+    "CCC": "Apollo11::Ground::MOCR::CCC",
+    "RTCC": "Apollo11::Ground::MCC::RTCC",
+    "CCATS": "Apollo11::Ground::MCC::CCATS",
+    "FLIGHT--CCC--src": "Apollo11::Ground::MOCR::FLIGHT",
+    "FLIGHT--CCC--tgt": "Apollo11::Ground::MOCR::CCC",
+    "conn-FLIGHT-CCC": "Apollo11::Ground::MOCR::FLIGHT",
+    "CAPCOM--CCC--src": "Apollo11::Ground::MOCR::CAPCOM",
+    "CAPCOM--CCC--tgt": "Apollo11::Ground::MOCR::CCC",
+    "conn-CAPCOM-CCC": "Apollo11::Ground::MOCR::CAPCOM",
+    "EECOM--CCC--src": "Apollo11::Ground::MOCR::EECOM",
+    "EECOM--CCC--tgt": "Apollo11::Ground::MOCR::CCC",
+    "conn-EECOM-CCC": "Apollo11::Ground::MOCR::EECOM",
+    "CCC--RTCC--src": "Apollo11::Ground::MOCR::CCC",
+    "CCC--RTCC--tgt": "Apollo11::Ground::MCC::RTCC",
+    "conn-CCC-RTCC": "Apollo11::Ground::MOCR::CCC",
+    "RTCC--CCATS--src": "Apollo11::Ground::MCC::RTCC",
+    "RTCC--CCATS--tgt": "Apollo11::Ground::MCC::CCATS",
+    "conn-RTCC-CCATS": "Apollo11::Ground::MCC::RTCC"
   },
   "nodes": {
-    "flight": {
+    "FLIGHT": {
       "label": "FLIGHT"
     },
-    "capcom": {
+    "CAPCOM": {
       "label": "CAPCOM"
     },
-    "eecom": {
+    "EECOM": {
       "label": "EECOM"
     },
-    "gncProp": {
-      "label": "GNC / prop"
-    },
-    "fdo": {
-      "label": "FDO"
-    },
-    "ccc": {
+    "CCC": {
       "label": "CCC"
     },
-    "rtcc": {
+    "RTCC": {
       "label": "RTCC\n5\u00d7 360/75"
     },
-    "ccats": {
+    "CCATS": {
       "label": "CCATS"
     }
   },
   "edges": [
     {
-      "from": "flight",
-      "to": "ccc",
+      "from": "FLIGHT",
+      "to": "CCC",
       "label": "FC",
-      "model_ref": "conn-flight-ccc"
+      "model_ref": "conn-FLIGHT-CCC"
     },
     {
-      "from": "capcom",
-      "to": "ccc",
-      "model_ref": "conn-capcom-ccc"
+      "from": "CAPCOM",
+      "to": "CCC",
+      "model_ref": "conn-CAPCOM-CCC"
     },
     {
-      "from": "eecom",
-      "to": "ccc",
-      "model_ref": "conn-eecom-ccc"
+      "from": "EECOM",
+      "to": "CCC",
+      "model_ref": "conn-EECOM-CCC"
     },
     {
-      "from": "gncProp",
-      "to": "ccc",
-      "model_ref": "conn-gncProp-ccc"
-    },
-    {
-      "from": "fdo",
-      "to": "ccc",
-      "model_ref": "conn-fdo-ccc"
-    },
-    {
-      "from": "ccc",
-      "to": "rtcc",
+      "from": "CCC",
+      "to": "RTCC",
       "label": "path A",
-      "model_ref": "conn-ccc-rtcc"
+      "model_ref": "conn-CCC-RTCC"
     },
     {
-      "from": "rtcc",
-      "to": "ccats",
+      "from": "RTCC",
+      "to": "CCATS",
       "label": "load",
-      "model_ref": "conn-rtcc-ccats"
+      "model_ref": "conn-RTCC-CCATS"
     }
   ]
 }

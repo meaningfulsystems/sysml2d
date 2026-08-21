@@ -1,103 +1,141 @@
 {
   "diagram": "apollo-ibd-lm",
   "kind": "InterconnectionView",
-  "name": "LM-5 PNGS / AGS / Propulsion",
-  "subject": "lm",
+  "name": "LM PNGS / AGC_LM / AGS",
+  "subject": "LM",
   "model_files": [
     "apollo.sysml"
   ],
   "direction": "left-right",
   "default_w": 140,
   "default_h": 58,
-  "col_gap": 56,
+  "col_gap": 52,
   "rank_gap": 120,
   "label_mode": "connection",
   "aliases": {
-    "lm": "Apollo11::LM",
-    "pngs": "Apollo11::LMAscent::pngs",
-    "lgc": "Apollo11::LMAscent::lgc",
-    "lmDsky": "Apollo11::LMAscent::lmDsky",
-    "ags": "Apollo11::LMAscent::ags",
-    "aps": "Apollo11::LMAscent::aps",
-    "lmRcs": "Apollo11::LMAscent::lmRcs",
-    "pngs--lgc--src": "Apollo11::LMAscent::pngs",
-    "pngs--lgc--tgt": "Apollo11::LMAscent::lgc",
-    "conn-pngs-lgc": "Apollo11::LMAscent::pngs",
-    "lgc--lmDsky--src": "Apollo11::LMAscent::lgc",
-    "lgc--lmDsky--tgt": "Apollo11::LMAscent::lmDsky",
-    "conn-lgc-lmDsky": "Apollo11::LMAscent::lgc",
-    "lgc--ags--src": "Apollo11::LMAscent::lgc",
-    "lgc--ags--tgt": "Apollo11::LMAscent::ags",
-    "conn-lgc-ags": "Apollo11::LMAscent::lgc",
-    "lgc--aps--src": "Apollo11::LMAscent::lgc",
-    "lgc--aps--tgt": "Apollo11::LMAscent::aps",
-    "conn-lgc-aps": "Apollo11::LMAscent::lgc",
-    "lgc--lmRcs--src": "Apollo11::LMAscent::lgc",
-    "lgc--lmRcs--tgt": "Apollo11::LMAscent::lmRcs",
-    "conn-lgc-lmRcs": "Apollo11::LMAscent::lgc"
+    "LM": "Apollo11::LM::LM",
+    "PNGS": "Apollo11::LM::ascent::PNGS",
+    "AGC_LM": "Apollo11::LM::ascent::AGC_LM",
+    "DSKY": "Apollo11::LM::ascent::DSKY",
+    "AGS": "Apollo11::LM::ascent::AGS",
+    "APS": "Apollo11::LM::ascent::APS",
+    "RCS": "Apollo11::LM::ascent::RCS",
+    "landingRadar": "Apollo11::LM::ascent::landingRadar",
+    "rendezvousRadar": "Apollo11::LM::ascent::rendezvousRadar",
+    "DPS": "Apollo11::LM::descent::DPS",
+    "PNGS--AGC_LM--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--AGC_LM--tgt": "Apollo11::LM::ascent::AGC_LM",
+    "conn-PNGS-AGC_LM": "Apollo11::LM::ascent::PNGS",
+    "AGC_LM--DSKY--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--DSKY--tgt": "Apollo11::LM::ascent::DSKY",
+    "conn-AGC_LM-DSKY": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--AGS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--AGS--tgt": "Apollo11::LM::ascent::AGS",
+    "conn-AGC_LM-AGS": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--APS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--APS--tgt": "Apollo11::LM::ascent::APS",
+    "conn-AGC_LM-APS": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--RCS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--RCS--tgt": "Apollo11::LM::ascent::RCS",
+    "conn-AGC_LM-RCS": "Apollo11::LM::ascent::AGC_LM",
+    "PNGS--landingRadar--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--landingRadar--tgt": "Apollo11::LM::ascent::landingRadar",
+    "conn-PNGS-landingRadar": "Apollo11::LM::ascent::PNGS",
+    "PNGS--rendezvousRadar--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--rendezvousRadar--tgt": "Apollo11::LM::ascent::rendezvousRadar",
+    "conn-PNGS-rendezvousRadar": "Apollo11::LM::ascent::PNGS"
   },
   "nodes": {
-    "pngs": {
-      "label": "PNGS\nIMU + radars",
+    "PNGS": {
+      "label": "PNGS",
       "style": "part.gnc"
     },
-    "lgc": {
-      "label": "LGC Luminary",
+    "AGC_LM": {
+      "label": "AGC_LM",
       "style": "part.gnc"
     },
-    "lmDsky": {
-      "label": "LM DSKY",
+    "DSKY": {
+      "label": "DSKY",
       "style": "part.gnc"
     },
-    "ags": {
-      "label": "AGS\nAEA+ASA",
+    "AGS": {
+      "label": "AGS",
       "style": "part.gnc"
     },
-    "aps": {
-      "label": "APS 3,500 lbf",
+    "landingRadar": {
+      "label": "landingRadar",
+      "style": "part.gnc"
+    },
+    "rendezvousRadar": {
+      "label": "rendezvousRadar",
+      "style": "part.gnc"
+    },
+    "DPS": {
+      "label": "DPS",
       "style": "part.prop"
     },
-    "lmRcs": {
-      "label": "LM RCS\n604 lb PK",
+    "APS": {
+      "label": "APS",
+      "style": "part.prop"
+    },
+    "RCS": {
+      "label": "RCS",
       "style": "part.prop"
     }
   },
   "edges": [
     {
-      "from": "pngs",
-      "to": "lgc",
+      "from": "PNGS",
+      "to": "AGC_LM",
       "label": "computer",
-      "model_ref": "conn-pngs-lgc"
+      "model_ref": "conn-PNGS-AGC_LM"
     },
     {
-      "from": "lgc",
-      "to": "lmDsky",
+      "from": "AGC_LM",
+      "to": "DSKY",
       "label": "DSKY",
-      "model_ref": "conn-lgc-lmDsky"
+      "model_ref": "conn-AGC_LM-DSKY"
     },
     {
-      "from": "lgc",
-      "to": "ags",
-      "label": "R47 init",
-      "model_ref": "conn-lgc-ags"
+      "from": "AGC_LM",
+      "to": "AGS",
+      "label": "R47",
+      "model_ref": "conn-AGC_LM-AGS"
     },
     {
-      "from": "lgc",
-      "to": "aps",
+      "from": "AGC_LM",
+      "to": "APS",
       "label": "P12",
-      "model_ref": "conn-lgc-aps"
+      "model_ref": "conn-AGC_LM-APS"
     },
     {
-      "from": "lgc",
-      "to": "lmRcs",
+      "from": "AGC_LM",
+      "to": "RCS",
       "label": "jets",
-      "model_ref": "conn-lgc-lmRcs"
+      "model_ref": "conn-AGC_LM-RCS"
+    },
+    {
+      "from": "PNGS",
+      "to": "landingRadar",
+      "label": "LR",
+      "model_ref": "conn-PNGS-landingRadar"
+    },
+    {
+      "from": "PNGS",
+      "to": "rendezvousRadar",
+      "label": "RR",
+      "model_ref": "conn-PNGS-rendezvousRadar"
     }
   ],
   "styles": {
     "boundary.system": {
       "fill": "#FFFFFF",
       "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
       "stroke_width": 2
     },
     "part.gnc": {
@@ -108,6 +146,21 @@
     "part.prop": {
       "fill": "#FFF3E0",
       "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
       "stroke_width": 2
     },
     "connector.default": {

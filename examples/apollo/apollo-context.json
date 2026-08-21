@@ -10,19 +10,19 @@
   "rank_gap": 150,
   "col_gap": 70,
   "nodes": {
-    "mcc": {
-      "label": "MCC-H",
+    "MCC": {
+      "label": "MCC",
       "symbol": "part_usage",
       "rank": 0,
       "order": 0
     },
-    "rso": {
-      "label": "RSO / AFETR",
+    "RSO": {
+      "label": "RSO",
       "symbol": "part_usage",
       "rank": 0,
       "order": 1
     },
-    "msfn": {
+    "MSFN": {
       "label": "MSFN",
       "symbol": "part_usage",
       "rank": 1,
@@ -45,8 +45,8 @@
   },
   "edges": [
     {
-      "from": "mcc",
-      "to": "msfn",
+      "from": "MCC",
+      "to": "MSFN",
       "label": "path A / voice",
       "model_ref": "commandPathA",
       "source_side": "right",
@@ -54,8 +54,8 @@
       "target_offset": 0.3
     },
     {
-      "from": "rso",
-      "to": "msfn",
+      "from": "RSO",
+      "to": "MSFN",
       "label": "destruct UHF (not MCC)",
       "model_ref": "destructFlow",
       "source_side": "right",
@@ -63,13 +63,13 @@
       "target_offset": 0.7
     },
     {
-      "from": "msfn",
+      "from": "MSFN",
       "to": "earth",
       "label": "USB / 210-ft / Parkes",
       "model_ref": "usbCsmFlow"
     },
     {
-      "from": "msfn",
+      "from": "MSFN",
       "to": "moon",
       "label": "~1.3 s",
       "model_ref": "usbLmFlow"

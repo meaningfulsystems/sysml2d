@@ -1,8 +1,8 @@
 {
   "diagram": "apollo-ibd-csm",
   "kind": "InterconnectionView",
-  "name": "CSM Block II Interconnection",
-  "subject": "csm",
+  "name": "CSM Interconnection",
+  "subject": "CSM",
   "model_files": [
     "apollo.sysml"
   ],
@@ -13,110 +13,92 @@
   "rank_gap": 120,
   "label_mode": "connection",
   "aliases": {
-    "csm": "Apollo11::CSM",
-    "cmc": "Apollo11::CM::cmc",
-    "scs": "Apollo11::CM::scs",
-    "cmRcs": "Apollo11::CM::cmRcs",
-    "ecs": "Apollo11::CM::ecs",
-    "ems": "Apollo11::CM::ems",
-    "sps": "Apollo11::SM::sps",
-    "smRcsA": "Apollo11::SM::smRcsA",
-    "fuelCell1": "Apollo11::SM::fuelCell1",
-    "scs--cmc--src": "Apollo11::CM::scs",
-    "scs--cmc--tgt": "Apollo11::CM::cmc",
-    "conn-scs-cmc": "Apollo11::CM::scs",
-    "scs--cmRcs--src": "Apollo11::CM::scs",
-    "scs--cmRcs--tgt": "Apollo11::CM::cmRcs",
-    "conn-scs-cmRcs": "Apollo11::CM::scs",
-    "cmc--ems--src": "Apollo11::CM::cmc",
-    "cmc--ems--tgt": "Apollo11::CM::ems",
-    "conn-cmc-ems": "Apollo11::CM::cmc",
-    "ecs--cmc--src": "Apollo11::CM::ecs",
-    "ecs--cmc--tgt": "Apollo11::CM::cmc",
-    "conn-ecs-cmc": "Apollo11::CM::ecs",
-    "sps--smRcsA--src": "Apollo11::SM::sps",
-    "sps--smRcsA--tgt": "Apollo11::SM::smRcsA",
-    "conn-sps-smRcsA": "Apollo11::SM::sps",
-    "fuelCell1--sps--src": "Apollo11::SM::fuelCell1",
-    "fuelCell1--sps--tgt": "Apollo11::SM::sps",
-    "conn-fuelCell1-sps": "Apollo11::SM::fuelCell1"
+    "CSM": "Apollo11::CSM::CSM",
+    "SCS": "Apollo11::CSM::CM::SCS",
+    "AGC_CM": "Apollo11::CSM::CM::AGC_CM",
+    "IMU": "Apollo11::CSM::CM::IMU",
+    "RCS": "Apollo11::CSM::CM::RCS",
+    "ECLSS": "Apollo11::CSM::CM::ECLSS",
+    "SPS": "Apollo11::CSM::SM::SPS",
+    "SM_RCS": "Apollo11::CSM::SM::RCS",
+    "SCS--AGC_CM--src": "Apollo11::CSM::CM::SCS",
+    "SCS--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-SCS-AGC_CM": "Apollo11::CSM::CM::SCS",
+    "SCS--RCS--src": "Apollo11::CSM::CM::SCS",
+    "SCS--RCS--tgt": "Apollo11::CSM::CM::RCS",
+    "conn-SCS-RCS": "Apollo11::CSM::CM::SCS",
+    "AGC_CM--IMU--src": "Apollo11::CSM::CM::AGC_CM",
+    "AGC_CM--IMU--tgt": "Apollo11::CSM::CM::IMU",
+    "conn-AGC_CM-IMU": "Apollo11::CSM::CM::AGC_CM",
+    "ECLSS--AGC_CM--src": "Apollo11::CSM::CM::ECLSS",
+    "ECLSS--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-ECLSS-AGC_CM": "Apollo11::CSM::CM::ECLSS"
   },
   "nodes": {
-    "scs": {
+    "SCS": {
       "label": "SCS",
       "style": "part.gnc"
     },
-    "cmc": {
-      "label": "CMC Colossus",
+    "AGC_CM": {
+      "label": "AGC_CM",
       "style": "part.gnc"
     },
-    "ems": {
-      "label": "EMS",
+    "IMU": {
+      "label": "IMU",
       "style": "part.gnc"
     },
-    "cmRcs": {
-      "label": "CM RCS",
+    "RCS": {
+      "label": "RCS",
       "style": "part.prop"
     },
-    "ecs": {
-      "label": "CM ECS",
+    "ECLSS": {
+      "label": "ECLSS",
       "style": "part.eclss"
     },
-    "fuelCell1": {
-      "label": "Fuel cells (\u00d73)",
-      "style": "part.power"
-    },
-    "sps": {
-      "label": "SPS 20,500 lbf",
+    "SPS": {
+      "label": "SPS",
       "style": "part.prop"
     },
-    "smRcsA": {
-      "label": "SM RCS\n4 quads",
+    "SM_RCS": {
+      "label": "RCS",
       "style": "part.prop"
     }
   },
   "edges": [
     {
-      "from": "scs",
-      "to": "cmc",
-      "label": "backup / CMC",
-      "model_ref": "conn-scs-cmc"
+      "from": "SCS",
+      "to": "AGC_CM",
+      "label": "backup",
+      "model_ref": "conn-SCS-AGC_CM"
     },
     {
-      "from": "scs",
-      "to": "cmRcs",
+      "from": "SCS",
+      "to": "RCS",
       "label": "jets",
-      "model_ref": "conn-scs-cmRcs"
+      "model_ref": "conn-SCS-RCS"
     },
     {
-      "from": "cmc",
-      "to": "ems",
-      "label": "entry",
-      "model_ref": "conn-cmc-ems"
+      "from": "AGC_CM",
+      "to": "IMU",
+      "label": "IMU",
+      "model_ref": "conn-AGC_CM-IMU"
     },
     {
-      "from": "ecs",
-      "to": "cmc",
+      "from": "ECLSS",
+      "to": "AGC_CM",
       "label": "cabin",
-      "model_ref": "conn-ecs-cmc"
-    },
-    {
-      "from": "fuelCell1",
-      "to": "sps",
-      "label": "power",
-      "model_ref": "conn-fuelCell1-sps"
-    },
-    {
-      "from": "sps",
-      "to": "smRcsA",
-      "label": "ullage / RCS",
-      "model_ref": "conn-sps-smRcsA"
+      "model_ref": "conn-ECLSS-AGC_CM"
     }
   ],
   "styles": {
     "boundary.system": {
       "fill": "#FFFFFF",
       "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
       "stroke_width": 2
     },
     "part.gnc": {
@@ -139,9 +121,9 @@
       "stroke": "#C2410C",
       "stroke_width": 2
     },
-    "part.power": {
-      "fill": "#F3E5F5",
-      "stroke": "#6A1B9A",
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
       "stroke_width": 2
     },
     "connector.default": {

@@ -57,34 +57,19 @@
       "order": 0
     },
     "scsRequirement": {
-      "label": "\u00abrequirement\u00bb\nCSM SCS analog backup\nCMC vs SCS crew-select\nFull switch deck TBD",
+      "label": "\u00abrequirement\u00bb\nCSM SCS analog backup\nAGC_CM vs SCS crew-select\nFull switch deck TBD",
       "rank": 2,
       "order": 1
     },
     "pngsRequirement": {
-      "label": "\u00abrequirement\u00bb\nLM PNGS \u2260 AGS\nLGC + IMU + radars\nR47 inits AGS",
+      "label": "\u00abrequirement\u00bb\nPNGS \u2260 AGS\nAGC_LM + IMU + radars\nR47 inits AGS",
       "rank": 2,
       "order": 2
     },
     "eclssLoopRequirement": {
-      "label": "\u00abrequirement\u00bb\nCM ECS loops O2/H2O/LiOH\n5.0 psia 100% O2\nCO2 \u22647.6 torr",
+      "label": "\u00abrequirement\u00bb\nECLSS O2/H2O/LiOH\n5.0 psia 100% O2\nCO2 \u22647.6 torr",
       "rank": 2,
       "order": 3
-    },
-    "smRcsRequirement": {
-      "label": "\u00abrequirement\u00bb\nSM RCS four quads A\u2013D\nThrust UNKNOWN",
-      "rank": 3,
-      "order": 0
-    },
-    "lmRcsRequirement": {
-      "label": "\u00abrequirement\u00bb\nLM RCS 604 lb PK\nCount/thrust UNKNOWN",
-      "rank": 3,
-      "order": 1
-    },
-    "fuelCellRequirement": {
-      "label": "\u00abrequirement\u00bb\nBlock II three fuel cells\nOutput UNKNOWN",
-      "rank": 3,
-      "order": 2
     }
   },
   "edges": [

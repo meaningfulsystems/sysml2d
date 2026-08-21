@@ -14,68 +14,62 @@
   "aliases": {
     "abortMode": "Apollo11::AbortMode",
     "nominal": "Apollo11::AbortMode::nominal",
-    "padLes": "Apollo11::AbortMode::padLes",
-    "modeI": "Apollo11::AbortMode::modeI",
-    "modeII": "Apollo11::AbortMode::modeII",
-    "modeIII": "Apollo11::AbortMode::modeIII",
-    "modeIV": "Apollo11::AbortMode::modeIV",
-    "contingencyTli": "Apollo11::AbortMode::contingencyTli",
-    "spsAbort": "Apollo11::AbortMode::spsAbort",
-    "p70Dps": "Apollo11::AbortMode::p70Dps",
-    "p71Aps": "Apollo11::AbortMode::p71Aps",
-    "lesAbort": "Apollo11::AbortMode::lesAbort",
-    "abortModeI": "Apollo11::AbortMode::abortModeI",
-    "abortModeII": "Apollo11::AbortMode::abortModeII",
-    "abortModeIII": "Apollo11::AbortMode::abortModeIII",
-    "abortModeIV": "Apollo11::AbortMode::abortModeIV",
-    "abortTli": "Apollo11::AbortMode::abortTli",
-    "abortSps": "Apollo11::AbortMode::abortSps",
-    "abortP70": "Apollo11::AbortMode::abortP70",
-    "abortP71": "Apollo11::AbortMode::abortP71"
+    "pad": "Apollo11::AbortMode::pad",
+    "I": "Apollo11::AbortMode::I",
+    "II": "Apollo11::AbortMode::II",
+    "III": "Apollo11::AbortMode::III",
+    "IV": "Apollo11::AbortMode::IV",
+    "contingencyTLI": "Apollo11::AbortMode::contingencyTLI",
+    "lunar": "Apollo11::AbortMode::lunar",
+    "SPS": "Apollo11::AbortMode::SPS",
+    "abortPad": "Apollo11::AbortMode::abortPad",
+    "abortI": "Apollo11::AbortMode::abortI",
+    "abortII": "Apollo11::AbortMode::abortII",
+    "abortIII": "Apollo11::AbortMode::abortIII",
+    "abortIV": "Apollo11::AbortMode::abortIV",
+    "abortTLI": "Apollo11::AbortMode::abortTLI",
+    "abortLunar": "Apollo11::AbortMode::abortLunar",
+    "abortSPS": "Apollo11::AbortMode::abortSPS"
   },
   "states": {
     "initial": {
       "initial": true
     },
     "nominal": {
-      "label": "Nominal",
+      "label": "nominal",
       "model_ref": "nominal"
     },
-    "padLes": {
-      "label": "Pad / LES",
-      "model_ref": "padLes"
+    "pad": {
+      "label": "pad",
+      "model_ref": "pad"
     },
-    "modeI": {
-      "label": "Mode I",
-      "model_ref": "modeI"
+    "I": {
+      "label": "I",
+      "model_ref": "I"
     },
-    "modeII": {
-      "label": "Mode II",
-      "model_ref": "modeII"
+    "II": {
+      "label": "II",
+      "model_ref": "II"
     },
-    "modeIII": {
-      "label": "Mode III",
-      "model_ref": "modeIII"
+    "III": {
+      "label": "III",
+      "model_ref": "III"
     },
-    "modeIV": {
-      "label": "Mode IV",
-      "model_ref": "modeIV"
+    "IV": {
+      "label": "IV",
+      "model_ref": "IV"
     },
-    "contingencyTli": {
-      "label": "Contingency TLI",
-      "model_ref": "contingencyTli"
+    "contingencyTLI": {
+      "label": "contingency TLI",
+      "model_ref": "contingencyTLI"
     },
-    "spsAbort": {
-      "label": "SPS abort",
-      "model_ref": "spsAbort"
+    "lunar": {
+      "label": "lunar",
+      "model_ref": "lunar"
     },
-    "p70Dps": {
-      "label": "P70 DPS",
-      "model_ref": "p70Dps"
-    },
-    "p71Aps": {
-      "label": "P71 APS",
-      "model_ref": "p71Aps"
+    "SPS": {
+      "label": "SPS",
+      "model_ref": "SPS"
     }
   },
   "transitions": [
@@ -86,57 +80,51 @@
     },
     {
       "from": "nominal",
-      "to": "padLes",
+      "to": "pad",
       "label": "pad",
-      "model_ref": "lesAbort"
+      "model_ref": "abortPad"
     },
     {
       "from": "nominal",
-      "to": "modeI",
+      "to": "I",
       "label": "I",
-      "model_ref": "abortModeI"
+      "model_ref": "abortI"
     },
     {
       "from": "nominal",
-      "to": "modeII",
+      "to": "II",
       "label": "II",
-      "model_ref": "abortModeII"
+      "model_ref": "abortII"
     },
     {
       "from": "nominal",
-      "to": "modeIII",
+      "to": "III",
       "label": "III",
-      "model_ref": "abortModeIII"
+      "model_ref": "abortIII"
     },
     {
       "from": "nominal",
-      "to": "modeIV",
+      "to": "IV",
       "label": "IV",
-      "model_ref": "abortModeIV"
+      "model_ref": "abortIV"
     },
     {
       "from": "nominal",
-      "to": "contingencyTli",
+      "to": "contingencyTLI",
       "label": "TLI",
-      "model_ref": "abortTli"
+      "model_ref": "abortTLI"
     },
     {
       "from": "nominal",
-      "to": "spsAbort",
+      "to": "lunar",
+      "label": "lunar",
+      "model_ref": "abortLunar"
+    },
+    {
+      "from": "nominal",
+      "to": "SPS",
       "label": "SPS",
-      "model_ref": "abortSps"
-    },
-    {
-      "from": "nominal",
-      "to": "p70Dps",
-      "label": "P70",
-      "model_ref": "abortP70"
-    },
-    {
-      "from": "p70Dps",
-      "to": "p71Aps",
-      "label": "P71",
-      "model_ref": "abortP71"
+      "model_ref": "abortSPS"
     }
   ]
 }

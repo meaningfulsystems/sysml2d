@@ -7,42 +7,46 @@
   ],
   "aliases": {
     "mission": "Apollo11::Apollo11",
-    "cmc": "Apollo11::CM::cmc",
-    "cmDsky1": "Apollo11::CM::cmDsky1",
-    "cmDsky2": "Apollo11::CM::cmDsky2",
-    "ems": "Apollo11::CM::ems",
-    "lgc": "Apollo11::LMAscent::lgc",
-    "lmDsky": "Apollo11::LMAscent::lmDsky",
-    "ags": "Apollo11::LMAscent::ags",
-    "lvdc": "Apollo11::IU::lvdc",
-    "scs": "Apollo11::CM::scs",
-    "pngs": "Apollo11::LMAscent::pngs",
-    "cmDsky1--cmc--src": "Apollo11::CM::cmDsky1",
-    "cmDsky1--cmc--tgt": "Apollo11::CM::cmc",
-    "conn-cmDsky1-cmc": "Apollo11::CM::cmDsky1",
-    "cmDsky2--cmc--src": "Apollo11::CM::cmDsky2",
-    "cmDsky2--cmc--tgt": "Apollo11::CM::cmc",
-    "conn-cmDsky2-cmc": "Apollo11::CM::cmDsky2",
-    "lmDsky--lgc--src": "Apollo11::LMAscent::lmDsky",
-    "lmDsky--lgc--tgt": "Apollo11::LMAscent::lgc",
-    "conn-lmDsky-lgc": "Apollo11::LMAscent::lmDsky",
-    "lgc--ags--src": "Apollo11::LMAscent::lgc",
-    "lgc--ags--tgt": "Apollo11::LMAscent::ags",
-    "conn-lgc-ags": "Apollo11::LMAscent::lgc",
-    "scs--cmc--src": "Apollo11::CM::scs",
-    "scs--cmc--tgt": "Apollo11::CM::cmc",
-    "conn-scs-cmc": "Apollo11::CM::scs",
-    "pngs--lgc--src": "Apollo11::LMAscent::pngs",
-    "pngs--lgc--tgt": "Apollo11::LMAscent::lgc",
-    "conn-pngs-lgc": "Apollo11::LMAscent::pngs"
+    "DSKY": "Apollo11::CSM::CM::DSKY",
+    "DSKY2": "Apollo11::CSM::CM::DSKY2",
+    "SCS": "Apollo11::CSM::CM::SCS",
+    "AGC_CM": "Apollo11::CSM::CM::AGC_CM",
+    "IMU": "Apollo11::CSM::CM::IMU",
+    "USB": "Apollo11::CSM::CM::USB",
+    "PNGS": "Apollo11::LM::ascent::PNGS",
+    "AGC_LM": "Apollo11::LM::ascent::AGC_LM",
+    "DSKY_LM": "Apollo11::LM::ascent::DSKY",
+    "AGS": "Apollo11::LM::ascent::AGS",
+    "LVDC": "Apollo11::SaturnV::IU::LVDC",
+    "DSKY--AGC_CM--src": "Apollo11::CSM::CM::DSKY",
+    "DSKY--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-DSKY-AGC_CM": "Apollo11::CSM::CM::DSKY",
+    "DSKY2--AGC_CM--src": "Apollo11::CSM::CM::DSKY2",
+    "DSKY2--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-DSKY2-AGC_CM": "Apollo11::CSM::CM::DSKY2",
+    "SCS--AGC_CM--src": "Apollo11::CSM::CM::SCS",
+    "SCS--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-SCS-AGC_CM": "Apollo11::CSM::CM::SCS",
+    "AGC_CM--IMU--src": "Apollo11::CSM::CM::AGC_CM",
+    "AGC_CM--IMU--tgt": "Apollo11::CSM::CM::IMU",
+    "conn-AGC_CM-IMU": "Apollo11::CSM::CM::AGC_CM",
+    "PNGS--AGC_LM--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--AGC_LM--tgt": "Apollo11::LM::ascent::AGC_LM",
+    "conn-PNGS-AGC_LM": "Apollo11::LM::ascent::PNGS",
+    "DSKY_LM--AGC_LM--src": "Apollo11::LM::ascent::DSKY",
+    "DSKY_LM--AGC_LM--tgt": "Apollo11::LM::ascent::AGC_LM",
+    "conn-DSKY_LM-AGC_LM": "Apollo11::LM::ascent::DSKY",
+    "AGC_LM--AGS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--AGS--tgt": "Apollo11::LM::ascent::AGS",
+    "conn-AGC_LM-AGS": "Apollo11::LM::ascent::AGC_LM"
   },
   "diagram": {
     "id": "apollo-ibd-gnc",
     "kind": "InterconnectionView",
-    "name": "Apollo 11 AGC / GNC (do not merge)",
+    "name": "AGC / GNC (do not merge)",
     "canvas": {
       "width": 1004,
-      "height": 960,
+      "height": 936,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -57,7 +61,7 @@
           "x": 40,
           "y": 40,
           "width": 924,
-          "height": 880,
+          "height": 856,
           "z": 0
         },
         "compartments": {
@@ -68,8 +72,8 @@
         "style": "boundary.system"
       },
       {
-        "id": "cmDsky1",
-        "model_ref": "cmDsky1",
+        "id": "DSKY",
+        "model_ref": "DSKY",
         "symbol": "part_usage",
         "layout": {
           "x": 76,
@@ -78,7 +82,7 @@
           "height": 64,
           "z": 10
         },
-        "label": "CM DSKY 1",
+        "label": "DSKY",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -87,17 +91,17 @@
         "style": "part.gnc"
       },
       {
-        "id": "cmDsky2",
-        "model_ref": "cmDsky2",
+        "id": "DSKY2",
+        "model_ref": "DSKY2",
         "symbol": "part_usage",
         "layout": {
           "x": 76,
-          "y": 200,
+          "y": 196,
           "width": 140,
           "height": 64,
           "z": 10
         },
-        "label": "CM DSKY 2",
+        "label": "DSKY 2",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -106,17 +110,17 @@
         "style": "part.gnc"
       },
       {
-        "id": "scs",
-        "model_ref": "scs",
+        "id": "SCS",
+        "model_ref": "SCS",
         "symbol": "part_usage",
         "layout": {
           "x": 76,
-          "y": 820,
+          "y": 676,
           "width": 140,
           "height": 64,
           "z": 10
         },
-        "label": "CM SCS",
+        "label": "SCS",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -125,17 +129,17 @@
         "style": "part.gnc"
       },
       {
-        "id": "cmc",
-        "model_ref": "cmc",
+        "id": "AGC_CM",
+        "model_ref": "AGC_CM",
         "symbol": "part_usage",
         "layout": {
           "x": 432,
-          "y": 386,
+          "y": 376,
           "width": 140,
           "height": 64,
           "z": 10
         },
-        "label": "CMC (Colossus)",
+        "label": "AGC_CM",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -144,93 +148,17 @@
         "style": "part.gnc"
       },
       {
-        "id": "ems",
-        "model_ref": "ems",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 76,
-          "y": 324,
-          "width": 140,
-          "height": 64,
-          "z": 10
-        },
-        "label": "EMS",
-        "compartments": {
-          "attributes": false,
-          "ports": true,
-          "actions": false
-        },
-        "style": "part.gnc"
-      },
-      {
-        "id": "pngs",
-        "model_ref": "pngs",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 76,
-          "y": 696,
-          "width": 140,
-          "height": 64,
-          "z": 10
-        },
-        "label": "LM PNGS",
-        "compartments": {
-          "attributes": false,
-          "ports": true,
-          "actions": false
-        },
-        "style": "part.gnc"
-      },
-      {
-        "id": "lgc",
-        "model_ref": "lgc",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 432,
-          "y": 510,
-          "width": 140,
-          "height": 64,
-          "z": 10
-        },
-        "label": "LGC (Luminary)",
-        "compartments": {
-          "attributes": false,
-          "ports": true,
-          "actions": false
-        },
-        "style": "part.gnc"
-      },
-      {
-        "id": "lmDsky",
-        "model_ref": "lmDsky",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 76,
-          "y": 448,
-          "width": 140,
-          "height": 64,
-          "z": 10
-        },
-        "label": "LM DSKY",
-        "compartments": {
-          "attributes": false,
-          "ports": true,
-          "actions": false
-        },
-        "style": "part.gnc"
-      },
-      {
-        "id": "ags",
-        "model_ref": "ags",
+        "id": "IMU",
+        "model_ref": "IMU",
         "symbol": "part_usage",
         "layout": {
           "x": 788,
-          "y": 448,
+          "y": 376,
           "width": 140,
           "height": 64,
           "z": 10
         },
-        "label": "AGS (AEA+ASA)",
+        "label": "IMU",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -239,17 +167,36 @@
         "style": "part.gnc"
       },
       {
-        "id": "lvdc",
-        "model_ref": "lvdc",
+        "id": "USB",
+        "model_ref": "USB",
         "symbol": "part_usage",
         "layout": {
           "x": 76,
-          "y": 572,
+          "y": 796,
           "width": 140,
           "height": 64,
           "z": 10
         },
-        "label": "IU LVDC",
+        "label": "USB",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "PNGS",
+        "model_ref": "PNGS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 556,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "PNGS",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -258,10 +205,97 @@
         "style": "part.gnc"
       },
       {
-        "id": "cmDsky1--cmc--src",
-        "model_ref": "cmDsky1--cmc--src",
+        "id": "AGC_LM",
+        "model_ref": "AGC_LM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 432,
+          "y": 496,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "AGC_LM",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "DSKY_LM",
+        "model_ref": "DSKY_LM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 316,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "DSKY",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "AGS",
+        "model_ref": "AGS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 788,
+          "y": 496,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "AGS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "LVDC",
+        "model_ref": "LVDC",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 436,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "LVDC",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "DSKY--AGC_CM--src",
+        "model_ref": "DSKY--AGC_CM--src",
         "symbol": "port",
-        "owner": "cmDsky1",
+        "owner": "DSKY",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "DSKY2--AGC_CM--src",
+        "model_ref": "DSKY2--AGC_CM--src",
+        "symbol": "port",
+        "owner": "DSKY2",
         "placement": {
           "side": "bottom",
           "offset": 0.5
@@ -269,10 +303,10 @@
         "label": ""
       },
       {
-        "id": "cmDsky2--cmc--src",
-        "model_ref": "cmDsky2--cmc--src",
+        "id": "SCS--AGC_CM--src",
+        "model_ref": "SCS--AGC_CM--src",
         "symbol": "port",
-        "owner": "cmDsky2",
+        "owner": "SCS",
         "placement": {
           "side": "bottom",
           "offset": 0.5
@@ -280,21 +314,10 @@
         "label": ""
       },
       {
-        "id": "scs--cmc--src",
-        "model_ref": "scs--cmc--src",
+        "id": "DSKY--AGC_CM--tgt",
+        "model_ref": "DSKY--AGC_CM--tgt",
         "symbol": "port",
-        "owner": "scs",
-        "placement": {
-          "side": "bottom",
-          "offset": 0.5
-        },
-        "label": ""
-      },
-      {
-        "id": "cmDsky1--cmc--tgt",
-        "model_ref": "cmDsky1--cmc--tgt",
-        "symbol": "port",
-        "owner": "cmc",
+        "owner": "AGC_CM",
         "placement": {
           "side": "left",
           "offset": 0.25
@@ -302,10 +325,10 @@
         "label": ""
       },
       {
-        "id": "cmDsky2--cmc--tgt",
-        "model_ref": "cmDsky2--cmc--tgt",
+        "id": "DSKY2--AGC_CM--tgt",
+        "model_ref": "DSKY2--AGC_CM--tgt",
         "symbol": "port",
-        "owner": "cmc",
+        "owner": "AGC_CM",
         "placement": {
           "side": "left",
           "offset": 0.5
@@ -313,10 +336,10 @@
         "label": ""
       },
       {
-        "id": "scs--cmc--tgt",
-        "model_ref": "scs--cmc--tgt",
+        "id": "SCS--AGC_CM--tgt",
+        "model_ref": "SCS--AGC_CM--tgt",
         "symbol": "port",
-        "owner": "cmc",
+        "owner": "AGC_CM",
         "placement": {
           "side": "left",
           "offset": 0.75
@@ -324,43 +347,10 @@
         "label": ""
       },
       {
-        "id": "pngs--lgc--src",
-        "model_ref": "pngs--lgc--src",
+        "id": "AGC_CM--IMU--src",
+        "model_ref": "AGC_CM--IMU--src",
         "symbol": "port",
-        "owner": "pngs",
-        "placement": {
-          "side": "bottom",
-          "offset": 0.5
-        },
-        "label": ""
-      },
-      {
-        "id": "lmDsky--lgc--tgt",
-        "model_ref": "lmDsky--lgc--tgt",
-        "symbol": "port",
-        "owner": "lgc",
-        "placement": {
-          "side": "left",
-          "offset": 0.3333
-        },
-        "label": ""
-      },
-      {
-        "id": "pngs--lgc--tgt",
-        "model_ref": "pngs--lgc--tgt",
-        "symbol": "port",
-        "owner": "lgc",
-        "placement": {
-          "side": "left",
-          "offset": 0.6667
-        },
-        "label": ""
-      },
-      {
-        "id": "lgc--ags--src",
-        "model_ref": "lgc--ags--src",
-        "symbol": "port",
-        "owner": "lgc",
+        "owner": "AGC_CM",
         "placement": {
           "side": "right",
           "offset": 0.5
@@ -368,10 +358,21 @@
         "label": ""
       },
       {
-        "id": "lmDsky--lgc--src",
-        "model_ref": "lmDsky--lgc--src",
+        "id": "AGC_CM--IMU--tgt",
+        "model_ref": "AGC_CM--IMU--tgt",
         "symbol": "port",
-        "owner": "lmDsky",
+        "owner": "IMU",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "PNGS--AGC_LM--src",
+        "model_ref": "PNGS--AGC_LM--src",
+        "symbol": "port",
+        "owner": "PNGS",
         "placement": {
           "side": "bottom",
           "offset": 0.5
@@ -379,10 +380,54 @@
         "label": ""
       },
       {
-        "id": "lgc--ags--tgt",
-        "model_ref": "lgc--ags--tgt",
+        "id": "DSKY_LM--AGC_LM--tgt",
+        "model_ref": "DSKY_LM--AGC_LM--tgt",
         "symbol": "port",
-        "owner": "ags",
+        "owner": "AGC_LM",
+        "placement": {
+          "side": "left",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "PNGS--AGC_LM--tgt",
+        "model_ref": "PNGS--AGC_LM--tgt",
+        "symbol": "port",
+        "owner": "AGC_LM",
+        "placement": {
+          "side": "left",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--AGS--src",
+        "model_ref": "AGC_LM--AGS--src",
+        "symbol": "port",
+        "owner": "AGC_LM",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "DSKY_LM--AGC_LM--src",
+        "model_ref": "DSKY_LM--AGC_LM--src",
+        "symbol": "port",
+        "owner": "DSKY_LM",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--AGS--tgt",
+        "model_ref": "AGC_LM--AGS--tgt",
+        "symbol": "port",
+        "owner": "AGS",
         "placement": {
           "side": "left",
           "offset": 0.5
@@ -392,17 +437,17 @@
     ],
     "connections": [
       {
-        "id": "conn-scs-cmc",
-        "model_ref": "conn-scs-cmc",
+        "id": "conn-DSKY-AGC_CM",
+        "model_ref": "conn-DSKY-AGC_CM",
         "source": {
-          "element": "scs--cmc--src",
+          "element": "DSKY--AGC_CM--src",
           "anchor": {
-            "side": "bottom",
+            "side": "top",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "scs--cmc--tgt",
+          "element": "DSKY--AGC_CM--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -413,21 +458,21 @@
           "waypoints": [
             {
               "x": 240,
-              "y": 884
+              "y": 76
             },
             {
               "x": 240,
-              "y": 536
+              "y": 292
             },
             {
               "x": 432,
-              "y": 536
+              "y": 292
             }
           ]
         },
         "labels": [
           {
-            "text": "backup / CMC",
+            "text": "DSKY",
             "position": {
               "offset": 0.5
             }
@@ -436,17 +481,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-pngs-lgc",
-        "model_ref": "conn-pngs-lgc",
+        "id": "conn-DSKY2-AGC_CM",
+        "model_ref": "conn-DSKY2-AGC_CM",
         "source": {
-          "element": "pngs--lgc--src",
+          "element": "DSKY2--AGC_CM--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "pngs--lgc--tgt",
+          "element": "DSKY2--AGC_CM--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -456,8 +501,127 @@
           "kind": "orthogonal",
           "waypoints": [
             {
+              "x": 146,
+              "y": 292
+            },
+            {
+              "x": 240,
+              "y": 292
+            },
+            {
+              "x": 240,
+              "y": 408
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "DSKY",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-SCS-AGC_CM",
+        "model_ref": "conn-SCS-AGC_CM",
+        "source": {
+          "element": "SCS--AGC_CM--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SCS--AGC_CM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 240,
+              "y": 740
+            },
+            {
+              "x": 240,
+              "y": 464
+            },
+            {
               "x": 432,
-              "y": 760
+              "y": 464
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "backup",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-AGC_CM-IMU",
+        "model_ref": "conn-AGC_CM-IMU",
+        "source": {
+          "element": "AGC_CM--IMU--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM--IMU--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "IMU",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-PNGS-AGC_LM",
+        "model_ref": "conn-PNGS-AGC_LM",
+        "source": {
+          "element": "PNGS--AGC_LM--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "PNGS--AGC_LM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 146,
+              "y": 538.669
             }
           ]
         },
@@ -472,17 +636,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-cmDsky1-cmc",
-        "model_ref": "conn-cmDsky1-cmc",
+        "id": "conn-DSKY_LM-AGC_LM",
+        "model_ref": "conn-DSKY_LM-AGC_LM",
         "source": {
-          "element": "cmDsky1--cmc--src",
+          "element": "DSKY_LM--AGC_LM--src",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "cmDsky1--cmc--tgt",
+          "element": "DSKY_LM--AGC_LM--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -493,19 +657,15 @@
           "waypoints": [
             {
               "x": 146,
-              "y": 176
+              "y": 318
             },
             {
-              "x": 240,
-              "y": 176
+              "x": 404,
+              "y": 318
             },
             {
-              "x": 240,
-              "y": 300
-            },
-            {
-              "x": 432,
-              "y": 300
+              "x": 404,
+              "y": 517.331
             }
           ]
         },
@@ -520,97 +680,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-cmDsky2-cmc",
-        "model_ref": "conn-cmDsky2-cmc",
+        "id": "conn-AGC_LM-AGS",
+        "model_ref": "conn-AGC_LM-AGS",
         "source": {
-          "element": "cmDsky2--cmc--src",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "cmDsky2--cmc--tgt",
-          "anchor": {
-            "side": "left",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 146,
-              "y": 300
-            },
-            {
-              "x": 240,
-              "y": 300
-            },
-            {
-              "x": 240,
-              "y": 418
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "DSKY",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.default"
-      },
-      {
-        "id": "conn-lmDsky-lgc",
-        "model_ref": "conn-lmDsky-lgc",
-        "source": {
-          "element": "lmDsky--lgc--src",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "lmDsky--lgc--tgt",
-          "anchor": {
-            "side": "left",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 146,
-              "y": 531.331
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "DSKY",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.default"
-      },
-      {
-        "id": "conn-lgc-ags",
-        "model_ref": "conn-lgc-ags",
-        "source": {
-          "element": "lgc--ags--src",
+          "element": "AGC_LM--AGS--src",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "lgc--ags--tgt",
+          "element": "AGC_LM--AGS--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -618,20 +698,11 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 680,
-              "y": 542
-            },
-            {
-              "x": 680,
-              "y": 480
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
-            "text": "R47 init",
+            "text": "R47",
             "position": {
               "offset": 0.5
             }
@@ -647,9 +718,34 @@
         "stroke": "#333333",
         "stroke_width": 2
       },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
       "part.gnc": {
         "fill": "#E8F5E9",
         "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
         "stroke_width": 2
       },
       "connector.default": {

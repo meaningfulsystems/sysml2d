@@ -3,46 +3,47 @@
   "kind": "DefinitionView",
   "name": "Apollo 11 System Definition Tree",
   "subject": "Apollo11::Apollo11",
-  "model_files": ["apollo.sysml"],
+  "model_files": [
+    "apollo.sysml"
+  ],
   "direction": "top-down",
   "default_w": 140,
   "default_h": 52,
-  "sibling_gap": 20,
-  "rank_gap": 80,
+  "sibling_gap": 18,
+  "rank_gap": 78,
   "max_siblings_per_row": 6,
   "aliases": {
     "root": "Apollo11::Apollo11",
-    "saturnV": "Apollo11::SaturnV",
-    "csm": "Apollo11::CSM",
-    "lm": "Apollo11::LM",
-    "crew": "Apollo11::Crew",
-    "ground": "Apollo11::Ground",
-    "sic": "Apollo11::SIC",
-    "sii": "Apollo11::SII",
-    "sivb": "Apollo11::SIVB",
-    "iu": "Apollo11::IU",
-    "sla": "Apollo11::SLA",
-    "les": "Apollo11::LES",
-    "cm": "Apollo11::CM",
-    "sm": "Apollo11::SM",
-    "lmd": "Apollo11::LMDescent",
-    "lma": "Apollo11::LMAscent",
-    "mcc": "Apollo11::MissionControlHouston",
-    "gsfc": "Apollo11::GoddardSpaceFlightCenter",
-    "msfn": "Apollo11::MannedSpaceFlightNetwork",
-    "ksc": "Apollo11::KennedyLC39",
-    "rso": "Apollo11::RangeSafetyAFETR",
-    "rec": "Apollo11::RecoveryForces",
-    "cdr": "Apollo11::Commander",
-    "cmp": "Apollo11::CommandModulePilot",
-    "lmp": "Apollo11::LunarModulePilot",
-    "scsDef": "Apollo11::SCS",
-    "pngsDef": "Apollo11::PNGS",
-    "cmcDef": "Apollo11::CMC",
-    "lgcDef": "Apollo11::LGC",
-    "agsDef": "Apollo11::AGS",
-    "spsDef": "Apollo11::SPS",
-    "dpsDef": "Apollo11::DPS"
+    "SaturnV": "Apollo11::SaturnV::SaturnV",
+    "CSM": "Apollo11::CSM::CSM",
+    "LM": "Apollo11::LM::LM",
+    "Crew": "Apollo11::Crew::Crew",
+    "Ground": "Apollo11::Ground::Ground",
+    "SIC": "Apollo11::SaturnV::SIC",
+    "SII": "Apollo11::SaturnV::SII",
+    "SIVB": "Apollo11::SaturnV::SIVB",
+    "IU": "Apollo11::SaturnV::IU",
+    "LVDC": "Apollo11::SaturnV::LVDC",
+    "SLA": "Apollo11::SaturnV::SLA",
+    "LES": "Apollo11::SaturnV::LES",
+    "CM": "Apollo11::CSM::CM",
+    "SM": "Apollo11::CSM::SM",
+    "SCS": "Apollo11::CSM::SCS",
+    "AGC_CM": "Apollo11::CSM::AGC_CM",
+    "SPS": "Apollo11::CSM::SPS",
+    "descent": "Apollo11::LM::descent",
+    "ascent": "Apollo11::LM::ascent",
+    "PNGS": "Apollo11::LM::PNGS",
+    "AGC_LM": "Apollo11::LM::AGC_LM",
+    "AGS": "Apollo11::LM::AGS",
+    "CDR": "Apollo11::Crew::CDR",
+    "CMP": "Apollo11::Crew::CMP",
+    "LMP": "Apollo11::Crew::LMP",
+    "KSC_LCC": "Apollo11::Ground::KSC_LCC",
+    "MCC": "Apollo11::Ground::MCC",
+    "RTCC": "Apollo11::Ground::RTCC",
+    "MSFN": "Apollo11::Ground::MSFN",
+    "NASCOM": "Apollo11::Ground::NASCOM"
   },
   "roots": [
     {
@@ -53,88 +54,171 @@
       "w": 200,
       "children": [
         {
-          "id": "saturnV",
-          "label": "Saturn V",
-          "model_ref": "saturnV",
+          "id": "SaturnV",
+          "label": "SaturnV",
+          "model_ref": "SaturnV",
           "children": [
-            {"id": "sIc", "label": "S-IC", "model_ref": "sic"},
-            {"id": "sIi", "label": "S-II", "model_ref": "sii"},
-            {"id": "sIvb", "label": "S-IVB", "model_ref": "sivb"},
-            {"id": "iu", "label": "IU", "model_ref": "iu"},
-            {"id": "sla", "label": "SLA", "model_ref": "sla"},
-            {"id": "les", "label": "LES", "model_ref": "les"}
+            {
+              "id": "SIC",
+              "label": "S-IC",
+              "model_ref": "SIC"
+            },
+            {
+              "id": "SII",
+              "label": "S-II",
+              "model_ref": "SII"
+            },
+            {
+              "id": "SIVB",
+              "label": "S-IVB",
+              "model_ref": "SIVB"
+            },
+            {
+              "id": "IU",
+              "label": "IU",
+              "model_ref": "IU",
+              "children": [
+                {
+                  "id": "LVDC",
+                  "label": "LVDC",
+                  "model_ref": "LVDC"
+                }
+              ]
+            },
+            {
+              "id": "SLA",
+              "label": "SLA",
+              "model_ref": "SLA"
+            },
+            {
+              "id": "LES",
+              "label": "LES",
+              "model_ref": "LES"
+            }
           ]
         },
         {
-          "id": "csm",
-          "label": "CSM Block II",
-          "model_ref": "csm",
+          "id": "CSM",
+          "label": "CSM",
+          "model_ref": "CSM",
           "children": [
             {
-              "id": "cm",
+              "id": "CM",
               "label": "CM",
-              "model_ref": "cm",
+              "model_ref": "CM",
               "children": [
-                {"id": "cmc", "label": "CMC", "model_ref": "cmcDef"},
-                {"id": "scs", "label": "SCS", "model_ref": "scsDef"}
+                {
+                  "id": "AGC_CM",
+                  "label": "AGC_CM",
+                  "model_ref": "AGC_CM"
+                },
+                {
+                  "id": "SCS",
+                  "label": "SCS",
+                  "model_ref": "SCS"
+                }
               ]
             },
             {
-              "id": "sm",
+              "id": "SM",
               "label": "SM",
-              "model_ref": "sm",
+              "model_ref": "SM",
               "children": [
-                {"id": "sps", "label": "SPS", "model_ref": "spsDef"}
+                {
+                  "id": "SPS",
+                  "label": "SPS",
+                  "model_ref": "SPS"
+                }
               ]
             }
           ]
         },
         {
-          "id": "lm",
-          "label": "LM-5",
-          "model_ref": "lm",
+          "id": "LM",
+          "label": "LM",
+          "model_ref": "LM",
           "children": [
             {
-              "id": "lmDescent",
-              "label": "Descent",
-              "model_ref": "lmd",
-              "children": [
-                {"id": "dps", "label": "DPS", "model_ref": "dpsDef"}
-              ]
+              "id": "descent",
+              "label": "descent",
+              "model_ref": "descent"
             },
             {
-              "id": "lmAscent",
-              "label": "Ascent",
-              "model_ref": "lma",
+              "id": "ascent",
+              "label": "ascent",
+              "model_ref": "ascent",
               "children": [
-                {"id": "pngs", "label": "PNGS", "model_ref": "pngsDef"},
-                {"id": "lgc", "label": "LGC", "model_ref": "lgcDef"},
-                {"id": "ags", "label": "AGS", "model_ref": "agsDef"}
+                {
+                  "id": "PNGS",
+                  "label": "PNGS",
+                  "model_ref": "PNGS"
+                },
+                {
+                  "id": "AGC_LM",
+                  "label": "AGC_LM",
+                  "model_ref": "AGC_LM"
+                },
+                {
+                  "id": "AGS",
+                  "label": "AGS",
+                  "model_ref": "AGS"
+                }
               ]
             }
           ]
         },
         {
-          "id": "crew",
+          "id": "Crew",
           "label": "Crew",
-          "model_ref": "crew",
+          "model_ref": "Crew",
           "children": [
-            {"id": "cdr", "label": "CDR", "model_ref": "cdr"},
-            {"id": "cmp", "label": "CMP", "model_ref": "cmp"},
-            {"id": "lmp", "label": "LMP", "model_ref": "lmp"}
+            {
+              "id": "CDR",
+              "label": "CDR",
+              "model_ref": "CDR"
+            },
+            {
+              "id": "CMP",
+              "label": "CMP",
+              "model_ref": "CMP"
+            },
+            {
+              "id": "LMP",
+              "label": "LMP",
+              "model_ref": "LMP"
+            }
           ]
         },
         {
-          "id": "ground",
+          "id": "Ground",
           "label": "Ground",
-          "model_ref": "ground",
+          "model_ref": "Ground",
           "children": [
-            {"id": "mcc", "label": "MCC-H", "model_ref": "mcc"},
-            {"id": "gsfc", "label": "GSFC", "model_ref": "gsfc"},
-            {"id": "msfn", "label": "MSFN", "model_ref": "msfn"},
-            {"id": "ksc", "label": "KSC LC-39", "model_ref": "ksc"},
-            {"id": "rso", "label": "RSO / AFETR", "model_ref": "rso"},
-            {"id": "recovery", "label": "Recovery", "model_ref": "rec"}
+            {
+              "id": "KSC_LCC",
+              "label": "KSC_LCC",
+              "model_ref": "KSC_LCC"
+            },
+            {
+              "id": "MCC",
+              "label": "MCC",
+              "model_ref": "MCC"
+            },
+            {
+              "id": "RTCC",
+              "label": "RTCC",
+              "model_ref": "RTCC"
+            },
+            {
+              "id": "MSFN",
+              "label": "MSFN",
+              "model_ref": "MSFN"
+            },
+            {
+              "id": "NASCOM",
+              "label": "NASCOM",
+              "model_ref": "NASCOM"
+            }
           ]
         }
       ]

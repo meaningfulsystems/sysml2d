@@ -6,28 +6,28 @@
     "apollo.sysml"
   ],
   "aliases": {
-    "cmcMajorMode": "Apollo11::CmcMajorMode",
-    "p00": "Apollo11::CmcMajorMode::p00",
-    "p11": "Apollo11::CmcMajorMode::p11",
-    "p27": "Apollo11::CmcMajorMode::p27",
-    "p40": "Apollo11::CmcMajorMode::p40",
-    "p61": "Apollo11::CmcMajorMode::p61",
-    "p62": "Apollo11::CmcMajorMode::p62",
-    "p67": "Apollo11::CmcMajorMode::p67",
-    "toP11": "Apollo11::CmcMajorMode::toP11",
-    "toP27": "Apollo11::CmcMajorMode::toP27",
-    "toP40": "Apollo11::CmcMajorMode::toP40",
-    "toP61": "Apollo11::CmcMajorMode::toP61",
-    "toP62": "Apollo11::CmcMajorMode::toP62",
-    "toP67": "Apollo11::CmcMajorMode::toP67"
+    "AGC_CM_Mode": "Apollo11::AGC_CM_Mode",
+    "p00": "Apollo11::AGC_CM_Mode::p00",
+    "p11": "Apollo11::AGC_CM_Mode::p11",
+    "p27": "Apollo11::AGC_CM_Mode::p27",
+    "p40": "Apollo11::AGC_CM_Mode::p40",
+    "p61": "Apollo11::AGC_CM_Mode::p61",
+    "p62": "Apollo11::AGC_CM_Mode::p62",
+    "p67": "Apollo11::AGC_CM_Mode::p67",
+    "toP11": "Apollo11::AGC_CM_Mode::toP11",
+    "toP27": "Apollo11::AGC_CM_Mode::toP27",
+    "toP40": "Apollo11::AGC_CM_Mode::toP40",
+    "toP61": "Apollo11::AGC_CM_Mode::toP61",
+    "toP62": "Apollo11::AGC_CM_Mode::toP62",
+    "toP67": "Apollo11::AGC_CM_Mode::toP67"
   },
   "diagram": {
     "id": "apollo-stm-cmc",
     "kind": "StateView",
-    "name": "Apollo 11 CMC Programs",
+    "name": "AGC_CM programs",
     "canvas": {
-      "width": 861,
-      "height": 759,
+      "width": 957,
+      "height": 939,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -36,13 +36,13 @@
     "elements": [
       {
         "id": "boundary",
-        "model_ref": "cmcMajorMode",
+        "model_ref": "AGC_CM_Mode",
         "symbol": "boundary",
         "layout": {
           "x": 54,
           "y": 119,
-          "width": 767,
-          "height": 600,
+          "width": 863,
+          "height": 780,
           "z": 0
         },
         "compartments": {
@@ -56,7 +56,7 @@
         "id": "initial",
         "symbol": "initial_state",
         "layout": {
-          "x": 428,
+          "x": 476,
           "y": 155,
           "width": 20,
           "height": 20,
@@ -68,14 +68,14 @@
         "id": "p00",
         "symbol": "state_usage",
         "layout": {
-          "x": 363,
-          "y": 260,
+          "x": 411,
+          "y": 307,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p00",
-        "label": "P00 idle",
+        "label": "P00",
         "style": "state.default"
       },
       {
@@ -83,35 +83,35 @@
         "symbol": "state_usage",
         "layout": {
           "x": 90,
-          "y": 382,
+          "y": 475,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p11",
-        "label": "P11 earth orbit",
+        "label": "P11",
         "style": "state.default"
       },
       {
         "id": "p27",
         "symbol": "state_usage",
         "layout": {
-          "x": 272,
-          "y": 382,
+          "x": 304,
+          "y": 475,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p27",
-        "label": "P27 uplink (V70\u2013V73)",
+        "label": "P27 V70\u2013V73",
         "style": "state.default"
       },
       {
         "id": "p40",
         "symbol": "state_usage",
         "layout": {
-          "x": 454,
-          "y": 382,
+          "x": 518,
+          "y": 475,
           "width": 150,
           "height": 52,
           "z": 10
@@ -124,49 +124,49 @@
         "id": "p61",
         "symbol": "state_usage",
         "layout": {
-          "x": 635,
-          "y": 382,
+          "x": 731,
+          "y": 475,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p61",
-        "label": "P61 entry prep",
+        "label": "P61",
         "style": "state.default"
       },
       {
         "id": "p62",
         "symbol": "state_usage",
         "layout": {
-          "x": 363,
-          "y": 504,
+          "x": 411,
+          "y": 643,
           "width": 150,
           "height": 52,
           "z": 10
         },
         "model_ref": "p62",
-        "label": "P62 CM/SM sep",
+        "label": "P62",
         "style": "state.default"
       },
       {
         "id": "p67",
         "symbol": "state_usage",
         "layout": {
-          "x": 363,
-          "y": 619,
+          "x": 411,
+          "y": 811,
           "width": 150,
-          "height": 64,
+          "height": 52,
           "z": 10
         },
         "model_ref": "p67",
-        "label": "P67 final\n(P63\u2013P66 TBD)",
+        "label": "P67 (P63\u2013P66 TBD)",
         "style": "state.default"
       }
     ],
     "connections": [
       {
         "id": "initial--p00",
-        "model_ref": "cmcMajorMode",
+        "model_ref": "AGC_CM_Mode",
         "source": {
           "element": "initial",
           "anchor": {
@@ -209,12 +209,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 393,
-              "y": 332
+              "x": 441,
+              "y": 382
             },
             {
               "x": 165,
-              "y": 332
+              "y": 382
             }
           ]
         },
@@ -251,12 +251,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 423,
-              "y": 352
+              "x": 471,
+              "y": 405
             },
             {
-              "x": 347,
-              "y": 352
+              "x": 379,
+              "y": 405
             }
           ]
         },
@@ -293,12 +293,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 453,
-              "y": 372
+              "x": 501,
+              "y": 429
             },
             {
-              "x": 529,
-              "y": 372
+              "x": 593,
+              "y": 429
             }
           ]
         },
@@ -335,12 +335,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 483,
-              "y": 392
+              "x": 531,
+              "y": 452
             },
             {
-              "x": 710,
-              "y": 392
+              "x": 806,
+              "y": 452
             }
           ]
         },
@@ -377,12 +377,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 710,
-              "y": 469
+              "x": 806,
+              "y": 585
             },
             {
-              "x": 438,
-              "y": 469
+              "x": 486,
+              "y": 585
             }
           ]
         },
@@ -471,6 +471,6 @@
         "container": true
       }
     },
-    "subject": "cmcMajorMode"
+    "subject": "AGC_CM_Mode"
   }
 }

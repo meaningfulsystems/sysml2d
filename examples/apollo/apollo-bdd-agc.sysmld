@@ -6,21 +6,18 @@
     "apollo.sysml"
   ],
   "aliases": {
-    "cmc": "Apollo11::CMC",
-    "lgc": "Apollo11::LGC",
-    "e": "Apollo11::ErasableMemory",
-    "f": "Apollo11::FixedMemory",
-    "osc": "Apollo11::Oscillator",
-    "dsky": "Apollo11::DSKY",
-    "ags": "Apollo11::AGS"
+    "AGC_CM": "Apollo11::CSM::AGC_CM",
+    "AGC_LM": "Apollo11::LM::AGC_LM",
+    "DSKY": "Apollo11::CSM::DSKY",
+    "AGS": "Apollo11::LM::AGS"
   },
   "diagram": {
     "id": "apollo-bdd-agc",
     "kind": "DefinitionView",
-    "name": "AGC Block II Hardware",
+    "name": "AGC_CM / AGC_LM",
     "canvas": {
-      "width": 1187,
-      "height": 356,
+      "width": 578,
+      "height": 272,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -28,17 +25,17 @@
     },
     "elements": [
       {
-        "id": "cmc",
-        "model_ref": "cmc",
+        "id": "AGC_CM",
+        "model_ref": "AGC_CM",
         "symbol": "part_definition",
         "layout": {
-          "x": 127,
+          "x": 40,
           "y": 40,
           "width": 150,
           "height": 56,
           "z": 10
         },
-        "label": "CMC Colossus",
+        "label": "AGC_CM",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -47,8 +44,8 @@
         "style": "part.definition.root"
       },
       {
-        "id": "cmcE",
-        "model_ref": "e",
+        "id": "DSKY",
+        "model_ref": "DSKY",
         "symbol": "part_definition",
         "layout": {
           "x": 40,
@@ -57,7 +54,7 @@
           "height": 56,
           "z": 10
         },
-        "label": "2048 E",
+        "label": "DSKY",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -66,74 +63,17 @@
         "style": "part.definition"
       },
       {
-        "id": "cmcF",
-        "model_ref": "f",
+        "id": "AGC_LM",
+        "model_ref": "AGC_LM",
         "symbol": "part_definition",
         "layout": {
           "x": 214,
-          "y": 176,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "36864 F",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "cmcOsc",
-        "model_ref": "osc",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 127,
-          "y": 260,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "1.024 MHz",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "cmDsky",
-        "model_ref": "dsky",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 301,
-          "y": 260,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "DSKY \u00d72",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "lgc",
-        "model_ref": "lgc",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 649,
           "y": 40,
           "width": 150,
           "height": 56,
           "z": 10
         },
-        "label": "LGC Luminary",
+        "label": "AGC_LM",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -142,93 +82,17 @@
         "style": "part.definition.root"
       },
       {
-        "id": "lgcE",
-        "model_ref": "e",
+        "id": "AGS",
+        "model_ref": "AGS",
         "symbol": "part_definition",
         "layout": {
-          "x": 562,
-          "y": 176,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "2048 E",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "lgcF",
-        "model_ref": "f",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 736,
-          "y": 176,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "36864 F",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "lgcOsc",
-        "model_ref": "osc",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 649,
-          "y": 260,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "1.024 MHz",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "lmDsky",
-        "model_ref": "dsky",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 823,
-          "y": 260,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "DSKY \u00d71",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "ags",
-        "model_ref": "ags",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 997,
+          "x": 388,
           "y": 40,
           "width": 150,
           "height": 56,
           "z": 10
         },
-        "label": "AGS (not AGC)",
+        "label": "AGS",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -239,17 +103,17 @@
     ],
     "connections": [
       {
-        "id": "conn-cmc-cmcE",
-        "model_ref": "e",
+        "id": "conn-AGC_CM-DSKY",
+        "model_ref": "DSKY",
         "source": {
-          "element": "cmc",
+          "element": "AGC_CM",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "cmcE",
+          "element": "DSKY",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -257,316 +121,14 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 202,
-              "y": 136
-            },
-            {
-              "x": 115,
-              "y": 136
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 0,
               "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-cmc-cmcF",
-        "model_ref": "f",
-        "source": {
-          "element": "cmc",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "cmcF",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 202,
-              "y": 136
-            },
-            {
-              "x": 289,
-              "y": 136
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-cmc-cmcOsc",
-        "model_ref": "osc",
-        "source": {
-          "element": "cmc",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "cmcOsc",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 202,
-              "y": 232
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 1,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-cmc-cmDsky",
-        "model_ref": "dsky",
-        "source": {
-          "element": "cmc",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "cmDsky",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 202,
-              "y": 232
-            },
-            {
-              "x": 376,
-              "y": 232
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-lgc-lgcE",
-        "model_ref": "e",
-        "source": {
-          "element": "lgc",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "lgcE",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 724,
-              "y": 136
-            },
-            {
-              "x": 637,
-              "y": 136
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-lgc-lgcF",
-        "model_ref": "f",
-        "source": {
-          "element": "lgc",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "lgcF",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 724,
-              "y": 136
-            },
-            {
-              "x": 811,
-              "y": 136
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-lgc-lgcOsc",
-        "model_ref": "osc",
-        "source": {
-          "element": "lgc",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "lgcOsc",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 724,
-              "y": 232
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 1,
-              "offset": 0.94,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-lgc-lmDsky",
-        "model_ref": "dsky",
-        "source": {
-          "element": "lgc",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "lmDsky",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 724,
-              "y": 232
-            },
-            {
-              "x": 898,
-              "y": 232
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.94,
               "dx": 10,
               "dy": -4
             }
@@ -577,6 +139,6 @@
     ],
     "annotations": [],
     "styles": {},
-    "subject": "Apollo11::CMC"
+    "subject": "Apollo11::CSM::AGC_CM"
   }
 }

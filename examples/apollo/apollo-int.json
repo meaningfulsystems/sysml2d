@@ -7,65 +7,65 @@
     "apollo.sysml"
   ],
   "lifelines": {
-    "flight": {
+    "FLIGHT": {
       "label": "FLIGHT"
     },
-    "ccc": {
+    "CCC": {
       "label": "CCC"
     },
-    "rtcc": {
+    "RTCC": {
       "label": "RTCC"
     },
-    "ccats": {
+    "CCATS": {
       "label": "CCATS"
     },
-    "site642B": {
-      "label": "Site 642B"
+    "MSFN": {
+      "label": "MSFN"
     },
-    "cmc": {
-      "label": "CMC"
+    "AGC_CM": {
+      "label": "AGC_CM"
     }
   },
   "messages": [
     {
       "id": "m1",
-      "from": "flight",
-      "to": "ccc",
+      "from": "FLIGHT",
+      "to": "CCC",
       "label": "FC",
       "model_ref": "sendPathA"
     },
     {
       "id": "m2",
-      "from": "ccc",
-      "to": "rtcc",
+      "from": "CCC",
+      "to": "RTCC",
       "label": "path A",
       "model_ref": "commandPathA"
     },
     {
       "id": "m3",
-      "from": "rtcc",
-      "to": "ccats",
+      "from": "RTCC",
+      "to": "CCATS",
       "label": "load",
       "model_ref": "commandPathA"
     },
     {
       "id": "m4",
-      "from": "ccats",
-      "to": "site642B",
+      "from": "CCATS",
+      "to": "MSFN",
       "label": "70 kHz",
       "model_ref": "commandPathA"
     },
     {
       "id": "m5",
-      "from": "site642B",
-      "to": "cmc",
+      "from": "MSFN",
+      "to": "AGC_CM",
       "label": "USB",
       "model_ref": "usbCsmFlow"
     },
     {
       "id": "m6",
-      "from": "flight",
-      "to": "cmc",
+      "from": "FLIGHT",
+      "to": "AGC_CM",
       "label": "P27 V70\u2013V73",
       "model_ref": "sendP27"
     }

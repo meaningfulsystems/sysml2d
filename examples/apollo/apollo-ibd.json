@@ -3,90 +3,206 @@
   "kind": "InterconnectionView",
   "name": "Apollo 11 Mission Interconnection",
   "subject": "mission",
-  "model_files": ["apollo.sysml"],
-  "aliases": {
-    "mission": "Apollo11::Apollo11",
-    "ksc": "Apollo11::Apollo11::ksc",
-    "rso": "Apollo11::Apollo11::rso",
-    "sIc": "Apollo11::Apollo11::sIc",
-    "mcc": "Apollo11::Apollo11::mcc",
-    "gsfc": "Apollo11::Apollo11::gsfc",
-    "msfn": "Apollo11::Apollo11::msfn",
-    "cm": "Apollo11::Apollo11::cm",
-    "lmDescent": "Apollo11::Apollo11::lmDescent",
-    "lmAscent": "Apollo11::Apollo11::lmAscent",
-    "recovery": "Apollo11::Apollo11::recovery",
-    "ksc--sIc--src": "Apollo11::Apollo11::kscUmbilicalOut",
-    "ksc--sIc--tgt": "Apollo11::Apollo11::sIcUmbilicalIn",
-    "rso--sIc--src": "Apollo11::Apollo11::rsoDestructOut",
-    "rso--sIc--tgt": "Apollo11::Apollo11::sIcDestructIn",
-    "ksc--mcc--src": "Apollo11::Apollo11::kscHandoffOut",
-    "ksc--mcc--tgt": "Apollo11::Apollo11::mccHandoffIn",
-    "mcc--gsfc--src": "Apollo11::Apollo11::mccFromGsfcIn",
-    "mcc--gsfc--tgt": "Apollo11::Apollo11::gsfcToMccOut",
-    "gsfc--msfn--src": "Apollo11::Apollo11::gsfcNascomIn",
-    "gsfc--msfn--tgt": "Apollo11::Apollo11::msfnNascomOut",
-    "mcc--msfn--src": "Apollo11::Apollo11::mccCcatsOut",
-    "mcc--msfn--tgt": "Apollo11::Apollo11::msfn642BIn",
-    "msfn--cm--src": "Apollo11::Apollo11::msfnUsbOut",
-    "msfn--cm--tgt": "Apollo11::Apollo11::cmUsbIn",
-    "msfn--lmAscent--src": "Apollo11::Apollo11::msfnUsbOut",
-    "msfn--lmAscent--tgt": "Apollo11::Apollo11::lmUsbIn",
-    "cm--lmAscent--src": "Apollo11::Apollo11::cmDockOut",
-    "cm--lmAscent--tgt": "Apollo11::Apollo11::lmAscentDockIn",
-    "lmDescent--lmAscent--src": "Apollo11::Apollo11::lmDescentToAscentOut",
-    "lmDescent--lmAscent--tgt": "Apollo11::Apollo11::lmAscentFromDescentIn",
-    "recovery--cm--src": "Apollo11::Apollo11::recoveryToCmOut",
-    "recovery--cm--tgt": "Apollo11::Apollo11::cmRecoveryIn",
-    "conn-ksc-sIc": "Apollo11::Apollo11::kscToSic",
-    "conn-rso-sIc": "Apollo11::Apollo11::rsoToSic",
-    "conn-ksc-mcc": "Apollo11::Apollo11::kscToMccHandoff",
-    "conn-mcc-gsfc": "Apollo11::Apollo11::gsfcToMcc",
-    "conn-gsfc-msfn": "Apollo11::Apollo11::msfnToGsfc",
-    "conn-mcc-msfn": "Apollo11::Apollo11::mccToMsfnCommand",
-    "conn-msfn-cm": "Apollo11::Apollo11::msfnToCmUsb",
-    "conn-msfn-lmAscent": "Apollo11::Apollo11::msfnToLmUsb",
-    "conn-cm-lmAscent": "Apollo11::Apollo11::cmToLmAscent",
-    "conn-lmDescent-lmAscent": "Apollo11::Apollo11::lmDescentToAscent",
-    "conn-recovery-cm": "Apollo11::Apollo11::recoveryToCm"
-  },
+  "model_files": [
+    "apollo.sysml"
+  ],
   "direction": "left-right",
-  "default_w": 150,
-  "default_h": 70,
+  "default_w": 140,
+  "default_h": 64,
   "col_gap": 56,
   "rank_gap": 130,
   "label_mode": "connection",
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "KSC_LCC": "Apollo11::Ground::Ground::KSC_LCC",
+    "RSO": "Apollo11::Apollo11::RSO",
+    "SIC": "Apollo11::SaturnV::SaturnV::SIC",
+    "MCC": "Apollo11::Ground::Ground::MCC",
+    "NASCOM": "Apollo11::Ground::Ground::NASCOM",
+    "MSFN": "Apollo11::Ground::Ground::MSFN",
+    "CM": "Apollo11::CSM::CSM::CM",
+    "descent": "Apollo11::LM::LM::descent",
+    "ascent": "Apollo11::LM::LM::ascent",
+    "recovery": "Apollo11::Apollo11::recovery",
+    "KSC_LCC--SIC--src": "Apollo11::Apollo11::KSC_LCCUmbilicalOut",
+    "KSC_LCC--SIC--tgt": "Apollo11::Apollo11::SICUmbilicalIn",
+    "conn-KSC_LCC-SIC": "Apollo11::Apollo11::KSC_LCCToSIC",
+    "RSO--SIC--src": "Apollo11::Apollo11::rsoDestructOut",
+    "RSO--SIC--tgt": "Apollo11::Apollo11::SICDestructIn",
+    "conn-RSO-SIC": "Apollo11::Apollo11::rsoToSIC",
+    "KSC_LCC--MCC--src": "Apollo11::Apollo11::KSC_LCCHandoffOut",
+    "KSC_LCC--MCC--tgt": "Apollo11::Apollo11::MCCHandoffIn",
+    "conn-KSC_LCC-MCC": "Apollo11::Apollo11::KSC_LCCToMCCHandoff",
+    "NASCOM--MCC--src": "Apollo11::Apollo11::NASCOMToMCCOut",
+    "NASCOM--MCC--tgt": "Apollo11::Apollo11::MCCFromNASCOMIn",
+    "conn-NASCOM-MCC": "Apollo11::Apollo11::NASCOMToMCC",
+    "NASCOM--MSFN--src": "Apollo11::Apollo11::NASCOMOut",
+    "NASCOM--MSFN--tgt": "Apollo11::Apollo11::NASCOMIn",
+    "conn-NASCOM-MSFN": "Apollo11::Apollo11::NASCOMToGround",
+    "MCC--MSFN--src": "Apollo11::Apollo11::MCCCcatsOut",
+    "MCC--MSFN--tgt": "Apollo11::Apollo11::MSFN642BIn",
+    "conn-MCC-MSFN": "Apollo11::Apollo11::MCCToMSFNCommand",
+    "MSFN--CM--src": "Apollo11::Apollo11::MSFNUsbOut",
+    "MSFN--CM--tgt": "Apollo11::Apollo11::CMUsbIn",
+    "conn-MSFN-CM": "Apollo11::Apollo11::MSFNToCMUsb",
+    "MSFN--ascent--src": "Apollo11::Apollo11::MSFNUsbOut",
+    "MSFN--ascent--tgt": "Apollo11::Apollo11::LMUsbIn",
+    "conn-MSFN-ascent": "Apollo11::Apollo11::MSFNToLMUsb",
+    "CM--ascent--src": "Apollo11::Apollo11::CMDockOut",
+    "CM--ascent--tgt": "Apollo11::Apollo11::ascentDockIn",
+    "conn-CM-ascent": "Apollo11::Apollo11::CMToAscent",
+    "descent--ascent--src": "Apollo11::Apollo11::descentToAscentOut",
+    "descent--ascent--tgt": "Apollo11::Apollo11::ascentFromDescentIn",
+    "conn-descent-ascent": "Apollo11::Apollo11::descentToAscent",
+    "recovery--CM--src": "Apollo11::Apollo11::recoveryToCMOut",
+    "recovery--CM--tgt": "Apollo11::Apollo11::CMRecoveryIn",
+    "conn-recovery-CM": "Apollo11::Apollo11::recoveryToCM"
+  },
   "nodes": {
-    "ksc": {"label": "KSC LC-39", "style": "part.ground"},
-    "rso": {"label": "RSO / AFETR", "style": "part.safety"},
-    "sIc": {"label": "S-IC", "style": "part.vehicle"},
-    "mcc": {"label": "MCC-H", "style": "part.ground"},
-    "gsfc": {"label": "GSFC", "style": "part.ground"},
-    "msfn": {"label": "MSFN", "style": "part.comms"},
-    "cm": {"label": "CM", "style": "part.vehicle"},
-    "lmDescent": {"label": "LM Descent", "style": "part.vehicle"},
-    "lmAscent": {"label": "LM Ascent", "style": "part.vehicle"},
-    "recovery": {"label": "Recovery", "style": "part.ground"}
+    "KSC_LCC": {
+      "label": "KSC_LCC",
+      "style": "part.ground"
+    },
+    "RSO": {
+      "label": "RSO",
+      "style": "part.safety"
+    },
+    "SIC": {
+      "label": "S-IC",
+      "style": "part.vehicle"
+    },
+    "MCC": {
+      "label": "MCC",
+      "style": "part.ground"
+    },
+    "NASCOM": {
+      "label": "NASCOM",
+      "style": "part.comms"
+    },
+    "MSFN": {
+      "label": "MSFN",
+      "style": "part.comms"
+    },
+    "CM": {
+      "label": "CM",
+      "style": "part.vehicle"
+    },
+    "descent": {
+      "label": "descent",
+      "style": "part.vehicle"
+    },
+    "ascent": {
+      "label": "ascent",
+      "style": "part.vehicle"
+    },
+    "recovery": {
+      "label": "Recovery",
+      "style": "part.ground"
+    }
   },
   "edges": [
-    {"from": "ksc", "to": "sIc", "label": "umbilical", "model_ref": "conn-ksc-sIc"},
-    {"from": "rso", "to": "sIc", "label": "UHF destruct", "model_ref": "conn-rso-sIc"},
-    {"from": "ksc", "to": "mcc", "label": "handoff @ tower clear", "source_side": "top", "target_side": "top", "model_ref": "conn-ksc-mcc"},
-    {"from": "mcc", "to": "gsfc", "label": "MOC/DSC", "model_ref": "conn-mcc-gsfc"},
-    {"from": "gsfc", "to": "msfn", "label": "NASCOM", "model_ref": "conn-gsfc-msfn"},
-    {"from": "mcc", "to": "msfn", "label": "path A 70 kHz", "source_side": "bottom", "target_side": "bottom", "model_ref": "conn-mcc-msfn"},
-    {"from": "msfn", "to": "cm", "label": "USB CSM", "model_ref": "conn-msfn-cm"},
-    {"from": "msfn", "to": "lmAscent", "label": "USB LM", "source_side": "top", "target_side": "top", "model_ref": "conn-msfn-lmAscent"},
-    {"from": "cm", "to": "lmAscent", "label": "dock", "model_ref": "conn-cm-lmAscent"},
-    {"from": "lmDescent", "to": "lmAscent", "label": "stage", "model_ref": "conn-lmDescent-lmAscent"},
-    {"from": "recovery", "to": "cm", "label": "TF-130 / Hornet", "model_ref": "conn-recovery-cm"}
+    {
+      "from": "KSC_LCC",
+      "to": "SIC",
+      "label": "umbilical",
+      "model_ref": "conn-KSC_LCC-SIC"
+    },
+    {
+      "from": "RSO",
+      "to": "SIC",
+      "label": "UHF destruct",
+      "model_ref": "conn-RSO-SIC"
+    },
+    {
+      "from": "KSC_LCC",
+      "to": "MCC",
+      "label": "handoff",
+      "source_side": "top",
+      "target_side": "top",
+      "model_ref": "conn-KSC_LCC-MCC"
+    },
+    {
+      "from": "NASCOM",
+      "to": "MCC",
+      "label": "NASCOM",
+      "model_ref": "conn-NASCOM-MCC"
+    },
+    {
+      "from": "NASCOM",
+      "to": "MSFN",
+      "label": "NASCOM",
+      "model_ref": "conn-NASCOM-MSFN"
+    },
+    {
+      "from": "MCC",
+      "to": "MSFN",
+      "label": "path A 70 kHz",
+      "source_side": "bottom",
+      "target_side": "bottom",
+      "model_ref": "conn-MCC-MSFN"
+    },
+    {
+      "from": "MSFN",
+      "to": "CM",
+      "label": "USB",
+      "model_ref": "conn-MSFN-CM"
+    },
+    {
+      "from": "MSFN",
+      "to": "ascent",
+      "label": "USB",
+      "source_side": "top",
+      "target_side": "top",
+      "model_ref": "conn-MSFN-ascent"
+    },
+    {
+      "from": "CM",
+      "to": "ascent",
+      "label": "dock",
+      "model_ref": "conn-CM-ascent"
+    },
+    {
+      "from": "descent",
+      "to": "ascent",
+      "label": "stage",
+      "model_ref": "conn-descent-ascent"
+    },
+    {
+      "from": "recovery",
+      "to": "CM",
+      "label": "recovery",
+      "model_ref": "conn-recovery-CM"
+    }
   ],
   "styles": {
-    "boundary.system": {"fill": "#FFFFFF", "stroke": "#333333", "stroke_width": 2},
-    "part.ground": {"fill": "#E3F2FD", "stroke": "#1565C0", "stroke_width": 2},
-    "part.safety": {"fill": "#FFEBEE", "stroke": "#B71C1C", "stroke_width": 2},
-    "part.comms": {"fill": "#FFF7ED", "stroke": "#C2410C", "stroke_width": 2},
-    "part.vehicle": {"fill": "#F5F5F5", "stroke": "#424242", "stroke_width": 2},
-    "connector.default": {"stroke": "#334155", "stroke_width": 2}
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.safety": {
+      "fill": "#FFEBEE",
+      "stroke": "#B71C1C",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
   }
 }

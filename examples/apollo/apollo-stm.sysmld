@@ -10,32 +10,30 @@
     "countdown": "Apollo11::MissionPhase::countdown",
     "boost": "Apollo11::MissionPhase::boost",
     "earthOrbit": "Apollo11::MissionPhase::earthOrbit",
-    "tli": "Apollo11::MissionPhase::tli",
+    "TLI": "Apollo11::MissionPhase::TLI",
     "translunar": "Apollo11::MissionPhase::translunar",
-    "dockEject": "Apollo11::MissionPhase::dockEject",
-    "loi": "Apollo11::MissionPhase::loi",
+    "LOI": "Apollo11::MissionPhase::LOI",
     "undock": "Apollo11::MissionPhase::undock",
-    "doi": "Apollo11::MissionPhase::doi",
+    "DOI": "Apollo11::MissionPhase::DOI",
     "descent": "Apollo11::MissionPhase::descent",
-    "surfaceEva": "Apollo11::MissionPhase::surfaceEva",
+    "surfaceEVA": "Apollo11::MissionPhase::surfaceEVA",
     "ascent": "Apollo11::MissionPhase::ascent",
     "rendezvous": "Apollo11::MissionPhase::rendezvous",
-    "tei": "Apollo11::MissionPhase::tei",
+    "TEI": "Apollo11::MissionPhase::TEI",
     "entry": "Apollo11::MissionPhase::entry",
     "recovery": "Apollo11::MissionPhase::recovery",
     "liftoff": "Apollo11::MissionPhase::liftoff",
     "seoi": "Apollo11::MissionPhase::seoi",
-    "startTli": "Apollo11::MissionPhase::startTli",
-    "tliCutoff": "Apollo11::MissionPhase::tliCutoff",
-    "dock": "Apollo11::MissionPhase::dock",
-    "startLoi": "Apollo11::MissionPhase::startLoi",
-    "loiCutoff": "Apollo11::MissionPhase::loiCutoff",
-    "startDoi": "Apollo11::MissionPhase::startDoi",
+    "startTLI": "Apollo11::MissionPhase::startTLI",
+    "TLICutoff": "Apollo11::MissionPhase::TLICutoff",
+    "startLOI": "Apollo11::MissionPhase::startLOI",
+    "LOICutoff": "Apollo11::MissionPhase::LOICutoff",
+    "startDOI": "Apollo11::MissionPhase::startDOI",
     "startDescent": "Apollo11::MissionPhase::startDescent",
     "touchdown": "Apollo11::MissionPhase::touchdown",
     "startAscent": "Apollo11::MissionPhase::startAscent",
     "startRndz": "Apollo11::MissionPhase::startRndz",
-    "startTei": "Apollo11::MissionPhase::startTei",
+    "startTEI": "Apollo11::MissionPhase::startTEI",
     "startEntry": "Apollo11::MissionPhase::startEntry",
     "splashdown": "Apollo11::MissionPhase::splashdown"
   },
@@ -44,7 +42,7 @@
     "kind": "StateView",
     "name": "Apollo 11 Mission Phases",
     "canvas": {
-      "width": 3488,
+      "width": 3282,
       "height": 251,
       "background": "#FFFFFF"
     },
@@ -59,7 +57,7 @@
         "layout": {
           "x": 103,
           "y": 87,
-          "width": 3345,
+          "width": 3139,
           "height": 124,
           "z": 0
         },
@@ -93,7 +91,7 @@
           "z": 10
         },
         "model_ref": "countdown",
-        "label": "Countdown",
+        "label": "countdown",
         "style": "state.default"
       },
       {
@@ -107,34 +105,34 @@
           "z": 10
         },
         "model_ref": "boost",
-        "label": "Boost",
+        "label": "boost",
         "style": "state.default"
       },
       {
         "id": "earthOrbit",
         "symbol": "state_usage",
         "layout": {
-          "x": 691,
+          "x": 690,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
         "model_ref": "earthOrbit",
-        "label": "Earth orbit\n100 nmi plan",
+        "label": "earthOrbit\n100 nmi",
         "style": "state.default"
       },
       {
-        "id": "tli",
+        "id": "TLI",
         "symbol": "state_usage",
         "layout": {
-          "x": 891,
+          "x": 890,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
-        "model_ref": "tli",
+        "model_ref": "TLI",
         "label": "TLI",
         "style": "state.default"
       },
@@ -142,41 +140,27 @@
         "id": "translunar",
         "symbol": "state_usage",
         "layout": {
-          "x": 1091,
+          "x": 1089,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
         "model_ref": "translunar",
-        "label": "Translunar",
+        "label": "translunar",
         "style": "state.default"
       },
       {
-        "id": "dockEject",
+        "id": "LOI",
         "symbol": "state_usage",
         "layout": {
-          "x": 1291,
+          "x": 1289,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
-        "model_ref": "dockEject",
-        "label": "Dock / eject",
-        "style": "state.default"
-      },
-      {
-        "id": "loi",
-        "symbol": "state_usage",
-        "layout": {
-          "x": 1492,
-          "y": 123,
-          "width": 118,
-          "height": 52,
-          "z": 10
-        },
-        "model_ref": "loi",
+        "model_ref": "LOI",
         "label": "LOI",
         "style": "state.default"
       },
@@ -184,27 +168,27 @@
         "id": "undock",
         "symbol": "state_usage",
         "layout": {
-          "x": 1692,
+          "x": 1489,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
         "model_ref": "undock",
-        "label": "Undock",
+        "label": "undock",
         "style": "state.default"
       },
       {
-        "id": "doi",
+        "id": "DOI",
         "symbol": "state_usage",
         "layout": {
-          "x": 1892,
+          "x": 1689,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
-        "model_ref": "doi",
+        "model_ref": "DOI",
         "label": "DOI",
         "style": "state.default"
       },
@@ -212,69 +196,69 @@
         "id": "descent",
         "symbol": "state_usage",
         "layout": {
-          "x": 2092,
+          "x": 1889,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
         "model_ref": "descent",
-        "label": "Descent",
+        "label": "descent",
         "style": "state.default"
       },
       {
-        "id": "surfaceEva",
+        "id": "surfaceEVA",
         "symbol": "state_usage",
         "layout": {
-          "x": 2293,
+          "x": 2089,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
-        "model_ref": "surfaceEva",
-        "label": "Surface / EVA",
+        "model_ref": "surfaceEVA",
+        "label": "surface/EVA",
         "style": "state.default"
       },
       {
         "id": "ascent",
         "symbol": "state_usage",
         "layout": {
-          "x": 2493,
+          "x": 2289,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
         "model_ref": "ascent",
-        "label": "Ascent",
+        "label": "ascent",
         "style": "state.default"
       },
       {
         "id": "rendezvous",
         "symbol": "state_usage",
         "layout": {
-          "x": 2693,
+          "x": 2488,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
         "model_ref": "rendezvous",
-        "label": "Rendezvous",
+        "label": "rendezvous",
         "style": "state.default"
       },
       {
-        "id": "tei",
+        "id": "TEI",
         "symbol": "state_usage",
         "layout": {
-          "x": 2893,
+          "x": 2688,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
-        "model_ref": "tei",
+        "model_ref": "TEI",
         "label": "TEI",
         "style": "state.default"
       },
@@ -282,28 +266,28 @@
         "id": "entry",
         "symbol": "state_usage",
         "layout": {
-          "x": 3094,
+          "x": 2888,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
         "model_ref": "entry",
-        "label": "Entry",
+        "label": "entry",
         "style": "state.default"
       },
       {
         "id": "recovery",
         "symbol": "state_usage",
         "layout": {
-          "x": 3294,
+          "x": 3088,
           "y": 123,
           "width": 118,
           "height": 52,
           "z": 10
         },
         "model_ref": "recovery",
-        "label": "Recovery",
+        "label": "recovery",
         "style": "state.default"
       }
     ],
@@ -399,8 +383,8 @@
         "style": "transition"
       },
       {
-        "id": "earthOrbit--tli",
-        "model_ref": "startTli",
+        "id": "earthOrbit--TLI",
+        "model_ref": "startTLI",
         "source": {
           "element": "earthOrbit",
           "anchor": {
@@ -409,7 +393,7 @@
           }
         },
         "target": {
-          "element": "tli",
+          "element": "TLI",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -432,10 +416,10 @@
         "style": "transition"
       },
       {
-        "id": "tli--translunar",
-        "model_ref": "tliCutoff",
+        "id": "TLI--translunar",
+        "model_ref": "TLICutoff",
         "source": {
-          "element": "tli",
+          "element": "TLI",
           "anchor": {
             "side": "right",
             "offset": 0.5
@@ -456,8 +440,8 @@
         "style": "transition"
       },
       {
-        "id": "translunar--dockEject",
-        "model_ref": "dock",
+        "id": "translunar--LOI",
+        "model_ref": "startLOI",
         "source": {
           "element": "translunar",
           "anchor": {
@@ -466,40 +450,7 @@
           }
         },
         "target": {
-          "element": "dockEject",
-          "anchor": {
-            "side": "left",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": []
-        },
-        "labels": [
-          {
-            "text": "dock",
-            "position": {
-              "segment": 0,
-              "offset": 0.5,
-              "placement": "centerline"
-            }
-          }
-        ],
-        "style": "transition"
-      },
-      {
-        "id": "dockEject--loi",
-        "model_ref": "startLoi",
-        "source": {
-          "element": "dockEject",
-          "anchor": {
-            "side": "right",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "loi",
+          "element": "LOI",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -522,10 +473,10 @@
         "style": "transition"
       },
       {
-        "id": "loi--undock",
-        "model_ref": "loiCutoff",
+        "id": "LOI--undock",
+        "model_ref": "LOICutoff",
         "source": {
-          "element": "loi",
+          "element": "LOI",
           "anchor": {
             "side": "right",
             "offset": 0.5
@@ -546,8 +497,8 @@
         "style": "transition"
       },
       {
-        "id": "undock--doi",
-        "model_ref": "startDoi",
+        "id": "undock--DOI",
+        "model_ref": "startDOI",
         "source": {
           "element": "undock",
           "anchor": {
@@ -556,7 +507,7 @@
           }
         },
         "target": {
-          "element": "doi",
+          "element": "DOI",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -579,10 +530,10 @@
         "style": "transition"
       },
       {
-        "id": "doi--descent",
+        "id": "DOI--descent",
         "model_ref": "startDescent",
         "source": {
-          "element": "doi",
+          "element": "DOI",
           "anchor": {
             "side": "right",
             "offset": 0.5
@@ -612,7 +563,7 @@
         "style": "transition"
       },
       {
-        "id": "descent--surfaceEva",
+        "id": "descent--surfaceEVA",
         "model_ref": "touchdown",
         "source": {
           "element": "descent",
@@ -622,7 +573,7 @@
           }
         },
         "target": {
-          "element": "surfaceEva",
+          "element": "surfaceEVA",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -645,10 +596,10 @@
         "style": "transition"
       },
       {
-        "id": "surfaceEva--ascent",
+        "id": "surfaceEVA--ascent",
         "model_ref": "startAscent",
         "source": {
-          "element": "surfaceEva",
+          "element": "surfaceEVA",
           "anchor": {
             "side": "right",
             "offset": 0.5
@@ -711,8 +662,8 @@
         "style": "transition"
       },
       {
-        "id": "rendezvous--tei",
-        "model_ref": "startTei",
+        "id": "rendezvous--TEI",
+        "model_ref": "startTEI",
         "source": {
           "element": "rendezvous",
           "anchor": {
@@ -721,7 +672,7 @@
           }
         },
         "target": {
-          "element": "tei",
+          "element": "TEI",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -744,10 +695,10 @@
         "style": "transition"
       },
       {
-        "id": "tei--entry",
+        "id": "TEI--entry",
         "model_ref": "startEntry",
         "source": {
-          "element": "tei",
+          "element": "TEI",
           "anchor": {
             "side": "right",
             "offset": 0.5

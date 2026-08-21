@@ -7,32 +7,32 @@
 </defs>
 <rect x="0" y="0" width="624" height="570" fill="#FFFFFF"/>
 <rect x="2" y="38" width="620" height="528" fill="none" stroke="#333333" stroke-width="2"/>
-<path d="M 2 1 H 480 L 496 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
-<text class="header" x="12" y="24">[icn.mb] AGC Block II Memory / Clock [mission : Apollo11]</text>
+<path d="M 2 1 H 456 L 472 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] AGC_CM / AGC_LM hardware [mission : Apollo11]</text>
 <rect x="2" y="38" width="620" height="530" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
 <rect id="boundary" x="40" y="40" width="540" height="448" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="label" x="50" y="62">mission</text>
-<rect id="cmcOsc" x="76" y="182" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="146" y="203.5">CMC osc</tspan><tspan x="146" dy="15">1.024 MHz</tspan></text>
-<rect id="cmcE" x="404" y="76" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="474" y="105">CMC 2048 E</text>
-<rect id="cmcF" x="404" y="182" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="474" y="203.5">CMC 36864 F</tspan><tspan x="474" dy="15">rope ID UNKNOWN</tspan></text>
-<rect id="lgcOsc" x="76" y="288" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="146" y="309.5">LGC osc</tspan><tspan x="146" dy="15">1.024 MHz</tspan></text>
-<rect id="lgcE" x="404" y="288" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="474" y="317">LGC 2048 E</text>
-<rect id="lgcF" x="404" y="394" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="474" y="415.5">LGC 36864 F</tspan><tspan x="474" dy="15">rope ID UNKNOWN</tspan></text>
-<rect id="cmcOsc--cmcE--src" x="210" y="190.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cmcOsc--cmcF--src" x="210" y="205" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cmcOsc--cmcE--tgt" x="398" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cmcOsc--cmcF--tgt" x="398" y="205" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lgcOsc--lgcE--src" x="210" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lgcOsc--lgcF--src" x="210" y="325.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lgcOsc--lgcE--tgt" x="398" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lgcOsc--lgcF--tgt" x="398" y="417" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="cmOsc" x="76" y="182" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="146" y="203.5">AGC_CM osc</tspan><tspan x="146" dy="15">1.024 MHz</tspan></text>
+<rect id="cmE" x="404" y="76" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="474" y="105">AGC_CM 2048 E</text>
+<rect id="cmF" x="404" y="182" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="474" y="211">AGC_CM 36864 F</text>
+<rect id="lmOsc" x="76" y="288" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="146" y="309.5">AGC_LM osc</tspan><tspan x="146" dy="15">1.024 MHz</tspan></text>
+<rect id="lmE" x="404" y="288" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="474" y="317">AGC_LM 2048 E</text>
+<rect id="lmF" x="404" y="394" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="474" y="423">AGC_LM 36864 F</text>
+<rect id="cmOsc--cmE--src" x="210" y="190.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="cmOsc--cmF--src" x="210" y="205" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="cmOsc--cmE--tgt" x="398" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="cmOsc--cmF--tgt" x="398" y="205" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lmOsc--lmE--src" x="210" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lmOsc--lmF--src" x="210" y="325.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lmOsc--lmE--tgt" x="398" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="lmOsc--lmF--tgt" x="398" y="417" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <path d="M 222,196.5 L 268,196.5 L 268,105 L 398,105" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 222,211 L 398,211" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 222,317 L 398,317" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>

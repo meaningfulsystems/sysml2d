@@ -1,97 +1,69 @@
 {
   "diagram": "apollo-ibd-msfn",
   "kind": "InterconnectionView",
-  "name": "MSFN USB / A11 coverage",
-  "subject": "msfn",
+  "name": "MSFN Goldstone/Madrid/Honeysuckle + NASCOM",
+  "subject": "MSFN",
   "model_files": [
     "apollo.sysml"
   ],
   "direction": "left-right",
-  "default_w": 140,
+  "default_w": 150,
   "default_h": 58,
   "col_gap": 48,
   "rank_gap": 120,
   "label_mode": "connection",
   "aliases": {
-    "msfn": "Apollo11::MannedSpaceFlightNetwork",
-    "goldstone85": "Apollo11::MannedSpaceFlightNetwork::goldstone85",
-    "madrid85": "Apollo11::MannedSpaceFlightNetwork::madrid85",
-    "honeysuckle85": "Apollo11::MannedSpaceFlightNetwork::honeysuckle85",
-    "site642B": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "goldstone210": "Apollo11::MannedSpaceFlightNetwork::goldstone210",
-    "parkes": "Apollo11::MannedSpaceFlightNetwork::parkes",
-    "goldstone85--site642B--src": "Apollo11::MannedSpaceFlightNetwork::goldstone85",
-    "goldstone85--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "conn-goldstone85-site642B": "Apollo11::MannedSpaceFlightNetwork::goldstone85",
-    "madrid85--site642B--src": "Apollo11::MannedSpaceFlightNetwork::madrid85",
-    "madrid85--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "conn-madrid85-site642B": "Apollo11::MannedSpaceFlightNetwork::madrid85",
-    "honeysuckle85--site642B--src": "Apollo11::MannedSpaceFlightNetwork::honeysuckle85",
-    "honeysuckle85--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "conn-honeysuckle85-site642B": "Apollo11::MannedSpaceFlightNetwork::honeysuckle85",
-    "goldstone210--site642B--src": "Apollo11::MannedSpaceFlightNetwork::goldstone210",
-    "goldstone210--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "conn-goldstone210-site642B": "Apollo11::MannedSpaceFlightNetwork::goldstone210",
-    "parkes--site642B--src": "Apollo11::MannedSpaceFlightNetwork::parkes",
-    "parkes--site642B--tgt": "Apollo11::MannedSpaceFlightNetwork::site642B",
-    "conn-parkes-site642B": "Apollo11::MannedSpaceFlightNetwork::parkes"
+    "MSFN": "Apollo11::Ground::MSFN",
+    "Goldstone": "Apollo11::Ground::MSFN::Goldstone",
+    "Madrid": "Apollo11::Ground::MSFN::Madrid",
+    "Honeysuckle": "Apollo11::Ground::MSFN::Honeysuckle",
+    "NASCOM": "Apollo11::Ground::Ground::NASCOM",
+    "Goldstone--NASCOM--src": "Apollo11::Ground::MSFN::Goldstone",
+    "Goldstone--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Goldstone-NASCOM": "Apollo11::Ground::MSFN::Goldstone",
+    "Madrid--NASCOM--src": "Apollo11::Ground::MSFN::Madrid",
+    "Madrid--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Madrid-NASCOM": "Apollo11::Ground::MSFN::Madrid",
+    "Honeysuckle--NASCOM--src": "Apollo11::Ground::MSFN::Honeysuckle",
+    "Honeysuckle--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Honeysuckle-NASCOM": "Apollo11::Ground::MSFN::Honeysuckle"
   },
   "nodes": {
-    "goldstone85": {
-      "label": "Goldstone 85-ft",
+    "Goldstone": {
+      "label": "Goldstone",
       "style": "part.comms"
     },
-    "madrid85": {
-      "label": "Madrid 85-ft",
+    "Madrid": {
+      "label": "Madrid",
       "style": "part.comms"
     },
-    "honeysuckle85": {
-      "label": "Honeysuckle 85-ft",
+    "Honeysuckle": {
+      "label": "Honeysuckle",
       "style": "part.comms"
     },
-    "site642B": {
-      "label": "Site 642B\n70 kHz path A",
+    "NASCOM": {
+      "label": "NASCOM",
       "style": "part.comms"
-    },
-    "goldstone210": {
-      "label": "Goldstone 210-ft\nA11 TV",
-      "style": "part.a11"
-    },
-    "parkes": {
-      "label": "Parkes\nA11 TV",
-      "style": "part.a11"
     }
   },
   "edges": [
     {
-      "from": "goldstone85",
-      "to": "site642B",
+      "from": "Goldstone",
+      "to": "NASCOM",
       "label": "USB",
-      "model_ref": "conn-goldstone85-site642B"
+      "model_ref": "conn-Goldstone-NASCOM"
     },
     {
-      "from": "madrid85",
-      "to": "site642B",
+      "from": "Madrid",
+      "to": "NASCOM",
       "label": "USB",
-      "model_ref": "conn-madrid85-site642B"
+      "model_ref": "conn-Madrid-NASCOM"
     },
     {
-      "from": "honeysuckle85",
-      "to": "site642B",
+      "from": "Honeysuckle",
+      "to": "NASCOM",
       "label": "USB",
-      "model_ref": "conn-honeysuckle85-site642B"
-    },
-    {
-      "from": "goldstone210",
-      "to": "site642B",
-      "label": "A11 coverage",
-      "model_ref": "conn-goldstone210-site642B"
-    },
-    {
-      "from": "parkes",
-      "to": "site642B",
-      "label": "A11 coverage",
-      "model_ref": "conn-parkes-site642B"
+      "model_ref": "conn-Honeysuckle-NASCOM"
     }
   ],
   "styles": {
@@ -100,14 +72,34 @@
       "stroke": "#333333",
       "stroke_width": 2
     },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
     "part.comms": {
       "fill": "#FFF7ED",
       "stroke": "#C2410C",
       "stroke_width": 2
     },
-    "part.a11": {
-      "fill": "#FCE4EC",
-      "stroke": "#AD1457",
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
       "stroke_width": 2
     },
     "connector.default": {

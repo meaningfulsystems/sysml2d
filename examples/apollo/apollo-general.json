@@ -26,8 +26,8 @@
       "rank": 2,
       "order": 0
     },
-    "cmc": {
-      "label": "CMC",
+    "AGC_CM": {
+      "label": "AGC_CM",
       "symbol": "part_usage",
       "rank": 3,
       "order": 0
@@ -52,7 +52,7 @@
     },
     {
       "from": "sendP27",
-      "to": "cmc",
+      "to": "AGC_CM",
       "label": "performed by"
     },
     {

@@ -62,7 +62,7 @@
         "model_ref": "sendP27"
       },
       {
-        "id": "cmc",
+        "id": "AGC_CM",
         "symbol": "part_usage",
         "layout": {
           "x": 82,
@@ -71,9 +71,9 @@
           "height": 70,
           "z": 10
         },
-        "label": "CMC",
+        "label": "AGC_CM",
         "style": "part_usage",
-        "model_ref": "cmc"
+        "model_ref": "AGC_CM"
       },
       {
         "id": "verifyP27",
@@ -154,7 +154,7 @@
         "model_ref": "p27Requirement"
       },
       {
-        "id": "conn-sendP27-cmc",
+        "id": "conn-sendP27-AGC_CM",
         "source": {
           "element": "sendP27",
           "anchor": {
@@ -163,7 +163,7 @@
           }
         },
         "target": {
-          "element": "cmc",
+          "element": "AGC_CM",
           "anchor": {
             "side": "top",
             "offset": 0.5

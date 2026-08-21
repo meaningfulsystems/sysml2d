@@ -11,20 +11,20 @@
 <text class="header" x="12" y="24">[flow.mb] Apollo 11 Command and USB Flows [Apollo11]</text>
 <rect x="2" y="38" width="1844" height="396" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="flight" x="72" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
+<rect id="FLIGHT" x="72" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="147" y="107">FLIGHT</text>
-<rect id="ccc" x="382" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
+<rect id="CCC" x="382" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="457" y="107">CCC</text>
-<rect id="rtcc" x="692" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
+<rect id="RTCC" x="692" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="767" y="107">RTCC</text>
-<rect id="ccats" x="1002" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
+<rect id="CCATS" x="1002" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1077" y="107">CCATS</text>
-<rect id="site642B" x="1312" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1387" y="107">Site 642B</text>
-<rect id="cmc" x="1622" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1697" y="107">CMC</text>
-<rect id="lgc" x="1622" y="252" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1697" y="287">LGC</text>
+<rect id="MSFN" x="1312" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1387" y="107">MSFN</text>
+<rect id="AGC_CM" x="1622" y="72" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1697" y="107">AGC_CM</text>
+<rect id="AGC_LM" x="1622" y="252" width="150" height="70" rx="4" fill="#FDF2F8" stroke="#BE185D" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1697" y="287">AGC_LM</text>
 <path d="M 222,107 L 382,107" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 532,107 L 692,107" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 842,107 L 1002,107" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>

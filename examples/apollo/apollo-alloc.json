@@ -3,96 +3,24 @@
   "kind": "AllocationView",
   "name": "Apollo 11 Allocations",
   "subject": "Apollo11",
-  "model_files": [
-    "apollo.sysml"
-  ],
+  "model_files": ["apollo.sysml"],
   "direction": "left-right",
   "nodes": {
-    "iuGncRequirement": {
-      "label": "IU owns boost+TLI",
-      "symbol": "requirement",
-      "rank": 0,
-      "order": 0
-    },
-    "rsoRequirement": {
-      "label": "RSO destruct",
-      "symbol": "requirement",
-      "rank": 0,
-      "order": 1
-    },
-    "agcRequirement": {
-      "label": "Two AGCs",
-      "symbol": "requirement",
-      "rank": 0,
-      "order": 2
-    },
-    "agsRequirement": {
-      "label": "AGS separate",
-      "symbol": "requirement",
-      "rank": 0,
-      "order": 3
-    },
-    "iu": {
-      "label": "IU",
-      "symbol": "part_usage",
-      "rank": 1,
-      "order": 0
-    },
-    "rso": {
-      "label": "RSO / AFETR",
-      "symbol": "part_usage",
-      "rank": 1,
-      "order": 1
-    },
-    "cmc": {
-      "label": "CMC",
-      "symbol": "part_usage",
-      "rank": 1,
-      "order": 2
-    },
-    "lgc": {
-      "label": "LGC",
-      "symbol": "part_usage",
-      "rank": 1,
-      "order": 3
-    },
-    "ags": {
-      "label": "AGS",
-      "symbol": "part_usage",
-      "rank": 1,
-      "order": 4
-    }
+    "iuGncRequirement": {"label": "IU owns boost+TLI", "symbol": "requirement", "rank": 0, "order": 0},
+    "rsoRequirement": {"label": "RSO destruct", "symbol": "requirement", "rank": 0, "order": 1},
+    "agcRequirement": {"label": "AGC_CM + AGC_LM", "symbol": "requirement", "rank": 0, "order": 2},
+    "agsRequirement": {"label": "AGS separate", "symbol": "requirement", "rank": 0, "order": 3},
+    "IU": {"label": "IU", "symbol": "part_usage", "rank": 1, "order": 0},
+    "RSO": {"label": "RSO", "symbol": "part_usage", "rank": 1, "order": 1},
+    "AGC_CM": {"label": "AGC_CM", "symbol": "part_usage", "rank": 1, "order": 2},
+    "AGC_LM": {"label": "AGC_LM", "symbol": "part_usage", "rank": 1, "order": 3},
+    "AGS": {"label": "AGS", "symbol": "part_usage", "rank": 1, "order": 4}
   },
   "edges": [
-    {
-      "from": "iuGncRequirement",
-      "to": "iu",
-      "label": "allocate",
-      "model_ref": "allocateBoostToIu"
-    },
-    {
-      "from": "rsoRequirement",
-      "to": "rso",
-      "label": "allocate",
-      "model_ref": "allocateDestructToRso"
-    },
-    {
-      "from": "agcRequirement",
-      "to": "cmc",
-      "label": "allocate",
-      "model_ref": "allocateCmcToCm"
-    },
-    {
-      "from": "agcRequirement",
-      "to": "lgc",
-      "label": "allocate",
-      "model_ref": "allocateLgcToLm"
-    },
-    {
-      "from": "agsRequirement",
-      "to": "ags",
-      "label": "allocate",
-      "model_ref": "allocateAgsToLm"
-    }
+    {"from": "iuGncRequirement", "to": "IU", "label": "allocate", "model_ref": "allocateBoostToIU"},
+    {"from": "rsoRequirement", "to": "RSO", "label": "allocate", "model_ref": "allocateDestructToRSO"},
+    {"from": "agcRequirement", "to": "AGC_CM", "label": "allocate", "model_ref": "allocateAGC_CMToCM"},
+    {"from": "agcRequirement", "to": "AGC_LM", "label": "allocate", "model_ref": "allocateAGC_LMToLM"},
+    {"from": "agsRequirement", "to": "AGS", "label": "allocate", "model_ref": "allocateAGSToLM"}
   ]
 }

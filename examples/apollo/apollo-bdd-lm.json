@@ -1,11 +1,9 @@
 {
   "diagram": "apollo-bdd-lm",
   "kind": "DefinitionView",
-  "name": "LM-5 Definition Tree",
-  "subject": "Apollo11::LM",
-  "model_files": [
-    "apollo.sysml"
-  ],
+  "name": "LM Definition Tree",
+  "subject": "Apollo11::LM::LM",
+  "model_files": ["apollo.sysml"],
   "direction": "top-down",
   "default_w": 140,
   "default_h": 52,
@@ -13,109 +11,36 @@
   "rank_gap": 78,
   "max_siblings_per_row": 4,
   "aliases": {
-    "lm": "Apollo11::LM",
-    "lmd": "Apollo11::LMDescent",
-    "lma": "Apollo11::LMAscent",
-    "dps": "Apollo11::DPS",
-    "aps": "Apollo11::APS",
-    "pngs": "Apollo11::PNGS",
-    "lgc": "Apollo11::LGC",
-    "ags": "Apollo11::AGS",
-    "imu": "Apollo11::IMU",
-    "lr": "Apollo11::LandingRadar",
-    "rr": "Apollo11::RendezvousRadar",
-    "lmRcs": "Apollo11::LMRCS",
-    "lmecs": "Apollo11::LMECS",
-    "aea": "Apollo11::AEA",
-    "asa": "Apollo11::ASA"
+    "LM": "Apollo11::LM::LM",
+    "descent": "Apollo11::LM::descent",
+    "ascent": "Apollo11::LM::ascent",
+    "PNGS": "Apollo11::LM::PNGS",
+    "AGC_LM": "Apollo11::LM::AGC_LM",
+    "AGS": "Apollo11::LM::AGS",
+    "DPS": "Apollo11::LM::DPS",
+    "APS": "Apollo11::LM::APS",
+    "RCS": "Apollo11::LM::RCS",
+    "landingRadar": "Apollo11::LM::landingRadar",
+    "rendezvousRadar": "Apollo11::LM::rendezvousRadar"
   },
-  "roots": [
-    {
-      "id": "lm",
-      "label": "LM-5",
-      "model_ref": "lm",
-      "style": "part.definition.root",
-      "w": 160,
-      "children": [
-        {
-          "id": "descent",
-          "label": "Descent",
-          "model_ref": "lmd",
-          "children": [
-            {
-              "id": "dps",
-              "label": "DPS 10,500 lbf",
-              "model_ref": "dps"
-            },
-            {
-              "id": "descEcs",
-              "label": "Descent ECS",
-              "model_ref": "lmecs"
-            }
-          ]
-        },
-        {
-          "id": "ascent",
-          "label": "Ascent",
-          "model_ref": "lma",
-          "children": [
-            {
-              "id": "pngs",
-              "label": "PNGS",
-              "model_ref": "pngs",
-              "children": [
-                {
-                  "id": "imu",
-                  "label": "IMU",
-                  "model_ref": "imu"
-                },
-                {
-                  "id": "lr",
-                  "label": "Landing radar",
-                  "model_ref": "lr"
-                },
-                {
-                  "id": "rr",
-                  "label": "Rndz radar",
-                  "model_ref": "rr"
-                }
-              ]
-            },
-            {
-              "id": "lgc",
-              "label": "LGC Luminary",
-              "model_ref": "lgc"
-            },
-            {
-              "id": "ags",
-              "label": "AGS",
-              "model_ref": "ags",
-              "children": [
-                {
-                  "id": "aea",
-                  "label": "AEA",
-                  "model_ref": "aea"
-                },
-                {
-                  "id": "asa",
-                  "label": "ASA",
-                  "model_ref": "asa"
-                }
-              ]
-            },
-            {
-              "id": "aps",
-              "label": "APS 3,500 lbf",
-              "model_ref": "aps"
-            },
-            {
-              "id": "lmRcs",
-              "label": "LM RCS",
-              "model_ref": "lmRcs"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  "roots": [{
+    "id": "LM",
+    "label": "LM",
+    "model_ref": "LM",
+    "style": "part.definition.root",
+    "children": [
+      {"id": "descent", "label": "descent", "model_ref": "descent", "children": [
+        {"id": "DPS", "label": "DPS", "model_ref": "DPS"}
+      ]},
+      {"id": "ascent", "label": "ascent", "model_ref": "ascent", "children": [
+        {"id": "PNGS", "label": "PNGS", "model_ref": "PNGS"},
+        {"id": "AGC_LM", "label": "AGC_LM", "model_ref": "AGC_LM"},
+        {"id": "AGS", "label": "AGS", "model_ref": "AGS"},
+        {"id": "APS", "label": "APS", "model_ref": "APS"},
+        {"id": "RCS", "label": "RCS", "model_ref": "RCS"},
+        {"id": "landingRadar", "label": "landingRadar", "model_ref": "landingRadar"},
+        {"id": "rendezvousRadar", "label": "rendezvousRadar", "model_ref": "rendezvousRadar"}
+      ]}
+    ]
+  }]
 }

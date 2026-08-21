@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="3251" height="472" viewBox="0 0 3251 472">
+<svg xmlns="http://www.w3.org/2000/svg" width="2579" height="472" viewBox="0 0 2579 472">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="3251" height="472" fill="#FFFFFF"/>
-<rect x="2" y="38" width="3247" height="430" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="2579" height="472" fill="#FFFFFF"/>
+<rect x="2" y="38" width="2575" height="430" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 424 L 440 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[req.mb] Apollo 11 Sourced Requirements [Apollo11]</text>
-<rect x="2" y="38" width="3247" height="432" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="2575" height="432" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
 <rect id="agcRequirement" x="72" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle"><tspan x="166" y="93.5">«requirement»</tspan><tspan x="166" dy="15">Two AGCs Block II</tspan><tspan x="166" dy="15">2048 E / 36864 F</tspan><tspan x="166" dy="15">1.024 MHz, MCT 11.7 μs</tspan></text>
@@ -29,18 +29,12 @@
 <text class="label" text-anchor="middle"><tspan x="1720" y="98">«requirement»</tspan><tspan x="1720" dy="15">RSO outside MCC</tspan><tspan x="1720" dy="15">UHF destruct; safed after EO</tspan></text>
 <rect id="a11AtypicalRequirement" x="814" y="270" width="237" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle"><tspan x="932.5" y="291.5">«requirement»</tspan><tspan x="932.5" dy="15">A11 atypical vs generic stack</tspan><tspan x="932.5" dy="15">1 EVA / 196 h; no LRV/SIM</tspan><tspan x="932.5" dy="15">P66 flown; F-1 from SA-507</tspan></text>
-<rect id="scsRequirement" x="1871" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1965" y="93.5">«requirement»</tspan><tspan x="1965" dy="15">CSM SCS analog backup</tspan><tspan x="1965" dy="15">CMC vs SCS crew-select</tspan><tspan x="1965" dy="15">Full switch deck TBD</tspan></text>
-<rect id="pngsRequirement" x="2095" y="72" width="170" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="2180" y="93.5">«requirement»</tspan><tspan x="2180" dy="15">LM PNGS ≠ AGS</tspan><tspan x="2180" dy="15">LGC + IMU + radars</tspan><tspan x="2180" dy="15">R47 inits AGS</tspan></text>
-<rect id="eclssLoopRequirement" x="2301" y="72" width="202" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="2402" y="93.5">«requirement»</tspan><tspan x="2402" dy="15">CM ECS loops O2/H2O/LiOH</tspan><tspan x="2402" dy="15">5.0 psia 100% O2</tspan><tspan x="2402" dy="15">CO2 ≤7.6 torr</tspan></text>
-<rect id="smRcsRequirement" x="2539" y="72" width="181" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="2629.5" y="98">«requirement»</tspan><tspan x="2629.5" dy="15">SM RCS four quads A–D</tspan><tspan x="2629.5" dy="15">Thrust UNKNOWN</tspan></text>
-<rect id="lmRcsRequirement" x="2756" y="72" width="174" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="2843" y="98">«requirement»</tspan><tspan x="2843" dy="15">LM RCS 604 lb PK</tspan><tspan x="2843" dy="15">Count/thrust UNKNOWN</tspan></text>
-<rect id="fuelCellRequirement" x="2966" y="72" width="209" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="3070.5" y="98">«requirement»</tspan><tspan x="3070.5" dy="15">Block II three fuel cells</tspan><tspan x="3070.5" dy="15">Output UNKNOWN</tspan></text>
+<rect id="scsRequirement" x="1871" y="72" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1975.5" y="93.5">«requirement»</tspan><tspan x="1975.5" dy="15">CSM SCS analog backup</tspan><tspan x="1975.5" dy="15">AGC_CM vs SCS crew-select</tspan><tspan x="1975.5" dy="15">Full switch deck TBD</tspan></text>
+<rect id="pngsRequirement" x="2116" y="72" width="181" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="2206.5" y="93.5">«requirement»</tspan><tspan x="2206.5" dy="15">PNGS ≠ AGS</tspan><tspan x="2206.5" dy="15">AGC_LM + IMU + radars</tspan><tspan x="2206.5" dy="15">R47 inits AGS</tspan></text>
+<rect id="eclssLoopRequirement" x="2333" y="72" width="170" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="2418" y="93.5">«requirement»</tspan><tspan x="2418" dy="15">ECLSS O2/H2O/LiOH</tspan><tspan x="2418" dy="15">5.0 psia 100% O2</tspan><tspan x="2418" dy="15">CO2 ≤7.6 torr</tspan></text>
 <path d="M 166,160 L 166,264" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 932.5,160 L 932.5,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text class="small" x="178" y="212">refine</text>

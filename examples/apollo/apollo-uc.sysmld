@@ -34,7 +34,7 @@
         "model_ref": "Apollo11"
       },
       {
-        "id": "cdr",
+        "id": "CDR",
         "symbol": "actor",
         "layout": {
           "x": 72,
@@ -45,10 +45,10 @@
         },
         "label": "CDR",
         "style": "actor",
-        "model_ref": "cdr"
+        "model_ref": "CDR"
       },
       {
-        "id": "mcc",
+        "id": "MCC",
         "symbol": "actor",
         "layout": {
           "x": 72,
@@ -57,12 +57,12 @@
           "height": 90,
           "z": 10
         },
-        "label": "MCC-H",
+        "label": "MCC",
         "style": "actor",
-        "model_ref": "mcc"
+        "model_ref": "MCC"
       },
       {
-        "id": "rso",
+        "id": "RSO",
         "symbol": "actor",
         "layout": {
           "x": 72,
@@ -73,7 +73,7 @@
         },
         "label": "RSO",
         "style": "actor",
-        "model_ref": "rso"
+        "model_ref": "RSO"
       },
       {
         "id": "flyMissionUseCase",
@@ -134,9 +134,9 @@
     ],
     "connections": [
       {
-        "id": "conn-cdr-flyMissionUseCase",
+        "id": "conn-CDR-flyMissionUseCase",
         "source": {
-          "element": "cdr",
+          "element": "CDR",
           "anchor": {
             "side": "right",
             "offset": 0.3
@@ -164,12 +164,12 @@
         },
         "labels": [],
         "style": "connector.default",
-        "model_ref": "cdr"
+        "model_ref": "CDR"
       },
       {
-        "id": "conn-cdr-lunarEvaUseCase",
+        "id": "conn-CDR-lunarEvaUseCase",
         "source": {
-          "element": "cdr",
+          "element": "CDR",
           "anchor": {
             "side": "right",
             "offset": 0.55
@@ -197,12 +197,12 @@
         },
         "labels": [],
         "style": "connector.default",
-        "model_ref": "cdr"
+        "model_ref": "CDR"
       },
       {
-        "id": "conn-mcc-flyMissionUseCase",
+        "id": "conn-MCC-flyMissionUseCase",
         "source": {
-          "element": "mcc",
+          "element": "MCC",
           "anchor": {
             "side": "right",
             "offset": 0.45
@@ -230,12 +230,12 @@
         },
         "labels": [],
         "style": "connector.default",
-        "model_ref": "mcc"
+        "model_ref": "MCC"
       },
       {
-        "id": "conn-mcc-recoverCrewUseCase",
+        "id": "conn-MCC-recoverCrewUseCase",
         "source": {
-          "element": "mcc",
+          "element": "MCC",
           "anchor": {
             "side": "right",
             "offset": 0.7
@@ -263,12 +263,12 @@
         },
         "labels": [],
         "style": "connector.default",
-        "model_ref": "mcc"
+        "model_ref": "MCC"
       },
       {
-        "id": "conn-rso-rangeSafetyUseCase",
+        "id": "conn-RSO-rangeSafetyUseCase",
         "source": {
-          "element": "rso",
+          "element": "RSO",
           "anchor": {
             "side": "right",
             "offset": 0.5
@@ -296,7 +296,7 @@
         },
         "labels": [],
         "style": "connector.default",
-        "model_ref": "rso"
+        "model_ref": "RSO"
       },
       {
         "id": "conn-flyMissionUseCase-lunarEvaUseCase",

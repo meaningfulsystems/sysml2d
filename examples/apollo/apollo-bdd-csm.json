@@ -1,11 +1,9 @@
 {
   "diagram": "apollo-bdd-csm",
   "kind": "DefinitionView",
-  "name": "CSM Block II Definition Tree",
-  "subject": "Apollo11::CSM",
-  "model_files": [
-    "apollo.sysml"
-  ],
+  "name": "CSM Definition Tree",
+  "subject": "Apollo11::CSM::CSM",
+  "model_files": ["apollo.sysml"],
   "direction": "top-down",
   "default_w": 140,
   "default_h": 52,
@@ -13,108 +11,34 @@
   "rank_gap": 78,
   "max_siblings_per_row": 5,
   "aliases": {
-    "csm": "Apollo11::CSM",
-    "cm": "Apollo11::CM",
-    "sm": "Apollo11::SM",
-    "cmc": "Apollo11::CMC",
-    "scs": "Apollo11::SCS",
-    "ems": "Apollo11::EMS",
-    "cmRcs": "Apollo11::CMRCS",
-    "ecs": "Apollo11::CMECS",
-    "usb": "Apollo11::USB",
-    "hga": "Apollo11::HGA",
-    "sps": "Apollo11::SPS",
-    "quad": "Apollo11::SMRCSQuad",
-    "fc": "Apollo11::FuelCell",
-    "bmag": "Apollo11::BMAG",
-    "tvc": "Apollo11::TVC",
-    "rhc": "Apollo11::RHC"
+    "CSM": "Apollo11::CSM::CSM",
+    "CM": "Apollo11::CSM::CM",
+    "SM": "Apollo11::CSM::SM",
+    "SCS": "Apollo11::CSM::SCS",
+    "AGC_CM": "Apollo11::CSM::AGC_CM",
+    "IMU": "Apollo11::CSM::IMU",
+    "DSKY": "Apollo11::CSM::DSKY",
+    "SPS": "Apollo11::CSM::SPS",
+    "RCS": "Apollo11::CSM::RCS",
+    "ECLSS": "Apollo11::CSM::ECLSS"
   },
-  "roots": [
-    {
-      "id": "csm",
-      "label": "CSM Block II",
-      "model_ref": "csm",
-      "style": "part.definition.root",
-      "w": 180,
-      "children": [
-        {
-          "id": "cm",
-          "label": "CM",
-          "model_ref": "cm",
-          "children": [
-            {
-              "id": "cmc",
-              "label": "CMC Colossus",
-              "model_ref": "cmc"
-            },
-            {
-              "id": "scs",
-              "label": "SCS",
-              "model_ref": "scs",
-              "children": [
-                {
-                  "id": "bmag",
-                  "label": "BMAG",
-                  "model_ref": "bmag"
-                },
-                {
-                  "id": "tvc",
-                  "label": "SPS TVC",
-                  "model_ref": "tvc"
-                },
-                {
-                  "id": "rhc",
-                  "label": "RHC",
-                  "model_ref": "rhc"
-                }
-              ]
-            },
-            {
-              "id": "ems",
-              "label": "EMS",
-              "model_ref": "ems"
-            },
-            {
-              "id": "cmRcs",
-              "label": "CM RCS",
-              "model_ref": "cmRcs"
-            },
-            {
-              "id": "ecs",
-              "label": "CM ECS",
-              "model_ref": "ecs"
-            },
-            {
-              "id": "hga",
-              "label": "HGA",
-              "model_ref": "hga"
-            }
-          ]
-        },
-        {
-          "id": "sm",
-          "label": "SM",
-          "model_ref": "sm",
-          "children": [
-            {
-              "id": "sps",
-              "label": "SPS 20,500 lbf",
-              "model_ref": "sps"
-            },
-            {
-              "id": "quad",
-              "label": "SM RCS quad",
-              "model_ref": "quad"
-            },
-            {
-              "id": "fc",
-              "label": "Fuel cell",
-              "model_ref": "fc"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  "roots": [{
+    "id": "CSM",
+    "label": "CSM",
+    "model_ref": "CSM",
+    "style": "part.definition.root",
+    "children": [
+      {"id": "CM", "label": "CM", "model_ref": "CM", "children": [
+        {"id": "SCS", "label": "SCS", "model_ref": "SCS"},
+        {"id": "AGC_CM", "label": "AGC_CM", "model_ref": "AGC_CM"},
+        {"id": "IMU", "label": "IMU", "model_ref": "IMU"},
+        {"id": "DSKY", "label": "DSKY", "model_ref": "DSKY"},
+        {"id": "RCS", "label": "RCS", "model_ref": "RCS"},
+        {"id": "ECLSS", "label": "ECLSS", "model_ref": "ECLSS"}
+      ]},
+      {"id": "SM", "label": "SM", "model_ref": "SM", "children": [
+        {"id": "SPS", "label": "SPS", "model_ref": "SPS"}
+      ]}
+    ]
+  }]
 }

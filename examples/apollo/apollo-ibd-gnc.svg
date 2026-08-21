@@ -1,61 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1008" height="1002" viewBox="0 0 1008 1002">
+<svg xmlns="http://www.w3.org/2000/svg" width="1008" height="978" viewBox="0 0 1008 978">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1008" height="1002" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1004" height="960" fill="none" stroke="#333333" stroke-width="2"/>
-<path d="M 2 1 H 536 L 552 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
-<text class="header" x="12" y="24">[icn.mb] Apollo 11 AGC / GNC (do not merge) [mission : Apollo11]</text>
-<rect x="2" y="38" width="1004" height="962" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="0" y="0" width="1008" height="978" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1004" height="936" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 456 L 472 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] AGC / GNC (do not merge) [mission : Apollo11]</text>
+<rect x="2" y="38" width="1004" height="938" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="boundary" x="40" y="40" width="924" height="880" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<rect id="boundary" x="40" y="40" width="924" height="856" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="label" x="50" y="62">mission</text>
-<rect id="cmDsky1" x="76" y="76" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="108">CM DSKY 1</text>
-<rect id="cmDsky2" x="76" y="200" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="232">CM DSKY 2</text>
-<rect id="scs" x="76" y="820" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="852">CM SCS</text>
-<rect id="cmc" x="432" y="386" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="502" y="418">CMC (Colossus)</text>
-<rect id="ems" x="76" y="324" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="356">EMS</text>
-<rect id="pngs" x="76" y="696" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="728">LM PNGS</text>
-<rect id="lgc" x="432" y="510" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="502" y="542">LGC (Luminary)</text>
-<rect id="lmDsky" x="76" y="448" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="480">LM DSKY</text>
-<rect id="ags" x="788" y="448" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="858" y="480">AGS (AEA+ASA)</text>
-<rect id="lvdc" x="76" y="572" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="604">IU LVDC</text>
-<rect id="cmDsky1--cmc--src" x="140" y="134" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cmDsky2--cmc--src" x="140" y="258" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="scs--cmc--src" x="140" y="878" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cmDsky1--cmc--tgt" x="426" y="396" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cmDsky2--cmc--tgt" x="426" y="412" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="scs--cmc--tgt" x="426" y="428" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="pngs--lgc--src" x="140" y="754" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lmDsky--lgc--tgt" x="426" y="525.331" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="pngs--lgc--tgt" x="426" y="546.669" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lgc--ags--src" x="566" y="536" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lmDsky--lgc--src" x="140" y="506" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lgc--ags--tgt" x="782" y="474" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<path d="M 146,890 L 240,884 L 240,536 L 432,536 L 426,434" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 146,766 L 432,760 L 426,552.669" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 146,146 L 146,176 L 240,176 L 240,300 L 432,300 L 426,402" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 146,270 L 146,300 L 240,300 L 240,418 L 426,418" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 146,518 L 146,531.331 L 426,531.331" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 578,542 L 680,542 L 680,480 L 782,480" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" x="252" y="710">backup / CMC</text>
-<text class="small" text-anchor="middle" x="289" y="751">computer</text>
-<text class="small" text-anchor="middle" x="336" y="288">DSKY</text>
-<text class="small" text-anchor="middle" x="333" y="406">DSKY</text>
-<text class="small" text-anchor="middle" x="286" y="519.331">DSKY</text>
-<text class="small" text-anchor="middle" x="629" y="530">R47 init</text>
+<rect id="DSKY" x="76" y="76" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="108">DSKY</text>
+<rect id="DSKY2" x="76" y="196" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="228">DSKY 2</text>
+<rect id="SCS" x="76" y="676" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="708">SCS</text>
+<rect id="AGC_CM" x="432" y="376" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="502" y="408">AGC_CM</text>
+<rect id="IMU" x="788" y="376" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="858" y="408">IMU</text>
+<rect id="USB" x="76" y="796" width="140" height="64" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="828">USB</text>
+<rect id="PNGS" x="76" y="556" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="588">PNGS</text>
+<rect id="AGC_LM" x="432" y="496" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="502" y="528">AGC_LM</text>
+<rect id="DSKY_LM" x="76" y="316" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="348">DSKY</text>
+<rect id="AGS" x="788" y="496" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="858" y="528">AGS</text>
+<rect id="LVDC" x="76" y="436" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="468">LVDC</text>
+<rect id="DSKY--AGC_CM--src" x="140" y="70" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="DSKY2--AGC_CM--src" x="140" y="254" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SCS--AGC_CM--src" x="140" y="734" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="DSKY--AGC_CM--tgt" x="426" y="386" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="DSKY2--AGC_CM--tgt" x="426" y="402" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SCS--AGC_CM--tgt" x="426" y="418" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_CM--IMU--src" x="566" y="402" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_CM--IMU--tgt" x="782" y="402" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="PNGS--AGC_LM--src" x="140" y="614" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="DSKY_LM--AGC_LM--tgt" x="426" y="511.331" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="PNGS--AGC_LM--tgt" x="426" y="532.669" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_LM--AGS--src" x="566" y="522" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="DSKY_LM--AGC_LM--src" x="140" y="374" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_LM--AGS--tgt" x="782" y="522" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 146,70 L 240,76 L 240,292 L 432,292 L 426,392" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 146,266 L 146,292 L 240,292 L 240,408 L 426,408" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 146,746 L 240,740 L 240,464 L 432,464 L 426,424" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 578,408 L 782,408" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 146,626 L 146,538.669 L 233,538.669 A 7 7 0 0 0 247,538.669 L 426,538.669" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 146,386 L 146,318 L 233,318 A 7 7 0 0 0 247,318 L 404,318 L 404,401 A 7 7 0 0 1 404,415 L 404,457 A 7 7 0 0 1 404,471 L 404,517.331 L 426,517.331" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 578,528 L 782,528" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="252" y="184">DSKY</text>
+<text class="small" text-anchor="middle" x="333" y="396">DSKY</text>
+<text class="small" x="252" y="602">backup</text>
+<text class="small" text-anchor="middle" x="680" y="396">IMU</text>
+<text class="small" text-anchor="middle" x="286" y="526.669">computer</text>
+<text class="small" text-anchor="middle" x="275" y="306">DSKY</text>
+<text class="small" text-anchor="middle" x="680" y="516">R47</text>
 </g>
 </svg>

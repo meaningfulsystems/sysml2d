@@ -6,23 +6,17 @@
     "apollo.sysml"
   ],
   "aliases": {
-    "cmecs": "Apollo11::CMECS",
-    "lmecs": "Apollo11::LMECS",
-    "o2": "Apollo11::OxygenLoop",
-    "h2o": "Apollo11::WaterLoop",
-    "lioh": "Apollo11::LiOHCanister",
-    "suit": "Apollo11::SuitCircuit",
-    "sub": "Apollo11::WaterSublimator",
-    "a7l": "Apollo11::A7L",
-    "plss": "Apollo11::PLSS"
+    "ECLSS": "Apollo11::CSM::ECLSS",
+    "A7L": "Apollo11::Crew::A7L",
+    "PLSS": "Apollo11::Crew::PLSS"
   },
   "diagram": {
     "id": "apollo-bdd-eclss",
     "kind": "DefinitionView",
-    "name": "ECLSS Loops",
+    "name": "ECLSS",
     "canvas": {
-      "width": 1292,
-      "height": 276,
+      "width": 402,
+      "height": 272,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -30,17 +24,17 @@
     },
     "elements": [
       {
-        "id": "cmecs",
-        "model_ref": "cmecs",
+        "id": "ECLSS",
+        "model_ref": "ECLSS",
         "symbol": "part_definition",
         "layout": {
-          "x": 298,
+          "x": 40,
           "y": 40,
           "width": 150,
           "height": 56,
           "z": 10
         },
-        "label": "CM ECS",
+        "label": "ECLSS",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -49,27 +43,27 @@
         "style": "part.definition.root"
       },
       {
-        "id": "o2",
-        "model_ref": "o2",
+        "id": "A7L",
+        "model_ref": "A7L",
         "symbol": "part_definition",
         "layout": {
-          "x": 40,
-          "y": 178,
+          "x": 212,
+          "y": 40,
           "width": 150,
-          "height": 58,
+          "height": 56,
           "z": 10
         },
-        "label": "O2 loop\n5.0 psia 100%",
+        "label": "A7L",
         "compartments": {
           "attributes": false,
           "ports": false,
           "actions": false
         },
-        "style": "part.definition"
+        "style": "part.definition.root"
       },
       {
-        "id": "h2o",
-        "model_ref": "h2o",
+        "id": "PLSS",
+        "model_ref": "PLSS",
         "symbol": "part_definition",
         "layout": {
           "x": 212,
@@ -78,140 +72,7 @@
           "height": 56,
           "z": 10
         },
-        "label": "Water loop",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "lioh",
-        "model_ref": "lioh",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 384,
-          "y": 178,
-          "width": 150,
-          "height": 58,
-          "z": 10
-        },
-        "label": "LiOH\n1.5 man-day",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "suit",
-        "model_ref": "suit",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 556,
-          "y": 176,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "Suit circuit",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "lmecs",
-        "model_ref": "lmecs",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 814,
-          "y": 40,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "LM ECS",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition.root"
-      },
-      {
-        "id": "lmSuit",
-        "model_ref": "suit",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 728,
-          "y": 176,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "Suit loop",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "sub",
-        "model_ref": "sub",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 900,
-          "y": 176,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "Sublimator",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "eva",
-        "model_ref": "a7l",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 1087,
-          "y": 40,
-          "width": 150,
-          "height": 56,
-          "z": 10
-        },
-        "label": "A7L / PLSS",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition.root"
-      },
-      {
-        "id": "plss",
-        "model_ref": "plss",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 1072,
-          "y": 176,
-          "width": 180,
-          "height": 56,
-          "z": 10
-        },
-        "label": "PLSS 1.04 lb / 4 h",
+        "label": "PLSS",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -222,275 +83,17 @@
     ],
     "connections": [
       {
-        "id": "conn-cmecs-o2",
-        "model_ref": "o2",
+        "id": "conn-A7L-PLSS",
+        "model_ref": "PLSS",
         "source": {
-          "element": "cmecs",
+          "element": "A7L",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "o2",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 373,
-              "y": 136
-            },
-            {
-              "x": 115,
-              "y": 136
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-cmecs-h2o",
-        "model_ref": "h2o",
-        "source": {
-          "element": "cmecs",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "h2o",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 373,
-              "y": 136
-            },
-            {
-              "x": 287,
-              "y": 136
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-cmecs-lioh",
-        "model_ref": "lioh",
-        "source": {
-          "element": "cmecs",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "lioh",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 373,
-              "y": 136
-            },
-            {
-              "x": 459,
-              "y": 136
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-cmecs-suit",
-        "model_ref": "suit",
-        "source": {
-          "element": "cmecs",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "suit",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 373,
-              "y": 136
-            },
-            {
-              "x": 631,
-              "y": 136
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-lmecs-lmSuit",
-        "model_ref": "suit",
-        "source": {
-          "element": "lmecs",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "lmSuit",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 889,
-              "y": 136
-            },
-            {
-              "x": 803,
-              "y": 136
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-lmecs-sub",
-        "model_ref": "sub",
-        "source": {
-          "element": "lmecs",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "sub",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 889,
-              "y": 136
-            },
-            {
-              "x": 975,
-              "y": 136
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-eva-plss",
-        "model_ref": "plss",
-        "source": {
-          "element": "eva",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "plss",
+          "element": "PLSS",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -516,6 +119,6 @@
     ],
     "annotations": [],
     "styles": {},
-    "subject": "Apollo11::CMECS"
+    "subject": "Apollo11::CSM::ECLSS"
   }
 }

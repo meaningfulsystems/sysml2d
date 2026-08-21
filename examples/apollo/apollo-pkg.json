@@ -8,58 +8,57 @@
   ],
   "direction": "top-down",
   "nodes": {
-    "ApolloModel": {
-      "label": "Apollo Model",
+    "Apollo11": {
+      "label": "Apollo11",
       "rank": 0,
       "order": 0
     },
-    "ApolloStructure": {
-      "label": "Structure",
+    "SaturnV": {
+      "label": "SaturnV",
       "rank": 1,
       "order": 0
     },
-    "ApolloBehavior": {
-      "label": "Behavior",
+    "CSM": {
+      "label": "CSM",
       "rank": 1,
       "order": 1
     },
-    "ApolloRequirements": {
-      "label": "Requirements",
+    "LM": {
+      "label": "LM",
       "rank": 1,
       "order": 2
     },
-    "ApolloAnalysis": {
-      "label": "Analysis",
+    "Crew": {
+      "label": "Crew",
       "rank": 1,
       "order": 3
     },
-    "ApolloVerification": {
-      "label": "Verification",
+    "Ground": {
+      "label": "Ground",
       "rank": 1,
       "order": 4
     }
   },
   "edges": [
     {
-      "from": "ApolloModel",
-      "to": "ApolloStructure",
-      "label": "contains"
+      "from": "Apollo11",
+      "to": "SaturnV"
     },
     {
-      "from": "ApolloModel",
-      "to": "ApolloBehavior"
+      "from": "Apollo11",
+      "to": "CSM"
     },
     {
-      "from": "ApolloModel",
-      "to": "ApolloRequirements"
+      "from": "Apollo11",
+      "to": "LM"
     },
     {
-      "from": "ApolloModel",
-      "to": "ApolloAnalysis"
+      "from": "Apollo11",
+      "to": "Crew"
     },
     {
-      "from": "ApolloModel",
-      "to": "ApolloVerification"
+      "from": "Apollo11",
+      "to": "Ground"
     }
   ]
 }

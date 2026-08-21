@@ -44,6 +44,59 @@ COMPOSERS = {
     "GeneralView": general_file,
 }
 
+LOCKED = (
+    "package SaturnV",
+    "package CSM",
+    "package LM",
+    "package Crew",
+    "package Ground",
+    "part SIC : SIC",
+    "part SII : SII",
+    "part SIVB : SIVB",
+    "part IU : IU",
+    "part LVDC : LVDC",
+    "part SLA : SLA",
+    "part LES : LES",
+    "part CM : CM",
+    "part SM : SM",
+    "part SCS : SCS",
+    "part AGC_CM : AGC_CM",
+    "part AGC_LM : AGC_LM",
+    "part IMU : IMU",
+    "part DSKY : DSKY",
+    "part SPS : SPS",
+    "part RCS : RCS",
+    "part ECLSS : ECLSS",
+    "part descent : descent",
+    "part ascent : ascent",
+    "part PNGS : PNGS",
+    "part AGS : AGS",
+    "part DPS : DPS",
+    "part APS : APS",
+    "part landingRadar : landingRadar",
+    "part rendezvousRadar : rendezvousRadar",
+    "part CDR : CDR",
+    "part CMP : CMP",
+    "part LMP : LMP",
+    "part A7L : A7L",
+    "part PLSS : PLSS",
+    "part KSC_LCC : KSC_LCC",
+    "part MCC : MCC",
+    "part RTCC : RTCC",
+    "part Goldstone : Goldstone",
+    "part Madrid : Madrid",
+    "part Honeysuckle : Honeysuckle",
+    "part NASCOM : NASCOM",
+    "state TLI",
+    "state LOI",
+    "state DOI",
+    "state TEI",
+    "state surfaceEVA",
+    "state pad",
+    "state contingencyTLI",
+    "state lunar",
+)
+
 
 class ApolloViewTests(unittest.TestCase):
     def test_apollo_intents_compose_validate_and_render(self):
@@ -71,39 +124,16 @@ class ApolloViewTests(unittest.TestCase):
             with self.subTest(name=intent.name):
                 self.assertEqual(_route_box_hits(doc), [])
 
-    def test_apollo_does_not_collapse_agcs(self):
+    def test_apollo_locked_msml_names(self):
         text = (APOLLO / "apollo.sysml").read_text(encoding="utf-8")
-        self.assertIn("part cmc : CMC", text)
-        self.assertIn("part lgc : LGC", text)
-        self.assertIn("part ags : AGS", text)
-        self.assertIn("part lvdc : LVDC", text)
-        self.assertIn("part ems : EMS", text)
-        self.assertIn("part cmDsky1 : DSKY", text)
-        self.assertIn("part cmDsky2 : DSKY", text)
-        self.assertIn("part lmDsky : DSKY", text)
-
-    def test_apollo_keeps_inner_machines_and_a11_flags(self):
-        text = (APOLLO / "apollo.sysml").read_text(encoding="utf-8")
-        self.assertIn("part scs : SCS", text)
-        self.assertIn("part pngs : PNGS", text)
-        self.assertIn("state def ScsMode", text)
-        self.assertIn("state def AgsMode", text)
-        self.assertIn("state def LgcMajorMode", text)
-        self.assertIn("state def CmcMajorMode", text)
-        self.assertIn("requirement a11AtypicalRequirement", text)
-        self.assertIn("requirement scsRequirement", text)
-        self.assertIn("requirement pngsRequirement", text)
-        self.assertNotIn("part pngs : AGS", text)
-        self.assertNotIn("part scs : CMC", text)
-        self.assertIn("part def SaturnV", text)
-        self.assertIn("part def CSM", text)
-        self.assertIn("part def LM", text)
-        self.assertIn("part cmRcs : CMRCS", text)
-        self.assertIn("part smRcsA : SMRCSQuad", text)
-        self.assertIn("part lmRcs : LMRCS", text)
-        self.assertIn("part oxygenLoop : OxygenLoop", text)
-        self.assertIn("part erasable : ErasableMemory", text)
-        self.assertIn("state def EclssMode", text)
+        for token in LOCKED:
+            with self.subTest(token=token):
+                self.assertIn(token, text)
+        self.assertIn("part USB : USB", text)
+        self.assertNotIn("part cmc : CMC", text)
+        self.assertNotIn("part lgc : LGC", text)
+        self.assertNotIn("state dockEject", text)
+        self.assertNotIn("part vanguard", text)
 
 
 def _route_box_hits(doc: dict) -> list[tuple[str, str]]:

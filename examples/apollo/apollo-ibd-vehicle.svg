@@ -13,46 +13,46 @@
 <g transform="translate(2,40)">
 <rect id="boundary" x="40" y="40" width="400" height="1648" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="label" x="50" y="62">mission</text>
-<rect id="les" x="76" y="76" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<rect id="LES" x="76" y="76" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="146" y="108">LES</text>
-<rect id="cm" x="76" y="328" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<rect id="CM" x="76" y="328" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="146" y="360">CM</text>
-<rect id="sm" x="76" y="1336" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<rect id="SM" x="76" y="1336" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="146" y="1368">SM</text>
-<rect id="sla" x="170" y="1084" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<rect id="SLA" x="170" y="1084" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="240" y="1116">SLA</text>
-<rect id="lmDescent" x="264" y="1336" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="334" y="1368">LM Descent</text>
-<rect id="lmAscent" x="170" y="1588" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="240" y="1620">LM Ascent</text>
-<rect id="iu" x="170" y="832" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<rect id="descent" x="264" y="1336" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="334" y="1368">descent</text>
+<rect id="ascent" x="170" y="1588" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="240" y="1620">ascent</text>
+<rect id="IU" x="170" y="832" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="240" y="864">IU</text>
-<rect id="sIvb" x="170" y="580" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<rect id="SIVB" x="170" y="580" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="240" y="612">S-IVB</text>
-<rect id="sIi" x="264" y="328" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<rect id="SII" x="264" y="328" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="334" y="360">S-II</text>
-<rect id="sIc" x="264" y="76" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<rect id="SIC" x="264" y="76" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="334" y="108">S-IC</text>
-<rect id="les--cm--src" x="140" y="134" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="les--cm--tgt" x="140" y="322" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cm--sm--src" x="140" y="386" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cm--lmAscent--src" x="210" y="354" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cm--sm--tgt" x="140" y="1330" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="sla--sm--tgt" x="175" y="1330" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="sla--sm--src" x="210.662" y="1142" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="sla--lmDescent--src" x="257.338" y="1142" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="iu--sla--tgt" x="234" y="1078" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="sla--lmDescent--tgt" x="328" y="1330" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lmDescent--lmAscent--src" x="328" y="1394" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="lmDescent--lmAscent--tgt" x="234" y="1582" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cm--lmAscent--tgt" x="304" y="1614" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="iu--sla--src" x="234" y="890" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="sIvb--iu--tgt" x="234" y="826" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="sIvb--iu--src" x="234" y="638" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="sIi--sIvb--tgt" x="234" y="574" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="sIi--sIvb--src" x="328" y="386" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="sIc--sIi--tgt" x="328" y="322" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="sIc--sIi--src" x="328" y="134" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="LES--CM--src" x="140" y="134" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="LES--CM--tgt" x="140" y="322" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CM--SM--src" x="140" y="386" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CM--ascent--src" x="210" y="354" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CM--SM--tgt" x="140" y="1330" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SLA--SM--tgt" x="175" y="1330" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SLA--SM--src" x="210.662" y="1142" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SLA--descent--src" x="257.338" y="1142" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="IU--SLA--tgt" x="234" y="1078" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SLA--descent--tgt" x="328" y="1330" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="descent--ascent--src" x="328" y="1394" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="descent--ascent--tgt" x="234" y="1582" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CM--ascent--tgt" x="304" y="1614" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="IU--SLA--src" x="234" y="890" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SIVB--IU--tgt" x="234" y="826" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SIVB--IU--src" x="234" y="638" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SII--SIVB--tgt" x="234" y="574" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SII--SIVB--src" x="328" y="386" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SIC--SII--tgt" x="328" y="322" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SIC--SII--src" x="328" y="134" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <path d="M 146,146 L 146,322" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 146,398 L 146,1330" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 216.662,1154 L 216.662,1218.67 L 181,1218.67 L 181,1330" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>

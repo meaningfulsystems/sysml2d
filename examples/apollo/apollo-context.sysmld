@@ -20,7 +20,7 @@
     },
     "elements": [
       {
-        "id": "mcc",
+        "id": "MCC",
         "symbol": "part_usage",
         "layout": {
           "x": 72,
@@ -29,12 +29,12 @@
           "height": 70,
           "z": 10
         },
-        "label": "MCC-H",
+        "label": "MCC",
         "style": "part_usage",
-        "model_ref": "mcc"
+        "model_ref": "MCC"
       },
       {
-        "id": "rso",
+        "id": "RSO",
         "symbol": "part_usage",
         "layout": {
           "x": 72,
@@ -43,12 +43,12 @@
           "height": 70,
           "z": 10
         },
-        "label": "RSO / AFETR",
+        "label": "RSO",
         "style": "part_usage",
-        "model_ref": "rso"
+        "model_ref": "RSO"
       },
       {
-        "id": "msfn",
+        "id": "MSFN",
         "symbol": "part_usage",
         "layout": {
           "x": 372,
@@ -59,7 +59,7 @@
         },
         "label": "MSFN",
         "style": "part_usage",
-        "model_ref": "msfn"
+        "model_ref": "MSFN"
       },
       {
         "id": "earth",
@@ -92,16 +92,16 @@
     ],
     "connections": [
       {
-        "id": "conn-mcc-msfn",
+        "id": "conn-MCC-MSFN",
         "source": {
-          "element": "mcc",
+          "element": "MCC",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "msfn",
+          "element": "MSFN",
           "anchor": {
             "side": "left",
             "offset": 0.3
@@ -132,16 +132,16 @@
         "model_ref": "commandPathA"
       },
       {
-        "id": "conn-rso-msfn",
+        "id": "conn-RSO-MSFN",
         "source": {
-          "element": "rso",
+          "element": "RSO",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "msfn",
+          "element": "MSFN",
           "anchor": {
             "side": "left",
             "offset": 0.7
@@ -172,9 +172,9 @@
         "model_ref": "destructFlow"
       },
       {
-        "id": "conn-msfn-earth",
+        "id": "conn-MSFN-earth",
         "source": {
-          "element": "msfn",
+          "element": "MSFN",
           "anchor": {
             "side": "right",
             "offset": 0.5
@@ -203,9 +203,9 @@
         "model_ref": "usbCsmFlow"
       },
       {
-        "id": "conn-msfn-moon",
+        "id": "conn-MSFN-moon",
         "source": {
-          "element": "msfn",
+          "element": "MSFN",
           "anchor": {
             "side": "right",
             "offset": 0.5
