@@ -11,8 +11,8 @@
     "boost": "Apollo11::MissionPhase::boost",
     "earthOrbit": "Apollo11::MissionPhase::earthOrbit",
     "TLI": "Apollo11::MissionPhase::TLI",
-    "translunar": "Apollo11::MissionPhase::translunar",
     "dockEject": "Apollo11::MissionPhase::dockEject",
+    "translunar": "Apollo11::MissionPhase::translunar",
     "LOI": "Apollo11::MissionPhase::LOI",
     "undock": "Apollo11::MissionPhase::undock",
     "DOI": "Apollo11::MissionPhase::DOI",
@@ -26,8 +26,8 @@
     "liftoff": "Apollo11::MissionPhase::liftoff",
     "seoi": "Apollo11::MissionPhase::seoi",
     "startTLI": "Apollo11::MissionPhase::startTLI",
-    "TLICutoff": "Apollo11::MissionPhase::TLICutoff",
     "startDockEject": "Apollo11::MissionPhase::startDockEject",
+    "startTranslunar": "Apollo11::MissionPhase::startTranslunar",
     "startLOI": "Apollo11::MissionPhase::startLOI",
     "LOICutoff": "Apollo11::MissionPhase::LOICutoff",
     "startDOI": "Apollo11::MissionPhase::startDOI",
@@ -135,11 +135,11 @@
           "z": 10
         },
         "model_ref": "TLI",
-        "label": "TLI",
+        "label": "TLI\n02:44:15 GET",
         "style": "state.default"
       },
       {
-        "id": "translunar",
+        "id": "dockEject",
         "symbol": "state_usage",
         "layout": {
           "x": 1091,
@@ -148,12 +148,12 @@
           "height": 52,
           "z": 10
         },
-        "model_ref": "translunar",
-        "label": "translunar",
+        "model_ref": "dockEject",
+        "label": "dock/eject\nCMP \u00b7 SM RCS",
         "style": "state.default"
       },
       {
-        "id": "dockEject",
+        "id": "translunar",
         "symbol": "state_usage",
         "layout": {
           "x": 1291,
@@ -162,8 +162,8 @@
           "height": 52,
           "z": 10
         },
-        "model_ref": "dockEject",
-        "label": "dock/eject",
+        "model_ref": "translunar",
+        "label": "translunar",
         "style": "state.default"
       },
       {
@@ -177,7 +177,7 @@
           "z": 10
         },
         "model_ref": "LOI",
-        "label": "LOI",
+        "label": "LOI\n75:54:28 GET",
         "style": "state.default"
       },
       {
@@ -432,34 +432,10 @@
         "style": "transition"
       },
       {
-        "id": "TLI--translunar",
-        "model_ref": "TLICutoff",
-        "source": {
-          "element": "TLI",
-          "anchor": {
-            "side": "right",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "translunar",
-          "anchor": {
-            "side": "left",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": []
-        },
-        "labels": [],
-        "style": "transition"
-      },
-      {
-        "id": "translunar--dockEject",
+        "id": "TLI--dockEject",
         "model_ref": "startDockEject",
         "source": {
-          "element": "translunar",
+          "element": "TLI",
           "anchor": {
             "side": "right",
             "offset": 0.5
@@ -478,7 +454,7 @@
         },
         "labels": [
           {
-            "text": "dock/eject",
+            "text": "TD&E",
             "position": {
               "segment": 0,
               "offset": 0.5,
@@ -489,10 +465,43 @@
         "style": "transition"
       },
       {
-        "id": "dockEject--LOI",
-        "model_ref": "startLOI",
+        "id": "dockEject--translunar",
+        "model_ref": "startTranslunar",
         "source": {
           "element": "dockEject",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "translunar",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "LM extract",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "translunar--LOI",
+        "model_ref": "startLOI",
+        "source": {
+          "element": "translunar",
           "anchor": {
             "side": "right",
             "offset": 0.5

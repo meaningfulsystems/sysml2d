@@ -40,7 +40,9 @@ Sourced numbers only. SPS loaded mass and CSM lunar Δv stay UNKNOWN — do not 
 
 ## Mission STM
 
-countdown → boost → earthOrbit → TLI → translunar → dock/eject (`dockEject`) → LOI → undock → DOI → descent → surface/EVA → ascent → rendezvous → TEI → entry → recovery
+countdown → boost → earthOrbit → TLI → dock/eject (`dockEject`) → translunar → LOI → undock → DOI → descent → surface/EVA → ascent → rendezvous → TEI → entry → recovery
+
+TD&E is its own GO/NO-GO (CMP-owned, SM RCS, probe/drogue + 12 latches). LM stays in the SLA until extract. A11 PK: TLI 02:44:15 GET → sep/dock ~03:20 → LM extract ~04:09 → translunar coast → LOI-1 75:54:28 GET. Do not jump translunar → LOI; do not invent Δv.
 
 Abort machine (parallel): pad, I–IV, contingency TLI, lunar, SPS.
 

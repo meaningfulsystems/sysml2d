@@ -17,8 +17,8 @@
     "boost": "Apollo11::MissionPhase::boost",
     "earthOrbit": "Apollo11::MissionPhase::earthOrbit",
     "TLI": "Apollo11::MissionPhase::TLI",
-    "translunar": "Apollo11::MissionPhase::translunar",
     "dockEject": "Apollo11::MissionPhase::dockEject",
+    "translunar": "Apollo11::MissionPhase::translunar",
     "LOI": "Apollo11::MissionPhase::LOI",
     "undock": "Apollo11::MissionPhase::undock",
     "DOI": "Apollo11::MissionPhase::DOI",
@@ -32,8 +32,8 @@
     "liftoff": "Apollo11::MissionPhase::liftoff",
     "seoi": "Apollo11::MissionPhase::seoi",
     "startTLI": "Apollo11::MissionPhase::startTLI",
-    "TLICutoff": "Apollo11::MissionPhase::TLICutoff",
     "startDockEject": "Apollo11::MissionPhase::startDockEject",
+    "startTranslunar": "Apollo11::MissionPhase::startTranslunar",
     "startLOI": "Apollo11::MissionPhase::startLOI",
     "LOICutoff": "Apollo11::MissionPhase::LOICutoff",
     "startDOI": "Apollo11::MissionPhase::startDOI",
@@ -62,19 +62,19 @@
       "model_ref": "earthOrbit"
     },
     "TLI": {
-      "label": "TLI",
+      "label": "TLI\n02:44:15 GET",
       "model_ref": "TLI"
+    },
+    "dockEject": {
+      "label": "dock/eject\nCMP · SM RCS",
+      "model_ref": "dockEject"
     },
     "translunar": {
       "label": "translunar",
       "model_ref": "translunar"
     },
-    "dockEject": {
-      "label": "dock/eject",
-      "model_ref": "dockEject"
-    },
     "LOI": {
-      "label": "LOI",
+      "label": "LOI\n75:54:28 GET",
       "model_ref": "LOI"
     },
     "undock": {
@@ -140,18 +140,18 @@
     },
     {
       "from": "TLI",
-      "to": "translunar",
-      "label": "",
-      "model_ref": "TLICutoff"
-    },
-    {
-      "from": "translunar",
       "to": "dockEject",
-      "label": "dock/eject",
+      "label": "TD&E",
       "model_ref": "startDockEject"
     },
     {
       "from": "dockEject",
+      "to": "translunar",
+      "label": "LM extract",
+      "model_ref": "startTranslunar"
+    },
+    {
+      "from": "translunar",
       "to": "LOI",
       "label": "SPS",
       "model_ref": "startLOI"
