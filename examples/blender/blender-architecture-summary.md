@@ -23,7 +23,7 @@ MagicGrid separates **what the system must do for someone** from **how the desig
 6. Parametrics / constraints — equations if present; names only if not.
 7. Allocations — requirements or behavior mapped onto parts that actually exist.
 
-Sections 8 and 9 walk every generated figure and then list unmarked items and out-of-scope work.
+Sections 8 and 9 walk every generated figure — Block Definition Diagram (BDD), Internal Block Diagram (IBD), and State Machine (STM) among them — and then list unmarked items and out-of-scope work.
 
 ---
 
@@ -270,7 +270,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** What parts compose the blender?
 
-**How to read it:** A Block Definition Diagram (BDD) is a composition tree: tamper, lid, container, blade assembly, drive coupling, smoothness sensor, motor base, motor, and control panel.
+**How to read it:** A BDD is a composition tree: tamper, lid, container, blade assembly, drive coupling, smoothness sensor, motor base, motor, and control panel.
 
 **Symbols:** part boxes and composition lines.
 
@@ -282,7 +282,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** How do the parts mount, drive, sense, and command each other?
 
-**How to read it:** An Internal Block Diagram (IBD) shows parts as boxes and connections as lines between ports. Follow lid → container → base, then motor → coupling → blades, and sensor → panel → motor. There is no power-port box.
+**How to read it:** An IBD shows parts as boxes and connections as lines between ports. Follow lid → container → base, then motor → coupling → blades, and sensor → panel → motor. There is no power-port box.
 
 **Symbols:** part boxes, ports, mechanical / drive / sensor / control connections.
 
@@ -318,7 +318,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Which modes does the blender occupy?
 
-**How to read it:** A State Machine (STM) has Off and a composite Powered. Ready, Blending, and Error sit inside Powered. Error covers general fault, lid opened during blend, blade jam, overcurrent, and sensor fault. Pause is required in text and is not a state.
+**How to read it:** The STM has Off and a composite Powered. Ready, Blending, and Error sit inside Powered. Error covers general fault, lid opened during blend, blade jam, overcurrent, and sensor fault. Pause is required in text and is not a state.
 
 **Symbols:** rounded states, composite frame, transition arrows.
 

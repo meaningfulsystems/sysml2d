@@ -313,10 +313,16 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("charger → `bms.chargerIn`", ebike)
         apollo = notes["apollo"].read_text(encoding="utf-8")
         self.assertIn("NPR 7123.1", apollo)
+        self.assertIn("Physical-subsystem", apollo)
         self.assertIn("D-7720 April 1967 plan baseline", apollo)
         self.assertIn("descent → DPS, AgZn1–4, ECA, landingRadar", apollo)
         self.assertIn("PNGS → IMU", apollo)
         self.assertNotIn("PNGS → IMU, rendezvousRadar", apollo)
+        self.assertIn("8 panels (4 jettison / 4 stay)", apollo)
+        self.assertNotIn("four petals", apollo)
+        self.assertIn("ST-124", apollo)
+        self.assertIn("Flight Control Computer (FCC)", apollo)
+        self.assertIn("PGNCS", apollo)
 
     def test_hop_overs_appear_on_crossing_generic_views(self):
         spec = {

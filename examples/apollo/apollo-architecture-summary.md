@@ -6,7 +6,7 @@ A new systems engineer should be able to learn the *system* and the *method* fro
 
 This is an example model, not a certifiable vehicle. Numbers are from NASA primary sources cited in the model (Apollo 11 Press Kit 69-83K, Saturn V Flight Manual, Apollo Experience Reports, Apollo Guidance Computer Information Series (AGCIS) / Massachusetts Institute of Technology Instrumentation Laboratory (MIT IL), Technical Notes D-6718 / D-6724 / D-7082 / D-7143 / D-7375 / D-7720 / D-8093 / D-8227 / TN-7990). Values not in those extracts are left unmarked. There is no official Command/Service Module lunar change-in-velocity (Δv) table in the sources used here — that table is not invented.
 
-Hyphens are not legal identifiers: S-IC / S-II / S-IVB appear as `SIC`, `SII`, `SIVB`. The mission phase surface/extravehicular activity is `surfaceEVA`.
+Hyphens are not legal identifiers: S-IC / S-II / S-IVB appear as `SIC`, `SII`, `SIVB`; ST-124 appears as `ST124`. The mission phase surface/extravehicular activity is `surfaceEVA`.
 
 ## How to read this note (simplified MagicGrid)
 
@@ -33,11 +33,14 @@ NASA Procedural Requirements (NPR) 7123.1, *NASA Systems Engineering Processes a
 
 | NPR 7123.1 process | MagicGrid layer in this note |
 |--------------------|------------------------------|
-| Stakeholder Expectations Definition | §§1–2 purpose, stakeholders, use cases, operating context |
-| Technical Requirements Definition | §3 requirements (model text; sourced numbers; unmarked left unmarked) |
-| Logical Decomposition | §4 logical parts and interfaces; §5 mission and computer behavior |
-| Design Solution Definition (physical) | §4 physical stages and hardware; §7 allocations onto existing parts |
-| Product Verification | analysis and verification *names* — no part, port, or effect is bound unless the model says so |
+| Stakeholder | §§1–2 purpose, stakeholders, operating context |
+| Requirements | §3 technical requirements (model text; sourced numbers; unmarked left unmarked) |
+| Use Cases | §2 every actor, include/extend, analysis and verification *names* |
+| Functional | §5 behavior — mission State Machine (STM) and named functions / actions / abort |
+| Logical | §4 part tree and interfaces (what connects to what) |
+| Physical-subsystem | §4 serialed hardware: S-IC-6, CSM-107, landing radar on descent, IU as Launch Vehicle Digital Computer (LVDC) + ST-124 + Flight Control Computer (FCC) |
+| Parametrics | §6 named constraints; no invented equations |
+| Verification | analysis and verification *names* — no part, port, or effect is bound unless the model says so |
 
 Crew safety, range safety, and recovery sit in stakeholder expectations and later-mode abort, not only in the Launch Escape System (LES).
 
@@ -47,9 +50,9 @@ Crew safety, range safety, and recovery sit in stakeholder expectations and late
 
 Apollo 11 is a lunar-orbit-rendezvous (LOR) mission. Saturn V places the CSM and LM in Earth parking orbit. Translunar Injection (TLI) sends the stack toward the Moon. After transposition, docking, and LM extract (`dockEject`), the docked vehicles coast translunar. The CSM performs Lunar Orbit Insertion (LOI) and later Trans-Earth Injection (TEI). The LM undocks, does Descent Orbit Insertion (DOI) and powered descent, lands, supports one surface Extravehicular Activity (EVA), ascends, and rendezvous with the CSM. The crew returns in the Command Module (CM) for entry and recovery.
 
-This is Apollo 11 only — first landing, one short EVA, no Lunar Roving Vehicle (LRV), no Scientific Instrument Module (SIM) bay, Primary Guidance, Navigation, and Control System (PNGS) program P66 as the flown landing program, Mission Operations Control Room (MOCR) 2, Service Module (SM) cryogenic tankage 2+2. J-mission variants are out of scope.
+This is Apollo 11 / AS-506 only — first landing, one short EVA, no Lunar Roving Vehicle (LRV), no Scientific Instrument Module (SIM) bay, model PNGS (cockpit/switch label Primary Guidance, Navigation, and Control System (PGNCS)) program P66 as the flown landing program, Mission Operations Control Room (MOCR) 2, Service Module (SM) cryogenic tankage 2+2. J-mission variants are out of scope.
 
-Crew safety in this model is not LES-only. LES is the pad / Mode I escape tower on the stack. Later-mode crew safety that is actually modeled: `AbortMode` (pad, I–IV, contingency TLI, lunar, Service Propulsion System (SPS)); Range Safety Officer (RSO) ultra-high-frequency (UHF) destruct (outside Mission Control Center (MCC), safed after Earth orbit); CM heat shield for entry; Environmental Control and Life Support System (ECLSS) / A7L pressure garment / Portable Life Support System (PLSS); and recover-crew to *Hornet*. There is no single `crewSafetyRequirement` element.
+Crew safety in this model is not LES-only. LES is the pad / Mode I escape tower on the stack. Later-mode crew safety that is actually modeled: `AbortMode` (pad, I–IV, contingency TLI, lunar, Service Propulsion System (SPS)); Range Safety Officer (RSO) ultra-high-frequency (UHF) destruct (outside Mission Control Center (MCC) Houston — not a midcourse correction — safed after Earth orbit); CM heat shield for entry; Environmental Control and Life Support System (ECLSS) / A7L pressure garment / Portable Life Support System (PLSS); and recover-crew to *Hornet*. There is no single `crewSafetyRequirement` element.
 
 ## 2. Stakeholders and use cases
 
@@ -59,7 +62,7 @@ The stack sits among first-class parts, not one Ground actor.
 |--------------------|------|----------------------|
 | Commander (CDR), Lunar Module Pilot (LMP), Command Module Pilot (CMP) | Flight crew. CDR (Armstrong) and LMP (Aldrin) carry PLSS for EVA. CMP has no PLSS in the model | CDR: Fly Mission, Lunar EVA |
 | Kennedy Space Center Launch Control Center (`KSC_LCC`) | Launch commit: Firing Room 1, RCA 110A pair, Acceptance Checkout Equipment (ACE), umbilicals, pad cryo | (context; not a use-case actor) |
-| MCC Houston | Flight control after tower clear. Apollo 11 uses **MOCR 2** | Fly Mission, Recover Crew |
+| MCC (Houston) | Flight control after tower clear. Apollo 11 uses **MOCR 2**. MCC is not a midcourse-correction burn | Fly Mission, Recover Crew |
 | Real-Time Computer Complex (RTCC) | Five IBM 360/75. Trajectory and uplink. Mission Operations Computer (MOC) vs Dynamic Standby Computer (DSC) roles on A11 are unmarked | (supports MCC) |
 | Goddard Space Flight Center (GSFC) / NASA Communications Network (NASCOM) | Ground wideband network | (context) |
 | Manned Space Flight Network (MSFN) | Goldstone / Madrid / Honeysuckle 85-ft Unified S-Band (USB) triad, plus named 30-ft, ships (collapsed), Apollo Range Instrumentation Aircraft (ARIA) | (context) |
@@ -96,7 +99,7 @@ The model states sourced requirements as documentation on named requirement elem
 | Instrument Unit (IU)-6 | 4,306 lb |
 | CM | 12,250 lb |
 | SM | 51,243 lb |
-| Also Press Kit | Ignition 6,484,280 lb; first motion 6,398,535; LES 8,930; LM descent dry 4,483; LM Reaction Control System (RCS) 604; Descent Propulsion System (DPS) load 18,100; Ascent Propulsion System (APS) load 5,214 |
+| Also Press Kit | Ignition 6,484,280 lb; first motion 6,398,535; LES 8,930; LM descent dry 4,483; LM Reaction Control System (RCS) 604; Descent Propulsion System (DPS) load 18,100; LM Ascent Propulsion System (APS) load 5,214 (engine — not the S-IVB Auxiliary Propulsion System / ullage motors) |
 
 ### Engines
 
@@ -104,7 +107,7 @@ The model states sourced requirements as documentation on named requirement elem
 |--------|----------|----------|
 | SPS | 20,500 lbf (Press Kit) | 21,500 lbf vac (TN D-7375) |
 | DPS | 9,870 / 1,050–6,300 lbf (Press Kit) | 10,500 lbf 10:1 (TN D-7143) |
-| APS | 3,500 lbf; 90% in 0.450 s; **1.5° cant** (TN D-7082) | — |
+| LM APS (engine) | 3,500 lbf; 90% in 0.450 s; **1.5° cant** (TN D-7082) | — |
 | F-1 ×5 | 1,530,000 lbf each, sourced as **SA-507**, not AS-506 | hydraulics collapsed |
 | J-2 S-II ×5 | 230,000 lbf | — |
 | J-2 S-IVB ×1 | 207,000 lbf | — |
@@ -121,12 +124,12 @@ SM 100 lbf/engine (Press Kit p.93), four quads. LM 100 lbf/engine (Press Kit p.1
 | A11 ropes | Comanche **055** on AGC_CM; Luminary **1A LMY99/1** on AGC_LM | `agcRequirement` |
 | P-numbers | Command Module Computer (CMC) P61–P67 = **entry**; Lunar Module Guidance Computer (LGC) P63–P68 = **landing**. Not one shared P-number machine | `agcRequirement` |
 | Pulse Integrating Pendulous Accelerometer (PIPA) | CM 5.85 cm/s/pulse; LM 1.0 cm/s/pulse | `pipaRequirement` |
-| IU Launch Vehicle Digital Computer (LVDC) | 82.03125 µs; 26+2 bits; **no digital AGC↔LVDC**. IU owns boost + TLI | `iuGncRequirement` |
-| Abort Guidance System (AGS) | Abort Electronics Assembly (AEA) + Abort Sensor Assembly (ASA) + Data Entry and Display Assembly (DEDA); AEA 4096×18, 5 µs, 32.7 lb; **not a landing computer**. R47 inits from PNGS | TN-7990 |
+| IU | Physically LVDC + ST-124 + FCC. LVDC 82.03125 µs; 26+2 bits; **no digital AGC↔LVDC**. IU owns boost + TLI | `iuGncRequirement` |
+| Abort Guidance System (AGS) | Abort Electronics Assembly (AEA) + Abort Sensor Assembly (ASA) + Data Entry and Display Assembly (DEDA); AEA 4096×18, 5 µs, 32.7 lb; **not a landing computer**. AGS ≠ DSKY — AGS display is DEDA. R47 inits from PNGS | TN-7990 |
 
 Verb 37 (V37) mode, V36 fresh start, V69 restart. 1201/1202 is executive overflow, not an abort.
 
-PNGS is AGC_LM + Inertial Measurement Unit (IMU) + radars — not AGS. Physical `landingRadar` is on descent; one `rendezvousRadar` is on ascent; PNGS connects to both.
+PNGS (model name; cockpit/switch label PGNCS) is AGC_LM + Inertial Measurement Unit (IMU) + radars — not AGS. Physical `landingRadar` is on descent only; one `rendezvousRadar` is on ascent only; PNGS connects to both and does not nest either radar.
 
 ### Electrical power (Press Kit)
 
@@ -158,15 +161,15 @@ SM: fuel cells FC1–FC3; cryo **2+2** (not J-mission 3+3). CM: silver-zinc (AgZ
 | Liquid Cooling Garment (LCG) | 1200 Btu/man-h steady |
 | A7L | 3.75±0.25 psid; extravehicular 19.69 kg |
 | PLSS | usable O2 1.04 lb / 4 h at 1200 Btu/h |
-| Food plan | **D-7720 April 1967 plan baseline:** 2800 kcal/man/day CM, 3200 kcal/man/day LM. Not A11 flown intake. Flown kcal unmarked |
+| Food plan | **TN D-7720 April 1967 plan baseline:** 2800 kcal/man/day CM, 3200 kcal/man/day LM. Not A11 flown intake. Flown kcal unmarked |
 | Earth parking orbit | **100 nmi planned** |
 | Lunar delay | range/c ≈ 1.3 s |
 | EVA | one surface EVA; CDR 2:48 / LMP 2:40 (**flown** A11 instance) |
-| TLI / dock / extract / LOI-1 | **planned** Ground Elapsed Time (GET) (A11 Press Kit): TLI 02:44:15; dock ~03:20; extract ~04:09; LOI-1 75:54:28 |
+| TLI / TD&E / LOI-1 | **planned** Ground Elapsed Time (GET) (A11 Press Kit): TLI 02:44:15; TD&E ~03:20–04:09; LOI-1 75:54:28 |
 | Splash | 195:18:35 MET, 13 nmi, *Hornet* — model does not mark planned or flown |
 | Landing program | **P66 flown** |
 
-Docking: transposition, docking, and extraction (TD&E) is its own GO/NO-GO, CMP-owned, SM RCS. CM probe / LM drogue + 12 ring latches. LM stays in the Spacecraft-LM Adapter (SLA) until `dockEject` (after TLI, before translunar coast).
+Docking: transposition, docking, and extraction (TD&E) is its own GO/NO-GO, CMP-owned, SM RCS. CM probe / LM drogue + 12 ring latches. LM stays in the Spacecraft-LM Adapter (SLA) — 8 panels: 4 jettison / 4 stay — until `dockEject` (after TLI, before translunar coast).
 
 ### Unmarked (do not invent)
 
@@ -178,7 +181,7 @@ Docking: transposition, docking, and extraction (TD&E) is its own GO/NO-GO, CMP-
 - A11 flown food intake (kcal)
 - Entry blackout duration
 - RTCC MOC vs DSC which-is-which on A11
-- Complete MSFN 30-ft inventory (ships collapsed)
+- Complete MSFN 30-ft inventory (ships collapsed); 4th Apollo Instrumentation Ship (AIS) unmarked
 - Full Stabilization and Control System (SCS) switch deck (TBD in the model)
 - CMP personal name (not in the model)
 
@@ -192,8 +195,8 @@ Apollo11
 │   ├── SIC → F1          S-IC-6
 │   ├── SII → J2          S-II-6
 │   ├── SIVB → J2         S-IVB-6N
-│   ├── IU → LVDC         IU-6
-│   ├── SLA               SLA-14; four petals; LM extract after transposition
+│   ├── IU → LVDC, ST-124, FCC     IU-6
+│   ├── SLA               SLA-14; 8 panels (4 jettison / 4 stay); LM extract after transposition
 │   └── LES
 ├── CSM
 │   ├── CM                12,250 lb
@@ -225,7 +228,7 @@ Apollo11
 
 Pad stack: S-IC-6, S-II-6, S-IVB-6N, IU-6, SLA-14 (LM-5), SM, CM, LES.
 
-Keep two AGCs, AGS, IU LVDC, LES, descent vs ascent, and three crew. PNGS is AGC_LM + IMU + radars — not AGS. Physical landingRadar is on descent; rendezvousRadar is on ascent. SCS is the Block II analog backup to AGC_CM.
+Keep two AGCs, AGS, IU (LVDC + ST-124 + FCC), LES, descent vs ascent, and three crew. PNGS is the model name for PGNCS: AGC_LM + IMU + radars — not AGS. Physical landingRadar is on descent only; one rendezvousRadar is on ascent only; PNGS connects to both and does not nest either radar. SCS is the Block II analog backup to AGC_CM.
 
 Mechanical stack: SIC → SII → SIVB → IU → SLA → SM; LES → CM → SM; SLA → LM descent; CM probe ↔ LM drogue; descent ↔ ascent mate.
 
@@ -314,7 +317,7 @@ Named constraints: `usbCsmLink`, `usbLmLink`, `lunarDelay`, `f1Thrust`, `agcCycl
 
 **Out of scope:** J-mission 3+3 cryo, LRV, SIM bay, extended EVA. F-1 1,530,000 lbf is an SA-507 citation, not an AS-506 figure.
 
-**Unmarked / TBD:** CSM lunar Δv, SPS loaded mass, SM/CM RCS loaded propellant mass. See also §3 (AGS flight-program name, A11 flown food intake, entry blackout, RTCC MOC/DSC, 30-ft MSFN inventory, SCS switch deck). D-7720 2800/3200 is the 1967 plan baseline, not flown kcal.
+**Unmarked / TBD:** CSM lunar Δv, CSM-107 SPS loaded lb, SM/CM RCS loaded propellant mass. See also §3 (AGS flight-program name, A11 flown food intake, entry blackout, RTCC MOC/DSC, 30-ft MSFN inventory, 4th AIS ship, SCS switch deck). TN D-7720 2800/3200 is the 1967 plan baseline, not flown kcal.
 
 ## 7. Allocations
 
@@ -322,7 +325,7 @@ NPR 7123 design-solution allocation is the mapping of technical requirements ont
 
 | Function | Allocated to parts that exist |
 |----------|-------------------------------|
-| Boost, TLI | IU LVDC |
+| Boost, TLI | IU (LVDC + ST-124 + FCC); LVDC is the digital computer |
 | Destruct | RSO (outside MCC) |
 | LOI / TEI / entry | AGC_CM |
 | Landing / ascent / LM abort | AGC_LM |
@@ -434,7 +437,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** What composes Apollo 11 at pad-stack grain?
 
-**How to read it:** A Block Definition Diagram (BDD) is a composition tree: Saturn V, CSM, LM, Crew, Ground. Descent and ascent stay separate. Two AGCs stay separate.
+**How to read it:** A Block Definition Diagram (BDD) is a composition tree: Saturn V, CSM, LM, Crew, Ground. IU children are LVDC, ST-124, and FCC. SLA is labeled 8-panel. Descent and ascent stay separate. Two AGCs stay separate.
 
 **Symbols:** part boxes and composition lines.
 
@@ -738,7 +741,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** What is the nominal mission sequence?
 
-**How to read it:** A State Machine (STM) from countdown through recovery. The locked hop is TLI → dockEject → translunar → LOI. There is no TLI→translunar hop.
+**How to read it:** The STM runs from countdown through recovery. The locked hop is TLI → dockEject → translunar → LOI. There is no TLI→translunar hop.
 
 **Symbols:** rounded states and labeled transitions.
 

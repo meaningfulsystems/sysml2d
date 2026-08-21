@@ -55,6 +55,8 @@ LOCKED = (
     "part SIVB : SIVB",
     "part IU : IU",
     "part LVDC : LVDC",
+    "part ST124 : ST124",
+    "part FCC : FCC",
     "part SLA : SLA",
     "part LES : LES",
     "part CM : CM",
@@ -219,7 +221,12 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("Comanche 055", text)
         self.assertIn("Luminary 1A LMY99/1", text)
         self.assertIn("A11 AGS flight-program name UNKNOWN", text)
+        self.assertIn("AGS ≠ DSKY", text)
+        self.assertIn("AGS display is DEDA", text)
         self.assertIn("D-7720 April 1967 plan baseline", text)
+        self.assertIn("IU physically is LVDC + ST-124 + Flight Control Computer (FCC)", text)
+        self.assertIn("Eight panels: four jettison, four stay", text)
+        self.assertNotIn("Four petals", text)
         self.assertIn("2800 kcal/man/day CM", text)
         self.assertIn("3200 kcal/man/day LM", text)
         self.assertIn("A11 actual intake UNKNOWN", text)
@@ -273,6 +280,17 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("PNGS → IMU", note)
         self.assertNotIn("PNGS → IMU, rendezvousRadar", note)
         self.assertNotIn("PNGS → IMU, landingRadar, rendezvousRadar", note)
+        self.assertIn("IU → LVDC, ST-124, FCC", note)
+        self.assertIn("8 panels (4 jettison / 4 stay)", note)
+        self.assertNotIn("four petals", note)
+        self.assertIn("Stakeholder", note)
+        self.assertIn("Physical-subsystem", note)
+        iu = _sysml_block(text, "part def IU")
+        sla = _sysml_block(text, "part def SLA")
+        self.assertIn("part ST124 : ST124", iu)
+        self.assertIn("part FCC : FCC", iu)
+        self.assertIn("part LVDC : LVDC", iu)
+        self.assertIn("Eight panels: four jettison, four stay", sla)
         ibd = json.loads((APOLLO / "apollo-ibd-lm.json").read_text(encoding="utf-8"))
         self.assertEqual(ibd["aliases"]["landingRadar"], "Apollo11::LM::descent::landingRadar")
         self.assertEqual(ibd["aliases"]["rendezvousRadar"], "Apollo11::LM::ascent::rendezvousRadar")

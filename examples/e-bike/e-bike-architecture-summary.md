@@ -4,7 +4,7 @@ This note is an educational architecture walkthrough of the electrically assiste
 
 A new systems engineer should be able to learn the *system* and the *method* from this note without opening the Systems Modeling Language (SysML) source. The `.sysml` model is authoritative when a generated view label disagrees.
 
-This is an example model, not a certifiable appliance. The bicycle is cadence Pedal Assist System (PAS) only: no certified throttle, assist cutoff at 25 km/h, walk assist at or below 6 km/h. The hub is rear geared with no regeneration. **250 W is the European Union (EU) continuous rating (EN 15194), not peak power.** **40 N·m is hub peak torque, not continuous** — that torque does not sit with 250 W at 25 km/h as a continuous operating point. Charge energy enters the Battery Management System (BMS), then the pack.
+This is an example model, not a certifiable appliance. The bicycle is cadence Pedal Assist System (PAS) only: no certified throttle, assist cutoff at 25 km/h, walk assist at or below 6 km/h. The hub is rear geared with no regeneration. **250 W is the European Union (EU) continuous rating (European Standard (EN) 15194), not peak power.** **40 N·m is hub peak torque, not continuous** — that torque does not sit with 250 W at 25 km/h as a continuous operating point. Charge energy enters the Battery Management System (BMS), then the pack.
 
 ## How to read this note (simplified MagicGrid)
 
@@ -23,13 +23,13 @@ MagicGrid separates **what the system must do for someone** from **how the desig
 6. Parametrics / constraints — equations if present; names only if not.
 7. Allocations — requirements or behavior mapped onto parts that actually exist.
 
-Sections 8 and 9 walk every generated figure and then list unmarked items and out-of-scope work.
+Sections 8 and 9 walk every generated figure — Block Definition Diagram (BDD), Internal Block Diagram (IBD), and State Machine (STM) among them — and then list unmarked items and out-of-scope work.
 
 ---
 
 ## 1. Purpose / mission
 
-The system is one Electrically Power Assisted Cycle (EPAC) class under European Standard EN 15194. Its mission is to assist a rider’s pedaling on the road within the legal continuous-power and speed limits, cut torque on brake input, and accept charge from an off-board charger through the pack BMS.
+The system is one Electrically Power Assisted Cycle (EPAC) class under EN 15194. Its mission is to assist a rider’s pedaling on the road within the legal continuous-power and speed limits, cut torque on brake input, and accept charge from an off-board charger through the pack BMS.
 
 It is not a throttle bike, not a mid-drive kit, and not a regenerative hub. Tour-mode range is the only bound range scenario.
 
@@ -61,7 +61,7 @@ Identifiers such as REQ-E-xxx appear only on generated views. Text and numbers a
 | REQ-E-001 | Ride safety — fail-silent torque cut. Brake, controller, cadence sensor, wheel-speed sensor, and BMS shall cut motor torque. Cadence-only cannot enforce 25 km/h | qualitative | EN 15194 EPAC safety (stated in the assist-limit family) |
 | REQ-E-002 | Tour-mode range | Tour-scenario `usableWh` binding: **500 Wh** / `energyPerKm` **~8.3 Wh/km** ≥ **60 km**. Not pack nameplate. Not Eco / PAS-1 | `rangeRequirement` / `tourRangeBind` |
 | REQ-E-003 | Assist limit — cadence PAS only, no certified throttle | Assist cut **25 km/h**; walk assist **≤ 6 km/h** | **EN 15194** |
-| REQ-E-004 | Charge safety — stop on over-temperature, over-voltage, or charger disconnect. BMS opens the pack contactor | qualitative | **UL 2849** |
+| REQ-E-004 | Charge safety — stop on over-temperature, over-voltage, or charger disconnect. BMS opens the pack contactor | qualitative | **Underwriters Laboratories (UL) 2849** |
 | REQ-E-010 | Electronic brake inhibit | **≤ 50 ms** from either lever. Separate design target — not a comparison to the EN 15194 distance test | `brakeOverrideRequirement` |
 | REQ-E-011 | BMS opens the pack contactor before any cell exceeds voltage or temperature limits | qualitative | UL 2849 (via charge safety) |
 | REQ-E-012 | EN 15194:2017 clause 4.2.13 Power management — motor-assist cut-off after pedaling stops, **not** vehicle brake distance. Brake lever switches only relax the cut-off from 2 m to 5 m | **2 m**; **5 m** when lever switches relax the clause | **EN 15194:2017 4.2.13** |
@@ -69,7 +69,7 @@ Identifiers such as REQ-E-xxx appear only on generated views. Text and numbers a
 | REQ-E-014 | Continuous assist power | **250 W EU continuous** — distinct from hub peak torque **40 N·m** | **EN 15194** |
 | REQ-E-020 | Display speed, assist level, and remaining range without removing hands from the bars | qualitative | not cited |
 | REQ-E-030 | Frame carries rider, cargo, and battery loads without yielding | qualitative | not cited |
-| REQ-E-040 | Lighting | **StVZO / ISO 6742**, not UN ECE R113 | **StVZO** (German road-traffic licensing regulation), **ISO 6742** |
+| REQ-E-040 | Lighting | **Straßenverkehrs-Zulassungs-Ordnung (StVZO) / International Organization for Standardization (ISO) 6742**, not United Nations Economic Commission for Europe (UN ECE) R113 | **StVZO**, **ISO 6742** |
 
 Clause 4.2.13 is power management on the motor controller, cadence sensor, and wheel-speed sensor — not `BrakeSystem`. The 50 ms electronic inhibit is a separate design target. Do not treat 50 ms as tighter than the distance test.
 
@@ -77,7 +77,7 @@ Clause 4.2.13 is power management on the motor controller, cadence sensor, and w
 
 ### Operating context / boundary
 
-Rider, charger, and road are first-class external parts. They stay on the operating-context view. They are not decomposed inside the Internal Block Diagram (IBD).
+Rider, charger, and road are first-class external parts. They stay on the operating-context view. They are not decomposed inside the IBD.
 
 | External part | Role | Context exchange |
 |---------------|------|------------------|
@@ -291,7 +291,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** What parts compose the bike?
 
-**How to read it:** A Block Definition Diagram (BDD) is a composition tree: frame, battery pack with nested BMS, motor controller, rear geared hub, human interface, brake system, cadence sensor, and wheel-speed sensor. The hub box states EU continuous 250 W and 40 N·m peak torque separately.
+**How to read it:** A BDD is a composition tree: frame, battery pack with nested BMS, motor controller, rear geared hub, human interface, brake system, cadence sensor, and wheel-speed sensor. The hub box states EU continuous 250 W and 40 N·m peak torque separately.
 
 **Symbols:** part boxes and composition lines.
 
@@ -339,7 +339,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Which ride modes exist, and which transitions are legal?
 
-**How to read it:** A State Machine (STM) starts in Off. Power goes to Standby; cadence starts Assist; the walk button starts walk (`do / ≤ 6 km/h`). Charging is entered only from Off. Fault is reached from Assist on overcurrent; reset returns to Off.
+**How to read it:** The STM starts in Off. Power goes to Standby; cadence starts Assist; the walk button starts walk (`do / ≤ 6 km/h`). Charging is entered only from Off. Fault is reached from Assist on overcurrent; reset returns to Off.
 
 **Symbols:** rounded states, transition arrows, triggers.
 

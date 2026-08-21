@@ -24,6 +24,8 @@
     "SIVB": "Apollo11::SaturnV::SIVB",
     "IU": "Apollo11::SaturnV::IU",
     "LVDC": "Apollo11::SaturnV::LVDC",
+    "ST124": "Apollo11::SaturnV::ST124",
+    "FCC": "Apollo11::SaturnV::FCC",
     "SLA": "Apollo11::SaturnV::SLA",
     "LES": "Apollo11::SaturnV::LES",
     "CM": "Apollo11::CSM::CM",
@@ -87,12 +89,22 @@
                   "id": "LVDC",
                   "label": "LVDC",
                   "model_ref": "LVDC"
+                },
+                {
+                  "id": "ST124",
+                  "label": "ST-124",
+                  "model_ref": "ST124"
+                },
+                {
+                  "id": "FCC",
+                  "label": "FCC",
+                  "model_ref": "FCC"
                 }
               ]
             },
             {
               "id": "SLA",
-              "label": "SLA",
+              "label": "SLA 8-panel",
               "model_ref": "SLA"
             },
             {

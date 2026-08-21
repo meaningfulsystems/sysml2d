@@ -8,14 +8,14 @@ Figures that have a source are stated. Values without a source stay UNKNOWN. SPS
 
 ## Packages
 
-- **SaturnV:** SIC, SII, SIVB, IU (LVDC inside IU), SLA, LES
+- **SaturnV:** SIC, SII, SIVB, IU (LVDC + ST-124 + FCC), SLA (8 panels: 4 jettison / 4 stay), LES
 - **CSM:** CM, SM, SCS, AGC_CM, IMU, DSKY, SPS, RCS, ECLSS
 - **LM:** descent (DPS, AgZn, ECA, landingRadar), ascent (PNGS, AGC_LM, AGS, APS, RCS, rendezvousRadar)
 - **Crew:** CDR, CMP, LMP, A7L, PLSS
 - **Ground:** KSC_LCC, MCC (Apollo 11 is MOCR 2), RTCC, MSFN Goldstone / Madrid / Honeysuckle + NASCOM
 - **Recovery:** Hornet under RecoveryForces
 
-AGC_CM, AGC_LM, the CM and LM DSKYs, AGS, IU LVDC, and USB stay distinct.
+AGC_CM, AGC_LM, the CM and LM DSKYs, AGS, IU (LVDC + ST-124 + Flight Control Computer), and USB stay distinct. AGS display is DEDA, not DSKY.
 
 ## Sourced figures
 

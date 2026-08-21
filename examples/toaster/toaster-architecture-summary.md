@@ -23,7 +23,7 @@ MagicGrid separates **what the system must do for someone** from **how the desig
 6. Parametrics / constraints — equations if present; names only if not.
 7. Allocations — requirements or behavior mapped onto parts that actually exist.
 
-Sections 8 and 9 walk every generated figure and then list unmarked items and out-of-scope work.
+Sections 8 and 9 walk every generated figure — Block Definition Diagram (BDD), Internal Block Diagram (IBD), and State Machine (STM) among them — and then list unmarked items and out-of-scope work.
 
 ---
 
@@ -268,7 +268,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** What parts compose the toaster?
 
-**How to read it:** A Block Definition Diagram (BDD) is a composition tree. Chassis, lever, buttons, power and control, heating element, carriage, crumb tray, and power cord hang from `Toaster`. Child definitions are empty.
+**How to read it:** A BDD is a composition tree. Chassis, lever, buttons, power and control, heating element, carriage, crumb tray, and power cord hang from `Toaster`. Child definitions are empty.
 
 **Symbols:** part boxes and composition lines.
 
@@ -280,7 +280,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** How does electrical energy and control reach the heater?
 
-**How to read it:** An Internal Block Diagram (IBD) shows parts as boxes and connections as lines between ports. This view keeps buttons, lever, cord, power and control, and heater. It is the same model connections as the mechanical IBD, split by domain.
+**How to read it:** An IBD shows parts as boxes and connections as lines between ports. This view keeps buttons, lever, cord, power and control, and heater. It is the same model connections as the mechanical IBD, split by domain.
 
 **Symbols:** part boxes, ports, power and control connections.
 
@@ -328,7 +328,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Which modes does the toaster occupy, and what events move it?
 
-**How to read it:** A State Machine (STM) starts in Idle. Heating is the only state that can go to Done or Error. Done returns to Idle on carriage up. Error returns to Idle on reset. The view may collapse the three heating-to-error transitions; the model keeps them separate.
+**How to read it:** The STM starts in Idle. Heating is the only state that can go to Done or Error. Done returns to Idle on carriage up. Error returns to Idle on reset. The view may collapse the three heating-to-error transitions; the model keeps them separate.
 
 **Symbols:** rounded states, transition arrows, triggers.
 
