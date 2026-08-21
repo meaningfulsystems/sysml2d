@@ -87,6 +87,64 @@ class ExampleViewTests(unittest.TestCase):
                 self.assertIn("<svg", svg)
                 self.assertIn("<path", svg)
 
+    def test_ebike_review_bindings_locked_with_msml(self):
+        model = (ROOT / "examples/e-bike/e-bike.sysml").read_text(encoding="utf-8")
+        self.assertIn("part bms : BMS", model)
+        self.assertIn("part def BatteryPack", model)
+        self.assertIn("allocation allocateChargeToBms", model)
+        self.assertNotIn("lockBikeUseCase", model)
+        self.assertIn("accept cadencePedal", model)
+        self.assertNotIn("accept throttle", model.lower())
+        self.assertIn("Tour-mode scenario only", model)
+        self.assertIn("~8.3 Wh/km", model)
+        self.assertIn("Not Eco / PAS-1", model)
+        self.assertIn("within 50 ms", model)
+        self.assertIn("en15194DistanceRequirement", model)
+        self.assertIn("within 5 m after pedaling stops", model)
+        self.assertIn("within 2 m", model)
+        self.assertIn("no certified throttle", model)
+        self.assertIn("25 km/h", model)
+        self.assertIn("Rear geared hub. No regenerative braking.", model)
+        self.assertIn("Cadence PAS and display only. No throttle.", model)
+        self.assertIn("StVZO / ISO 6742", model)
+        self.assertNotIn("UN ECE R113.", model.replace("Not UN ECE R113.", ""))
+        self.assertIn("allocateSafetyToBrakes", model)
+        self.assertIn("allocateSafetyToController", model)
+        self.assertIn("allocateSafetyToSensors", model)
+        self.assertIn("allocateSafetyToBms", model)
+        for name in (
+            "frame",
+            "batteryPack",
+            "motorController",
+            "hubMotor",
+            "humanInterface",
+            "brakeSystem",
+            "cadenceSensor",
+        ):
+            self.assertIn(f"part {name} :", model)
+
+        intf = json.loads((ROOT / "examples/e-bike/e-bike-intf.json").read_text(encoding="utf-8"))
+        self.assertNotIn("ThrottleCommand", intf["nodes"])
+        self.assertFalse(any(edge.get("to") == "ThrottleCommand" for edge in intf["edges"]))
+
+        alloc = json.loads((ROOT / "examples/e-bike/e-bike-alloc.json").read_text(encoding="utf-8"))
+        safety_targets = {
+            edge["to"]
+            for edge in alloc["edges"]
+            if edge.get("from") == "rideSafetyRequirement"
+        }
+        self.assertEqual(safety_targets, {"brakeSystem", "motorController", "cadenceSensor", "bms"})
+        charge_edges = [edge for edge in alloc["edges"] if edge.get("model_ref") == "allocateChargeToBms"]
+        self.assertEqual(len(charge_edges), 1)
+        self.assertEqual(charge_edges[0]["to"], "bms")
+
+        bdd = json.loads((ROOT / "examples/e-bike/e-bike-bdd.json").read_text(encoding="utf-8"))
+        children = bdd["roots"][0]["children"]
+        hub = next(child for child in children if child["id"] == "hubMotor")
+        self.assertEqual(hub["label"], "Rear Geared Hub")
+        pack = next(child for child in children if child["id"] == "batteryPack")
+        self.assertEqual(pack["children"][0]["id"], "bms")
+
     def test_hop_overs_appear_on_crossing_generic_views(self):
         spec = {
             "kind": "PackageView",

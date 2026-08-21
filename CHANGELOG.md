@@ -20,7 +20,7 @@ All notable changes to SysMLD are documented here.
 - Connection labels on generic, action, and requirement views sit beside the line instead of on the centerline
 - Toaster, blender, and e-bike example artifacts regenerated from the composers
 - README / CONTRIBUTING test counts updated for the new routing and e-bike coverage
-- E-bike review: EPAC (no certified throttle), Tour-mode 500 Wh / 60 km bind, BMS inside BatteryPack, EN 15194 5 m / 2 m plus 50 ms inhibit, fail-silent allocated beyond brakes, `lockBikeUseCase` removed, rear geared hub, StVZO / ISO 6742 lighting
+- E-bike review: EPAC cadence PAS only (throttle removed from RideControl, HumanInterface, and RiderInterface), Tour-mode 500 Wh / 60 km bind, BMS inside BatteryPack, EN 15194 5 m / 2 m plus 50 ms inhibit, fail-silent allocated beyond brakes, `lockBikeUseCase` removed, rear geared hub (no regen), StVZO / ISO 6742 lighting
 
 ## [0.1.0] — 2026-05-22
 

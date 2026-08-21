@@ -15,7 +15,7 @@ Review bindings (do not treat a first-diagram slogan as truth):
 - Ride safety allocates to brakes **and** controller, cadence sensor, and BMS.
 - `lockBikeUseCase` is deleted (commercial, not EN 15194).
 - Lighting is StVZO / ISO 6742, not UN ECE R113.
-- `ThrottleCommand` remains as an id; it is not the certified EPAC control.
+- RideControl and `humanInterface` have no throttle. RiderInterface carries `PedalCadence` only. `ThrottleCommand` remains as an unused item id.
 
 ```bash
 sysmld definition      examples/e-bike/e-bike-bdd.json

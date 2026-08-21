@@ -50,8 +50,8 @@ package ElectricBike {
     }
     part def BMS;
     part def MotorController;
-    part def HubMotor;
-    part def HumanInterface;
+    part def HubMotor { doc /* Rear geared hub. No regenerative braking. */ }
+    part def HumanInterface { doc /* Cadence PAS and display only. No throttle. */ }
     part def BrakeSystem;
     part def CadenceSensor;
 
@@ -141,7 +141,7 @@ package ElectricBike {
     interface def DriveInterface;
     interface def BrakeInterface;
     item def PedalCadence;
-    item def ThrottleCommand;
+    item def ThrottleCommand { doc /* Unused by this EPAC. Not on RideControl or HumanInterface. */ }
     item def ElectricalEnergy;
     item def WheelTorque;
     item def BrakeInhibit;
