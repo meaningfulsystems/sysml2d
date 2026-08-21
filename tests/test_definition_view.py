@@ -78,6 +78,34 @@ class TreeComposerTests(unittest.TestCase):
         second_row_label = connections["conn-root-child-4"]["labels"][0]["position"]
         self.assertGreater(second_row_label["offset"], 0.9)
 
+    def test_later_wrap_routes_around_first_row_boxes(self):
+        doc = compose_tree({
+            "diagram": "around-tree",
+            "kind": "DefinitionView",
+            "name": "Around Tree",
+            "route_around_boxes": True,
+            "max_siblings_per_row": 2,
+            "default_w": 80,
+            "default_h": 40,
+            "rank_gap": 40,
+            "row_gap": 16,
+            "roots": [
+                {
+                    "id": "root",
+                    "children": [
+                        {"id": "left"},
+                        {"id": "mid"},
+                        {"id": "tail"},
+                    ],
+                }
+            ],
+        })
+        hits = _definition_box_hits(doc)
+        self.assertEqual(hits, [])
+        connections = {connection["id"]: connection for connection in doc["diagram"]["connections"]}
+        wrap = connections["conn-root-tail"]["route"]["waypoints"]
+        self.assertGreaterEqual(len(wrap), 2)
+
     def test_wrapped_rows_with_grandchildren_do_not_overlap(self):
         doc = compose_tree({
             "diagram": "stacked-tree",
@@ -170,6 +198,51 @@ class TreeComposerTests(unittest.TestCase):
                 doc = compose_tree(spec)
                 self.assertEqual(doc["diagram"]["kind"], "DefinitionView")
                 self.assertTrue(all(element["symbol"] == "part_definition" for element in doc["diagram"]["elements"]))
+
+
+def _definition_box_hits(doc):
+    elements = {element["id"]: element for element in doc["diagram"]["elements"]}
+    boxes = {element_id: element["layout"] for element_id, element in elements.items()}
+    hits = []
+    for connection in doc["diagram"]["connections"]:
+        source = connection["source"]
+        target = connection["target"]
+        points = [
+            _anchor(elements[source["element"]], source["anchor"]["side"]),
+            *[(point["x"], point["y"]) for point in connection["route"].get("waypoints", [])],
+            _anchor(elements[target["element"]], target["anchor"]["side"]),
+        ]
+        own = {source["element"], target["element"]}
+        for start, end in zip(points, points[1:]):
+            for box_id, box in boxes.items():
+                if box_id in own:
+                    continue
+                if _segment_hits(start, end, box):
+                    hits.append((connection["id"], box_id))
+    return hits
+
+
+def _anchor(element, side):
+    layout = element["layout"]
+    if side == "top":
+        return layout["x"] + layout["width"] / 2, layout["y"]
+    if side == "bottom":
+        return layout["x"] + layout["width"] / 2, layout["y"] + layout["height"]
+    if side == "left":
+        return layout["x"], layout["y"] + layout["height"] / 2
+    return layout["x"] + layout["width"], layout["y"] + layout["height"] / 2
+
+
+def _segment_hits(start, end, box):
+    x1, y1 = start
+    x2, y2 = end
+    left, right = box["x"], box["x"] + box["width"]
+    top, bottom = box["y"], box["y"] + box["height"]
+    if round(x1, 3) == round(x2, 3):
+        return left < x1 < right and max(y1, y2) > top and min(y1, y2) < bottom
+    if round(y1, 3) == round(y2, 3):
+        return top < y1 < bottom and max(x1, x2) > left and min(x1, x2) < right
+    return False
 
 
 if __name__ == "__main__":

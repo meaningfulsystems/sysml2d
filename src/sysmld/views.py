@@ -441,23 +441,37 @@ def _action_boxes(
     explicit_columns: Any = None,
     explicit_rows: Any = None,
 ) -> tuple[dict[str, tuple[float, float, float, float]], dict[int, float], dict[int, float], dict[str, int]]:
-    columns = _action_column_count(len(nids), explicit_columns, direction)
-    rows_per_column = _action_rows_per_column(len(nids), columns, explicit_rows)
     sizes = {
         node_id: _node_size({**nodes[node_id], "symbol": nodes[node_id].get("symbol", symbol_default)}, default_w, default_h)
         for node_id in nids
     }
+    ranked = bool(nids) and all("rank" in nodes[node_id] for node_id in nids)
     cell_positions: dict[str, tuple[int, int]] = {}
-    for index, node_id in enumerate(nids):
-        if direction in {"top-down", "bottom-up"}:
-            col = index // rows_per_column
-            row_in_sequence = index % rows_per_column
-            row = row_in_sequence if col % 2 == 0 else rows_per_column - 1 - row_in_sequence
-        else:
-            row = index // columns
-            col_in_sequence = index % columns
-            col = col_in_sequence if row % 2 == 0 else columns - 1 - col_in_sequence
-        cell_positions[node_id] = (row, col)
+    rank_groups: dict[int, list[str]] | None = None
+    if ranked:
+        rank_groups = defaultdict(list)
+        for node_id in nids:
+            rank_groups[int(nodes[node_id]["rank"])].append(node_id)
+        for group in rank_groups.values():
+            group.sort(key=lambda node_id: (int(nodes[node_id].get("order", 0)), node_id))
+        ranks = sorted(rank_groups)
+        columns = max(len(rank_groups[rank]) for rank in ranks)
+        for row, rank in enumerate(ranks):
+            for col, node_id in enumerate(rank_groups[rank]):
+                cell_positions[node_id] = (row, col)
+    else:
+        columns = _action_column_count(len(nids), explicit_columns, direction)
+        rows_per_column = _action_rows_per_column(len(nids), columns, explicit_rows)
+        for index, node_id in enumerate(nids):
+            if direction in {"top-down", "bottom-up"}:
+                col = index // rows_per_column
+                row_in_sequence = index % rows_per_column
+                row = row_in_sequence if col % 2 == 0 else rows_per_column - 1 - row_in_sequence
+            else:
+                row = index // columns
+                col_in_sequence = index % columns
+                col = col_in_sequence if row % 2 == 0 else columns - 1 - col_in_sequence
+            cell_positions[node_id] = (row, col)
 
     row_count = max((row for row, _col in cell_positions.values()), default=0) + 1
     col_widths = [0] * columns
@@ -480,11 +494,25 @@ def _action_boxes(
         cursor_y += height + row_gap
 
     boxes: dict[str, tuple[float, float, float, float]] = {}
-    for node_id, (row, col) in cell_positions.items():
-        width, height = sizes[node_id]
-        x = x_by_col[col] + (col_widths[col] - width) / 2
-        y = y_by_row[row] + (row_heights[row] - height) / 2
-        boxes[node_id] = (_clean(x), _clean(y), width, height)
+    total_span = (x_by_col[-1] + col_widths[-1]) if columns else 0
+    if rank_groups is not None:
+        ranks = sorted(rank_groups)
+        for row, rank in enumerate(ranks):
+            group = rank_groups[rank]
+            used = len(group)
+            group_width = x_by_col[used - 1] + col_widths[used - 1] if used else 0
+            offset = (total_span - group_width) / 2
+            for col, node_id in enumerate(group):
+                width, height = sizes[node_id]
+                x = offset + x_by_col[col] + (col_widths[col] - width) / 2
+                y = y_by_row[row] + (row_heights[row] - height) / 2
+                boxes[node_id] = (_clean(x), _clean(y), width, height)
+    else:
+        for node_id, (row, col) in cell_positions.items():
+            width, height = sizes[node_id]
+            x = x_by_col[col] + (col_widths[col] - width) / 2
+            y = y_by_row[row] + (row_heights[row] - height) / 2
+            boxes[node_id] = (_clean(x), _clean(y), width, height)
 
     row_bottoms = {
         row: y_by_row[row] + row_heights[row]
@@ -521,6 +549,19 @@ def _action_edge_connection(
         waypoints = edge.get("waypoints")
         if waypoints is None:
             waypoints = _orthogonal_waypoints(source_point, target_point, source_side, target_side)
+
+    source_point = _anchor_point(boxes[src], source_side, float(edge.get("source_offset", 0.5)))
+    target_point = _anchor_point(boxes[tgt], target_side, float(edge.get("target_offset", 0.5)))
+    points = [source_point, *[(point["x"], point["y"]) for point in waypoints], target_point]
+    if path_crosses_boxes(points, boxes, {src, tgt}):
+        avoided = orthogonal_path_avoiding_boxes(
+            source_point,
+            target_point,
+            boxes,
+            ignore={src, tgt},
+            preferred=points,
+        )
+        waypoints = _clean_waypoints(avoided)
 
     labels = []
     if edge.get("label", ""):

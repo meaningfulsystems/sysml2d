@@ -1,109 +1,109 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2010" height="564" viewBox="0 0 2010 564">
+<svg xmlns="http://www.w3.org/2000/svg" width="1856" height="694" viewBox="0 0 1856 694">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="2010" height="564" fill="#FFFFFF"/>
-<rect x="2" y="38" width="2006" height="522" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1856" height="694" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1852" height="652" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 296 L 312 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[def.mb] CSM Definition Tree [CSM]</text>
-<rect x="2" y="38" width="2006" height="524" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1852" height="654" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="CSM" x="933" y="40" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1003" y="66">CSM</text>
-<rect id="CM" x="538" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="608" y="196">CM</text>
-<rect id="SCS" x="40" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="110" y="326">SCS</text>
-<rect id="AGC_CM" x="198" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="268" y="326">AGC_CM</text>
-<rect id="IMU" x="356" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="426" y="326">IMU</text>
-<rect id="DSKY" x="514" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="584" y="326">DSKY</text>
-<rect id="RCS" x="775" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="845" y="326">RCS</text>
-<rect id="systemA" x="672" y="430" width="164" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="754" y="456">systemA 6×93 lbf</text>
-<rect id="systemB" x="854" y="430" width="164" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="936" y="456">systemB 6×93 lbf</text>
-<rect id="ECLSS" x="1036" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1106" y="326">ECLSS</text>
-<rect id="AgZn1" x="222" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="292" y="406">AgZn1</text>
-<rect id="charger" x="380" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="450" y="406">charger</text>
-<rect id="inverter1" x="538" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="608" y="406">inverter1</text>
-<rect id="probe" x="696" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="766" y="406">probe</text>
-<rect id="ringLatches" x="854" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="924" y="406">ringLatches</text>
-<rect id="SM" x="1510" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1580" y="196">SM</text>
-<rect id="SPS" x="1273" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1343" y="326">SPS</text>
-<rect id="FC1" x="1431" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1501" y="326">FC1</text>
-<rect id="FC2" x="1589" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1659" y="326">FC2</text>
-<rect id="FC3" x="1747" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1817" y="326">FC3</text>
-<rect id="quadA" x="1352" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1422" y="406">quadA 100 lbf</text>
-<rect id="quadB" x="1510" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1580" y="406">quadB 100 lbf</text>
-<rect id="quadC" x="1668" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1738" y="406">quadC 100 lbf</text>
-<rect id="quadD" x="1826" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1896" y="406">quadD 100 lbf</text>
-<path d="M 1003,92 L 1003,131 L 608,131 L 608,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1003,92 L 1003,131 L 1580,131 L 1580,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 608,222 L 608,261 L 110,261 L 110,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 608,222 L 608,261 L 268,261 L 268,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 608,222 L 608,261 L 426,261 L 426,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 608,222 L 608,261 L 584,261 L 584,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 608,222 L 608,261 L 845,261 L 845,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 608,222 L 608,261 L 1106,261 L 1106,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 608,222 L 608,352 L 292,352 L 292,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 608,222 L 608,352 L 450,352 L 450,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 608,222 L 608,352 L 608,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 608,222 L 608,352 L 766,352 L 766,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 608,222 L 608,352 L 924,352 L 924,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 845,352 L 845,391 L 754,391 L 754,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 845,352 L 845,391 L 936,391 L 936,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1580,222 L 1580,261 L 1343,261 L 1343,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1580,222 L 1580,261 L 1501,261 L 1501,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1580,222 L 1580,261 L 1659,261 L 1659,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1580,222 L 1580,261 L 1817,261 L 1817,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1580,222 L 1580,352 L 1422,352 L 1422,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1580,222 L 1580,352 L 1580,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1580,222 L 1580,352 L 1738,352 L 1738,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1580,222 L 1580,352 L 1896,352 L 1896,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" x="618" y="158.98">1</text>
-<text class="small" x="1590" y="158.98">1</text>
-<text class="small" x="120" y="288.98">1</text>
-<text class="small" x="278" y="288.98">1</text>
-<text class="small" x="436" y="288.98">1</text>
-<text class="small" x="594" y="288.98">1</text>
-<text class="small" x="855" y="288.98">1</text>
-<text class="small" x="1116" y="288.98">1</text>
-<text class="small" x="302" y="374.32">1</text>
-<text class="small" x="460" y="374.32">1</text>
-<text class="small" x="618" y="374.32">1</text>
-<text class="small" x="776" y="374.32">1</text>
-<text class="small" x="934" y="374.32">1</text>
-<text class="small" x="764" y="418.98">1</text>
-<text class="small" x="946" y="418.98">1</text>
-<text class="small" x="1353" y="288.98">1</text>
-<text class="small" x="1511" y="288.98">1</text>
-<text class="small" x="1669" y="288.98">1</text>
-<text class="small" x="1827" y="288.98">1</text>
-<text class="small" x="1432" y="374.32">1</text>
-<text class="small" x="1590" y="374.32">1</text>
-<text class="small" x="1748" y="374.32">1</text>
-<text class="small" x="1906" y="374.32">1</text>
+<rect id="CSM" x="858" y="40" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="928" y="66">CSM</text>
+<rect id="CM" x="463" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="533" y="196">CM</text>
+<rect id="SCS" x="68" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="138" y="326">SCS</text>
+<rect id="AGC_CM" x="226" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="296" y="326">AGC_CM</text>
+<rect id="IMU" x="384" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="454" y="326">IMU</text>
+<rect id="DSKY" x="542" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="612" y="326">DSKY</text>
+<rect id="ECLSS" x="700" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="770" y="326">ECLSS</text>
+<rect id="AgZn1" x="858" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="928" y="326">AgZn1</text>
+<rect id="charger" x="44" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="114" y="456">charger</text>
+<rect id="inverter1" x="202" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="272" y="456">inverter1</text>
+<rect id="probe" x="360" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="430" y="456">probe</text>
+<rect id="ringLatches" x="518" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="588" y="456">ringLatches</text>
+<rect id="RCS" x="779" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="849" y="456">RCS</text>
+<rect id="systemA" x="676" y="560" width="164" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="758" y="586">systemA 6×93 lbf</text>
+<rect id="systemB" x="858" y="560" width="164" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="940" y="586">systemB 6×93 lbf</text>
+<rect id="SM" x="1356" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1426" y="196">SM</text>
+<rect id="SPS" x="1119" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1189" y="326">SPS</text>
+<rect id="FC1" x="1277" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1347" y="326">FC1</text>
+<rect id="FC2" x="1435" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1505" y="326">FC2</text>
+<rect id="FC3" x="1593" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1663" y="326">FC3</text>
+<rect id="quadA" x="1198" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1268" y="406">quadA 100 lbf</text>
+<rect id="quadB" x="1356" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1426" y="406">quadB 100 lbf</text>
+<rect id="quadC" x="1514" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1584" y="406">quadC 100 lbf</text>
+<rect id="quadD" x="1672" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1742" y="406">quadD 100 lbf</text>
+<path d="M 928,92 L 928,131 L 533,131 L 533,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 928,92 L 928,131 L 1426,131 L 1426,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 533,222 L 533,261 L 138,261 L 138,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 533,222 L 533,261 L 296,261 L 296,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 533,222 L 533,261 L 454,261 L 454,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 533,222 L 533,261 L 612,261 L 612,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 533,222 L 533,261 L 770,261 L 770,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 533,222 L 533,261 L 928,261 L 928,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 533,222 L 533,250 L 40,250 L 40,402 L 114,402 L 114,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 533,222 L 533,250 L 40,250 L 40,402 L 272,402 L 272,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 533,222 L 533,250 L 40,250 L 40,402 L 430,402 L 430,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 533,222 L 533,250 L 1026,250 L 1026,402 L 588,402 L 588,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 533,222 L 533,250 L 1026,250 L 1026,402 L 849,402 L 849,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 849,482 L 849,521 L 758,521 L 758,560" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 849,482 L 849,521 L 940,521 L 940,560" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1426,222 L 1426,261 L 1189,261 L 1189,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1426,222 L 1426,261 L 1347,261 L 1347,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1426,222 L 1426,261 L 1505,261 L 1505,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1426,222 L 1426,261 L 1663,261 L 1663,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1426,222 L 1426,250 L 1091,250 L 1091,352 L 1268,352 L 1268,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1426,222 L 1426,250 L 1091,250 L 1091,352 L 1426,352 L 1426,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1426,222 L 1426,250 L 1761,250 L 1761,352 L 1584,352 L 1584,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1426,222 L 1426,250 L 1761,250 L 1761,352 L 1742,352 L 1742,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="543" y="158.98">1</text>
+<text class="small" x="1436" y="158.98">1</text>
+<text class="small" x="148" y="288.98">1</text>
+<text class="small" x="306" y="288.98">1</text>
+<text class="small" x="464" y="288.98">1</text>
+<text class="small" x="622" y="288.98">1</text>
+<text class="small" x="780" y="288.98">1</text>
+<text class="small" x="938" y="288.98">1</text>
+<text class="small" x="124" y="424.32">1</text>
+<text class="small" x="282" y="424.32">1</text>
+<text class="small" x="440" y="424.32">1</text>
+<text class="small" x="598" y="424.32">1</text>
+<text class="small" x="859" y="424.32">1</text>
+<text class="small" x="768" y="548.98">1</text>
+<text class="small" x="950" y="548.98">1</text>
+<text class="small" x="1199" y="288.98">1</text>
+<text class="small" x="1357" y="288.98">1</text>
+<text class="small" x="1515" y="288.98">1</text>
+<text class="small" x="1673" y="288.98">1</text>
+<text class="small" x="1278" y="374.32">1</text>
+<text class="small" x="1436" y="374.32">1</text>
+<text class="small" x="1594" y="374.32">1</text>
+<text class="small" x="1752" y="374.32">1</text>
 </g>
 </svg>

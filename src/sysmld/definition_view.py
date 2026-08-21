@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from .routing import orthogonal_path_avoiding_boxes, path_crosses_boxes
+
 
 CANVAS_MARGIN = 40
 DEFAULT_NODE_W = 170
@@ -82,10 +84,13 @@ def compose_tree(spec: dict[str, Any]) -> dict[str, Any]:
             for node_id, (x, y, w, h) in boxes.items()
         }
 
-    max_x = max(x + w for x, _y, w, _h in boxes.values())
-    max_y = max(y + h for _x, y, _w, h in boxes.values())
-    canvas_w = max_x + CANVAS_MARGIN
-    canvas_h = max_y + CANVAS_MARGIN
+    avoid_boxes = bool(spec.get("route_around_boxes"))
+    connections = []
+    for parent in node_order:
+        for child in parent.children:
+            connections.append(_connection(parent, child, boxes, direction, avoid_boxes=avoid_boxes))
+
+    boxes, connections, canvas_w, canvas_h = _fit_canvas(boxes, connections)
 
     elements = []
     for node in node_order:
@@ -99,11 +104,6 @@ def compose_tree(spec: dict[str, Any]) -> dict[str, Any]:
             "compartments": {"attributes": False, "ports": False, "actions": False},
             "style": node.style,
         })
-
-    connections = []
-    for parent in node_order:
-        for child in parent.children:
-            connections.append(_connection(parent, child, boxes, direction))
 
     diagram_id = spec.get("diagram", "definition-tree")
     doc: dict[str, Any] = {
@@ -371,6 +371,7 @@ def _connection(
     child: TreeNode,
     boxes: dict[str, tuple[int, int, int, int]],
     direction: str,
+    avoid_boxes: bool = False,
 ) -> dict[str, Any]:
     source_side, target_side = {
         "top-down": ("bottom", "top"),
@@ -381,6 +382,7 @@ def _connection(
     source_point = _anchor_point(boxes[parent.id], source_side)
     target_point = _anchor_point(boxes[child.id], target_side)
     primary_target = _primary_child_anchor(parent, boxes, target_side, direction)
+    first_row_boxes = _first_row_child_boxes(parent, boxes, primary_target, direction)
     waypoints = _tree_waypoints(
         source_point,
         target_point,
@@ -388,7 +390,20 @@ def _connection(
         primary_target,
         child_box=boxes[child.id],
         parent_box=boxes[parent.id],
+        first_row_boxes=first_row_boxes if avoid_boxes else None,
     )
+    if avoid_boxes:
+        points = [source_point, *[(point["x"], point["y"]) for point in waypoints], target_point]
+        ignore = {parent.id, child.id}
+        if path_crosses_boxes(points, boxes, ignore):
+            avoided = orthogonal_path_avoiding_boxes(
+                source_point,
+                target_point,
+                boxes,
+                ignore=ignore,
+                preferred=points,
+            )
+            waypoints = _clean_waypoints(avoided)
     labels = []
     if child.multiplicity:
         labels.append({
@@ -451,6 +466,67 @@ def _primary_child_anchor(
     return max(anchors, key=lambda point: point[0])
 
 
+def _first_row_child_boxes(
+    parent: TreeNode,
+    boxes: dict[str, tuple[int, int, int, int]],
+    primary_target: tuple[float, float] | None,
+    direction: str,
+) -> list[tuple[int, int, int, int]]:
+    if primary_target is None:
+        return []
+    found: list[tuple[int, int, int, int]] = []
+    for child in parent.children:
+        if child.id not in boxes:
+            continue
+        anchor = _anchor_point(
+            boxes[child.id],
+            "top" if direction == "top-down" else
+            "bottom" if direction == "bottom-up" else
+            "left" if direction == "left-right" else
+            "right",
+        )
+        if direction in {"top-down", "bottom-up"}:
+            if abs(anchor[1] - primary_target[1]) <= 20:
+                found.append(boxes[child.id])
+        elif abs(anchor[0] - primary_target[0]) <= 20:
+            found.append(boxes[child.id])
+    return found
+
+
+def _around_first_row_waypoints(
+    source: tuple[float, float],
+    target: tuple[float, float],
+    direction: str,
+    first_row_boxes: list[tuple[int, int, int, int]],
+    stub: float,
+    bus: float,
+) -> list[dict[str, float]] | None:
+    if not first_row_boxes:
+        return None
+    gutter = 28
+    if direction in {"top-down", "bottom-up"}:
+        left = min(box[0] for box in first_row_boxes) - gutter
+        right = max(box[0] + box[2] for box in first_row_boxes) + gutter
+        side_x = left if target[0] <= source[0] else right
+        mid_y = source[1] + stub if direction == "top-down" else source[1] - stub
+        return _clean_waypoints([
+            (source[0], mid_y),
+            (side_x, mid_y),
+            (side_x, bus),
+            (target[0], bus),
+        ])
+    top = min(box[1] for box in first_row_boxes) - gutter
+    bottom = max(box[1] + box[3] for box in first_row_boxes) + gutter
+    side_y = top if target[1] <= source[1] else bottom
+    mid_x = source[0] + stub if direction == "left-right" else source[0] - stub
+    return _clean_waypoints([
+        (mid_x, source[1]),
+        (mid_x, side_y),
+        (bus, side_y),
+        (bus, target[1]),
+    ])
+
+
 def _tree_waypoints(
     source: tuple[float, float],
     target: tuple[float, float],
@@ -458,6 +534,7 @@ def _tree_waypoints(
     primary_target: tuple[float, float] | None = None,
     child_box: tuple[int, int, int, int] | None = None,
     parent_box: tuple[int, int, int, int] | None = None,
+    first_row_boxes: list[tuple[int, int, int, int]] | None = None,
 ) -> list[dict[str, float]]:
     if direction in {"top-down", "bottom-up"}:
         first_row = primary_target or target
@@ -467,6 +544,11 @@ def _tree_waypoints(
             gap = (target[1] - source[1]) if direction == "top-down" else (source[1] - target[1])
             stub = min(28, max(16, abs(gap) * 0.2))
             bus_y = target[1] - stub if direction == "top-down" else target[1] + stub
+            around = _around_first_row_waypoints(
+                source, target, direction, first_row_boxes or [], stub, bus_y
+            )
+            if around:
+                return around
             stacked_later = abs(target[1] - first_row[1]) > 100
             if stacked_later and parent_box is not None:
                 px, _py, pw, _ph = parent_box
@@ -489,9 +571,45 @@ def _tree_waypoints(
         gap = (target[0] - source[0]) if direction == "left-right" else (source[0] - target[0])
         stub = min(28, max(16, abs(gap) * 0.2))
         bus_x = target[0] - stub if direction == "left-right" else target[0] + stub
+        around = _around_first_row_waypoints(
+            source, target, direction, first_row_boxes or [], stub, bus_x
+        )
+        if around:
+            return around
     if source[1] == target[1]:
         return [] if not later_row and target[0] == first_row[0] else _clean_waypoints([(bus_x, source[1])])
     return _clean_waypoints([(bus_x, source[1]), (bus_x, target[1])])
+
+
+def _fit_canvas(
+    boxes: dict[str, tuple[int, int, int, int]],
+    connections: list[dict[str, Any]],
+) -> tuple[dict[str, tuple[int, int, int, int]], list[dict[str, Any]], float, float]:
+    xs: list[float] = []
+    ys: list[float] = []
+    for x, y, width, height in boxes.values():
+        xs.extend((x, x + width))
+        ys.extend((y, y + height))
+    for connection in connections:
+        for point in connection["route"]["waypoints"]:
+            xs.append(float(point["x"]))
+            ys.append(float(point["y"]))
+    min_x = min(xs)
+    min_y = min(ys)
+    shift_x = CANVAS_MARGIN - min_x if min_x < CANVAS_MARGIN else 0
+    shift_y = CANVAS_MARGIN - min_y if min_y < CANVAS_MARGIN else 0
+    if shift_x or shift_y:
+        boxes = {
+            node_id: (round(x + shift_x), round(y + shift_y), width, height)
+            for node_id, (x, y, width, height) in boxes.items()
+        }
+        for connection in connections:
+            for point in connection["route"]["waypoints"]:
+                point["x"] = _clean_number(point["x"] + shift_x)
+                point["y"] = _clean_number(point["y"] + shift_y)
+        xs = [value + shift_x for value in xs]
+        ys = [value + shift_y for value in ys]
+    return boxes, connections, max(xs) + CANVAS_MARGIN, max(ys) + CANVAS_MARGIN
 
 
 def _clean_waypoints(points: list[tuple[float, float]]) -> list[dict[str, float]]:

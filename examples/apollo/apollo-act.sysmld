@@ -19,8 +19,8 @@
     "kind": "ActionView",
     "name": "A11 Powered Descent (P63/P64/P66)",
     "canvas": {
-      "width": 311,
-      "height": 854,
+      "width": 551,
+      "height": 734,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -31,7 +31,7 @@
         "id": "start",
         "symbol": "initial_state",
         "layout": {
-          "x": 145.5,
+          "x": 265.5,
           "y": 72,
           "width": 20,
           "height": 20,
@@ -44,7 +44,7 @@
         "id": "p63Braking",
         "symbol": "action",
         "layout": {
-          "x": 80.5,
+          "x": 200.5,
           "y": 156,
           "width": 150,
           "height": 56,
@@ -58,7 +58,7 @@
         "id": "p64Approach",
         "symbol": "action",
         "layout": {
-          "x": 80.5,
+          "x": 200.5,
           "y": 276,
           "width": 150,
           "height": 56,
@@ -72,7 +72,7 @@
         "id": "abort",
         "symbol": "decision_node",
         "layout": {
-          "x": 117.5,
+          "x": 237.5,
           "y": 396,
           "width": 76,
           "height": 58,
@@ -99,8 +99,8 @@
         "id": "p70Abort",
         "symbol": "action",
         "layout": {
-          "x": 80.5,
-          "y": 638,
+          "x": 329,
+          "y": 518,
           "width": 150,
           "height": 56,
           "z": 10
@@ -113,8 +113,8 @@
         "id": "done",
         "symbol": "activity_final_node",
         "layout": {
-          "x": 143.5,
-          "y": 758,
+          "x": 263.5,
+          "y": 638,
           "width": 24,
           "height": 24,
           "z": 10
@@ -201,7 +201,7 @@
         "source": {
           "element": "abort",
           "anchor": {
-            "side": "bottom",
+            "side": "left",
             "offset": 0.5
           }
         },
@@ -214,7 +214,12 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 155.5,
+              "y": 425
+            }
+          ]
         },
         "labels": [
           {
@@ -232,7 +237,7 @@
         "source": {
           "element": "abort",
           "anchor": {
-            "side": "bottom",
+            "side": "right",
             "offset": 0.5
           }
         },
@@ -245,7 +250,12 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 404,
+              "y": 425
+            }
+          ]
         },
         "labels": [
           {
@@ -263,20 +273,29 @@
         "source": {
           "element": "p66Landing",
           "anchor": {
-            "side": "bottom",
+            "side": "right",
             "offset": 0.5
           }
         },
         "target": {
           "element": "done",
           "anchor": {
-            "side": "top",
+            "side": "left",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 251.25,
+              "y": 546
+            },
+            {
+              "x": 251.25,
+              "y": 650
+            }
+          ]
         },
         "labels": [],
         "style": "connector.control_flow",
@@ -287,20 +306,29 @@
         "source": {
           "element": "p70Abort",
           "anchor": {
-            "side": "bottom",
+            "side": "left",
             "offset": 0.5
           }
         },
         "target": {
           "element": "done",
           "anchor": {
-            "side": "top",
+            "side": "right",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 308.25,
+              "y": 546
+            },
+            {
+              "x": 308.25,
+              "y": 650
+            }
+          ]
         },
         "labels": [],
         "style": "connector.control_flow",

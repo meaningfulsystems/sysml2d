@@ -1,93 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1109" height="824" viewBox="0 0 1109 824">
+<svg xmlns="http://www.w3.org/2000/svg" width="1157" height="824" viewBox="0 0 1157 824">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1109" height="824" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1105" height="782" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1157" height="824" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1153" height="782" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 280 L 296 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[def.mb] LM Definition Tree [LM]</text>
-<rect x="2" y="38" width="1105" height="784" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1153" height="784" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="LM" x="443" y="40" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="513" y="66">LM</text>
-<rect id="descent" x="198" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="268" y="196">descent</text>
-<rect id="DPS" x="40" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="110" y="326">DPS</text>
-<rect id="AgZn1" x="198" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="268" y="326">AgZn1</text>
-<rect id="AgZn2" x="356" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="426" y="326">AgZn2</text>
-<rect id="AgZn3" x="119" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="189" y="406">AgZn3</text>
-<rect id="AgZn4" x="277" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="347" y="406">AgZn4</text>
-<rect id="ECA" x="435" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="505" y="406">ECA</text>
-<rect id="landingRadar" x="198" y="460" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="268" y="486">landingRadar</text>
-<rect id="ascent" x="759" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="829" y="196">ascent</text>
-<rect id="PNGS" x="601" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="671" y="326">PNGS</text>
-<rect id="AGC_LM" x="759" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="829" y="326">AGC_LM</text>
-<rect id="APS" x="917" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="987" y="326">APS</text>
-<rect id="RCS" x="593" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="663" y="456">RCS 100 lbf</text>
-<rect id="rendezvousRadar" x="751" y="430" width="156" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="829" y="456">rendezvousRadar</text>
-<rect id="drogue" x="925" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="995" y="456">drogue</text>
-<rect id="AGS" x="759" y="560" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="829" y="586">AGS</text>
-<rect id="AEA" x="601" y="690" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="671" y="716">AEA</text>
-<rect id="ASA" x="759" y="690" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="829" y="716">ASA</text>
-<rect id="DEDA" x="917" y="690" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="987" y="716">DEDA</text>
-<path d="M 513,92 L 513,131 L 268,131 L 268,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 513,92 L 513,131 L 829,131 L 829,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 268,222 L 268,261 L 110,261 L 110,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 268,222 L 268,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 268,222 L 268,261 L 426,261 L 426,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 268,222 L 268,352 L 189,352 L 189,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 268,222 L 268,352 L 347,352 L 347,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 268,222 L 268,352 L 505,352 L 505,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 268,222 L 268,250 L 162,250 L 162,254 A 7 7 0 0 1 162,268 L 162,432 L 268,432 L 268,460" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 829,222 L 829,261 L 671,261 L 671,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 829,222 L 829,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 829,222 L 829,261 L 987,261 L 987,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 829,222 L 829,250 L 723,250 L 723,254 A 7 7 0 0 1 723,268 L 723,402 L 663,402 L 663,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 829,222 L 829,250 L 723,250 L 723,254 A 7 7 0 0 1 723,268 L 723,402 L 829,402 L 829,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 829,222 L 829,250 L 935,250 L 935,254 A 7 7 0 0 1 935,268 L 935,402 L 995,402 L 995,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 829,222 L 829,250 L 723,250 L 723,254 A 7 7 0 0 1 723,268 L 723,532 L 829,532 L 829,560" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 829,612 L 829,651 L 671,651 L 671,690" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 829,612 L 829,690" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 829,612 L 829,651 L 987,651 L 987,690" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" x="278" y="158.98">1</text>
-<text class="small" x="839" y="158.98">1</text>
-<text class="small" x="120" y="288.98">1</text>
-<text class="small" x="278" y="281.96">1</text>
-<text class="small" x="436" y="288.98">1</text>
-<text class="small" x="199" y="374.32">1</text>
-<text class="small" x="357" y="374.32">1</text>
-<text class="small" x="515" y="374.32">1</text>
-<text class="small" x="278" y="454.32">1</text>
-<text class="small" x="681" y="288.98">1</text>
-<text class="small" x="839" y="281.96">1</text>
-<text class="small" x="997" y="288.98">1</text>
-<text class="small" x="673" y="424.32">1</text>
-<text class="small" x="839" y="424.32">1</text>
-<text class="small" x="1005" y="424.32">1</text>
-<text class="small" x="839" y="554.32">1</text>
-<text class="small" x="681" y="678.98">1</text>
-<text class="small" x="839" y="671.96">1</text>
-<text class="small" x="997" y="678.98">1</text>
+<rect id="LM" x="471" y="40" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="541" y="66">LM</text>
+<rect id="descent" x="226" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="296" y="196">descent</text>
+<rect id="DPS" x="68" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="138" y="326">DPS</text>
+<rect id="AgZn1" x="226" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="296" y="326">AgZn1</text>
+<rect id="AgZn2" x="384" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="454" y="326">AgZn2</text>
+<rect id="AgZn3" x="147" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="217" y="406">AgZn3</text>
+<rect id="AgZn4" x="305" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="375" y="406">AgZn4</text>
+<rect id="ECA" x="463" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="533" y="406">ECA</text>
+<rect id="landingRadar" x="226" y="460" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="296" y="486">landingRadar</text>
+<rect id="ascent" x="787" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="857" y="196">ascent</text>
+<rect id="PNGS" x="629" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="699" y="326">PNGS</text>
+<rect id="AGC_LM" x="787" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="857" y="326">AGC_LM</text>
+<rect id="APS" x="945" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1015" y="326">APS</text>
+<rect id="RCS" x="621" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="691" y="456">RCS 100 lbf</text>
+<rect id="rendezvousRadar" x="779" y="430" width="156" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="857" y="456">rendezvousRadar</text>
+<rect id="drogue" x="953" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1023" y="456">drogue</text>
+<rect id="AGS" x="787" y="560" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="857" y="586">AGS</text>
+<rect id="AEA" x="629" y="690" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="699" y="716">AEA</text>
+<rect id="ASA" x="787" y="690" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="857" y="716">ASA</text>
+<rect id="DEDA" x="945" y="690" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1015" y="716">DEDA</text>
+<path d="M 541,92 L 541,131 L 296,131 L 296,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 541,92 L 541,131 L 857,131 L 857,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 296,222 L 296,261 L 138,261 L 138,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 296,222 L 296,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 296,222 L 296,261 L 454,261 L 454,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 296,222 L 296,250 L 40,250 L 40,352 L 217,352 L 217,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 296,222 L 296,250 L 552,250 L 552,352 L 375,352 L 375,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 296,222 L 296,250 L 552,250 L 552,352 L 533,352 L 533,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 296,222 L 296,250 L 40,250 L 40,432 L 296,432 L 296,460" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 857,222 L 857,261 L 699,261 L 699,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 857,222 L 857,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 857,222 L 857,261 L 1015,261 L 1015,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 857,222 L 857,284 L 785,284 L 785,368 L 763,368 L 763,430 L 691,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 857,222 L 857,284 L 785,284 L 785,430 L 857,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 857,222 L 857,250 L 1113,250 L 1113,402 L 1023,402 L 1023,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 857,222 L 857,284 L 785,284 L 785,368 L 777,368 L 777,498 L 785,498 L 785,560 L 857,560" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 857,612 L 857,651 L 699,651 L 699,690" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 857,612 L 857,690" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 857,612 L 857,651 L 1015,651 L 1015,690" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="306" y="158.98">1</text>
+<text class="small" x="867" y="158.98">1</text>
+<text class="small" x="148" y="288.98">1</text>
+<text class="small" x="306" y="281.96">1</text>
+<text class="small" x="464" y="288.98">1</text>
+<text class="small" x="227" y="374.32">1</text>
+<text class="small" x="385" y="374.32">1</text>
+<text class="small" x="543" y="374.32">1</text>
+<text class="small" x="306" y="454.32">1</text>
+<text class="small" x="709" y="288.98">1</text>
+<text class="small" x="867" y="281.96">1</text>
+<text class="small" x="1025" y="288.98">1</text>
+<text class="small" x="705.32" y="426">1</text>
+<text class="small" x="862.68" y="426">1</text>
+<text class="small" x="1033" y="424.32">1</text>
+<text class="small" x="862.68" y="556">1</text>
+<text class="small" x="709" y="678.98">1</text>
+<text class="small" x="867" y="671.96">1</text>
+<text class="small" x="1025" y="678.98">1</text>
 </g>
 </svg>

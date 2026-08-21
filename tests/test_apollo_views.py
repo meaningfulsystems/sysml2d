@@ -179,6 +179,41 @@ class ApolloViewTests(unittest.TestCase):
             with self.subTest(name=intent.name):
                 self.assertEqual(_route_box_hits(doc), [])
 
+    def test_apollo_wrap_and_control_routes_do_not_cross_boxes(self):
+        from sysmld.definition_view import compose_tree
+        from sysmld.views import action
+        from tests.test_action_view import _route_box_hits as action_hits
+
+        for name in ("apollo-bdd.json", "apollo-bdd-lm.json", "apollo-bdd-csm.json"):
+            spec = json.loads((APOLLO / name).read_text(encoding="utf-8"))
+            doc = compose_tree(spec)
+            canvas = doc["diagram"]["canvas"]
+            with self.subTest(name=name):
+                self.assertEqual(_definition_route_box_hits(doc), [])
+                self.assertLess(canvas["width"], 2800)
+                self.assertLess(canvas["height"], 2000)
+
+        csm = compose_tree(json.loads((APOLLO / "apollo-bdd-csm.json").read_text(encoding="utf-8")))
+        boxes = {element["id"]: element["layout"] for element in csm["diagram"]["elements"]}
+        self.assertGreater(boxes["RCS"]["y"], boxes["DSKY"]["y"] + boxes["DSKY"]["height"])
+        self.assertGreater(boxes["systemA"]["y"], boxes["RCS"]["y"] + boxes["RCS"]["height"] - 1)
+        for grandchild in ("systemA", "systemB"):
+            for other in ("probe", "ringLatches", "charger", "inverter1"):
+                self.assertFalse(
+                    _layouts_overlap(boxes[grandchild], boxes[other]),
+                    f"{grandchild} overlaps {other}",
+                )
+
+        act = action(json.loads((APOLLO / "apollo-act.json").read_text(encoding="utf-8")))
+        self.assertEqual(action_hits(act), [])
+        act_boxes = {element["id"]: element["layout"] for element in act["diagram"]["elements"]}
+        self.assertLess(act["diagram"]["canvas"]["width"], 1200)
+        self.assertAlmostEqual(act_boxes["p66Landing"]["y"], act_boxes["p70Abort"]["y"], delta=1)
+        self.assertLess(
+            act_boxes["p66Landing"]["x"] + act_boxes["p66Landing"]["width"],
+            act_boxes["p70Abort"]["x"],
+        )
+
     def test_apollo_locked_msml_names(self):
         text = (APOLLO / "apollo.sysml").read_text(encoding="utf-8")
         for token in LOCKED:
@@ -399,6 +434,50 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("landingRadar", {child["id"] for child in descent_node["children"]})
         self.assertNotIn("landingRadar", {child["id"] for child in ascent_node["children"]})
         self.assertIn("rendezvousRadar", {child["id"] for child in ascent_node["children"]})
+
+
+def _definition_route_box_hits(doc: dict) -> list[tuple[str, str]]:
+    elements = {element["id"]: element for element in doc["diagram"]["elements"]}
+    boxes = {element_id: element["layout"] for element_id, element in elements.items()}
+    hits: list[tuple[str, str]] = []
+    for connection in doc["diagram"]["connections"]:
+        source = connection["source"]
+        target = connection["target"]
+        points = [
+            _element_anchor(elements[source["element"]], source["anchor"]),
+            *[(point["x"], point["y"]) for point in connection["route"].get("waypoints", [])],
+            _element_anchor(elements[target["element"]], target["anchor"]),
+        ]
+        own = {source["element"], target["element"]}
+        for start, end in zip(points, points[1:]):
+            for box_id, box in boxes.items():
+                if box_id in own:
+                    continue
+                if _segment_crosses_interior(start, end, box):
+                    hits.append((connection["id"], box_id))
+    return hits
+
+
+def _element_anchor(element: dict, anchor: dict) -> tuple[float, float]:
+    layout = element["layout"]
+    side = anchor["side"]
+    offset = anchor.get("offset", 0.5)
+    if side == "left":
+        return (layout["x"], layout["y"] + layout["height"] * offset)
+    if side == "right":
+        return (layout["x"] + layout["width"], layout["y"] + layout["height"] * offset)
+    if side == "top":
+        return (layout["x"] + layout["width"] * offset, layout["y"])
+    return (layout["x"] + layout["width"] * offset, layout["y"] + layout["height"])
+
+
+def _layouts_overlap(first: dict, second: dict) -> bool:
+    return (
+        first["x"] < second["x"] + second["width"] - 1
+        and second["x"] < first["x"] + first["width"] - 1
+        and first["y"] < second["y"] + second["height"] - 1
+        and second["y"] < first["y"] + first["height"] - 1
+    )
 
 
 def _sysml_block(text: str, header: str) -> str:

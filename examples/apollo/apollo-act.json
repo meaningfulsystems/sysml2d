@@ -78,13 +78,17 @@
     {
       "from": "abort",
       "to": "p66Landing",
-      "label": "no"
+      "label": "no",
+      "source_side": "left",
+      "target_side": "top"
     },
     {
       "from": "abort",
       "to": "p70Abort",
       "label": "yes",
-      "model_ref": "p70Abort"
+      "model_ref": "p70Abort",
+      "source_side": "right",
+      "target_side": "top"
     },
     {
       "from": "p66Landing",

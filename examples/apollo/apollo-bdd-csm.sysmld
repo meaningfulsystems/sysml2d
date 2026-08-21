@@ -30,8 +30,8 @@
     "kind": "DefinitionView",
     "name": "CSM Definition Tree",
     "canvas": {
-      "width": 2006,
-      "height": 522,
+      "width": 1852,
+      "height": 652,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -43,7 +43,7 @@
         "model_ref": "CSM",
         "symbol": "part_definition",
         "layout": {
-          "x": 933,
+          "x": 858,
           "y": 40,
           "width": 140,
           "height": 52,
@@ -62,7 +62,7 @@
         "model_ref": "CM",
         "symbol": "part_definition",
         "layout": {
-          "x": 538,
+          "x": 463,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -81,7 +81,7 @@
         "model_ref": "SCS",
         "symbol": "part_definition",
         "layout": {
-          "x": 40,
+          "x": 68,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -100,7 +100,7 @@
         "model_ref": "AGC_CM",
         "symbol": "part_definition",
         "layout": {
-          "x": 198,
+          "x": 226,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -119,7 +119,7 @@
         "model_ref": "IMU",
         "symbol": "part_definition",
         "layout": {
-          "x": 356,
+          "x": 384,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -138,7 +138,7 @@
         "model_ref": "DSKY",
         "symbol": "part_definition",
         "layout": {
-          "x": 514,
+          "x": 542,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -153,68 +153,11 @@
         "style": "part.definition"
       },
       {
-        "id": "RCS",
-        "model_ref": "RCS",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 775,
-          "y": 300,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "RCS",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "systemA",
-        "model_ref": "RCSSystem",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 672,
-          "y": 430,
-          "width": 164,
-          "height": 52,
-          "z": 10
-        },
-        "label": "systemA 6\u00d793 lbf",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "systemB",
-        "model_ref": "RCSSystem",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 854,
-          "y": 430,
-          "width": 164,
-          "height": 52,
-          "z": 10
-        },
-        "label": "systemB 6\u00d793 lbf",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
         "id": "ECLSS",
         "model_ref": "ECLSS",
         "symbol": "part_definition",
         "layout": {
-          "x": 1036,
+          "x": 700,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -233,8 +176,8 @@
         "model_ref": "AgZn",
         "symbol": "part_definition",
         "layout": {
-          "x": 222,
-          "y": 380,
+          "x": 858,
+          "y": 300,
           "width": 140,
           "height": 52,
           "z": 10
@@ -252,8 +195,8 @@
         "model_ref": "charger",
         "symbol": "part_definition",
         "layout": {
-          "x": 380,
-          "y": 380,
+          "x": 44,
+          "y": 430,
           "width": 140,
           "height": 52,
           "z": 10
@@ -271,8 +214,8 @@
         "model_ref": "inverter",
         "symbol": "part_definition",
         "layout": {
-          "x": 538,
-          "y": 380,
+          "x": 202,
+          "y": 430,
           "width": 140,
           "height": 52,
           "z": 10
@@ -290,8 +233,8 @@
         "model_ref": "probe",
         "symbol": "part_definition",
         "layout": {
-          "x": 696,
-          "y": 380,
+          "x": 360,
+          "y": 430,
           "width": 140,
           "height": 52,
           "z": 10
@@ -309,8 +252,8 @@
         "model_ref": "ringLatches",
         "symbol": "part_definition",
         "layout": {
-          "x": 854,
-          "y": 380,
+          "x": 518,
+          "y": 430,
           "width": 140,
           "height": 52,
           "z": 10
@@ -324,11 +267,68 @@
         "style": "part.definition"
       },
       {
+        "id": "RCS",
+        "model_ref": "RCS",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 779,
+          "y": 430,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "RCS",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "systemA",
+        "model_ref": "RCSSystem",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 676,
+          "y": 560,
+          "width": 164,
+          "height": 52,
+          "z": 10
+        },
+        "label": "systemA 6\u00d793 lbf",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "systemB",
+        "model_ref": "RCSSystem",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 858,
+          "y": 560,
+          "width": 164,
+          "height": 52,
+          "z": 10
+        },
+        "label": "systemB 6\u00d793 lbf",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
         "id": "SM",
         "model_ref": "SM",
         "symbol": "part_definition",
         "layout": {
-          "x": 1510,
+          "x": 1356,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -347,7 +347,7 @@
         "model_ref": "SPS",
         "symbol": "part_definition",
         "layout": {
-          "x": 1273,
+          "x": 1119,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -366,7 +366,7 @@
         "model_ref": "FC",
         "symbol": "part_definition",
         "layout": {
-          "x": 1431,
+          "x": 1277,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -385,7 +385,7 @@
         "model_ref": "FC",
         "symbol": "part_definition",
         "layout": {
-          "x": 1589,
+          "x": 1435,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -404,7 +404,7 @@
         "model_ref": "FC",
         "symbol": "part_definition",
         "layout": {
-          "x": 1747,
+          "x": 1593,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -423,7 +423,7 @@
         "model_ref": "quad",
         "symbol": "part_definition",
         "layout": {
-          "x": 1352,
+          "x": 1198,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -442,7 +442,7 @@
         "model_ref": "quad",
         "symbol": "part_definition",
         "layout": {
-          "x": 1510,
+          "x": 1356,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -461,7 +461,7 @@
         "model_ref": "quad",
         "symbol": "part_definition",
         "layout": {
-          "x": 1668,
+          "x": 1514,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -480,7 +480,7 @@
         "model_ref": "quad",
         "symbol": "part_definition",
         "layout": {
-          "x": 1826,
+          "x": 1672,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -517,11 +517,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1003,
+              "x": 928,
               "y": 131
             },
             {
-              "x": 608,
+              "x": 533,
               "y": 131
             }
           ]
@@ -560,11 +560,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1003,
+              "x": 928,
               "y": 131
             },
             {
-              "x": 1580,
+              "x": 1426,
               "y": 131
             }
           ]
@@ -603,11 +603,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 608,
+              "x": 533,
               "y": 261
             },
             {
-              "x": 110,
+              "x": 138,
               "y": 261
             }
           ]
@@ -646,11 +646,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 608,
+              "x": 533,
               "y": 261
             },
             {
-              "x": 268,
+              "x": 296,
               "y": 261
             }
           ]
@@ -689,11 +689,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 608,
+              "x": 533,
               "y": 261
             },
             {
-              "x": 426,
+              "x": 454,
               "y": 261
             }
           ]
@@ -732,54 +732,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 608,
+              "x": 533,
               "y": 261
             },
             {
-              "x": 584,
-              "y": 261
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-CM-RCS",
-        "model_ref": "RCS",
-        "source": {
-          "element": "CM",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "RCS",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 608,
-              "y": 261
-            },
-            {
-              "x": 845,
+              "x": 612,
               "y": 261
             }
           ]
@@ -818,11 +775,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 608,
+              "x": 533,
               "y": 261
             },
             {
-              "x": 1106,
+              "x": 770,
               "y": 261
             }
           ]
@@ -861,12 +818,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 608,
-              "y": 352
+              "x": 533,
+              "y": 261
             },
             {
-              "x": 292,
-              "y": 352
+              "x": 928,
+              "y": 261
             }
           ]
         },
@@ -875,7 +832,7 @@
             "text": "1",
             "position": {
               "segment": 2,
-              "offset": 0.94,
+              "offset": 0.82,
               "dx": 10,
               "dy": -4
             }
@@ -904,12 +861,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 608,
-              "y": 352
+              "x": 533,
+              "y": 250
             },
             {
-              "x": 450,
-              "y": 352
+              "x": 40,
+              "y": 250
+            },
+            {
+              "x": 40,
+              "y": 402
+            },
+            {
+              "x": 114,
+              "y": 402
             }
           ]
         },
@@ -917,7 +882,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -947,8 +912,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 608,
-              "y": 352
+              "x": 533,
+              "y": 250
+            },
+            {
+              "x": 40,
+              "y": 250
+            },
+            {
+              "x": 40,
+              "y": 402
+            },
+            {
+              "x": 272,
+              "y": 402
             }
           ]
         },
@@ -956,7 +933,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 1,
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -986,12 +963,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 608,
-              "y": 352
+              "x": 533,
+              "y": 250
             },
             {
-              "x": 766,
-              "y": 352
+              "x": 40,
+              "y": 250
+            },
+            {
+              "x": 40,
+              "y": 402
+            },
+            {
+              "x": 430,
+              "y": 402
             }
           ]
         },
@@ -999,7 +984,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1029,12 +1014,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 608,
-              "y": 352
+              "x": 533,
+              "y": 250
             },
             {
-              "x": 924,
-              "y": 352
+              "x": 1026,
+              "y": 250
+            },
+            {
+              "x": 1026,
+              "y": 402
+            },
+            {
+              "x": 588,
+              "y": 402
             }
           ]
         },
@@ -1042,7 +1035,58 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-RCS",
+        "model_ref": "RCS",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RCS",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 250
+            },
+            {
+              "x": 1026,
+              "y": 250
+            },
+            {
+              "x": 1026,
+              "y": 402
+            },
+            {
+              "x": 849,
+              "y": 402
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1072,12 +1116,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 845,
-              "y": 391
+              "x": 849,
+              "y": 521
             },
             {
-              "x": 754,
-              "y": 391
+              "x": 758,
+              "y": 521
             }
           ]
         },
@@ -1115,12 +1159,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 845,
-              "y": 391
+              "x": 849,
+              "y": 521
             },
             {
-              "x": 936,
-              "y": 391
+              "x": 940,
+              "y": 521
             }
           ]
         },
@@ -1158,11 +1202,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1580,
+              "x": 1426,
               "y": 261
             },
             {
-              "x": 1343,
+              "x": 1189,
               "y": 261
             }
           ]
@@ -1201,11 +1245,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1580,
+              "x": 1426,
               "y": 261
             },
             {
-              "x": 1501,
+              "x": 1347,
               "y": 261
             }
           ]
@@ -1244,11 +1288,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1580,
+              "x": 1426,
               "y": 261
             },
             {
-              "x": 1659,
+              "x": 1505,
               "y": 261
             }
           ]
@@ -1287,11 +1331,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1580,
+              "x": 1426,
               "y": 261
             },
             {
-              "x": 1817,
+              "x": 1663,
               "y": 261
             }
           ]
@@ -1330,11 +1374,19 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1580,
+              "x": 1426,
+              "y": 250
+            },
+            {
+              "x": 1091,
+              "y": 250
+            },
+            {
+              "x": 1091,
               "y": 352
             },
             {
-              "x": 1422,
+              "x": 1268,
               "y": 352
             }
           ]
@@ -1343,7 +1395,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1373,7 +1425,19 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1580,
+              "x": 1426,
+              "y": 250
+            },
+            {
+              "x": 1091,
+              "y": 250
+            },
+            {
+              "x": 1091,
+              "y": 352
+            },
+            {
+              "x": 1426,
               "y": 352
             }
           ]
@@ -1382,7 +1446,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 1,
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1412,11 +1476,19 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1580,
+              "x": 1426,
+              "y": 250
+            },
+            {
+              "x": 1761,
+              "y": 250
+            },
+            {
+              "x": 1761,
               "y": 352
             },
             {
-              "x": 1738,
+              "x": 1584,
               "y": 352
             }
           ]
@@ -1425,7 +1497,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1455,11 +1527,19 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1580,
+              "x": 1426,
+              "y": 250
+            },
+            {
+              "x": 1761,
+              "y": 250
+            },
+            {
+              "x": 1761,
               "y": 352
             },
             {
-              "x": 1896,
+              "x": 1742,
               "y": 352
             }
           ]
@@ -1468,7 +1548,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
