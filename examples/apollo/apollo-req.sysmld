@@ -11,7 +11,7 @@
     "kind": "RequirementView",
     "name": "Apollo 11 Sourced Requirements",
     "canvas": {
-      "width": 3534,
+      "width": 4279,
       "height": 430,
       "background": "#FFFFFF"
     },
@@ -26,11 +26,11 @@
         "layout": {
           "x": 72,
           "y": 72,
-          "width": 188,
+          "width": 195,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nTwo AGCs Block II\n2048 E / 36864 F\n1.024 MHz, MCT 11.7 \u03bcs",
+        "label": "\u00abrequirement\u00bb\nTwo AGCs Block II\nComanche 055 + LMY99/1\nCMC ENTRY \u2260 LGC LANDING",
         "style": "requirement"
       },
       {
@@ -38,7 +38,7 @@
         "model_ref": "p27Requirement",
         "symbol": "requirement",
         "layout": {
-          "x": 72,
+          "x": 75.5,
           "y": 264,
           "width": 188,
           "height": 82,
@@ -52,7 +52,7 @@
         "model_ref": "usbCsmRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 296,
+          "x": 303,
           "y": 72,
           "width": 237,
           "height": 88,
@@ -66,7 +66,7 @@
         "model_ref": "usbLmRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 569,
+          "x": 576,
           "y": 72,
           "width": 209,
           "height": 88,
@@ -80,7 +80,7 @@
         "model_ref": "cmEcsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 835,
+          "x": 845.5,
           "y": 72,
           "width": 195,
           "height": 88,
@@ -94,7 +94,7 @@
         "model_ref": "a7lRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1087,
+          "x": 1101,
           "y": 72,
           "width": 258,
           "height": 82,
@@ -108,13 +108,13 @@
         "model_ref": "a11MassRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1381,
+          "x": 1395,
           "y": 72,
-          "width": 188,
+          "width": 237,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nIgnition 6,484,280 lb\nFirst motion 6,398,535\nTank/\u0394v table UNKNOWN",
+        "label": "\u00abrequirement\u00bb\nPK p.109 S-IC 5,022,674\nS-II 1,059,171; S-IVB 260,523\nSPS load / CSM \u0394v UNKNOWN",
         "style": "requirement"
       },
       {
@@ -122,7 +122,7 @@
         "model_ref": "rsoRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1605,
+          "x": 1668,
           "y": 72,
           "width": 230,
           "height": 82,
@@ -136,13 +136,13 @@
         "model_ref": "a11AtypicalRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 814,
+          "x": 821,
           "y": 270,
-          "width": 237,
+          "width": 244,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nA11 atypical vs generic stack\n1 EVA / 196 h; no LRV/SIM\nP66 flown; F-1 from SA-507",
+        "label": "\u00abrequirement\u00bb\nA11 atypical vs generic stack\n1 EVA / 196 h; no LRV/SIM\nP66 LGC landing; ropes sourced",
         "style": "requirement"
       },
       {
@@ -150,7 +150,7 @@
         "model_ref": "scsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1871,
+          "x": 1934,
           "y": 72,
           "width": 209,
           "height": 88,
@@ -164,7 +164,7 @@
         "model_ref": "pngsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 2116,
+          "x": 2179,
           "y": 72,
           "width": 181,
           "height": 88,
@@ -178,7 +178,7 @@
         "model_ref": "eclssLoopRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 2333,
+          "x": 2396,
           "y": 72,
           "width": 170,
           "height": 88,
@@ -192,7 +192,7 @@
         "model_ref": "epsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 2539,
+          "x": 2602,
           "y": 72,
           "width": 216,
           "height": 88,
@@ -206,7 +206,7 @@
         "model_ref": "agsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 2791,
+          "x": 2854,
           "y": 72,
           "width": 216,
           "height": 88,
@@ -220,7 +220,7 @@
         "model_ref": "dockingRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 3043,
+          "x": 3106,
           "y": 72,
           "width": 188,
           "height": 88,
@@ -234,13 +234,55 @@
         "model_ref": "rcsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 3267,
+          "x": 3330,
           "y": 72,
           "width": 195,
           "height": 88,
           "z": 10
         },
         "label": "\u00abrequirement\u00bb\nSM 4 quads, lbf UNKNOWN\nCM 2\u00d76 \u00d7 93 lbf\nno auto translation",
+        "style": "requirement"
+      },
+      {
+        "id": "spsRequirement",
+        "model_ref": "spsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 3561,
+          "y": 72,
+          "width": 216,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nSPS conflict\n20,500 PK vs 21,500 D-7375\nloaded mass UNKNOWN",
+        "style": "requirement"
+      },
+      {
+        "id": "dpsRequirement",
+        "model_ref": "dpsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 3813,
+          "y": 72,
+          "width": 188,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nDPS conflict\n9,870 / 1,050\u20136,300 PK\nvs 10,500 10:1 D-7143",
+        "style": "requirement"
+      },
+      {
+        "id": "pipaRequirement",
+        "model_ref": "pipaRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 4037,
+          "y": 72,
+          "width": 170,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nPIPA scale\nCM 5.85 cm/s/pulse\nLM 1.0 cm/s/pulse",
         "style": "requirement"
       }
     ],

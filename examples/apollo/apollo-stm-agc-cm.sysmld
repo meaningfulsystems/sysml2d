@@ -6,28 +6,28 @@
     "apollo.sysml"
   ],
   "aliases": {
-    "LGC_Landing": "Apollo11::LGC_Landing",
-    "p63": "Apollo11::LGC_Landing::p63",
-    "p64": "Apollo11::LGC_Landing::p64",
-    "p65": "Apollo11::LGC_Landing::p65",
-    "p66": "Apollo11::LGC_Landing::p66",
-    "p67": "Apollo11::LGC_Landing::p67",
-    "p68": "Apollo11::LGC_Landing::p68",
-    "toP64": "Apollo11::LGC_Landing::toP64",
-    "toP65": "Apollo11::LGC_Landing::toP65",
-    "toP66": "Apollo11::LGC_Landing::toP66",
-    "toP67": "Apollo11::LGC_Landing::toP67",
-    "p65ToP68": "Apollo11::LGC_Landing::p65ToP68",
-    "p66ToP68": "Apollo11::LGC_Landing::p66ToP68",
-    "p67ToP68": "Apollo11::LGC_Landing::p67ToP68"
+    "AGC_CM_Mode": "Apollo11::AGC_CM_Mode",
+    "p00": "Apollo11::AGC_CM_Mode::p00",
+    "mode": "Apollo11::AGC_CM_Mode::mode",
+    "freshStart": "Apollo11::AGC_CM_Mode::freshStart",
+    "restart": "Apollo11::AGC_CM_Mode::restart",
+    "execOverflow": "Apollo11::AGC_CM_Mode::execOverflow",
+    "v37": "Apollo11::AGC_CM_Mode::v37",
+    "v36": "Apollo11::AGC_CM_Mode::v36",
+    "v69": "Apollo11::AGC_CM_Mode::v69",
+    "alarm1201": "Apollo11::AGC_CM_Mode::alarm1201",
+    "alarm1202": "Apollo11::AGC_CM_Mode::alarm1202",
+    "overflowToP00": "Apollo11::AGC_CM_Mode::overflowToP00",
+    "v36ToP00": "Apollo11::AGC_CM_Mode::v36ToP00",
+    "v69ToP00": "Apollo11::AGC_CM_Mode::v69ToP00"
   },
   "diagram": {
-    "id": "apollo-stm-lgc",
+    "id": "apollo-stm-agc-cm",
     "kind": "StateView",
-    "name": "LGC LANDING P63\u2013P68 (not CMC entry)",
+    "name": "AGC_CM verbs (V37/V36/V69; 1201/1202 \u2260 abort)",
     "canvas": {
-      "width": 1189,
-      "height": 379,
+      "width": 1026,
+      "height": 552,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -36,13 +36,13 @@
     "elements": [
       {
         "id": "boundary",
-        "model_ref": "LGC_Landing",
+        "model_ref": "AGC_CM_Mode",
         "symbol": "boundary",
         "layout": {
-          "x": 104,
-          "y": 88,
-          "width": 1045,
-          "height": 251,
+          "x": 114,
+          "y": 68,
+          "width": 872,
+          "height": 444,
           "z": 0
         },
         "compartments": {
@@ -56,8 +56,8 @@
         "id": "initial",
         "symbol": "initial_state",
         "layout": {
-          "x": 140,
-          "y": 204,
+          "x": 150,
+          "y": 280,
           "width": 20,
           "height": 20,
           "z": 10
@@ -65,94 +65,80 @@
         "style": "initial_state"
       },
       {
-        "id": "p63",
+        "id": "p00",
         "symbol": "state_usage",
         "layout": {
-          "x": 316,
-          "y": 188,
-          "width": 120,
-          "height": 52,
+          "x": 330,
+          "y": 262,
+          "width": 140,
+          "height": 56,
           "z": 10
         },
-        "model_ref": "p63",
-        "label": "P63 LANDING",
+        "model_ref": "p00",
+        "label": "P00",
         "style": "state.default"
       },
       {
-        "id": "p64",
+        "id": "mode",
         "symbol": "state_usage",
         "layout": {
-          "x": 541,
-          "y": 188,
-          "width": 120,
-          "height": 52,
+          "x": 570,
+          "y": 132,
+          "width": 140,
+          "height": 56,
           "z": 10
         },
-        "model_ref": "p64",
-        "label": "P64 LANDING",
+        "model_ref": "mode",
+        "label": "V37 mode",
         "style": "state.default"
       },
       {
-        "id": "p65",
+        "id": "freshStart",
         "symbol": "state_usage",
         "layout": {
-          "x": 767,
-          "y": 124,
-          "width": 120,
-          "height": 52,
+          "x": 570,
+          "y": 262,
+          "width": 140,
+          "height": 56,
           "z": 10
         },
-        "model_ref": "p65",
-        "label": "P65 LANDING",
+        "model_ref": "freshStart",
+        "label": "V36 fresh start",
         "style": "state.default"
       },
       {
-        "id": "p66",
+        "id": "restart",
         "symbol": "state_usage",
         "layout": {
-          "x": 767,
-          "y": 251,
-          "width": 120,
-          "height": 52,
+          "x": 570,
+          "y": 392,
+          "width": 140,
+          "height": 56,
           "z": 10
         },
-        "model_ref": "p66",
-        "label": "P66 LANDING\n(A11 flown)",
+        "model_ref": "restart",
+        "label": "V69 restart",
         "style": "state.default"
       },
       {
-        "id": "p67",
+        "id": "execOverflow",
         "symbol": "state_usage",
         "layout": {
-          "x": 993,
-          "y": 251,
-          "width": 120,
-          "height": 52,
+          "x": 810,
+          "y": 262,
+          "width": 140,
+          "height": 56,
           "z": 10
         },
-        "model_ref": "p67",
-        "label": "P67 LANDING",
-        "style": "state.default"
-      },
-      {
-        "id": "p68",
-        "symbol": "state_usage",
-        "layout": {
-          "x": 993,
-          "y": 124,
-          "width": 120,
-          "height": 52,
-          "z": 10
-        },
-        "model_ref": "p68",
-        "label": "P68 LANDING",
+        "model_ref": "execOverflow",
+        "label": "1201/1202\nexec overflow\n(not abort)",
         "style": "state.default"
       }
     ],
     "connections": [
       {
-        "id": "initial--p63",
-        "model_ref": "LGC_Landing",
+        "id": "initial--p00",
+        "model_ref": "AGC_CM_Mode",
         "source": {
           "element": "initial",
           "anchor": {
@@ -161,7 +147,7 @@
           }
         },
         "target": {
-          "element": "p63",
+          "element": "p00",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -175,17 +161,59 @@
         "style": "transition"
       },
       {
-        "id": "p63--p64",
-        "model_ref": "toP64",
+        "id": "p00--mode",
+        "model_ref": "v37",
         "source": {
-          "element": "p63",
+          "element": "p00",
+          "anchor": {
+            "side": "right",
+            "offset": 0.25
+          }
+        },
+        "target": {
+          "element": "mode",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 495,
+              "y": 276
+            },
+            {
+              "x": 495,
+              "y": 160
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "V37",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p00--freshStart",
+        "model_ref": "v36",
+        "source": {
+          "element": "p00",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "p64",
+          "element": "freshStart",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -195,21 +223,30 @@
           "kind": "orthogonal",
           "waypoints": []
         },
-        "labels": [],
+        "labels": [
+          {
+            "text": "V36",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
         "style": "transition"
       },
       {
-        "id": "p64--p65",
-        "model_ref": "toP65",
+        "id": "p00--restart",
+        "model_ref": "v69",
         "source": {
-          "element": "p64",
+          "element": "p00",
           "anchor": {
             "side": "right",
-            "offset": 0.3333
+            "offset": 0.75
           }
         },
         "target": {
-          "element": "p65",
+          "element": "restart",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -219,18 +256,18 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 696,
-              "y": 205
+              "x": 545,
+              "y": 304
             },
             {
-              "x": 696,
-              "y": 150
+              "x": 545,
+              "y": 420
             }
           ]
         },
         "labels": [
           {
-            "text": "auto",
+            "text": "V69",
             "position": {
               "segment": 1,
               "offset": 0.5,
@@ -241,17 +278,17 @@
         "style": "transition"
       },
       {
-        "id": "p64--p66",
-        "model_ref": "toP66",
+        "id": "mode--execOverflow",
+        "model_ref": "alarm1201",
         "source": {
-          "element": "p64",
+          "element": "mode",
           "anchor": {
             "side": "right",
-            "offset": 0.6667
+            "offset": 0.5
           }
         },
         "target": {
-          "element": "p66",
+          "element": "execOverflow",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -261,18 +298,18 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 732,
-              "y": 223
+              "x": 760,
+              "y": 160
             },
             {
-              "x": 732,
-              "y": 277
+              "x": 760,
+              "y": 290
             }
           ]
         },
         "labels": [
           {
-            "text": "A11",
+            "text": "1201/1202",
             "position": {
               "segment": 1,
               "offset": 0.5,
@@ -283,116 +320,17 @@
         "style": "transition"
       },
       {
-        "id": "p66--p67",
-        "model_ref": "toP67",
+        "id": "freshStart-back-p00",
+        "model_ref": "v36ToP00",
         "source": {
-          "element": "p66",
+          "element": "freshStart",
           "anchor": {
-            "side": "right",
-            "offset": 0.3333
-          }
-        },
-        "target": {
-          "element": "p67",
-          "anchor": {
-            "side": "left",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 966,
-              "y": 268
-            },
-            {
-              "x": 966,
-              "y": 277
-            }
-          ]
-        },
-        "labels": [],
-        "style": "transition"
-      },
-      {
-        "id": "p65--p68",
-        "model_ref": "p65ToP68",
-        "source": {
-          "element": "p65",
-          "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "p68",
-          "anchor": {
-            "side": "left",
-            "offset": 0.3333
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 914,
-              "y": 150
-            },
-            {
-              "x": 914,
-              "y": 141
-            }
-          ]
-        },
-        "labels": [],
-        "style": "transition"
-      },
-      {
-        "id": "p66--p68",
-        "model_ref": "p66ToP68",
-        "source": {
-          "element": "p66",
-          "anchor": {
-            "side": "right",
-            "offset": 0.6667
-          }
-        },
-        "target": {
-          "element": "p68",
-          "anchor": {
-            "side": "left",
-            "offset": 0.6667
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 940,
-              "y": 286
-            },
-            {
-              "x": 940,
-              "y": 159
-            }
-          ]
-        },
-        "labels": [],
-        "style": "transition"
-      },
-      {
-        "id": "p67--p68",
-        "model_ref": "p67ToP68",
-        "source": {
-          "element": "p67",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "p68",
+          "element": "p00",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
@@ -402,16 +340,95 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1053,
-              "y": 251
+              "x": 640,
+              "y": 346
             },
             {
-              "x": 1053,
-              "y": 176
+              "x": 400,
+              "y": 346
             }
           ]
         },
         "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "restart-back-p00",
+        "model_ref": "v69ToP00",
+        "source": {
+          "element": "restart",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p00",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 640,
+              "y": 476
+            },
+            {
+              "x": 400,
+              "y": 476
+            }
+          ]
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "execOverflow-back-p00",
+        "model_ref": "overflowToP00",
+        "source": {
+          "element": "execOverflow",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p00",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 880,
+              "y": 104
+            },
+            {
+              "x": 542,
+              "y": 104
+            },
+            {
+              "x": 542,
+              "y": 290
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "resume",
+            "position": {
+              "segment": 2,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
         "style": "transition"
       }
     ],
@@ -454,6 +471,6 @@
         "container": true
       }
     },
-    "subject": "LGC_Landing"
+    "subject": "AGC_CM_Mode"
   }
 }

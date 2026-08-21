@@ -12,7 +12,7 @@
   "sibling_gap": 36,
   "nodes": {
     "agcRequirement": {
-      "label": "\u00abrequirement\u00bb\nTwo AGCs Block II\n2048 E / 36864 F\n1.024 MHz, MCT 11.7 \u03bcs",
+      "label": "\u00abrequirement\u00bb\nTwo AGCs Block II\nComanche 055 + LMY99/1\nCMC ENTRY \u2260 LGC LANDING",
       "rank": 0,
       "order": 0
     },
@@ -42,7 +42,7 @@
       "order": 1
     },
     "a11MassRequirement": {
-      "label": "\u00abrequirement\u00bb\nIgnition 6,484,280 lb\nFirst motion 6,398,535\nTank/\u0394v table UNKNOWN",
+      "label": "\u00abrequirement\u00bb\nPK p.109 S-IC 5,022,674\nS-II 1,059,171; S-IVB 260,523\nSPS load / CSM \u0394v UNKNOWN",
       "rank": 1,
       "order": 2
     },
@@ -52,9 +52,24 @@
       "order": 3
     },
     "a11AtypicalRequirement": {
-      "label": "\u00abrequirement\u00bb\nA11 atypical vs generic stack\n1 EVA / 196 h; no LRV/SIM\nP66 flown; F-1 from SA-507",
+      "label": "\u00abrequirement\u00bb\nA11 atypical vs generic stack\n1 EVA / 196 h; no LRV/SIM\nP66 LGC landing; ropes sourced",
       "rank": 2,
       "order": 0
+    },
+    "spsRequirement": {
+      "label": "\u00abrequirement\u00bb\nSPS conflict\n20,500 PK vs 21,500 D-7375\nloaded mass UNKNOWN",
+      "rank": 3,
+      "order": 4
+    },
+    "dpsRequirement": {
+      "label": "\u00abrequirement\u00bb\nDPS conflict\n9,870 / 1,050\u20136,300 PK\nvs 10,500 10:1 D-7143",
+      "rank": 3,
+      "order": 5
+    },
+    "pipaRequirement": {
+      "label": "\u00abrequirement\u00bb\nPIPA scale\nCM 5.85 cm/s/pulse\nLM 1.0 cm/s/pulse",
+      "rank": 3,
+      "order": 6
     },
     "scsRequirement": {
       "label": "\u00abrequirement\u00bb\nCSM SCS analog backup\nAGC_CM vs SCS crew-select\nFull switch deck TBD",

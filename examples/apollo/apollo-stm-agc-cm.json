@@ -1,0 +1,44 @@
+{
+  "diagram": "apollo-stm-agc-cm",
+  "kind": "StateView",
+  "name": "AGC_CM verbs (V37/V36/V69; 1201/1202 ≠ abort)",
+  "subject": "AGC_CM_Mode",
+  "model_files": ["apollo.sysml"],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 56,
+  "aliases": {
+    "AGC_CM_Mode": "Apollo11::AGC_CM_Mode",
+    "p00": "Apollo11::AGC_CM_Mode::p00",
+    "mode": "Apollo11::AGC_CM_Mode::mode",
+    "freshStart": "Apollo11::AGC_CM_Mode::freshStart",
+    "restart": "Apollo11::AGC_CM_Mode::restart",
+    "execOverflow": "Apollo11::AGC_CM_Mode::execOverflow",
+    "v37": "Apollo11::AGC_CM_Mode::v37",
+    "v36": "Apollo11::AGC_CM_Mode::v36",
+    "v69": "Apollo11::AGC_CM_Mode::v69",
+    "alarm1201": "Apollo11::AGC_CM_Mode::alarm1201",
+    "alarm1202": "Apollo11::AGC_CM_Mode::alarm1202",
+    "overflowToP00": "Apollo11::AGC_CM_Mode::overflowToP00",
+    "v36ToP00": "Apollo11::AGC_CM_Mode::v36ToP00",
+    "v69ToP00": "Apollo11::AGC_CM_Mode::v69ToP00"
+  },
+  "states": {
+    "initial": {"initial": true},
+    "p00": {"label": "P00", "model_ref": "p00"},
+    "mode": {"label": "V37 mode", "model_ref": "mode"},
+    "freshStart": {"label": "V36 fresh start", "model_ref": "freshStart"},
+    "restart": {"label": "V69 restart", "model_ref": "restart"},
+    "execOverflow": {"label": "1201/1202\nexec overflow\n(not abort)", "model_ref": "execOverflow"}
+  },
+  "transitions": [
+    {"from": "initial", "to": "p00", "label": ""},
+    {"from": "p00", "to": "mode", "label": "V37", "model_ref": "v37"},
+    {"from": "p00", "to": "freshStart", "label": "V36", "model_ref": "v36"},
+    {"from": "p00", "to": "restart", "label": "V69", "model_ref": "v69"},
+    {"from": "mode", "to": "execOverflow", "label": "1201/1202", "model_ref": "alarm1201"},
+    {"from": "freshStart", "to": "p00", "label": "", "model_ref": "v36ToP00"},
+    {"from": "restart", "to": "p00", "label": "", "model_ref": "v69ToP00"},
+    {"from": "execOverflow", "to": "p00", "label": "resume", "model_ref": "overflowToP00"}
+  ]
+}

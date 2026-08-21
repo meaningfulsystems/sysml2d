@@ -18,7 +18,13 @@ OK to collapse: engine hydraulics, every MSFN ship.
 
 ## Morning delta (Mrs. Researcher)
 
-Sourced numbers only. Tank loads / Δv / A11 rope IDs stay UNKNOWN.
+Sourced numbers only. SPS loaded mass and CSM lunar Δv stay UNKNOWN — do not invent them.
+
+**Tank loads (A11 Press Kit p.109)** — no longer UNKNOWN: S-IC 5,022,674 / 288,750; LOX 3,307,855; RP-1 1,426,069; liftoff 7,653,854 lbf. S-II 1,059,171 / 79,918; LOX 821,022; LH2 158,221. S-IVB 260,523 / 25,000; LOX 192,023; LH2 43,500. IU 4,306 lb; CM 12,250; SM 51,243.
+
+**AGC:** A11 ropes `Comanche055` + `Luminary1A` (LMY99/1). AGS hardware sourced; A11 AGS flight-program name UNKNOWN. P-numbers are not global: `CMC_Entry` P61–P67 = ENTRY, `LGC_Landing` P63–P68 = LANDING. V37 mode, V36 fresh start, V69 restart. 1201/1202 is exec overflow, not an abort. PIPA CM 5.85 cm/s/pulse vs LM 1.0. LVDC 82.03125 µs, 26+2 bits; no digital AGC↔LVDC.
+
+**Engine conflicts** (cite both, no silent winner): SPS 20,500 PK vs 21,500 TN D-7375. DPS 9,870 / 1,050–6,300 PK vs 10,500 10:1 TN D-7143.
 
 - **Electrical (A11 Press Kit):** SM `FC1` `FC2` `FC3`; CM `AgZn1`–`AgZn3` + `charger`; LM six AgZn (4 descent / 2 ascent) + `ECA` each; 28 V DC; `inverter1` `inverter2` at 117 V 400 Hz.
 - **AGS (TN-7990):** `AEA` + `ASA` + `DEDA`. AEA 4096 × 18-bit, half/half, 5 μs, 32.7 lb. Not a landing computer.

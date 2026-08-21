@@ -1,45 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="961" height="981" viewBox="0 0 961 981">
+<svg xmlns="http://www.w3.org/2000/svg" width="1882" height="294" viewBox="0 0 1882 294">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="961" height="981" fill="#FFFFFF"/>
-<rect x="2" y="38" width="957" height="939" fill="none" stroke="#333333" stroke-width="2"/>
-<path d="M 2 1 H 440 L 456 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
-<text class="header" x="12" y="24">[stv.mb] AGC_CM programs [AGC_CM_Mode : AGC_CM_Mode]</text>
-<rect x="2" y="38" width="957" height="941" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="0" y="0" width="1882" height="294" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1878" height="252" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 568 L 584 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[stv.mb] CMC ENTRY P61–P67 (not LGC landing) [CMC_Entry : CMC_Entry]</text>
+<rect x="2" y="38" width="1878" height="254" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="boundary" x="54" y="119" width="863" height="780" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
-<text class="label" x="64" y="141">AGC_CM_Mode</text>
-<circle id="initial" cx="486" cy="165" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
-<rect id="p00" x="411" y="307" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="486" y="333">P00</text>
-<rect id="p11" x="90" y="475" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="165" y="501">P11</text>
-<rect id="p27" x="304" y="475" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="379" y="501">P27 V70–V73</text>
-<rect id="p40" x="518" y="475" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="593" y="501">P40 SPS</text>
-<rect id="p61" x="731" y="475" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="806" y="501">P61</text>
-<rect id="p62" x="411" y="643" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="486" y="669">P62</text>
-<rect id="p67" x="411" y="811" width="150" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="486" y="837">P67 (P63–P66 TBD)</text>
-<path d="M 486,175 L 486,307" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 441,359 L 441,374 Q 441,382 433,382 L 173,382 Q 165,382 165,390 L 165,475" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 471,359 L 471,397 Q 471,405 463,405 L 387,405 Q 379,405 379,413 L 379,475" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 501,359 L 501,421 Q 501,429 509,429 L 585,429 Q 593,429 593,437 L 593,475" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 531,359 L 531,422 A 7 7 0 0 1 531,436 L 531,444 Q 531,452 539,452 L 586,452 A 7 7 0 0 0 600,452 L 798,452 Q 806,452 806,460 L 806,475" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 806,527 L 806,577 Q 806,585 798,585 L 494,585 Q 486,585 486,593 L 486,643" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 486,695 L 486,811" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<text class="small" text-anchor="middle" x="303" y="390">orbit</text>
-<text class="small" text-anchor="middle" x="425" y="413">uplink</text>
-<text class="small" text-anchor="middle" x="547" y="437">SPS</text>
-<text class="small" text-anchor="middle" x="668.5" y="460">entry</text>
-<text class="small" text-anchor="middle" x="646" y="593">sep</text>
-<text class="small" text-anchor="middle" x="486" y="761">P63–P66 collapsed</text>
+<rect id="boundary" x="104" y="88" width="1734" height="124" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="114" y="110">CMC_Entry</text>
+<circle id="initial" cx="150" cy="150" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="p61" x="318" y="124" width="120" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="378" y="150">P61 ENTRY</text>
+<rect id="p62" x="545" y="124" width="120" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="605" y="150">P62 ENTRY</text>
+<rect id="p63" x="772" y="124" width="120" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="832" y="150">P63 ENTRY</text>
+<rect id="p64" x="1000" y="124" width="120" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1060" y="150">P64 ENTRY</text>
+<rect id="p65" x="1228" y="124" width="120" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1288" y="150">P65 ENTRY</text>
+<rect id="p66" x="1455" y="124" width="120" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1515" y="150">P66 ENTRY</text>
+<rect id="p67" x="1682" y="124" width="120" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1742" y="150">P67 ENTRY</text>
+<path d="M 160,150 L 318,150" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 438,150 L 545,150" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 665,150 L 772,150" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 892,150 L 1000,150" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1120,150 L 1228,150" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1348,150 L 1455,150" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1575,150 L 1682,150" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 </g>
 </svg>

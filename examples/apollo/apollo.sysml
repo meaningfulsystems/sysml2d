@@ -88,21 +88,25 @@ package Apollo11 {
         }
         part def SIC {
             part F1 : F1;
+            doc /* A11 PK p.109: 5,022,674 fueled / 288,750 dry; LOX 3,307,855; RP-1 1,426,069; liftoff 7,653,854 lbf. */
         }
         part def SII {
             part J2 : J2;
+            doc /* A11 PK p.109: 1,059,171 fueled / 79,918 dry; LOX 821,022; LH2 158,221. */
         }
         part def SIVB {
             part J2 : J2;
+            doc /* A11 PK p.109: 260,523 fueled / 25,000 dry; LOX 192,023; LH2 43,500. */
         }
         part def IU {
             part LVDC : LVDC;
+            doc /* A11 PK p.109: 4,306 lb. */
         }
         part def SLA;
         part def LES;
         part def F1;
         part def J2;
-        part def LVDC;
+        part def LVDC { doc /* 82.03125 µs, 26+2 bits. No digital AGC↔LVDC. */ }
     }
 
     package CSM {
@@ -112,6 +116,7 @@ package Apollo11 {
             connection SMToCMPower connect SM to CM;
         }
         part def CM {
+            doc /* A11 PK p.109: 12,250 lb. */
             part SCS : SCS;
             part AGC_CM : AGC_CM;
             part IMU : IMU;
@@ -147,6 +152,7 @@ package Apollo11 {
             connection RCSToSystemB connect RCS to systemB;
         }
         part def SM {
+            doc /* A11 PK p.109: 51,243 lb. SPS loaded mass UNKNOWN. */
             part SPS : SPS;
             part RCS : RCS;
             part FC1 : FC;
@@ -174,6 +180,7 @@ package Apollo11 {
             part erasable : ErasableMemory;
             part fixed : FixedMemory;
             part oscillator : Oscillator;
+            part Comanche055 : Rope;
             connection oscToErasable connect oscillator to erasable;
             connection oscToFixed connect oscillator to fixed;
         }
@@ -206,6 +213,7 @@ package Apollo11 {
         part def ErasableMemory;
         part def FixedMemory;
         part def Oscillator;
+        part def Rope;
         part def OxygenLoop;
         part def WaterLoop;
         part def LiOHCanister;
@@ -264,6 +272,7 @@ package Apollo11 {
             part erasable : ErasableMemory;
             part fixed : FixedMemory;
             part oscillator : Oscillator;
+            part Luminary1A : Rope;
             connection oscToErasable connect oscillator to erasable;
             connection oscToFixed connect oscillator to fixed;
         }
@@ -291,6 +300,7 @@ package Apollo11 {
         part def ErasableMemory;
         part def FixedMemory;
         part def Oscillator;
+        part def Rope;
     }
 
     package Crew {
@@ -437,19 +447,42 @@ package Apollo11 {
         state p20;
         state p27;
         state p30;
-        state p63;
-        state p64;
-        state p66;
-        state p68;
         state p70;
         state p71;
-        transition toP63 first p00 accept p63 then p63;
-        transition toP64 first p63 accept p64 then p64;
-        transition toP66 first p64 accept p66 then p66;
-        transition toP68 first p66 accept p68 then p68;
-        transition toP70 first p63 accept p70 then p70;
+        state mode;
+        state freshStart;
+        state restart;
+        state execOverflow;
+        transition v37 first p00 accept v37 then mode;
+        transition v37ToP12 first mode accept p12 then p12;
+        transition v37ToP27 first mode accept p27 then p27;
+        transition v37ToP30 first mode accept p30 then p30;
+        transition v37ToP70 first mode accept p70 then p70;
+        transition v36 first p00 accept v36 then freshStart;
+        transition v36ToP00 first freshStart accept v36done then p00;
+        transition v69 first p00 accept v69 then restart;
+        transition v69ToP00 first restart accept v69done then p00;
+        transition alarm1201 first mode accept alarm1201 then execOverflow;
+        transition alarm1202 first mode accept alarm1202 then execOverflow;
+        transition overflowToP00 first execOverflow accept resume then p00;
         transition toP71 first p70 accept p71 then p71;
-        transition toP12 first p68 accept p12 then p12;
+    }
+
+    state def LGC_Landing {
+        entry; then p63;
+        state p63;
+        state p64;
+        state p65;
+        state p66;
+        state p67;
+        state p68;
+        transition toP64 first p63 accept p64 then p64;
+        transition toP65 first p64 accept p65 then p65;
+        transition toP66 first p64 accept p66 then p66;
+        transition toP67 first p66 accept p67 then p67;
+        transition p65ToP68 first p65 accept p68 then p68;
+        transition p66ToP68 first p66 accept p68 then p68;
+        transition p67ToP68 first p67 accept p68 then p68;
     }
 
     state def SCSMode {
@@ -485,15 +518,38 @@ package Apollo11 {
         state p40;
         state p51;
         state p52;
+        state mode;
+        state freshStart;
+        state restart;
+        state execOverflow;
+        transition v37 first p00 accept v37 then mode;
+        transition v37ToP11 first mode accept p11 then p11;
+        transition v37ToP27 first mode accept p27 then p27;
+        transition v37ToP40 first mode accept p40 then p40;
+        transition v36 first p00 accept v36 then freshStart;
+        transition v36ToP00 first freshStart accept v36done then p00;
+        transition v69 first p00 accept v69 then restart;
+        transition v69ToP00 first restart accept v69done then p00;
+        transition alarm1201 first mode accept alarm1201 then execOverflow;
+        transition alarm1202 first mode accept alarm1202 then execOverflow;
+        transition overflowToP00 first execOverflow accept resume then p00;
+    }
+
+    state def CMC_Entry {
+        entry; then p61;
         state p61;
         state p62;
+        state p63;
+        state p64;
+        state p65;
+        state p66;
         state p67;
-        transition toP11 first p00 accept p11 then p11;
-        transition toP27 first p00 accept p27 then p27;
-        transition toP40 first p00 accept p40 then p40;
-        transition toP61 first p00 accept p61 then p61;
         transition toP62 first p61 accept p62 then p62;
-        transition toP67 first p62 accept p67 then p67;
+        transition toP63 first p62 accept p63 then p63;
+        transition toP64 first p63 accept p64 then p64;
+        transition toP65 first p64 accept p65 then p65;
+        transition toP66 first p65 accept p66 then p66;
+        transition toP67 first p66 accept p67 then p67;
     }
 
     state def ECLSSMode {
@@ -560,18 +616,19 @@ package Apollo11 {
     requirement earthOrbitRequirement { doc /* Earth parking orbit 100 nmi planned. */ }
     requirement f1Requirement { doc /* F-1 ×5 @ 1,530,000 lbf each (SA-507). F-1 hydraulics collapsed. */ }
     requirement j2Requirement { doc /* J-2 ×5 @ 230,000 lbf (S-II); J-2 ×1 @ 207,000 lbf (S-IVB). */ }
-    requirement spsRequirement { doc /* SPS 20,500 lbf (PK 69-83K). */ }
-    requirement dpsRequirement { doc /* DPS 10,500 lbf, 10:1, ±6° (TN D-7143). */ }
+    requirement spsRequirement { doc /* Engine conflict — cite both, no silent winner: SPS 20,500 lbf (PK) vs 21,500 lbf (TN D-7375). SPS loaded mass UNKNOWN. */ }
+    requirement dpsRequirement { doc /* Engine conflict — cite both, no silent winner: DPS 9,870 / 1,050–6,300 lbf (PK) vs 10,500 lbf 10:1 (TN D-7143). */ }
     requirement apsRequirement { doc /* APS 3,500 lbf, 90% in 0.450 s (TN D-7082). */ }
-    requirement a11MassRequirement { doc /* A11 PK masses: ignition 6,484,280 lb; first motion 6,398,535; LES 8,930; LM descent dry 4,483; LM RCS 604; DPS load 18,100; APS load 5,214. Stage tank loads and Δv table UNKNOWN. */ }
-    requirement agcRequirement { doc /* Two AGCs: AGC_CM and AGC_LM. Block II: 16-bit, 2048 E / 36864 F, 1.024 MHz, MCT 11.7 μs (AGCIS 30). CM = 1 AGC + 2 DSKY. LM = 1 AGC + 1 DSKY. Do not merge. A11 rope IDs UNKNOWN. */ }
-    requirement agsRequirement { doc /* AGS = AEA + ASA + DEDA (TN-7990). AEA 4096 × 18-bit, half/half, 5 μs, 32.7 lb. Not a landing computer. R47 inits it from PNGS. */ }
+    requirement a11MassRequirement { doc /* A11 PK p.109 tank loads (no longer UNKNOWN): S-IC 5,022,674 fueled / 288,750 dry; LOX 3,307,855; RP-1 1,426,069; liftoff 7,653,854 lbf. S-II 1,059,171 / 79,918; LOX 821,022; LH2 158,221. S-IVB 260,523 / 25,000; LOX 192,023; LH2 43,500. IU 4,306 lb; CM 12,250; SM 51,243. Also PK: ignition 6,484,280 lb; first motion 6,398,535; LES 8,930; LM descent dry 4,483; LM RCS 604; DPS load 18,100; APS load 5,214. SPS loaded mass UNKNOWN. CSM lunar Δv UNKNOWN — do not invent. */ }
+    requirement agcRequirement { doc /* Two AGCs: AGC_CM and AGC_LM. Block II: 16-bit, 2048 E / 36864 F, 1.024 MHz, MCT 11.7 μs (AGCIS 30). CM = 1 AGC + 2 DSKY. LM = 1 AGC + 1 DSKY. Do not merge. A11 ropes: Comanche 055 + Luminary 1A LMY99/1. P-numbers are not global: CMC P61–P67 = ENTRY; LGC P63–P68 = LANDING. V37 mode, V36 fresh start, V69 restart. 1201/1202 is exec overflow, not an abort. */ }
+    requirement agsRequirement { doc /* AGS = AEA + ASA + DEDA (TN-7990). AEA 4096 × 18-bit, half/half, 5 μs, 32.7 lb. Not a landing computer. R47 inits it from PNGS. A11 AGS flight-program name UNKNOWN. */ }
+    requirement pipaRequirement { doc /* PIPA scale: CM 5.85 cm/s/pulse vs LM 1.0 cm/s/pulse. */ }
     requirement epsRequirement { doc /* A11 Press Kit electrical: SM three fuel cells; CM three AgZn + charger; LM six AgZn (4 descent / 2 ascent) + ECA each; 28 V DC; two 117 V 400 Hz inverters. */ }
     requirement dockingRequirement { doc /* CM probe / LM drogue; 12 ring latches; soft then hard dock; hardware removed for transfer. */ }
     requirement rcsRequirement { doc /* SM four quads (per-engine lbf UNKNOWN in press kit). CM two × six 93 lbf engines; no auto translation. */ }
-    requirement iuGncRequirement { doc /* IU LVDC stays separate from AGC. IU owns boost+TLI. */ }
+    requirement iuGncRequirement { doc /* IU LVDC stays separate from AGC. LVDC 82.03125 µs, 26+2 bits. No digital AGC↔LVDC. IU owns boost+TLI. */ }
     requirement rsoRequirement { doc /* RSO is OUTSIDE MCC. UHF destruct, safed after Earth orbit. */ }
-    requirement a11AtypicalRequirement { doc /* A11 vs generic lunar stack: (1) first landing, one short EVA, 196 h vs 336 h ECLSS spec; (2) no LRV, no SIM bay; (3) P66 was the A11-flown landing program; (4) Parkes + Goldstone 210-ft is A11 coverage; (5) F-1 1,530,000 lbf sourced as SA-507, not AS-506; (6) PK masses A11-only; tank/Δv UNKNOWN; (7) rope IDs UNKNOWN. */ }
+    requirement a11AtypicalRequirement { doc /* A11 vs generic lunar stack: (1) first landing, one short EVA, 196 h vs 336 h ECLSS spec; (2) no LRV, no SIM bay; (3) P66 was the A11-flown landing program; (4) Parkes + Goldstone 210-ft is A11 coverage; (5) F-1 1,530,000 lbf sourced as SA-507, not AS-506; (6) PK p.109 tank loads A11-only; SPS loaded mass UNKNOWN; CSM lunar Δv UNKNOWN; (7) ropes Comanche 055 + Luminary 1A LMY99/1; AGS flight-program name UNKNOWN. */ }
     requirement scsRequirement { doc /* CSM SCS is the Block II analog backup to AGC_CM. Crew selects AGC_CM vs SCS. Full SCS switch deck TBD. */ }
     requirement pngsRequirement { doc /* LM PNGS is AGC_LM + IMU + landingRadar + rendezvousRadar. AGS is separate. Do not merge PNGS with AGS. */ }
     requirement eclssLoopRequirement { doc /* CM ECLSS loops: O2, water, LiOH CO2 removal, suit circuit. 5.0 psia 100% O2; CO2 ≤7.6 torr; LiOH 1.5 man-day, swap 12 h. SM O2 640 lb; potable 36 lb / waste 56 lb. */ }

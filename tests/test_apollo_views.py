@@ -109,6 +109,11 @@ LOCKED = (
     "state soft",
     "state hard",
     "state hardwareOff",
+    "part Comanche055 : Rope",
+    "part Luminary1A : Rope",
+    "state def CMC_Entry",
+    "state def LGC_Landing",
+    "state execOverflow",
 )
 
 
@@ -148,13 +153,33 @@ class ApolloViewTests(unittest.TestCase):
         self.assertNotIn("part lgc : LGC", text)
         self.assertNotIn("state dockEject", text)
         self.assertNotIn("part vanguard", text)
-        self.assertIn("Stage tank loads and Δv table UNKNOWN", text)
-        self.assertIn("A11 rope IDs UNKNOWN", text)
         self.assertIn("per-engine lbf UNKNOWN in press kit", text)
         self.assertIn("Not a landing computer", text)
         self.assertIn("4096 × 18-bit", text)
         self.assertIn("two × six 93 lbf", text)
         self.assertIn("117 V 400 Hz", text)
+        self.assertIn("5,022,674 fueled", text)
+        self.assertIn("1,059,171", text)
+        self.assertIn("260,523", text)
+        self.assertIn("4,306 lb", text)
+        self.assertIn("12,250", text)
+        self.assertIn("51,243", text)
+        self.assertIn("7,653,854 lbf", text)
+        self.assertIn("SPS loaded mass UNKNOWN", text)
+        self.assertIn("CSM lunar Δv UNKNOWN", text)
+        self.assertNotIn("Stage tank loads and Δv table UNKNOWN", text)
+        self.assertNotIn("A11 rope IDs UNKNOWN", text)
+        self.assertIn("Comanche 055", text)
+        self.assertIn("Luminary 1A LMY99/1", text)
+        self.assertIn("A11 AGS flight-program name UNKNOWN", text)
+        self.assertIn("CMC P61–P67 = ENTRY", text)
+        self.assertIn("LGC P63–P68 = LANDING", text)
+        self.assertIn("1201/1202 is exec overflow, not an abort", text)
+        self.assertIn("CM 5.85 cm/s/pulse", text)
+        self.assertIn("82.03125", text)
+        self.assertIn("No digital AGC↔LVDC", text)
+        self.assertIn("20,500 lbf (PK) vs 21,500 lbf (TN D-7375)", text)
+        self.assertIn("9,870 / 1,050–6,300 lbf (PK) vs 10,500 lbf 10:1 (TN D-7143)", text)
 
 
 def _route_box_hits(doc: dict) -> list[tuple[str, str]]:
