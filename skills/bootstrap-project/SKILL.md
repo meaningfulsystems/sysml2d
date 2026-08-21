@@ -5,12 +5,12 @@ description: Start a new user project from the starter template — folder layou
 
 # Bootstrap a new SysMLD system
 
-Use this when someone wants **their own** system, not a fork of toaster/blender/e-bike.
+Use this when someone wants **their own** SysML2d system (`.sysml` / `.sysmld` / SVG), not a fork of toaster/blender/e-bike. Do not mix in `.msml` — that is the paired MSML toolchain.
 
 ## Copy the starter
 
 ```bash
-cp -R template/new-project/ ../my-system
+cp -R templates/new-project/ ../my-system
 cd ../my-system
 ```
 

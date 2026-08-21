@@ -1,10 +1,10 @@
 # SysMLD Skills
 
-Installable Cursor-style skills for taking SysMLD onto a new project. Stems match the MSML skill pack — **not** one file per view kind, and **no** `sysmld-` prefix.
+Installable Cursor-style skills for taking SysML2d onto a new project. Stems match the MSML skill pack — **not** one file per view kind, and **no** `sysmld-` prefix. This repo is SysML v2 (`.sysml` / `.sysmld` / SVG). MSML is a different language (`.msml` / `.msmd` / PNG). Do not mix them.
 
 | Skill | When to use it |
 | --- | --- |
-| [bootstrap-project](bootstrap-project/SKILL.md) | Start a new user project from [template/new-project/](../template/new-project/) |
+| [bootstrap-project](bootstrap-project/SKILL.md) | Start a new user project from [templates/new-project/](../templates/new-project/) |
 | [author-model](author-model/SKILL.md) | Write or update SysML v2 textual models in this style |
 | [compose-views](compose-views/SKILL.md) | Write intent JSON and run the right `sysmld` command (all 15 kinds) |
 | [vision-review](vision-review/SKILL.md) | Vision QA: no line through a box, hop-overs only for line crossings, meaning checks |

@@ -14,7 +14,7 @@ from sysmld.validate import validate_file
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TEMPLATE = ROOT / "template" / "new-project"
+TEMPLATE = ROOT / "templates" / "new-project"
 
 
 class StarterTemplateTests(unittest.TestCase):
