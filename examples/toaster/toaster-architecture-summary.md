@@ -13,7 +13,7 @@ MagicGrid separates **what the system must do for someone** from **how the desig
 **Problem domain**
 
 1. Purpose / mission — why the system exists, in plain language.
-2. Stakeholders and use cases — every actor, include/extend, and the analysis and verification *names*.
+2. Stakeholders and use cases — every actor and named use case (include/extend only when the `.sysml` has it), and the analysis and verification *names*.
 3. Requirements — model text wins. Quantitative targets appear only when they are bound in the `.sysml`.
 
 **Solution domain**
@@ -39,9 +39,9 @@ The only named stakeholder is the user. A service technician is implied by a ser
 
 **Use cases**
 
-- **Toast Bread** — primary cycle. The user inserts bread, selects browning, and receives toast.
-- **Cancel Toast** — **extends** Toast Bread. The user can abort a heating cycle.
-- **Empty Crumb Tray** — **included** by Toast Bread. The tray is removable without tools.
+- **Toast Bread** — primary named use case. The user inserts bread, selects browning, and receives toast.
+- **Cancel Toast** — named use case. The user can abort a heating cycle. The `.sysml` has no extend relationship.
+- **Empty Crumb Tray** — named use case. The tray is removable without tools. The `.sysml` has no include relationship.
 
 **Analysis cases** (named studies; they bind named constraints, not measured results)
 
@@ -113,7 +113,7 @@ Port types used on the toaster: user-interface, power, control, heat, and mechan
 
 ### What connects to what, and why
 
-The user starts and stops the cycle through the lever and buttons. Mains energy reaches the control subsystem through the cord. The subsystem commands the heater. The heater heats the carriage. The chassis locates the moving and mounted parts.
+The user starts and stops the cycle through the lever and buttons. Mains energy reaches the control subsystem through the cord. The subsystem commands the heater. `heaterToCarriage` connects `heaterHeatOut` to `carriageHeatIn` — heat to the carriage. The model has no bread thermal port. The chassis locates the moving and mounted parts.
 
 | Connection | From → to | Why |
 |------------|-----------|-----|
@@ -122,7 +122,7 @@ The user starts and stops the cycle through the lever and buttons. Mains energy 
 | Lever → power and control | Control | Toast request / latch |
 | Buttons → power and control | Control | Browning and cancel |
 | Power and control → heater | Control | Heat command |
-| Heater → carriage | Thermal | Heat to bread |
+| Heater → carriage | Thermal | `heaterToCarriage`: heat to the carriage |
 | Lever → carriage | Mechanical | Lift / release |
 | Chassis → carriage, buttons, power and control, crumb tray | Mechanical | Guide and mount |
 
@@ -145,7 +145,7 @@ Initial state is Idle.
 | Heating | power fault | Error |
 | Error | reset | Idle |
 
-Done is a normal state, not a final node: cycle complete is distinct from bread removal. The three heating-to-error transitions are separate in the model; the state view collapses them to one fault edge.
+Done is a normal state, not a final node: cycle complete is distinct from bread removal. Error is event names only: overheat, carriage jam, power fault. The model does not bind unmodeled effects on Error. The three heating-to-error transitions are separate in the model; the state view collapses them to one fault edge.
 
 ### Toast cycle (actions)
 
@@ -188,7 +188,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 - Stick figure — actor (a stakeholder outside the system).
 - Ellipse — use case.
-- Dashed arrow labeled `include` / `extend` — use-case dependency.
+- Dashed arrow labeled `include` / `extend` — use-case dependency on a view. Teach it only when the `.sysml` has the relationship.
 - Rectangle with `«requirement»` — a requirement node (view identifier only).
 - Rectangle — part usage (a piece of the toaster).
 - Small square on a box edge — port.
@@ -206,9 +206,9 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Who uses the toaster, and which jobs can they ask of it?
 
-**How to read it:** The User actor associates with three ellipses inside the Toaster boundary. Cancel Toast **extends** Toast Bread. Empty Crumb Tray is **included** by Toast Bread.
+**How to read it:** The User actor associates with three named ellipses inside the Toaster boundary: Toast Bread, Cancel Toast, Empty Crumb Tray. The `.sysml` has no include or extend. A generated view may still draw those arrows; that is a view, not the model.
 
-**Symbols:** actor, use-case ellipses, include/extend dashed arrows, system boundary.
+**Symbols:** actor, use-case ellipses, system boundary.
 
 ![Toaster Use Cases](toaster-uc.svg)
 
@@ -328,7 +328,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Which modes does the toaster occupy, and what events move it?
 
-**How to read it:** The STM starts in Idle. Heating is the only state that can go to Done or Error. Done returns to Idle on carriage up. Error returns to Idle on reset. The view may collapse the three heating-to-error transitions; the model keeps them separate.
+**How to read it:** The STM starts in Idle. Heating is the only state that can go to Done or Error. Done returns to Idle on carriage up. Error is event names only (overheat, carriage jam, power fault) and returns to Idle on reset. The view may collapse the three heating-to-error transitions; the model keeps them separate.
 
 **Symbols:** rounded states, transition arrows, triggers.
 

@@ -61,9 +61,9 @@ Identifiers such as REQ-E-xxx appear only on generated views. Text and numbers a
 | REQ-E-001 | Ride safety — fail-silent torque cut. Brake, controller, cadence sensor, wheel-speed sensor, and BMS shall cut motor torque. Cadence-only cannot enforce 25 km/h | qualitative | EN 15194 EPAC safety (stated in the assist-limit family) |
 | REQ-E-002 | Tour-mode range | Tour-scenario `usableWh` binding: **500 Wh** / `energyPerKm` **~8.3 Wh/km** ≥ **60 km**. Not pack nameplate. Not Eco / PAS-1 | `rangeRequirement` / `tourRangeBind` |
 | REQ-E-003 | Assist limit — cadence PAS only, no certified throttle | Assist cut **25 km/h**; walk assist **≤ 6 km/h** | **EN 15194** |
-| REQ-E-004 | Charge safety — stop on over-temperature, over-voltage, or charger disconnect. BMS opens the pack contactor | qualitative | **Underwriters Laboratories (UL) 2849** |
+| REQ-E-004 | Charge safety — stop on over-temperature, over-voltage, or charger disconnect. **Model shall:** BMS opens the pack contactor | qualitative | UL 2849 cited; not a certification shall |
 | REQ-E-010 | Electronic brake inhibit | **≤ 50 ms** from either lever. Separate design target — not a comparison to the EN 15194 distance test | `brakeOverrideRequirement` |
-| REQ-E-011 | BMS opens the pack contactor before any cell exceeds voltage or temperature limits | qualitative | UL 2849 (via charge safety) |
+| REQ-E-011 | BMS opens the pack contactor before any cell exceeds voltage or temperature limits | qualitative | UL 2849 cited; not a certification shall |
 | REQ-E-012 | EN 15194:2017 clause 4.2.13 Power management — motor-assist cut-off after pedaling stops, **not** vehicle brake distance. Brake lever switches only relax the cut-off from 2 m to 5 m | **2 m**; **5 m** when lever switches relax the clause | **EN 15194:2017 4.2.13** |
 | REQ-E-013 | Walk assist is not a throttle | **≤ 6 km/h** | **EN 15194** |
 | REQ-E-014 | Continuous assist power | **250 W EU continuous** — distinct from hub peak torque **40 N·m** | **EN 15194** |
@@ -72,6 +72,8 @@ Identifiers such as REQ-E-xxx appear only on generated views. Text and numbers a
 | REQ-E-040 | Lighting | **Straßenverkehrs-Zulassungs-Ordnung (StVZO) / International Organization for Standardization (ISO) 6742**, not United Nations Economic Commission for Europe (UN ECE) R113 | **StVZO**, **ISO 6742** |
 
 Clause 4.2.13 is power management on the motor controller, cadence sensor, and wheel-speed sensor — not `BrakeSystem`. The 50 ms electronic inhibit is a separate design target. Do not treat 50 ms as tighter than the distance test.
+
+UL 2849 is a citation on charge safety. It is not modeled as a certification requirement. The model shall is that the BMS opens the pack contactor.
 
 ## 4. Structure and interfaces
 
@@ -131,7 +133,7 @@ Interfaces: rider (`PedalCadence`, `WalkAssistCommand`), charge (`ChargeEnergy`,
 | Inhibit | brake system → controller | Fail-silent cut |
 | Cadence | cadence sensor → controller `sensorIn` | Pedal presence |
 | Wheel speed | wheel-speed sensor → controller `sensorIn` | 25 km/h cut — cadence cannot do this alone |
-| Charge | charger → BMS → pack | UL 2849 charge safety |
+| Charge | charger → BMS → pack | BMS opens the contactor (UL 2849 cited, not a certification shall) |
 | Road load | road → hub | Tractive load (context, not an internal actor) |
 
 `frameToMotor` exists in the model. The interconnection view leaves the frame-to-hub mount off the drawing so frame mounts do not hop each other.

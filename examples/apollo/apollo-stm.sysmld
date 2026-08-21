@@ -44,8 +44,8 @@
     "kind": "StateView",
     "name": "Apollo 11 Mission Phases",
     "canvas": {
-      "width": 3488,
-      "height": 251,
+      "width": 3552,
+      "height": 265,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -58,9 +58,9 @@
         "symbol": "boundary",
         "layout": {
           "x": 103,
-          "y": 87,
-          "width": 3345,
-          "height": 124,
+          "y": 73,
+          "width": 3409,
+          "height": 152,
           "z": 0
         },
         "compartments": {
@@ -86,7 +86,7 @@
         "id": "countdown",
         "symbol": "state_usage",
         "layout": {
-          "x": 290,
+          "x": 294,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -100,7 +100,7 @@
         "id": "boost",
         "symbol": "state_usage",
         "layout": {
-          "x": 490,
+          "x": 498,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -114,7 +114,7 @@
         "id": "earthOrbit",
         "symbol": "state_usage",
         "layout": {
-          "x": 691,
+          "x": 703,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -128,21 +128,21 @@
         "id": "TLI",
         "symbol": "state_usage",
         "layout": {
-          "x": 891,
-          "y": 123,
-          "width": 118,
-          "height": 52,
+          "x": 892,
+          "y": 109,
+          "width": 148,
+          "height": 80,
           "z": 10
         },
         "model_ref": "TLI",
-        "label": "TLI\n02:44:15 GET planned",
+        "label": "TLI\nPK 02:44:15\nA11-FP 2:44:26\nflown 02:44:16",
         "style": "state.default"
       },
       {
         "id": "dockEject",
         "symbol": "state_usage",
         "layout": {
-          "x": 1091,
+          "x": 1111,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -156,7 +156,7 @@
         "id": "translunar",
         "symbol": "state_usage",
         "layout": {
-          "x": 1291,
+          "x": 1315,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -170,21 +170,21 @@
         "id": "LOI",
         "symbol": "state_usage",
         "layout": {
-          "x": 1492,
-          "y": 123,
-          "width": 118,
-          "height": 52,
+          "x": 1501,
+          "y": 114,
+          "width": 156,
+          "height": 70,
           "z": 10
         },
         "model_ref": "LOI",
-        "label": "LOI\n75:54:28 GET planned",
+        "label": "LOI-1\nA11-FP 75:54:28\nflown ~075:49:50",
         "style": "state.default"
       },
       {
         "id": "undock",
         "symbol": "state_usage",
         "layout": {
-          "x": 1692,
+          "x": 1724,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -198,7 +198,7 @@
         "id": "DOI",
         "symbol": "state_usage",
         "layout": {
-          "x": 1892,
+          "x": 1928,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -212,7 +212,7 @@
         "id": "descent",
         "symbol": "state_usage",
         "layout": {
-          "x": 2092,
+          "x": 2132,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -226,7 +226,7 @@
         "id": "surfaceEVA",
         "symbol": "state_usage",
         "layout": {
-          "x": 2293,
+          "x": 2337,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -240,7 +240,7 @@
         "id": "ascent",
         "symbol": "state_usage",
         "layout": {
-          "x": 2493,
+          "x": 2541,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -254,7 +254,7 @@
         "id": "rendezvous",
         "symbol": "state_usage",
         "layout": {
-          "x": 2693,
+          "x": 2745,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -268,7 +268,7 @@
         "id": "TEI",
         "symbol": "state_usage",
         "layout": {
-          "x": 2893,
+          "x": 2949,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -282,7 +282,7 @@
         "id": "entry",
         "symbol": "state_usage",
         "layout": {
-          "x": 3094,
+          "x": 3154,
           "y": 123,
           "width": 118,
           "height": 52,
@@ -296,7 +296,7 @@
         "id": "recovery",
         "symbol": "state_usage",
         "layout": {
-          "x": 3294,
+          "x": 3358,
           "y": 123,
           "width": 118,
           "height": 52,

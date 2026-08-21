@@ -62,8 +62,10 @@
       "model_ref": "earthOrbit"
     },
     "TLI": {
-      "label": "TLI\n02:44:15 GET planned",
-      "model_ref": "TLI"
+      "label": "TLI\nPK 02:44:15\nA11-FP 2:44:26\nflown 02:44:16",
+      "model_ref": "TLI",
+      "w": 148,
+      "h": 80
     },
     "dockEject": {
       "label": "dock/eject",
@@ -74,8 +76,10 @@
       "model_ref": "translunar"
     },
     "LOI": {
-      "label": "LOI\n75:54:28 GET planned",
-      "model_ref": "LOI"
+      "label": "LOI-1\nA11-FP 75:54:28\nflown ~075:49:50",
+      "model_ref": "LOI",
+      "w": 156,
+      "h": 70
     },
     "undock": {
       "label": "undock",

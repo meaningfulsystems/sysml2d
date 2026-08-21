@@ -13,7 +13,7 @@ MagicGrid separates **what the system must do for someone** from **how the desig
 **Problem domain**
 
 1. Purpose / mission — why the system exists, in plain language.
-2. Stakeholders and use cases — every actor, include/extend, and the analysis and verification *names*.
+2. Stakeholders and use cases — every actor and named use case (include/extend only when the `.sysml` has it), and the analysis and verification *names*.
 3. Requirements — model text wins. Quantitative targets appear only when they are bound in the `.sysml`.
 
 **Solution domain**
@@ -39,9 +39,9 @@ The only named stakeholder is the user.
 
 **Use cases**
 
-- **Make Smoothie** — primary program.
-- **Stop Blend** — **extends** Make Smoothie.
-- **Clean Container** — **included** by Make Smoothie.
+- **Make Smoothie** — primary named use case.
+- **Stop Blend** — named use case. The `.sysml` has no extend relationship.
+- **Clean Container** — named use case. The `.sysml` has no include relationship.
 
 **Analysis cases** (named studies; they bind named constraints, not measured results)
 
@@ -119,7 +119,7 @@ The lid and container must be seated before torque is legal. The motor base loca
 | Connection | From → to | Why |
 |------------|-----------|-----|
 | Tamper ↔ lid | Mechanical | Optional tamper fit |
-| Lid ↔ container | Mechanical | Lid seat / interlock geometry |
+| Lid ↔ container | Mechanical | Lid seat (mechanical connection; 50 ms requirement). No interlock part |
 | Container ↔ blade | Mechanical | Blade mounted in the jar |
 | Container ↔ motor base | Mechanical | Seat and lock |
 | Base → motor, control panel, drive coupling | Mechanical | Mount |
@@ -151,7 +151,7 @@ Top-level states are Off and a composite Powered. Entering Powered goes to Ready
 | Blending | sensor fault | Error |
 | Error | reset | Ready |
 
-Timeout duration is not in the model. The state view collapses the five blending-to-error transitions into one fault edge.
+Timeout duration is not in the model. Error is event names only: fault, lidOpened, bladeJam, overcurrent, sensorFault. The model does not bind unmodeled effects on Error. The state view collapses the five blending-to-error transitions into one fault edge.
 
 ### Smoothie program (actions)
 
@@ -190,7 +190,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 - Stick figure — actor.
 - Ellipse — use case.
-- Dashed arrow labeled `include` / `extend` — use-case dependency.
+- Dashed arrow labeled `include` / `extend` — use-case dependency on a view. Teach it only when the `.sysml` has the relationship.
 - Rectangle with `«requirement»` — a requirement node (view identifier only).
 - Rectangle — part usage.
 - Small square on a box edge — port.
@@ -208,9 +208,9 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Who uses the blender, and which jobs can they ask of it?
 
-**How to read it:** The User actor associates with three ellipses inside the Blender boundary. Stop Blend **extends** Make Smoothie. Clean Container is **included** by Make Smoothie.
+**How to read it:** The User actor associates with three named ellipses inside the Blender boundary: Make Smoothie, Stop Blend, Clean Container. The `.sysml` has no include or extend. A generated view may still draw those arrows; that is a view, not the model.
 
-**Symbols:** actor, use-case ellipses, include/extend dashed arrows, system boundary.
+**Symbols:** actor, use-case ellipses, system boundary.
 
 ![Blender Use Cases](blender-uc.svg)
 
@@ -318,7 +318,7 @@ The figures are generated SysMLD views. They illustrate the architecture above; 
 
 **Question:** Which modes does the blender occupy?
 
-**How to read it:** The STM has Off and a composite Powered. Ready, Blending, and Error sit inside Powered. Error covers general fault, lid opened during blend, blade jam, overcurrent, and sensor fault. Pause is required in text and is not a state.
+**How to read it:** The STM has Off and a composite Powered. Ready, Blending, and Error sit inside Powered. Error is event names only: fault, lidOpened, bladeJam, overcurrent, sensorFault. Pause is required in text and is not a state.
 
 **Symbols:** rounded states, composite frame, transition arrows.
 
