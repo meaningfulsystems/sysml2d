@@ -82,6 +82,8 @@ LOCKED = (
     "part PLSS : PLSS",
     "part KSC_LCC : KSC_LCC",
     "part MCC : MCC",
+    "part MOCR2 : MOCR",
+    "part Hornet : Hornet",
     "part RTCC : RTCC",
     "part Goldstone : Goldstone",
     "part Madrid : Madrid",
@@ -184,6 +186,27 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("No digital AGC↔LVDC", text)
         self.assertIn("20,500 lbf (PK) vs 21,500 lbf (TN D-7375)", text)
         self.assertIn("9,870 / 1,050–6,300 lbf (PK) vs 10,500 lbf 10:1 (TN D-7143)", text)
+        self.assertIn("A11 MCC is MOCR 2", text)
+        self.assertIn("Mission Rule 1-21", text)
+        self.assertIn("296.8", text)
+        self.assertIn("259.7", text)
+        self.assertIn("243.0", text)
+        self.assertIn("S-IC-6", text)
+        self.assertIn("S-II-6", text)
+        self.assertIn("S-IVB-6N", text)
+        self.assertIn("IU-6", text)
+        self.assertIn("SLA-14", text)
+        self.assertIn("No stage-to-stage electrical power", text)
+        self.assertIn("No CSM–LM propellant crossfeed", text)
+        self.assertIn("A11 SM cryo is 2+2", text)
+        self.assertIn("1.5° cant", text)
+        self.assertIn("195:18:35", text)
+        self.assertIn("13 nmi", text)
+        self.assertIn("CDR 2:48", text)
+        self.assertIn("LMP 2:40", text)
+        self.assertIn("2800 psi vs 3000 psi", text)
+        self.assertIn("part Comanche055 : Rope", text)
+        self.assertIn("part Luminary1A : Rope", text)
 
 
 def _route_box_hits(doc: dict) -> list[tuple[str, str]]:

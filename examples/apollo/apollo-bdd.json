@@ -45,6 +45,7 @@
     "LMP": "Apollo11::Crew::LMP",
     "KSC_LCC": "Apollo11::Ground::KSC_LCC",
     "MCC": "Apollo11::Ground::MCC",
+    "MOCR2": "Apollo11::Ground::MCC::MOCR2",
     "RTCC": "Apollo11::Ground::RTCC",
     "MSFN": "Apollo11::Ground::MSFN",
     "NASCOM": "Apollo11::Ground::NASCOM"
@@ -216,7 +217,14 @@
             {
               "id": "MCC",
               "label": "MCC",
-              "model_ref": "MCC"
+              "model_ref": "MCC",
+              "children": [
+                {
+                  "id": "MOCR2",
+                  "label": "MOCR 2",
+                  "model_ref": "MOCR2"
+                }
+              ]
             },
             {
               "id": "RTCC",

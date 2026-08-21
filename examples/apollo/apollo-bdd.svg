@@ -75,6 +75,8 @@
 <text class="label" text-anchor="middle" x="3112" y="326">KSC_LCC</text>
 <rect id="MCC" x="3200" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="3270" y="326">MCC</text>
+<rect id="MOCR2" x="3200" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="3270" y="456">MOCR 2</text>
 <rect id="RTCC" x="3358" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="3428" y="326">RTCC</text>
 <rect id="MSFN" x="3516" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
@@ -115,6 +117,7 @@
 <path d="M 3428,222 L 3428,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 3428,222 L 3428,261 L 3586,261 L 3586,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 3428,222 L 3428,261 L 3744,261 L 3744,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 3270,352 L 3270,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text class="small" x="515" y="158.98">1</text>
 <text class="small" x="1305" y="158.98">1</text>
 <text class="small" x="2095" y="158.98">1</text>
@@ -149,5 +152,6 @@
 <text class="small" x="3438" y="281.96">1</text>
 <text class="small" x="3596" y="288.98">1</text>
 <text class="small" x="3754" y="288.98">1</text>
+<text class="small" x="3280" y="411.96">1</text>
 </g>
 </svg>

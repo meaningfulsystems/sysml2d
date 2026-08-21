@@ -88,21 +88,21 @@ package Apollo11 {
         }
         part def SIC {
             part F1 : F1;
-            doc /* A11 PK p.109: 5,022,674 fueled / 288,750 dry; LOX 3,307,855; RP-1 1,426,069; liftoff 7,653,854 lbf. */
+            doc /* Stack serial S-IC-6. A11 PK p.109: 5,022,674 fueled / 288,750 dry; LOX 3,307,855; RP-1 1,426,069; liftoff 7,653,854 lbf. */
         }
         part def SII {
             part J2 : J2;
-            doc /* A11 PK p.109: 1,059,171 fueled / 79,918 dry; LOX 821,022; LH2 158,221. */
+            doc /* Stack serial S-II-6. A11 PK p.109: 1,059,171 fueled / 79,918 dry; LOX 821,022; LH2 158,221. */
         }
         part def SIVB {
             part J2 : J2;
-            doc /* A11 PK p.109: 260,523 fueled / 25,000 dry; LOX 192,023; LH2 43,500. */
+            doc /* Stack serial S-IVB-6N. A11 PK p.109: 260,523 fueled / 25,000 dry; LOX 192,023; LH2 43,500. */
         }
         part def IU {
             part LVDC : LVDC;
-            doc /* A11 PK p.109: 4,306 lb. */
+            doc /* Stack serial IU-6. A11 PK p.109: 4,306 lb. */
         }
-        part def SLA;
+        part def SLA { doc /* Stack serial SLA-14. Four petals; LM extract after transposition. */ }
         part def LES;
         part def F1;
         part def J2;
@@ -152,7 +152,7 @@ package Apollo11 {
             connection RCSToSystemB connect RCS to systemB;
         }
         part def SM {
-            doc /* A11 PK p.109: 51,243 lb. SPS loaded mass UNKNOWN. */
+            doc /* A11 PK p.109: 51,243 lb. SPS loaded mass UNKNOWN. A11 SM cryo is 2+2 (two H2 + two O2), not J-mission 3+3. */
             part SPS : SPS;
             part RCS : RCS;
             part FC1 : FC;
@@ -290,7 +290,7 @@ package Apollo11 {
         part def ECA;
         part def drogue;
         part def DPS;
-        part def APS;
+        part def APS { doc /* APS 3,500 lbf; 90% in 0.450 s (TN D-7082); 1.5° cant. */ }
         part def RCS { doc /* LM RCS: 100 lbf per engine (A11 PK p.106). */ }
         part def IMU;
         part def DSKY;
@@ -312,6 +312,7 @@ package Apollo11 {
         part def CDR {
             part A7L : A7L;
             part PLSS : PLSS;
+            doc /* Armstrong. Surface EVA 2:48. */
         }
         part def CMP {
             part A7L : A7L;
@@ -319,6 +320,7 @@ package Apollo11 {
         part def LMP {
             part A7L : A7L;
             part PLSS : PLSS;
+            doc /* Aldrin. Surface EVA 2:40. */
         }
         part def A7L;
         part def PLSS;
@@ -335,8 +337,9 @@ package Apollo11 {
         part def KSC_LCC;
         part def MCC {
             part RTCC : RTCC;
-            part MOCR : MOCR;
+            part MOCR2 : MOCR;
             part CCATS : CCATS;
+            doc /* A11 MCC is MOCR 2. Handoff from KSC_LCC at tower clear — Mission Rule 1-21. */
         }
         part def RTCC {
             part ibm360a : IBM360_75;
@@ -373,7 +376,11 @@ package Apollo11 {
     }
 
     part def RSO;
-    part def RecoveryForces;
+    part def RecoveryForces {
+        part Hornet : Hornet;
+        doc /* USS Hornet (CV-12). Splash 195:18:35 MET, 13 nmi from target. */
+    }
+    part def Hornet;
 
     port def UhfDestructPort;
     port def UmbilicalPort;
@@ -609,7 +616,7 @@ package Apollo11 {
     requirement p27Requirement { doc /* P27 uplink verbs ONLY V70–V73 (clock/block/scatter). Separate from CCATS real-time command-load path. */ }
     requirement commandPathARequirement { doc /* Path A: FC→CCC→RTCC→CCATS→site 642B→USB 70 kHz. */ }
     requirement cmEcsRequirement { doc /* CM ECLSS: 3 crew / 14 d spec; 5.0 psia 100% O2; CO2 ≤7.6 torr; SM O2 640 lb; potable 36 lb / waste 56 lb; LiOH 1.5 man-day, swap 12 h. A11 mission 196 h vs 336 h spec. */ }
-    requirement lm5ConsumableRequirement { doc /* LM-5: descent O2 ~48 lb @ 3000 psi; ascent O2 ~2.4 lb ×2; descent water 332 lb; ascent water 42 lb ×2; LCG 1200 Btu/man-h steady. */ }
+    requirement lm5ConsumableRequirement { doc /* LM-5: descent O2 ~48 lb — 2800 psi vs 3000 psi (cite both, no silent winner); ascent O2 ~2.4 lb ×2; descent water 332 lb; ascent water 42 lb ×2; LCG 1200 Btu/man-h steady. */ }
     requirement a7lRequirement { doc /* A7L: 3.75±0.25 psid; EV 19.69 kg; PLSS usable O2 1.04 lb / 4 h at 1200 Btu/h. */ }
     requirement foodRequirement { doc /* Food plan 2200±300 kcal/d. A11 actual intake UNKNOWN. */ }
     requirement delayRequirement { doc /* Lunar delay = range/c (~1.3 s). Entry blackout duration UNKNOWN. */ }
@@ -618,23 +625,27 @@ package Apollo11 {
     requirement j2Requirement { doc /* J-2 ×5 @ 230,000 lbf (S-II); J-2 ×1 @ 207,000 lbf (S-IVB). */ }
     requirement spsRequirement { doc /* Engine conflict — cite both, no silent winner: SPS 20,500 lbf (PK) vs 21,500 lbf (TN D-7375). SPS loaded mass UNKNOWN. */ }
     requirement dpsRequirement { doc /* Engine conflict — cite both, no silent winner: DPS 9,870 / 1,050–6,300 lbf (PK) vs 10,500 lbf 10:1 (TN D-7143). */ }
-    requirement apsRequirement { doc /* APS 3,500 lbf, 90% in 0.450 s (TN D-7082). */ }
-    requirement a11MassRequirement { doc /* A11 PK p.109 tank loads (no longer UNKNOWN): S-IC 5,022,674 fueled / 288,750 dry; LOX 3,307,855; RP-1 1,426,069; liftoff 7,653,854 lbf. S-II 1,059,171 / 79,918; LOX 821,022; LH2 158,221. S-IVB 260,523 / 25,000; LOX 192,023; LH2 43,500. IU 4,306 lb; CM 12,250; SM 51,243. Also PK: ignition 6,484,280 lb; first motion 6,398,535; LES 8,930; LM descent dry 4,483; LM RCS 604; DPS load 18,100; APS load 5,214. SPS loaded mass UNKNOWN. CSM lunar Δv UNKNOWN — do not invent. */ }
+    requirement apsRequirement { doc /* APS 3,500 lbf, 90% in 0.450 s (TN D-7082); 1.5° cant. */ }
+    requirement a11MassRequirement { doc /* Stack serials S-IC-6 / S-II-6 / S-IVB-6N / IU-6 / SLA-14. A11 PK p.109 tank loads (no longer UNKNOWN): S-IC 5,022,674 fueled / 288,750 dry; LOX 3,307,855; RP-1 1,426,069; liftoff 7,653,854 lbf. S-II 1,059,171 / 79,918; LOX 821,022; LH2 158,221. S-IVB 260,523 / 25,000; LOX 192,023; LH2 43,500. IU 4,306 lb; CM 12,250; SM 51,243. Also PK: ignition 6,484,280 lb; first motion 6,398,535; LES 8,930; LM descent dry 4,483; LM RCS 604; DPS load 18,100; APS load 5,214. SPS loaded mass UNKNOWN. CSM lunar Δv UNKNOWN — do not invent. */ }
     requirement agcRequirement { doc /* Two AGCs: AGC_CM and AGC_LM. Block II: 16-bit, 2048 E / 36864 F, 1.024 MHz, MCT 11.7 μs (AGCIS 30). CM = 1 AGC + 2 DSKY. LM = 1 AGC + 1 DSKY. Do not merge. A11 ropes: Comanche 055 + Luminary 1A LMY99/1. P-numbers are not global: CMC P61–P67 = ENTRY; LGC P63–P68 = LANDING. V37 mode, V36 fresh start, V69 restart. 1201/1202 is exec overflow, not an abort. */ }
     requirement agsRequirement { doc /* AGS = AEA + ASA + DEDA (TN-7990). AEA 4096 × 18-bit, half/half, 5 μs, 32.7 lb. Not a landing computer. R47 inits it from PNGS. A11 AGS flight-program name UNKNOWN. */ }
     requirement pipaRequirement { doc /* PIPA scale: CM 5.85 cm/s/pulse vs LM 1.0 cm/s/pulse. */ }
-    requirement epsRequirement { doc /* A11 Press Kit electrical: SM three fuel cells; CM three AgZn + charger; LM six AgZn (4 descent / 2 ascent) + ECA each; 28 V DC; two 117 V 400 Hz inverters. */ }
+    requirement epsRequirement { doc /* A11 Press Kit electrical: SM three fuel cells; A11 SM cryo is 2+2, not J-mission. CM three AgZn + charger; LM six AgZn (4 descent / 2 ascent) + ECA each; 28 V DC; two 117 V 400 Hz inverters. No stage-to-stage electrical power. No CSM–LM propellant crossfeed. */ }
     requirement dockingRequirement { doc /* CM probe / LM drogue; 12 ring latches; soft then hard dock; hardware removed for transfer. */ }
     requirement rcsRequirement { doc /* RCS thrust: SM 100 lbf per engine (A11 PK p.93); LM 100 lbf per engine (A11 PK p.106); CM 93 lbf. SM four quads. CM two × six 93 lbf engines; no auto translation. Loaded SM/CM RCS propellant mass UNKNOWN — do not invent. Δv table still UNKNOWN. */ }
     requirement iuGncRequirement { doc /* IU LVDC stays separate from AGC. LVDC 82.03125 µs, 26+2 bits. No digital AGC↔LVDC. IU owns boost+TLI. */ }
     requirement rsoRequirement { doc /* RSO is OUTSIDE MCC. UHF destruct, safed after Earth orbit. */ }
-    requirement a11AtypicalRequirement { doc /* A11 vs generic lunar stack: (1) first landing, one short EVA, 196 h vs 336 h ECLSS spec; (2) no LRV, no SIM bay; (3) P66 was the A11-flown landing program; (4) Parkes + Goldstone 210-ft is A11 coverage; (5) F-1 1,530,000 lbf sourced as SA-507, not AS-506; (6) PK p.109 tank loads A11-only; SPS loaded mass UNKNOWN; CSM lunar Δv UNKNOWN; (7) ropes Comanche 055 + Luminary 1A LMY99/1; AGS flight-program name UNKNOWN. */ }
+    requirement a11AtypicalRequirement { doc /* A11 vs generic lunar stack: (1) first landing, one short EVA — CDR 2:48 / LMP 2:40 — 196 h vs 336 h ECLSS spec; (2) no LRV, no SIM bay; (3) P66 was the A11-flown landing program; (4) Parkes + Goldstone 210-ft is A11 coverage; (5) F-1 1,530,000 lbf sourced as SA-507, not AS-506; (6) PK p.109 tank loads A11-only; SPS loaded mass UNKNOWN; CSM lunar Δv UNKNOWN; (7) ropes Comanche 055 + Luminary 1A LMY99/1; AGS flight-program name UNKNOWN; (8) A11 MCC is MOCR 2; (9) A11 SM cryo is 2+2, not J-mission. */ }
     requirement scsRequirement { doc /* CSM SCS is the Block II analog backup to AGC_CM. Crew selects AGC_CM vs SCS. Full SCS switch deck TBD. */ }
     requirement pngsRequirement { doc /* LM PNGS is AGC_LM + IMU + landingRadar + rendezvousRadar. AGS is separate. Do not merge PNGS with AGS. */ }
     requirement eclssLoopRequirement { doc /* CM ECLSS loops: O2, water, LiOH CO2 removal, suit circuit. 5.0 psia 100% O2; CO2 ≤7.6 torr; LiOH 1.5 man-day, swap 12 h. SM O2 640 lb; potable 36 lb / waste 56 lb. */ }
     requirement rtccRequirement { doc /* RTCC: five IBM 360/75. MOC+DSC roles; which-is-which on A11 UNKNOWN. */ }
     requirement msfnSiteRequirement { doc /* 3×85-ft USB: Goldstone, Madrid, Honeysuckle + NASCOM. MSFN ships collapsed. Complete 30-ft inventory UNKNOWN. */ }
-    requirement kscRequirement { doc /* KSC_LCC: Firing Room 1, RCA 110A pair, ACE, umbilicals, pad cryo. Handoff MCC at tower clear. */ }
+    requirement kscRequirement { doc /* KSC_LCC: Firing Room 1, RCA 110A pair, ACE, umbilicals, pad cryo. Handoff MCC at tower clear — Mission Rule 1-21. */ }
+    requirement vhfRequirement { doc /* VHF 296.8 / 259.7 MHz. Recovery 243.0 MHz. */ }
+    requirement isolationRequirement { doc /* No stage-to-stage electrical power. No CSM–LM propellant crossfeed. */ }
+    requirement recoveryRequirement { doc /* Splash 195:18:35 MET, 13 nmi from target, USS Hornet (CV-12). */ }
+    requirement evaRequirement { doc /* One surface EVA (A11-atypical vs later J). CDR 2:48 / LMP 2:40. PLSS + A7L. */ }
 
     constraint def usbCsmLink;
     constraint def usbLmLink;

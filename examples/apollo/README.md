@@ -10,7 +10,8 @@ This is **SysML2d** (`.sysml` / `.sysmld` / SVG), not MSML.
 - **CSM:** CM, SM, SCS, AGC_CM, IMU, DSKY, SPS, RCS, ECLSS
 - **LM:** descent, ascent, PNGS, AGC_LM, AGS, DPS, APS, RCS, landingRadar, rendezvousRadar
 - **Crew:** CDR, CMP, LMP, A7L, PLSS
-- **Ground:** KSC_LCC, MCC, RTCC, MSFN Goldstone / Madrid / Honeysuckle + NASCOM
+- **Ground:** KSC_LCC, MCC (`MOCR2` — A11 is MOCR 2), RTCC, MSFN Goldstone / Madrid / Honeysuckle + NASCOM
+- **Recovery:** `Hornet` (USS Hornet) under `RecoveryForces`
 
 Do **not** collapse: AGC_CM, AGC_LM, DSKY (CM ×2 + LM ×1), AGS, IU LVDC, USB.
 
@@ -30,6 +31,12 @@ Sourced numbers only. SPS loaded mass and CSM lunar Δv stay UNKNOWN — do not 
 - **AGS (TN-7990):** `AEA` + `ASA` + `DEDA`. AEA 4096 × 18-bit, half/half, 5 μs, 32.7 lb. Not a landing computer.
 - **Docking:** CM `probe` / LM `drogue`, `ringLatches` (12), soft then hard, hardware removed for transfer (`hardwareOff`).
 - **RCS:** SM 100 lbf/engine (A11 PK p.93); LM 100 lbf/engine (A11 PK p.106); CM 93 lbf. SM `quadA`–`quadD`. CM `systemA` / `systemB` (two × six 93 lbf); no auto translation. Loaded SM/CM RCS propellant mass UNKNOWN — do not invent. Δv table still UNKNOWN.
+
+**Stack serials (do not revert tank loads or rope IDs):** S-IC-6 / S-II-6 / S-IVB-6N / IU-6 / SLA-14.
+
+**MCC / recovery / EVA:** A11 MCC is MOCR 2; handoff Mission Rule 1-21 at tower clear. VHF 296.8 / 259.7 MHz; recovery 243.0 MHz. Splash 195:18:35 MET, 13 nmi, Hornet. EVA CDR 2:48 / LMP 2:40.
+
+**Isolation / cryo / APS / LM O2:** No stage-to-stage electrical power; no CSM–LM propellant crossfeed. A11 SM cryo is 2+2, not J-mission. APS 1.5° cant. Descent O2 2800 vs 3000 psi — cite both.
 
 ## Mission STM
 

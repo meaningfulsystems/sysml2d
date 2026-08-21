@@ -42,7 +42,7 @@
       "order": 1
     },
     "a11MassRequirement": {
-      "label": "\u00abrequirement\u00bb\nPK p.109 S-IC 5,022,674\nS-II 1,059,171; S-IVB 260,523\nSPS load / CSM \u0394v UNKNOWN",
+      "label": "\u00abrequirement\u00bb\nSerials S-IC-6 / S-II-6 / S-IVB-6N\nIU-6 / SLA-14; PK p.109 loads\nSPS load / CSM \u0394v UNKNOWN",
       "rank": 1,
       "order": 2
     },
@@ -52,7 +52,7 @@
       "order": 3
     },
     "a11AtypicalRequirement": {
-      "label": "\u00abrequirement\u00bb\nA11 atypical vs generic stack\n1 EVA / 196 h; no LRV/SIM\nP66 LGC landing; ropes sourced",
+      "label": "\u00abrequirement\u00bb\nA11 atypical: MOCR 2; cryo 2+2\nEVA CDR 2:48 / LMP 2:40\nP66 landing; ropes sourced",
       "rank": 2,
       "order": 0
     },
@@ -87,9 +87,39 @@
       "order": 3
     },
     "epsRequirement": {
-      "label": "\u00abrequirement\u00bb\nEPS A11 Press Kit\nSM 3 FC; CM 3 AgZn+charger\nLM 6 AgZn + ECA; 28 V DC",
+      "label": "\u00abrequirement\u00bb\nEPS A11 Press Kit\nSM 3 FC; cryo 2+2 not J\nno stage-to-stage power",
       "rank": 3,
       "order": 0
+    },
+    "vhfRequirement": {
+      "label": "\u00abrequirement\u00bb\nVHF 296.8 / 259.7 MHz\nRecovery 243.0 MHz",
+      "rank": 4,
+      "order": 0
+    },
+    "isolationRequirement": {
+      "label": "\u00abrequirement\u00bb\nNo stage-to-stage power\nNo CSM\u2013LM propellant crossfeed",
+      "rank": 4,
+      "order": 1
+    },
+    "recoveryRequirement": {
+      "label": "\u00abrequirement\u00bb\nSplash 195:18:35 MET\n13 nmi \u00b7 USS Hornet",
+      "rank": 4,
+      "order": 2
+    },
+    "kscRequirement": {
+      "label": "\u00abrequirement\u00bb\nKSC_LCC Firing Room 1\nHandoff MCC at tower clear\nMission Rule 1-21",
+      "rank": 4,
+      "order": 3
+    },
+    "lm5ConsumableRequirement": {
+      "label": "\u00abrequirement\u00bb\nLM-5 descent O2 ~48 lb\n2800 psi vs 3000 psi\ncite both",
+      "rank": 4,
+      "order": 4
+    },
+    "apsRequirement": {
+      "label": "\u00abrequirement\u00bb\nAPS 3,500 lbf\n90% in 0.450 s\n1.5\u00b0 cant",
+      "rank": 4,
+      "order": 5
     },
     "agsRequirement": {
       "label": "\u00abrequirement\u00bb\nAGS AEA+ASA+DEDA\nAEA 4096\u00d718, 5 \u03bcs, 32.7 lb\nNot a landing computer",

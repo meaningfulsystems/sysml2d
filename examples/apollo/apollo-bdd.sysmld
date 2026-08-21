@@ -38,6 +38,7 @@
     "LMP": "Apollo11::Crew::LMP",
     "KSC_LCC": "Apollo11::Ground::KSC_LCC",
     "MCC": "Apollo11::Ground::MCC",
+    "MOCR2": "Apollo11::Ground::MCC::MOCR2",
     "RTCC": "Apollo11::Ground::RTCC",
     "MSFN": "Apollo11::Ground::MSFN",
     "NASCOM": "Apollo11::Ground::NASCOM"
@@ -656,6 +657,25 @@
           "z": 10
         },
         "label": "MCC",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "MOCR2",
+        "model_ref": "MOCR2",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 3200,
+          "y": 430,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "MOCR 2",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -2140,6 +2160,40 @@
             "text": "1",
             "position": {
               "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-MCC-MOCR2",
+        "model_ref": "MOCR2",
+        "source": {
+          "element": "MCC",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "MOCR2",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
               "offset": 0.82,
               "dx": 10,
               "dy": -4
