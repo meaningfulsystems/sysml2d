@@ -15,6 +15,7 @@
     "brakeDef": "ElectricBike::BrakeSystem",
     "bmsDef": "ElectricBike::BMS",
     "cadenceDef": "ElectricBike::CadenceSensor",
+    "wheelSpeedDef": "ElectricBike::WheelSpeedSensor",
     "framePart": "ElectricBike::ElectricBike::frame",
     "batteryPart": "ElectricBike::ElectricBike::batteryPack",
     "controllerPart": "ElectricBike::ElectricBike::motorController",
@@ -22,14 +23,15 @@
     "interfacePart": "ElectricBike::ElectricBike::humanInterface",
     "brakePart": "ElectricBike::ElectricBike::brakeSystem",
     "bmsPart": "ElectricBike::BatteryPack::bms",
-    "cadencePart": "ElectricBike::ElectricBike::cadenceSensor"
+    "cadencePart": "ElectricBike::ElectricBike::cadenceSensor",
+    "wheelSpeedPart": "ElectricBike::ElectricBike::wheelSpeedSensor"
   },
   "diagram": {
     "id": "e-bike-bdd",
     "kind": "DefinitionView",
     "name": "Electric Bike Definition Tree",
     "canvas": {
-      "width": 948,
+      "width": 1061,
       "height": 516,
       "background": "#FFFFFF"
     },
@@ -201,6 +203,25 @@
           "z": 10
         },
         "label": "Cadence Sensor",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "wheelSpeedSensor",
+        "model_ref": "wheelSpeedDef",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 831,
+          "y": 322,
+          "width": 190,
+          "height": 72,
+          "z": 10
+        },
+        "label": "Wheel Speed Sensor",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -490,6 +511,49 @@
             },
             {
               "x": 700,
+              "y": 294
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-bike-wheelSpeedSensor",
+        "model_ref": "wheelSpeedPart",
+        "source": {
+          "element": "bike",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "wheelSpeedSensor",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 474,
+              "y": 294
+            },
+            {
+              "x": 926,
               "y": 294
             }
           ]

@@ -10,11 +10,15 @@
     "off": "ElectricBike::RideControl::off",
     "standby": "ElectricBike::RideControl::standby",
     "assist": "ElectricBike::RideControl::assist",
+    "walkAssist": "ElectricBike::RideControl::walkAssist",
     "charging": "ElectricBike::RideControl::charging",
     "fault": "ElectricBike::RideControl::fault",
     "powerOn": "ElectricBike::RideControl::powerOn",
     "startAssist": "ElectricBike::RideControl::startAssist",
     "stopAssist": "ElectricBike::RideControl::stopAssist",
+    "startWalk": "ElectricBike::RideControl::startWalk",
+    "stopWalk": "ElectricBike::RideControl::stopWalk",
+    "brakeWalk": "ElectricBike::RideControl::brakeWalk",
     "brakeCut": "ElectricBike::RideControl::brakeCut",
     "plugIn": "ElectricBike::RideControl::plugIn",
     "chargeComplete": "ElectricBike::RideControl::chargeComplete",
@@ -28,8 +32,8 @@
     "kind": "StateView",
     "name": "Ride Control State Machine",
     "canvas": {
-      "width": 1423,
-      "height": 432,
+      "width": 1433,
+      "height": 461,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -42,9 +46,9 @@
         "symbol": "boundary",
         "layout": {
           "x": 109,
-          "y": 5,
-          "width": 1274,
-          "height": 387,
+          "y": 33,
+          "width": 1284,
+          "height": 388,
           "z": 0
         },
         "compartments": {
@@ -70,7 +74,7 @@
         "id": "off",
         "symbol": "state_usage",
         "layout": {
-          "x": 372,
+          "x": 374,
           "y": 197,
           "width": 130,
           "height": 60,
@@ -84,7 +88,7 @@
         "id": "standby",
         "symbol": "state_usage",
         "layout": {
-          "x": 653,
+          "x": 659,
           "y": 125,
           "width": 130,
           "height": 60,
@@ -98,8 +102,8 @@
         "id": "assist",
         "symbol": "state_usage",
         "layout": {
-          "x": 935,
-          "y": 197,
+          "x": 943,
+          "y": 125,
           "width": 130,
           "height": 60,
           "z": 10
@@ -109,11 +113,25 @@
         "style": "state.default"
       },
       {
+        "id": "walkAssist",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 943,
+          "y": 269,
+          "width": 130,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "walkAssist",
+        "label": "Walk Assist\n<= 6 km/h",
+        "style": "state.default"
+      },
+      {
         "id": "charging",
         "symbol": "state_usage",
         "layout": {
-          "x": 653,
-          "y": 268,
+          "x": 659,
+          "y": 269,
           "width": 130,
           "height": 60,
           "z": 10
@@ -126,7 +144,7 @@
         "id": "fault",
         "symbol": "state_usage",
         "layout": {
-          "x": 1217,
+          "x": 1227,
           "y": 197,
           "width": 130,
           "height": 60,
@@ -183,11 +201,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 552,
+              "x": 556,
               "y": 217
             },
             {
-              "x": 552,
+              "x": 556,
               "y": 155
             }
           ]
@@ -211,7 +229,7 @@
           "element": "standby",
           "anchor": {
             "side": "right",
-            "offset": 0.5
+            "offset": 0.3333
           }
         },
         "target": {
@@ -225,18 +243,60 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 859,
-              "y": 155
+              "x": 840,
+              "y": 145
             },
             {
-              "x": 859,
-              "y": 227
+              "x": 840,
+              "y": 155
             }
           ]
         },
         "labels": [
           {
             "text": "cadence (EPAC)",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "standby--walkAssist",
+        "model_ref": "startWalk",
+        "source": {
+          "element": "standby",
+          "anchor": {
+            "side": "right",
+            "offset": 0.6667
+          }
+        },
+        "target": {
+          "element": "walkAssist",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 892,
+              "y": 165
+            },
+            {
+              "x": 892,
+              "y": 299
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "walk button",
             "position": {
               "segment": 1,
               "offset": 0.5,
@@ -267,12 +327,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 603,
+              "x": 607,
               "y": 237
             },
             {
-              "x": 603,
-              "y": 298
+              "x": 607,
+              "y": 299
             }
           ]
         },
@@ -307,13 +367,68 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 1150,
+              "y": 155
+            },
+            {
+              "x": 1150,
+              "y": 227
+            }
+          ]
         },
         "labels": [
           {
             "text": "overcurrent",
             "position": {
-              "segment": 0,
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "walkAssist-back-standby",
+        "model_ref": "stopWalk",
+        "source": {
+          "element": "walkAssist",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "standby",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1008,
+              "y": 357
+            },
+            {
+              "x": 631,
+              "y": 357
+            },
+            {
+              "x": 631,
+              "y": 185
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "release / brake",
+            "position": {
+              "segment": 2,
               "offset": 0.5,
               "placement": "centerline"
             }
@@ -327,27 +442,27 @@
         "source": {
           "element": "assist",
           "anchor": {
-            "side": "top",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "standby",
           "anchor": {
-            "side": "top",
-            "offset": 0.3333
+            "side": "bottom",
+            "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1000,
-              "y": 69
+              "x": 1008,
+              "y": 213
             },
             {
-              "x": 696,
-              "y": 69
+              "x": 724,
+              "y": 213
             }
           ]
         },
@@ -384,12 +499,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 718,
-              "y": 356
+              "x": 724,
+              "y": 385
             },
             {
-              "x": 437,
-              "y": 356
+              "x": 439,
+              "y": 385
             }
           ]
         },
@@ -412,7 +527,7 @@
           "element": "standby",
           "anchor": {
             "side": "top",
-            "offset": 0.6667
+            "offset": 0.5
           }
         },
         "target": {
@@ -426,12 +541,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 740,
-              "y": 41
+              "x": 724,
+              "y": 69
             },
             {
-              "x": 415,
-              "y": 41
+              "x": 417,
+              "y": 69
             }
           ]
         },
@@ -468,15 +583,15 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1282,
-              "y": 85
+              "x": 1292,
+              "y": 97
             },
             {
-              "x": 907,
-              "y": 85
+              "x": 1199,
+              "y": 97
             },
             {
-              "x": 907,
+              "x": 1199,
               "y": 227
             }
           ]

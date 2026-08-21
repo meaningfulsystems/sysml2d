@@ -29,9 +29,37 @@
       "order": 2
     },
     "energyBalance": {
-      "label": "Energy\nBalance",
+      "label": "Energy Balance\n(pack only)",
       "rank": 1,
       "order": 0
+    },
+    "riderInputBalance": {
+      "label": "Rider Input\n(not pack Wh)",
+      "rank": 1,
+      "order": 3
+    },
+    "thermalDerate": {
+      "label": "Thermal\nDerate",
+      "rank": 1,
+      "order": 4
+    },
+    "packVoltage": {
+      "label": "packVoltage",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 3
+    },
+    "continuousPowerW": {
+      "label": "continuous\n250 W",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 4
+    },
+    "walkAssistSpeed": {
+      "label": "walkAssist\n<= 6 km/h",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 5
     },
     "assistPowerLimit": {
       "label": "Assist Power\nLimit",
@@ -86,7 +114,27 @@
     },
     {
       "from": "riderPower",
+      "to": "riderInputBalance",
+      "label": "bind"
+    },
+    {
+      "from": "packVoltage",
       "to": "energyBalance",
+      "label": "bind"
+    },
+    {
+      "from": "continuousPowerW",
+      "to": "assistPowerLimit",
+      "label": "bind"
+    },
+    {
+      "from": "walkAssistSpeed",
+      "to": "assistPowerLimit",
+      "label": "bind"
+    },
+    {
+      "from": "assistPower",
+      "to": "thermalDerate",
       "label": "bind"
     },
     {

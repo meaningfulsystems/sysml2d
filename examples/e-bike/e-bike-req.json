@@ -22,7 +22,7 @@
       "order": 1
     },
     "assistLimitRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-003 Assist Limit\nEPAC cadence PAS, no throttle.\nCut assist at 25 km/h.",
+      "label": "\u00abrequirement\u00bb\nREQ-E-003 Assist Limit\nEPAC cadence PAS, no throttle.\n25 km/h cut; walk assist <= 6.",
       "rank": 0,
       "order": 2
     },
@@ -51,6 +51,16 @@
       "rank": 1,
       "order": 3
     },
+    "walkAssistRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-013 Walk Assist\n<= 6 km/h EPAC feature.\nNot a throttle.",
+      "rank": 1,
+      "order": 4
+    },
+    "continuousPowerRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-014 Continuous Power\nAssist <= 250 W continuous.",
+      "rank": 1,
+      "order": 5
+    },
     "en15194DistanceRequirement": {
       "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194 Distance\nCut assist within 5 m after\npedaling stops (2 m if tighter).",
       "rank": 1,
@@ -71,6 +81,16 @@
     {
       "from": "assistLimitRequirement",
       "to": "en15194DistanceRequirement",
+      "label": "refine"
+    },
+    {
+      "from": "assistLimitRequirement",
+      "to": "walkAssistRequirement",
+      "label": "refine"
+    },
+    {
+      "from": "assistLimitRequirement",
+      "to": "continuousPowerRequirement",
       "label": "refine"
     },
     {

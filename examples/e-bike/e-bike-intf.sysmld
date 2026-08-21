@@ -12,7 +12,7 @@
     "name": "Electric Bike Interfaces",
     "canvas": {
       "width": 604,
-      "height": 934,
+      "height": 1130.5,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -38,7 +38,7 @@
         "symbol": "interface",
         "layout": {
           "x": 72,
-          "y": 252,
+          "y": 255,
           "width": 150,
           "height": 70,
           "z": 10
@@ -52,7 +52,7 @@
         "symbol": "interface",
         "layout": {
           "x": 72,
-          "y": 432,
+          "y": 438,
           "width": 150,
           "height": 70,
           "z": 10
@@ -66,7 +66,7 @@
         "symbol": "interface",
         "layout": {
           "x": 72,
-          "y": 612,
+          "y": 621,
           "width": 150,
           "height": 70,
           "z": 10
@@ -90,11 +90,25 @@
         "model_ref": "PedalCadence"
       },
       {
+        "id": "WalkAssistCommand",
+        "symbol": "item",
+        "layout": {
+          "x": 382,
+          "y": 985.5,
+          "width": 150,
+          "height": 73,
+          "z": 10
+        },
+        "label": "WalkAssist\n<= 6 km/h\n(not throttle)",
+        "style": "item",
+        "model_ref": "WalkAssistCommand"
+      },
+      {
         "id": "ChargeEnergy",
         "symbol": "item",
         "layout": {
           "x": 382,
-          "y": 252,
+          "y": 255,
           "width": 150,
           "height": 70,
           "z": 10
@@ -108,7 +122,7 @@
         "symbol": "item",
         "layout": {
           "x": 382,
-          "y": 432,
+          "y": 438,
           "width": 150,
           "height": 70,
           "z": 10
@@ -122,7 +136,7 @@
         "symbol": "item",
         "layout": {
           "x": 382,
-          "y": 612,
+          "y": 621,
           "width": 150,
           "height": 70,
           "z": 10
@@ -136,7 +150,7 @@
         "symbol": "item",
         "layout": {
           "x": 382,
-          "y": 792,
+          "y": 804,
           "width": 150,
           "height": 70,
           "z": 10
@@ -166,6 +180,46 @@
         "route": {
           "kind": "orthogonal",
           "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "RiderInterface"
+      },
+      {
+        "id": "conn-RiderInterface-WalkAssistCommand",
+        "source": {
+          "element": "RiderInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "WalkAssistCommand",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 311.143,
+              "y": 107
+            },
+            {
+              "x": 311.143,
+              "y": 1022
+            }
+          ]
         },
         "labels": [
           {
@@ -229,12 +283,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 289.2,
-              "y": 287
+              "x": 292.857,
+              "y": 290
             },
             {
-              "x": 289.2,
-              "y": 467
+              "x": 292.857,
+              "y": 473
             }
           ]
         },
@@ -269,12 +323,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 314.8,
-              "y": 467
+              "x": 329.429,
+              "y": 473
             },
             {
-              "x": 314.8,
-              "y": 647
+              "x": 329.429,
+              "y": 656
             }
           ]
         },
@@ -309,12 +363,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 340.4,
-              "y": 647
+              "x": 347.714,
+              "y": 656
             },
             {
-              "x": 340.4,
-              "y": 827
+              "x": 347.714,
+              "y": 839
             }
           ]
         },

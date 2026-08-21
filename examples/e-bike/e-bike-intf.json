@@ -34,6 +34,12 @@
       "rank": 1,
       "order": 0
     },
+    "WalkAssistCommand": {
+      "label": "WalkAssist\n<= 6 km/h\n(not throttle)",
+      "symbol": "item",
+      "rank": 1,
+      "order": 5
+    },
     "ChargeEnergy": {
       "label": "ChargeEnergy",
       "symbol": "item",
@@ -63,6 +69,11 @@
     {
       "from": "RiderInterface",
       "to": "PedalCadence",
+      "label": "carries"
+    },
+    {
+      "from": "RiderInterface",
+      "to": "WalkAssistCommand",
       "label": "carries"
     },
     {

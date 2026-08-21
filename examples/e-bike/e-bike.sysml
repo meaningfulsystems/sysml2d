@@ -7,53 +7,68 @@ package ElectricBike {
         part humanInterface : HumanInterface;
         part brakeSystem : BrakeSystem;
         part cadenceSensor : CadenceSensor;
+        part wheelSpeedSensor : WheelSpeedSensor;
 
-        port riderCommandIn : RiderPort;
-        port chargerIn : ChargePort;
-        port roadLoadIn : MechanicalPort;
-        port frameBatteryMountOut : MechanicalPort;
-        port batteryMountIn : MechanicalPort;
-        port frameMotorMountOut : MechanicalPort;
-        port motorMountIn : MechanicalPort;
-        port frameInterfaceMountOut : MechanicalPort;
-        port interfaceMountIn : MechanicalPort;
-        port frameBrakeMountOut : MechanicalPort;
-        port brakeMountIn : MechanicalPort;
-        port batteryPowerOut : PowerPort;
-        port controllerPowerIn : PowerPort;
-        port controllerDriveOut : DrivePort;
-        port motorDriveIn : DrivePort;
-        port interfaceCommandOut : ControlPort;
-        port controllerCommandIn : ControlPort;
-        port brakeInhibitOut : ControlPort;
-        port controllerInhibitIn : ControlPort;
-        port riderInputIn : RiderPort;
-        port chargeInputIn : ChargePort;
-        port wheelLoadIn : MechanicalPort;
-
-        connection riderToInterface connect riderCommandIn to riderInputIn;
-        connection chargerToBattery connect chargerIn to chargeInputIn;
-        connection roadToMotor connect roadLoadIn to wheelLoadIn;
-        connection frameToBattery connect frameBatteryMountOut to batteryMountIn;
-        connection frameToMotor connect frameMotorMountOut to motorMountIn;
-        connection frameToInterface connect frameInterfaceMountOut to interfaceMountIn;
-        connection frameToBrakes connect frameBrakeMountOut to brakeMountIn;
-        connection batteryToController connect batteryPowerOut to controllerPowerIn;
-        connection controllerToMotor connect controllerDriveOut to motorDriveIn;
-        connection interfaceToController connect interfaceCommandOut to controllerCommandIn;
-        connection brakesToController connect brakeInhibitOut to controllerInhibitIn;
+        connection frameToBattery connect frame.batteryMountOut to batteryPack.mountIn;
+        connection frameToMotor connect frame.motorMountOut to hubMotor.mountIn;
+        connection frameToInterface connect frame.interfaceMountOut to humanInterface.mountIn;
+        connection frameToBrakes connect frame.brakeMountOut to brakeSystem.mountIn;
+        connection batteryToController connect batteryPack.powerOut to motorController.powerIn;
+        connection controllerToMotor connect motorController.driveOut to hubMotor.driveIn;
+        connection interfaceToController connect humanInterface.commandOut to motorController.commandIn;
+        connection brakesToController connect brakeSystem.inhibitOut to motorController.inhibitIn;
+        connection cadenceToController connect cadenceSensor.cadenceOut to motorController.sensorIn;
+        connection wheelSpeedToController connect wheelSpeedSensor.speedOut to motorController.sensorIn;
+        connection riderToInterface connect humanInterface.riderIn to humanInterface.commandOut;
+        connection chargerToBattery connect batteryPack.bms.chargerIn to batteryPack.powerOut;
+        connection roadToMotor connect hubMotor.roadLoadIn to hubMotor.driveIn;
     }
 
-    part def Frame;
+    part def Frame {
+        port batteryMountOut : MechanicalPort;
+        port motorMountOut : MechanicalPort;
+        port interfaceMountOut : MechanicalPort;
+        port brakeMountOut : MechanicalPort;
+    }
     part def BatteryPack {
         part bms : BMS;
+        port mountIn : MechanicalPort;
+        port powerOut : PowerPort;
+        connection bmsToPackPower connect bms.contactorOut to powerOut;
     }
-    part def BMS;
-    part def MotorController;
-    part def HubMotor { doc /* Rear geared hub. No regenerative braking. */ }
-    part def HumanInterface { doc /* Cadence PAS and display only. No throttle. */ }
-    part def BrakeSystem;
-    part def CadenceSensor;
+    part def BMS {
+        port chargerIn : ChargePort;
+        port contactorOut : PowerPort;
+    }
+    part def MotorController {
+        port powerIn : PowerPort;
+        port driveOut : DrivePort;
+        port commandIn : ControlPort;
+        port inhibitIn : ControlPort;
+        port sensorIn : ControlPort;
+    }
+    part def HubMotor {
+        doc /* Rear geared hub. No regenerative braking. */
+        port mountIn : MechanicalPort;
+        port driveIn : DrivePort;
+        port roadLoadIn : MechanicalPort;
+    }
+    part def HumanInterface {
+        doc /* Cadence PAS, walk assist, and display. No throttle. */
+        port mountIn : MechanicalPort;
+        port commandOut : ControlPort;
+        port riderIn : RiderPort;
+    }
+    part def BrakeSystem {
+        port mountIn : MechanicalPort;
+        port inhibitOut : ControlPort;
+    }
+    part def CadenceSensor {
+        port cadenceOut : ControlPort;
+    }
+    part def WheelSpeedSensor {
+        port speedOut : ControlPort;
+    }
 
     port def RiderPort;
     port def ChargePort;
@@ -68,6 +83,7 @@ package ElectricBike {
         state off;
         state standby;
         state assist;
+        state walkAssist;
         state charging;
         state fault;
 
@@ -84,6 +100,21 @@ package ElectricBike {
         transition stopAssist
             first assist
             accept noPedal
+            then standby;
+
+        transition startWalk
+            first standby
+            accept walkButton
+            then walkAssist;
+
+        transition stopWalk
+            first walkAssist
+            accept walkRelease
+            then standby;
+
+        transition brakeWalk
+            first walkAssist
+            accept brakeLever
             then standby;
 
         transition brakeCut
@@ -141,6 +172,7 @@ package ElectricBike {
     interface def DriveInterface;
     interface def BrakeInterface;
     item def PedalCadence;
+    item def WalkAssistCommand { doc /* EPAC walk assist ≤ 6 km/h. Not a throttle. */ }
     item def ThrottleCommand { doc /* Unused by this EPAC. Not on RideControl or HumanInterface. */ }
     item def ElectricalEnergy;
     item def WheelTorque;
@@ -156,7 +188,9 @@ package ElectricBike {
 
     requirement rideSafetyRequirement       { doc /* Motor fail-silent: brake input, controller, cadence/speed sensors, and BMS shall cut motor torque before the wheel can keep driving the rider. */ }
     requirement rangeRequirement            { doc /* Tour-mode scenario only: at least 60 km on a 500 Wh pack (~8.3 Wh/km). Not Eco / PAS-1; undemonstrated unless this scenario is bound. */ }
-    requirement assistLimitRequirement      { doc /* EPAC (EN 15194): cadence PAS only, no certified throttle. Assist shall cut off at 25 km/h. */ }
+    requirement assistLimitRequirement      { doc /* EPAC (EN 15194): cadence PAS only, no certified throttle. Assist shall cut off at 25 km/h. Walk assist ≤ 6 km/h is a real EPAC feature, not a throttle. */ }
+    requirement walkAssistRequirement       { doc /* EPAC walk assist shall not exceed 6 km/h. Walk assist is not a throttle. */ }
+    requirement continuousPowerRequirement  { doc /* Continuous assist shall not exceed 250 W. */ }
     requirement chargeSafetyRequirement     { doc /* Charging shall stop on over-temperature, over-voltage, or charger disconnect. UL 2849: the BMS inside the pack opens the contactor. */ }
     requirement brakeOverrideRequirement    { doc /* Electronic inhibit shall assert within 50 ms of either brake lever. This is ~10x tighter than the EN 15194 distance test. */ }
     requirement en15194DistanceRequirement  { doc /* EN 15194 distance cutoff: assistance shall cease within 5 m after pedaling stops, and within 2 m where that tighter clause applies. */ }
@@ -165,16 +199,21 @@ package ElectricBike {
     requirement structuralRequirement       { doc /* The frame shall carry rider, cargo, and battery loads without yielding. */ }
     requirement lightingRequirement         { doc /* Lighting shall follow StVZO / ISO 6742. Not UN ECE R113. */ }
 
-    constraint def energyBalance;
+    constraint def energyBalance { doc /* Pack electrical energy only. Do not add rider watts to pack energy; they are different sources. */ }
+    constraint def riderInputBalance { doc /* Rider pedal watts are a mechanical source, not pack energy. */ }
     constraint def rangeEstimate;
     constraint def assistPowerLimit;
     constraint def brakeLatencyLimit;
     constraint def tourRangeBind;
+    constraint def thermalDerate;
     attribute packEnergy;
+    attribute packVoltage;
     attribute riderPower;
     attribute assistPower;
     attribute rangeKm;
     attribute cutoffSpeed;
+    attribute walkAssistSpeed;
+    attribute continuousPowerW;
     attribute brakeLatency;
     attribute tourWhPerKm;
 

@@ -11,7 +11,7 @@
     "kind": "RequirementView",
     "name": "Electric Bike Requirements",
     "canvas": {
-      "width": 2156,
+      "width": 2686,
       "height": 430,
       "background": "#FFFFFF"
     },
@@ -52,13 +52,13 @@
         "model_ref": "assistLimitRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 665,
+          "x": 930,
           "y": 72,
           "width": 244,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-E-003 Assist Limit\nEPAC cadence PAS, no throttle.\nCut assist at 25 km/h.",
+        "label": "\u00abrequirement\u00bb\nREQ-E-003 Assist Limit\nEPAC cadence PAS, no throttle.\n25 km/h cut; walk assist <= 6.",
         "style": "requirement"
       },
       {
@@ -66,7 +66,7 @@
         "model_ref": "chargeSafetyRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 972,
+          "x": 1502,
           "y": 72,
           "width": 258,
           "height": 88,
@@ -80,7 +80,7 @@
         "model_ref": "structuralRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1286,
+          "x": 1816,
           "y": 72,
           "width": 251,
           "height": 88,
@@ -94,7 +94,7 @@
         "model_ref": "displayRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1593,
+          "x": 2123,
           "y": 72,
           "width": 265,
           "height": 88,
@@ -108,7 +108,7 @@
         "model_ref": "lightingRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1914,
+          "x": 2444,
           "y": 72,
           "width": 170,
           "height": 88,
@@ -150,13 +150,41 @@
         "model_ref": "batteryCutoffRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 982.5,
+          "x": 1512.5,
           "y": 270,
           "width": 237,
           "height": 88,
           "z": 10
         },
         "label": "\u00abrequirement\u00bb\nREQ-E-011 Battery Cutoff\nBMS inside the pack opens the\ncontactor (UL 2849).",
+        "style": "requirement"
+      },
+      {
+        "id": "walkAssistRequirement",
+        "model_ref": "walkAssistRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 972,
+          "y": 270,
+          "width": 195,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-013 Walk Assist\n<= 6 km/h EPAC feature.\nNot a throttle.",
+        "style": "requirement"
+      },
+      {
+        "id": "continuousPowerRequirement",
+        "model_ref": "continuousPowerRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1223,
+          "y": 264,
+          "width": 223,
+          "height": 82,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-014 Continuous Power\nAssist <= 250 W continuous.",
         "style": "requirement"
       }
     ],
@@ -199,11 +227,73 @@
           "element": "assistLimitRequirement",
           "anchor": {
             "side": "bottom",
-            "offset": 0.5
+            "offset": 0.25
           }
         },
         "target": {
           "element": "en15194DistanceRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-assistLimitRequirement-walkAssistRequirement",
+        "model_ref": "assistLimitRequirement",
+        "source": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "walkAssistRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-assistLimitRequirement-continuousPowerRequirement",
+        "model_ref": "assistLimitRequirement",
+        "source": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.75
+          }
+        },
+        "target": {
+          "element": "continuousPowerRequirement",
           "anchor": {
             "side": "top",
             "offset": 0.5

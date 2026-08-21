@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1588" height="818" viewBox="0 0 1588 818">
+<svg xmlns="http://www.w3.org/2000/svg" width="1588" height="1194" viewBox="0 0 1588 1194">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1588" height="818" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1584" height="776" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1588" height="1194" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1584" height="1152" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 416 L 432 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[cst.mb] Electric Bike Parametrics [ElectricBike]</text>
-<rect x="2" y="38" width="1584" height="778" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1584" height="1154" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
 <rect id="packEnergy" x="72" y="82" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
 <text class="label" text-anchor="middle"><tspan x="137" y="103.5">packEnergy</tspan><tspan x="137" dy="15">500 Wh</tspan></text>
@@ -18,7 +18,17 @@
 <rect id="cutoffSpeed" x="72" y="458" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
 <text class="label" text-anchor="middle"><tspan x="137" y="479.5">cutoffSpeed</tspan><tspan x="137" dy="15">25 km/h</tspan></text>
 <rect id="energyBalance" x="362" y="72" width="180" height="78" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="452" y="103.5">Energy</tspan><tspan x="452" dy="15">Balance</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="452" y="103.5">Energy Balance</tspan><tspan x="452" dy="15">(pack only)</tspan></text>
+<rect id="riderInputBalance" x="362" y="636" width="180" height="78" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="452" y="667.5">Rider Input</tspan><tspan x="452" dy="15">(not pack Wh)</tspan></text>
+<rect id="thermalDerate" x="362" y="824" width="180" height="78" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="452" y="855.5">Thermal</tspan><tspan x="452" dy="15">Derate</tspan></text>
+<rect id="packVoltage" x="72" y="647" width="130" height="56" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle" x="137" y="675">packVoltage</text>
+<rect id="continuousPowerW" x="72" y="834" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle"><tspan x="137" y="855.5">continuous</tspan><tspan x="137" dy="15">250 W</tspan></text>
+<rect id="walkAssistSpeed" x="72" y="1022" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
+<text class="label" text-anchor="middle"><tspan x="137" y="1043.5">walkAssist</tspan><tspan x="137" dy="15">&lt;= 6 km/h</tspan></text>
 <rect id="assistPowerLimit" x="362" y="260" width="180" height="78" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
 <text class="label" text-anchor="middle"><tspan x="452" y="291.5">Assist Power</tspan><tspan x="452" dy="15">Limit</tspan></text>
 <rect id="brakeLatencyLimit" x="362" y="448" width="180" height="78" rx="4" fill="#F5F3FF" stroke="#6D28D9" stroke-width="2"/>
@@ -36,20 +46,28 @@
 <rect id="rangeKm" x="1382" y="82" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
 <text class="label" text-anchor="middle"><tspan x="1447" y="103.5">rangeKm</tspan><tspan x="1447" dy="15">&gt;= 60 km Tour</tspan></text>
 <path d="M 202,111 L 362,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 202,299 L 282,299 L 282,111 L 362,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 202,487 L 314,487 L 314,299 L 362,299" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 202,299 L 291.143,299 L 291.143,675 L 362,675" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 202,675 L 254.571,675 L 254.571,306 A 7 7 0 0 0 254.571,292 L 254.571,111 L 362,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 202,863 L 309.429,863 L 309.429,682 A 7 7 0 0 0 309.429,668 L 309.429,299 L 362,299" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 202,1051 L 327.714,1051 L 327.714,682 A 7 7 0 0 0 327.714,668 L 327.714,299 L 362,299" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 702,299 L 660.4,299 L 660.4,863 L 542,863" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 202,487 L 247.571,487 A 7 7 0 0 0 261.571,487 L 272.857,487 L 272.857,299 L 362,299" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 542,111 L 702,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 542,299 L 622,299 L 622,111 L 702,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 542,299 L 609.2,299 L 609.2,111 L 702,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 882,111 L 1042,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 832,675 L 983.333,675 L 983.333,111 L 1042,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 1222,111 L 1382,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 542,299 L 702,299" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 542,487 L 702,487" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 542,487 L 653.4,487 A 7 7 0 0 0 667.4,487 L 702,487" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <text class="small" text-anchor="middle" x="282" y="99">bind</text>
-<text class="small" x="294" y="205">bind</text>
-<text class="small" x="326" y="393">bind</text>
+<text class="small" text-anchor="middle" x="233.2" y="287">bind</text>
+<text class="small" text-anchor="end" x="242.571" y="393">bind</text>
+<text class="small" text-anchor="end" x="297.429" y="750.2">bind</text>
+<text class="small" x="339.714" y="787.8">bind</text>
+<text class="small" x="672.4" y="581">bind</text>
+<text class="small" text-anchor="middle" x="317.428" y="287">bind</text>
 <text class="small" text-anchor="middle" x="622" y="99">feeds</text>
-<text class="small" x="634" y="205">bounds</text>
+<text class="small" x="621.2" y="205">bounds</text>
 <text class="small" text-anchor="middle" x="962" y="99">feeds</text>
 <text class="small" x="995.333" y="393">bind</text>
 <text class="small" text-anchor="middle" x="1302" y="99">result</text>

@@ -105,7 +105,18 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("no certified throttle", model)
         self.assertIn("25 km/h", model)
         self.assertIn("Rear geared hub. No regenerative braking.", model)
-        self.assertIn("Cadence PAS and display only. No throttle.", model)
+        self.assertIn("Cadence PAS, walk assist, and display. No throttle.", model)
+        self.assertIn("state walkAssist", model)
+        self.assertIn("accept walkButton", model)
+        self.assertIn("6 km/h", model)
+        self.assertIn("Walk assist is not a throttle", model)
+        self.assertIn("Do not add rider watts to pack energy", model)
+        self.assertNotIn("port riderCommandIn", model)
+        self.assertNotIn("port frameBatteryMountOut", model)
+        self.assertIn("port batteryMountOut", model)
+        self.assertIn("port chargerIn", model)
+        self.assertIn("part wheelSpeedSensor : WheelSpeedSensor", model)
+        self.assertIn("250 W", model)
         self.assertIn("StVZO / ISO 6742", model)
         self.assertNotIn("UN ECE R113.", model.replace("Not UN ECE R113.", ""))
         self.assertIn("allocateSafetyToBrakes", model)
@@ -137,6 +148,22 @@ class ExampleViewTests(unittest.TestCase):
         charge_edges = [edge for edge in alloc["edges"] if edge.get("model_ref") == "allocateChargeToBms"]
         self.assertEqual(len(charge_edges), 1)
         self.assertEqual(charge_edges[0]["to"], "bms")
+
+        cst = json.loads((ROOT / "examples/e-bike/e-bike-cst.json").read_text(encoding="utf-8"))
+        self.assertFalse(
+            any(edge.get("from") == "riderPower" and edge.get("to") == "energyBalance" for edge in cst["edges"])
+        )
+        self.assertTrue(
+            any(edge.get("from") == "packEnergy" and edge.get("to") == "energyBalance" for edge in cst["edges"])
+        )
+        self.assertTrue(
+            any(edge.get("from") == "riderPower" and edge.get("to") == "riderInputBalance" for edge in cst["edges"])
+        )
+
+        ibd = json.loads((ROOT / "examples/e-bike/e-bike-ibd.json").read_text(encoding="utf-8"))
+        self.assertEqual(ibd["aliases"]["frame--batteryPack--src"], "ElectricBike::Frame::batteryMountOut")
+        self.assertEqual(ibd["aliases"]["batteryPack--bnd--tgt"], "ElectricBike::BMS::chargerIn")
+        self.assertNotIn("ElectricBike::ElectricBike::frameBatteryMountOut", ibd["aliases"].values())
 
         bdd = json.loads((ROOT / "examples/e-bike/e-bike-bdd.json").read_text(encoding="utf-8"))
         children = bdd["roots"][0]["children"]

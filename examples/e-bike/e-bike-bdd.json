@@ -16,6 +16,7 @@
     "brakeDef": "ElectricBike::BrakeSystem",
     "bmsDef": "ElectricBike::BMS",
     "cadenceDef": "ElectricBike::CadenceSensor",
+    "wheelSpeedDef": "ElectricBike::WheelSpeedSensor",
     "framePart": "ElectricBike::ElectricBike::frame",
     "batteryPart": "ElectricBike::ElectricBike::batteryPack",
     "controllerPart": "ElectricBike::ElectricBike::motorController",
@@ -23,7 +24,8 @@
     "interfacePart": "ElectricBike::ElectricBike::humanInterface",
     "brakePart": "ElectricBike::ElectricBike::brakeSystem",
     "bmsPart": "ElectricBike::BatteryPack::bms",
-    "cadencePart": "ElectricBike::ElectricBike::cadenceSensor"
+    "cadencePart": "ElectricBike::ElectricBike::cadenceSensor",
+    "wheelSpeedPart": "ElectricBike::ElectricBike::wheelSpeedSensor"
   },
   "direction": "top-down",
   "default_w": 190,
@@ -88,6 +90,12 @@
           "label": "Cadence Sensor",
           "model_ref": "cadenceDef",
           "part_ref": "cadencePart"
+        },
+        {
+          "id": "wheelSpeedSensor",
+          "label": "Wheel Speed Sensor",
+          "model_ref": "wheelSpeedDef",
+          "part_ref": "wheelSpeedPart"
         }
       ]
     }

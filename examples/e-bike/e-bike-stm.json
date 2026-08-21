@@ -16,11 +16,15 @@
     "off": "ElectricBike::RideControl::off",
     "standby": "ElectricBike::RideControl::standby",
     "assist": "ElectricBike::RideControl::assist",
+    "walkAssist": "ElectricBike::RideControl::walkAssist",
     "charging": "ElectricBike::RideControl::charging",
     "fault": "ElectricBike::RideControl::fault",
     "powerOn": "ElectricBike::RideControl::powerOn",
     "startAssist": "ElectricBike::RideControl::startAssist",
     "stopAssist": "ElectricBike::RideControl::stopAssist",
+    "startWalk": "ElectricBike::RideControl::startWalk",
+    "stopWalk": "ElectricBike::RideControl::stopWalk",
+    "brakeWalk": "ElectricBike::RideControl::brakeWalk",
     "brakeCut": "ElectricBike::RideControl::brakeCut",
     "plugIn": "ElectricBike::RideControl::plugIn",
     "chargeComplete": "ElectricBike::RideControl::chargeComplete",
@@ -44,6 +48,10 @@
     "assist": {
       "label": "Assist",
       "model_ref": "assist"
+    },
+    "walkAssist": {
+      "label": "Walk Assist\n<= 6 km/h",
+      "model_ref": "walkAssist"
     },
     "charging": {
       "label": "Charging",
@@ -71,6 +79,18 @@
       "to": "assist",
       "label": "cadence (EPAC)",
       "model_ref": "startAssist"
+    },
+    {
+      "from": "standby",
+      "to": "walkAssist",
+      "label": "walk button",
+      "model_ref": "startWalk"
+    },
+    {
+      "from": "walkAssist",
+      "to": "standby",
+      "label": "release / brake",
+      "model_ref": "stopWalk"
     },
     {
       "from": "assist",

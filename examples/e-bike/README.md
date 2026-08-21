@@ -15,7 +15,9 @@ Review bindings (do not treat a first-diagram slogan as truth):
 - Ride safety allocates to brakes **and** controller, cadence sensor, and BMS.
 - `lockBikeUseCase` is deleted (commercial, not EN 15194).
 - Lighting is StVZO / ISO 6742, not UN ECE R113.
-- RideControl and `humanInterface` have no throttle. RiderInterface carries `PedalCadence` only. `ThrottleCommand` remains as an unused item id.
+- RideControl and `humanInterface` have no throttle. Walk assist ≤ 6 km/h is a real EPAC feature, not a throttle. RiderInterface carries `PedalCadence` and `WalkAssistCommand`. `ThrottleCommand` remains unused.
+- `energyBalance` binds pack energy only. Rider watts are a different source (`riderInputBalance`).
+- Ports live on the child parts (`frame`, `batteryPack`, `motorController`, `hubMotor`, `humanInterface`, `brakeSystem`, `bms`). The parent IBD connects those child ports.
 
 ```bash
 sysmld definition      examples/e-bike/e-bike-bdd.json

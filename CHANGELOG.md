@@ -23,6 +23,7 @@ All notable changes to SysMLD are documented here.
 - Toaster, blender, and e-bike example artifacts regenerated from the composers
 - README / CONTRIBUTING test counts updated for the new routing and e-bike coverage
 - E-bike review: EPAC cadence PAS only (throttle removed from RideControl, HumanInterface, and RiderInterface), Tour-mode 500 Wh / 60 km bind, BMS inside BatteryPack, EN 15194 5 m / 2 m plus 50 ms inhibit, fail-silent allocated beyond brakes, `lockBikeUseCase` removed, rear geared hub (no regen), StVZO / ISO 6742 lighting
+- E-bike addendum: walk assist ≤ 6 km/h (not throttle); energyBalance is pack-only; ports moved onto child parts; 250 W / pack voltage / thermal derate / wheelSpeedSensor as extras
 
 ## [0.1.0] — 2026-05-22
 

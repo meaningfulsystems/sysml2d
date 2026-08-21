@@ -12,7 +12,7 @@
     "name": "Electric Bike Parametrics",
     "canvas": {
       "width": 1584,
-      "height": 776,
+      "height": 1152,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -71,9 +71,79 @@
           "height": 78,
           "z": 10
         },
-        "label": "Energy\nBalance",
+        "label": "Energy Balance\n(pack only)",
         "style": "constraint",
         "model_ref": "energyBalance"
+      },
+      {
+        "id": "riderInputBalance",
+        "symbol": "constraint",
+        "layout": {
+          "x": 362,
+          "y": 636,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Rider Input\n(not pack Wh)",
+        "style": "constraint",
+        "model_ref": "riderInputBalance"
+      },
+      {
+        "id": "thermalDerate",
+        "symbol": "constraint",
+        "layout": {
+          "x": 362,
+          "y": 824,
+          "width": 180,
+          "height": 78,
+          "z": 10
+        },
+        "label": "Thermal\nDerate",
+        "style": "constraint",
+        "model_ref": "thermalDerate"
+      },
+      {
+        "id": "packVoltage",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 647,
+          "width": 130,
+          "height": 56,
+          "z": 10
+        },
+        "label": "packVoltage",
+        "style": "value_property",
+        "model_ref": "packVoltage"
+      },
+      {
+        "id": "continuousPowerW",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 834,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "continuous\n250 W",
+        "style": "value_property",
+        "model_ref": "continuousPowerW"
+      },
+      {
+        "id": "walkAssistSpeed",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 1022,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "walkAssist\n<= 6 km/h",
+        "style": "value_property",
+        "model_ref": "walkAssistSpeed"
       },
       {
         "id": "assistPowerLimit",
@@ -221,9 +291,49 @@
         "model_ref": "packEnergy"
       },
       {
-        "id": "conn-riderPower-energyBalance",
+        "id": "conn-riderPower-riderInputBalance",
         "source": {
           "element": "riderPower",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "riderInputBalance",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 291.143,
+              "y": 299
+            },
+            {
+              "x": 291.143,
+              "y": 675
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "riderPower"
+      },
+      {
+        "id": "conn-packVoltage-energyBalance",
+        "source": {
+          "element": "packVoltage",
           "anchor": {
             "side": "right",
             "offset": 0.5
@@ -240,11 +350,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 282,
-              "y": 299
+              "x": 254.571,
+              "y": 675
             },
             {
-              "x": 282,
+              "x": 254.571,
               "y": 111
             }
           ]
@@ -258,7 +368,127 @@
           }
         ],
         "style": "connector.default",
-        "model_ref": "riderPower"
+        "model_ref": "packVoltage"
+      },
+      {
+        "id": "conn-continuousPowerW-assistPowerLimit",
+        "source": {
+          "element": "continuousPowerW",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "assistPowerLimit",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 309.429,
+              "y": 863
+            },
+            {
+              "x": 309.429,
+              "y": 299
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "continuousPowerW"
+      },
+      {
+        "id": "conn-walkAssistSpeed-assistPowerLimit",
+        "source": {
+          "element": "walkAssistSpeed",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "assistPowerLimit",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 327.714,
+              "y": 1051
+            },
+            {
+              "x": 327.714,
+              "y": 299
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "walkAssistSpeed"
+      },
+      {
+        "id": "conn-assistPower-thermalDerate",
+        "source": {
+          "element": "assistPower",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "thermalDerate",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 660.4,
+              "y": 299
+            },
+            {
+              "x": 660.4,
+              "y": 863
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "assistPower"
       },
       {
         "id": "conn-cutoffSpeed-assistPowerLimit",
@@ -280,11 +510,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 314,
+              "x": 272.857,
               "y": 487
             },
             {
-              "x": 314,
+              "x": 272.857,
               "y": 299
             }
           ]
@@ -351,11 +581,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 622,
+              "x": 609.2,
               "y": 299
             },
             {
-              "x": 622,
+              "x": 609.2,
               "y": 111
             }
           ]
