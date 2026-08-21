@@ -140,12 +140,12 @@
         "symbol": "part_definition",
         "layout": {
           "x": 718,
-          "y": 222,
+          "y": 223,
           "width": 190,
-          "height": 72,
+          "height": 73,
           "z": 10
         },
-        "label": "Rear Geared Hub",
+        "label": "Rear Geared Hub\npeak 250 W \u00b7 40 N\u00b7m\nregen none",
         "compartments": {
           "attributes": false,
           "ports": false,

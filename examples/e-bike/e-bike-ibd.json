@@ -85,8 +85,9 @@
       "style": "part.control"
     },
     "hubMotor": {
-      "label": "Rear Geared Hub",
-      "style": "part.mechanical"
+      "label": "Rear Geared Hub\n250 W · 40 N·m\nregen none",
+      "style": "part.mechanical",
+      "h": 86
     },
     "frame": {
       "label": "Frame",

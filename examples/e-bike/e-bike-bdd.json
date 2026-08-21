@@ -69,7 +69,7 @@
         },
         {
           "id": "hubMotor",
-          "label": "Rear Geared Hub",
+          "label": "Rear Geared Hub\npeak 250 W · 40 N·m\nregen none",
           "model_ref": "motorDef",
           "part_ref": "motorPart"
         },

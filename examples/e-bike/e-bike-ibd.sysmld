@@ -66,7 +66,7 @@
     "name": "Electric Bike Interconnection",
     "canvas": {
       "width": 1544,
-      "height": 634,
+      "height": 637,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -81,7 +81,7 @@
           "x": 40,
           "y": 40,
           "width": 1464,
-          "height": 554,
+          "height": 557,
           "z": 0
         },
         "compartments": {
@@ -97,7 +97,7 @@
         "symbol": "part_usage",
         "layout": {
           "x": 483,
-          "y": 278,
+          "y": 279,
           "width": 170,
           "height": 78,
           "z": 10
@@ -116,7 +116,7 @@
         "symbol": "part_usage",
         "layout": {
           "x": 483,
-          "y": 419,
+          "y": 422,
           "width": 170,
           "height": 78,
           "z": 10
@@ -154,7 +154,7 @@
         "symbol": "part_usage",
         "layout": {
           "x": 891,
-          "y": 278,
+          "y": 279,
           "width": 170,
           "height": 78,
           "z": 10
@@ -173,12 +173,12 @@
         "symbol": "part_usage",
         "layout": {
           "x": 1298,
-          "y": 278,
+          "y": 275,
           "width": 170,
-          "height": 78,
+          "height": 86,
           "z": 10
         },
-        "label": "Rear Geared Hub",
+        "label": "Rear Geared Hub\n250 W \u00b7 40 N\u00b7m\nregen none",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -192,7 +192,7 @@
         "symbol": "part_usage",
         "layout": {
           "x": 76,
-          "y": 349,
+          "y": 350,
           "width": 170,
           "height": 78,
           "z": 10
@@ -230,7 +230,7 @@
         "symbol": "part_usage",
         "layout": {
           "x": 86,
-          "y": 217,
+          "y": 218,
           "width": 150,
           "height": 58,
           "z": 10
@@ -249,7 +249,7 @@
         "symbol": "part_usage",
         "layout": {
           "x": 81,
-          "y": 500,
+          "y": 503,
           "width": 160,
           "height": 58,
           "z": 10
@@ -522,7 +522,7 @@
         "owner": "boundary",
         "placement": {
           "side": "left",
-          "offset": 0.4765
+          "offset": 0.4758
         },
         "label": "rider"
       },
@@ -533,7 +533,7 @@
         "owner": "boundary",
         "placement": {
           "side": "left",
-          "offset": 0.1173
+          "offset": 0.1167
         },
         "label": "charger"
       },
@@ -544,7 +544,7 @@
         "owner": "boundary",
         "placement": {
           "side": "right",
-          "offset": 0.5
+          "offset": 0.4991
         },
         "label": "road load"
       }
@@ -572,7 +572,7 @@
           "waypoints": [
             {
               "x": 317.25,
-              "y": 368.5
+              "y": 369.5
             },
             {
               "x": 317.25,
@@ -612,11 +612,11 @@
           "waypoints": [
             {
               "x": 364.5,
-              "y": 388
+              "y": 389
             },
             {
               "x": 364.5,
-              "y": 330.003
+              "y": 331.003
             }
           ]
         },
@@ -652,11 +652,11 @@
           "waypoints": [
             {
               "x": 411.75,
-              "y": 407.5
+              "y": 408.5
             },
             {
               "x": 411.75,
-              "y": 458
+              "y": 461
             }
           ]
         },
@@ -696,7 +696,7 @@
             },
             {
               "x": 724.5,
-              "y": 291.003
+              "y": 292.003
             }
           ]
         },
@@ -794,11 +794,11 @@
           "waypoints": [
             {
               "x": 819.5,
-              "y": 458
+              "y": 461
             },
             {
               "x": 819.5,
-              "y": 330.003
+              "y": 331.003
             }
           ]
         },
@@ -869,20 +869,16 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 270,
-              "y": 217
+              "x": 161,
+              "y": 215.5
             },
             {
-              "x": 270,
-              "y": 254
+              "x": 863,
+              "y": 215.5
             },
             {
-              "x": 677,
-              "y": 254
-            },
-            {
-              "x": 677,
-              "y": 303.997
+              "x": 863,
+              "y": 304.997
             }
           ]
         },
@@ -917,20 +913,24 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 270,
-              "y": 500
+              "x": 161,
+              "y": 452
             },
             {
-              "x": 270,
-              "y": 380
+              "x": 255,
+              "y": 452
+            },
+            {
+              "x": 255,
+              "y": 381
             },
             {
               "x": 677,
-              "y": 380
+              "y": 381
             },
             {
               "x": 677,
-              "y": 342.997
+              "y": 343.997
             }
           ]
         },

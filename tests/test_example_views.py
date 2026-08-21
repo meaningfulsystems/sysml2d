@@ -248,7 +248,13 @@ class ExampleViewTests(unittest.TestCase):
         bdd = json.loads((ROOT / "examples/e-bike/e-bike-bdd.json").read_text(encoding="utf-8"))
         children = bdd["roots"][0]["children"]
         hub = next(child for child in children if child["id"] == "hubMotor")
-        self.assertEqual(hub["label"], "Rear Geared Hub")
+        self.assertIn("Rear Geared Hub", hub["label"])
+        self.assertIn("250 W", hub["label"])
+        self.assertIn("40 N·m", hub["label"])
+        self.assertIn("regen none", hub["label"])
+        self.assertIn("250 W", ibd["nodes"]["hubMotor"]["label"])
+        self.assertIn("40 N·m", ibd["nodes"]["hubMotor"]["label"])
+        self.assertIn("regen none", ibd["nodes"]["hubMotor"]["label"])
         pack = next(child for child in children if child["id"] == "batteryPack")
         self.assertEqual(pack["children"][0]["id"], "bms")
 
