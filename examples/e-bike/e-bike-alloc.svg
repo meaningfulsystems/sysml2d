@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="628" height="1030" viewBox="0 0 628 1030">
+<svg xmlns="http://www.w3.org/2000/svg" width="638" height="1222" viewBox="0 0 638 1222">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="628" height="1030" fill="#FFFFFF"/>
-<rect x="2" y="38" width="624" height="988" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="638" height="1222" fill="#FFFFFF"/>
+<rect x="2" y="38" width="634" height="1180" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 432 L 448 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[alloc.mb] Electric Bike Allocations [ElectricBike]</text>
-<rect x="2" y="38" width="624" height="990" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="634" height="1182" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
 <rect id="rideSafetyRequirement" x="72" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="157" y="113">Ride Safety</text>
@@ -25,23 +25,29 @@
 <text class="label" text-anchor="middle" x="477" y="305">Controller</text>
 <rect id="cadenceSensor" x="402" y="462" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="477" y="497">Cadence Sensor</text>
-<rect id="bms" x="402" y="654" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="477" y="689">BMS</text>
-<rect id="batteryPack" x="402" y="846" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="477" y="881">Battery Pack</text>
+<rect id="wheelSpeedSensor" x="402" y="654" width="160" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="482" y="689">Wheel Speed Sensor</text>
+<rect id="bms" x="402" y="846" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="477" y="881">BMS</text>
+<rect id="batteryPack" x="402" y="1038" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="477" y="1073">Battery Pack</text>
 <path d="M 242,113 L 402,113" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 242,113 L 290,113 L 290,305 L 402,305" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 242,113 L 306,113 L 306,298 A 7 7 0 0 1 306,312 L 306,497 L 402,497" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 242,113 L 322,113 L 322,298 A 7 7 0 0 1 322,312 L 322,490 A 7 7 0 0 1 322,504 L 322,689 L 402,689" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 242,305 L 299,305 A 7 7 0 0 0 313,305 L 315,305 A 7 7 0 0 0 329,305 L 354,305 L 354,490 A 7 7 0 0 1 354,504 L 354,682 A 7 7 0 0 1 354,696 L 354,881 L 402,881" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 242,689 L 338,689 L 338,504 A 7 7 0 0 0 338,490 L 338,305 L 402,305" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 242,497 L 315,497 A 7 7 0 0 0 329,497 L 331,497 A 7 7 0 0 0 345,497 L 347,497 A 7 7 0 0 0 361,497 L 370,497 L 370,689 L 402,689" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 242,113 L 283.6,113 L 283.6,305 L 402,305" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 242,113 L 296.4,113 L 296.4,298 A 7 7 0 0 1 296.4,312 L 296.4,497 L 402,497" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 242,113 L 309.2,113 L 309.2,298 A 7 7 0 0 1 309.2,312 L 309.2,490 A 7 7 0 0 1 309.2,504 L 309.2,689 L 402,689" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 242,113 L 322,113 L 322,298 A 7 7 0 0 1 322,312 L 322,490 A 7 7 0 0 1 322,504 L 322,682 A 7 7 0 0 1 322,696 L 322,881 L 402,881" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 242,305 L 289.4,305 A 7 7 0 0 0 303.4,305 L 315,305 A 7 7 0 0 0 329,305 L 347.6,305 L 347.6,490 A 7 7 0 0 1 347.6,504 L 347.6,682 A 7 7 0 0 1 347.6,696 L 347.6,874 A 7 7 0 0 1 347.6,888 L 347.6,1073 L 402,1073" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 242,689 L 315,689 A 7 7 0 0 0 329,689 L 334.8,689 L 334.8,504 A 7 7 0 0 0 334.8,490 L 334.8,305 L 402,305" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 242,689 L 315,689 A 7 7 0 0 0 329,689 L 340.6,689 A 7 7 0 0 0 354.6,689 L 402,689" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 242,497 L 302.2,497 A 7 7 0 0 0 316.2,497 L 327.8,497 A 7 7 0 0 0 341.8,497 L 373.2,497 L 373.2,682 A 7 7 0 0 1 373.2,696 L 373.2,881 L 402,881" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
 <text class="small" text-anchor="middle" x="322" y="101">allocate</text>
-<text class="small" text-anchor="end" x="278" y="209">allocate</text>
-<text class="small" text-anchor="end" x="294" y="420.2">allocate</text>
-<text class="small" x="334" y="228.2">allocate</text>
-<text class="small" x="366" y="420.2">allocate</text>
-<text class="small" text-anchor="middle" x="290" y="677">allocate</text>
-<text class="small" x="382" y="593">allocate</text>
+<text class="small" text-anchor="end" x="271.6" y="209">allocate</text>
+<text class="small" text-anchor="end" x="284.4" y="420.2">allocate</text>
+<text class="small" text-anchor="end" x="297.2" y="573.8">allocate</text>
+<text class="small" x="334" y="266.6">allocate</text>
+<text class="small" text-anchor="end" x="335.6" y="919.4">allocate</text>
+<text class="small" text-anchor="middle" x="288.4" y="712">allocate</text>
+<text class="small" text-anchor="middle" x="298" y="677">allocate</text>
+<text class="small" x="385.2" y="631.4">allocate</text>
 </g>
 </svg>

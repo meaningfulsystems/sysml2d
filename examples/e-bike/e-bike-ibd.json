@@ -15,6 +15,9 @@
     "hubMotor": "ElectricBike::ElectricBike::hubMotor",
     "humanInterface": "ElectricBike::ElectricBike::humanInterface",
     "brakeSystem": "ElectricBike::ElectricBike::brakeSystem",
+    "bms": "ElectricBike::BatteryPack::bms",
+    "cadenceSensor": "ElectricBike::ElectricBike::cadenceSensor",
+    "wheelSpeedSensor": "ElectricBike::ElectricBike::wheelSpeedSensor",
     "frame--batteryPack--src": "ElectricBike::Frame::batteryMountOut",
     "frame--batteryPack--tgt": "ElectricBike::BatteryPack::mountIn",
     "frame--hubMotor--src": "ElectricBike::Frame::motorMountOut",
@@ -33,8 +36,14 @@
     "brakeSystem--motorController--tgt": "ElectricBike::MotorController::inhibitIn",
     "bnd--humanInterface": "ElectricBike::HumanInterface::riderIn",
     "humanInterface--bnd--tgt": "ElectricBike::HumanInterface::riderIn",
-    "bnd--batteryPack": "ElectricBike::BMS::chargerIn",
-    "batteryPack--bnd--tgt": "ElectricBike::BMS::chargerIn",
+    "bnd--bms": "ElectricBike::BMS::chargerIn",
+    "bms--bnd--tgt": "ElectricBike::BMS::chargerIn",
+    "bms--batteryPack--src": "ElectricBike::BMS::contactorOut",
+    "bms--batteryPack--tgt": "ElectricBike::BatteryPack::powerOut",
+    "cadenceSensor--motorController--src": "ElectricBike::CadenceSensor::cadenceOut",
+    "cadenceSensor--motorController--tgt": "ElectricBike::MotorController::sensorIn",
+    "wheelSpeedSensor--motorController--src": "ElectricBike::WheelSpeedSensor::speedOut",
+    "wheelSpeedSensor--motorController--tgt": "ElectricBike::MotorController::sensorIn",
     "bnd--hubMotor": "ElectricBike::HubMotor::roadLoadIn",
     "hubMotor--bnd--tgt": "ElectricBike::HubMotor::roadLoadIn",
     "conn-frame-batteryPack": "ElectricBike::ElectricBike::frameToBattery",
@@ -46,7 +55,10 @@
     "conn-humanInterface-motorController": "ElectricBike::ElectricBike::interfaceToController",
     "conn-brakeSystem-motorController": "ElectricBike::ElectricBike::brakesToController",
     "conn-bnd-humanInterface": "ElectricBike::ElectricBike::riderToInterface",
-    "conn-bnd-batteryPack": "ElectricBike::ElectricBike::chargerToBattery",
+    "conn-bnd-bms": "ElectricBike::ElectricBike::chargerToBattery",
+    "conn-bms-batteryPack": "ElectricBike::BatteryPack::bmsToPackPower",
+    "conn-cadenceSensor-motorController": "ElectricBike::ElectricBike::cadenceToController",
+    "conn-wheelSpeedSensor-motorController": "ElectricBike::ElectricBike::wheelSpeedToController",
     "conn-bnd-hubMotor": "ElectricBike::ElectricBike::roadToMotor"
   },
   "direction": "left-right",
@@ -79,6 +91,24 @@
     "frame": {
       "label": "Frame",
       "style": "part.structure"
+    },
+    "bms": {
+      "label": "BMS",
+      "style": "part.power",
+      "w": 140,
+      "h": 58
+    },
+    "cadenceSensor": {
+      "label": "Cadence Sensor",
+      "style": "part.control",
+      "w": 150,
+      "h": 58
+    },
+    "wheelSpeedSensor": {
+      "label": "Wheel Speed Sensor",
+      "style": "part.control",
+      "w": 150,
+      "h": 58
     }
   },
   "edges": [
@@ -133,6 +163,24 @@
       "to": "motorController",
       "label": "inhibit",
       "model_ref": "conn-brakeSystem-motorController"
+    },
+    {
+      "from": "bms",
+      "to": "batteryPack",
+      "label": "contactor",
+      "model_ref": "conn-bms-batteryPack"
+    },
+    {
+      "from": "cadenceSensor",
+      "to": "motorController",
+      "label": "cadence",
+      "model_ref": "conn-cadenceSensor-motorController"
+    },
+    {
+      "from": "wheelSpeedSensor",
+      "to": "motorController",
+      "label": "wheel speed",
+      "model_ref": "conn-wheelSpeedSensor-motorController"
     }
   ],
   "boundary_inputs": [
@@ -142,9 +190,9 @@
       "model_ref": "conn-bnd-humanInterface"
     },
     {
-      "to": "batteryPack",
+      "to": "bms",
       "label": "charger",
-      "model_ref": "conn-bnd-batteryPack"
+      "model_ref": "conn-bnd-bms"
     },
     {
       "to": "hubMotor",

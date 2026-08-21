@@ -83,9 +83,9 @@ package ElectricBike {
         state off;
         state standby;
         state assist;
-        state walk;
-        state charging;
-        state fault;
+        state walk { doc /* do / speed <= 6 km/h. EPAC walk assist, not a throttle. */ }
+        state charging { doc /* EPAC: Charging only from Off, not Standby. */ }
+        state fault { doc /* resetFault is Fault→Off, not Standby. */ }
 
         transition powerOn
             first off
@@ -125,7 +125,7 @@ package ElectricBike {
         transition plugIn
             first off
             accept chargerConnected
-            then charging;
+            then charging;  // EPAC: charge only from Off
 
         transition chargeComplete
             first charging
@@ -150,7 +150,7 @@ package ElectricBike {
         transition resetFault
             first fault
             accept reset
-            then off;
+            then off;  // locked: Fault→Off, not Standby
     }
 
     package BikeModel;
@@ -186,9 +186,9 @@ package ElectricBike {
     flow brakeInhibitFlow;
     flow roadLoadFlow;
 
-    requirement rideSafetyRequirement       { doc /* Motor fail-silent: brake input, controller, cadence/speed sensors, and BMS shall cut motor torque before the wheel can keep driving the rider. */ }
+    requirement rideSafetyRequirement       { doc /* Motor fail-silent: brake input, controller, cadenceSensor, wheelSpeedSensor, and BMS shall cut motor torque before the wheel can keep driving the rider. Cadence-only cannot enforce 25 km/h. */ }
     requirement rangeRequirement            { doc /* Tour-mode scenario only: usableWh 500 Wh / energyPerKm ~8.3 Wh/km ≥ 60 km. Not Eco / PAS-1; undemonstrated unless this scenario is bound. */ }
-    requirement assistLimitRequirement      { doc /* EPAC (EN 15194): cadence PAS only, no certified throttle. Assist shall cut off at 25 km/h. Walk assist ≤ 6 km/h is a real EPAC feature, not a throttle. */ }
+    requirement assistLimitRequirement      { doc /* EPAC (EN 15194): cadence PAS only, no certified throttle. Assist shall cut off at 25 km/h — enforced by wheelSpeedSensor; cadence-only cannot enforce 25 km/h. Walk assist ≤ 6 km/h is a real EPAC feature, not a throttle. */ }
     requirement walkAssistRequirement       { doc /* EPAC walk assist shall not exceed 6 km/h. Walk assist is not a throttle. */ }
     requirement continuousPowerRequirement  { doc /* Continuous assist shall not exceed 250 W. */ }
     requirement chargeSafetyRequirement     { doc /* Charging shall stop on over-temperature, over-voltage, or charger disconnect. UL 2849: the BMS inside the pack opens the contactor. */ }
@@ -246,7 +246,9 @@ package ElectricBike {
     allocation allocateSafetyToController;
     allocation allocateSafetyToBms;
     allocation allocateSafetyToSensors;
+    allocation allocateSafetyToWheelSpeed;
     allocation allocateRangeToBattery;
     allocation allocateAssistToController;
+    allocation allocateAssistToWheelSpeed;
     allocation allocateChargeToBms;
 }

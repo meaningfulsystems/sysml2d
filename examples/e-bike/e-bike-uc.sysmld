@@ -11,7 +11,7 @@
     "kind": "UseCaseView",
     "name": "Electric Bike Use Cases",
     "canvas": {
-      "width": 627,
+      "width": 807,
       "height": 654,
       "background": "#FFFFFF"
     },
@@ -23,7 +23,7 @@
         "id": "bikeBoundary",
         "symbol": "boundary",
         "layout": {
-          "x": 265,
+          "x": 252,
           "y": 72,
           "width": 290.0,
           "height": 510.0,
@@ -51,7 +51,7 @@
         "id": "rideBikeUseCase",
         "symbol": "use_case",
         "layout": {
-          "x": 335,
+          "x": 322,
           "y": 122,
           "width": 150,
           "height": 70,
@@ -65,7 +65,7 @@
         "id": "adjustAssistUseCase",
         "symbol": "use_case",
         "layout": {
-          "x": 335,
+          "x": 322,
           "y": 292,
           "width": 150,
           "height": 70,
@@ -79,7 +79,7 @@
         "id": "chargeBikeUseCase",
         "symbol": "use_case",
         "layout": {
-          "x": 335,
+          "x": 322,
           "y": 462,
           "width": 150,
           "height": 70,
@@ -93,8 +93,8 @@
         "id": "charger",
         "symbol": "actor",
         "layout": {
-          "x": 72,
-          "y": 282,
+          "x": 652,
+          "y": 112,
           "width": 83,
           "height": 90,
           "z": 10
@@ -125,11 +125,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 190.5,
+              "x": 177.5,
               "y": 139
             },
             {
-              "x": 190.5,
+              "x": 177.5,
               "y": 157
             }
           ]
@@ -158,11 +158,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 210,
+              "x": 177.5,
               "y": 152.5
             },
             {
-              "x": 210,
+              "x": 177.5,
               "y": 327
             }
           ]
@@ -176,14 +176,14 @@
         "source": {
           "element": "charger",
           "anchor": {
-            "side": "right",
+            "side": "left",
             "offset": 0.5
           }
         },
         "target": {
           "element": "chargeBikeUseCase",
           "anchor": {
-            "side": "left",
+            "side": "right",
             "offset": 0.5
           }
         },
@@ -191,11 +191,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 229.5,
-              "y": 327
+              "x": 597,
+              "y": 157
             },
             {
-              "x": 229.5,
+              "x": 597,
               "y": 497
             }
           ]

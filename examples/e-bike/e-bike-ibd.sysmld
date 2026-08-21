@@ -14,6 +14,9 @@
     "hubMotor": "ElectricBike::ElectricBike::hubMotor",
     "humanInterface": "ElectricBike::ElectricBike::humanInterface",
     "brakeSystem": "ElectricBike::ElectricBike::brakeSystem",
+    "bms": "ElectricBike::BatteryPack::bms",
+    "cadenceSensor": "ElectricBike::ElectricBike::cadenceSensor",
+    "wheelSpeedSensor": "ElectricBike::ElectricBike::wheelSpeedSensor",
     "frame--batteryPack--src": "ElectricBike::Frame::batteryMountOut",
     "frame--batteryPack--tgt": "ElectricBike::BatteryPack::mountIn",
     "frame--hubMotor--src": "ElectricBike::Frame::motorMountOut",
@@ -32,8 +35,14 @@
     "brakeSystem--motorController--tgt": "ElectricBike::MotorController::inhibitIn",
     "bnd--humanInterface": "ElectricBike::HumanInterface::riderIn",
     "humanInterface--bnd--tgt": "ElectricBike::HumanInterface::riderIn",
-    "bnd--batteryPack": "ElectricBike::BMS::chargerIn",
-    "batteryPack--bnd--tgt": "ElectricBike::BMS::chargerIn",
+    "bnd--bms": "ElectricBike::BMS::chargerIn",
+    "bms--bnd--tgt": "ElectricBike::BMS::chargerIn",
+    "bms--batteryPack--src": "ElectricBike::BMS::contactorOut",
+    "bms--batteryPack--tgt": "ElectricBike::BatteryPack::powerOut",
+    "cadenceSensor--motorController--src": "ElectricBike::CadenceSensor::cadenceOut",
+    "cadenceSensor--motorController--tgt": "ElectricBike::MotorController::sensorIn",
+    "wheelSpeedSensor--motorController--src": "ElectricBike::WheelSpeedSensor::speedOut",
+    "wheelSpeedSensor--motorController--tgt": "ElectricBike::MotorController::sensorIn",
     "bnd--hubMotor": "ElectricBike::HubMotor::roadLoadIn",
     "hubMotor--bnd--tgt": "ElectricBike::HubMotor::roadLoadIn",
     "conn-frame-batteryPack": "ElectricBike::ElectricBike::frameToBattery",
@@ -45,7 +54,10 @@
     "conn-humanInterface-motorController": "ElectricBike::ElectricBike::interfaceToController",
     "conn-brakeSystem-motorController": "ElectricBike::ElectricBike::brakesToController",
     "conn-bnd-humanInterface": "ElectricBike::ElectricBike::riderToInterface",
-    "conn-bnd-batteryPack": "ElectricBike::ElectricBike::chargerToBattery",
+    "conn-bnd-bms": "ElectricBike::ElectricBike::chargerToBattery",
+    "conn-bms-batteryPack": "ElectricBike::BatteryPack::bmsToPackPower",
+    "conn-cadenceSensor-motorController": "ElectricBike::ElectricBike::cadenceToController",
+    "conn-wheelSpeedSensor-motorController": "ElectricBike::ElectricBike::wheelSpeedToController",
     "conn-bnd-hubMotor": "ElectricBike::ElectricBike::roadToMotor"
   },
   "diagram": {
@@ -53,8 +65,8 @@
     "kind": "InterconnectionView",
     "name": "Electric Bike Interconnection",
     "canvas": {
-      "width": 1396,
-      "height": 526,
+      "width": 1628,
+      "height": 634,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -68,8 +80,8 @@
         "layout": {
           "x": 40,
           "y": 40,
-          "width": 1316,
-          "height": 446,
+          "width": 1548,
+          "height": 554,
           "z": 0
         },
         "compartments": {
@@ -84,8 +96,8 @@
         "model_ref": "humanInterface",
         "symbol": "part_usage",
         "layout": {
-          "x": 434,
-          "y": 76,
+          "x": 511,
+          "y": 278,
           "width": 170,
           "height": 78,
           "z": 10
@@ -103,8 +115,8 @@
         "model_ref": "brakeSystem",
         "symbol": "part_usage",
         "layout": {
-          "x": 434,
-          "y": 224,
+          "x": 511,
+          "y": 419,
           "width": 170,
           "height": 78,
           "z": 10
@@ -122,8 +134,8 @@
         "model_ref": "batteryPack",
         "symbol": "part_usage",
         "layout": {
-          "x": 434,
-          "y": 372,
+          "x": 511,
+          "y": 137,
           "width": 170,
           "height": 78,
           "z": 10
@@ -141,8 +153,8 @@
         "model_ref": "motorController",
         "symbol": "part_usage",
         "layout": {
-          "x": 792,
-          "y": 224,
+          "x": 947,
+          "y": 278,
           "width": 170,
           "height": 78,
           "z": 10
@@ -160,8 +172,8 @@
         "model_ref": "hubMotor",
         "symbol": "part_usage",
         "layout": {
-          "x": 1150,
-          "y": 224,
+          "x": 1382,
+          "y": 278,
           "width": 170,
           "height": 78,
           "z": 10
@@ -180,7 +192,7 @@
         "symbol": "part_usage",
         "layout": {
           "x": 76,
-          "y": 224,
+          "y": 349,
           "width": 170,
           "height": 78,
           "z": 10
@@ -192,6 +204,63 @@
           "actions": false
         },
         "style": "part.structure"
+      },
+      {
+        "id": "bms",
+        "model_ref": "bms",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 91,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "BMS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.power"
+      },
+      {
+        "id": "cadenceSensor",
+        "model_ref": "cadenceSensor",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 86,
+          "y": 217,
+          "width": 150,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Cadence Sensor",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.control"
+      },
+      {
+        "id": "wheelSpeedSensor",
+        "model_ref": "wheelSpeedSensor",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 81,
+          "y": 500,
+          "width": 160,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Wheel Speed Sensor",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.control"
       },
       {
         "id": "humanInterface--bnd--tgt",
@@ -249,8 +318,8 @@
         "label": ""
       },
       {
-        "id": "frame--batteryPack--tgt",
-        "model_ref": "frame--batteryPack--tgt",
+        "id": "bms--batteryPack--tgt",
+        "model_ref": "bms--batteryPack--tgt",
         "symbol": "port",
         "owner": "batteryPack",
         "placement": {
@@ -260,8 +329,8 @@
         "label": ""
       },
       {
-        "id": "batteryPack--bnd--tgt",
-        "model_ref": "batteryPack--bnd--tgt",
+        "id": "frame--batteryPack--tgt",
+        "model_ref": "frame--batteryPack--tgt",
         "symbol": "port",
         "owner": "batteryPack",
         "placement": {
@@ -282,13 +351,35 @@
         "label": ""
       },
       {
+        "id": "batteryPack--motorController--tgt",
+        "model_ref": "batteryPack--motorController--tgt",
+        "symbol": "port",
+        "owner": "motorController",
+        "placement": {
+          "side": "left",
+          "offset": 0.1667
+        },
+        "label": ""
+      },
+      {
+        "id": "cadenceSensor--motorController--tgt",
+        "model_ref": "cadenceSensor--motorController--tgt",
+        "symbol": "port",
+        "owner": "motorController",
+        "placement": {
+          "side": "left",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
         "id": "humanInterface--motorController--tgt",
         "model_ref": "humanInterface--motorController--tgt",
         "symbol": "port",
         "owner": "motorController",
         "placement": {
           "side": "left",
-          "offset": 0.25
+          "offset": 0.5
         },
         "label": ""
       },
@@ -299,18 +390,18 @@
         "owner": "motorController",
         "placement": {
           "side": "left",
-          "offset": 0.5
+          "offset": 0.6667
         },
         "label": ""
       },
       {
-        "id": "batteryPack--motorController--tgt",
-        "model_ref": "batteryPack--motorController--tgt",
+        "id": "wheelSpeedSensor--motorController--tgt",
+        "model_ref": "wheelSpeedSensor--motorController--tgt",
         "symbol": "port",
         "owner": "motorController",
         "placement": {
           "side": "left",
-          "offset": 0.75
+          "offset": 0.8333
         },
         "label": ""
       },
@@ -359,24 +450,24 @@
         "label": ""
       },
       {
-        "id": "frame--brakeSystem--src",
-        "model_ref": "frame--brakeSystem--src",
-        "symbol": "port",
-        "owner": "frame",
-        "placement": {
-          "side": "right",
-          "offset": 0.5
-        },
-        "label": ""
-      },
-      {
         "id": "frame--batteryPack--src",
         "model_ref": "frame--batteryPack--src",
         "symbol": "port",
         "owner": "frame",
         "placement": {
           "side": "right",
-          "offset": 0.75
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "frame--brakeSystem--src",
+        "model_ref": "frame--brakeSystem--src",
+        "symbol": "port",
+        "owner": "frame",
+        "placement": {
+          "side": "right",
+          "offset": 0.6667
         },
         "label": ""
       },
@@ -403,24 +494,68 @@
         "label": ""
       },
       {
+        "id": "bms--batteryPack--src",
+        "model_ref": "bms--batteryPack--src",
+        "symbol": "port",
+        "owner": "bms",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "bms--bnd--tgt",
+        "model_ref": "bms--bnd--tgt",
+        "symbol": "port",
+        "owner": "bms",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "cadenceSensor--motorController--src",
+        "model_ref": "cadenceSensor--motorController--src",
+        "symbol": "port",
+        "owner": "cadenceSensor",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "wheelSpeedSensor--motorController--src",
+        "model_ref": "wheelSpeedSensor--motorController--src",
+        "symbol": "port",
+        "owner": "wheelSpeedSensor",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
         "id": "bnd--humanInterface",
         "model_ref": "bnd--humanInterface",
         "symbol": "port",
         "owner": "boundary",
         "placement": {
           "side": "left",
-          "offset": 0.139
+          "offset": 0.4765
         },
         "label": "rider"
       },
       {
-        "id": "bnd--batteryPack",
-        "model_ref": "bnd--batteryPack",
+        "id": "bnd--bms",
+        "model_ref": "bnd--bms",
         "symbol": "port",
         "owner": "boundary",
         "placement": {
           "side": "left",
-          "offset": 0.861
+          "offset": 0.1173
         },
         "label": "charger"
       },
@@ -458,12 +593,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 363.333,
-              "y": 282.5
+              "x": 342.333,
+              "y": 374.997
             },
             {
-              "x": 363.333,
-              "y": 397.997
+              "x": 342.333,
+              "y": 189.003
             }
           ]
         },
@@ -498,12 +633,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 189.339,
-              "y": 200
+              "x": 265,
+              "y": 349
             },
             {
-              "x": 1235,
-              "y": 200
+              "x": 265,
+              "y": 278
             }
           ]
         },
@@ -539,7 +674,7 @@
           "waypoints": [
             {
               "x": 132.661,
-              "y": 128.003
+              "y": 330.003
             }
           ]
         },
@@ -572,7 +707,16 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 414.667,
+              "y": 401.003
+            },
+            {
+              "x": 414.667,
+              "y": 458
+            }
+          ]
         },
         "labels": [
           {
@@ -605,12 +749,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 733,
-              "y": 411
+              "x": 759.5,
+              "y": 176
             },
             {
-              "x": 733,
-              "y": 282.5
+              "x": 759.5,
+              "y": 291.003
             }
           ]
         },
@@ -674,16 +818,7 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 663,
-              "y": 115
-            },
-            {
-              "x": 663,
-              "y": 243.5
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
@@ -714,11 +849,152 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 868.5,
+              "y": 458
+            },
+            {
+              "x": 868.5,
+              "y": 330.003
+            }
+          ]
         },
         "labels": [
           {
             "text": "inhibit",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-bms-batteryPack",
+        "model_ref": "conn-bms-batteryPack",
+        "source": {
+          "element": "bms--batteryPack--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "bms--batteryPack--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 161,
+              "y": 162.997
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "contactor",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-cadenceSensor-motorController",
+        "model_ref": "conn-cadenceSensor-motorController",
+        "source": {
+          "element": "cadenceSensor--motorController--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cadenceSensor--motorController--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 270,
+              "y": 217
+            },
+            {
+              "x": 270,
+              "y": 254
+            },
+            {
+              "x": 705,
+              "y": 254
+            },
+            {
+              "x": 705,
+              "y": 303.997
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "cadence",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-wheelSpeedSensor-motorController",
+        "model_ref": "conn-wheelSpeedSensor-motorController",
+        "source": {
+          "element": "wheelSpeedSensor--motorController--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "wheelSpeedSensor--motorController--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 270,
+              "y": 500
+            },
+            {
+              "x": 270,
+              "y": 380
+            },
+            {
+              "x": 705,
+              "y": 380
+            },
+            {
+              "x": 705,
+              "y": 342.997
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "wheel speed",
             "position": {
               "offset": 0.5
             }
@@ -751,17 +1027,17 @@
         "style": "connector.default"
       },
       {
-        "id": "conn-bnd-batteryPack",
-        "model_ref": "conn-bnd-batteryPack",
+        "id": "conn-bnd-bms",
+        "model_ref": "conn-bnd-bms",
         "source": {
-          "element": "bnd--batteryPack",
+          "element": "bnd--bms",
           "anchor": {
             "side": "right",
             "offset": 0.5
           }
         },
         "target": {
-          "element": "batteryPack--bnd--tgt",
+          "element": "bms--bnd--tgt",
           "anchor": {
             "side": "left",
             "offset": 0.5

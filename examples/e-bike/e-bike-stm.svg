@@ -21,9 +21,9 @@
 <rect id="assist" x="943" y="125" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1008" y="155">Assist</text>
 <rect id="walk" x="943" y="269" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1008" y="291.5">walk</tspan><tspan x="1008" dy="15">&lt;= 6 km/h EPAC</tspan></text>
+<text class="label" text-anchor="middle"><tspan x="1008" y="291.5">walk</tspan><tspan x="1008" dy="15">do / &lt;= 6 km/h</tspan></text>
 <rect id="charging" x="659" y="269" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="724" y="299">Charging</text>
+<text class="label" text-anchor="middle"><tspan x="724" y="291.5">Charging</tspan><tspan x="724" dy="15">from Off only</tspan></text>
 <rect id="fault" x="1227" y="197" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="1292" y="227">Fault</text>
 <path d="M 165,227 L 374,227" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
@@ -40,12 +40,12 @@
 <text class="small" text-anchor="middle" x="556" y="194">power button</text>
 <text class="small" text-anchor="middle" x="876.05" y="143">cadence (EPAC)</text>
 <text class="small" text-anchor="middle" x="892" y="260.1">walk button</text>
-<text class="small" text-anchor="end" x="595" y="268">charger in</text>
+<text class="small" text-anchor="end" x="595" y="277.3">charger in (Off only)</text>
 <text class="small" text-anchor="middle" x="1150" y="199">overcurrent</text>
 <text class="small" x="643" y="245.2">release / brake</text>
 <text class="small" text-anchor="middle" x="823.4" y="221">no pedal / brake</text>
 <text class="small" text-anchor="middle" x="581.5" y="393">full / unplug</text>
 <text class="small" text-anchor="middle" x="570.5" y="77">power button</text>
-<text class="small" text-anchor="middle" x="1199" y="170">reset</text>
+<text class="small" text-anchor="middle" x="1199" y="170">reset → Off</text>
 </g>
 </svg>

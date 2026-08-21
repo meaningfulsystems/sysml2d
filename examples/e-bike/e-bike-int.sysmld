@@ -11,7 +11,7 @@
     "kind": "InteractionView",
     "name": "Rider Assist Interaction",
     "canvas": {
-      "width": 1097,
+      "width": 1138,
       "height": 442,
       "background": "#FFFFFF"
     },
@@ -67,11 +67,11 @@
         "layout": {
           "x": 717,
           "y": 70,
-          "width": 110,
+          "width": 151,
           "height": 364,
           "z": 10
         },
-        "label": "Hub Motor",
+        "label": "Rear Geared Hub",
         "style": "lifeline",
         "model_ref": "hubMotor"
       },
@@ -79,7 +79,7 @@
         "id": "brakeSystem",
         "symbol": "lifeline",
         "layout": {
-          "x": 917,
+          "x": 958,
           "y": 70,
           "width": 110,
           "height": 364,

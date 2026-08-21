@@ -12,10 +12,10 @@ Review bindings (do not treat a first-diagram slogan as truth):
 - Tour 60 km binds `usableWh` (500 Wh) and `energyPerKm` (~8.3 Wh/km), not Eco / PAS-1.
 - 50 ms brake inhibit is the electronic order. EN 15194 also carries the 5 m / 2 m distance cutoff.
 - `allocateChargeToBms` targets `BatteryPack::bms`, not the pack box.
-- Ride safety allocates to brakes **and** controller, cadence sensor, and BMS.
+- Ride safety allocates to brakes, controller, cadenceSensor, wheelSpeedSensor, and BMS. Assist Limit also allocates to wheelSpeedSensor — cadence-only cannot enforce 25 km/h.
 - `lockBikeUseCase` is deleted (commercial, not EN 15194).
 - Lighting is StVZO / ISO 6742, not UN ECE R113.
-- RideControl state `walk` (≤ 6 km/h) is a real EPAC feature, not a throttle. RiderInterface carries `PedalCadence` and `WalkAssistCommand`. `ThrottleCommand` remains unused.
+- RideControl state `walk` (`do / <= 6 km/h`) is a real EPAC feature, not a throttle. `resetFault` is Fault→Off (not Standby). Charging is Off→Charging only. RiderInterface carries `PedalCadence` and `WalkAssistCommand`. `ThrottleCommand` remains unused.
 - `energyBalance` binds pack energy only. Rider watts are a different source (`riderInputBalance`).
 - Ports live on the child parts (`frame`, `batteryPack`, `motorController`, `hubMotor`, `humanInterface`, `brakeSystem`, `bms`). The parent IBD connects those child ports.
 

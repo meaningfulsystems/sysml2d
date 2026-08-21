@@ -106,7 +106,7 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("25 km/h", model)
         self.assertIn("Rear geared hub. No regenerative braking.", model)
         self.assertIn("Cadence PAS, walk assist, and display. No throttle.", model)
-        self.assertIn("state walk;", model)
+        self.assertIn("state walk", model)
         self.assertNotIn("state walkAssist", model)
         self.assertIn("attribute energyPerKm", model)
         self.assertIn("attribute usableWh", model)
@@ -118,7 +118,11 @@ class ExampleViewTests(unittest.TestCase):
         self.assertNotIn("port frameBatteryMountOut", model)
         self.assertIn("port batteryMountOut", model)
         self.assertIn("port chargerIn", model)
+        self.assertIn("part cadenceSensor : CadenceSensor", model)
         self.assertIn("part wheelSpeedSensor : WheelSpeedSensor", model)
+        self.assertIn("allocateSafetyToWheelSpeed", model)
+        self.assertIn("allocateAssistToWheelSpeed", model)
+        self.assertIn("cadence-only cannot enforce 25 km/h", model)
         self.assertIn("250 W", model)
         self.assertIn("StVZO / ISO 6742", model)
         self.assertNotIn("UN ECE R113.", model.replace("Not UN ECE R113.", ""))
@@ -147,7 +151,17 @@ class ExampleViewTests(unittest.TestCase):
             for edge in alloc["edges"]
             if edge.get("from") == "rideSafetyRequirement"
         }
-        self.assertEqual(safety_targets, {"brakeSystem", "motorController", "cadenceSensor", "bms"})
+        self.assertEqual(
+            safety_targets,
+            {"brakeSystem", "motorController", "cadenceSensor", "wheelSpeedSensor", "bms"},
+        )
+        assist_targets = {
+            edge["to"]
+            for edge in alloc["edges"]
+            if edge.get("from") == "assistLimitRequirement"
+        }
+        self.assertIn("wheelSpeedSensor", assist_targets)
+        self.assertIn("motorController", assist_targets)
         charge_edges = [edge for edge in alloc["edges"] if edge.get("model_ref") == "allocateChargeToBms"]
         self.assertEqual(len(charge_edges), 1)
         self.assertEqual(charge_edges[0]["to"], "bms")
@@ -174,13 +188,47 @@ class ExampleViewTests(unittest.TestCase):
 
         ibd = json.loads((ROOT / "examples/e-bike/e-bike-ibd.json").read_text(encoding="utf-8"))
         self.assertEqual(ibd["aliases"]["frame--batteryPack--src"], "ElectricBike::Frame::batteryMountOut")
-        self.assertEqual(ibd["aliases"]["batteryPack--bnd--tgt"], "ElectricBike::BMS::chargerIn")
+        self.assertEqual(ibd["aliases"]["bms--bnd--tgt"], "ElectricBike::BMS::chargerIn")
+        self.assertIn("bms", ibd["nodes"])
+        self.assertIn("cadenceSensor", ibd["nodes"])
+        self.assertIn("wheelSpeedSensor", ibd["nodes"])
         self.assertNotIn("ElectricBike::ElectricBike::frameBatteryMountOut", ibd["aliases"].values())
         parent_body = model[model.index("part def ElectricBike {") : model.index("part def Frame")]
         self.assertNotIn("port ", parent_body)
         for key, value in ibd["aliases"].items():
             if "--src" in key or "--tgt" in key or key.startswith("bnd--"):
                 self.assertNotIn("ElectricBike::ElectricBike::", value)
+
+        uc = json.loads((ROOT / "examples/e-bike/e-bike-uc.json").read_text(encoding="utf-8"))
+        charger_tos = {edge["to"] for edge in uc["edges"] if edge.get("from") == "charger"}
+        rider_tos = {edge["to"] for edge in uc["edges"] if edge.get("from") == "rider"}
+        self.assertEqual(charger_tos, {"chargeBikeUseCase"})
+        self.assertEqual(rider_tos, {"rideBikeUseCase", "adjustAssistUseCase"})
+        self.assertTrue(
+            any(
+                edge.get("from") == "rideBikeUseCase" and edge.get("to") == "adjustAssistUseCase"
+                for edge in uc["edges"]
+            )
+        )
+        self.assertFalse(
+            any(edge.get("from") == "charger" and edge.get("to") == "adjustAssistUseCase" for edge in uc["edges"])
+        )
+
+        interaction = json.loads((ROOT / "examples/e-bike/e-bike-int.json").read_text(encoding="utf-8"))
+        self.assertEqual(interaction["lifelines"]["hubMotor"]["label"], "Rear Geared Hub")
+
+        stm = json.loads((ROOT / "examples/e-bike/e-bike-stm.json").read_text(encoding="utf-8"))
+        hops = {(edge["from"], edge["to"]) for edge in stm["transitions"]}
+        self.assertIn(("fault", "off"), hops)
+        self.assertNotIn(("fault", "standby"), hops)
+        self.assertIn(("off", "charging"), hops)
+        self.assertNotIn(("standby", "charging"), hops)
+        self.assertNotIn(("standby", "fault"), hops)
+        self.assertTrue(stm["states"]["walk"]["label"].startswith("walk"))
+        self.assertIn("do / <= 6 km/h", stm["states"]["walk"]["label"])
+        self.assertIn("from Off only", stm["states"]["charging"]["label"])
+        self.assertIn("resetFault is Fault→Off", model)
+        self.assertIn("Charging only from Off", model)
 
         bdd = json.loads((ROOT / "examples/e-bike/e-bike-bdd.json").read_text(encoding="utf-8"))
         children = bdd["roots"][0]["children"]

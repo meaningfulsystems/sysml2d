@@ -11,8 +11,8 @@
     "kind": "AllocationView",
     "name": "Electric Bike Allocations",
     "canvas": {
-      "width": 624,
-      "height": 988,
+      "width": 634,
+      "height": 1180,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -118,11 +118,25 @@
         "model_ref": "cadenceSensor"
       },
       {
-        "id": "bms",
+        "id": "wheelSpeedSensor",
         "symbol": "part_usage",
         "layout": {
           "x": 402,
           "y": 654,
+          "width": 160,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Wheel Speed Sensor",
+        "style": "part_usage",
+        "model_ref": "wheelSpeedSensor"
+      },
+      {
+        "id": "bms",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 846,
           "width": 150,
           "height": 70,
           "z": 10
@@ -136,7 +150,7 @@
         "symbol": "part_usage",
         "layout": {
           "x": 402,
-          "y": 846,
+          "y": 1038,
           "width": 150,
           "height": 70,
           "z": 10
@@ -198,11 +212,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 290,
+              "x": 283.6,
               "y": 113
             },
             {
-              "x": 290,
+              "x": 283.6,
               "y": 305
             }
           ]
@@ -238,11 +252,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 306,
+              "x": 296.4,
               "y": 113
             },
             {
-              "x": 306,
+              "x": 296.4,
               "y": 497
             }
           ]
@@ -257,6 +271,46 @@
         ],
         "style": "connector.allocation",
         "model_ref": "allocateSafetyToSensors"
+      },
+      {
+        "id": "conn-rideSafetyRequirement-wheelSpeedSensor",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "wheelSpeedSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 309.2,
+              "y": 113
+            },
+            {
+              "x": 309.2,
+              "y": 689
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateSafetyToWheelSpeed"
       },
       {
         "id": "conn-rideSafetyRequirement-bms",
@@ -283,7 +337,7 @@
             },
             {
               "x": 322,
-              "y": 689
+              "y": 881
             }
           ]
         },
@@ -318,12 +372,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 354,
+              "x": 347.6,
               "y": 305
             },
             {
-              "x": 354,
-              "y": 881
+              "x": 347.6,
+              "y": 1073
             }
           ]
         },
@@ -358,11 +412,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 338,
+              "x": 334.8,
               "y": 689
             },
             {
-              "x": 338,
+              "x": 334.8,
               "y": 305
             }
           ]
@@ -377,6 +431,37 @@
         ],
         "style": "connector.allocation",
         "model_ref": "allocateAssistToController"
+      },
+      {
+        "id": "conn-assistLimitRequirement-wheelSpeedSensor",
+        "source": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "wheelSpeedSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateAssistToWheelSpeed"
       },
       {
         "id": "conn-chargeSafetyRequirement-bms",
@@ -398,12 +483,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 370,
+              "x": 373.2,
               "y": 497
             },
             {
-              "x": 370,
-              "y": 689
+              "x": 373.2,
+              "y": 881
             }
           ]
         },

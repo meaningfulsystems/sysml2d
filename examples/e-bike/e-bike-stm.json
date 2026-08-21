@@ -50,11 +50,11 @@
       "model_ref": "assist"
     },
     "walk": {
-      "label": "walk\n<= 6 km/h EPAC",
+      "label": "walk\ndo / <= 6 km/h",
       "model_ref": "walk"
     },
     "charging": {
-      "label": "Charging",
+      "label": "Charging\nfrom Off only",
       "model_ref": "charging"
     },
     "fault": {
@@ -101,7 +101,7 @@
     {
       "from": "off",
       "to": "charging",
-      "label": "charger in",
+      "label": "charger in (Off only)",
       "model_ref": "plugIn"
     },
     {
@@ -125,7 +125,7 @@
     {
       "from": "fault",
       "to": "off",
-      "label": "reset",
+      "label": "reset → Off",
       "model_ref": "resetFault"
     }
   ]

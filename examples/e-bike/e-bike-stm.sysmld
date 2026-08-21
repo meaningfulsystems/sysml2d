@@ -123,7 +123,7 @@
           "z": 10
         },
         "model_ref": "walk",
-        "label": "walk\n<= 6 km/h EPAC",
+        "label": "walk\ndo / <= 6 km/h",
         "style": "state.default"
       },
       {
@@ -137,7 +137,7 @@
           "z": 10
         },
         "model_ref": "charging",
-        "label": "Charging",
+        "label": "Charging\nfrom Off only",
         "style": "state.default"
       },
       {
@@ -338,7 +338,7 @@
         },
         "labels": [
           {
-            "text": "charger in",
+            "text": "charger in (Off only)",
             "position": {
               "segment": 1,
               "offset": 0.5,
@@ -598,7 +598,7 @@
         },
         "labels": [
           {
-            "text": "reset",
+            "text": "reset \u2192 Off",
             "position": {
               "segment": 2,
               "offset": 0.5,
