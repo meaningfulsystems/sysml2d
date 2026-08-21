@@ -68,9 +68,11 @@
       "parent": "lunarReturn"
     },
     "surfaceEVA": {
-      "label": "Surface EVA",
+      "label": "Surface\nExtravehicular Activity",
       "model_ref": "surfaceEVA",
-      "parent": "lunarReturn"
+      "parent": "lunarReturn",
+      "w": 200,
+      "h": 64
     },
     "ascent": {
       "label": "Ascent",

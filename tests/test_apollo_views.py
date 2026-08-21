@@ -555,6 +555,8 @@ class ApolloViewTests(unittest.TestCase):
         self.assertNotIn("apollo-stm-and.svg", note)
         self.assertNotIn("concurrency page", note)
         self.assertNotIn("third small page", note)
+        self.assertNotIn("lecture", note)
+        self.assertNotIn("The class", note)
         self.assertIn("INCOSE shalls", note)
         self.assertIn("four concurrent regions", note)
         abort_spec = json.loads((APOLLO / "apollo-stm-abort.json").read_text(encoding="utf-8"))
@@ -573,9 +575,25 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("not Launch Escape System", abort_spec["states"]["II"]["label"])
         self.assertIn("not Launch Escape System", abort_spec["states"]["SPS"]["label"])
         alloc_spec = json.loads((APOLLO / "apollo-alloc.json").read_text(encoding="utf-8"))
+        self.assertEqual(alloc_spec["nodes"]["IU"]["label"], "Instrument Unit")
+        self.assertEqual(alloc_spec["nodes"]["RSO"]["label"], "Range Safety Officer")
+        self.assertEqual(alloc_spec["nodes"]["AGC_CM"]["label"], "Command Module\nguidance computer")
+        self.assertEqual(alloc_spec["nodes"]["AGC_LM"]["label"], "Lunar Module\nguidance computer")
+        self.assertEqual(alloc_spec["nodes"]["AGS"]["label"], "Abort Guidance System")
         self.assertEqual(alloc_spec["nodes"]["SM"]["label"], "Service Module")
         self.assertEqual(alloc_spec["nodes"]["CM"]["label"], "Command Module")
         self.assertEqual(alloc_spec["nodes"]["descent"]["label"], "Descent stage")
+        for node in alloc_spec["nodes"].values():
+            self.assertNotEqual(node["label"], "IU")
+            self.assertNotEqual(node["label"], "RSO")
+            self.assertNotEqual(node["label"], "AGC_CM")
+            self.assertNotEqual(node["label"], "AGC_LM")
+            self.assertNotEqual(node["label"], "AGS")
+            self.assertNotEqual(node["label"], "SM")
+            self.assertNotEqual(node["label"], "CM")
+        lunar_surface = json.loads((APOLLO / "apollo-stm-lunar.json").read_text(encoding="utf-8"))["states"]["surfaceEVA"]["label"]
+        self.assertIn("Extravehicular Activity", lunar_surface)
+        self.assertNotEqual(lunar_surface, "Surface EVA")
         right_offsets = {
             (edge["from"], edge["to"]): edge["target_offset"]
             for edge in alloc_spec["edges"]

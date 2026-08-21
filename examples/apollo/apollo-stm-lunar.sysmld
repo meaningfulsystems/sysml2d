@@ -32,8 +32,8 @@
     "kind": "StateView",
     "name": "Apollo 11 Lunar Return",
     "canvas": {
-      "width": 1261,
-      "height": 722,
+      "width": 1273,
+      "height": 724,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -47,8 +47,8 @@
         "layout": {
           "x": -7,
           "y": 5,
-          "width": 1228,
-          "height": 677,
+          "width": 1240,
+          "height": 679,
           "z": 0
         },
         "compartments": {
@@ -64,8 +64,8 @@
         "layout": {
           "x": 29,
           "y": 41,
-          "width": 1156,
-          "height": 605,
+          "width": 1168,
+          "height": 607,
           "z": 4
         },
         "model_ref": "lunarReturn",
@@ -117,7 +117,7 @@
         "symbol": "state_usage",
         "layout": {
           "x": 90,
-          "y": 537,
+          "y": 539,
           "width": 168,
           "height": 64,
           "z": 10
@@ -130,8 +130,8 @@
         "id": "descent",
         "symbol": "state_usage",
         "layout": {
-          "x": 384,
-          "y": 541,
+          "x": 388,
+          "y": 543,
           "width": 168,
           "height": 56,
           "z": 10
@@ -144,21 +144,21 @@
         "id": "surfaceEVA",
         "symbol": "state_usage",
         "layout": {
-          "x": 384,
-          "y": 344,
-          "width": 168,
-          "height": 56,
+          "x": 372,
+          "y": 340,
+          "width": 200,
+          "height": 64,
           "z": 10
         },
         "model_ref": "surfaceEVA",
-        "label": "Surface EVA",
+        "label": "Surface\nExtravehicular Activity",
         "style": "state.default"
       },
       {
         "id": "ascent",
         "symbol": "state_usage",
         "layout": {
-          "x": 384,
+          "x": 388,
           "y": 146,
           "width": 168,
           "height": 56,
@@ -172,7 +172,7 @@
         "id": "rendezvous",
         "symbol": "state_usage",
         "layout": {
-          "x": 678,
+          "x": 686,
           "y": 146,
           "width": 168,
           "height": 56,
@@ -186,7 +186,7 @@
         "id": "TEI",
         "symbol": "state_usage",
         "layout": {
-          "x": 678,
+          "x": 686,
           "y": 340,
           "width": 168,
           "height": 64,
@@ -200,8 +200,8 @@
         "id": "entry",
         "symbol": "state_usage",
         "layout": {
-          "x": 678,
-          "y": 541,
+          "x": 686,
+          "y": 543,
           "width": 168,
           "height": 56,
           "z": 10
@@ -214,8 +214,8 @@
         "id": "recovery",
         "symbol": "state_usage",
         "layout": {
-          "x": 972,
-          "y": 541,
+          "x": 984,
+          "y": 543,
           "width": 168,
           "height": 56,
           "z": 10
@@ -329,11 +329,11 @@
           "waypoints": [
             {
               "x": 258,
-              "y": 571
+              "y": 573
             },
             {
-              "x": 384,
-              "y": 571
+              "x": 388,
+              "y": 573
             }
           ]
         },
@@ -436,11 +436,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 552,
+              "x": 556,
               "y": 174
             },
             {
-              "x": 678,
+              "x": 686,
               "y": 174
             }
           ]
@@ -544,12 +544,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 846,
-              "y": 569
+              "x": 854,
+              "y": 571
             },
             {
-              "x": 972,
-              "y": 569
+              "x": 984,
+              "y": 571
             }
           ]
         },

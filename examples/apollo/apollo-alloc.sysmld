@@ -11,7 +11,7 @@
     "kind": "AllocationView",
     "name": "Apollo 11 Allocations",
     "canvas": {
-      "width": 1840,
+      "width": 2311,
       "height": 476,
       "background": "#FFFFFF"
     },
@@ -25,11 +25,11 @@
         "layout": {
           "x": 72,
           "y": 72,
-          "width": 170,
+          "width": 244,
           "height": 82,
           "z": 10
         },
-        "label": "IU owns boost+TLI",
+        "label": "Instrument Unit owns\nboost and Translunar Injection",
         "style": "requirement",
         "model_ref": "iuGncRequirement"
       },
@@ -37,13 +37,13 @@
         "id": "rsoRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 290,
+          "x": 387,
           "y": 72,
-          "width": 170,
+          "width": 174,
           "height": 82,
           "z": 10
         },
-        "label": "RSO destruct",
+        "label": "Range Safety Officer\ndestruct",
         "style": "requirement",
         "model_ref": "rsoRequirement"
       },
@@ -51,13 +51,13 @@
         "id": "agcRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 508,
+          "x": 649.5,
           "y": 72,
-          "width": 170,
+          "width": 209,
           "height": 82,
           "z": 10
         },
-        "label": "AGC_CM + AGC_LM",
+        "label": "Command Module and Lunar\nModule guidance computers",
         "style": "requirement",
         "model_ref": "agcRequirement"
       },
@@ -65,13 +65,13 @@
         "id": "agsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 944,
+          "x": 1223.5,
           "y": 72,
-          "width": 170,
+          "width": 181,
           "height": 82,
           "z": 10
         },
-        "label": "AGS separate",
+        "label": "Abort Guidance System\nseparate",
         "style": "requirement",
         "model_ref": "agsRequirement"
       },
@@ -79,7 +79,7 @@
         "id": "epsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1162,
+          "x": 1509,
           "y": 72,
           "width": 170,
           "height": 82,
@@ -93,7 +93,7 @@
         "id": "dockingRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1380,
+          "x": 1789,
           "y": 72,
           "width": 170,
           "height": 82,
@@ -107,7 +107,7 @@
         "id": "rcsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1598,
+          "x": 2069,
           "y": 72,
           "width": 170,
           "height": 82,
@@ -121,13 +121,13 @@
         "id": "IU",
         "symbol": "part_usage",
         "layout": {
-          "x": 82,
+          "x": 119,
           "y": 334,
           "width": 150,
           "height": 70,
           "z": 10
         },
-        "label": "IU",
+        "label": "Instrument Unit",
         "style": "part_usage",
         "model_ref": "IU"
       },
@@ -135,13 +135,13 @@
         "id": "RSO",
         "symbol": "part_usage",
         "layout": {
-          "x": 300,
+          "x": 387,
           "y": 334,
-          "width": 150,
+          "width": 174,
           "height": 70,
           "z": 10
         },
-        "label": "RSO",
+        "label": "Range Safety Officer",
         "style": "part_usage",
         "model_ref": "RSO"
       },
@@ -149,13 +149,13 @@
         "id": "AGC_CM",
         "symbol": "part_usage",
         "layout": {
-          "x": 518,
+          "x": 677.5,
           "y": 334,
-          "width": 150,
+          "width": 153,
           "height": 70,
           "z": 10
         },
-        "label": "AGC_CM",
+        "label": "Command Module\nguidance computer",
         "style": "part_usage",
         "model_ref": "AGC_CM"
       },
@@ -163,13 +163,13 @@
         "id": "AGC_LM",
         "symbol": "part_usage",
         "layout": {
-          "x": 736,
+          "x": 957.5,
           "y": 334,
-          "width": 150,
+          "width": 153,
           "height": 70,
           "z": 10
         },
-        "label": "AGC_LM",
+        "label": "Lunar Module\nguidance computer",
         "style": "part_usage",
         "model_ref": "AGC_LM"
       },
@@ -177,13 +177,13 @@
         "id": "AGS",
         "symbol": "part_usage",
         "layout": {
-          "x": 954,
+          "x": 1223.5,
           "y": 334,
-          "width": 150,
+          "width": 181,
           "height": 70,
           "z": 10
         },
-        "label": "AGS",
+        "label": "Abort Guidance System",
         "style": "part_usage",
         "model_ref": "AGS"
       },
@@ -191,7 +191,7 @@
         "id": "SM",
         "symbol": "part_usage",
         "layout": {
-          "x": 1172,
+          "x": 1519,
           "y": 334,
           "width": 150,
           "height": 70,
@@ -205,7 +205,7 @@
         "id": "CM",
         "symbol": "part_usage",
         "layout": {
-          "x": 1390,
+          "x": 1799,
           "y": 334,
           "width": 150,
           "height": 70,
@@ -219,7 +219,7 @@
         "id": "descent",
         "symbol": "part_usage",
         "layout": {
-          "x": 1608,
+          "x": 2079,
           "y": 334,
           "width": 150,
           "height": 70,
@@ -344,11 +344,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 593,
+              "x": 754,
               "y": 202.889
             },
             {
-              "x": 811,
+              "x": 1034,
               "y": 202.889
             }
           ]
@@ -415,11 +415,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1247,
+              "x": 1594,
               "y": 219.333
             },
             {
-              "x": 1214,
+              "x": 1561,
               "y": 219.333
             }
           ]
@@ -455,11 +455,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1247,
+              "x": 1594,
               "y": 235.778
             },
             {
-              "x": 1423,
+              "x": 1832,
               "y": 235.778
             }
           ]
@@ -495,11 +495,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1247,
+              "x": 1594,
               "y": 252.222
             },
             {
-              "x": 1641,
+              "x": 2112,
               "y": 252.222
             }
           ]
@@ -566,11 +566,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1683,
+              "x": 2154,
               "y": 285.111
             },
             {
-              "x": 1280,
+              "x": 1627,
               "y": 285.111
             }
           ]
@@ -606,11 +606,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1683,
+              "x": 2154,
               "y": 301.556
             },
             {
-              "x": 1507,
+              "x": 1916,
               "y": 301.556
             }
           ]

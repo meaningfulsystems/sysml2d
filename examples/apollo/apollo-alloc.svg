@@ -1,67 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1844" height="518" viewBox="0 0 1844 518">
+<svg xmlns="http://www.w3.org/2000/svg" width="2315" height="518" viewBox="0 0 2315 518">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1844" height="518" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1840" height="476" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="2315" height="518" fill="#FFFFFF"/>
+<rect x="2" y="38" width="2311" height="476" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 368 L 384 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[alloc.mb] Apollo 11 Allocations [Apollo11]</text>
-<rect x="2" y="38" width="1840" height="478" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="2311" height="478" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="iuGncRequirement" x="72" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="157" y="113">IU owns boost+TLI</text>
-<rect id="rsoRequirement" x="290" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="375" y="113">RSO destruct</text>
-<rect id="agcRequirement" x="508" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="593" y="113">AGC_CM + AGC_LM</text>
-<rect id="agsRequirement" x="944" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1029" y="113">AGS separate</text>
-<rect id="epsRequirement" x="1162" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1247" y="113">Electrical Power</text>
-<rect id="dockingRequirement" x="1380" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1465" y="113">Docking</text>
-<rect id="rcsRequirement" x="1598" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1683" y="113">Reaction Control</text>
-<rect id="IU" x="82" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="157" y="369">IU</text>
-<rect id="RSO" x="300" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="375" y="369">RSO</text>
-<rect id="AGC_CM" x="518" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="593" y="369">AGC_CM</text>
-<rect id="AGC_LM" x="736" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="811" y="369">AGC_LM</text>
-<rect id="AGS" x="954" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1029" y="369">AGS</text>
-<rect id="SM" x="1172" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1247" y="369">Service Module</text>
-<rect id="CM" x="1390" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1465" y="369">Command Module</text>
-<rect id="descent" x="1608" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1683" y="369">Descent stage</text>
-<path d="M 157,154 L 157,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 375,154 L 375,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 593,154 L 593,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 593,154 L 593,202.889 L 811,202.889 L 811,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1029,154 L 1029,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1247,154 L 1247,219.333 L 1214,219.333 L 1214,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1247,154 L 1247,235.778 L 1423,235.778 L 1423,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1247,154 L 1247,252.222 L 1416,252.222 A 7 7 0 0 0 1430,252.222 L 1641,252.222 L 1641,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1465,154 L 1465,245.222 A 7 7 0 0 1 1465,259.222 L 1465,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1683,154 L 1683,285.111 L 1648,285.111 A 7 7 0 0 1 1634,285.111 L 1472,285.111 A 7 7 0 0 1 1458,285.111 L 1430,285.111 A 7 7 0 0 1 1416,285.111 L 1280,285.111 L 1280,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<path d="M 1683,154 L 1683,301.556 L 1648,301.556 A 7 7 0 0 1 1634,301.556 L 1507,301.556 L 1507,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
-<text class="small" x="169" y="244">allocate</text>
-<text class="small" x="387" y="244">allocate</text>
-<text class="small" x="605" y="244">allocate</text>
-<text class="small" text-anchor="middle" x="702" y="190.889">allocate</text>
-<text class="small" x="1041" y="244">allocate</text>
-<text class="small" x="1226" y="276.666">allocate</text>
-<text class="small" text-anchor="middle" x="1335" y="223.778">allocate</text>
-<text class="small" text-anchor="middle" x="1384.9" y="275.222">allocate</text>
-<text class="small" x="1477" y="244">allocate</text>
-<text class="small" text-anchor="middle" x="1541.95" y="273.111">allocate</text>
-<text class="small" x="1695" y="227.778">allocate</text>
+<rect id="iuGncRequirement" x="72" y="72" width="244" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="194" y="105.5">Instrument Unit owns</tspan><tspan x="194" dy="15">boost and Translunar Injection</tspan></text>
+<rect id="rsoRequirement" x="387" y="72" width="174" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="474" y="105.5">Range Safety Officer</tspan><tspan x="474" dy="15">destruct</tspan></text>
+<rect id="agcRequirement" x="649.5" y="72" width="209" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="754" y="105.5">Command Module and Lunar</tspan><tspan x="754" dy="15">Module guidance computers</tspan></text>
+<rect id="agsRequirement" x="1223.5" y="72" width="181" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1314" y="105.5">Abort Guidance System</tspan><tspan x="1314" dy="15">separate</tspan></text>
+<rect id="epsRequirement" x="1509" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1594" y="113">Electrical Power</text>
+<rect id="dockingRequirement" x="1789" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1874" y="113">Docking</text>
+<rect id="rcsRequirement" x="2069" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="2154" y="113">Reaction Control</text>
+<rect id="IU" x="119" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="194" y="369">Instrument Unit</text>
+<rect id="RSO" x="387" y="334" width="174" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="474" y="369">Range Safety Officer</text>
+<rect id="AGC_CM" x="677.5" y="334" width="153" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="754" y="361.5">Command Module</tspan><tspan x="754" dy="15">guidance computer</tspan></text>
+<rect id="AGC_LM" x="957.5" y="334" width="153" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1034" y="361.5">Lunar Module</tspan><tspan x="1034" dy="15">guidance computer</tspan></text>
+<rect id="AGS" x="1223.5" y="334" width="181" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1314" y="369">Abort Guidance System</text>
+<rect id="SM" x="1519" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1594" y="369">Service Module</text>
+<rect id="CM" x="1799" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1874" y="369">Command Module</text>
+<rect id="descent" x="2079" y="334" width="150" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="2154" y="369">Descent stage</text>
+<path d="M 194,154 L 194,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 474,154 L 474,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 754,154 L 754,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 754,154 L 754,202.889 L 1034,202.889 L 1034,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 1314,154 L 1314,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 1594,154 L 1594,219.333 L 1561,219.333 L 1561,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 1594,154 L 1594,235.778 L 1832,235.778 L 1832,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 1594,154 L 1594,252.222 L 1825,252.222 A 7 7 0 0 0 1839,252.222 L 2112,252.222 L 2112,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 1874,154 L 1874,245.222 A 7 7 0 0 1 1874,259.222 L 1874,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 2154,154 L 2154,285.111 L 2119,285.111 A 7 7 0 0 1 2105,285.111 L 1881,285.111 A 7 7 0 0 1 1867,285.111 L 1839,285.111 A 7 7 0 0 1 1825,285.111 L 1627,285.111 L 1627,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<path d="M 2154,154 L 2154,301.556 L 2119,301.556 A 7 7 0 0 1 2105,301.556 L 1916,301.556 L 1916,334" fill="none" stroke="#64748B" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
+<text class="small" x="206" y="244">allocate</text>
+<text class="small" x="486" y="244">allocate</text>
+<text class="small" x="766" y="244">allocate</text>
+<text class="small" text-anchor="middle" x="894" y="190.889">allocate</text>
+<text class="small" x="1326" y="244">allocate</text>
+<text class="small" x="1573" y="276.666">allocate</text>
+<text class="small" text-anchor="middle" x="1713" y="223.778">allocate</text>
+<text class="small" text-anchor="middle" x="1775.3" y="275.222">allocate</text>
+<text class="small" x="1886" y="244">allocate</text>
+<text class="small" text-anchor="middle" x="1969.55" y="273.111">allocate</text>
+<text class="small" text-anchor="middle" x="2035" y="324.556">allocate</text>
 </g>
 </svg>

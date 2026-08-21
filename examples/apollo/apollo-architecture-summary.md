@@ -6,7 +6,7 @@ Look at the photograph first. NASA 69-HC-620 is Saturn-Apollo 506 (SA-506) rolli
 
 ![Saturn V SA-506 / Apollo 11 rolled out to Pad 39-A, 20 May 1969. Credit: NASA photo 69-HC-620 (public domain). This is the system portrait, not a generated SysMLD view.](apollo-sa506-rollout.jpg)
 
-The class is working a Systems Modeling Language version 2 (SysML v2) example rendered in SysML2d. The source is `apollo.sysml`. When a generated view disagrees with the model, the model wins. Numbers appear only when the model already has them. This is an **example model, not a certifiable** vehicle.
+This is a Systems Modeling Language version 2 (SysML v2) example rendered in SysML2d. The source is `apollo.sysml`. When a generated view disagrees with the model, the model wins. Numbers appear only when the model already has them. This is an **example model, not a certifiable** vehicle.
 
 Three crew fly. Two land. All three come home. That thread is lunar-orbit rendezvous. Saturn V puts the Command/Service Module (CSM) and the Lunar Module (LM) in Earth parking orbit. Translunar Injection (TLI) sends the stack toward the Moon. After transposition, docking, and LM extract (`dockEject`), the docked vehicles coast. The CSM burns Lunar Orbit Insertion (LOI) and later Trans-Earth Injection (TEI). The LM undocks, burns Descent Orbit Insertion (DOI), lands two crew, supports one surface Extravehicular Activity (EVA), ascends, and meets the CSM. The Command Module (CM) brings all three home.
 
@@ -14,7 +14,7 @@ The instance is Apollo 11 / Apollo-Saturn 506 (AS-506), as-flown July 1969. Laun
 
 The serials on that crawler are Saturn V S-IC-6 / S-II-6 / S-IVB-6N / Instrument Unit (IU)-6 / Spacecraft-LM Adapter (SLA)-14, Command/Service Module CSM-107 *Columbia*, and Lunar Module LM-5 *Eagle*. In scope: first landing, one short surface EVA, model PNGS (cockpit/switch label Primary Guidance, Navigation, and Control System (PGNCS)) program P66 as the flown landing program, and Service Module (SM) cryogenic tankage 2+2. Out of scope: later J-mission variants, Lunar Roving Vehicle (LRV), Scientific Instrument Module (SIM) bay, extended EVA, and invented change-in-velocity (Δv) tables.
 
-The class thinks about the problem first, then the design. That spine is simplified MagicGrid. NASA Procedural Requirements (NPR 7123.1) maps onto it as Who needs what, The shalls, Jobs asked of the stack, What the design does in time, The parts, The serialed hardware, Sourced numbers, and Named checks. Those rows are not NPR 7123 product titles.
+The work starts with the problem first, then the design. That spine is simplified MagicGrid. NASA Procedural Requirements (NPR 7123.1) maps onto it as Who needs what, The shalls, Jobs asked of the stack, What the design does in time, The parts, The serialed hardware, Sourced numbers, and Named checks. Those rows are not NPR 7123 product titles.
 
 Hyphens are not legal identifiers in the model. S-IC / S-II / S-IVB appear as `SIC`, `SII`, `SIVB`. ST-124 appears as `ST124`. Surface EVA is `surfaceEVA`.
 
@@ -141,7 +141,7 @@ countdown → boost → earthOrbit → TLI → dockEject → translunar → LOI 
 
 Tower clear starts boost. SECO is orbital insertion. The TLI burn, then `tliComplete`, then LM extract, then the SPS LOI burn. DPS does DOI. P66 is the flown landing program. P12 is ascent. SPS does TEI. The recovery force closes the book.
 
-The mission clock is two pages so each stays printable. The model still nests Earth coast and Lunar return. The four sourced concurrent regions stay in the model. They are not flattened onto a forced lecture page.
+The mission clock is two pages so each stays printable. The model still nests Earth coast and Lunar return. The four sourced concurrent regions stay in the model. They are not flattened onto a forced note page.
 
 Earth coast holds countdown through Lunar Orbit Insertion. The locked hop sits on that page: TLI → dockEject → translunar → LOI. TLI boxes carry the three GET labels. LOI-1 boxes carry planned 75:54:28 GET and flown ~075:49:50 GET.
 

@@ -359,6 +359,8 @@ class ExampleViewTests(unittest.TestCase):
         self.assertNotIn("MagicGrid layer:", apollo)
         self.assertNotIn("This note teaches", apollo)
         self.assertNotIn("This note uses", apollo)
+        self.assertNotIn("lecture", apollo)
+        self.assertNotIn("The class", apollo)
         self.assertNotIn("The block below is an AV-1", apollo)
         self.assertNotIn("Someone asked me", apollo)
         self.assertNotRegex(apollo, r"\bI've\b")
