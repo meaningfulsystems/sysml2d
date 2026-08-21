@@ -6,11 +6,11 @@
   "model_files": [
     "apollo.sysml"
   ],
-  "direction": "left-right",
-  "default_w": 120,
-  "default_h": 52,
-  "rank_gap": 100,
-  "col_gap": 50,
+  "direction": "top-down",
+  "default_w": 150,
+  "default_h": 56,
+  "rank_gap": 180,
+  "col_gap": 80,
   "aliases": {
     "abortMode": "Apollo11::AbortMode",
     "nominal": "Apollo11::AbortMode::nominal",

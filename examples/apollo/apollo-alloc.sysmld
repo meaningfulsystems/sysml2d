@@ -11,8 +11,8 @@
     "kind": "AllocationView",
     "name": "Apollo 11 Allocations",
     "canvas": {
-      "width": 624,
-      "height": 1564,
+      "width": 1840,
+      "height": 476,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -37,8 +37,8 @@
         "id": "rsoRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 72,
-          "y": 264,
+          "x": 290,
+          "y": 72,
           "width": 170,
           "height": 82,
           "z": 10
@@ -51,8 +51,8 @@
         "id": "agcRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 72,
-          "y": 456,
+          "x": 508,
+          "y": 72,
           "width": 170,
           "height": 82,
           "z": 10
@@ -65,8 +65,8 @@
         "id": "agsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 72,
-          "y": 648,
+          "x": 944,
+          "y": 72,
           "width": 170,
           "height": 82,
           "z": 10
@@ -76,81 +76,11 @@
         "model_ref": "agsRequirement"
       },
       {
-        "id": "IU",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 402,
-          "y": 78,
-          "width": 150,
-          "height": 70,
-          "z": 10
-        },
-        "label": "IU",
-        "style": "part_usage",
-        "model_ref": "IU"
-      },
-      {
-        "id": "RSO",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 402,
-          "y": 270,
-          "width": 150,
-          "height": 70,
-          "z": 10
-        },
-        "label": "RSO",
-        "style": "part_usage",
-        "model_ref": "RSO"
-      },
-      {
-        "id": "AGC_CM",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 402,
-          "y": 462,
-          "width": 150,
-          "height": 70,
-          "z": 10
-        },
-        "label": "AGC_CM",
-        "style": "part_usage",
-        "model_ref": "AGC_CM"
-      },
-      {
-        "id": "AGC_LM",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 402,
-          "y": 654,
-          "width": 150,
-          "height": 70,
-          "z": 10
-        },
-        "label": "AGC_LM",
-        "style": "part_usage",
-        "model_ref": "AGC_LM"
-      },
-      {
-        "id": "AGS",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 402,
-          "y": 846,
-          "width": 150,
-          "height": 70,
-          "z": 10
-        },
-        "label": "AGS",
-        "style": "part_usage",
-        "model_ref": "AGS"
-      },
-      {
         "id": "epsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 72,
-          "y": 840,
+          "x": 1162,
+          "y": 72,
           "width": 170,
           "height": 82,
           "z": 10
@@ -163,8 +93,8 @@
         "id": "dockingRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 72,
-          "y": 1032,
+          "x": 1380,
+          "y": 72,
           "width": 170,
           "height": 82,
           "z": 10
@@ -177,8 +107,8 @@
         "id": "rcsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 72,
-          "y": 1224,
+          "x": 1598,
+          "y": 72,
           "width": 170,
           "height": 82,
           "z": 10
@@ -188,11 +118,81 @@
         "model_ref": "rcsRequirement"
       },
       {
+        "id": "IU",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 82,
+          "y": 334,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "IU",
+        "style": "part_usage",
+        "model_ref": "IU"
+      },
+      {
+        "id": "RSO",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 300,
+          "y": 334,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "RSO",
+        "style": "part_usage",
+        "model_ref": "RSO"
+      },
+      {
+        "id": "AGC_CM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 518,
+          "y": 334,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "AGC_CM",
+        "style": "part_usage",
+        "model_ref": "AGC_CM"
+      },
+      {
+        "id": "AGC_LM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 736,
+          "y": 334,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "AGC_LM",
+        "style": "part_usage",
+        "model_ref": "AGC_LM"
+      },
+      {
+        "id": "AGS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 954,
+          "y": 334,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "AGS",
+        "style": "part_usage",
+        "model_ref": "AGS"
+      },
+      {
         "id": "SM",
         "symbol": "part_usage",
         "layout": {
-          "x": 402,
-          "y": 1038,
+          "x": 1172,
+          "y": 334,
           "width": 150,
           "height": 70,
           "z": 10
@@ -205,8 +205,8 @@
         "id": "CM",
         "symbol": "part_usage",
         "layout": {
-          "x": 402,
-          "y": 1230,
+          "x": 1390,
+          "y": 334,
           "width": 150,
           "height": 70,
           "z": 10
@@ -219,8 +219,8 @@
         "id": "descent",
         "symbol": "part_usage",
         "layout": {
-          "x": 402,
-          "y": 1422,
+          "x": 1608,
+          "y": 334,
           "width": 150,
           "height": 70,
           "z": 10
@@ -236,14 +236,14 @@
         "source": {
           "element": "iuGncRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "IU",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -267,14 +267,14 @@
         "source": {
           "element": "rsoRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "RSO",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -298,14 +298,14 @@
         "source": {
           "element": "agcRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "AGC_CM",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -329,14 +329,14 @@
         "source": {
           "element": "agcRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "AGC_LM",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -344,12 +344,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 283.6,
-              "y": 497
+              "x": 593,
+              "y": 202.889
             },
             {
-              "x": 283.6,
-              "y": 689
+              "x": 811,
+              "y": 202.889
             }
           ]
         },
@@ -369,29 +369,20 @@
         "source": {
           "element": "agsRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "AGS",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 296.4,
-              "y": 689
-            },
-            {
-              "x": 296.4,
-              "y": 881
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
@@ -409,29 +400,20 @@
         "source": {
           "element": "epsRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "SM",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 309.2,
-              "y": 881
-            },
-            {
-              "x": 309.2,
-              "y": 1073
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
@@ -449,14 +431,14 @@
         "source": {
           "element": "epsRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "CM",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -464,12 +446,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 322,
-              "y": 881
+              "x": 1247,
+              "y": 235.778
             },
             {
-              "x": 322,
-              "y": 1265
+              "x": 1465,
+              "y": 235.778
             }
           ]
         },
@@ -489,14 +471,14 @@
         "source": {
           "element": "epsRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "descent",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -504,12 +486,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 334.8,
-              "y": 881
+              "x": 1247,
+              "y": 252.222
             },
             {
-              "x": 334.8,
-              "y": 1457
+              "x": 1683,
+              "y": 252.222
             }
           ]
         },
@@ -529,29 +511,20 @@
         "source": {
           "element": "dockingRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "CM",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 347.6,
-              "y": 1073
-            },
-            {
-              "x": 347.6,
-              "y": 1265
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
@@ -569,14 +542,14 @@
         "source": {
           "element": "rcsRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "SM",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -584,12 +557,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 360.4,
-              "y": 1265
+              "x": 1683,
+              "y": 285.111
             },
             {
-              "x": 360.4,
-              "y": 1073
+              "x": 1247,
+              "y": 285.111
             }
           ]
         },
@@ -609,20 +582,29 @@
         "source": {
           "element": "rcsRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "CM",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 1683,
+              "y": 301.556
+            },
+            {
+              "x": 1465,
+              "y": 301.556
+            }
+          ]
         },
         "labels": [
           {

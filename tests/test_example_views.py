@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import re
 import unittest
 
 from sysmld.action_view import action_file
@@ -371,17 +372,31 @@ class ExampleViewTests(unittest.TestCase):
         self.assertIn("Flight Control Computer (FCC)", apollo)
         self.assertIn("PGNCS", apollo)
         self.assertIn("A11-FP is the **only planned source**", apollo)
-        self.assertNotIn("Apollo 11 Flight Plan", apollo)
         self.assertIn("MSC-00171", apollo)
         self.assertIn("~075:49:50 GET", apollo)
         self.assertIn("2:44:26 GET", apollo)
         self.assertNotIn("02:44:16.2", apollo)
         self.assertNotIn("flown 75:54:28", apollo.lower())
         self.assertIn("**Includes** Lunar EVA", apollo)
-        for sent in apollo.replace(";", ".").split("."):
+        for sent in re.split(r"(?<=[.!?])\s+|\n+", apollo.replace(";", ".")):
             if "75:54:28" in sent:
                 self.assertNotIn("Press Kit", sent)
                 self.assertNotRegex(sent, r"\bPK\b")
+                self.assertNotIn("Apollo 11 Flight Plan", sent)
+        self.assertIn("NASA Manned Spacecraft Center, Flight Planning Branch. (1969, July 1). *Apollo 11 Flight Plan* (Final).", apollo)
+        self.assertIn("*Apollo 11 Mission Report* (MSC-00171)", apollo)
+        self.assertIn("Smith et al. (1974, July). *Food Systems* (Technical Note D-7720).", apollo)
+        self.assertIn("Kurten. (1975, July). *Technical Note D-7990*.", apollo)
+        self.assertIn("Lutz et al. (1975, November). *Technical Note D-8093*.", apollo)
+        self.assertIn("(1973a, March). *Technical Note D-7082*.", apollo)
+        self.assertIn("(1973b, March). *Technical Note D-7143*.", apollo)
+        self.assertIn("(1973c, August). *Technical Note D-7375*.", apollo)
+        self.assertIn("(1972). *Technical Note D-6724*.", apollo)
+        self.assertIn("(1969a, May 20). *69-HC-620*", apollo)
+        self.assertIn("*Apollo 11 press kit* (69-83K)", apollo)
+        self.assertNotIn("(n.d.", apollo)
+        self.assertNotIn("A11-FP. (n.d.)", apollo)
+        self.assertNotIn("PAD / Mission Report (flown LOI-1)", apollo)
 
     def test_hop_overs_appear_on_crossing_generic_views(self):
         spec = {

@@ -11,7 +11,7 @@
   "default_h": 52,
   "sibling_gap": 18,
   "rank_gap": 78,
-  "max_siblings_per_row": 6,
+  "max_siblings_per_row": 3,
   "aliases": {
     "root": "Apollo11::Apollo11",
     "SaturnV": "Apollo11::SaturnV::SaturnV",
@@ -50,7 +50,10 @@
     "MOCR2": "Apollo11::Ground::MCC::MOCR2",
     "RTCC": "Apollo11::Ground::RTCC",
     "MSFN": "Apollo11::Ground::MSFN",
-    "NASCOM": "Apollo11::Ground::NASCOM"
+    "NASCOM": "Apollo11::Ground::NASCOM",
+    "RSO": "Apollo11::Apollo11::RSO",
+    "recovery": "Apollo11::Apollo11::recovery",
+    "Hornet": "Apollo11::RecoveryForces::Hornet"
   },
   "roots": [
     {
@@ -252,6 +255,23 @@
               "id": "NASCOM",
               "label": "NASCOM",
               "model_ref": "NASCOM"
+            }
+          ]
+        },
+        {
+          "id": "RSO",
+          "label": "RSO",
+          "model_ref": "RSO"
+        },
+        {
+          "id": "recovery",
+          "label": "recovery",
+          "model_ref": "recovery",
+          "children": [
+            {
+              "id": "Hornet",
+              "label": "Hornet",
+              "model_ref": "Hornet"
             }
           ]
         }

@@ -1,81 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1944" height="762" viewBox="0 0 1944 762">
+<svg xmlns="http://www.w3.org/2000/svg" width="736" height="1178" viewBox="0 0 736 1178">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1944" height="762" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1940" height="720" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="736" height="1178" fill="#FFFFFF"/>
+<rect x="2" y="38" width="732" height="1136" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 528 L 544 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[icn.mb] Apollo 11 Mission Interconnection [mission : Apollo11]</text>
-<rect x="2" y="38" width="1940" height="722" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="732" height="1138" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="boundary" x="40" y="40" width="1860" height="640" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<rect id="boundary" x="40" y="40" width="652" height="1056" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="label" x="50" y="62">mission</text>
-<rect id="KSC_LCC" x="76" y="100" width="140" height="64" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="132">KSC_LCC</text>
-<rect id="RSO" x="76" y="340" width="140" height="64" rx="4" fill="#FFEBEE" stroke="#B71C1C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="372">RSO</text>
-<rect id="SIC" x="488" y="400" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="558" y="432">S-IC</text>
-<rect id="MCC" x="488" y="280" width="140" height="64" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="558" y="312">MCC</text>
-<rect id="NASCOM" x="76" y="220" width="140" height="64" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="252">NASCOM</text>
-<rect id="MSFN" x="900" y="340" width="140" height="64" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="970" y="372">MSFN</text>
-<rect id="CM" x="1312" y="340" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1382" y="372">CM</text>
-<rect id="descent" x="76" y="460" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="492">descent</text>
-<rect id="ascent" x="1724" y="340" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1794" y="372">ascent</text>
-<rect id="recovery" x="76" y="580" width="140" height="64" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="146" y="612">Recovery</text>
-<rect id="KSC_LCC--SIC--src" x="210" y="126" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="KSC_LCC--MCC--src" x="140" y="94" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="RSO--SIC--src" x="140" y="398" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="KSC_LCC--SIC--tgt" x="482" y="415.331" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="RSO--SIC--tgt" x="482" y="436.669" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="KSC_LCC--MCC--tgt" x="552" y="274" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="NASCOM--MCC--tgt" x="482" y="306" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="MCC--MSFN--src" x="552" y="338" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="NASCOM--MCC--src" x="210" y="235.331" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="NASCOM--MSFN--src" x="210" y="256.669" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="NASCOM--MSFN--tgt" x="894" y="366" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="MCC--MSFN--tgt" x="964" y="398" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="MSFN--CM--src" x="1034" y="366" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="MSFN--ascent--src" x="964" y="334" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="MSFN--CM--tgt" x="1306" y="366" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="recovery--CM--tgt" x="1306" y="382" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="CM--ascent--src" x="1446" y="366" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="descent--ascent--src" x="140" y="518" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="MSFN--ascent--tgt" x="1788" y="334" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="CM--ascent--tgt" x="1718" y="366" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="descent--ascent--tgt" x="1718" y="382" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="recovery--CM--src" x="140" y="638" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<path d="M 222,132 L 314.667,132 L 314.667,421.331 L 482,421.331" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 146,410 L 146,442.669 L 482,442.669" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 146,94 L 146,76 L 558,76 L 558,274" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 222,241.331 L 307.667,241.331 A 7 7 0 0 0 321.667,241.331 L 389.333,241.331 L 389.333,312 L 482,312" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 222,262.669 L 268,262.669 L 268,372 L 307.667,372 A 7 7 0 0 0 321.667,372 L 894,372" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 558,350 L 558,376 L 652,376 L 652,404 L 970,410" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1046,372 L 1306,372" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 970,334 L 970,316 L 1794,316 L 1794,334" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1458,372 L 1718,372" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 146,530 L 146,488 L 652,488 L 652,428 L 1476,428 L 1476,388 L 1718,388" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 146,650 L 240,644 L 240,488 L 652,488 L 652,428 L 1064,428 L 1064,388 L 1306,388" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" x="326.667" y="233.266">umbilical</text>
-<text class="small" text-anchor="middle" x="314" y="465.669">UHF destruct</text>
-<text class="small" text-anchor="middle" x="352" y="64">handoff</text>
-<text class="small" text-anchor="middle" x="280.567" y="229.331">NASCOM</text>
-<text class="small" text-anchor="middle" x="674.9" y="360">NASCOM</text>
-<text class="small" text-anchor="middle" x="811" y="395">path A 70 kHz</text>
-<text class="small" text-anchor="middle" x="1176" y="360">USB</text>
-<text class="small" text-anchor="middle" x="1382" y="304">USB</text>
-<text class="small" text-anchor="middle" x="1588" y="360">dock</text>
-<text class="small" text-anchor="middle" x="1064" y="451">stage</text>
-<text class="small" text-anchor="middle" x="446" y="476">recovery</text>
+<rect id="KSC_LCC" x="186" y="100" width="140" height="64" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="256" y="132">KSC_LCC</text>
+<rect id="RSO" x="406" y="100" width="140" height="64" rx="4" fill="#FFEBEE" stroke="#B71C1C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="476" y="132">RSO</text>
+<rect id="SIC" x="76" y="324" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="356">S-IC</text>
+<rect id="MCC" x="296" y="324" width="140" height="64" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="366" y="356">MCC</text>
+<rect id="NASCOM" x="516" y="324" width="140" height="64" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="586" y="356">NASCOM</text>
+<rect id="MSFN" x="296" y="548" width="140" height="64" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="366" y="580">MSFN</text>
+<rect id="CM" x="186" y="772" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="256" y="804">CM</text>
+<rect id="recovery" x="406" y="772" width="140" height="64" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="476" y="804">Recovery</text>
+<rect id="descent" x="186" y="996" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="256" y="1028">descent</text>
+<rect id="ascent" x="406" y="996" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="476" y="1028">ascent</text>
+<rect id="KSC_LCC--SIC--src" x="250" y="158" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="KSC_LCC--MCC--src" x="250" y="94" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="RSO--SIC--src" x="540" y="126" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="KSC_LCC--SIC--tgt" x="116.662" y="318" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="RSO--SIC--tgt" x="163.338" y="318" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="KSC_LCC--MCC--tgt" x="360" y="318" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="NASCOM--MCC--tgt" x="430" y="350" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="MCC--MSFN--src" x="360" y="382" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="NASCOM--MCC--src" x="510" y="350" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="NASCOM--MSFN--src" x="580" y="382" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="MSFN--ascent--src" x="336.662" y="542" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="NASCOM--MSFN--tgt" x="383.338" y="542" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="MCC--MSFN--tgt" x="360" y="606" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="MSFN--CM--src" x="290" y="574" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="MSFN--CM--tgt" x="250" y="766" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CM--ascent--src" x="250" y="830" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="recovery--CM--tgt" x="320" y="798" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="recovery--CM--src" x="400" y="798" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="descent--ascent--src" x="320" y="1022" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CM--ascent--tgt" x="446.662" y="990" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="MSFN--ascent--tgt" x="493.338" y="990" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="descent--ascent--tgt" x="400" y="1022" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 256,170 L 256,225.333 L 122.662,225.333 L 122.662,318" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 552,132 L 574,132 L 574,262.667 L 169.338,262.667 L 169.338,318" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 256,94 L 256,76 L 366,76 L 366,255.667 A 7 7 0 0 1 366,269.667 L 366,318" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 510,356 L 442,356" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 586,394 L 586,468 L 389.338,468 L 389.338,542" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 366,394 L 366,618" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 290,580 L 256,580 L 256,766" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 342.662,542 L 382,548 L 382,972 L 499.338,972 L 499.338,990" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 256,842 L 256,916 L 375,916 A 7 7 0 0 0 389,916 L 452.662,916 L 452.662,965 A 7 7 0 0 1 452.662,979 L 452.662,990" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 332,1028 L 400,1028" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 400,804 L 389,804 A 7 7 0 0 1 375,804 L 332,804" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="189.331" y="213.333">umbilical</text>
+<text class="small" text-anchor="middle" x="432.368" y="250.667">UHF destruct</text>
+<text class="small" x="378" y="197">handoff</text>
+<text class="small" text-anchor="middle" x="476" y="344">NASCOM</text>
+<text class="small" text-anchor="middle" x="487.669" y="456">NASCOM</text>
+<text class="small" text-anchor="end" x="354" y="506">path A 70 kHz</text>
+<text class="small" x="268" y="673">USB</text>
+<text class="small" x="394" y="760">USB</text>
+<text class="small" text-anchor="middle" x="354.331" y="904">dock</text>
+<text class="small" text-anchor="middle" x="366" y="1016">stage</text>
+<text class="small" text-anchor="middle" x="366" y="827">recovery</text>
 </g>
 </svg>

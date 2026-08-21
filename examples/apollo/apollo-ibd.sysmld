@@ -56,8 +56,8 @@
     "kind": "InterconnectionView",
     "name": "Apollo 11 Mission Interconnection",
     "canvas": {
-      "width": 1940,
-      "height": 720,
+      "width": 732,
+      "height": 1136,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -71,8 +71,8 @@
         "layout": {
           "x": 40,
           "y": 40,
-          "width": 1860,
-          "height": 640,
+          "width": 652,
+          "height": 1056,
           "z": 0
         },
         "compartments": {
@@ -87,7 +87,7 @@
         "model_ref": "KSC_LCC",
         "symbol": "part_usage",
         "layout": {
-          "x": 76,
+          "x": 186,
           "y": 100,
           "width": 140,
           "height": 64,
@@ -106,8 +106,8 @@
         "model_ref": "RSO",
         "symbol": "part_usage",
         "layout": {
-          "x": 76,
-          "y": 340,
+          "x": 406,
+          "y": 100,
           "width": 140,
           "height": 64,
           "z": 10
@@ -125,8 +125,8 @@
         "model_ref": "SIC",
         "symbol": "part_usage",
         "layout": {
-          "x": 488,
-          "y": 400,
+          "x": 76,
+          "y": 324,
           "width": 140,
           "height": 64,
           "z": 10
@@ -144,8 +144,8 @@
         "model_ref": "MCC",
         "symbol": "part_usage",
         "layout": {
-          "x": 488,
-          "y": 280,
+          "x": 296,
+          "y": 324,
           "width": 140,
           "height": 64,
           "z": 10
@@ -163,8 +163,8 @@
         "model_ref": "NASCOM",
         "symbol": "part_usage",
         "layout": {
-          "x": 76,
-          "y": 220,
+          "x": 516,
+          "y": 324,
           "width": 140,
           "height": 64,
           "z": 10
@@ -182,8 +182,8 @@
         "model_ref": "MSFN",
         "symbol": "part_usage",
         "layout": {
-          "x": 900,
-          "y": 340,
+          "x": 296,
+          "y": 548,
           "width": 140,
           "height": 64,
           "z": 10
@@ -201,8 +201,8 @@
         "model_ref": "CM",
         "symbol": "part_usage",
         "layout": {
-          "x": 1312,
-          "y": 340,
+          "x": 186,
+          "y": 772,
           "width": 140,
           "height": 64,
           "z": 10
@@ -216,12 +216,31 @@
         "style": "part.vehicle"
       },
       {
+        "id": "recovery",
+        "model_ref": "recovery",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 406,
+          "y": 772,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Recovery",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.ground"
+      },
+      {
         "id": "descent",
         "model_ref": "descent",
         "symbol": "part_usage",
         "layout": {
-          "x": 76,
-          "y": 460,
+          "x": 186,
+          "y": 996,
           "width": 140,
           "height": 64,
           "z": 10
@@ -239,8 +258,8 @@
         "model_ref": "ascent",
         "symbol": "part_usage",
         "layout": {
-          "x": 1724,
-          "y": 340,
+          "x": 406,
+          "y": 996,
           "width": 140,
           "height": 64,
           "z": 10
@@ -254,31 +273,12 @@
         "style": "part.vehicle"
       },
       {
-        "id": "recovery",
-        "model_ref": "recovery",
-        "symbol": "part_usage",
-        "layout": {
-          "x": 76,
-          "y": 580,
-          "width": 140,
-          "height": 64,
-          "z": 10
-        },
-        "label": "Recovery",
-        "compartments": {
-          "attributes": false,
-          "ports": true,
-          "actions": false
-        },
-        "style": "part.ground"
-      },
-      {
         "id": "KSC_LCC--SIC--src",
         "model_ref": "KSC_LCC--SIC--src",
         "symbol": "port",
         "owner": "KSC_LCC",
         "placement": {
-          "side": "right",
+          "side": "bottom",
           "offset": 0.5
         },
         "label": ""
@@ -300,7 +300,7 @@
         "symbol": "port",
         "owner": "RSO",
         "placement": {
-          "side": "bottom",
+          "side": "right",
           "offset": 0.5
         },
         "label": ""
@@ -311,7 +311,7 @@
         "symbol": "port",
         "owner": "SIC",
         "placement": {
-          "side": "left",
+          "side": "top",
           "offset": 0.3333
         },
         "label": ""
@@ -322,7 +322,7 @@
         "symbol": "port",
         "owner": "SIC",
         "placement": {
-          "side": "left",
+          "side": "top",
           "offset": 0.6667
         },
         "label": ""
@@ -344,7 +344,7 @@
         "symbol": "port",
         "owner": "MCC",
         "placement": {
-          "side": "left",
+          "side": "right",
           "offset": 0.5
         },
         "label": ""
@@ -366,8 +366,8 @@
         "symbol": "port",
         "owner": "NASCOM",
         "placement": {
-          "side": "right",
-          "offset": 0.3333
+          "side": "left",
+          "offset": 0.5
         },
         "label": ""
       },
@@ -377,8 +377,19 @@
         "symbol": "port",
         "owner": "NASCOM",
         "placement": {
-          "side": "right",
-          "offset": 0.6667
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "MSFN--ascent--src",
+        "model_ref": "MSFN--ascent--src",
+        "symbol": "port",
+        "owner": "MSFN",
+        "placement": {
+          "side": "top",
+          "offset": 0.3333
         },
         "label": ""
       },
@@ -388,8 +399,8 @@
         "symbol": "port",
         "owner": "MSFN",
         "placement": {
-          "side": "left",
-          "offset": 0.5
+          "side": "top",
+          "offset": 0.6667
         },
         "label": ""
       },
@@ -410,18 +421,7 @@
         "symbol": "port",
         "owner": "MSFN",
         "placement": {
-          "side": "right",
-          "offset": 0.5
-        },
-        "label": ""
-      },
-      {
-        "id": "MSFN--ascent--src",
-        "model_ref": "MSFN--ascent--src",
-        "symbol": "port",
-        "owner": "MSFN",
-        "placement": {
-          "side": "top",
+          "side": "left",
           "offset": 0.5
         },
         "label": ""
@@ -432,7 +432,18 @@
         "symbol": "port",
         "owner": "CM",
         "placement": {
-          "side": "left",
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "CM--ascent--src",
+        "model_ref": "CM--ascent--src",
+        "symbol": "port",
+        "owner": "CM",
+        "placement": {
+          "side": "bottom",
           "offset": 0.5
         },
         "label": ""
@@ -443,18 +454,18 @@
         "symbol": "port",
         "owner": "CM",
         "placement": {
-          "side": "left",
-          "offset": 0.75
+          "side": "right",
+          "offset": 0.5
         },
         "label": ""
       },
       {
-        "id": "CM--ascent--src",
-        "model_ref": "CM--ascent--src",
+        "id": "recovery--CM--src",
+        "model_ref": "recovery--CM--src",
         "symbol": "port",
-        "owner": "CM",
+        "owner": "recovery",
         "placement": {
-          "side": "right",
+          "side": "left",
           "offset": 0.5
         },
         "label": ""
@@ -465,18 +476,7 @@
         "symbol": "port",
         "owner": "descent",
         "placement": {
-          "side": "bottom",
-          "offset": 0.5
-        },
-        "label": ""
-      },
-      {
-        "id": "MSFN--ascent--tgt",
-        "model_ref": "MSFN--ascent--tgt",
-        "symbol": "port",
-        "owner": "ascent",
-        "placement": {
-          "side": "top",
+          "side": "right",
           "offset": 0.5
         },
         "label": ""
@@ -487,8 +487,19 @@
         "symbol": "port",
         "owner": "ascent",
         "placement": {
-          "side": "left",
-          "offset": 0.5
+          "side": "top",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "MSFN--ascent--tgt",
+        "model_ref": "MSFN--ascent--tgt",
+        "symbol": "port",
+        "owner": "ascent",
+        "placement": {
+          "side": "top",
+          "offset": 0.6667
         },
         "label": ""
       },
@@ -499,17 +510,6 @@
         "owner": "ascent",
         "placement": {
           "side": "left",
-          "offset": 0.75
-        },
-        "label": ""
-      },
-      {
-        "id": "recovery--CM--src",
-        "model_ref": "recovery--CM--src",
-        "symbol": "port",
-        "owner": "recovery",
-        "placement": {
-          "side": "bottom",
           "offset": 0.5
         },
         "label": ""
@@ -522,14 +522,14 @@
         "source": {
           "element": "KSC_LCC--SIC--src",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "KSC_LCC--SIC--tgt",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -537,12 +537,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 314.667,
-              "y": 132
+              "x": 256,
+              "y": 225.333
             },
             {
-              "x": 314.667,
-              "y": 421.331
+              "x": 122.662,
+              "y": 225.333
             }
           ]
         },
@@ -562,14 +562,14 @@
         "source": {
           "element": "RSO--SIC--src",
           "anchor": {
-            "side": "bottom",
+            "side": "right",
             "offset": 0.5
           }
         },
         "target": {
           "element": "RSO--SIC--tgt",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -577,8 +577,16 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 146,
-              "y": 442.669
+              "x": 574,
+              "y": 132
+            },
+            {
+              "x": 574,
+              "y": 262.667
+            },
+            {
+              "x": 169.338,
+              "y": 262.667
             }
           ]
         },
@@ -613,11 +621,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 146,
+              "x": 256,
               "y": 76
             },
             {
-              "x": 558,
+              "x": 366,
               "y": 76
             }
           ]
@@ -638,29 +646,20 @@
         "source": {
           "element": "NASCOM--MCC--src",
           "anchor": {
-            "side": "right",
+            "side": "left",
             "offset": 0.5
           }
         },
         "target": {
           "element": "NASCOM--MCC--tgt",
           "anchor": {
-            "side": "left",
+            "side": "right",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 389.333,
-              "y": 241.331
-            },
-            {
-              "x": 389.333,
-              "y": 312
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
@@ -678,14 +677,14 @@
         "source": {
           "element": "NASCOM--MSFN--src",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "NASCOM--MSFN--tgt",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -693,12 +692,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 268,
-              "y": 262.669
+              "x": 586,
+              "y": 468
             },
             {
-              "x": 268,
-              "y": 372
+              "x": 389.338,
+              "y": 468
             }
           ]
         },
@@ -731,20 +730,7 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 558,
-              "y": 376
-            },
-            {
-              "x": 652,
-              "y": 376
-            },
-            {
-              "x": 652,
-              "y": 404
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
@@ -762,20 +748,25 @@
         "source": {
           "element": "MSFN--CM--src",
           "anchor": {
-            "side": "right",
+            "side": "left",
             "offset": 0.5
           }
         },
         "target": {
           "element": "MSFN--CM--tgt",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 256,
+              "y": 580
+            }
+          ]
         },
         "labels": [
           {
@@ -808,12 +799,16 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 970,
-              "y": 316
+              "x": 382,
+              "y": 548
             },
             {
-              "x": 1794,
-              "y": 316
+              "x": 382,
+              "y": 972
+            },
+            {
+              "x": 499.338,
+              "y": 972
             }
           ]
         },
@@ -833,20 +828,29 @@
         "source": {
           "element": "CM--ascent--src",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "CM--ascent--tgt",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 256,
+              "y": 916
+            },
+            {
+              "x": 452.662,
+              "y": 916
+            }
+          ]
         },
         "labels": [
           {
@@ -864,7 +868,7 @@
         "source": {
           "element": "descent--ascent--src",
           "anchor": {
-            "side": "bottom",
+            "side": "right",
             "offset": 0.5
           }
         },
@@ -877,28 +881,7 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 146,
-              "y": 488
-            },
-            {
-              "x": 652,
-              "y": 488
-            },
-            {
-              "x": 652,
-              "y": 428
-            },
-            {
-              "x": 1476,
-              "y": 428
-            },
-            {
-              "x": 1476,
-              "y": 388
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
@@ -916,45 +899,20 @@
         "source": {
           "element": "recovery--CM--src",
           "anchor": {
-            "side": "bottom",
+            "side": "left",
             "offset": 0.5
           }
         },
         "target": {
           "element": "recovery--CM--tgt",
           "anchor": {
-            "side": "left",
+            "side": "right",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 240,
-              "y": 644
-            },
-            {
-              "x": 240,
-              "y": 488
-            },
-            {
-              "x": 652,
-              "y": 488
-            },
-            {
-              "x": 652,
-              "y": 428
-            },
-            {
-              "x": 1064,
-              "y": 428
-            },
-            {
-              "x": 1064,
-              "y": 388
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {

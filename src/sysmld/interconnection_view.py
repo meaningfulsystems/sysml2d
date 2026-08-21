@@ -83,6 +83,16 @@ def compose(spec: dict[str, Any]) -> dict[str, Any]:
     # average box dimension to convert from edge-gap to centre-gap.
     avg_w = sum(nw(n) for n in nids) / max(len(nids), 1)
     avg_h = sum(nh(n) for n in nids) / max(len(nids), 1)
+    fixed_ranks = (
+        {n: int(nodes[n]["rank"]) for n in nids}
+        if nids and all("rank" in nodes[n] for n in nids)
+        else None
+    )
+    fixed_order = (
+        {n: int(nodes[n].get("order", 0)) for n in nids}
+        if fixed_ranks is not None
+        else None
+    )
     lo = _layout(
         nids, edges, direction,
         col_gap  = col_gap  + (avg_w if lo_vertical(direction) else avg_h),
@@ -90,6 +100,8 @@ def compose(spec: dict[str, Any]) -> dict[str, Any]:
         margin   = CANVAS_MARGIN + BND_PAD + max(dw, dh) // 2,
         rank_wrap=rank_wrap,
         target_aspect=target_aspect,
+        fixed_ranks=fixed_ranks,
+        fixed_order=fixed_order,
     )
     max_channel = _max_adjacent_channel_members(edges, lo.rank)
     if rank_wrap:
@@ -105,6 +117,8 @@ def compose(spec: dict[str, Any]) -> dict[str, Any]:
             margin   = CANVAS_MARGIN + BND_PAD + max(dw, dh) // 2,
             rank_wrap=rank_wrap,
             target_aspect=target_aspect,
+            fixed_ranks=fixed_ranks,
+            fixed_order=fixed_order,
         )
 
     rank_groups = lo.rank_groups

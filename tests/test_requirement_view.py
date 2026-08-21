@@ -22,6 +22,32 @@ class RequirementComposerTests(unittest.TestCase):
                 self.assertEqual(_route_crossings(doc), [])
                 self.assertEqual(_route_box_hits(doc), [])
 
+    def test_isolated_requirements_place_on_a_rank_grid(self):
+        spec = {
+            "nodes": {
+                f"r{index}": {
+                    "label": f"R{index}",
+                    "rank": index // 3,
+                    "order": index % 3,
+                }
+                for index in range(9)
+            },
+            "edges": [],
+            "default_w": 80,
+            "default_h": 40,
+            "sibling_gap": 20,
+            "rank_gap": 20,
+        }
+        doc = requirement(spec)
+        rows = {}
+        for element in doc["diagram"]["elements"]:
+            rows.setdefault(round(element["layout"]["y"]), []).append(element["id"])
+        self.assertEqual(len(rows), 3)
+        self.assertLess(doc["diagram"]["canvas"]["width"], 1600)
+        self.assertGreater(doc["diagram"]["canvas"]["height"], 140)
+        tops = sorted(rows)
+        self.assertGreater(tops[-1] - tops[0], 40)
+
     def test_requirement_routes_use_polyline_dependency_lines(self):
         spec = json.loads((ROOT / "examples/toaster/toaster-req.json").read_text(encoding="utf-8"))
         doc = requirement(spec)

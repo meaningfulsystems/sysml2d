@@ -30,8 +30,8 @@
     "kind": "StateView",
     "name": "Apollo 11 Abort Modes",
     "canvas": {
-      "width": 706,
-      "height": 944,
+      "width": 1835,
+      "height": 734,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -43,10 +43,10 @@
         "model_ref": "abortMode",
         "symbol": "boundary",
         "layout": {
-          "x": 104,
-          "y": 88,
-          "width": 562,
-          "height": 816,
+          "x": 54,
+          "y": 119,
+          "width": 1741,
+          "height": 575,
           "z": 0
         },
         "compartments": {
@@ -60,8 +60,8 @@
         "id": "initial",
         "symbol": "initial_state",
         "layout": {
-          "x": 140,
-          "y": 486,
+          "x": 914,
+          "y": 155,
           "width": 20,
           "height": 20,
           "z": 10
@@ -72,10 +72,10 @@
         "id": "nominal",
         "symbol": "state_usage",
         "layout": {
-          "x": 300,
-          "y": 470,
-          "width": 120,
-          "height": 52,
+          "x": 850,
+          "y": 369,
+          "width": 150,
+          "height": 56,
           "z": 10
         },
         "model_ref": "nominal",
@@ -86,10 +86,10 @@
         "id": "pad",
         "symbol": "state_usage",
         "layout": {
-          "x": 510,
-          "y": 124,
-          "width": 120,
-          "height": 52,
+          "x": 90,
+          "y": 602,
+          "width": 150,
+          "height": 56,
           "z": 10
         },
         "model_ref": "pad",
@@ -100,10 +100,10 @@
         "id": "I",
         "symbol": "state_usage",
         "layout": {
-          "x": 510,
-          "y": 223,
-          "width": 120,
-          "height": 52,
+          "x": 307,
+          "y": 602,
+          "width": 150,
+          "height": 56,
           "z": 10
         },
         "model_ref": "I",
@@ -114,10 +114,10 @@
         "id": "II",
         "symbol": "state_usage",
         "layout": {
-          "x": 510,
-          "y": 322,
-          "width": 120,
-          "height": 52,
+          "x": 524,
+          "y": 602,
+          "width": 150,
+          "height": 56,
           "z": 10
         },
         "model_ref": "II",
@@ -128,10 +128,10 @@
         "id": "III",
         "symbol": "state_usage",
         "layout": {
-          "x": 510,
-          "y": 420,
-          "width": 120,
-          "height": 52,
+          "x": 741,
+          "y": 602,
+          "width": 150,
+          "height": 56,
           "z": 10
         },
         "model_ref": "III",
@@ -142,10 +142,10 @@
         "id": "IV",
         "symbol": "state_usage",
         "layout": {
-          "x": 510,
-          "y": 519,
-          "width": 120,
-          "height": 52,
+          "x": 958,
+          "y": 602,
+          "width": 150,
+          "height": 56,
           "z": 10
         },
         "model_ref": "IV",
@@ -156,10 +156,10 @@
         "id": "contingencyTLI",
         "symbol": "state_usage",
         "layout": {
-          "x": 510,
-          "y": 618,
-          "width": 120,
-          "height": 52,
+          "x": 1175,
+          "y": 602,
+          "width": 150,
+          "height": 56,
           "z": 10
         },
         "model_ref": "contingencyTLI",
@@ -170,10 +170,10 @@
         "id": "lunar",
         "symbol": "state_usage",
         "layout": {
-          "x": 510,
-          "y": 717,
-          "width": 120,
-          "height": 52,
+          "x": 1392,
+          "y": 602,
+          "width": 150,
+          "height": 56,
           "z": 10
         },
         "model_ref": "lunar",
@@ -184,10 +184,10 @@
         "id": "SPS",
         "symbol": "state_usage",
         "layout": {
-          "x": 510,
-          "y": 816,
-          "width": 120,
-          "height": 52,
+          "x": 1609,
+          "y": 602,
+          "width": 150,
+          "height": 56,
           "z": 10
         },
         "model_ref": "SPS",
@@ -202,14 +202,14 @@
         "source": {
           "element": "initial",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "nominal",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -226,14 +226,14 @@
         "source": {
           "element": "nominal",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.1111
           }
         },
         "target": {
           "element": "pad",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -241,12 +241,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 440,
-              "y": 476
+              "x": 867,
+              "y": 445
             },
             {
-              "x": 440,
-              "y": 150
+              "x": 165,
+              "y": 445
             }
           ]
         },
@@ -268,14 +268,14 @@
         "source": {
           "element": "nominal",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.2222
           }
         },
         "target": {
           "element": "I",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -283,12 +283,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 460,
-              "y": 482
+              "x": 883,
+              "y": 464
             },
             {
-              "x": 460,
-              "y": 249
+              "x": 382,
+              "y": 464
             }
           ]
         },
@@ -310,14 +310,14 @@
         "source": {
           "element": "nominal",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.3333
           }
         },
         "target": {
           "element": "II",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -325,12 +325,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 480,
-              "y": 487
+              "x": 900,
+              "y": 484
             },
             {
-              "x": 480,
-              "y": 348
+              "x": 599,
+              "y": 484
             }
           ]
         },
@@ -352,14 +352,14 @@
         "source": {
           "element": "nominal",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.4444
           }
         },
         "target": {
           "element": "III",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -367,12 +367,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 500,
-              "y": 493
+              "x": 917,
+              "y": 504
             },
             {
-              "x": 500,
-              "y": 446
+              "x": 816,
+              "y": 504
             }
           ]
         },
@@ -394,14 +394,14 @@
         "source": {
           "element": "nominal",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5556
           }
         },
         "target": {
           "element": "IV",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -409,12 +409,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 520,
-              "y": 499
+              "x": 933,
+              "y": 523
             },
             {
-              "x": 520,
-              "y": 545
+              "x": 1033,
+              "y": 523
             }
           ]
         },
@@ -436,14 +436,14 @@
         "source": {
           "element": "nominal",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.6667
           }
         },
         "target": {
           "element": "contingencyTLI",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -451,12 +451,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 540,
-              "y": 505
+              "x": 950,
+              "y": 543
             },
             {
-              "x": 540,
-              "y": 644
+              "x": 1250,
+              "y": 543
             }
           ]
         },
@@ -478,14 +478,14 @@
         "source": {
           "element": "nominal",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.7778
           }
         },
         "target": {
           "element": "lunar",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -493,12 +493,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 560,
-              "y": 510
+              "x": 967,
+              "y": 563
             },
             {
-              "x": 560,
-              "y": 743
+              "x": 1467,
+              "y": 563
             }
           ]
         },
@@ -520,14 +520,14 @@
         "source": {
           "element": "nominal",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.8889
           }
         },
         "target": {
           "element": "SPS",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
@@ -535,12 +535,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 580,
-              "y": 516
+              "x": 983,
+              "y": 582
             },
             {
-              "x": 580,
-              "y": 842
+              "x": 1684,
+              "y": 582
             }
           ]
         },

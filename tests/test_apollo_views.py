@@ -138,6 +138,25 @@ class ApolloViewTests(unittest.TestCase):
                 self.assertEqual(report.errors, 0, [f.message for f in report.findings])
                 svg = scene_to_svg(build_scene(committed))
                 self.assertIn("<svg", svg)
+        sizes = {
+            intent.stem: json.loads(intent.with_suffix(".sysmld").read_text(encoding="utf-8"))["diagram"]["canvas"]
+            for intent in (
+                APOLLO / "apollo-req.json",
+                APOLLO / "apollo-stm.json",
+                APOLLO / "apollo-bdd.json",
+                APOLLO / "apollo-stm-abort.json",
+                APOLLO / "apollo-bdd-lm.json",
+                APOLLO / "apollo-ibd.json",
+                APOLLO / "apollo-alloc.json",
+            )
+        }
+        self.assertLess(sizes["apollo-req"]["width"], 2500)
+        self.assertGreater(sizes["apollo-req"]["height"], 600)
+        self.assertLess(sizes["apollo-stm"]["width"], 2500)
+        self.assertGreater(sizes["apollo-stm"]["height"], 600)
+        self.assertLess(sizes["apollo-bdd"]["width"], 2800)
+        self.assertGreater(sizes["apollo-bdd"]["height"], 800)
+        self.assertLess(sizes["apollo-alloc"]["height"], 900)
         self.assertEqual(kinds, set(COMPOSERS))
 
     def test_apollo_ibds_do_not_cross_boxes(self):
@@ -351,6 +370,15 @@ class ApolloViewTests(unittest.TestCase):
         self.assertEqual(ibd["aliases"]["PNGS--rendezvousRadar--tgt"], "Apollo11::LM::ascent::rendezvousRadar")
         self.assertEqual(ibd["aliases"]["conn-PNGS-rendezvousRadar"], "Apollo11::LM::ascent::PNGSToRendezvousRadar")
         self.assertEqual(ibd["aliases"]["PNGS--landingRadar--tgt"], "Apollo11::LM::descent::landingRadar")
+        system = json.loads((APOLLO / "apollo-bdd.json").read_text(encoding="utf-8"))
+        self.assertEqual(system["aliases"]["RSO"], "Apollo11::Apollo11::RSO")
+        self.assertEqual(system["aliases"]["recovery"], "Apollo11::Apollo11::recovery")
+        self.assertEqual(system["aliases"]["Hornet"], "Apollo11::RecoveryForces::Hornet")
+        top_ids = {child["id"] for child in system["roots"][0]["children"]}
+        self.assertIn("RSO", top_ids)
+        self.assertIn("recovery", top_ids)
+        recovery_node = next(child for child in system["roots"][0]["children"] if child["id"] == "recovery")
+        self.assertIn("Hornet", {child["id"] for child in recovery_node["children"]})
         bdd = json.loads((APOLLO / "apollo-bdd-lm.json").read_text(encoding="utf-8"))
         descent_node = bdd["roots"][0]["children"][0]
         ascent_node = bdd["roots"][0]["children"][1]

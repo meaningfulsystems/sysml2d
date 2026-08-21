@@ -10,6 +10,8 @@
   "default_w": 240,
   "default_h": 100,
   "sibling_gap": 36,
+  "rank_gap": 56,
+  "max_per_row": 5,
   "nodes": {
     "agcRequirement": {
       "label": "\u00abrequirement\u00bb\nTwo AGCs Block II\nComanche 055 + LMY99/1\nCMC ENTRY \u2260 LGC LANDING",
@@ -18,7 +20,17 @@
     },
     "p27Requirement": {
       "label": "\u00abrequirement\u00bb\nP27 verbs V70\u2013V73 only\nNot the CCATS path",
+      "rank": 1,
+      "order": 0
+    },
+    "cmEcsRequirement": {
+      "label": "\u00abrequirement\u00bb\nCM ECS 5.0 psia 100% O2\n3 crew / 14 d spec\nA11 196 h vs 336 h spec",
       "rank": 0,
+      "order": 1
+    },
+    "a11AtypicalRequirement": {
+      "label": "\u00abrequirement\u00bb\nA11 atypical: MOCR 2; cryo 2+2\nEVA CDR 2:48 / LMP 2:40\nP66 landing; ropes sourced",
+      "rank": 1,
       "order": 1
     },
     "usbCsmRequirement": {
@@ -31,95 +43,40 @@
       "rank": 0,
       "order": 3
     },
-    "cmEcsRequirement": {
-      "label": "\u00abrequirement\u00bb\nCM ECS 5.0 psia 100% O2\n3 crew / 14 d spec\nA11 196 h vs 336 h spec",
-      "rank": 1,
-      "order": 0
+    "rsoRequirement": {
+      "label": "\u00abrequirement\u00bb\nRSO outside MCC\nUHF destruct; safed after EO",
+      "rank": 0,
+      "order": 4
     },
     "a7lRequirement": {
       "label": "\u00abrequirement\u00bb\nA7L 3.75\u00b10.25 psid\nEV 19.69 kg \u00b7 PLSS 1.04 lb / 4 h",
-      "rank": 1,
-      "order": 1
-    },
-    "a11MassRequirement": {
-      "label": "\u00abrequirement\u00bb\nSerials S-IC-6 / S-II-6 / S-IVB-6N\nIU-6 / SLA-14; PK p.109 loads\nSPS load / CSM \u0394v UNKNOWN",
-      "rank": 1,
-      "order": 2
-    },
-    "rsoRequirement": {
-      "label": "\u00abrequirement\u00bb\nRSO outside MCC\nUHF destruct; safed after EO",
-      "rank": 1,
-      "order": 3
-    },
-    "a11AtypicalRequirement": {
-      "label": "\u00abrequirement\u00bb\nA11 atypical: MOCR 2; cryo 2+2\nEVA CDR 2:48 / LMP 2:40\nP66 landing; ropes sourced",
       "rank": 2,
       "order": 0
     },
-    "spsRequirement": {
-      "label": "\u00abrequirement\u00bb\nSPS conflict\n20,500 PK vs 21,500 D-7375\nloaded mass UNKNOWN",
-      "rank": 3,
-      "order": 4
-    },
-    "dpsRequirement": {
-      "label": "\u00abrequirement\u00bb\nDPS conflict\n9,870 / 1,050\u20136,300 PK\nvs 10,500 10:1 D-7143",
-      "rank": 3,
-      "order": 5
-    },
-    "pipaRequirement": {
-      "label": "\u00abrequirement\u00bb\nPIPA scale\nCM 5.85 cm/s/pulse\nLM 1.0 cm/s/pulse",
-      "rank": 3,
-      "order": 6
+    "a11MassRequirement": {
+      "label": "\u00abrequirement\u00bb\nSerials S-IC-6 / S-II-6 / S-IVB-6N\nIU-6 / SLA-14; PK p.109 loads\nSPS load / CSM \u0394v UNKNOWN",
+      "rank": 2,
+      "order": 1
     },
     "scsRequirement": {
       "label": "\u00abrequirement\u00bb\nCSM SCS analog backup\nAGC_CM vs SCS crew-select\nFull switch deck TBD",
       "rank": 2,
-      "order": 1
+      "order": 2
     },
     "pngsRequirement": {
       "label": "\u00abrequirement\u00bb\nPNGS \u2260 AGS\nAGC_LM + IMU + radars\nR47 inits AGS",
       "rank": 2,
-      "order": 2
+      "order": 3
     },
     "eclssLoopRequirement": {
       "label": "\u00abrequirement\u00bb\nECLSS O2/H2O/LiOH\n5.0 psia 100% O2\nCO2 \u22647.6 torr",
       "rank": 2,
-      "order": 3
+      "order": 4
     },
     "epsRequirement": {
       "label": "\u00abrequirement\u00bb\nEPS A11 Press Kit\nSM 3 FC; cryo 2+2 not J\nno stage-to-stage power",
       "rank": 3,
       "order": 0
-    },
-    "vhfRequirement": {
-      "label": "\u00abrequirement\u00bb\nVHF 296.8 / 259.7 MHz\nRecovery 243.0 MHz",
-      "rank": 4,
-      "order": 0
-    },
-    "isolationRequirement": {
-      "label": "\u00abrequirement\u00bb\nNo stage-to-stage power\nNo CSM\u2013LM propellant crossfeed",
-      "rank": 4,
-      "order": 1
-    },
-    "recoveryRequirement": {
-      "label": "\u00abrequirement\u00bb\nSplash 195:18:35 MET\n13 nmi \u00b7 USS Hornet",
-      "rank": 4,
-      "order": 2
-    },
-    "kscRequirement": {
-      "label": "\u00abrequirement\u00bb\nKSC_LCC Firing Room 1\nHandoff MCC at tower clear\nMission Rule 1-21",
-      "rank": 4,
-      "order": 3
-    },
-    "lm5ConsumableRequirement": {
-      "label": "\u00abrequirement\u00bb\nLM-5 descent O2 ~48 lb\n2800 psi vs 3000 psi\ncite both",
-      "rank": 4,
-      "order": 4
-    },
-    "apsRequirement": {
-      "label": "\u00abrequirement\u00bb\nAPS 3,500 lbf\n90% in 0.450 s\n1.5\u00b0 cant",
-      "rank": 4,
-      "order": 5
     },
     "agsRequirement": {
       "label": "\u00abrequirement\u00bb\nAGS AEA+ASA+DEDA\nAEA 4096\u00d718, 5 \u03bcs, 32.7 lb\nNot a landing computer",
@@ -135,6 +92,51 @@
       "label": "\u00abrequirement\u00bb\nRCS SM PK p.93 / LM p.106\n100 lbf; CM 93 lbf\nSM/CM RCS load UNKNOWN",
       "rank": 3,
       "order": 3
+    },
+    "spsRequirement": {
+      "label": "\u00abrequirement\u00bb\nSPS conflict\n20,500 PK vs 21,500 D-7375\nloaded mass UNKNOWN",
+      "rank": 3,
+      "order": 4
+    },
+    "dpsRequirement": {
+      "label": "\u00abrequirement\u00bb\nDPS conflict\n9,870 / 1,050\u20136,300 PK\nvs 10,500 10:1 D-7143",
+      "rank": 4,
+      "order": 0
+    },
+    "pipaRequirement": {
+      "label": "\u00abrequirement\u00bb\nPIPA scale\nCM 5.85 cm/s/pulse\nLM 1.0 cm/s/pulse",
+      "rank": 4,
+      "order": 1
+    },
+    "vhfRequirement": {
+      "label": "\u00abrequirement\u00bb\nVHF 296.8 / 259.7 MHz\nRecovery 243.0 MHz",
+      "rank": 4,
+      "order": 2
+    },
+    "isolationRequirement": {
+      "label": "\u00abrequirement\u00bb\nNo stage-to-stage power\nNo CSM\u2013LM propellant crossfeed",
+      "rank": 4,
+      "order": 3
+    },
+    "recoveryRequirement": {
+      "label": "\u00abrequirement\u00bb\nSplash 195:18:35 GET\n13 nmi \u00b7 USS Hornet",
+      "rank": 4,
+      "order": 4
+    },
+    "kscRequirement": {
+      "label": "\u00abrequirement\u00bb\nKSC_LCC Firing Room 1\nHandoff MCC at tower clear\nMission Rule 1-21",
+      "rank": 5,
+      "order": 0
+    },
+    "lm5ConsumableRequirement": {
+      "label": "\u00abrequirement\u00bb\nLM-5 descent O2 ~48 lb\n2800 psi vs 3000 psi\ncite both",
+      "rank": 5,
+      "order": 1
+    },
+    "apsRequirement": {
+      "label": "\u00abrequirement\u00bb\nAPS 3,500 lbf\n90% in 0.450 s\n1.5\u00b0 cant",
+      "rank": 5,
+      "order": 2
     }
   },
   "edges": [

@@ -1,69 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="5700" height="472" viewBox="0 0 5700 472">
+<svg xmlns="http://www.w3.org/2000/svg" width="1407" height="994" viewBox="0 0 1407 994">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="5700" height="472" fill="#FFFFFF"/>
-<rect x="2" y="38" width="5696" height="430" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1407" height="994" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1403" height="952" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 424 L 440 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[req.mb] Apollo 11 Sourced Requirements [Apollo11]</text>
-<rect x="2" y="38" width="5696" height="432" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1403" height="954" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
 <rect id="agcRequirement" x="72" y="72" width="195" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle"><tspan x="169.5" y="93.5">«requirement»</tspan><tspan x="169.5" dy="15">Two AGCs Block II</tspan><tspan x="169.5" dy="15">Comanche 055 + LMY99/1</tspan><tspan x="169.5" dy="15">CMC ENTRY ≠ LGC LANDING</tspan></text>
-<rect id="p27Requirement" x="75.5" y="264" width="188" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="169.5" y="290">«requirement»</tspan><tspan x="169.5" dy="15">P27 verbs V70–V73 only</tspan><tspan x="169.5" dy="15">Not the CCATS path</tspan></text>
-<rect id="usbCsmRequirement" x="303" y="72" width="237" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="421.5" y="93.5">«requirement»</tspan><tspan x="421.5" dy="15">USB CSM</tspan><tspan x="421.5" dy="15">2106.40625 ↑ / 2287.5 PM ↓</tspan><tspan x="421.5" dy="15">2272.5 FM · PCM 51.2/1.6 kbps</tspan></text>
-<rect id="usbLmRequirement" x="576" y="72" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="680.5" y="93.5">«requirement»</tspan><tspan x="680.5" dy="15">USB LM</tspan><tspan x="680.5" dy="15">2101.802 ↑ / 2282.5</tspan><tspan x="680.5" dy="15">20.5 dB · 20 W · no PM+FM</tspan></text>
-<rect id="cmEcsRequirement" x="845.5" y="72" width="195" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="943" y="93.5">«requirement»</tspan><tspan x="943" dy="15">CM ECS 5.0 psia 100% O2</tspan><tspan x="943" dy="15">3 crew / 14 d spec</tspan><tspan x="943" dy="15">A11 196 h vs 336 h spec</tspan></text>
-<rect id="a7lRequirement" x="1101" y="72" width="258" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1230" y="98">«requirement»</tspan><tspan x="1230" dy="15">A7L 3.75±0.25 psid</tspan><tspan x="1230" dy="15">EV 19.69 kg · PLSS 1.04 lb / 4 h</tspan></text>
-<rect id="a11MassRequirement" x="1395" y="72" width="272" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1531" y="93.5">«requirement»</tspan><tspan x="1531" dy="15">Serials S-IC-6 / S-II-6 / S-IVB-6N</tspan><tspan x="1531" dy="15">IU-6 / SLA-14; PK p.109 loads</tspan><tspan x="1531" dy="15">SPS load / CSM Δv UNKNOWN</tspan></text>
-<rect id="rsoRequirement" x="1703" y="72" width="230" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1818" y="98">«requirement»</tspan><tspan x="1818" dy="15">RSO outside MCC</tspan><tspan x="1818" dy="15">UHF destruct; safed after EO</tspan></text>
-<rect id="a11AtypicalRequirement" x="821" y="270" width="244" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="943" y="291.5">«requirement»</tspan><tspan x="943" dy="15">A11 atypical: MOCR 2; cryo 2+2</tspan><tspan x="943" dy="15">EVA CDR 2:48 / LMP 2:40</tspan><tspan x="943" dy="15">P66 landing; ropes sourced</tspan></text>
-<rect id="scsRequirement" x="1969" y="72" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="2073.5" y="93.5">«requirement»</tspan><tspan x="2073.5" dy="15">CSM SCS analog backup</tspan><tspan x="2073.5" dy="15">AGC_CM vs SCS crew-select</tspan><tspan x="2073.5" dy="15">Full switch deck TBD</tspan></text>
-<rect id="pngsRequirement" x="2214" y="72" width="181" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="2304.5" y="93.5">«requirement»</tspan><tspan x="2304.5" dy="15">PNGS ≠ AGS</tspan><tspan x="2304.5" dy="15">AGC_LM + IMU + radars</tspan><tspan x="2304.5" dy="15">R47 inits AGS</tspan></text>
-<rect id="eclssLoopRequirement" x="2431" y="72" width="170" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="2516" y="93.5">«requirement»</tspan><tspan x="2516" dy="15">ECLSS O2/H2O/LiOH</tspan><tspan x="2516" dy="15">5.0 psia 100% O2</tspan><tspan x="2516" dy="15">CO2 ≤7.6 torr</tspan></text>
-<rect id="epsRequirement" x="2637" y="72" width="195" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="2734.5" y="93.5">«requirement»</tspan><tspan x="2734.5" dy="15">EPS A11 Press Kit</tspan><tspan x="2734.5" dy="15">SM 3 FC; cryo 2+2 not J</tspan><tspan x="2734.5" dy="15">no stage-to-stage power</tspan></text>
-<rect id="agsRequirement" x="2868" y="72" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="2976" y="93.5">«requirement»</tspan><tspan x="2976" dy="15">AGS AEA+ASA+DEDA</tspan><tspan x="2976" dy="15">AEA 4096×18, 5 μs, 32.7 lb</tspan><tspan x="2976" dy="15">Not a landing computer</tspan></text>
-<rect id="dockingRequirement" x="3120" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="3214" y="93.5">«requirement»</tspan><tspan x="3214" dy="15">CM probe / LM drogue</tspan><tspan x="3214" dy="15">12 ring latches</tspan><tspan x="3214" dy="15">soft then hard; hw off</tspan></text>
-<rect id="rcsRequirement" x="3344" y="72" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="3448.5" y="93.5">«requirement»</tspan><tspan x="3448.5" dy="15">RCS SM PK p.93 / LM p.106</tspan><tspan x="3448.5" dy="15">100 lbf; CM 93 lbf</tspan><tspan x="3448.5" dy="15">SM/CM RCS load UNKNOWN</tspan></text>
-<rect id="spsRequirement" x="3589" y="72" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="3697" y="93.5">«requirement»</tspan><tspan x="3697" dy="15">SPS conflict</tspan><tspan x="3697" dy="15">20,500 PK vs 21,500 D-7375</tspan><tspan x="3697" dy="15">loaded mass UNKNOWN</tspan></text>
-<rect id="dpsRequirement" x="3841" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="3935" y="93.5">«requirement»</tspan><tspan x="3935" dy="15">DPS conflict</tspan><tspan x="3935" dy="15">9,870 / 1,050–6,300 PK</tspan><tspan x="3935" dy="15">vs 10,500 10:1 D-7143</tspan></text>
-<rect id="pipaRequirement" x="4065" y="72" width="170" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="4150" y="93.5">«requirement»</tspan><tspan x="4150" dy="15">PIPA scale</tspan><tspan x="4150" dy="15">CM 5.85 cm/s/pulse</tspan><tspan x="4150" dy="15">LM 1.0 cm/s/pulse</tspan></text>
-<rect id="vhfRequirement" x="4271" y="72" width="181" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="4361.5" y="98">«requirement»</tspan><tspan x="4361.5" dy="15">VHF 296.8 / 259.7 MHz</tspan><tspan x="4361.5" dy="15">Recovery 243.0 MHz</tspan></text>
-<rect id="isolationRequirement" x="4488" y="72" width="244" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="4610" y="98">«requirement»</tspan><tspan x="4610" dy="15">No stage-to-stage power</tspan><tspan x="4610" dy="15">No CSM–LM propellant crossfeed</tspan></text>
-<rect id="recoveryRequirement" x="4768" y="72" width="174" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="4855" y="98">«requirement»</tspan><tspan x="4855" dy="15">Splash 195:18:35 MET</tspan><tspan x="4855" dy="15">13 nmi · USS Hornet</tspan></text>
-<rect id="kscRequirement" x="4978" y="72" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="5086" y="93.5">«requirement»</tspan><tspan x="5086" dy="15">KSC_LCC Firing Room 1</tspan><tspan x="5086" dy="15">Handoff MCC at tower clear</tspan><tspan x="5086" dy="15">Mission Rule 1-21</tspan></text>
-<rect id="lm5ConsumableRequirement" x="5230" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="5324" y="93.5">«requirement»</tspan><tspan x="5324" dy="15">LM-5 descent O2 ~48 lb</tspan><tspan x="5324" dy="15">2800 psi vs 3000 psi</tspan><tspan x="5324" dy="15">cite both</tspan></text>
-<rect id="apsRequirement" x="5454" y="72" width="170" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="5539" y="93.5">«requirement»</tspan><tspan x="5539" dy="15">APS 3,500 lbf</tspan><tspan x="5539" dy="15">90% in 0.450 s</tspan><tspan x="5539" dy="15">1.5° cant</tspan></text>
-<path d="M 169.5,160 L 169.5,264" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 943,160 L 943,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" x="181.5" y="212">refine</text>
-<text class="small" x="955" y="215">A11 instance</text>
+<rect id="cmEcsRequirement" x="327.5" y="72" width="195" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="425" y="93.5">«requirement»</tspan><tspan x="425" dy="15">CM ECS 5.0 psia 100% O2</tspan><tspan x="425" dy="15">3 crew / 14 d spec</tspan><tspan x="425" dy="15">A11 196 h vs 336 h spec</tspan></text>
+<rect id="usbCsmRequirement" x="583" y="72" width="237" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="701.5" y="93.5">«requirement»</tspan><tspan x="701.5" dy="15">USB CSM</tspan><tspan x="701.5" dy="15">2106.40625 ↑ / 2287.5 PM ↓</tspan><tspan x="701.5" dy="15">2272.5 FM · PCM 51.2/1.6 kbps</tspan></text>
+<rect id="usbLmRequirement" x="856" y="72" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="960.5" y="93.5">«requirement»</tspan><tspan x="960.5" dy="15">USB LM</tspan><tspan x="960.5" dy="15">2101.802 ↑ / 2282.5</tspan><tspan x="960.5" dy="15">20.5 dB · 20 W · no PM+FM</tspan></text>
+<rect id="rsoRequirement" x="1101" y="72" width="230" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1216" y="98">«requirement»</tspan><tspan x="1216" dy="15">RSO outside MCC</tspan><tspan x="1216" dy="15">UHF destruct; safed after EO</tspan></text>
+<rect id="p27Requirement" x="75.5" y="210" width="188" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="169.5" y="236">«requirement»</tspan><tspan x="169.5" dy="15">P27 verbs V70–V73 only</tspan><tspan x="169.5" dy="15">Not the CCATS path</tspan></text>
+<rect id="a11AtypicalRequirement" x="303" y="216" width="244" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="425" y="237.5">«requirement»</tspan><tspan x="425" dy="15">A11 atypical: MOCR 2; cryo 2+2</tspan><tspan x="425" dy="15">EVA CDR 2:48 / LMP 2:40</tspan><tspan x="425" dy="15">P66 landing; ropes sourced</tspan></text>
+<rect id="a7lRequirement" x="72" y="348" width="258" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="201" y="374">«requirement»</tspan><tspan x="201" dy="15">A7L 3.75±0.25 psid</tspan><tspan x="201" dy="15">EV 19.69 kg · PLSS 1.04 lb / 4 h</tspan></text>
+<rect id="a11MassRequirement" x="366" y="360" width="272" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="502" y="381.5">«requirement»</tspan><tspan x="502" dy="15">Serials S-IC-6 / S-II-6 / S-IVB-6N</tspan><tspan x="502" dy="15">IU-6 / SLA-14; PK p.109 loads</tspan><tspan x="502" dy="15">SPS load / CSM Δv UNKNOWN</tspan></text>
+<rect id="scsRequirement" x="674" y="360" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="778.5" y="381.5">«requirement»</tspan><tspan x="778.5" dy="15">CSM SCS analog backup</tspan><tspan x="778.5" dy="15">AGC_CM vs SCS crew-select</tspan><tspan x="778.5" dy="15">Full switch deck TBD</tspan></text>
+<rect id="pngsRequirement" x="919" y="360" width="181" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1009.5" y="381.5">«requirement»</tspan><tspan x="1009.5" dy="15">PNGS ≠ AGS</tspan><tspan x="1009.5" dy="15">AGC_LM + IMU + radars</tspan><tspan x="1009.5" dy="15">R47 inits AGS</tspan></text>
+<rect id="eclssLoopRequirement" x="1136" y="360" width="170" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1221" y="381.5">«requirement»</tspan><tspan x="1221" dy="15">ECLSS O2/H2O/LiOH</tspan><tspan x="1221" dy="15">5.0 psia 100% O2</tspan><tspan x="1221" dy="15">CO2 ≤7.6 torr</tspan></text>
+<rect id="epsRequirement" x="72" y="504" width="195" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="169.5" y="525.5">«requirement»</tspan><tspan x="169.5" dy="15">EPS A11 Press Kit</tspan><tspan x="169.5" dy="15">SM 3 FC; cryo 2+2 not J</tspan><tspan x="169.5" dy="15">no stage-to-stage power</tspan></text>
+<rect id="agsRequirement" x="303" y="504" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="411" y="525.5">«requirement»</tspan><tspan x="411" dy="15">AGS AEA+ASA+DEDA</tspan><tspan x="411" dy="15">AEA 4096×18, 5 μs, 32.7 lb</tspan><tspan x="411" dy="15">Not a landing computer</tspan></text>
+<rect id="dockingRequirement" x="555" y="504" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="649" y="525.5">«requirement»</tspan><tspan x="649" dy="15">CM probe / LM drogue</tspan><tspan x="649" dy="15">12 ring latches</tspan><tspan x="649" dy="15">soft then hard; hw off</tspan></text>
+<rect id="rcsRequirement" x="779" y="504" width="209" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="883.5" y="525.5">«requirement»</tspan><tspan x="883.5" dy="15">RCS SM PK p.93 / LM p.106</tspan><tspan x="883.5" dy="15">100 lbf; CM 93 lbf</tspan><tspan x="883.5" dy="15">SM/CM RCS load UNKNOWN</tspan></text>
+<rect id="spsRequirement" x="1024" y="504" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1132" y="525.5">«requirement»</tspan><tspan x="1132" dy="15">SPS conflict</tspan><tspan x="1132" dy="15">20,500 PK vs 21,500 D-7375</tspan><tspan x="1132" dy="15">loaded mass UNKNOWN</tspan></text>
+<rect id="dpsRequirement" x="72" y="648" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="166" y="669.5">«requirement»</tspan><tspan x="166" dy="15">DPS conflict</tspan><tspan x="166" dy="15">9,870 / 1,050–6,300 PK</tspan><tspan x="166" dy="15">vs 10,500 10:1 D-7143</tspan></text>
+<rect id="pipaRequirement" x="296" y="648" width="170" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="381" y="669.5">«requirement»</tspan><tspan x="381" dy="15">PIPA scale</tspan><tspan x="381" dy="15">CM 5.85 cm/s/pulse</tspan><tspan x="381" dy="15">LM 1.0 cm/s/pulse</tspan></text>
+<rect id="vhfRequirement" x="502" y="624" width="181" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="592.5" y="650">«requirement»</tspan><tspan x="592.5" dy="15">VHF 296.8 / 259.7 MHz</tspan><tspan x="592.5" dy="15">Recovery 243.0 MHz</tspan></text>
+<rect id="isolationRequirement" x="719" y="624" width="244" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="841" y="650">«requirement»</tspan><tspan x="841" dy="15">No stage-to-stage power</tspan><tspan x="841" dy="15">No CSM–LM propellant crossfeed</tspan></text>
+<rect id="recoveryRequirement" x="999" y="624" width="174" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1086" y="650">«requirement»</tspan><tspan x="1086" dy="15">Splash 195:18:35 GET</tspan><tspan x="1086" dy="15">13 nmi · USS Hornet</tspan></text>
+<rect id="kscRequirement" x="72" y="792" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="180" y="813.5">«requirement»</tspan><tspan x="180" dy="15">KSC_LCC Firing Room 1</tspan><tspan x="180" dy="15">Handoff MCC at tower clear</tspan><tspan x="180" dy="15">Mission Rule 1-21</tspan></text>
+<rect id="lm5ConsumableRequirement" x="324" y="792" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="418" y="813.5">«requirement»</tspan><tspan x="418" dy="15">LM-5 descent O2 ~48 lb</tspan><tspan x="418" dy="15">2800 psi vs 3000 psi</tspan><tspan x="418" dy="15">cite both</tspan></text>
+<rect id="apsRequirement" x="548" y="792" width="170" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="633" y="813.5">«requirement»</tspan><tspan x="633" dy="15">APS 3,500 lbf</tspan><tspan x="633" dy="15">90% in 0.450 s</tspan><tspan x="633" dy="15">1.5° cant</tspan></text>
+<path d="M 169.5,160 L 169.5,210" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 425,160 L 425,216" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="181.5" y="185">refine</text>
+<text class="small" x="437" y="188">A11 instance</text>
 </g>
 </svg>

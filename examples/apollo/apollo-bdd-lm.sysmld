@@ -29,8 +29,8 @@
     "kind": "DefinitionView",
     "name": "LM Definition Tree",
     "canvas": {
-      "width": 1642,
-      "height": 522,
+      "width": 1105,
+      "height": 782,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -42,7 +42,7 @@
         "model_ref": "LM",
         "symbol": "part_definition",
         "layout": {
-          "x": 751,
+          "x": 443,
           "y": 40,
           "width": 140,
           "height": 52,
@@ -61,7 +61,7 @@
         "model_ref": "descent",
         "symbol": "part_definition",
         "layout": {
-          "x": 277,
+          "x": 198,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -137,8 +137,8 @@
         "model_ref": "AgZn",
         "symbol": "part_definition",
         "layout": {
-          "x": 514,
-          "y": 300,
+          "x": 119,
+          "y": 380,
           "width": 140,
           "height": 52,
           "z": 10
@@ -156,7 +156,7 @@
         "model_ref": "AgZn",
         "symbol": "part_definition",
         "layout": {
-          "x": 119,
+          "x": 277,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -175,7 +175,7 @@
         "model_ref": "ECA",
         "symbol": "part_definition",
         "layout": {
-          "x": 277,
+          "x": 435,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -194,8 +194,8 @@
         "model_ref": "landingRadar",
         "symbol": "part_definition",
         "layout": {
-          "x": 435,
-          "y": 380,
+          "x": 198,
+          "y": 460,
           "width": 140,
           "height": 52,
           "z": 10
@@ -213,7 +213,7 @@
         "model_ref": "ascent",
         "symbol": "part_definition",
         "layout": {
-          "x": 1067,
+          "x": 759,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -232,7 +232,7 @@
         "model_ref": "PNGS",
         "symbol": "part_definition",
         "layout": {
-          "x": 672,
+          "x": 601,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -251,7 +251,7 @@
         "model_ref": "AGC_LM",
         "symbol": "part_definition",
         "layout": {
-          "x": 830,
+          "x": 759,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -266,87 +266,11 @@
         "style": "part.definition"
       },
       {
-        "id": "AGS",
-        "model_ref": "AGS",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 1146,
-          "y": 300,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "AGS",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "AEA",
-        "model_ref": "AEA",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 988,
-          "y": 430,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "AEA",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "ASA",
-        "model_ref": "ASA",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 1146,
-          "y": 430,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "ASA",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
-        "id": "DEDA",
-        "model_ref": "DEDA",
-        "symbol": "part_definition",
-        "layout": {
-          "x": 1304,
-          "y": 430,
-          "width": 140,
-          "height": 52,
-          "z": 10
-        },
-        "label": "DEDA",
-        "compartments": {
-          "attributes": false,
-          "ports": false,
-          "actions": false
-        },
-        "style": "part.definition"
-      },
-      {
         "id": "APS",
         "model_ref": "APS",
         "symbol": "part_definition",
         "layout": {
-          "x": 1462,
+          "x": 917,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -365,8 +289,8 @@
         "model_ref": "RCS",
         "symbol": "part_definition",
         "layout": {
-          "x": 901,
-          "y": 380,
+          "x": 593,
+          "y": 430,
           "width": 140,
           "height": 52,
           "z": 10
@@ -384,8 +308,8 @@
         "model_ref": "rendezvousRadar",
         "symbol": "part_definition",
         "layout": {
-          "x": 1059,
-          "y": 380,
+          "x": 751,
+          "y": 430,
           "width": 156,
           "height": 52,
           "z": 10
@@ -403,13 +327,89 @@
         "model_ref": "drogue",
         "symbol": "part_definition",
         "layout": {
-          "x": 1233,
-          "y": 380,
+          "x": 925,
+          "y": 430,
           "width": 140,
           "height": 52,
           "z": 10
         },
         "label": "drogue",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "AGS",
+        "model_ref": "AGS",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 759,
+          "y": 560,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "AGS",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "AEA",
+        "model_ref": "AEA",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 601,
+          "y": 690,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "AEA",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ASA",
+        "model_ref": "ASA",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 759,
+          "y": 690,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "ASA",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "DEDA",
+        "model_ref": "DEDA",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 917,
+          "y": 690,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "DEDA",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -440,11 +440,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 821,
+              "x": 513,
               "y": 131
             },
             {
-              "x": 347,
+              "x": 268,
               "y": 131
             }
           ]
@@ -483,11 +483,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 821,
+              "x": 513,
               "y": 131
             },
             {
-              "x": 1137,
+              "x": 829,
               "y": 131
             }
           ]
@@ -526,7 +526,7 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 347,
+              "x": 268,
               "y": 261
             },
             {
@@ -567,22 +567,13 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 347,
-              "y": 261
-            },
-            {
-              "x": 268,
-              "y": 261
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 0,
               "offset": 0.82,
               "dx": 10,
               "dy": -4
@@ -612,7 +603,7 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 347,
+              "x": 268,
               "y": 261
             },
             {
@@ -655,12 +646,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 347,
-              "y": 261
+              "x": 268,
+              "y": 352
             },
             {
-              "x": 584,
-              "y": 261
+              "x": 189,
+              "y": 352
             }
           ]
         },
@@ -669,7 +660,7 @@
             "text": "1",
             "position": {
               "segment": 2,
-              "offset": 0.82,
+              "offset": 0.94,
               "dx": 10,
               "dy": -4
             }
@@ -698,11 +689,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 347,
+              "x": 268,
               "y": 352
             },
             {
-              "x": 189,
+              "x": 347,
               "y": 352
             }
           ]
@@ -741,7 +732,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 347,
+              "x": 268,
+              "y": 352
+            },
+            {
+              "x": 505,
               "y": 352
             }
           ]
@@ -750,7 +745,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 1,
+              "segment": 2,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -780,12 +775,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 347,
-              "y": 352
+              "x": 268,
+              "y": 250
             },
             {
-              "x": 505,
-              "y": 352
+              "x": 162,
+              "y": 250
+            },
+            {
+              "x": 162,
+              "y": 432
+            },
+            {
+              "x": 268,
+              "y": 432
             }
           ]
         },
@@ -793,7 +796,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -823,11 +826,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1137,
+              "x": 829,
               "y": 261
             },
             {
-              "x": 742,
+              "x": 671,
               "y": 261
             }
           ]
@@ -864,65 +867,13 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 1137,
-              "y": 261
-            },
-            {
-              "x": 900,
-              "y": 261
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "1",
             "position": {
-              "segment": 2,
-              "offset": 0.82,
-              "dx": 10,
-              "dy": -4
-            }
-          }
-        ],
-        "style": "connector.definition"
-      },
-      {
-        "id": "conn-ascent-AGS",
-        "model_ref": "AGS",
-        "source": {
-          "element": "ascent",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "AGS",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 1137,
-              "y": 261
-            },
-            {
-              "x": 1216,
-              "y": 261
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "1",
-            "position": {
-              "segment": 2,
+              "segment": 0,
               "offset": 0.82,
               "dx": 10,
               "dy": -4
@@ -952,11 +903,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1137,
+              "x": 829,
               "y": 261
             },
             {
-              "x": 1532,
+              "x": 987,
               "y": 261
             }
           ]
@@ -995,12 +946,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1137,
-              "y": 352
+              "x": 829,
+              "y": 250
             },
             {
-              "x": 971,
-              "y": 352
+              "x": 723,
+              "y": 250
+            },
+            {
+              "x": 723,
+              "y": 402
+            },
+            {
+              "x": 663,
+              "y": 402
             }
           ]
         },
@@ -1008,7 +967,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1038,8 +997,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1137,
-              "y": 352
+              "x": 829,
+              "y": 250
+            },
+            {
+              "x": 723,
+              "y": 250
+            },
+            {
+              "x": 723,
+              "y": 402
+            },
+            {
+              "x": 829,
+              "y": 402
             }
           ]
         },
@@ -1047,7 +1018,7 @@
           {
             "text": "1",
             "position": {
-              "segment": 1,
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1077,12 +1048,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1137,
-              "y": 352
+              "x": 829,
+              "y": 250
             },
             {
-              "x": 1303,
-              "y": 352
+              "x": 935,
+              "y": 250
+            },
+            {
+              "x": 935,
+              "y": 402
+            },
+            {
+              "x": 995,
+              "y": 402
             }
           ]
         },
@@ -1090,7 +1069,58 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ascent-AGS",
+        "model_ref": "AGS",
+        "source": {
+          "element": "ascent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGS",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 829,
+              "y": 250
+            },
+            {
+              "x": 723,
+              "y": 250
+            },
+            {
+              "x": 723,
+              "y": 532
+            },
+            {
+              "x": 829,
+              "y": 532
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
               "offset": 0.94,
               "dx": 10,
               "dy": -4
@@ -1120,12 +1150,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1216,
-              "y": 391
+              "x": 829,
+              "y": 651
             },
             {
-              "x": 1058,
-              "y": 391
+              "x": 671,
+              "y": 651
             }
           ]
         },
@@ -1197,12 +1227,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1216,
-              "y": 391
+              "x": 829,
+              "y": 651
             },
             {
-              "x": 1374,
-              "y": 391
+              "x": 987,
+              "y": 651
             }
           ]
         },

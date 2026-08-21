@@ -6,11 +6,11 @@
   "model_files": [
     "apollo.sysml"
   ],
-  "direction": "left-right",
+  "direction": "top-down",
   "default_w": 140,
   "default_h": 64,
-  "col_gap": 56,
-  "rank_gap": 130,
+  "col_gap": 80,
+  "rank_gap": 150,
   "label_mode": "connection",
   "aliases": {
     "mission": "Apollo11::Apollo11",
@@ -61,43 +61,63 @@
   "nodes": {
     "KSC_LCC": {
       "label": "KSC_LCC",
-      "style": "part.ground"
+      "style": "part.ground",
+      "rank": 0,
+      "order": 0
     },
     "RSO": {
       "label": "RSO",
-      "style": "part.safety"
+      "style": "part.safety",
+      "rank": 0,
+      "order": 1
     },
     "SIC": {
       "label": "S-IC",
-      "style": "part.vehicle"
+      "style": "part.vehicle",
+      "rank": 1,
+      "order": 0
     },
     "MCC": {
       "label": "MCC",
-      "style": "part.ground"
+      "style": "part.ground",
+      "rank": 1,
+      "order": 1
     },
     "NASCOM": {
       "label": "NASCOM",
-      "style": "part.comms"
+      "style": "part.comms",
+      "rank": 1,
+      "order": 2
     },
     "MSFN": {
       "label": "MSFN",
-      "style": "part.comms"
+      "style": "part.comms",
+      "rank": 2,
+      "order": 1
     },
     "CM": {
       "label": "CM",
-      "style": "part.vehicle"
-    },
-    "descent": {
-      "label": "descent",
-      "style": "part.vehicle"
-    },
-    "ascent": {
-      "label": "ascent",
-      "style": "part.vehicle"
+      "style": "part.vehicle",
+      "rank": 3,
+      "order": 0
     },
     "recovery": {
       "label": "Recovery",
-      "style": "part.ground"
+      "style": "part.ground",
+      "rank": 3,
+      "order": 2
+    },
+    "descent": {
+      "label": "descent",
+      "style": "part.vehicle",
+      "rank": 4,
+      "order": 0
+    },
+    "ascent": {
+      "label": "ascent",
+      "style": "part.vehicle",
+      "rank": 4,
+      "order": 1
     }
   },
   "edges": [
@@ -105,6 +125,8 @@
       "from": "KSC_LCC",
       "to": "SIC",
       "label": "umbilical",
+      "source_side": "bottom",
+      "target_side": "top",
       "model_ref": "conn-KSC_LCC-SIC"
     },
     {
@@ -125,6 +147,8 @@
       "from": "NASCOM",
       "to": "MCC",
       "label": "NASCOM",
+      "source_side": "left",
+      "target_side": "right",
       "model_ref": "conn-NASCOM-MCC"
     },
     {
@@ -165,6 +189,8 @@
       "from": "descent",
       "to": "ascent",
       "label": "stage",
+      "source_side": "right",
+      "target_side": "left",
       "model_ref": "conn-descent-ascent"
     },
     {

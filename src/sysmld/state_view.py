@@ -188,6 +188,8 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
         col_gap  = col_gap  + (avg_w if vertical else avg_h),
         rank_gap = rank_gap + (avg_h if vertical else avg_w),
         margin   = CANVAS_MARGIN + BND_PAD + max(default_w, default_h) // 2,
+        rank_wrap=spec.get("rank_wrap"),
+        target_aspect=float(spec.get("target_aspect", 1.618)),
     )
     cx_map, cy_map, rank = lo.cx, lo.cy, lo.rank
 
@@ -342,7 +344,8 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
 
         sorted_idxs = sorted(idxs, key=_mid)
         n = len(sorted_idxs)
-        step = max((chan_hi - chan_lo) / (n + 1), 20)
+        usable = max(chan_hi - chan_lo, 1)
+        step = usable / (n + 1)
 
         for pos, i in enumerate(sorted_idxs):
             t = forward_trans[i]

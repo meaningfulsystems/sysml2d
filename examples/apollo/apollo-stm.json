@@ -6,11 +6,12 @@
   "model_files": [
     "apollo.sysml"
   ],
-  "direction": "left-right",
-  "default_w": 118,
-  "default_h": 52,
-  "rank_gap": 88,
-  "col_gap": 40,
+  "direction": "top-down",
+  "rank_wrap": "snake",
+  "default_w": 168,
+  "default_h": 56,
+  "rank_gap": 150,
+  "col_gap": 88,
   "aliases": {
     "missionPhase": "Apollo11::MissionPhase",
     "countdown": "Apollo11::MissionPhase::countdown",

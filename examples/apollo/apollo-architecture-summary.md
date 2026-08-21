@@ -58,18 +58,18 @@ The model states sourced requirements as documentation on named requirement elem
 
 Press Kit 69-83K page 109 gives the A11 tank loads and does not turn them into a required-mass shall (NASA, 1969b): S-IC-6 is 5,022,674 lb fueled / 288,750 lb dry, liquid oxygen (LOX) 3,307,855, RP-1 1,426,069, liftoff 7,653,854 lbf; S-II-6 is 1,059,171 / 79,918 with LOX 821,022 and liquid hydrogen (LH2) 158,221; S-IVB-6N is 260,523 / 25,000 with LOX 192,023 and LH2 43,500; IU-6 is 4,306 lb; CM is 12,250 lb; SM is 51,243 lb. The same kit also lists ignition 6,484,280 lb, first motion 6,398,535, LES 8,930, LM descent dry 4,483, LM Reaction Control System (RCS) 604, Descent Propulsion System (DPS) load 18,100, and LM Ascent Propulsion System (APS) load 5,214 (the engine, not the S-IVB Auxiliary Propulsion System / ullage motors).
 
-The engine table is the number fight. There is no required thrust. SPS and DPS cites stay; the model does not pick a winner and does not add a shall. LMA790 (a Grumman Lunar Module document number) is the third DPS cite (NASA, 1969b; NASA, n.d.-a; NASA, n.d.-b; Grumman, n.d.).
+The engine table is the number fight. There is no required thrust. SPS and DPS cites stay; the model does not pick a winner and does not add a shall. LMA790 (a Grumman Lunar Module document number) is the third DPS cite (NASA, 1969b; NASA, 1973c; NASA, 1973b).
 
 | Engine | Source A | Source B | Source C |
 |--------|----------|----------|----------|
 | SPS | 20,500 lbf (Press Kit) | 21,500 lbf vac (TN D-7375) | — |
 | DPS | 9,870 / 1,050–6,300 lbf (Press Kit) | 10,500 lbf 10:1 (TN D-7143) | 9,870 / 1,050–6,800 lbf (LMA790) |
 
-LM APS is 3,500 lbf, 90% in 0.450 s, 1.5° cant (NASA, n.d.-c, Technical Note D-7082). F-1 ×5 is 1,530,000 lbf each, sourced as SA-507, not AS-506; F-1 hydraulics are collapsed. J-2 is 230,000 lbf on S-II ×5 and 207,000 lbf on S-IVB ×1.
+LM APS is 3,500 lbf, 90% in 0.450 s, 1.5° cant (NASA, 1973a, Technical Note D-7082). F-1 ×5 is 1,530,000 lbf each, sourced as SA-507, not AS-506; F-1 hydraulics are collapsed. J-2 is 230,000 lbf on S-II ×5 and 207,000 lbf on S-IVB ×1.
 
 SM RCS is 100 lbf/engine (NASA, 1969b, p. 93), four quads. LM RCS is 100 lbf/engine (NASA, 1969b, p. 106). CM RCS is 93 lbf/engine, two systems of six, no automatic translation. Loaded SM/CM RCS propellant mass is unmarked.
 
-There are two Apollo Guidance Computers (AGC): `AGC_CM` and `AGC_LM`. Block II is 16-bit, 2048 erasable / 36864 fixed, 1.024 MHz, memory cycle time (MCT) 11.7 µs, 65 lb / 70 W (Massachusetts Institute of Technology Instrumentation Laboratory, n.d., AGCIS 30). The CM is 1 AGC + 2 Display and Keyboard (DSKY). The LM is 1 AGC + 1 DSKY. A11 ropes are Comanche 055 on AGC_CM and Luminary 1A LMY99/1 on AGC_LM. Command Module Computer (CMC) P61–P67 is entry. Lunar Module Guidance Computer (LGC) P63–P68 is landing. Those are not one shared P-number machine. Pulse Integrating Pendulous Accelerometer (PIPA) scale is CM 5.85 cm/s/pulse versus LM 1.0 cm/s/pulse. The IU is physically LVDC + ST-124 + Flight Control Computer (FCC); LVDC is 82.03125 µs, 26+2 bits, with no digital AGC↔LVDC, and the IU owns boost + TLI. Abort Guidance System (AGS) is Abort Electronics Assembly (AEA) + Abort Sensor Assembly (ASA) + Data Entry and Display Assembly (DEDA): AEA 4096×18, 5 µs, 32.7 lb, not a landing computer (NASA, n.d.-d, TN-7990). AGS ≠ DSKY; AGS display is DEDA. R47 inits AGS from PNGS. Verb 37 (V37) is mode, V36 is fresh start, V69 is restart. 1201/1202 is executive overflow, not an abort.
+There are two Apollo Guidance Computers (AGC): `AGC_CM` and `AGC_LM`. Block II is 16-bit, 2048 erasable / 36864 fixed, 1.024 MHz, memory cycle time (MCT) 11.7 µs, 65 lb / 70 W (AGCIS 30). The CM is 1 AGC + 2 Display and Keyboard (DSKY). The LM is 1 AGC + 1 DSKY. A11 ropes are Comanche 055 on AGC_CM and Luminary 1A LMY99/1 on AGC_LM. Command Module Computer (CMC) P61–P67 is entry. Lunar Module Guidance Computer (LGC) P63–P68 is landing. Those are not one shared P-number machine. Pulse Integrating Pendulous Accelerometer (PIPA) scale is CM 5.85 cm/s/pulse versus LM 1.0 cm/s/pulse. The IU is physically LVDC + ST-124 + Flight Control Computer (FCC); LVDC is 82.03125 µs, 26+2 bits, with no digital AGC↔LVDC, and the IU owns boost + TLI. Abort Guidance System (AGS) is Abort Electronics Assembly (AEA) + Abort Sensor Assembly (ASA) + Data Entry and Display Assembly (DEDA): AEA 4096×18, 5 µs, 32.7 lb, not a landing computer (Kurten, 1975, Technical Note D-7990). AGS ≠ DSKY; AGS display is DEDA. R47 inits AGS from PNGS. Verb 37 (V37) is mode, V36 is fresh start, V69 is restart. 1201/1202 is executive overflow, not an abort.
 
 PNGS is AGC_LM + Inertial Measurement Unit (IMU) + radars, not AGS. Physical `landingRadar` is on descent only. One `rendezvousRadar` is on ascent only. PNGS connects to both and does not nest either radar.
 
@@ -77,15 +77,15 @@ Electrical power in the Press Kit is SM fuel cells FC1–FC3 with cryo 2+2; CM s
 
 USB CSM is uplink 2106.40625 MHz, phase modulation (PM) down 2287.5, frequency modulation (FM) down 2272.5, pulse-code modulation (PCM) 51.2 or 1.6 kbps, uplink digital about 2 kbps, pseudo-random noise (PRN) range 992 kbps, ±15 m, about 540,000 mi unambiguous. USB LM is uplink 2101.802 MHz, down 2282.5, steerable 20.5 dB transmit, amplitron 20 W, no simultaneous PM+FM. CSM High-Gain Antenna (HGA) is wide 8.0 / medium 18.0 / narrow 25.7 dB, power amplifier 11.2 W PM / 12.6 W FM, crew-selected, not ground-commandable on Block II. Path A is Flight Controller (FC) → Command and Communications Controller (CCC) → RTCC → Communications, Command, and Telemetry System (CCATS) → site 642B → USB 70 kHz. P27 is verbs V70–V73 only, separate from CCATS. Very High Frequency (VHF) is 296.8 / 259.7 MHz. Recovery is 243.0 MHz.
 
-CM cabin is 5.0 psia 100% O2, carbon dioxide (CO2) ≤ 7.6 torr. The CM spec is 3 crew / 14 d; A11 is 196 h versus 336 h spec. SM holds 640 lb O2, potable 36 lb / waste 56 lb. Lithium hydroxide (LiOH) is 1.5 man-day, swap 12 h. LM-5 descent O2 is about 48 lb — teaching figure 2800 psi; 3000 psi D-6724 is the other text; no required pressure (NASA, n.d.-e, Technical Note D-6724). LM-5 ascent O2 is about 2.4 lb ×2. Water is descent 332 lb and ascent 42 lb ×2. Liquid Cooling Garment (LCG) is 1200 Btu/man-h steady. A7L is 3.75±0.25 psid, extravehicular 19.69 kg. PLSS usable O2 is 1.04 lb / 4 h at 1200 Btu/h. Food is TN D-7720 April 1967 plan baseline: 2800 kcal/man/day CM, 3200 kcal/man/day LM, not A11 flown intake (NASA, 1967). Earth parking orbit is 100 nmi planned. One surface EVA: CDR 2:48 / LMP 2:40 (Technical Note D-8093 Table I). Not the Public Affairs Office (PAO) hatch-to-hatch 2:31:40 (NASA, n.d.-f). Transposition, docking, and extraction (TD&E) is about 03:20–04:09 planned, CMP-owned, SM RCS, CM probe / LM drogue + 12 ring latches. The LM stays in the SLA — 8 panels (4 jettison / 4 stay) — until `dockEject` after TLI and before translunar coast. Landing program is P66 flown.
+CM cabin is 5.0 psia 100% O2, carbon dioxide (CO2) ≤ 7.6 torr. The CM spec is 3 crew / 14 d; A11 is 196 h versus 336 h spec. SM holds 640 lb O2, potable 36 lb / waste 56 lb. Lithium hydroxide (LiOH) is 1.5 man-day, swap 12 h. LM-5 descent O2 is about 48 lb — teaching figure 2800 psi; 3000 psi D-6724 is the other text; no required pressure (NASA, 1972, Technical Note D-6724). LM-5 ascent O2 is about 2.4 lb ×2. Water is descent 332 lb and ascent 42 lb ×2. Liquid Cooling Garment (LCG) is 1200 Btu/man-h steady. A7L is 3.75±0.25 psid, extravehicular 19.69 kg. PLSS usable O2 is 1.04 lb / 4 h at 1200 Btu/h. Food is TN D-7720 April 1967 plan baseline: 2800 kcal/man/day CM, 3200 kcal/man/day LM, not A11 flown intake (Smith et al., 1974). Earth parking orbit is 100 nmi planned. One surface EVA: CDR 2:48 / LMP 2:40 (Technical Note D-8093 Table I). Not the Public Affairs Office (PAO) hatch-to-hatch 2:31:40 (Lutz et al., 1975). Transposition, docking, and extraction (TD&E) is about 03:20–04:09 planned, CMP-owned, SM RCS, CM probe / LM drogue + 12 ring latches. The LM stays in the SLA — 8 panels (4 jettison / 4 stay) — until `dockEject` after TLI and before translunar coast. Landing program is P66 flown.
 
 TLI Ground Elapsed Time (GET) has three labels only.
 
 | TLI label | GET | Source |
 |-----------|-----|--------|
 | Planned | 02:44:15 GET | Press Kit (NASA, 1969b) |
-| Planned | 2:44:26 GET | A11-FP (A11-FP, n.d.) |
-| Flown | 02:44:16 GET | MSC-00171 (NASA, n.d.-g) |
+| Planned | 2:44:26 GET | A11-FP (NASA Manned Spacecraft Center, 1969) |
+| Flown | 02:44:16 GET | MSC-00171 (NASA, 1969c) |
 
 Planned LOI-1 is 75:54:28 GET. A11-FP is the **only planned source**. Flown LOI-1 is ~075:49:50 GET (PAD / Mission Report). Two LOI-1 numbers only.
 
@@ -194,30 +194,24 @@ Which cut of the stack is hardest to drop — the two AGCs, the radar split, or 
 
 ## References
 
-A11-FP. (n.d.). *A11-FP*.
+Kurten. (1975, July). *Technical Note D-7990*.
 
-Grumman. (n.d.). *LMA790* (Lunar Module document).
+Lutz et al. (1975, November). *Technical Note D-8093*.
 
-Massachusetts Institute of Technology Instrumentation Laboratory. (n.d.). *Apollo Guidance Computer Information Series 30*.
+NASA Manned Spacecraft Center, Flight Planning Branch. (1969, July 1). *Apollo 11 Flight Plan* (Final).
 
-National Aeronautics and Space Administration. (1967). *Technical Note D-7720*.
-
-National Aeronautics and Space Administration. (1969a). *69-HC-620* [Photograph].
+National Aeronautics and Space Administration. (1969a, May 20). *69-HC-620* [Photograph].
 
 National Aeronautics and Space Administration. (1969b). *Apollo 11 press kit* (69-83K).
 
-National Aeronautics and Space Administration. (n.d.-a). *Technical Note D-7375*.
+National Aeronautics and Space Administration. (1969c, November). *Apollo 11 Mission Report* (MSC-00171).
 
-National Aeronautics and Space Administration. (n.d.-b). *Technical Note D-7143*.
+National Aeronautics and Space Administration. (1972). *Technical Note D-6724*.
 
-National Aeronautics and Space Administration. (n.d.-c). *Technical Note D-7082*.
+National Aeronautics and Space Administration. (1973a, March). *Technical Note D-7082*.
 
-National Aeronautics and Space Administration. (n.d.-d). *TN-7990*.
+National Aeronautics and Space Administration. (1973b, March). *Technical Note D-7143*.
 
-National Aeronautics and Space Administration. (n.d.-e). *Technical Note D-6724*.
+National Aeronautics and Space Administration. (1973c, August). *Technical Note D-7375*.
 
-National Aeronautics and Space Administration. (n.d.-f). *Technical Note D-8093*.
-
-National Aeronautics and Space Administration. (n.d.-g). *MSC-00171*.
-
-National Aeronautics and Space Administration. (n.d.-h). PAD / Mission Report (flown LOI-1).
+Smith et al. (1974, July). *Food Systems* (Technical Note D-7720).

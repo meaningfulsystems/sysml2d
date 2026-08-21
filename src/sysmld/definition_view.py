@@ -27,6 +27,7 @@ class TreeNode:
     style: str
     width: int
     height: int
+    max_siblings_per_row: int | None = None
     children: list["TreeNode"] = field(default_factory=list)
 
 
@@ -157,6 +158,7 @@ def _read_node(raw: dict[str, Any], default_w: int, default_h: int, default_styl
         style=str(raw.get("style", default_style)),
         width=width,
         height=height,
+        max_siblings_per_row=int(raw["max_siblings_per_row"]) if "max_siblings_per_row" in raw else None,
         children=[
             _read_node(child, default_w, default_h, default_style)
             for child in raw.get("children", [])
@@ -202,8 +204,11 @@ def _subtree_width(
         return node.width
     for child in node.children:
         _subtree_width(child, sibling_gap, max_siblings_per_row, widths)
-    rows = _child_rows(node.children, max_siblings_per_row)
-    row_widths = [_row_width(row, sibling_gap, widths, row_index, rows) for row_index, row in enumerate(rows)]
+    rows = _child_rows(node.children, _effective_max(node, max_siblings_per_row))
+    if _later_wrap_needs_stack(rows):
+        row_widths = [_row_base_width(row, sibling_gap, widths) for row in rows]
+    else:
+        row_widths = [_row_width(row, sibling_gap, widths, row_index, rows) for row_index, row in enumerate(rows)]
     widths[node.id] = max(node.width, *row_widths)
     return widths[node.id]
 
@@ -222,18 +227,25 @@ def _place(
     positions[node.id] = (center_x, depth * (node.height + rank_gap))
     if not node.children:
         return
-    rows = _child_rows(node.children, max_siblings_per_row)
+    child_limit = _effective_max(node, max_siblings_per_row)
+    rows = _child_rows(node.children, child_limit)
     row_step = node.height + row_gap
+    stack_rows = _later_wrap_needs_stack(rows)
+    next_depth = depth + 1
     for row_index, row in enumerate(rows):
         row_width = _row_base_width(row, sibling_gap, subtree_widths)
-        cursor = center_x - row_width / 2 + _row_stagger(row, sibling_gap, subtree_widths, row_index, rows)
+        stagger = 0 if stack_rows else _row_stagger(row, sibling_gap, subtree_widths, row_index, rows)
+        cursor = center_x - row_width / 2 + stagger
+        if stack_rows:
+            row_depth = next_depth
+        else:
+            row_depth = depth + 1 + (row_index * row_step / (node.height + rank_gap))
         for child in row:
             child_width = subtree_widths[child.id]
-            child_depth = depth + 1 + (row_index * row_step / (node.height + rank_gap))
             _place(
                 child,
                 cursor + child_width / 2,
-                child_depth,
+                row_depth,
                 sibling_gap,
                 rank_gap,
                 row_gap,
@@ -242,6 +254,32 @@ def _place(
                 positions,
             )
             cursor += child_width + sibling_gap
+        if stack_rows:
+            next_depth = row_depth + max(
+                _placed_depth(child, max_siblings_per_row) for child in row
+            )
+
+
+def _effective_max(node: TreeNode, default: int) -> int:
+    if node.max_siblings_per_row is None:
+        return default
+    return node.max_siblings_per_row
+
+
+def _placed_depth(node: TreeNode, max_siblings_per_row: int) -> int:
+    if not node.children:
+        return 1
+    rows = _child_rows(node.children, _effective_max(node, max_siblings_per_row))
+    if _later_wrap_needs_stack(rows):
+        return 1 + sum(
+            max(_placed_depth(child, max_siblings_per_row) for child in row)
+            for row in rows
+        )
+    return 1 + max(_placed_depth(child, max_siblings_per_row) for child in node.children)
+
+
+def _later_wrap_needs_stack(rows: list[list[TreeNode]]) -> bool:
+    return any(any(child.children for child in row) for row in rows[1:])
 
 
 def _child_rows(children: list[TreeNode], max_siblings_per_row: int) -> list[list[TreeNode]]:
@@ -349,6 +387,7 @@ def _connection(
         direction,
         primary_target,
         child_box=boxes[child.id],
+        parent_box=boxes[parent.id],
     )
     labels = []
     if child.multiplicity:
@@ -418,6 +457,7 @@ def _tree_waypoints(
     direction: str,
     primary_target: tuple[float, float] | None = None,
     child_box: tuple[int, int, int, int] | None = None,
+    parent_box: tuple[int, int, int, int] | None = None,
 ) -> list[dict[str, float]]:
     if direction in {"top-down", "bottom-up"}:
         first_row = primary_target or target
@@ -427,6 +467,18 @@ def _tree_waypoints(
             gap = (target[1] - source[1]) if direction == "top-down" else (source[1] - target[1])
             stub = min(28, max(16, abs(gap) * 0.2))
             bus_y = target[1] - stub if direction == "top-down" else target[1] + stub
+            stacked_later = abs(target[1] - first_row[1]) > 100
+            if stacked_later and parent_box is not None:
+                px, _py, pw, _ph = parent_box
+                down = direction == "top-down"
+                side_x = px - 36 if target[0] <= source[0] else px + pw + 36
+                mid_y = source[1] + stub if down else source[1] - stub
+                return _clean_waypoints([
+                    (source[0], mid_y),
+                    (side_x, mid_y),
+                    (side_x, bus_y),
+                    (target[0], bus_y),
+                ])
         if source[0] == target[0]:
             return [] if not later_row and target[1] == first_row[1] else _clean_waypoints([(source[0], bus_y)])
         return _clean_waypoints([(source[0], bus_y), (target[0], bus_y)])

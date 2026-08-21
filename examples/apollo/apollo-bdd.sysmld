@@ -43,15 +43,18 @@
     "MOCR2": "Apollo11::Ground::MCC::MOCR2",
     "RTCC": "Apollo11::Ground::RTCC",
     "MSFN": "Apollo11::Ground::MSFN",
-    "NASCOM": "Apollo11::Ground::NASCOM"
+    "NASCOM": "Apollo11::Ground::NASCOM",
+    "RSO": "Apollo11::Apollo11::RSO",
+    "recovery": "Apollo11::Apollo11::recovery",
+    "Hornet": "Apollo11::RecoveryForces::Hornet"
   },
   "diagram": {
     "id": "apollo-bdd",
     "kind": "DefinitionView",
     "name": "Apollo 11 System Definition Tree",
     "canvas": {
-      "width": 4170,
-      "height": 652,
+      "width": 2432,
+      "height": 1302,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -63,7 +66,7 @@
         "model_ref": "root",
         "symbol": "part_definition",
         "layout": {
-          "x": 1985,
+          "x": 1116,
           "y": 40,
           "width": 200,
           "height": 52,
@@ -82,7 +85,7 @@
         "model_ref": "SaturnV",
         "symbol": "part_definition",
         "layout": {
-          "x": 593,
+          "x": 356,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -101,7 +104,7 @@
         "model_ref": "SIC",
         "symbol": "part_definition",
         "layout": {
-          "x": 40,
+          "x": 198,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -120,7 +123,7 @@
         "model_ref": "SII",
         "symbol": "part_definition",
         "layout": {
-          "x": 198,
+          "x": 356,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -139,7 +142,7 @@
         "model_ref": "SIVB",
         "symbol": "part_definition",
         "layout": {
-          "x": 356,
+          "x": 514,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -158,8 +161,8 @@
         "model_ref": "IU",
         "symbol": "part_definition",
         "layout": {
-          "x": 672,
-          "y": 300,
+          "x": 198,
+          "y": 430,
           "width": 140,
           "height": 52,
           "z": 10
@@ -177,8 +180,8 @@
         "model_ref": "LVDC",
         "symbol": "part_definition",
         "layout": {
-          "x": 514,
-          "y": 430,
+          "x": 40,
+          "y": 560,
           "width": 140,
           "height": 52,
           "z": 10
@@ -196,8 +199,8 @@
         "model_ref": "ST124",
         "symbol": "part_definition",
         "layout": {
-          "x": 672,
-          "y": 430,
+          "x": 198,
+          "y": 560,
           "width": 140,
           "height": 52,
           "z": 10
@@ -215,8 +218,8 @@
         "model_ref": "FCC",
         "symbol": "part_definition",
         "layout": {
-          "x": 830,
-          "y": 430,
+          "x": 356,
+          "y": 560,
           "width": 140,
           "height": 52,
           "z": 10
@@ -234,8 +237,8 @@
         "model_ref": "SLA",
         "symbol": "part_definition",
         "layout": {
-          "x": 988,
-          "y": 300,
+          "x": 514,
+          "y": 430,
           "width": 140,
           "height": 52,
           "z": 10
@@ -253,8 +256,8 @@
         "model_ref": "LES",
         "symbol": "part_definition",
         "layout": {
-          "x": 1146,
-          "y": 300,
+          "x": 672,
+          "y": 430,
           "width": 140,
           "height": 52,
           "z": 10
@@ -272,7 +275,7 @@
         "model_ref": "CSM",
         "symbol": "part_definition",
         "layout": {
-          "x": 1541,
+          "x": 1067,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -291,7 +294,7 @@
         "model_ref": "CM",
         "symbol": "part_definition",
         "layout": {
-          "x": 1383,
+          "x": 909,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -310,7 +313,7 @@
         "model_ref": "AGC_CM",
         "symbol": "part_definition",
         "layout": {
-          "x": 1304,
+          "x": 830,
           "y": 430,
           "width": 140,
           "height": 52,
@@ -329,7 +332,7 @@
         "model_ref": "SCS",
         "symbol": "part_definition",
         "layout": {
-          "x": 1462,
+          "x": 988,
           "y": 430,
           "width": 140,
           "height": 52,
@@ -348,7 +351,7 @@
         "model_ref": "SM",
         "symbol": "part_definition",
         "layout": {
-          "x": 1699,
+          "x": 1225,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -367,7 +370,7 @@
         "model_ref": "SPS",
         "symbol": "part_definition",
         "layout": {
-          "x": 1620,
+          "x": 1146,
           "y": 430,
           "width": 140,
           "height": 52,
@@ -386,7 +389,7 @@
         "model_ref": "FC",
         "symbol": "part_definition",
         "layout": {
-          "x": 1778,
+          "x": 1304,
           "y": 430,
           "width": 140,
           "height": 52,
@@ -405,7 +408,7 @@
         "model_ref": "LM",
         "symbol": "part_definition",
         "layout": {
-          "x": 2331,
+          "x": 1857,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -424,7 +427,7 @@
         "model_ref": "descent",
         "symbol": "part_definition",
         "layout": {
-          "x": 1936,
+          "x": 1462,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -443,7 +446,7 @@
         "model_ref": "ascent",
         "symbol": "part_definition",
         "layout": {
-          "x": 2410,
+          "x": 1936,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -462,7 +465,7 @@
         "model_ref": "PNGS",
         "symbol": "part_definition",
         "layout": {
-          "x": 2094,
+          "x": 1620,
           "y": 430,
           "width": 140,
           "height": 52,
@@ -481,7 +484,7 @@
         "model_ref": "AGC_LM",
         "symbol": "part_definition",
         "layout": {
-          "x": 2252,
+          "x": 1778,
           "y": 430,
           "width": 140,
           "height": 52,
@@ -500,7 +503,7 @@
         "model_ref": "AGS",
         "symbol": "part_definition",
         "layout": {
-          "x": 2568,
+          "x": 2094,
           "y": 430,
           "width": 140,
           "height": 52,
@@ -519,7 +522,7 @@
         "model_ref": "AEA",
         "symbol": "part_definition",
         "layout": {
-          "x": 2410,
+          "x": 1936,
           "y": 560,
           "width": 140,
           "height": 52,
@@ -538,7 +541,7 @@
         "model_ref": "ASA",
         "symbol": "part_definition",
         "layout": {
-          "x": 2568,
+          "x": 2094,
           "y": 560,
           "width": 140,
           "height": 52,
@@ -557,7 +560,7 @@
         "model_ref": "DEDA",
         "symbol": "part_definition",
         "layout": {
-          "x": 2726,
+          "x": 2252,
           "y": 560,
           "width": 140,
           "height": 52,
@@ -576,8 +579,8 @@
         "model_ref": "Crew",
         "symbol": "part_definition",
         "layout": {
-          "x": 3042,
-          "y": 170,
+          "x": 830,
+          "y": 690,
           "width": 140,
           "height": 52,
           "z": 10
@@ -595,8 +598,8 @@
         "model_ref": "CDR",
         "symbol": "part_definition",
         "layout": {
-          "x": 2884,
-          "y": 300,
+          "x": 672,
+          "y": 820,
           "width": 140,
           "height": 52,
           "z": 10
@@ -614,8 +617,8 @@
         "model_ref": "CMP",
         "symbol": "part_definition",
         "layout": {
-          "x": 3042,
-          "y": 300,
+          "x": 830,
+          "y": 820,
           "width": 140,
           "height": 52,
           "z": 10
@@ -633,8 +636,8 @@
         "model_ref": "LMP",
         "symbol": "part_definition",
         "layout": {
-          "x": 3200,
-          "y": 300,
+          "x": 988,
+          "y": 820,
           "width": 140,
           "height": 52,
           "z": 10
@@ -652,8 +655,8 @@
         "model_ref": "Ground",
         "symbol": "part_definition",
         "layout": {
-          "x": 3674,
-          "y": 170,
+          "x": 1304,
+          "y": 690,
           "width": 140,
           "height": 52,
           "z": 10
@@ -671,8 +674,8 @@
         "model_ref": "KSC_LCC",
         "symbol": "part_definition",
         "layout": {
-          "x": 3358,
-          "y": 300,
+          "x": 1146,
+          "y": 820,
           "width": 140,
           "height": 52,
           "z": 10
@@ -690,8 +693,8 @@
         "model_ref": "MCC",
         "symbol": "part_definition",
         "layout": {
-          "x": 3516,
-          "y": 300,
+          "x": 1304,
+          "y": 820,
           "width": 140,
           "height": 52,
           "z": 10
@@ -709,8 +712,8 @@
         "model_ref": "MOCR2",
         "symbol": "part_definition",
         "layout": {
-          "x": 3516,
-          "y": 430,
+          "x": 1304,
+          "y": 950,
           "width": 140,
           "height": 52,
           "z": 10
@@ -728,8 +731,8 @@
         "model_ref": "RTCC",
         "symbol": "part_definition",
         "layout": {
-          "x": 3674,
-          "y": 300,
+          "x": 1462,
+          "y": 820,
           "width": 140,
           "height": 52,
           "z": 10
@@ -747,8 +750,8 @@
         "model_ref": "MSFN",
         "symbol": "part_definition",
         "layout": {
-          "x": 3832,
-          "y": 300,
+          "x": 1225,
+          "y": 900,
           "width": 140,
           "height": 52,
           "z": 10
@@ -766,13 +769,70 @@
         "model_ref": "NASCOM",
         "symbol": "part_definition",
         "layout": {
-          "x": 3990,
-          "y": 300,
+          "x": 1383,
+          "y": 900,
           "width": 140,
           "height": 52,
           "z": 10
         },
         "label": "NASCOM",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "RSO",
+        "model_ref": "RSO",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1620,
+          "y": 690,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "RSO",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "recovery",
+        "model_ref": "recovery",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1146,
+          "y": 1080,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "recovery",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "Hornet",
+        "model_ref": "Hornet",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1146,
+          "y": 1210,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "Hornet",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -803,11 +863,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2085,
+              "x": 1216,
               "y": 131
             },
             {
-              "x": 663,
+              "x": 426,
               "y": 131
             }
           ]
@@ -846,11 +906,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2085,
+              "x": 1216,
               "y": 131
             },
             {
-              "x": 1611,
+              "x": 1137,
               "y": 131
             }
           ]
@@ -889,11 +949,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2085,
+              "x": 1216,
               "y": 131
             },
             {
-              "x": 2401,
+              "x": 1927,
               "y": 131
             }
           ]
@@ -932,12 +992,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2085,
-              "y": 131
+              "x": 1216,
+              "y": 120
             },
             {
-              "x": 3112,
-              "y": 131
+              "x": 1080,
+              "y": 120
+            },
+            {
+              "x": 1080,
+              "y": 662
+            },
+            {
+              "x": 900,
+              "y": 662
             }
           ]
         },
@@ -945,8 +1013,8 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
-              "offset": 0.82,
+              "segment": 4,
+              "offset": 0.94,
               "dx": 10,
               "dy": -4
             }
@@ -975,12 +1043,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2085,
-              "y": 131
+              "x": 1216,
+              "y": 120
             },
             {
-              "x": 3744,
-              "y": 131
+              "x": 1352,
+              "y": 120
+            },
+            {
+              "x": 1352,
+              "y": 662
+            },
+            {
+              "x": 1374,
+              "y": 662
             }
           ]
         },
@@ -988,8 +1064,110 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
-              "offset": 0.82,
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-apollo-RSO",
+        "model_ref": "RSO",
+        "source": {
+          "element": "apollo",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RSO",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1216,
+              "y": 120
+            },
+            {
+              "x": 1352,
+              "y": 120
+            },
+            {
+              "x": 1352,
+              "y": 662
+            },
+            {
+              "x": 1690,
+              "y": 662
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-apollo-recovery",
+        "model_ref": "recovery",
+        "source": {
+          "element": "apollo",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "recovery",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1216,
+              "y": 120
+            },
+            {
+              "x": 1080,
+              "y": 120
+            },
+            {
+              "x": 1080,
+              "y": 1052
+            },
+            {
+              "x": 1216,
+              "y": 1052
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
+              "offset": 0.94,
               "dx": 10,
               "dy": -4
             }
@@ -1018,11 +1196,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 663,
+              "x": 426,
               "y": 261
             },
             {
-              "x": 110,
+              "x": 268,
               "y": 261
             }
           ]
@@ -1059,22 +1237,13 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 663,
-              "y": 261
-            },
-            {
-              "x": 268,
-              "y": 261
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 0,
               "offset": 0.82,
               "dx": 10,
               "dy": -4
@@ -1104,11 +1273,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 663,
+              "x": 426,
               "y": 261
             },
             {
-              "x": 426,
+              "x": 584,
               "y": 261
             }
           ]
@@ -1147,12 +1316,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 663,
-              "y": 261
+              "x": 426,
+              "y": 250
             },
             {
-              "x": 742,
-              "y": 261
+              "x": 320,
+              "y": 250
+            },
+            {
+              "x": 320,
+              "y": 402
+            },
+            {
+              "x": 268,
+              "y": 402
             }
           ]
         },
@@ -1160,8 +1337,8 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
-              "offset": 0.82,
+              "segment": 4,
+              "offset": 0.94,
               "dx": 10,
               "dy": -4
             }
@@ -1190,12 +1367,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 663,
-              "y": 261
+              "x": 426,
+              "y": 250
             },
             {
-              "x": 1058,
-              "y": 261
+              "x": 532,
+              "y": 250
+            },
+            {
+              "x": 532,
+              "y": 402
+            },
+            {
+              "x": 584,
+              "y": 402
             }
           ]
         },
@@ -1203,8 +1388,8 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
-              "offset": 0.82,
+              "segment": 4,
+              "offset": 0.94,
               "dx": 10,
               "dy": -4
             }
@@ -1233,12 +1418,20 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 663,
-              "y": 261
+              "x": 426,
+              "y": 250
             },
             {
-              "x": 1216,
-              "y": 261
+              "x": 532,
+              "y": 250
+            },
+            {
+              "x": 532,
+              "y": 402
+            },
+            {
+              "x": 742,
+              "y": 402
             }
           ]
         },
@@ -1246,8 +1439,8 @@
           {
             "text": "1",
             "position": {
-              "segment": 2,
-              "offset": 0.82,
+              "segment": 4,
+              "offset": 0.94,
               "dx": 10,
               "dy": -4
             }
@@ -1276,12 +1469,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 742,
-              "y": 391
+              "x": 268,
+              "y": 521
             },
             {
-              "x": 584,
-              "y": 391
+              "x": 110,
+              "y": 521
             }
           ]
         },
@@ -1353,12 +1546,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 742,
-              "y": 391
+              "x": 268,
+              "y": 521
             },
             {
-              "x": 900,
-              "y": 391
+              "x": 426,
+              "y": 521
             }
           ]
         },
@@ -1396,11 +1589,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1611,
+              "x": 1137,
               "y": 261
             },
             {
-              "x": 1453,
+              "x": 979,
               "y": 261
             }
           ]
@@ -1439,11 +1632,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1611,
+              "x": 1137,
               "y": 261
             },
             {
-              "x": 1769,
+              "x": 1295,
               "y": 261
             }
           ]
@@ -1482,11 +1675,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1453,
+              "x": 979,
               "y": 391
             },
             {
-              "x": 1374,
+              "x": 900,
               "y": 391
             }
           ]
@@ -1525,11 +1718,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1453,
+              "x": 979,
               "y": 391
             },
             {
-              "x": 1532,
+              "x": 1058,
               "y": 391
             }
           ]
@@ -1568,11 +1761,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1769,
+              "x": 1295,
               "y": 391
             },
             {
-              "x": 1690,
+              "x": 1216,
               "y": 391
             }
           ]
@@ -1611,11 +1804,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1769,
+              "x": 1295,
               "y": 391
             },
             {
-              "x": 1848,
+              "x": 1374,
               "y": 391
             }
           ]
@@ -1654,11 +1847,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2401,
+              "x": 1927,
               "y": 261
             },
             {
-              "x": 2006,
+              "x": 1532,
               "y": 261
             }
           ]
@@ -1697,11 +1890,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2401,
+              "x": 1927,
               "y": 261
             },
             {
-              "x": 2480,
+              "x": 2006,
               "y": 261
             }
           ]
@@ -1740,11 +1933,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2480,
+              "x": 2006,
               "y": 391
             },
             {
-              "x": 2164,
+              "x": 1690,
               "y": 391
             }
           ]
@@ -1783,11 +1976,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2480,
+              "x": 2006,
               "y": 391
             },
             {
-              "x": 2322,
+              "x": 1848,
               "y": 391
             }
           ]
@@ -1826,11 +2019,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2480,
+              "x": 2006,
               "y": 391
             },
             {
-              "x": 2638,
+              "x": 2164,
               "y": 391
             }
           ]
@@ -1869,11 +2062,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2638,
+              "x": 2164,
               "y": 521
             },
             {
-              "x": 2480,
+              "x": 2006,
               "y": 521
             }
           ]
@@ -1946,11 +2139,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2638,
+              "x": 2164,
               "y": 521
             },
             {
-              "x": 2796,
+              "x": 2322,
               "y": 521
             }
           ]
@@ -1989,12 +2182,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 3112,
-              "y": 261
+              "x": 900,
+              "y": 781
             },
             {
-              "x": 2954,
-              "y": 261
+              "x": 742,
+              "y": 781
             }
           ]
         },
@@ -2066,12 +2259,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 3112,
-              "y": 261
+              "x": 900,
+              "y": 781
             },
             {
-              "x": 3270,
-              "y": 261
+              "x": 1058,
+              "y": 781
             }
           ]
         },
@@ -2109,12 +2302,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 3744,
-              "y": 261
+              "x": 1374,
+              "y": 781
             },
             {
-              "x": 3428,
-              "y": 261
+              "x": 1216,
+              "y": 781
             }
           ]
         },
@@ -2150,22 +2343,13 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 3744,
-              "y": 261
-            },
-            {
-              "x": 3586,
-              "y": 261
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "1",
             "position": {
-              "segment": 2,
+              "segment": 0,
               "offset": 0.82,
               "dx": 10,
               "dy": -4
@@ -2193,13 +2377,22 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 1374,
+              "y": 781
+            },
+            {
+              "x": 1532,
+              "y": 781
+            }
+          ]
         },
         "labels": [
           {
             "text": "1",
             "position": {
-              "segment": 0,
+              "segment": 2,
               "offset": 0.82,
               "dx": 10,
               "dy": -4
@@ -2229,12 +2422,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 3744,
-              "y": 261
+              "x": 1374,
+              "y": 872
             },
             {
-              "x": 3902,
-              "y": 261
+              "x": 1295,
+              "y": 872
             }
           ]
         },
@@ -2243,7 +2436,7 @@
             "text": "1",
             "position": {
               "segment": 2,
-              "offset": 0.82,
+              "offset": 0.94,
               "dx": 10,
               "dy": -4
             }
@@ -2272,12 +2465,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 3744,
-              "y": 261
+              "x": 1374,
+              "y": 872
             },
             {
-              "x": 4060,
-              "y": 261
+              "x": 1453,
+              "y": 872
             }
           ]
         },
@@ -2286,7 +2479,7 @@
             "text": "1",
             "position": {
               "segment": 2,
-              "offset": 0.82,
+              "offset": 0.94,
               "dx": 10,
               "dy": -4
             }
@@ -2306,6 +2499,40 @@
         },
         "target": {
           "element": "MOCR2",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-recovery-Hornet",
+        "model_ref": "Hornet",
+        "source": {
+          "element": "recovery",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Hornet",
           "anchor": {
             "side": "top",
             "offset": 0.5

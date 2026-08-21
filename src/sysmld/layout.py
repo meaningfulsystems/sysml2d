@@ -37,6 +37,8 @@ def compute(
     margin:    int  = 80,    # canvas edge → nearest node centre
     rank_wrap: str | None = None,
     target_aspect: float = 1.618,
+    fixed_ranks: dict[str, int] | None = None,
+    fixed_order: dict[str, int] | None = None,
 ) -> LayoutResult:
     """Run Sugiyama layout and return a LayoutResult."""
 
@@ -49,15 +51,18 @@ def compute(
             adj[s].add(t)
             in_count[t] += 1
 
-    rank: dict[str, int] = {n: 0 for n in nids}
-    queue: deque[str] = deque(n for n in sorted(nids) if in_count[n] == 0)
-    while queue:
-        n = queue.popleft()
-        for nbr in sorted(adj[n]):
-            rank[nbr] = max(rank[nbr], rank[n] + 1)
-            in_count[nbr] -= 1
-            if in_count[nbr] == 0:
-                queue.append(nbr)
+    if fixed_ranks:
+        rank = {n: int(fixed_ranks.get(n, 0)) for n in nids}
+    else:
+        rank = {n: 0 for n in nids}
+        queue: deque[str] = deque(n for n in sorted(nids) if in_count[n] == 0)
+        while queue:
+            n = queue.popleft()
+            for nbr in sorted(adj[n]):
+                rank[nbr] = max(rank[nbr], rank[n] + 1)
+                in_count[nbr] -= 1
+                if in_count[nbr] == 0:
+                    queue.append(nbr)
 
     # ── 2. Within-rank ordering (barycenter, always rank-0-first) ─────────
     # Do NOT flip rank numbers before this step — barycenter needs
@@ -74,7 +79,9 @@ def compute(
     pos_in_rank: dict[str, int] = {}
     for r in sorted(rank_groups):
         grp = rank_groups[r]
-        if r == 0:
+        if fixed_order is not None:
+            grp.sort(key=lambda n: (fixed_order.get(n, 0), n))
+        elif r == 0:
             grp.sort()
         else:
             def _bary(n: str, _p=preds, _pos=pos_in_rank) -> float:

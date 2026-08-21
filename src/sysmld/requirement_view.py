@@ -34,17 +34,38 @@ def requirement(spec: dict[str, Any]) -> dict[str, Any]:
     for root in roots:
         _subtree_width(root, children, sizes, sibling_gap, subtree_widths)
 
-    positions: dict[str, tuple[float, int]] = {}
-    cursor = 0.0
+    max_per_row = spec.get("max_per_row")
+    rank_groups: dict[int, list[str]] = defaultdict(list)
     for root in roots:
-        width = subtree_widths[root]
-        _place_tree(root, cursor + width / 2, 0, children, sizes, sibling_gap, rank_gap, subtree_widths, positions)
-        cursor += width + sibling_gap
+        rank_groups[int(nodes[root].get("rank", 0))].append(root)
+
+    visual_rows: list[list[str]] = []
+    for rank in sorted(rank_groups):
+        group = rank_groups[rank]
+        if max_per_row:
+            limit = max(1, int(max_per_row))
+            for start in range(0, len(group), limit):
+                visual_rows.append(group[start:start + limit])
+        else:
+            visual_rows.append(group)
+
+    positions: dict[str, tuple[float, int]] = {}
+    depth = 0
+    for row in visual_rows:
+        cursor = 0.0
+        extra = 0
+        for root in row:
+            width = subtree_widths[root]
+            _place_tree(root, cursor + width / 2, depth, children, sizes, sibling_gap, rank_gap, subtree_widths, positions)
+            cursor += width + sibling_gap
+            extra = max(extra, _tree_depth(root, children) - 1)
+        depth += 1 + extra
+    leftover_cursor = 0.0
     for node_id in nids:
         if node_id not in positions:
             width = subtree_widths.get(node_id, sizes[node_id][0])
-            _place_tree(node_id, cursor + width / 2, 0, children, sizes, sibling_gap, rank_gap, subtree_widths, positions)
-            cursor += width + sibling_gap
+            _place_tree(node_id, leftover_cursor + width / 2, depth, children, sizes, sibling_gap, rank_gap, subtree_widths, positions)
+            leftover_cursor += width + sibling_gap
 
     boxes = {
         node_id: (
@@ -175,6 +196,13 @@ def _subtree_width(
     ]
     widths[node_id] = max(sizes[node_id][0], sum(child_widths) + sibling_gap * (len(child_widths) - 1))
     return widths[node_id]
+
+
+def _tree_depth(node_id: str, children: dict[str, list[str]]) -> int:
+    child_ids = children.get(node_id, [])
+    if not child_ids:
+        return 1
+    return 1 + max(_tree_depth(child_id, children) for child_id in child_ids)
 
 
 def _place_tree(

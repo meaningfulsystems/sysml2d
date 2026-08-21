@@ -78,6 +78,45 @@ class TreeComposerTests(unittest.TestCase):
         second_row_label = connections["conn-root-child-4"]["labels"][0]["position"]
         self.assertGreater(second_row_label["offset"], 0.9)
 
+    def test_wrapped_rows_with_grandchildren_do_not_overlap(self):
+        doc = compose_tree({
+            "diagram": "stacked-tree",
+            "kind": "DefinitionView",
+            "name": "Stacked Tree",
+            "max_siblings_per_row": 2,
+            "default_w": 80,
+            "default_h": 40,
+            "rank_gap": 40,
+            "row_gap": 16,
+            "roots": [
+                {
+                    "id": "root",
+                    "children": [
+                        {"id": "left", "children": [{"id": "left-a"}, {"id": "left-b"}]},
+                        {"id": "right", "children": [{"id": "right-a"}]},
+                        {"id": "tail", "children": [{"id": "tail-a"}]},
+                    ],
+                }
+            ],
+        })
+        boxes = {
+            element["id"]: element["layout"]
+            for element in doc["diagram"]["elements"]
+        }
+        self.assertLess(boxes["left"]["y"] + boxes["left"]["height"], boxes["tail"]["y"])
+        ids = list(boxes)
+        for index, first in enumerate(ids):
+            a = boxes[first]
+            for second in ids[index + 1:]:
+                b = boxes[second]
+                overlap = (
+                    a["x"] < b["x"] + b["width"] - 1
+                    and b["x"] < a["x"] + a["width"] - 1
+                    and a["y"] < b["y"] + b["height"] - 1
+                    and b["y"] < a["y"] + a["height"] - 1
+                )
+                self.assertFalse(overlap, f"{first} overlaps {second}")
+
     def test_tree_connections_use_part_refs_and_multiplicity_labels(self):
         doc = compose_tree({
             "diagram": "parts",

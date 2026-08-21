@@ -612,9 +612,12 @@ def _node_boxes(
             cursor += max_primary + rank_gap
         for rank in sorted(rank_groups):
             group = rank_groups[rank]
+            orders = [int(nodes[node_id].get("order", index)) for index, node_id in enumerate(group)]
+            span = max(orders) - min(orders) + 1 if orders else 0
+            use_order_slots = len(set(orders)) == len(orders) and span > len(orders)
             for index, node_id in enumerate(group):
                 w, h = sizes[node_id]
-                slot = index * row_pitch
+                slot = (orders[index] if use_order_slots else index) * row_pitch
                 if vertical:
                     x = slot + (row_pitch - col_gap - w) / 2
                     y = primary_by_rank[rank]
