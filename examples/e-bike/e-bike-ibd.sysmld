@@ -65,7 +65,7 @@
     "kind": "InterconnectionView",
     "name": "Electric Bike Interconnection",
     "canvas": {
-      "width": 1544,
+      "width": 1571,
       "height": 637,
       "background": "#FFFFFF"
     },
@@ -80,7 +80,7 @@
         "layout": {
           "x": 40,
           "y": 40,
-          "width": 1464,
+          "width": 1491,
           "height": 557,
           "z": 0
         },
@@ -96,7 +96,7 @@
         "model_ref": "humanInterface",
         "symbol": "part_usage",
         "layout": {
-          "x": 483,
+          "x": 487,
           "y": 279,
           "width": 170,
           "height": 78,
@@ -115,7 +115,7 @@
         "model_ref": "brakeSystem",
         "symbol": "part_usage",
         "layout": {
-          "x": 483,
+          "x": 487,
           "y": 422,
           "width": 170,
           "height": 78,
@@ -134,7 +134,7 @@
         "model_ref": "batteryPack",
         "symbol": "part_usage",
         "layout": {
-          "x": 483,
+          "x": 487,
           "y": 137,
           "width": 170,
           "height": 78,
@@ -153,7 +153,7 @@
         "model_ref": "motorController",
         "symbol": "part_usage",
         "layout": {
-          "x": 891,
+          "x": 898,
           "y": 279,
           "width": 170,
           "height": 78,
@@ -172,13 +172,13 @@
         "model_ref": "hubMotor",
         "symbol": "part_usage",
         "layout": {
-          "x": 1298,
+          "x": 1293,
           "y": 275,
-          "width": 170,
+          "width": 202,
           "height": 86,
           "z": 10
         },
-        "label": "Rear Geared Hub\n250 W \u00b7 40 N\u00b7m\nregen none",
+        "label": "Rear Geared Hub\n250 W cont. (EU)\n40 N\u00b7m peak \u00b7 regen none",
         "compartments": {
           "attributes": false,
           "ports": true,
@@ -571,11 +571,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 317.25,
+              "x": 318.25,
               "y": 369.5
             },
             {
-              "x": 317.25,
+              "x": 318.25,
               "y": 189.003
             }
           ]
@@ -611,11 +611,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 364.5,
+              "x": 366.5,
               "y": 389
             },
             {
-              "x": 364.5,
+              "x": 366.5,
               "y": 331.003
             }
           ]
@@ -651,11 +651,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 411.75,
+              "x": 414.75,
               "y": 408.5
             },
             {
-              "x": 411.75,
+              "x": 414.75,
               "y": 461
             }
           ]
@@ -691,11 +691,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 724.5,
+              "x": 729.25,
               "y": 176
             },
             {
-              "x": 724.5,
+              "x": 729.25,
               "y": 292.003
             }
           ]
@@ -793,11 +793,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 819.5,
+              "x": 825.75,
               "y": 461
             },
             {
-              "x": 819.5,
+              "x": 825.75,
               "y": 331.003
             }
           ]
@@ -873,11 +873,11 @@
               "y": 215.5
             },
             {
-              "x": 863,
+              "x": 870,
               "y": 215.5
             },
             {
-              "x": 863,
+              "x": 870,
               "y": 304.997
             }
           ]
@@ -925,11 +925,11 @@
               "y": 381
             },
             {
-              "x": 677,
+              "x": 681,
               "y": 381
             },
             {
-              "x": 677,
+              "x": 681,
               "y": 343.997
             }
           ]

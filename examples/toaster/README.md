@@ -1,5 +1,7 @@
 # Toaster Examples
 
+Architecture walkthrough: [toaster-architecture-summary.md](toaster-architecture-summary.md).
+
 This folder contains a complete toaster model and generated SysMLD views for the current view vocabulary.
 
 ## Primary Inputs

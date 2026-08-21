@@ -65,11 +65,17 @@ The same idea — models, diagrams, and history as text — also drives the pair
 
 ## Examples
 
-**Electric bike interconnection** — the hero IBD (`sysmld interconnection`). Connections must never pass over boxes.
+**Electric bike** is the small hero: a street-legal EPAC (EN 15194) with all 15 view kinds plus an operating-context view. Cadence PAS, 25 km/h cutoff, EU continuous 250 W, hub peak torque 40 N·m (not a continuous pair). Connections must never pass over boxes.
 
 ![Electric Bike Interconnection](examples/e-bike/e-bike-ibd.svg)
 
-See all 15 view kinds in [examples/e-bike/](examples/e-bike/). Full-stack [Apollo 11](examples/apollo/) (AS-506 / Block II). Appliance extras: [toaster](examples/toaster), [blender](examples/blender).
+Model and compose commands: [examples/e-bike/](examples/e-bike/). View walkthrough: [e-bike architecture summary](examples/e-bike/e-bike-architecture-summary.md).
+
+**Apollo 11** is the full-stack example. The reference instance is Apollo 11 / AS-506 / Block II: Saturn V through CSM and LM, crew, KSC, MCC (MOCR 2), and MSFN. System views sit beside subsystem views for CSM/LM, AGC/GNC, ground, EPS, RCS, docking, and the mission and abort state machines. Figures are sourced; values without a source stay UNKNOWN.
+
+Model and compose commands: [examples/apollo/](examples/apollo/). View walkthrough: [Apollo architecture summary](examples/apollo/apollo-architecture-summary.md).
+
+Appliance extras: [toaster](examples/toaster/) ([summary](examples/toaster/toaster-architecture-summary.md)), [blender](examples/blender/) ([summary](examples/blender/blender-architecture-summary.md)).
 
 ## Quick Start
 
@@ -166,8 +172,8 @@ src/sysmld/              Python package — view composers, layout engine, rende
 schemas/                 SysMLD JSON Schema (authoritative for .sysmld document shape)
 examples/toaster/        Toaster appliance model and all diagram examples
 examples/blender/        Blender appliance model and all diagram examples
-examples/e-bike/         Electric-bike model covering all 15 view kinds
-examples/apollo/         Apollo 11 / Block II whole-stack example (sourced; UNKNOWN marked)
+examples/e-bike/         EPAC hero example (all 15 views + architecture summary)
+examples/apollo/         Apollo 11 / AS-506 / Block II full-stack example + architecture summary
 templates/new-project/   Copy-this starter (model stub + IBD + STM intents)
 skills/                  Installable agent skills plus leftover one-shot prompts
 AGENTS.md                How an agent should work in this repo

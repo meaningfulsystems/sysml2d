@@ -1,23 +1,24 @@
-# Electric Bike Examples
+# Electric Bike
 
-EPAC (EN 15194) street-legal class: cadence PAS, no certified throttle, 25 km/h cutoff. Rear geared hub (`peakPower` 250 W, `wheelTorque` 40 N·m, regen none). Charge path is charger → bms → pack. BMS lives inside the battery pack (UL 2849).
+Architecture walkthrough: [e-bike-architecture-summary.md](e-bike-architecture-summary.md).
 
-- `e-bike.sysml` is the SysML v2 model. ElectricBike qualified names are frozen.
+Street-legal EPAC (EN 15194): cadence PAS, no certified throttle, 25 km/h cutoff, walk assist ≤ 6 km/h. Rear geared hub, no regeneration. **250 W is the EU continuous rating.** **40 N·m is hub peak torque, not continuous** — it does not sit with 250 W at 25 km/h as a continuous operating point. Charge path is charger → BMS → pack.
+
+- `e-bike.sysml` is the SysML v2 model.
 - `*.json` files are deterministic composer intent files.
 - `*.sysmld` files are generated diagram layouts.
 - `*.svg` files are rendered output.
 
-Review bindings (do not treat a first-diagram slogan as truth):
+Bindings used in the views:
 
-- Tour 60 km binds `usableWh` (500 Wh) and `energyPerKm` (~8.3 Wh/km), not Eco / PAS-1.
-- 50 ms brake inhibit is the electronic order. EN 15194 also carries the 5 m / 2 m distance cutoff.
-- `allocateChargeToBms` targets `BatteryPack::bms`, not the pack box.
-- Ride safety allocates to brakes, controller, cadenceSensor, wheelSpeedSensor, and BMS. Assist Limit also allocates to wheelSpeedSensor — cadence-only cannot enforce 25 km/h.
-- `lockBikeUseCase` is deleted (commercial, not EN 15194).
+- Tour 60 km uses `usableWh` (500 Wh) and `energyPerKm` (~8.3 Wh/km), not Eco / PAS-1.
+- 50 ms brake inhibit is the electronic order. EN 15194 also has the 5 m / 2 m distance cutoff.
+- Charge safety is allocated to `BatteryPack::bms`.
+- Ride safety and assist limit allocate to brakes, controller, cadence sensor, wheel-speed sensor, and BMS. Cadence alone cannot enforce 25 km/h.
 - Lighting is StVZO / ISO 6742, not UN ECE R113.
-- RideControl state `walk` (`do / <= 6 km/h`) is a real EPAC feature, not a throttle. `resetFault` is Fault→Off (not Standby). Charging is Off→Charging only. RiderInterface carries `PedalCadence` and `WalkAssistCommand`. `ThrottleCommand` remains unused.
-- `energyBalance` binds pack energy only. Rider watts are a different source (`riderInputBalance`).
-- Ports live on the child parts (`frame`, `batteryPack`, `motorController`, `hubMotor`, `humanInterface`, `brakeSystem`, `bms`). The parent IBD connects those child ports.
+- RideControl `walk` is `do / ≤ 6 km/h`. Fault reset returns to Off. Charging is entered only from Off.
+- `energyBalance` is pack energy only. Rider watts use `riderInputBalance`.
+- Ports live on child parts. The parent interconnection view connects those ports.
 
 ```bash
 sysmld definition      examples/e-bike/e-bike-bdd.json

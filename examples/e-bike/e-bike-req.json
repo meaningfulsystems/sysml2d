@@ -57,7 +57,7 @@
       "order": 4
     },
     "continuousPowerRequirement": {
-      "label": "\u00abrequirement\u00bb\nREQ-E-014 Continuous Power\nAssist <= 250 W continuous.",
+      "label": "\u00abrequirement\u00bb\nREQ-E-014 Continuous Power\nEU 250 W continuous (EN 15194).\nNot hub peak torque 40 N\u00b7m.",
       "rank": 1,
       "order": 5
     },

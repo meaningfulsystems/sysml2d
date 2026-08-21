@@ -48,8 +48,8 @@ package ElectricBike {
         port sensorIn : ControlPort;
     }
     part def HubMotor {
-        doc /* Rear geared hub. No regenerative braking. peakPower 250 W; wheelTorque 40 N·m; regen none. */
-        attribute peakPower;
+        doc /* Rear geared hub. No regenerative braking. regen none. EU continuous rating 250 W (EN 15194). Hub peak torque 40 N·m — not continuous; 40 N·m does not sit with 250 W at 25 km/h as a continuous operating point. */
+        attribute continuousPower;
         attribute wheelTorque;
         port mountIn : MechanicalPort;
         port driveIn : DrivePort;
@@ -192,7 +192,7 @@ package ElectricBike {
     requirement rangeRequirement            { doc /* Tour-mode scenario only: usableWh 500 Wh / energyPerKm ~8.3 Wh/km ≥ 60 km. Not Eco / PAS-1; undemonstrated unless this scenario is bound. */ }
     requirement assistLimitRequirement      { doc /* EPAC (EN 15194): cadence PAS only, no certified throttle. Assist shall cut off at 25 km/h — enforced by wheelSpeedSensor; cadence-only cannot enforce 25 km/h. Walk assist ≤ 6 km/h is a real EPAC feature, not a throttle. */ }
     requirement walkAssistRequirement       { doc /* EPAC walk assist shall not exceed 6 km/h. Walk assist is not a throttle. */ }
-    requirement continuousPowerRequirement  { doc /* Continuous assist shall not exceed 250 W. */ }
+    requirement continuousPowerRequirement  { doc /* EU continuous rating: assist shall not exceed 250 W (EN 15194). Distinct from hub peak torque 40 N·m. */ }
     requirement chargeSafetyRequirement     { doc /* Charging shall stop on over-temperature, over-voltage, or charger disconnect. UL 2849: the BMS inside the pack opens the contactor. */ }
     requirement brakeOverrideRequirement    { doc /* Electronic inhibit shall assert within 50 ms of either brake lever. This is ~10x tighter than the EN 15194 distance test. */ }
     requirement en15194DistanceRequirement  { doc /* EN 15194 distance cutoff: assistance shall cease within 5 m after pedaling stops, and within 2 m where that tighter clause applies. */ }

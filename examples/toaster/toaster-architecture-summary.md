@@ -80,6 +80,6 @@ The package view organizes the model into structure, behavior, requirements, ana
 
 ![Toaster Cross-View Trace](toaster-general.svg)
 
-## Feedback Disposition
+## Scope
 
-The Grok review recommended quantitative requirements, richer fault handling, context, and stronger thermal/safety emphasis. Those were implemented in the requirement view, constraint view, state machine, and context view. Product-line variants such as 4-slice, bagel, defrost, and wide-slot versions are not modeled yet; they are intentionally deferred because this example is a reference architecture for one 2-slice baseline, not a product-line model.
+Product-line variants such as 4-slice, bagel, defrost, and wide-slot versions are not modeled. This example is a reference architecture for one 2-slice baseline, not a product line.

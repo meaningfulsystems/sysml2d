@@ -62,7 +62,7 @@
       "order": 3
     },
     "continuousPowerW": {
-      "label": "continuous\n250 W",
+      "label": "EU continuous\n250 W",
       "symbol": "value_property",
       "rank": 0,
       "order": 4

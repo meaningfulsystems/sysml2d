@@ -1,5 +1,7 @@
 # Blender Examples
 
+Architecture walkthrough: [blender-architecture-summary.md](blender-architecture-summary.md).
+
 This folder contains a complete blender model and generated SysMLD views for the current view vocabulary.
 
 ## Primary Inputs

@@ -155,7 +155,7 @@
           "height": 58,
           "z": 10
         },
-        "label": "continuous\n250 W",
+        "label": "EU continuous\n250 W",
         "style": "value_property",
         "model_ref": "continuousPowerW"
       },

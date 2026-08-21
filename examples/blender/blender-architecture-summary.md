@@ -78,6 +78,6 @@ The package view organizes the model into structure, behavior, requirements, ana
 
 ![Blender Cross-View Trace](blender-general.svg)
 
-## Feedback Disposition
+## Scope
 
-The Grok review recommended quantitative requirements, deeper error handling, stronger electrical/user/mechanical interface detail, context, and richer constraints. Those were implemented in the requirement view, constraint view, state machine, and context view. Product-line variants, dishwasher material certifications, and detailed digital sensor protocol are not modeled yet; they are deferred because this appliance example is scoped to a baseline smart blender architecture, not a production certification package.
+Product-line variants, dishwasher material certifications, and a detailed digital sensor protocol are not modeled. This example is a baseline blender architecture, not a production certification package.
