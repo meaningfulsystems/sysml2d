@@ -676,6 +676,24 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
                             SELF_LOOP_H,
                         )
                     used_bottom_rails.append(local_y)
+                    target_edge_y = tgt_box[1] + tgt_box[3] if src_face == "bottom" else tgt_box[1]
+                    clear_x = _offset_vertical_stub(
+                        target_x,
+                        local_y,
+                        target_edge_y,
+                        boxes,
+                        {t["from"], t["to"]},
+                        SELF_LOOP_H,
+                    )
+                    if abs(clear_x - target_x) >= 1:
+                        wps = [
+                            {"x": source_x, "y": round(local_y)},
+                            {"x": round(clear_x), "y": round(local_y)},
+                            {"x": round(clear_x), "y": round(target_edge_y)},
+                        ]
+                        _append_back(out_conns, t, tid, subject_raw, t["from"], t["to"],
+                                     src_face, soff, tgt_face, toff, wps)
+                        continue
                 wps = [
                     {"x": source_x, "y": round(local_y)},
                     {"x": target_x, "y": round(local_y)},
@@ -911,6 +929,34 @@ def _clear_horizontal_rail(
                 y = by + bh + pad
                 changed = True
     return y
+
+
+def _offset_vertical_stub(
+    x: float,
+    y0: float,
+    y1: float,
+    boxes: dict[str, tuple[float, float, float, float]],
+    skip: set[str],
+    pad: float,
+) -> float:
+    lo, hi = sorted((y0, y1))
+    parents = {
+        node_id
+        for node_id, box in boxes.items()
+        if node_id not in skip and all(_box_contains(box, boxes[other]) for other in skip if other in boxes)
+    }
+    blockers: list[tuple[float, float]] = []
+    for node_id, (bx, by, bw, bh) in boxes.items():
+        if node_id in skip or node_id in parents:
+            continue
+        if by + bh < lo or by > hi:
+            continue
+        if bx < x < bx + bw:
+            blockers.append((bx, bx + bw))
+    if not blockers:
+        return x
+    candidates = [edge + shift for left, right in blockers for edge, shift in ((left, -pad), (right, pad))]
+    return min(candidates, key=lambda value: (abs(value - x), value))
 
 
 def _box_contains(

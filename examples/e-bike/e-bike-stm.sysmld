@@ -346,8 +346,12 @@
               "y": 346
             },
             {
-              "x": 618,
+              "x": 525,
               "y": 346
+            },
+            {
+              "x": 525,
+              "y": 185
             }
           ]
         },
@@ -355,7 +359,7 @@
           {
             "text": "no pedal / brake",
             "position": {
-              "segment": 1,
+              "segment": 2,
               "offset": 0.5,
               "placement": "centerline"
             }

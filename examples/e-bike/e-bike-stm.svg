@@ -29,15 +29,15 @@
 <path d="M 683,155 L 726,155 Q 734,155 734,163 L 734,214 Q 734,222 742,222 L 785,222" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 452,232.002 L 511,232 Q 519,232 519,240 L 519,280 Q 519,288 527,288 L 553,288" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 915,222 L 1017,222" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 850,252 L 850,338 Q 850,346 842,346 L 626,346 Q 618,346 618,338 L 618,185" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 618,318 L 618,366 Q 618,374 610,374 L 395,374 Q 387,374 387,366 L 387,252" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 850,252 L 850,338 Q 850,346 842,346 L 533,346 Q 525,346 525,338 L 525,295 A 7 7 0 0 0 525,281 L 525,193 Q 525,185 533,185 L 618,185" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 618,318 L 618,339 A 7 7 0 0 1 618,353 L 618,366 Q 618,374 610,374 L 395,374 Q 387,374 387,366 L 387,252" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 618,125 L 618,105 Q 618,97 610,97 L 373,97 Q 365,97 365.028,105 L 365.329,192" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 1082,192 L 1082,144 Q 1082,136 1074,136 L 417,136 Q 409,136 408.953,144 L 408.671,192" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <text class="small" text-anchor="middle" x="486" y="174.4">power button</text>
 <text class="small" x="746" y="178.45">cadence / throttle</text>
 <text class="small" x="531" y="243.2">charger in</text>
 <text class="small" text-anchor="middle" x="966" y="230">overcurrent</text>
-<text class="small" text-anchor="middle" x="734" y="354">no pedal / brake</text>
+<text class="small" text-anchor="middle" x="525" y="225.2">no pedal / brake</text>
 <text class="small" text-anchor="middle" x="502.5" y="382">full / unplug</text>
 <text class="small" text-anchor="middle" x="491.5" y="105">power button</text>
 <text class="small" text-anchor="middle" x="745.5" y="144">reset</text>
