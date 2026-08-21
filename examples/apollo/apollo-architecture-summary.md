@@ -204,6 +204,7 @@ Mechanical stack: SIC → SII → SIVB → IU → SLA → SM; LES → CM → SM;
 | Separate P27 path | AGC | V70–V73 only |
 | Recovery | CM | 243.0 MHz |
 | CM probe + 12 latches | LM drogue | Soft then hard dock; hardware removed for transfer |
+| PNGS (ascent) | landingRadar (descent) | PNGS talks to the physical landing radar on the descent stage |
 
 Port types: UHF destruct, umbilical, voice, guidance, mechanical, docking, USB, NASCOM, command, recovery.
 
