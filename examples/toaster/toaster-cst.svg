@@ -35,23 +35,23 @@
 <text class="label" text-anchor="middle"><tspan x="1159" y="291.5">surfaceTemperature</tspan><tspan x="1159" dy="15">external touch</tspan></text>
 <rect id="releaseTime" x="1079" y="458" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
 <text class="label" text-anchor="middle"><tspan x="1144" y="479.5">releaseTime</tspan><tspan x="1144" dy="15">&lt;= 2 s</tspan></text>
-<path d="M 202,299 L 300.5,299 L 300.5,111 L 399,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 202,299 L 238,299 L 238,111 L 399,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 239,487 L 399,487" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 138,140 L 138,566 L 829,566 L 829,150" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 579,111 L 739,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 399,299 L 202,299" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 919,111 L 1079,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 579,111 L 680.333,111 L 680.333,299 L 739,299" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 579,111 L 615,111 L 615,299 L 739,299" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 919,299 L 1079,299" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 579,487 L 739,487" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 919,487 L 1079,487" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<text class="small" x="312.5" y="205">bind</text>
+<text class="small" x="250" y="205">bind</text>
 <text class="small" text-anchor="middle" x="319" y="475">bind</text>
 <text class="small" text-anchor="middle" x="483.5" y="554">bind</text>
 <text class="small" text-anchor="middle" x="659" y="99">bind</text>
-<text class="small" text-anchor="middle" x="300.5" y="322">limit</text>
+<text class="small" text-anchor="middle" x="300.5" y="287">limit</text>
 <text class="small" text-anchor="middle" x="999" y="99">result</text>
-<text class="small" x="692.333" y="205">bounds</text>
+<text class="small" x="627" y="205">bounds</text>
 <text class="small" text-anchor="middle" x="999" y="287">result</text>
 <text class="small" text-anchor="middle" x="659" y="475">bounds</text>
 <text class="small" text-anchor="middle" x="999" y="475">result</text>

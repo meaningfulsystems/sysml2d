@@ -184,6 +184,14 @@ def _assign_channel(
 
     ordered = sorted(routed, key=sort_key)
     span = gap_hi - gap_lo
+    sources = {edges[index]["from"] for index in ordered}
+    targets = {edges[index]["to"] for index in ordered}
+    if len(sources) == 1 or len(targets) == 1:
+        inset = min(20.0, span / 4)
+        track = gap_hi - inset if len(targets) == 1 and len(sources) > 1 else gap_lo + inset
+        for index in ordered:
+            assignments[index] = ("channel", clean(track))
+        return
     count = len(ordered)
     for slot, index in enumerate(ordered):
         assignments[index] = ("channel", clean(gap_lo + span * (slot + 1) / (count + 1)))

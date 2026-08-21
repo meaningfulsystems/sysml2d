@@ -24,10 +24,10 @@
 <path d="M 157,142 L 157,302" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 157,384 L 157,544" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 157,614 L 157,780" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 437,544 L 437,464 L 157,464 L 157,384" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 437,544 L 437,420 L 157,420 L 157,384" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <text class="small" x="169" y="222">refine</text>
-<text class="small" text-anchor="end" x="145" y="464">allocate</text>
+<text class="small" x="169" y="464">allocate</text>
 <text class="small" x="169" y="697">performed by</text>
-<text class="small" text-anchor="middle" x="297" y="452">verify</text>
+<text class="small" text-anchor="middle" x="297" y="408">verify</text>
 </g>
 </svg>

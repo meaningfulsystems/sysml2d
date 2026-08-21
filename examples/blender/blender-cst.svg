@@ -36,22 +36,22 @@
 <rect id="noiseLevel" x="1058" y="270" width="130" height="58" rx="4" fill="#FAFAFA" stroke="#525252" stroke-width="1.5"/>
 <text class="label" text-anchor="middle"><tspan x="1123" y="291.5">noiseLevel</tspan><tspan x="1123" dy="15">1 m distance</tspan></text>
 <path d="M 211,111 L 378,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 202,299 L 317,299 L 317,111 L 378,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 202,299 L 342,299 L 342,111 L 378,111" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 218,487 L 378,487" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 218,675 L 378,675" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 468,150 L 468,260" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 558,487 L 638,487 L 638,111 L 718,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 558,487 L 594,487 L 594,111 L 718,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 898,111 L 1058,111" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 558,299 L 631,299 A 7 7 0 0 0 645,299 L 718,299" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 558,299 L 587,299 A 7 7 0 0 0 601,299 L 718,299" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 898,299 L 1058,299" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <text class="small" text-anchor="middle" x="294.5" y="99">bind</text>
-<text class="small" x="329" y="205">bind</text>
+<text class="small" x="354" y="205">bind</text>
 <text class="small" text-anchor="middle" x="298" y="475">bind</text>
 <text class="small" text-anchor="middle" x="298" y="663">bind</text>
 <text class="small" x="480" y="205">limit</text>
-<text class="small" x="650" y="355.4">estimate</text>
+<text class="small" x="606" y="355.4">estimate</text>
 <text class="small" text-anchor="middle" x="978" y="99">result</text>
-<text class="small" text-anchor="middle" x="614" y="287">bounds</text>
+<text class="small" text-anchor="middle" x="638" y="287">bounds</text>
 <text class="small" text-anchor="middle" x="978" y="287">result</text>
 </g>
 </svg>

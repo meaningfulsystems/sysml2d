@@ -27,10 +27,10 @@
 <text class="label" text-anchor="middle" x="397" y="497">Charge Bike</text>
 <ellipse id="lockBikeUseCase" cx="397" cy="667" rx="75" ry="35" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="397" y="667">Lock Bike</text>
-<path d="M 142,139 L 173.6,139 L 173.6,157 L 322,157" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 142,152.5 L 166.6,152.5 A 7 7 0 0 0 180.6,152.5 L 189.2,152.5 L 189.2,327 L 322,327" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 142,166 L 182.2,166 A 7 7 0 0 0 196.2,166 L 204.8,166 L 204.8,320 A 7 7 0 0 1 204.8,334 L 204.8,497 L 322,497" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 142,179.5 L 182.2,179.5 A 7 7 0 0 0 196.2,179.5 L 197.8,179.5 A 7 7 0 0 0 211.8,179.5 L 220.4,179.5 L 220.4,320 A 7 7 0 0 1 220.4,334 L 220.4,490 A 7 7 0 0 1 220.4,504 L 220.4,667 L 322,667" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 142,139 L 177.5,139 L 177.5,157 L 322,157" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 142,152.5 L 177.5,152.5 L 177.5,327 L 322,327" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 142,166 L 177.5,166 L 177.5,497 L 322,497" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 142,179.5 L 177.5,179.5 L 177.5,667 L 322,667" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 397,292 L 397,192" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
 <text class="small" x="409" y="242">include</text>
 </g>

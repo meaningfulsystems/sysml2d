@@ -34,16 +34,16 @@
 <path d="M 142,117 L 382,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 142,117 L 302,117 L 302,317 L 382,317" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 222,317 L 382,317" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 532,317 L 612,317 L 612,117 L 692,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 532,317 L 568,317 L 568,117 L 692,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 842,117 L 1002,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 1152,117 L 1312,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 1152,117 L 1253.33,117 L 1253.33,317 L 1312,317" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 1152,117 L 1188,117 L 1188,317 L 1312,317" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <text class="small" text-anchor="middle" x="262" y="105">ingredients</text>
 <text class="small" x="314" y="217">command</text>
 <text class="small" text-anchor="middle" x="302" y="340">power</text>
-<text class="small" x="624" y="217">drive command</text>
+<text class="small" x="580" y="217">drive command</text>
 <text class="small" text-anchor="middle" x="922" y="105">torque</text>
 <text class="small" text-anchor="middle" x="1232" y="105">rotation</text>
-<text class="small" x="1265.33" y="217">feedback</text>
+<text class="small" x="1200" y="217">feedback</text>
 </g>
 </svg>

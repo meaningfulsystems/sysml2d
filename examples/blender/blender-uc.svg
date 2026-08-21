@@ -25,9 +25,9 @@
 <text class="label" text-anchor="middle" x="377" y="419">Stop Blend</text>
 <ellipse id="cleanContainerUseCase" cx="377" cy="689" rx="75" ry="35" fill="#EFF6FF" stroke="#2563EB" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="377" y="689">Clean Container</text>
-<path d="M 142,135.5 L 179.5,135.5 L 179.5,149 L 302,149" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 142,149 L 201,149 L 201,419 L 302,419" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 142,162.5 L 194,162.5 A 7 7 0 0 0 208,162.5 L 222.5,162.5 L 222.5,412 A 7 7 0 0 1 222.5,426 L 222.5,689 L 302,689" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 142,135.5 L 178,135.5 L 178,149 L 302,149" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 142,149 L 178,149 L 178,419 L 302,419" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 142,162.5 L 178,162.5 L 178,689 L 302,689" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 377,384 L 377,184" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
 <path d="M 377,654 L 496,654 L 496,184 L 377,184" fill="none" stroke="#334155" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="6 4" marker-end="url(#arrow-dark)"/>
 <text class="small" x="389" y="284">extend</text>

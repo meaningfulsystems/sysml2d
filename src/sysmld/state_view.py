@@ -652,11 +652,30 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
                     src_face, tgt_face = "top", "top"
                     soff = top_endpoint_offset.get((idx, "src"), soff)
                     toff = top_endpoint_offset.get((idx, "tgt"), toff)
+                    source_x = round(_anchor_xy(t["from"], src_face, soff)[0])
+                    target_x = round(_anchor_xy(t["to"], tgt_face, toff)[0])
                 else:
-                    local_y = max(src_box[1] + src_box[3], tgt_box[1] + tgt_box[3]) + SELF_LOOP_H + pos * BACK_ARC_STEP
                     src_face, tgt_face = "bottom", "bottom"
-                source_x = round(_anchor_xy(t["from"], src_face, soff)[0])
-                target_x = round(_anchor_xy(t["to"], tgt_face, toff)[0])
+                    source_x = round(_anchor_xy(t["from"], src_face, soff)[0])
+                    target_x = round(_anchor_xy(t["to"], tgt_face, toff)[0])
+                    local_y = _clear_horizontal_rail(
+                        max(src_box[1] + src_box[3], tgt_box[1] + tgt_box[3]) + SELF_LOOP_H + pos * BACK_ARC_STEP,
+                        source_x,
+                        target_x,
+                        boxes,
+                        {t["from"], t["to"]},
+                        SELF_LOOP_H,
+                    )
+                    while any(abs(local_y - used) < BACK_ARC_STEP for used in used_bottom_rails):
+                        local_y = _clear_horizontal_rail(
+                            local_y + BACK_ARC_STEP,
+                            source_x,
+                            target_x,
+                            boxes,
+                            {t["from"], t["to"]},
+                            SELF_LOOP_H,
+                        )
+                    used_bottom_rails.append(local_y)
                 wps = [
                     {"x": source_x, "y": round(local_y)},
                     {"x": target_x, "y": round(local_y)},

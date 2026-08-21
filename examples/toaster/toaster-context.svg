@@ -29,17 +29,17 @@
 <text class="label" text-anchor="middle" x="807" y="317">Crumb Debris</text>
 <rect id="environment" x="732" y="482" width="167" height="70" rx="4" fill="#F7F9FC" stroke="#334155" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="815.5" y="517">Kitchen Environment</text>
-<path d="M 142,103.5 L 270,103.5 L 270,94.5 L 382,94.5" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 222,317 L 302,317 L 302,117 L 382,117" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 222,517 L 334,517 L 334,139.5 L 382,139.5" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 572,94.5 L 620,94.5 L 620,117 L 732,117" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 572,117 L 652,117 L 652,317 L 732,317" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 572,139.5 L 645,139.5 A 7 7 0 0 0 659,139.5 L 684,139.5 L 684,310 A 7 7 0 0 1 684,324 L 684,517 L 732,517" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<text class="small" text-anchor="middle" x="206" y="91.5">lever/buttons</text>
-<text class="small" text-anchor="end" x="290" y="217">insert</text>
-<text class="small" x="346" y="328.25">900-1200 W</text>
-<text class="small" text-anchor="middle" x="676" y="105">toast</text>
-<text class="small" text-anchor="end" x="640" y="217">crumbs</text>
-<text class="small" x="696" y="271.625">heat/noise</text>
+<path d="M 142,103.5 L 346,103.5 L 346,94.5 L 382,94.5" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 222,317 L 346,317 L 346,117 L 382,117" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 222,517 L 346,517 L 346,139.5 L 382,139.5" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 572,94.5 L 608,94.5 L 608,117 L 732,117" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 572,117 L 608,117 L 608,317 L 732,317" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 572,139.5 L 608,139.5 L 608,517 L 732,517" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<text class="small" text-anchor="middle" x="244" y="91.5">lever/buttons</text>
+<text class="small" x="358" y="217">insert</text>
+<text class="small" x="358" y="328.25">900-1200 W</text>
+<text class="small" text-anchor="middle" x="670" y="105">toast</text>
+<text class="small" x="620" y="217">crumbs</text>
+<text class="small" text-anchor="end" x="596" y="328.25">heat/noise</text>
 </g>
 </svg>

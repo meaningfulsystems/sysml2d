@@ -31,15 +31,15 @@
 <text class="label" text-anchor="middle" x="1077" y="117">Road</text>
 <path d="M 142,117 L 382,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 222,317 L 382,317" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 532,317 L 633.333,317 L 633.333,117 L 692,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 532,317 L 656,317 L 656,117 L 692,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 532,117 L 692,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 767,152 L 767,282" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 842,317 L 922,317 L 922,117 L 1002,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 842,317 L 878,317 L 878,117 L 1002,117" fill="none" stroke="#BE185D" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <text class="small" text-anchor="middle" x="262" y="105">command</text>
 <text class="small" text-anchor="middle" x="302" y="305">charge</text>
-<text class="small" x="645.333" y="217">dc power</text>
+<text class="small" x="668" y="217">dc power</text>
 <text class="small" text-anchor="middle" x="612" y="105">assist</text>
 <text class="small" x="779" y="217">torque</text>
-<text class="small" x="934" y="217">tractive</text>
+<text class="small" x="890" y="217">tractive</text>
 </g>
 </svg>

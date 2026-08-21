@@ -24,14 +24,14 @@
 <path id="BikeVerification" d="M 1112,322 V 302 H 1209.5 L 1221.5,322 H 1262 V 372 H 1112 Z" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="small" x="1122" y="317">Verification</text>
 <path d="M 147,142 L 147,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 147,142 L 147,200.667 L 407,200.667 L 407,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 147,142 L 147,222 L 400,222 A 7 7 0 0 0 414,222 L 667,222 L 667,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 147,142 L 147,243.333 L 400,243.333 A 7 7 0 0 0 414,243.333 L 660,243.333 A 7 7 0 0 0 674,243.333 L 927,243.333 L 927,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 147,142 L 147,264.667 L 400,264.667 A 7 7 0 0 0 414,264.667 L 660,264.667 A 7 7 0 0 0 674,264.667 L 920,264.667 A 7 7 0 0 0 934,264.667 L 1187,264.667 L 1187,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" text-anchor="end" x="135" y="222">contains</text>
-<text class="small" text-anchor="middle" x="277" y="188.667">contains</text>
-<text class="small" text-anchor="middle" x="485" y="210">contains</text>
-<text class="small" text-anchor="middle" x="771" y="231.333">contains</text>
-<text class="small" text-anchor="middle" x="511" y="287.667">contains</text>
+<path d="M 147,142 L 147,178 L 407,178 L 407,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 147,142 L 147,178 L 667,178 L 667,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 147,142 L 147,178 L 927,178 L 927,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 147,142 L 147,178 L 1187,178 L 1187,302" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="159" y="222">contains</text>
+<text class="small" text-anchor="middle" x="277" y="166">contains</text>
+<text class="small" text-anchor="middle" x="407" y="166">contains</text>
+<text class="small" text-anchor="middle" x="537" y="166">contains</text>
+<text class="small" text-anchor="middle" x="667" y="166">contains</text>
 </g>
 </svg>

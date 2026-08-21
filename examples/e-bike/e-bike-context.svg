@@ -26,12 +26,12 @@
 <rect id="WheelTorque" x="732" y="282" width="150" height="70" rx="4" fill="#F1F5F9" stroke="#475569" stroke-width="1.5"/>
 <text class="label" text-anchor="middle" x="807" y="317">Wheel Torque</text>
 <path d="M 142,117 L 382,117" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 222,317 L 323.333,317 L 323.333,117 L 382,117" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 222,317 L 346,317 L 346,117 L 382,117" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 572,117 L 732,117" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<path d="M 572,117 L 673.333,117 L 673.333,317 L 732,317" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
+<path d="M 572,117 L 608,117 L 608,317 L 732,317" fill="none" stroke="#334155" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <text class="small" text-anchor="middle" x="262" y="105">commands</text>
-<text class="small" x="335.333" y="217">charge</text>
+<text class="small" x="358" y="217">charge</text>
 <text class="small" text-anchor="middle" x="652" y="105">tractive</text>
-<text class="small" x="685.333" y="217">torque</text>
+<text class="small" x="620" y="217">torque</text>
 </g>
 </svg>
