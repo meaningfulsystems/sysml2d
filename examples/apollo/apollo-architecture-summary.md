@@ -1,33 +1,33 @@
 # Apollo Architecture
 
-## Executive summary
+Someone asked me a simple question last week: if Apollo 11 was one mission, why does it take a stack of vehicles, two computers, and a room in Houston that isn't even in charge of the destruct button?
 
-July 1969. A Saturn V stands on Pad 39-A at the Kennedy Space Center (KSC). The serial is Saturn-Apollo 506 (SA-506). The mission is Apollo 11, also called Apollo-Saturn 506 (AS-506). On top of the rocket sit Command/Service Module (CSM) CSM-107 *Columbia* and Lunar Module (LM) LM-5 *Eagle*. Three crew will fly. Two will land. All three must come home.
+That question stayed with me.
 
-This note teaches that system. It is a technical paper written as a history of one flown stack. Short sentences. Everyday words first. Every short form is expanded on first use as Expansion (Acronym). The Systems Modeling Language (SysML) file `apollo.sysml` wins when a generated view label disagrees. Numbers appear only when that model already has them.
+I opened `apollo.sysml` and tried to walk the as-flown stack the way I'd walk a dinner-table argument. Units a curious kid could track. No invented numbers. The Systems Modeling Language (SysML) file wins when a picture disagrees.
+
+Here's the portrait. NASA photo 69-HC-620. Saturn-Apollo 506 (SA-506) rolling to Pad 39-A on 20 May 1969. This is the real vehicle, not a generated view.
 
 ![Saturn V SA-506 / Apollo 11 rolled out to Pad 39-A, 20 May 1969. Credit: NASA photo 69-HC-620 (public domain). This is the system portrait, not a generated SysMLD view.](apollo-sa506-rollout.jpg)
 
 *Saturn V SA-506 / Apollo 11 rolled out to Pad 39-A, 20 May 1969. Credit: NASA photo 69-HC-620 (public domain). This is the system portrait, not a generated SysMLD view.*
 
-### One-page overview
+## One-page overview
 
-This is **not** a Department of Defense Architecture Framework (DoDAF) product set. There are no Operational View / Systems View / Technical View (OV / SV / TV) products and no capability taxonomies.
+I'm not writing a Department of Defense Architecture Framework (DoDAF) product set. There are no Operational View / Systems View / Technical View (OV / SV / TV) products and no capability taxonomies. The first page is just who, why, the stack, and the mission thread.
 
-The block below is an AV-1 only in the classroom sense: one page that says who, why, the stack, and the mission thread. It is not a DoDAF All Viewpoint product, and it is not a viewpoint set.
+**Who I'm talking to, and who was on the pad.** The instance is Apollo 11 / Apollo-Saturn 506 (AS-506), as-flown July 1969. I wrote this for anyone who will stay with a ninth-grade history paper and still check a cite. Launch is from the Kennedy Space Center (KSC). After tower clear, Mission Control Center (MCC) Houston sits in Mission Operations Control Room (MOCR) 2. The Manned Space Flight Network (MSFN) talks to the stack. The Range Safety Officer (RSO) sits outside MCC. Recovery is to USS *Hornet*. Earth and Moon are context, not decoration.
 
-**Who.** The instance is Apollo 11 / AS-506 (SA-506), as-flown July 1969. The readers are a new systems engineer and any careful reader who can follow a ninth-grade history paper. Launch is from KSC. Flight control after tower clear is Mission Control Center (MCC) Houston in Mission Operations Control Room (MOCR) 2. The Manned Space Flight Network (MSFN) talks to the stack. The Range Safety Officer (RSO) sits outside MCC. Recovery is to USS *Hornet*. Earth and Moon are context.
+**Why bother.** I wanted to see how the as-flown system actually worked, not how a poster remembers it. This is an **example model, not a certifiable** vehicle. After the first page I go problem first, then design, then the holes I still can't fill.
 
-**Why.** This note teaches how that as-flown system worked, and how a **simplified MagicGrid** architecture note is read. This is an **example model, not a certifiable** vehicle. After this page, read the problem domain, then the solution domain, then unmarked items. Generated figures sit in the story. They are not a catalog at the end.
+**The stack.** Saturn V serials S-IC-6 / S-II-6 / S-IVB-6N / Instrument Unit (IU)-6 / Spacecraft-LM Adapter (SLA)-14. Command/Service Module (CSM) CSM-107 *Columbia*. Lunar Module (LM) LM-5 *Eagle*. In scope: first landing, one short surface Extravehicular Activity (EVA), model PNGS (cockpit/switch label Primary Guidance, Navigation, and Control System (PGNCS)) program P66 as the flown landing program, Service Module (SM) cryogenic tankage 2+2. Out of scope: later J-mission variants, Lunar Roving Vehicle (LRV), Scientific Instrument Module (SIM) bay, extended EVA, invented change-in-velocity (Δv) tables.
 
-**The stack.** Saturn V serials S-IC-6 / S-II-6 / S-IVB-6N / Instrument Unit (IU)-6 / Spacecraft-LM Adapter (SLA)-14. CSM-107 *Columbia*. LM-5 *Eagle*. In scope: first landing, one short surface Extravehicular Activity (EVA), model PNGS (cockpit/switch label Primary Guidance, Navigation, and Control System (PGNCS)) program P66 as the flown landing program, SM cryogenic tankage 2+2. Out of scope: later J-mission variants, Lunar Roving Vehicle (LRV), Scientific Instrument Module (SIM) bay, extended EVA, invented change-in-velocity (Δv) tables.
+**The mission thread.** Lunar-orbit rendezvous. Three crew. Land two. Bring all three home. Saturn V puts the CSM and the LM into Earth parking orbit. Translunar Injection (TLI) sends the stack toward the Moon. After transposition, docking, and LM extract (`dockEject`), they coast. The CSM burns Lunar Orbit Insertion (LOI) and, later, Trans-Earth Injection (TEI). The LM undocks, burns Descent Orbit Insertion (DOI), lands two crew, supports one surface EVA, ascends, and meets the CSM. The Command Module (CM) brings all three home.
 
-**The mission thread.** Lunar-orbit rendezvous. Three crew. Land two. Bring all three home.
+I think about the problem first, then the design. That's simplified MagicGrid. When I map NASA Procedural Requirements (NPR 7123.1) onto that, I keep it as a translation, not a second framework. These rows are not NPR 7123 product titles.
 
-The spine after this page is still simplified MagicGrid, not DoDAF. MagicGrid splits **what someone needs** from **how the design does it**. NASA Procedural Requirements (NPR 7123.1), *NASA Systems Engineering Processes and Requirements*, is a mapping onto that spine. The left column is plain-language NASA process ideas. The right column uses MagicGrid section names. These rows are not NPR 7123 product titles.
-
-| NASA process idea | MagicGrid section in this note |
-|-------------------|--------------------------------|
+| NASA process idea | Where I put it |
+|-------------------|----------------|
 | Who needs what | Problem domain — purpose, stakeholders, operating context |
 | The shalls | Problem domain — requirements (model text; sourced numbers; unmarked left unmarked) |
 | Jobs asked of the stack | Problem domain — named use cases |
@@ -37,35 +37,25 @@ The spine after this page is still simplified MagicGrid, not DoDAF. MagicGrid sp
 | Sourced numbers | Problem domain and named constraints; no invented equations |
 | Named checks | Analysis and verification *names* — no part, port, or effect is bound unless the model says so |
 
-Hyphens are not legal identifiers in the model. S-IC / S-II / S-IVB appear as `SIC`, `SII`, `SIVB`. ST-124 appears as `ST124`. Surface EVA is `surfaceEVA`.
-
-### The mission in one paragraph
-
-Apollo 11 is a lunar-orbit-rendezvous mission. Saturn V puts the CSM and the LM into Earth parking orbit. Translunar Injection (TLI) sends the stack toward the Moon. After transposition, docking, and LM extract (`dockEject`), the docked vehicles coast translunar. The CSM burns Lunar Orbit Insertion (LOI) and, later, Trans-Earth Injection (TEI). The LM undocks, burns Descent Orbit Insertion (DOI), lands two crew, supports one surface EVA, ascends, and meets the CSM. The Command Module (CM) brings all three home for entry and recovery.
+Hyphens aren't legal identifiers in the model. S-IC / S-II / S-IVB show up as `SIC`, `SII`, `SIVB`. ST-124 is `ST124`. Surface EVA is `surfaceEVA`.
 
 ---
 
 ## Problem domain
 
-The problem domain asks what the system must do, for whom, and under which sourced shalls. It does not yet say how the hardware is wired.
+I start with who needed what. The wiring comes later.
 
-### Purpose / mission
+The national job is to land two people on the Moon and return three. This instance is Apollo 11 only. First landing. One short EVA. No rover, no SIM bay. The flown landing program is P66. MCC sits in **MOCR 2**. SM cryo is **2+2**, not the later J-mission 3+3.
 
-The national job is to land two people on the Moon and return three. This instance is Apollo 11 only. It is the first landing. It has one short EVA. It has no rover and no SIM bay. The cockpit switch label Primary Guidance, Navigation, and Control System (PGNCS) is the model part PNGS. The flown landing program is P66. MCC sits in **MOCR 2**. SM cryo is **2+2**, not the later J-mission 3+3.
+Crew safety isn't Launch Escape System (LES)-only. LES is the pad and Mode I escape tower. Later-mode safety that the model actually has: `AbortMode` (pad, I–IV, contingency TLI, lunar, Service Propulsion System (SPS)); RSO ultra-high-frequency (UHF) destruct outside MCC, safed after Earth orbit; the CM heat shield; Environmental Control and Life Support System (ECLSS); A7L pressure garment; Portable Life Support System (PLSS); and recover-crew to *Hornet*. There is no single `crewSafetyRequirement` element.
 
-Crew safety is not Launch Escape System (LES)-only. LES is the pad and Mode I escape tower. Later-mode safety that the model actually has: `AbortMode` (pad, I–IV, contingency TLI, lunar, Service Propulsion System (SPS)); RSO ultra-high-frequency (UHF) destruct outside MCC, safed after Earth orbit; the CM heat shield; Environmental Control and Life Support System (ECLSS); A7L pressure garment; Portable Life Support System (PLSS); and recover-crew to *Hornet*. There is no single `crewSafetyRequirement` element.
-
-The stack sits in a world, not in a vacuum. Crew, KSC, MCC, the tracking net, RSO, recovery, Earth, and Moon are first-class parts.
+The stack sits in a world, not in a vacuum. Here's the operating-context picture. I want you to see the people and nets outside the vehicles — and that RSO destruct does not pass through MCC.
 
 ![Apollo operating context](apollo-context.svg)
 
-**MagicGrid layer:** problem / context.
+### Who asked for a job
 
-Look at who sits outside the vehicles. RSO destruct does not pass through MCC.
-
-### Stakeholders and use cases
-
-A Stakeholder here is a person or organization that asks a job of the stack. The model does not collapse them into one Ground actor.
+A Stakeholder here is a person or organization that asks a job of the stack. The model doesn't collapse them into one Ground actor.
 
 | Stakeholder / part | Role | Associated use cases |
 |--------------------|------|----------------------|
@@ -81,38 +71,32 @@ A Stakeholder here is a person or organization that asks a job of the stack. The
 
 Handoff is KSC → MCC at tower clear — **Mission Rule 1-21**. RSO is not MCC.
 
-**Use cases**
+The jobs the model names:
 
 - **Fly Mission** — primary. CDR and MCC associate. **Includes** Lunar EVA.
 - **Lunar EVA** — CDR. One surface EVA.
 - **Recover Crew** — MCC.
 - **Range Safety** — RSO. Separate from Fly Mission.
 
-**Analysis cases** (names only — no equations and no results): USB link analysis (`usbLinkAnalysis`); consumable analysis (`consumableAnalysis`).
+Analysis cases are names only — no equations and no results: USB link analysis (`usbLinkAnalysis`); consumable analysis (`consumableAnalysis`). Verification cases are names only — no part, port, or effect is bound: `verifyUsbCsm`, `verifyA7l`, `verifyP27`, `verifyRso`.
 
-**Verification cases** (names only — no part, port, or effect is bound): `verifyUsbCsm`, `verifyA7l`, `verifyP27`, `verifyRso`.
+Here's the use-case picture. Three actors, four ellipses. Fly Mission **Includes** Lunar EVA. Recover Crew belongs to MCC. Range Safety belongs to RSO.
 
 ![Apollo use cases](apollo-uc.svg)
 
-**MagicGrid layer:** problem / stakeholders.
+Context flows the model names: MCC → MSFN (Path A / voice); RSO → vehicle (destruct UHF, not via MCC); MSFN ↔ Earth (USB / 210-ft / Parkes); MSFN ↔ Moon (~1.3 s lunar delay).
 
-Look at three actors and four ellipses. Fly Mission **includes** Lunar EVA. Recover Crew belongs to MCC. Range Safety belongs to RSO.
+### The shalls, and the fights I won't paper over
 
-Context flows that the model names: MCC → MSFN (Path A / voice); RSO → vehicle (destruct UHF, not via MCC); MSFN ↔ Earth (USB / 210-ft / Parkes); MSFN ↔ Moon (~1.3 s lunar delay).
+I didn't invent a shall to make a table look tidy. Engine thrust conflicts stay cited with no silent winner and no required thrust. A generated box isn't a requirement.
 
-### Requirements
-
-The model states sourced requirements as documentation on named requirement elements. Engine thrust conflicts are cited with no silent winner and no required thrust. View identifiers are not model elements. A generated box is not a shall.
+Here's the requirements picture. I want you to see TLI GET with three labels (PK 02:44:15, A11-FP 2:44:26, flown 02:44:16 MSC-00171). Planned LOI-1 is 75:54:28 GET. A11-FP is the **only planned source**. Flown LOI-1 is ~075:49:50 GET. Food is D-7720 April 1967 plan baseline, not flown. Unmarked Δv / SPS load / Reaction Control System (RCS) load stay unmarked.
 
 ![Apollo requirements](apollo-req.svg)
 
-**MagicGrid layer:** problem / requirements.
-
-Look at boxes that follow model text. TLI Ground Elapsed Time (GET) has three labels (PK 02:44:15, A11-FP 2:44:26, flown 02:44:16 MSC-00171). Planned LOI-1 is 75:54:28 GET. A11-FP is the **only planned source**. Flown LOI-1 is ~075:49:50 GET. Food is D-7720 April 1967 plan baseline, not flown. Unmarked Δv / SPS load / Reaction Control System (RCS) load stay unmarked.
-
 #### Mass and propellant (A11 Press Kit p.109)
 
-These Press Kit p.109 loads stay dual-cited with the rest of the model. They are not turned into a required-mass shall.
+These Press Kit p.109 loads stay dual-cited with the rest of the model. They are not a required-mass shall.
 
 | Item | Sourced value |
 |------|---------------|
@@ -126,7 +110,7 @@ These Press Kit p.109 loads stay dual-cited with the rest of the model. They are
 
 #### Engines
 
-No required thrust. SPS and DPS numbers are cited; the model does not pick a winner and does not add a shall. LMA790 (a Grumman Lunar Module document number) is the third DPS cite.
+No required thrust. SPS and DPS numbers are cited; I don't pick a winner and I don't add a shall. LMA790 (a Grumman Lunar Module document number) is the third DPS cite.
 
 | Engine | Source A | Source B | Source C |
 |--------|----------|----------|----------|
@@ -172,7 +156,7 @@ SM: fuel cells FC1–FC3; cryo **2+2**. CM: silver-zinc (AgZn) 1–3 + charger; 
 | Very High Frequency (VHF) | 296.8 / 259.7 MHz |
 | Recovery | 243.0 MHz |
 
-#### ECLSS, EVA, orbit, timing
+#### Air, food, EVA, clocks
 
 | Parameter | Value |
 |-----------|-------|
@@ -196,25 +180,23 @@ SM: fuel cells FC1–FC3; cryo **2+2**. CM: silver-zinc (AgZn) 1–3 + charger; 
 | Splash | flown 195:18:35 GET. 13 nmi from USS *Hornet*, not from the target. Weather-revised miss ~1.7 nmi |
 | Landing program | **P66 flown** |
 
-Docking: TD&E is its own GO/NO-GO, CMP-owned, SM RCS. CM probe / LM drogue + 12 ring latches. LM stays in the SLA — 8 panels (4 jettison / 4 stay) — until `dockEject` (after TLI, before translunar coast).
+TD&E is its own GO/NO-GO, CMP-owned, SM RCS. CM probe / LM drogue + 12 ring latches. LM stays in the SLA — 8 panels (4 jettison / 4 stay) — until `dockEject` (after TLI, before translunar coast).
 
-Sources cited in the model: Apollo 11 Press Kit 69-83K; Saturn V Flight Manual; Apollo Experience Reports; AGCIS / Massachusetts Institute of Technology Instrumentation Laboratory (MIT IL); Technical Notes D-6718 / D-6724 / D-7082 / D-7143 / D-7375 / D-7720 / D-8093 / D-8227 / TN-7990; and LMA790 (a Grumman Lunar Module document number). Values not in those extracts stay unmarked. There is no official CSM lunar Δv table in the sources used here. That table is not invented.
+Sources in the model: Apollo 11 Press Kit 69-83K; Saturn V Flight Manual; Apollo Experience Reports; AGCIS / Massachusetts Institute of Technology Instrumentation Laboratory (MIT IL); Technical Notes D-6718 / D-6724 / D-7082 / D-7143 / D-7375 / D-7720 / D-8093 / D-8227 / TN-7990; and LMA790 (a Grumman Lunar Module document number). Values not in those extracts stay unmarked. There is no official CSM lunar Δv table in the sources used here. I didn't invent one.
 
 ---
 
 ## Solution domain
 
-The solution domain is the stack, the ports, the mission in time, the named constraints, and which part owns which job.
+Now the design. What was stacked, what talked to what, and how the flight actually ran.
 
-### Structure and interfaces
+### How the stack is built
 
-The pad stack, from the ground up, is S-IC-6, S-II-6, S-IVB-6N, IU-6, SLA-14 (LM-5 inside), SM, CM, LES.
+From the ground up: S-IC-6, S-II-6, S-IVB-6N, IU-6, SLA-14 (LM-5 inside), SM, CM, LES.
+
+Here's the system tree. I want you to see Saturn V, CSM, LM, Crew, and Ground stay separate. IU children are LVDC, ST-124, and FCC. SLA is eight-panel. Descent and ascent stay separate. Two AGCs stay separate.
 
 ![Apollo system definition](apollo-bdd.svg)
-
-**MagicGrid layer:** solution / structure.
-
-Look at the composition tree. Saturn V, CSM, LM, Crew, and Ground stay separate. IU children are LVDC, ST-124, and FCC. SLA is eight-panel. Descent and ascent stay separate. Two AGCs stay separate.
 
 ```
 Apollo11
@@ -253,21 +235,13 @@ Apollo11
 └── recovery → Hornet
 ```
 
-Keep two AGCs, AGS, IU (LVDC + ST-124 + FCC), LES, descent vs ascent, and three crew. PNGS is the model name for PGNCS. It is not AGS. SCS is the Block II analog backup to AGC_CM.
+I keep two AGCs, AGS, IU (LVDC + ST-124 + FCC), LES, descent vs ascent, and three crew. PNGS is the model name for PGNCS. It isn't AGS. SCS is the Block II analog backup to AGC_CM.
 
-The LM split is the teaching cut for the radars.
+The LM split is where the radars live. Here's the LM tree, then the insides. `landingRadar` lives on descent only. One `rendezvousRadar` lives on ascent only. PNGS doesn't nest either radar. PNGS on ascent talks to `landingRadar` on descent and to `rendezvousRadar` on ascent.
 
 ![LM definition](apollo-bdd-lm.svg)
 
-**MagicGrid layer:** solution / structure.
-
-Look at descent vs ascent. `landingRadar` lives on descent only. One `rendezvousRadar` lives on ascent only. PNGS does not nest either radar.
-
 ![LM internal connections](apollo-ibd-lm.svg)
-
-**MagicGrid layer:** solution / interfaces.
-
-Look at PNGS talking across the mate. PNGS on ascent connects to `landingRadar` on descent and to `rendezvousRadar` on ascent.
 
 Mechanical stack: SIC → SII → SIVB → IU → SLA → SM; LES → CM → SM; SLA → LM descent; CM probe ↔ LM drogue; descent ↔ ascent mate.
 
@@ -286,17 +260,15 @@ Mechanical stack: SIC → SII → SIVB → IU → SLA → SM; LES → CM → SM;
 | PNGS (ascent) | landingRadar (descent) | PNGS talks to the physical landing radar on the descent stage |
 | PNGS (ascent) | rendezvousRadar (ascent) | PNGS talks to the one rendezvous radar on ascent |
 
+Here's the vehicle insides. Named ports, named connections. Lines shouldn't pass through boxes. Isolation stays: no stage-to-stage electrical power; no CSM–LM propellant crossfeed.
+
 ![Apollo vehicle internals](apollo-ibd.svg)
-
-**MagicGrid layer:** solution / interfaces.
-
-Look at named ports and connections. Lines must not pass through boxes. Isolation stays: no stage-to-stage electrical power; no CSM–LM propellant crossfeed.
 
 Port types: UHF destruct, umbilical, voice, guidance, mechanical, docking, USB, NASCOM, command, recovery.
 
-### Behavior
+### How the flight ran
 
-The mission is a sequence of states. The locked hop is TLI → dockEject → translunar → LOI. There is no TLI→translunar hop. `dockEject` is after TLI and before translunar coast.
+The hop I won't let slide is TLI → dockEject → translunar → LOI. There is no TLI→translunar hop. `dockEject` is after TLI and before translunar coast.
 
 ```
 countdown → boost → earthOrbit → TLI → dockEject → translunar → LOI → undock → DOI → descent → surfaceEVA → ascent → rendezvous → TEI → entry → recovery
@@ -324,29 +296,23 @@ TLI GET has three labels only: PK planned 02:44:15 GET; A11-FP planned 2:44:26 G
 
 Planned LOI-1 is 75:54:28 GET. A11-FP is the **only planned source**. Flown LOI-1 is ~075:49:50 GET (PAD / Mission Report). Two LOI-1 numbers only. P66 is the flown landing program.
 
+Here's the mission STM. I want you to see that hop — TLI → dockEject → translunar → LOI. TLI boxes carry the three GET labels. LOI-1 boxes carry planned 75:54:28 GET and flown ~075:49:50 GET.
+
 ![Apollo mission states](apollo-stm.svg)
 
-**MagicGrid layer:** solution / behavior.
-
-Look at the locked hop TLI → dockEject → translunar → LOI. TLI boxes carry the three GET labels. LOI-1 boxes carry planned 75:54:28 GET and flown ~075:49:50 GET.
-
-Abort runs in parallel with the nominal machine: pad, I, II, III, IV, contingency TLI, lunar, SPS. LES covers pad / Mode I only. Later modes are not LES.
+Abort runs beside the nominal machine: pad, I, II, III, IV, contingency TLI, lunar, SPS. LES covers pad / Mode I only. Later modes aren't LES. Here's the abort picture. Crew safety isn't the tower alone.
 
 ![Apollo abort modes](apollo-stm-abort.svg)
-
-**MagicGrid layer:** solution / behavior.
-
-Look at later-mode abort beside LES. Crew safety is not the tower alone.
 
 Computer mode machines stay separate. CMC entry is P61 → P62 → P63 → P64 → P65 → P66 → P67 (entry only). LGC landing is P63 → P64 → {P65 | P66} → P67 → P68 (landing only). Apollo 11 flew **P66**. AGC_CM modes include P00, P11, P20, P27, P40, P51, P52 plus V37 / V36 / V69 / 1201/1202. AGC_LM modes include P00, P12, P20, P27, P30, P70, P71 plus the same verb/alarm pattern; P70 → P71 abort chain. SCS: AGC_CM ↔ attitude hold / rate command / min impulse; crew selects AGC_CM vs SCS. AGS: idle → operate (R47 from PNGS) → follow PNGS → idle. AGS does not land. ECLSS: cabin → suit → EVA (PLSS) → cabin. Docking mode (not the mission `dockEject` state): undocked → soft (probe capture) → hard (twelve latches) → hardware off (transfer prep).
 
 Named actions: AGC power-up (CM and LM), antenna selection, Path A load, P27 load, R47 AGS init, P63 braking, P64 approach, P66 landing, P70/P71 abort, soft dock, hard dock, remove docking hardware.
 
-Other generated computer-mode STMs and the package view exist in `examples/apollo/`. They are omitted here so the story can stay on the stack and the mission.
+Other generated computer-mode STMs and the package view sit in `examples/apollo/`. I left them out so we could stay on the stack and the mission.
 
-### Parametrics / constraints
+### Named constraints
 
-Named constraints: `usbCsmLink`, `usbLmLink`, `lunarDelay`, `f1Thrust`, `agcCycle`, `a11IgnitionMass`. Names only — no equations and no results. They are not taught as studies.
+Named constraints: `usbCsmLink`, `usbLmLink`, `lunarDelay`, `f1Thrust`, `agcCycle`, `a11IgnitionMass`. Names only — no equations and no results. I don't teach them as studies.
 
 | Parameter | Value |
 |-----------|-------|
@@ -359,9 +325,9 @@ Named constraints: `usbCsmLink`, `usbLmLink`, `lunarDelay`, `f1Thrust`, `agcCycl
 | Ignition mass | 6,484,280 lb |
 | Earth parking orbit | 100 nmi |
 
-### Allocations
+### Who owns which job
 
-Allocation is the mapping of a named job onto a part that exists.
+Allocation is a named job landing on a part that exists.
 
 | Function | Allocated to parts that exist |
 |----------|-------------------------------|
@@ -387,17 +353,15 @@ Allocation is the mapping of a named job onto a part that exists.
 
 Allocation names in the model: `allocateBoostToIU`, `allocateTliToIU`, `allocateDestructToRSO`, `allocateAGC_CMToCM`, `allocateAGC_LMToLM`, `allocateAGSToLM`, `allocateLVDCToIU`, `allocatePathAToCCATS`, `allocatePathBToP27`, `allocateEPSToSM`, `allocateEPSToCM`, `allocateEPSToDescent`, `allocateDockToCM`, `allocateDockToLM`, `allocateRCSToSM`, `allocateRCSToCM`.
 
+Here's the allocation picture. IU owns boost and TLI. RSO owns destruct. AGC_CM and AGC_LM stay split. AGS is separate. EPS sits on SM, CM, and descent.
+
 ![Apollo allocations](apollo-alloc.svg)
-
-**MagicGrid layer:** solution / allocations.
-
-Look at IU owning boost and TLI; RSO owning destruct; AGC_CM and AGC_LM staying split; AGS separate; EPS on SM, CM, and descent; docking and RCS on CM/SM.
 
 ---
 
-## Open risks / unmarked
+## What we don't know
 
-Unmarked stays unmarked. The model does not invent a number to close a gap.
+Unmarked stays unmarked. I don't invent a number to close a gap.
 
 - CSM lunar Δv (no official table in the sources used)
 - SPS loaded mass / CSM-107 SPS loaded lb
@@ -411,10 +375,12 @@ Unmarked stays unmarked. The model does not invent a number to close a gap.
 - Full SCS switch deck (TBD in the model)
 - CMP personal name (not in the model)
 
-**In scope:** Apollo 11 / Block II / AS-506.
+In scope: Apollo 11 / Block II / AS-506.
 
-**Out of scope:** J-mission 3+3 cryo, LRV, SIM bay, extended EVA. F-1 1,530,000 lbf is an SA-507 citation, not an AS-506 figure.
+Out of scope: J-mission 3+3 cryo, LRV, SIM bay, extended EVA. F-1 1,530,000 lbf is an SA-507 citation, not an AS-506 figure.
 
 Verification cases remain names only.
 
 This remains an example model, not a certifiable product.
+
+If you had to keep one cut of this stack — the two AGCs, the radar split, or the TLI → dockEject hop — which one would you defend at a dinner table, and what number would you refuse to invent to make the story easier?
