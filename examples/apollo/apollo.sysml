@@ -417,7 +417,12 @@ package Apollo11 {
             state csmOrbit;
             state afterUndock;
             state DOI;
-            state descent;
+            state descent {
+                entry; then approach;
+                state approach;
+                state rateOfDescent;
+                transition startRateOfDescent first approach then rateOfDescent;
+            }
             state surfaceEVA;
             state ascent;
             state rendezvous;
@@ -425,8 +430,8 @@ package Apollo11 {
             state entry;
             state recovery;
             transition startDOI first undock accept doiBurn then DOI;
-            transition startDescent first DOI accept p63 then descent;
-            transition touchdown first descent accept p68 then surfaceEVA;
+            transition startDescent first DOI accept p63 then approach;
+            transition touchdown first rateOfDescent accept p68 then surfaceEVA;
             transition startAscent first surfaceEVA accept p12 then ascent;
             transition startRndz first ascent accept p30 then rendezvous;
             transition startTEI first rendezvous accept teiBurn then TEI;

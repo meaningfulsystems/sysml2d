@@ -1,58 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1277" height="766" viewBox="0 0 1277 766">
+<svg xmlns="http://www.w3.org/2000/svg" width="1279" height="806" viewBox="0 0 1279 806">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1277" height="766" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1273" height="724" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1279" height="806" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1275" height="764" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 496 L 512 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[stv.mb] Apollo 11 Lunar Return [lunarReturn : lunarReturn]</text>
-<rect x="2" y="38" width="1273" height="726" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1275" height="766" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="boundary" x="-7" y="5" width="1240" height="679" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<rect id="boundary" x="-7" y="5" width="1242" height="719" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
 <text class="label" x="3" y="27">lunarReturn</text>
-<rect id="lunarReturn" x="29" y="41" width="1168" height="607" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<rect id="lunarReturn" x="29" y="41" width="1170" height="647" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" x="41" y="65">Lunar return</text>
+<rect id="descent" x="338" y="274" width="270" height="369" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" x="350" y="298">Descent</text>
 <circle id="lunarInitial" cx="174" cy="121" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
 <rect id="LOI" x="74" y="146" width="200" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="174" y="174">Lunar Orbit Insertion</text>
 <rect id="undock" x="90" y="344" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="174" y="372">Undock</text>
-<rect id="DOI" x="90" y="539" width="168" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="174" y="563.5">Descent Orbit</tspan><tspan x="174" dy="15">Insertion</tspan></text>
-<rect id="descent" x="388" y="543" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="472" y="571">Descent</text>
-<rect id="surfaceEVA" x="372" y="340" width="200" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="472" y="364.5">Surface</tspan><tspan x="472" dy="15">extravehicular activity</tspan></text>
-<rect id="ascent" x="388" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="472" y="174">Ascent</text>
-<rect id="rendezvous" x="686" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="770" y="174">Rendezvous</text>
-<rect id="TEI" x="686" y="340" width="168" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="770" y="364.5">Trans-Earth</tspan><tspan x="770" dy="15">Injection</tspan></text>
-<rect id="entry" x="686" y="543" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="770" y="571">Entry</text>
-<rect id="recovery" x="984" y="543" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1068" y="571">Recovery</text>
+<rect id="DOI" x="90" y="538" width="168" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="174" y="562.5">Descent Orbit</tspan><tspan x="174" dy="15">Insertion</tspan></text>
+<rect id="approach" x="389" y="542" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="473" y="570">Approach</text>
+<rect id="rateOfDescent" x="383" y="344" width="180" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="473" y="372">Rate of descent</text>
+<rect id="surfaceEVA" x="373" y="142" width="200" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="473" y="166.5">Surface</tspan><tspan x="473" dy="15">extravehicular activity</tspan></text>
+<rect id="ascent" x="687" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="771" y="174">Ascent</text>
+<rect id="rendezvous" x="687" y="344" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="771" y="372">Rendezvous</text>
+<rect id="TEI" x="687" y="538" width="168" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="771" y="562.5">Trans-Earth</tspan><tspan x="771" dy="15">Injection</tspan></text>
+<rect id="entry" x="986" y="542" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1070" y="570">Entry</text>
+<rect id="recovery" x="986" y="344" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1070" y="372">Recovery</text>
 <path d="M 174,131 L 174,146" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <path d="M 174,202 L 174,344" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 174,400 L 174,539" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 258,571 L 258,572 Q 258,573 259,573 L 388,573" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 472,543 L 472,404" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 472,340 L 472,202" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 556,174 L 556,174 L 686,174" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 770,202 L 770,340" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 770,404 L 770,543" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<path d="M 854,571 L 854,571 L 984,571" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
-<text class="small" text-anchor="middle" x="174" y="477.5">Descent Propulsion</text>
-<text class="small" text-anchor="middle" x="323" y="581">braking</text>
-<text class="small" text-anchor="middle" x="472" y="481.5">landing confirmation</text>
-<text class="small" text-anchor="middle" x="472" y="279">ascent</text>
-<text class="small" text-anchor="middle" x="621" y="182">rendezvous</text>
-<text class="small" text-anchor="middle" x="770" y="279">Service Propulsion</text>
-<text class="small" text-anchor="middle" x="770" y="481.5">entry interface</text>
-<text class="small" text-anchor="middle" x="919" y="579">splashdown</text>
+<path d="M 174,400 L 174,538" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 258,570 L 258,571 Q 258,572 259,572 L 389,572" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 473,542 L 473,400" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 473,344 L 473,206" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 573,174 L 573,175 Q 573,176 574,176 L 687,176" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 771,202 L 771,344" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 771,400 L 771,538" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 855,570 L 855,571 Q 855,572 856,572 L 986,572" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 1070,542 L 1070,400" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="174" y="477">Descent Propulsion</text>
+<text class="small" text-anchor="middle" x="323.5" y="580">braking</text>
+<text class="small" text-anchor="middle" x="473" y="283">landing confirmation</text>
+<text class="small" text-anchor="middle" x="630" y="184">ascent</text>
+<text class="small" text-anchor="middle" x="771" y="281">rendezvous</text>
+<text class="small" text-anchor="middle" x="771" y="477">Service Propulsion</text>
+<text class="small" text-anchor="middle" x="920.5" y="580">entry interface</text>
+<text class="small" text-anchor="middle" x="1070" y="479">splashdown</text>
 </g>
 </svg>

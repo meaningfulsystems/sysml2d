@@ -11,6 +11,9 @@
     "undock": "Apollo11::MissionPhase::lunarReturn::undock",
     "DOI": "Apollo11::MissionPhase::lunarReturn::DOI",
     "descent": "Apollo11::MissionPhase::lunarReturn::descent",
+    "approach": "Apollo11::MissionPhase::lunarReturn::descent::approach",
+    "rateOfDescent": "Apollo11::MissionPhase::lunarReturn::descent::rateOfDescent",
+    "startRateOfDescent": "Apollo11::MissionPhase::lunarReturn::descent::startRateOfDescent",
     "surfaceEVA": "Apollo11::MissionPhase::lunarReturn::surfaceEVA",
     "ascent": "Apollo11::MissionPhase::lunarReturn::ascent",
     "rendezvous": "Apollo11::MissionPhase::lunarReturn::rendezvous",
@@ -32,8 +35,8 @@
     "kind": "StateView",
     "name": "Apollo 11 Lunar Return",
     "canvas": {
-      "width": 1273,
-      "height": 724,
+      "width": 1275,
+      "height": 764,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -47,8 +50,8 @@
         "layout": {
           "x": -7,
           "y": 5,
-          "width": 1240,
-          "height": 679,
+          "width": 1242,
+          "height": 719,
           "z": 0
         },
         "compartments": {
@@ -64,8 +67,8 @@
         "layout": {
           "x": 29,
           "y": 41,
-          "width": 1168,
-          "height": 607,
+          "width": 1170,
+          "height": 647,
           "z": 4
         },
         "model_ref": "lunarReturn",
@@ -117,7 +120,7 @@
         "symbol": "state_usage",
         "layout": {
           "x": 90,
-          "y": 539,
+          "y": 538,
           "width": 168,
           "height": 64,
           "z": 10
@@ -130,22 +133,50 @@
         "id": "descent",
         "symbol": "state_usage",
         "layout": {
-          "x": 388,
-          "y": 543,
+          "x": 338,
+          "y": 274,
+          "width": 270,
+          "height": 369,
+          "z": 5
+        },
+        "model_ref": "descent",
+        "label": "Descent",
+        "style": "state.composite"
+      },
+      {
+        "id": "approach",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 389,
+          "y": 542,
           "width": 168,
           "height": 56,
           "z": 10
         },
-        "model_ref": "descent",
-        "label": "Descent",
+        "model_ref": "approach",
+        "label": "Approach",
+        "style": "state.default"
+      },
+      {
+        "id": "rateOfDescent",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 383,
+          "y": 344,
+          "width": 180,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "rateOfDescent",
+        "label": "Rate of descent",
         "style": "state.default"
       },
       {
         "id": "surfaceEVA",
         "symbol": "state_usage",
         "layout": {
-          "x": 372,
-          "y": 340,
+          "x": 373,
+          "y": 142,
           "width": 200,
           "height": 64,
           "z": 10
@@ -158,7 +189,7 @@
         "id": "ascent",
         "symbol": "state_usage",
         "layout": {
-          "x": 388,
+          "x": 687,
           "y": 146,
           "width": 168,
           "height": 56,
@@ -172,8 +203,8 @@
         "id": "rendezvous",
         "symbol": "state_usage",
         "layout": {
-          "x": 686,
-          "y": 146,
+          "x": 687,
+          "y": 344,
           "width": 168,
           "height": 56,
           "z": 10
@@ -186,8 +217,8 @@
         "id": "TEI",
         "symbol": "state_usage",
         "layout": {
-          "x": 686,
-          "y": 340,
+          "x": 687,
+          "y": 538,
           "width": 168,
           "height": 64,
           "z": 10
@@ -200,8 +231,8 @@
         "id": "entry",
         "symbol": "state_usage",
         "layout": {
-          "x": 686,
-          "y": 543,
+          "x": 986,
+          "y": 542,
           "width": 168,
           "height": 56,
           "z": 10
@@ -214,8 +245,8 @@
         "id": "recovery",
         "symbol": "state_usage",
         "layout": {
-          "x": 984,
-          "y": 543,
+          "x": 986,
+          "y": 344,
           "width": 168,
           "height": 56,
           "z": 10
@@ -308,7 +339,7 @@
         "style": "transition"
       },
       {
-        "id": "DOI--descent",
+        "id": "DOI--approach",
         "model_ref": "startDescent",
         "source": {
           "element": "DOI",
@@ -318,7 +349,7 @@
           }
         },
         "target": {
-          "element": "descent",
+          "element": "approach",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -329,11 +360,11 @@
           "waypoints": [
             {
               "x": 258,
-              "y": 573
+              "y": 572
             },
             {
-              "x": 388,
-              "y": 573
+              "x": 389,
+              "y": 572
             }
           ]
         },
@@ -350,10 +381,34 @@
         "style": "transition"
       },
       {
-        "id": "descent--surfaceEVA",
+        "id": "approach--rateOfDescent",
+        "model_ref": "startRateOfDescent",
+        "source": {
+          "element": "approach",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rateOfDescent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "rateOfDescent--surfaceEVA",
         "model_ref": "touchdown",
         "source": {
-          "element": "descent",
+          "element": "rateOfDescent",
           "anchor": {
             "side": "top",
             "offset": 0.5
@@ -388,26 +443,35 @@
         "source": {
           "element": "surfaceEVA",
           "anchor": {
-            "side": "top",
+            "side": "right",
             "offset": 0.5
           }
         },
         "target": {
           "element": "ascent",
           "anchor": {
-            "side": "bottom",
+            "side": "left",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 573,
+              "y": 176
+            },
+            {
+              "x": 687,
+              "y": 176
+            }
+          ]
         },
         "labels": [
           {
             "text": "ascent",
             "position": {
-              "segment": 0,
+              "segment": 1,
               "offset": 0.5,
               "placement": "centerline"
             }
@@ -421,35 +485,26 @@
         "source": {
           "element": "ascent",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "rendezvous",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 556,
-              "y": 174
-            },
-            {
-              "x": 686,
-              "y": 174
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "rendezvous",
             "position": {
-              "segment": 1,
+              "segment": 0,
               "offset": 0.5,
               "placement": "centerline"
             }
@@ -496,26 +551,35 @@
         "source": {
           "element": "TEI",
           "anchor": {
-            "side": "bottom",
+            "side": "right",
             "offset": 0.5
           }
         },
         "target": {
           "element": "entry",
           "anchor": {
-            "side": "top",
+            "side": "left",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 855,
+              "y": 572
+            },
+            {
+              "x": 986,
+              "y": 572
+            }
+          ]
         },
         "labels": [
           {
             "text": "entry interface",
             "position": {
-              "segment": 0,
+              "segment": 1,
               "offset": 0.5,
               "placement": "centerline"
             }
@@ -529,35 +593,26 @@
         "source": {
           "element": "entry",
           "anchor": {
-            "side": "right",
+            "side": "top",
             "offset": 0.5
           }
         },
         "target": {
           "element": "recovery",
           "anchor": {
-            "side": "left",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 854,
-              "y": 571
-            },
-            {
-              "x": 984,
-              "y": 571
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "splashdown",
             "position": {
-              "segment": 1,
+              "segment": 0,
               "offset": 0.5,
               "placement": "centerline"
             }

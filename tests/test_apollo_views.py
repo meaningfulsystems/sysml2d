@@ -392,12 +392,18 @@ class ApolloViewTests(unittest.TestCase):
             if state.get("parent") == "lunarReturn" and not state.get("initial")
         ]
         self.assertLessEqual(len(lunar_children), 10)
+        self.assertTrue(lunar_spec["states"]["descent"].get("composite"))
+        self.assertEqual(lunar_spec["states"]["approach"].get("parent"), "descent")
+        self.assertEqual(lunar_spec["states"]["rateOfDescent"].get("parent"), "descent")
+        self.assertEqual(lunar_spec["states"]["approach"]["label"], "Approach")
+        self.assertEqual(lunar_spec["states"]["rateOfDescent"]["label"], "Rate of descent")
         lunar_hops = {(edge["from"], edge["to"]) for edge in lunar_spec["transitions"]}
         lunar = [
             "LOI",
             "undock",
             "DOI",
-            "descent",
+            "approach",
+            "rateOfDescent",
             "surfaceEVA",
             "ascent",
             "rendezvous",
@@ -410,6 +416,11 @@ class ApolloViewTests(unittest.TestCase):
             lunar[1:],
         )
         self.assertIn(("undock", "DOI"), lunar_hops)
+        self.assertIn(("DOI", "approach"), lunar_hops)
+        self.assertIn(("approach", "rateOfDescent"), lunar_hops)
+        self.assertIn(("rateOfDescent", "surfaceEVA"), lunar_hops)
+        self.assertNotIn(("descent", "surfaceEVA"), lunar_hops)
+        self.assertNotIn(("DOI", "descent"), lunar_hops)
         context = json.loads((APOLLO / "apollo-context.json").read_text(encoding="utf-8"))
         context_labels = [node["label"] for node in context["nodes"].values()]
         self.assertIn("Crew", context_labels)
@@ -614,6 +625,8 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("landing confirmation", lunar_labels)
         self.assertIn("ascent", lunar_labels)
         self.assertIn("rendezvous", lunar_labels)
+        self.assertIn("Approach", lunar_spec["states"]["approach"]["label"])
+        self.assertIn("Rate of descent", lunar_spec["states"]["rateOfDescent"]["label"])
         self.assertNotIn("P63", lunar_labels)
         self.assertNotIn("P68", lunar_labels)
         self.assertNotIn("P12", lunar_labels)

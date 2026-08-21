@@ -18,6 +18,9 @@
     "undock": "Apollo11::MissionPhase::lunarReturn::undock",
     "DOI": "Apollo11::MissionPhase::lunarReturn::DOI",
     "descent": "Apollo11::MissionPhase::lunarReturn::descent",
+    "approach": "Apollo11::MissionPhase::lunarReturn::descent::approach",
+    "rateOfDescent": "Apollo11::MissionPhase::lunarReturn::descent::rateOfDescent",
+    "startRateOfDescent": "Apollo11::MissionPhase::lunarReturn::descent::startRateOfDescent",
     "surfaceEVA": "Apollo11::MissionPhase::lunarReturn::surfaceEVA",
     "ascent": "Apollo11::MissionPhase::lunarReturn::ascent",
     "rendezvous": "Apollo11::MissionPhase::lunarReturn::rendezvous",
@@ -64,8 +67,21 @@
     },
     "descent": {
       "label": "Descent",
+      "composite": true,
+      "style": "state.composite",
       "model_ref": "descent",
       "parent": "lunarReturn"
+    },
+    "approach": {
+      "label": "Approach",
+      "model_ref": "approach",
+      "parent": "descent"
+    },
+    "rateOfDescent": {
+      "label": "Rate of descent",
+      "model_ref": "rateOfDescent",
+      "parent": "descent",
+      "w": 180
     },
     "surfaceEVA": {
       "label": "Surface\nextravehicular activity",
@@ -121,12 +137,18 @@
     },
     {
       "from": "DOI",
-      "to": "descent",
+      "to": "approach",
       "label": "braking",
       "model_ref": "startDescent"
     },
     {
-      "from": "descent",
+      "from": "approach",
+      "to": "rateOfDescent",
+      "label": "",
+      "model_ref": "startRateOfDescent"
+    },
+    {
+      "from": "rateOfDescent",
       "to": "surfaceEVA",
       "label": "landing confirmation",
       "model_ref": "touchdown"
