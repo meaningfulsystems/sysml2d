@@ -7,40 +7,58 @@
     "apollo.sysml"
   ],
   "direction": "left-right",
-  "rank_gap": 150,
+  "rank_gap": 160,
   "col_gap": 70,
   "nodes": {
-    "MCC": {
-      "label": "MCC",
+    "Crew": {
+      "label": "Crew",
       "symbol": "part_usage",
       "rank": 0,
-      "order": 0
+      "order": 0,
+      "w": 170,
+      "h": 70,
+      "model_ref": "Crew"
+    },
+    "MCC": {
+      "label": "Mission Control",
+      "symbol": "part_usage",
+      "rank": 0,
+      "order": 1,
+      "w": 170,
+      "h": 70,
+      "model_ref": "MCC"
     },
     "RSO": {
-      "label": "RSO",
+      "label": "Range Safety Officer",
       "symbol": "part_usage",
       "rank": 0,
-      "order": 1
+      "order": 2,
+      "w": 190,
+      "h": 70,
+      "model_ref": "RSO"
     },
     "MSFN": {
-      "label": "MSFN",
+      "label": "tracking net",
       "symbol": "part_usage",
       "rank": 1,
       "order": 0,
-      "w": 160,
-      "h": 80
+      "w": 170,
+      "h": 80,
+      "model_ref": "MSFN"
     },
     "earth": {
       "label": "Earth",
       "symbol": "part_usage",
       "rank": 2,
-      "order": 0
+      "order": 0,
+      "model_ref": "earth"
     },
     "moon": {
       "label": "Moon",
       "symbol": "part_usage",
       "rank": 2,
-      "order": 1
+      "order": 1,
+      "model_ref": "moon"
     }
   },
   "edges": [
@@ -56,7 +74,7 @@
     {
       "from": "RSO",
       "to": "MSFN",
-      "label": "destruct UHF (not MCC)",
+      "label": "destruct UHF (not Mission Control)",
       "model_ref": "destructFlow",
       "source_side": "right",
       "target_side": "left",

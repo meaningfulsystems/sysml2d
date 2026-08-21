@@ -7,27 +7,33 @@
   ],
   "aliases": {
     "missionPhase": "Apollo11::MissionPhase",
-    "countdown": "Apollo11::MissionPhase::countdown",
-    "boost": "Apollo11::MissionPhase::boost",
-    "earthOrbit": "Apollo11::MissionPhase::earthOrbit",
-    "TLI": "Apollo11::MissionPhase::TLI",
-    "dockEject": "Apollo11::MissionPhase::dockEject",
-    "translunar": "Apollo11::MissionPhase::translunar",
     "LOI": "Apollo11::MissionPhase::LOI",
-    "liftoff": "Apollo11::MissionPhase::liftoff",
-    "seoi": "Apollo11::MissionPhase::seoi",
-    "startTLI": "Apollo11::MissionPhase::startTLI",
-    "startDockEject": "Apollo11::MissionPhase::startDockEject",
-    "startTranslunar": "Apollo11::MissionPhase::startTranslunar",
-    "startLOI": "Apollo11::MissionPhase::startLOI"
+    "undock": "Apollo11::MissionPhase::undock",
+    "DOI": "Apollo11::MissionPhase::DOI",
+    "descent": "Apollo11::MissionPhase::descent",
+    "surfaceEVA": "Apollo11::MissionPhase::surfaceEVA",
+    "ascent": "Apollo11::MissionPhase::ascent",
+    "rendezvous": "Apollo11::MissionPhase::rendezvous",
+    "TEI": "Apollo11::MissionPhase::TEI",
+    "entry": "Apollo11::MissionPhase::entry",
+    "recovery": "Apollo11::MissionPhase::recovery",
+    "LOICutoff": "Apollo11::MissionPhase::LOICutoff",
+    "startDOI": "Apollo11::MissionPhase::startDOI",
+    "startDescent": "Apollo11::MissionPhase::startDescent",
+    "touchdown": "Apollo11::MissionPhase::touchdown",
+    "startAscent": "Apollo11::MissionPhase::startAscent",
+    "startRndz": "Apollo11::MissionPhase::startRndz",
+    "startTEI": "Apollo11::MissionPhase::startTEI",
+    "startEntry": "Apollo11::MissionPhase::startEntry",
+    "splashdown": "Apollo11::MissionPhase::splashdown"
   },
   "diagram": {
-    "id": "apollo-stm",
+    "id": "apollo-stm-lunar",
     "kind": "StateView",
-    "name": "Apollo 11 Earth Coast",
+    "name": "Apollo 11 Lunar Return",
     "canvas": {
-      "width": 924,
-      "height": 681,
+      "width": 1164,
+      "height": 670,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -39,10 +45,10 @@
         "model_ref": "missionPhase",
         "symbol": "boundary",
         "layout": {
-          "x": 54,
+          "x": 38,
           "y": 110,
-          "width": 830,
-          "height": 531,
+          "width": 1086,
+          "height": 520,
           "z": 0
         },
         "compartments": {
@@ -65,317 +71,152 @@
         "style": "initial_state"
       },
       {
-        "id": "countdown",
+        "id": "LOI",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 74,
+          "y": 340,
+          "width": 200,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "LOI",
+        "label": "Lunar Orbit Insertion",
+        "style": "state.default"
+      },
+      {
+        "id": "undock",
         "symbol": "state_usage",
         "layout": {
           "x": 90,
-          "y": 346,
+          "y": 534,
           "width": 168,
           "height": 56,
           "z": 10
         },
-        "model_ref": "countdown",
-        "label": "Countdown",
+        "model_ref": "undock",
+        "label": "Undock",
         "style": "state.default"
       },
       {
-        "id": "boost",
+        "id": "DOI",
         "symbol": "state_usage",
         "layout": {
-          "x": 90,
-          "y": 545,
-          "width": 168,
-          "height": 56,
-          "z": 10
-        },
-        "model_ref": "boost",
-        "label": "Boost",
-        "style": "state.default"
-      },
-      {
-        "id": "earthOrbit",
-        "symbol": "state_usage",
-        "layout": {
-          "x": 377,
-          "y": 541,
+          "x": 367,
+          "y": 530,
           "width": 168,
           "height": 64,
           "z": 10
         },
-        "model_ref": "earthOrbit",
-        "label": "Earth orbit\n100 nmi planned",
+        "model_ref": "DOI",
+        "label": "Descent Orbit\nInsertion",
         "style": "state.default"
       },
       {
-        "id": "TLI",
+        "id": "descent",
         "symbol": "state_usage",
         "layout": {
-          "x": 361,
-          "y": 330,
-          "width": 200,
-          "height": 88,
+          "x": 367,
+          "y": 340,
+          "width": 168,
+          "height": 56,
           "z": 10
         },
-        "model_ref": "TLI",
-        "label": "Translunar Injection\nPK 02:44:15\nA11-FP 2:44:26\nflown 02:44:16",
+        "model_ref": "descent",
+        "label": "Descent",
         "style": "state.default"
       },
       {
-        "id": "dockEject",
+        "id": "surfaceEVA",
         "symbol": "state_usage",
         "layout": {
-          "x": 377,
+          "x": 367,
           "y": 146,
           "width": 168,
           "height": 56,
           "z": 10
         },
-        "model_ref": "dockEject",
-        "label": "dock/eject",
+        "model_ref": "surfaceEVA",
+        "label": "Surface EVA",
         "style": "state.default"
       },
       {
-        "id": "translunar",
+        "id": "ascent",
         "symbol": "state_usage",
         "layout": {
-          "x": 664,
+          "x": 644,
           "y": 146,
           "width": 168,
           "height": 56,
           "z": 10
         },
-        "model_ref": "translunar",
-        "label": "Translunar coast",
+        "model_ref": "ascent",
+        "label": "Ascent",
         "style": "state.default"
       },
       {
-        "id": "LOI",
+        "id": "rendezvous",
         "symbol": "state_usage",
         "layout": {
-          "x": 648,
-          "y": 334,
-          "width": 200,
-          "height": 80,
+          "x": 644,
+          "y": 340,
+          "width": 168,
+          "height": 56,
           "z": 10
         },
-        "model_ref": "LOI",
-        "label": "Lunar Orbit Insertion\nplanned 75:54:28\nflown ~075:49:50",
+        "model_ref": "rendezvous",
+        "label": "Rendezvous",
+        "style": "state.default"
+      },
+      {
+        "id": "TEI",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 644,
+          "y": 530,
+          "width": 168,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "TEI",
+        "label": "Trans-Earth\nInjection",
+        "style": "state.default"
+      },
+      {
+        "id": "entry",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 920,
+          "y": 534,
+          "width": 168,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "entry",
+        "label": "Entry",
+        "style": "state.default"
+      },
+      {
+        "id": "recovery",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 920,
+          "y": 340,
+          "width": 168,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "recovery",
+        "label": "Recovery",
         "style": "state.default"
       }
     ],
     "connections": [
       {
-        "id": "initial--countdown",
+        "id": "initial--LOI",
         "model_ref": "missionPhase",
         "source": {
           "element": "initial",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "countdown",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": []
-        },
-        "labels": [],
-        "style": "transition"
-      },
-      {
-        "id": "countdown--boost",
-        "model_ref": "liftoff",
-        "source": {
-          "element": "countdown",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "boost",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": []
-        },
-        "labels": [
-          {
-            "text": "tower clear",
-            "position": {
-              "segment": 0,
-              "offset": 0.5,
-              "placement": "centerline"
-            }
-          }
-        ],
-        "style": "transition"
-      },
-      {
-        "id": "boost--earthOrbit",
-        "model_ref": "seoi",
-        "source": {
-          "element": "boost",
-          "anchor": {
-            "side": "right",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "earthOrbit",
-          "anchor": {
-            "side": "left",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 258,
-              "y": 571
-            },
-            {
-              "x": 377,
-              "y": 571
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "engine cutoff",
-            "position": {
-              "segment": 1,
-              "offset": 0.5,
-              "placement": "centerline"
-            }
-          }
-        ],
-        "style": "transition"
-      },
-      {
-        "id": "earthOrbit--TLI",
-        "model_ref": "startTLI",
-        "source": {
-          "element": "earthOrbit",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "TLI",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": []
-        },
-        "labels": [
-          {
-            "text": "IU / S-IVB",
-            "position": {
-              "segment": 0,
-              "offset": 0.5,
-              "placement": "centerline"
-            }
-          }
-        ],
-        "style": "transition"
-      },
-      {
-        "id": "TLI--dockEject",
-        "model_ref": "startDockEject",
-        "source": {
-          "element": "TLI",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "dockEject",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": []
-        },
-        "labels": [
-          {
-            "text": "TDE ~03:20\u201304:09",
-            "position": {
-              "segment": 0,
-              "offset": 0.5,
-              "placement": "centerline"
-            }
-          }
-        ],
-        "style": "transition"
-      },
-      {
-        "id": "dockEject--translunar",
-        "model_ref": "startTranslunar",
-        "source": {
-          "element": "dockEject",
-          "anchor": {
-            "side": "right",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "translunar",
-          "anchor": {
-            "side": "left",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 545,
-              "y": 174
-            },
-            {
-              "x": 664,
-              "y": 174
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "LM extract",
-            "position": {
-              "segment": 1,
-              "offset": 0.5,
-              "placement": "centerline"
-            }
-          }
-        ],
-        "style": "transition"
-      },
-      {
-        "id": "translunar--LOI",
-        "model_ref": "startLOI",
-        "source": {
-          "element": "translunar",
           "anchor": {
             "side": "bottom",
             "offset": 0.5
@@ -392,9 +233,315 @@
           "kind": "orthogonal",
           "waypoints": []
         },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "LOI--undock",
+        "model_ref": "LOICutoff",
+        "source": {
+          "element": "LOI",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "undock",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "undock--DOI",
+        "model_ref": "startDOI",
+        "source": {
+          "element": "undock",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "DOI",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 258,
+              "y": 560
+            },
+            {
+              "x": 367,
+              "y": 560
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "Descent Propulsion",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "DOI--descent",
+        "model_ref": "startDescent",
+        "source": {
+          "element": "DOI",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "descent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "P63",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "descent--surfaceEVA",
+        "model_ref": "touchdown",
+        "source": {
+          "element": "descent",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "surfaceEVA",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "P68",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "surfaceEVA--ascent",
+        "model_ref": "startAscent",
+        "source": {
+          "element": "surfaceEVA",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ascent",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 535,
+              "y": 174
+            },
+            {
+              "x": 644,
+              "y": 174
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "P12",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "ascent--rendezvous",
+        "model_ref": "startRndz",
+        "source": {
+          "element": "ascent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rendezvous",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "P30",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "rendezvous--TEI",
+        "model_ref": "startTEI",
+        "source": {
+          "element": "rendezvous",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "TEI",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
         "labels": [
           {
             "text": "Service Propulsion",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "TEI--entry",
+        "model_ref": "startEntry",
+        "source": {
+          "element": "TEI",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "entry",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 812,
+              "y": 564
+            },
+            {
+              "x": 920,
+              "y": 564
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "entry interface",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "entry--recovery",
+        "model_ref": "splashdown",
+        "source": {
+          "element": "entry",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "recovery",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "splashdown",
             "position": {
               "segment": 0,
               "offset": 0.5,

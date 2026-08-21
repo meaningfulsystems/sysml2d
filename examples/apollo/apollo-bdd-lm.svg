@@ -1,93 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1485" height="860" viewBox="0 0 1485 860">
+<svg xmlns="http://www.w3.org/2000/svg" width="1208" height="452" viewBox="0 0 1208 452">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1485" height="860" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1481" height="818" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1208" height="452" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1204" height="410" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 280 L 296 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[def.mb] LM Definition Tree [LM]</text>
-<rect x="2" y="38" width="1481" height="820" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1204" height="412" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="LM" x="593" y="40" width="190" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="688" y="68">Lunar Module</text>
-<rect id="descent" x="278" y="174" width="190" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="373" y="202">Descent stage</text>
-<rect id="DPS" x="68" y="312" width="190" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="163" y="333.5">Descent Propulsion</tspan><tspan x="163" dy="15">System</tspan></text>
-<rect id="AgZn1" x="278" y="308" width="190" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="373" y="336">Silver-zinc 1</text>
-<rect id="AgZn2" x="488" y="308" width="190" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="583" y="336">Silver-zinc 2</text>
-<rect id="AgZn3" x="173" y="392" width="190" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="268" y="420">Silver-zinc 3</text>
-<rect id="AgZn4" x="383" y="392" width="190" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="478" y="420">Silver-zinc 4</text>
-<rect id="ECA" x="593" y="397" width="190" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="688" y="418.5">Electrical Control</tspan><tspan x="688" dy="15">Assembly</tspan></text>
-<rect id="landingRadar" x="278" y="476" width="190" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="373" y="504">Landing radar</text>
-<rect id="ascent" x="1013" y="174" width="190" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1108" y="202">Ascent stage</text>
-<rect id="PNGS" x="803" y="312" width="190" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="898" y="333.5">Primary Guidance</tspan><tspan x="898" dy="15">(PNGS)</tspan></text>
-<rect id="AGC_LM" x="1013" y="312" width="190" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1108" y="333.5">LM guidance</tspan><tspan x="1108" dy="15">computer</tspan></text>
-<rect id="APS" x="1223" y="312" width="190" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1318" y="333.5">Ascent Propulsion</tspan><tspan x="1318" dy="15">System</tspan></text>
-<rect id="RCS" x="803" y="448" width="190" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="898" y="469.5">Reaction control</tspan><tspan x="898" dy="15">(100 lbf)</tspan></text>
-<rect id="rendezvousRadar" x="1013" y="442" width="190" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1108" y="470">Rendezvous radar</text>
-<rect id="drogue" x="1223" y="442" width="190" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1318" y="470">Drogue</text>
-<rect id="AGS" x="1013" y="584" width="190" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1108" y="605.5">Abort Guidance</tspan><tspan x="1108" dy="15">System</tspan></text>
-<rect id="AEA" x="803" y="720" width="190" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="898" y="741.5">Abort Electronics</tspan><tspan x="898" dy="15">Assembly</tspan></text>
-<rect id="ASA" x="1013" y="720" width="190" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1108" y="741.5">Abort Sensor</tspan><tspan x="1108" dy="15">Assembly</tspan></text>
-<rect id="DEDA" x="1223" y="720" width="190" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle"><tspan x="1318" y="741.5">Data Entry and</tspan><tspan x="1318" dy="15">Display Assembly</tspan></text>
-<path d="M 688,96 L 688,135 L 373,135 L 373,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 688,96 L 688,135 L 1108,135 L 1108,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 373,230 L 373,269 L 163,269 L 163,312" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 373,230 L 373,308" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 373,230 L 373,269 L 583,269 L 583,308" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 373,230 L 373,296 L 274,296 L 274,386 L 268,386 L 268,392" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 373,230 L 373,258 L 706,258 L 706,364 L 478,364 L 478,392" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 373,230 L 373,258 L 706,258 L 706,369 L 688,369 L 688,397" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 373,230 L 373,258 L 40,258 L 40,448 L 373,448 L 373,476" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1108,230 L 1108,271 L 898,271 L 898,312" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1108,230 L 1108,312" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1108,230 L 1108,271 L 1318,271 L 1318,312" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1108,230 L 1108,296 L 1009,296 L 1009,432 L 997,432 L 997,448 L 898,448" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1108,230 L 1108,296 L 1009,296 L 1009,442 L 1108,442" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1108,230 L 1108,258 L 1441,258 L 1441,414 L 1318,414 L 1318,442" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1108,230 L 1108,296 L 1009,296 L 1009,584 L 1108,584" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1108,642 L 1108,681 L 898,681 L 898,720" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1108,642 L 1108,720" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1108,642 L 1108,681 L 1318,681 L 1318,720" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" x="383" y="162.98">1</text>
-<text class="small" x="1118" y="162.98">1</text>
-<text class="small" x="173" y="300.26">1</text>
-<text class="small" x="383" y="289.96">1</text>
-<text class="small" x="593" y="296.98">1</text>
-<text class="small" x="278" y="387.64">1</text>
-<text class="small" x="488" y="386.32">1</text>
-<text class="small" x="698" y="391.32">1</text>
-<text class="small" x="383" y="470.32">1</text>
-<text class="small" x="908" y="300.62">1</text>
-<text class="small" x="1118" y="293.24">1</text>
-<text class="small" x="1328" y="300.62">1</text>
-<text class="small" x="913.94" y="444">1</text>
-<text class="small" x="1112.06" y="438">1</text>
-<text class="small" x="1328" y="436.32">1</text>
-<text class="small" x="1112.06" y="580">1</text>
-<text class="small" x="908" y="708.98">1</text>
-<text class="small" x="1118" y="701.96">1</text>
-<text class="small" x="1328" y="708.98">1</text>
+<rect id="LM" x="502" y="40" width="200" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="602" y="68">Lunar Module</text>
+<rect id="descent" x="154" y="174" width="200" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="254" y="202">Descent stage</text>
+<rect id="DPS" x="40" y="312" width="200" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="140" y="333.5">Descent Propulsion</tspan><tspan x="140" dy="15">System</tspan></text>
+<rect id="landingRadar" x="268" y="308" width="200" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="368" y="336">Landing radar</text>
+<rect id="ascent" x="730" y="174" width="200" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="830" y="202">Ascent stage</text>
+<rect id="PNGS" x="496" y="312" width="212" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="602" y="333.5">Primary Guidance</tspan><tspan x="602" dy="15">Navigation and Control</tspan></text>
+<rect id="AGS" x="736" y="312" width="200" height="58" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="836" y="333.5">Abort Guidance</tspan><tspan x="836" dy="15">System</tspan></text>
+<rect id="rendezvousRadar" x="964" y="308" width="200" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1064" y="336">Rendezvous radar</text>
+<path d="M 602,96 L 602,135 L 254,135 L 254,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 602,96 L 602,135 L 830,135 L 830,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 254,230 L 254,269 L 140,269 L 140,312" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 254,230 L 254,269 L 368,269 L 368,308" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 830,230 L 830,269 L 602,269 L 602,312" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 830,230 L 830,269 L 836,269 L 836,312" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 830,230 L 830,269 L 1064,269 L 1064,308" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="264" y="162.98">1</text>
+<text class="small" x="840" y="162.98">1</text>
+<text class="small" x="150" y="300.26">1</text>
+<text class="small" x="378" y="296.98">1</text>
+<text class="small" x="612" y="300.26">1</text>
+<text class="small" x="846" y="300.26">1</text>
+<text class="small" x="1074" y="296.98">1</text>
 </g>
 </svg>

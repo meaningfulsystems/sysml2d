@@ -172,8 +172,9 @@ class ApolloViewTests(unittest.TestCase):
         self.assertNotIn("21,500", joined)
         self.assertNotIn("LMA790", joined)
         self.assertNotRegex(joined, r"(?i)required thrust")
-        self.assertLess(sizes["apollo-stm"]["width"], 2500)
-        self.assertGreater(sizes["apollo-stm"]["height"], 600)
+        self.assertLess(sizes["apollo-stm"]["width"], 2800)
+        self.assertGreater(sizes["apollo-stm"]["height"], 200)
+        self.assertLess(sizes["apollo-stm"]["height"], 900)
         self.assertLess(sizes["apollo-bdd"]["width"], 2800)
         self.assertGreater(sizes["apollo-bdd"]["height"], 200)
         self.assertLess(sizes["apollo-bdd"]["height"], 800)
@@ -276,14 +277,42 @@ class ApolloViewTests(unittest.TestCase):
         stm_spec = json.loads((APOLLO / "apollo-stm.json").read_text(encoding="utf-8"))
         self.assertIn("dockEject", stm_spec["states"])
         self.assertEqual(stm_spec["states"]["dockEject"]["label"], "dock/eject")
+        earth_states = [sid for sid, state in stm_spec["states"].items() if not state.get("initial")]
+        self.assertLessEqual(len(earth_states), 10)
         hops = {(edge["from"], edge["to"]) for edge in stm_spec["transitions"]}
-        mission = [
+        earth = [
             "countdown",
             "boost",
             "earthOrbit",
             "TLI",
             "dockEject",
             "translunar",
+            "LOI",
+        ]
+        self.assertEqual(
+            [edge["to"] for edge in stm_spec["transitions"] if edge.get("from") in earth[:-1] and edge.get("to") in earth],
+            earth[1:],
+        )
+        self.assertIn(("TLI", "dockEject"), hops)
+        self.assertIn(("dockEject", "translunar"), hops)
+        self.assertIn(("translunar", "LOI"), hops)
+        self.assertNotIn(("TLI", "translunar"), hops)
+        self.assertNotIn(("dockEject", "LOI"), hops)
+        self.assertNotIn(("translunar", "dockEject"), hops)
+        tli_label = stm_spec["states"]["TLI"]["label"]
+        self.assertIn("PK 02:44:15", tli_label)
+        self.assertIn("A11-FP 2:44:26", tli_label)
+        self.assertIn("flown 02:44:16", tli_label)
+        self.assertNotIn("02:44:16.2", tli_label)
+        loi_label = stm_spec["states"]["LOI"]["label"]
+        self.assertIn("75:54:28", loi_label)
+        self.assertIn("~075:49:50", loi_label)
+        self.assertNotIn("Press Kit", loi_label)
+        lunar_spec = json.loads((APOLLO / "apollo-stm-lunar.json").read_text(encoding="utf-8"))
+        lunar_states = [sid for sid, state in lunar_spec["states"].items() if not state.get("initial")]
+        self.assertLessEqual(len(lunar_states), 10)
+        lunar_hops = {(edge["from"], edge["to"]) for edge in lunar_spec["transitions"]}
+        lunar = [
             "LOI",
             "undock",
             "DOI",
@@ -296,15 +325,22 @@ class ApolloViewTests(unittest.TestCase):
             "recovery",
         ]
         self.assertEqual(
-            [edge["to"] for edge in stm_spec["transitions"] if edge.get("from") in mission[:-1] and edge.get("to") in mission],
-            mission[1:],
+            [edge["to"] for edge in lunar_spec["transitions"] if edge.get("from") in lunar[:-1] and edge.get("to") in lunar],
+            lunar[1:],
         )
-        self.assertIn(("TLI", "dockEject"), hops)
-        self.assertIn(("dockEject", "translunar"), hops)
-        self.assertIn(("translunar", "LOI"), hops)
-        self.assertNotIn(("TLI", "translunar"), hops)
-        self.assertNotIn(("dockEject", "LOI"), hops)
-        self.assertNotIn(("translunar", "dockEject"), hops)
+        self.assertIn(("undock", "DOI"), lunar_hops)
+        context = json.loads((APOLLO / "apollo-context.json").read_text(encoding="utf-8"))
+        context_labels = [node["label"] for node in context["nodes"].values()]
+        self.assertIn("Crew", context_labels)
+        self.assertIn("Mission Control", context_labels)
+        self.assertIn("tracking net", context_labels)
+        self.assertIn("Earth", context_labels)
+        self.assertIn("Moon", context_labels)
+        self.assertTrue(any("Range Safety Officer" in label for label in context_labels))
+        joined_labels = "\n".join(context_labels)
+        self.assertNotIn("MCC", joined_labels)
+        self.assertNotIn("RSO", joined_labels)
+        self.assertNotIn("MSFN", joined_labels)
         tli_i = text.find("state TLI")
         dock_i = text.find("state dockEject")
         coast_i = text.find("state translunar")
@@ -497,6 +533,16 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("landingRadar", {child["id"] for child in descent_node["children"]})
         self.assertNotIn("landingRadar", {child["id"] for child in ascent_node["children"]})
         self.assertIn("rendezvousRadar", {child["id"] for child in ascent_node["children"]})
+        def _tree_ids(node: dict) -> list[str]:
+            ids = [node["id"]]
+            for child in node.get("children") or []:
+                ids.extend(_tree_ids(child))
+            return ids
+        lm_ids = _tree_ids(bdd["roots"][0])
+        self.assertLessEqual(len(lm_ids), 8)
+        self.assertNotIn("AgZn1", lm_ids)
+        self.assertNotIn("AEA", lm_ids)
+        self.assertNotIn("drogue", lm_ids)
 
 
 def _definition_route_box_hits(doc: dict) -> list[tuple[str, str]]:

@@ -11,8 +11,8 @@
     "kind": "GeneralView",
     "name": "Apollo 11 Operating Context",
     "canvas": {
-      "width": 904,
-      "height": 369,
+      "width": 974,
+      "height": 519,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -20,16 +20,30 @@
     },
     "elements": [
       {
-        "id": "MCC",
+        "id": "Crew",
         "symbol": "part_usage",
         "layout": {
           "x": 72,
           "y": 77,
-          "width": 150,
+          "width": 170,
           "height": 70,
           "z": 10
         },
-        "label": "MCC",
+        "label": "Crew",
+        "style": "part_usage",
+        "model_ref": "Crew"
+      },
+      {
+        "id": "MCC",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 72,
+          "y": 227,
+          "width": 170,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Mission Control",
         "style": "part_usage",
         "model_ref": "MCC"
       },
@@ -38,12 +52,12 @@
         "symbol": "part_usage",
         "layout": {
           "x": 72,
-          "y": 227,
-          "width": 150,
+          "y": 377,
+          "width": 190,
           "height": 70,
           "z": 10
         },
-        "label": "RSO",
+        "label": "Range Safety Officer",
         "style": "part_usage",
         "model_ref": "RSO"
       },
@@ -51,13 +65,13 @@
         "id": "MSFN",
         "symbol": "part_usage",
         "layout": {
-          "x": 372,
+          "x": 422,
           "y": 72,
-          "width": 160,
+          "width": 170,
           "height": 80,
           "z": 10
         },
-        "label": "MSFN",
+        "label": "tracking net",
         "style": "part_usage",
         "model_ref": "MSFN"
       },
@@ -65,7 +79,7 @@
         "id": "earth",
         "symbol": "part_usage",
         "layout": {
-          "x": 682,
+          "x": 752,
           "y": 77,
           "width": 150,
           "height": 70,
@@ -79,7 +93,7 @@
         "id": "moon",
         "symbol": "part_usage",
         "layout": {
-          "x": 682,
+          "x": 752,
           "y": 227,
           "width": 150,
           "height": 70,
@@ -111,11 +125,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 277.333,
-              "y": 112
+              "x": 320.667,
+              "y": 262
             },
             {
-              "x": 277.333,
+              "x": 320.667,
               "y": 96
             }
           ]
@@ -151,18 +165,18 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 316.667,
-              "y": 262
+              "x": 363.333,
+              "y": 412
             },
             {
-              "x": 316.667,
+              "x": 363.333,
               "y": 128
             }
           ]
         },
         "labels": [
           {
-            "text": "destruct UHF (not MCC)",
+            "text": "destruct UHF (not Mission Control)",
             "position": {
               "offset": 0.5
             }
@@ -222,11 +236,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 568,
+              "x": 628,
               "y": 112
             },
             {
-              "x": 568,
+              "x": 628,
               "y": 262
             }
           ]

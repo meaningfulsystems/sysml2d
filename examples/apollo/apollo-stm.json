@@ -1,7 +1,7 @@
 {
   "diagram": "apollo-stm",
   "kind": "StateView",
-  "name": "Apollo 11 Mission Phases",
+  "name": "Apollo 11 Earth Coast",
   "subject": "missionPhase",
   "model_files": [
     "apollo.sysml"
@@ -10,8 +10,8 @@
   "rank_wrap": "snake",
   "default_w": 168,
   "default_h": 56,
-  "rank_gap": 150,
-  "col_gap": 88,
+  "rank_gap": 140,
+  "col_gap": 72,
   "aliases": {
     "missionPhase": "Apollo11::MissionPhase",
     "countdown": "Apollo11::MissionPhase::countdown",
@@ -21,102 +21,49 @@
     "dockEject": "Apollo11::MissionPhase::dockEject",
     "translunar": "Apollo11::MissionPhase::translunar",
     "LOI": "Apollo11::MissionPhase::LOI",
-    "undock": "Apollo11::MissionPhase::undock",
-    "DOI": "Apollo11::MissionPhase::DOI",
-    "descent": "Apollo11::MissionPhase::descent",
-    "surfaceEVA": "Apollo11::MissionPhase::surfaceEVA",
-    "ascent": "Apollo11::MissionPhase::ascent",
-    "rendezvous": "Apollo11::MissionPhase::rendezvous",
-    "TEI": "Apollo11::MissionPhase::TEI",
-    "entry": "Apollo11::MissionPhase::entry",
-    "recovery": "Apollo11::MissionPhase::recovery",
     "liftoff": "Apollo11::MissionPhase::liftoff",
     "seoi": "Apollo11::MissionPhase::seoi",
     "startTLI": "Apollo11::MissionPhase::startTLI",
     "startDockEject": "Apollo11::MissionPhase::startDockEject",
     "startTranslunar": "Apollo11::MissionPhase::startTranslunar",
-    "startLOI": "Apollo11::MissionPhase::startLOI",
-    "LOICutoff": "Apollo11::MissionPhase::LOICutoff",
-    "startDOI": "Apollo11::MissionPhase::startDOI",
-    "startDescent": "Apollo11::MissionPhase::startDescent",
-    "touchdown": "Apollo11::MissionPhase::touchdown",
-    "startAscent": "Apollo11::MissionPhase::startAscent",
-    "startRndz": "Apollo11::MissionPhase::startRndz",
-    "startTEI": "Apollo11::MissionPhase::startTEI",
-    "startEntry": "Apollo11::MissionPhase::startEntry",
-    "splashdown": "Apollo11::MissionPhase::splashdown"
+    "startLOI": "Apollo11::MissionPhase::startLOI"
   },
   "states": {
     "initial": {
       "initial": true
     },
     "countdown": {
-      "label": "countdown",
+      "label": "Countdown",
       "model_ref": "countdown"
     },
     "boost": {
-      "label": "boost",
+      "label": "Boost",
       "model_ref": "boost"
     },
     "earthOrbit": {
-      "label": "earthOrbit\n100 nmi planned",
-      "model_ref": "earthOrbit"
+      "label": "Earth orbit\n100 nmi planned",
+      "model_ref": "earthOrbit",
+      "h": 64
     },
     "TLI": {
-      "label": "TLI\nPK 02:44:15\nA11-FP 2:44:26\nflown 02:44:16",
+      "label": "Translunar Injection\nPK 02:44:15\nA11-FP 2:44:26\nflown 02:44:16",
       "model_ref": "TLI",
-      "w": 148,
-      "h": 80
+      "w": 200,
+      "h": 88
     },
     "dockEject": {
       "label": "dock/eject",
       "model_ref": "dockEject"
     },
     "translunar": {
-      "label": "translunar",
+      "label": "Translunar coast",
       "model_ref": "translunar"
     },
     "LOI": {
-      "label": "LOI-1\nplanned 75:54:28\nflown ~075:49:50",
+      "label": "Lunar Orbit Insertion\nplanned 75:54:28\nflown ~075:49:50",
       "model_ref": "LOI",
-      "w": 156,
-      "h": 70
-    },
-    "undock": {
-      "label": "undock",
-      "model_ref": "undock"
-    },
-    "DOI": {
-      "label": "DOI",
-      "model_ref": "DOI"
-    },
-    "descent": {
-      "label": "descent",
-      "model_ref": "descent"
-    },
-    "surfaceEVA": {
-      "label": "surface/EVA",
-      "model_ref": "surfaceEVA"
-    },
-    "ascent": {
-      "label": "ascent",
-      "model_ref": "ascent"
-    },
-    "rendezvous": {
-      "label": "rendezvous",
-      "model_ref": "rendezvous"
-    },
-    "TEI": {
-      "label": "TEI",
-      "model_ref": "TEI"
-    },
-    "entry": {
-      "label": "entry",
-      "model_ref": "entry"
-    },
-    "recovery": {
-      "label": "recovery",
-      "model_ref": "recovery"
+      "w": 200,
+      "h": 80
     }
   },
   "transitions": [
@@ -134,7 +81,7 @@
     {
       "from": "boost",
       "to": "earthOrbit",
-      "label": "SECO",
+      "label": "engine cutoff",
       "model_ref": "seoi"
     },
     {
@@ -158,62 +105,8 @@
     {
       "from": "translunar",
       "to": "LOI",
-      "label": "SPS",
+      "label": "Service Propulsion",
       "model_ref": "startLOI"
-    },
-    {
-      "from": "LOI",
-      "to": "undock",
-      "label": "",
-      "model_ref": "LOICutoff"
-    },
-    {
-      "from": "undock",
-      "to": "DOI",
-      "label": "DPS",
-      "model_ref": "startDOI"
-    },
-    {
-      "from": "DOI",
-      "to": "descent",
-      "label": "P63",
-      "model_ref": "startDescent"
-    },
-    {
-      "from": "descent",
-      "to": "surfaceEVA",
-      "label": "P68",
-      "model_ref": "touchdown"
-    },
-    {
-      "from": "surfaceEVA",
-      "to": "ascent",
-      "label": "P12",
-      "model_ref": "startAscent"
-    },
-    {
-      "from": "ascent",
-      "to": "rendezvous",
-      "label": "P30",
-      "model_ref": "startRndz"
-    },
-    {
-      "from": "rendezvous",
-      "to": "TEI",
-      "label": "SPS",
-      "model_ref": "startTEI"
-    },
-    {
-      "from": "TEI",
-      "to": "entry",
-      "label": "EI",
-      "model_ref": "startEntry"
-    },
-    {
-      "from": "entry",
-      "to": "recovery",
-      "label": "splashdown",
-      "model_ref": "splashdown"
     }
   ]
 }
