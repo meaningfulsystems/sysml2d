@@ -36,7 +36,7 @@
     "conn-PNGS-landingRadar": "Apollo11::LM::LM::PNGSToLandingRadar",
     "PNGS--rendezvousRadar--src": "Apollo11::LM::ascent::PNGS",
     "PNGS--rendezvousRadar--tgt": "Apollo11::LM::ascent::rendezvousRadar",
-    "conn-PNGS-rendezvousRadar": "Apollo11::LM::ascent::PNGS"
+    "conn-PNGS-rendezvousRadar": "Apollo11::LM::ascent::PNGSToRendezvousRadar"
   },
   "diagram": {
     "id": "apollo-ibd-lm",

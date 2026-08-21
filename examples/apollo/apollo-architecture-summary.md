@@ -173,10 +173,10 @@ Apollo11
 ├── LM
 │   ├── descent → DPS, AgZn1–4, ECA, landingRadar
 │   └── ascent
-│       ├── PNGS → IMU, rendezvousRadar
+│       ├── PNGS → IMU
 │       ├── AGC_LM → erasable, fixed, oscillator, Luminary1A
 │       ├── AGS → AEA, ASA, DEDA
-│       ├── APS, RCS, DSKY, USB, drogue
+│       ├── APS, RCS, DSKY, USB, drogue, rendezvousRadar
 │       └── AgZn1–2, ECA
 ├── Crew → CDR (A7L, PLSS), CMP (A7L), LMP (A7L, PLSS)
 ├── Ground → KSC_LCC, MCC (RTCC, MOCR2, CCATS; FLIGHT, CAPCOM, EECOM, CCC, FDO), MSFN, NASCOM
