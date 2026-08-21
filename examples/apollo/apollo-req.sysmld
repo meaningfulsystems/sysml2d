@@ -12,7 +12,7 @@
     "name": "Apollo 11 Sourced Requirements",
     "canvas": {
       "width": 1403,
-      "height": 952,
+      "height": 1042,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -263,12 +263,12 @@
         "symbol": "requirement",
         "layout": {
           "x": 72,
-          "y": 648,
-          "width": 188,
-          "height": 88,
+          "y": 708,
+          "width": 237,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nDPS conflict\n9,870 / 1,050\u20136,300 PK\nvs 10,500 10:1 D-7143",
+        "label": "\u00abrequirement\u00bb\nDPS conflict\n9,870 / 1,050\u20136,300 PK\nvs 10,500 10:1 D-7143\nvs 9,870 / 1,050\u20136,800 LMA790",
         "style": "requirement"
       },
       {
@@ -276,7 +276,7 @@
         "model_ref": "pipaRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 296,
+          "x": 345,
           "y": 648,
           "width": 170,
           "height": 88,
@@ -290,7 +290,7 @@
         "model_ref": "vhfRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 502,
+          "x": 551,
           "y": 624,
           "width": 181,
           "height": 82,
@@ -304,7 +304,7 @@
         "model_ref": "isolationRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 719,
+          "x": 768,
           "y": 624,
           "width": 244,
           "height": 82,
@@ -318,7 +318,7 @@
         "model_ref": "recoveryRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 999,
+          "x": 1048,
           "y": 624,
           "width": 174,
           "height": 82,
@@ -347,12 +347,12 @@
         "symbol": "requirement",
         "layout": {
           "x": 324,
-          "y": 792,
-          "width": 188,
-          "height": 88,
+          "y": 867,
+          "width": 209,
+          "height": 103,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nLM-5 descent O2 ~48 lb\n2800 psi vs 3000 psi\ncite both",
+        "label": "\u00abrequirement\u00bb\nLM-5 descent O2 ~48 lb\nteaching figure 2800 psi\n3000 psi D-6724 mentioned\nno required pressure",
         "style": "requirement"
       },
       {
@@ -360,7 +360,7 @@
         "model_ref": "apsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 548,
+          "x": 569,
           "y": 792,
           "width": 170,
           "height": 88,

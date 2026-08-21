@@ -152,6 +152,18 @@ class ApolloViewTests(unittest.TestCase):
         }
         self.assertLess(sizes["apollo-req"]["width"], 2500)
         self.assertGreater(sizes["apollo-req"]["height"], 600)
+        req = json.loads((APOLLO / "apollo-req.json").read_text(encoding="utf-8"))
+        o2 = req["nodes"]["lm5ConsumableRequirement"]["label"]
+        dps = req["nodes"]["dpsRequirement"]["label"]
+        self.assertIn("teaching figure 2800 psi", o2)
+        self.assertIn("3000 psi D-6724 mentioned", o2)
+        self.assertIn("no required pressure", o2)
+        self.assertNotIn("cite both", o2)
+        self.assertNotIn("2800 psi vs 3000 psi", o2)
+        self.assertIn("9,870 / 1,050–6,300 PK", dps)
+        self.assertIn("10,500 10:1 D-7143", dps)
+        self.assertIn("9,870 / 1,050–6,800 LMA790", dps)
+        self.assertNotIn("shall", dps.lower())
         self.assertLess(sizes["apollo-stm"]["width"], 2500)
         self.assertGreater(sizes["apollo-stm"]["height"], 600)
         self.assertLess(sizes["apollo-bdd"]["width"], 2800)

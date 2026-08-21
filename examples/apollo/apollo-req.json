@@ -99,7 +99,7 @@
       "order": 4
     },
     "dpsRequirement": {
-      "label": "\u00abrequirement\u00bb\nDPS conflict\n9,870 / 1,050\u20136,300 PK\nvs 10,500 10:1 D-7143",
+      "label": "\u00abrequirement\u00bb\nDPS conflict\n9,870 / 1,050\u20136,300 PK\nvs 10,500 10:1 D-7143\nvs 9,870 / 1,050\u20136,800 LMA790",
       "rank": 4,
       "order": 0
     },
@@ -129,7 +129,7 @@
       "order": 0
     },
     "lm5ConsumableRequirement": {
-      "label": "\u00abrequirement\u00bb\nLM-5 descent O2 ~48 lb\n2800 psi vs 3000 psi\ncite both",
+      "label": "\u00abrequirement\u00bb\nLM-5 descent O2 ~48 lb\nteaching figure 2800 psi\n3000 psi D-6724 mentioned\nno required pressure",
       "rank": 5,
       "order": 1
     },
