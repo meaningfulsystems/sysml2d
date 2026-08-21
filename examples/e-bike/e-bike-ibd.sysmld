@@ -65,7 +65,7 @@
     "kind": "InterconnectionView",
     "name": "Electric Bike Interconnection",
     "canvas": {
-      "width": 1628,
+      "width": 1544,
       "height": 634,
       "background": "#FFFFFF"
     },
@@ -80,7 +80,7 @@
         "layout": {
           "x": 40,
           "y": 40,
-          "width": 1548,
+          "width": 1464,
           "height": 554,
           "z": 0
         },
@@ -96,7 +96,7 @@
         "model_ref": "humanInterface",
         "symbol": "part_usage",
         "layout": {
-          "x": 511,
+          "x": 483,
           "y": 278,
           "width": 170,
           "height": 78,
@@ -115,7 +115,7 @@
         "model_ref": "brakeSystem",
         "symbol": "part_usage",
         "layout": {
-          "x": 511,
+          "x": 483,
           "y": 419,
           "width": 170,
           "height": 78,
@@ -134,7 +134,7 @@
         "model_ref": "batteryPack",
         "symbol": "part_usage",
         "layout": {
-          "x": 511,
+          "x": 483,
           "y": 137,
           "width": 170,
           "height": 78,
@@ -153,7 +153,7 @@
         "model_ref": "motorController",
         "symbol": "part_usage",
         "layout": {
-          "x": 947,
+          "x": 891,
           "y": 278,
           "width": 170,
           "height": 78,
@@ -172,7 +172,7 @@
         "model_ref": "hubMotor",
         "symbol": "part_usage",
         "layout": {
-          "x": 1382,
+          "x": 1298,
           "y": 278,
           "width": 170,
           "height": 78,
@@ -417,17 +417,6 @@
         "label": ""
       },
       {
-        "id": "frame--hubMotor--tgt",
-        "model_ref": "frame--hubMotor--tgt",
-        "symbol": "port",
-        "owner": "hubMotor",
-        "placement": {
-          "side": "top",
-          "offset": 0.5
-        },
-        "label": ""
-      },
-      {
         "id": "motorController--hubMotor--tgt",
         "model_ref": "motorController--hubMotor--tgt",
         "symbol": "port",
@@ -456,7 +445,18 @@
         "owner": "frame",
         "placement": {
           "side": "right",
-          "offset": 0.3333
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "frame--humanInterface--src",
+        "model_ref": "frame--humanInterface--src",
+        "symbol": "port",
+        "owner": "frame",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
         },
         "label": ""
       },
@@ -467,29 +467,7 @@
         "owner": "frame",
         "placement": {
           "side": "right",
-          "offset": 0.6667
-        },
-        "label": ""
-      },
-      {
-        "id": "frame--humanInterface--src",
-        "model_ref": "frame--humanInterface--src",
-        "symbol": "port",
-        "owner": "frame",
-        "placement": {
-          "side": "top",
-          "offset": 0.3333
-        },
-        "label": ""
-      },
-      {
-        "id": "frame--hubMotor--src",
-        "model_ref": "frame--hubMotor--src",
-        "symbol": "port",
-        "owner": "frame",
-        "placement": {
-          "side": "top",
-          "offset": 0.6667
+          "offset": 0.75
         },
         "label": ""
       },
@@ -593,52 +571,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 342.333,
-              "y": 374.997
+              "x": 317.25,
+              "y": 368.5
             },
             {
-              "x": 342.333,
+              "x": 317.25,
               "y": 189.003
-            }
-          ]
-        },
-        "labels": [
-          {
-            "text": "mount",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.default"
-      },
-      {
-        "id": "conn-frame-hubMotor",
-        "model_ref": "conn-frame-hubMotor",
-        "source": {
-          "element": "frame--hubMotor--src",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "frame--hubMotor--tgt",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 265,
-              "y": 349
-            },
-            {
-              "x": 265,
-              "y": 278
             }
           ]
         },
@@ -658,7 +596,7 @@
         "source": {
           "element": "frame--humanInterface--src",
           "anchor": {
-            "side": "top",
+            "side": "right",
             "offset": 0.5
           }
         },
@@ -673,7 +611,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 132.661,
+              "x": 364.5,
+              "y": 388
+            },
+            {
+              "x": 364.5,
               "y": 330.003
             }
           ]
@@ -709,11 +651,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 414.667,
-              "y": 401.003
+              "x": 411.75,
+              "y": 407.5
             },
             {
-              "x": 414.667,
+              "x": 411.75,
               "y": 458
             }
           ]
@@ -749,11 +691,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 759.5,
+              "x": 724.5,
               "y": 176
             },
             {
-              "x": 759.5,
+              "x": 724.5,
               "y": 291.003
             }
           ]
@@ -851,11 +793,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 868.5,
+              "x": 819.5,
               "y": 458
             },
             {
-              "x": 868.5,
+              "x": 819.5,
               "y": 330.003
             }
           ]
@@ -935,11 +877,11 @@
               "y": 254
             },
             {
-              "x": 705,
+              "x": 677,
               "y": 254
             },
             {
-              "x": 705,
+              "x": 677,
               "y": 303.997
             }
           ]
@@ -983,11 +925,11 @@
               "y": 380
             },
             {
-              "x": 705,
+              "x": 677,
               "y": 380
             },
             {
-              "x": 705,
+              "x": 677,
               "y": 342.997
             }
           ]

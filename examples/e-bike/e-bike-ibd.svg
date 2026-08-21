@@ -1,31 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1632" height="676" viewBox="0 0 1632 676">
+<svg xmlns="http://www.w3.org/2000/svg" width="1548" height="676" viewBox="0 0 1548 676">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1632" height="676" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1628" height="634" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1548" height="676" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1544" height="634" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 504 L 520 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[icn.mb] Electric Bike Interconnection [bike : ElectricBike]</text>
-<rect x="2" y="38" width="1628" height="636" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1544" height="636" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="boundary" x="40" y="40" width="1548" height="554" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<rect id="boundary" x="40" y="40" width="1464" height="554" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="label" x="50" y="62">bike</text>
 <rect id="bnd--humanInterface" x="34" y="297.981" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="bnd--bms" x="34" y="98.9842" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="bnd--hubMotor" x="1582" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="humanInterface" x="511" y="278" width="170" height="78" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="596" y="317">Human Interface</text>
-<rect id="brakeSystem" x="511" y="419" width="170" height="78" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="596" y="458">Brake System</text>
-<rect id="batteryPack" x="511" y="137" width="170" height="78" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="596" y="176">Battery Pack</text>
-<rect id="motorController" x="947" y="278" width="170" height="78" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1032" y="317">Motor Controller</text>
-<rect id="hubMotor" x="1382" y="278" width="170" height="78" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="1467" y="317">Rear Geared Hub</text>
+<rect id="bnd--hubMotor" x="1498" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="humanInterface" x="483" y="278" width="170" height="78" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="568" y="317">Human Interface</text>
+<rect id="brakeSystem" x="483" y="419" width="170" height="78" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="568" y="458">Brake System</text>
+<rect id="batteryPack" x="483" y="137" width="170" height="78" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="568" y="176">Battery Pack</text>
+<rect id="motorController" x="891" y="278" width="170" height="78" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="976" y="317">Motor Controller</text>
+<rect id="hubMotor" x="1298" y="278" width="170" height="78" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1383" y="317">Rear Geared Hub</text>
 <rect id="frame" x="76" y="349" width="170" height="78" rx="4" fill="#F5F5F5" stroke="#616161" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="161" y="388">Frame</text>
 <rect id="bms" x="91" y="76" width="140" height="58" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
@@ -34,58 +34,54 @@
 <text class="label" text-anchor="middle" x="161" y="246">Cadence Sensor</text>
 <rect id="wheelSpeedSensor" x="81" y="500" width="160" height="58" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="161" y="529">Wheel Speed Sensor</text>
-<rect id="humanInterface--bnd--tgt" x="505" y="297.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--humanInterface--tgt" x="505" y="324.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="humanInterface--motorController--src" x="675" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--brakeSystem--tgt" x="505" y="452" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="brakeSystem--motorController--src" x="675" y="452" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="bms--batteryPack--tgt" x="505" y="156.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--batteryPack--tgt" x="505" y="183.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="batteryPack--motorController--src" x="675" y="170" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="batteryPack--motorController--tgt" x="941" y="285.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="cadenceSensor--motorController--tgt" x="941" y="297.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="humanInterface--motorController--tgt" x="941" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="brakeSystem--motorController--tgt" x="941" y="324.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="wheelSpeedSensor--motorController--tgt" x="941" y="336.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="motorController--hubMotor--src" x="1111" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--hubMotor--tgt" x="1461" y="272" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="motorController--hubMotor--tgt" x="1376" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="hubMotor--bnd--tgt" x="1546" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--batteryPack--src" x="240" y="368.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--brakeSystem--src" x="240" y="395.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--humanInterface--src" x="126.661" y="343" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<rect id="frame--hubMotor--src" x="183.339" y="343" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="humanInterface--bnd--tgt" x="477" y="297.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--humanInterface--tgt" x="477" y="324.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="humanInterface--motorController--src" x="647" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--brakeSystem--tgt" x="477" y="452" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="brakeSystem--motorController--src" x="647" y="452" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="bms--batteryPack--tgt" x="477" y="156.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--batteryPack--tgt" x="477" y="183.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="batteryPack--motorController--src" x="647" y="170" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="batteryPack--motorController--tgt" x="885" y="285.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="cadenceSensor--motorController--tgt" x="885" y="297.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="humanInterface--motorController--tgt" x="885" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="brakeSystem--motorController--tgt" x="885" y="324.003" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="wheelSpeedSensor--motorController--tgt" x="885" y="336.997" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="motorController--hubMotor--src" x="1055" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="motorController--hubMotor--tgt" x="1292" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="hubMotor--bnd--tgt" x="1462" y="311" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--batteryPack--src" x="240" y="362.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--humanInterface--src" x="240" y="382" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="frame--brakeSystem--src" x="240" y="401.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="bms--batteryPack--src" x="155" y="128" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="bms--bnd--tgt" x="85" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="cadenceSensor--motorController--src" x="155" y="211" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
 <rect id="wheelSpeedSensor--motorController--src" x="155" y="494" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
-<path d="M 252,374.997 L 342.333,374.997 L 342.333,189.003 L 505,189.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 189.339,343 L 265,349 L 265,278 L 1467,272" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 132.661,343 L 132.661,330.003 L 258,330.003 A 7 7 0 0 0 272,330.003 L 335.333,330.003 A 7 7 0 0 0 349.333,330.003 L 505,330.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 252,401.003 L 414.667,401.003 L 414.667,458 L 505,458" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 687,176 L 759.5,176 L 759.5,291.003 L 941,291.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1123,317 L 1376,317" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 687,317 L 941,317" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 687,458 L 868.5,458 L 868.5,330.003 L 941,330.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 161,140 L 161,162.997 L 505,162.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 161,211 L 270,217 L 270,254 L 335.333,254 A 7 7 0 0 0 349.333,254 L 705,254 L 705,303.997 L 941,303.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 161,494 L 270,500 L 270,408.003 A 7 7 0 0 0 270,394.003 L 270,380 L 705,380 L 705,342.997 L 861.5,342.997 A 7 7 0 0 0 875.5,342.997 L 941,342.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 46,303.981 L 258,303.981 A 7 7 0 0 0 272,303.981 L 335.333,303.981 A 7 7 0 0 0 349.333,303.981 L 505,303.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 252,368.5 L 317.25,368.5 L 317.25,189.003 L 477,189.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 252,388 L 364.5,388 L 364.5,330.003 L 477,330.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 252,407.5 L 411.75,407.5 L 411.75,458 L 477,458" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 659,176 L 724.5,176 L 724.5,291.003 L 885,291.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1067,317 L 1292,317" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 659,317 L 885,317" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 659,458 L 819.5,458 L 819.5,330.003 L 885,330.003" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 161,140 L 161,162.997 L 477,162.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 161,211 L 270,217 L 270,254 L 310.25,254 A 7 7 0 0 0 324.25,254 L 677,254 L 677,303.997 L 885,303.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 161,494 L 270,500 L 270,414.5 A 7 7 0 0 0 270,400.5 L 270,395 A 7 7 0 0 0 270,381 L 270,380 L 357.5,380 A 7 7 0 0 0 371.5,380 L 677,380 L 677,342.997 L 812.5,342.997 A 7 7 0 0 0 826.5,342.997 L 885,342.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 46,303.981 L 310.25,303.981 A 7 7 0 0 0 324.25,303.981 L 477,303.997" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 46,104.984 L 85,105" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 1582,317 L 1558,317" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1498,317 L 1474,317" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text class="small" x="58" y="332.981">rider</text>
 <text class="small" x="58" y="86.9842">charger</text>
-<text class="small" text-anchor="end" x="1570" y="299">road load</text>
-<text class="small" x="354.333" y="282">mount</text>
-<text class="small" text-anchor="middle" x="866" y="263">mount</text>
-<text class="small" text-anchor="middle" x="318.831" y="318.003">mount</text>
-<text class="small" text-anchor="middle" x="333.333" y="424.003">mount</text>
-<text class="small" text-anchor="middle" x="795.8" y="279.003">pack power</text>
-<text class="small" text-anchor="middle" x="1249.5" y="305">phase drive</text>
-<text class="small" text-anchor="middle" x="814" y="305">assist command</text>
-<text class="small" text-anchor="middle" x="777.75" y="446">inhibit</text>
-<text class="small" text-anchor="middle" x="333" y="150.997">contactor</text>
-<text class="small" text-anchor="middle" x="487.5" y="242">cadence</text>
-<text class="small" text-anchor="middle" x="487.5" y="403">wheel speed</text>
+<text class="small" text-anchor="end" x="1486" y="299">road load</text>
+<text class="small" x="329.25" y="278.751">mount</text>
+<text class="small" text-anchor="middle" x="420.75" y="318.003">mount</text>
+<text class="small" text-anchor="middle" x="331.875" y="430.5">mount</text>
+<text class="small" text-anchor="middle" x="804.75" y="279.003">pack power</text>
+<text class="small" text-anchor="middle" x="1179.5" y="305">phase drive</text>
+<text class="small" text-anchor="middle" x="772" y="305">assist command</text>
+<text class="small" text-anchor="middle" x="739.25" y="446">inhibit</text>
+<text class="small" text-anchor="middle" x="319" y="150.997">contactor</text>
+<text class="small" text-anchor="middle" x="473.5" y="242">cadence</text>
+<text class="small" text-anchor="middle" x="473.5" y="403">wheel speed</text>
 </g>
 </svg>
