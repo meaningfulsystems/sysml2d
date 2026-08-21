@@ -8,6 +8,7 @@ All notable changes to SysMLD are documented here.
 
 - Shared orthogonal autorouting helpers (`src/sysmld/routing.py`): unique channel tracks for adjacent-rank edges, outside rails for skip-rank edges, and renderer hop-overs as small half-circle arcs where later connections cross earlier ones
 - `examples/e-bike/` — a street-legal class e-bike model with intents, `.sysmld`, and SVG for all 15 view kinds plus an operating-context general view
+- Adoption pack: [AGENTS.md](AGENTS.md), four installable skills under `skills/sysmld-*`, and [templates/new-system/](templates/new-system/) (copy-this `.sysml` + IBD + STM)
 
 ### Changed
 
