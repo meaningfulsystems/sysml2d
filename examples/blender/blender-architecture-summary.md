@@ -2,13 +2,13 @@
 
 This document is the architecture and system-design description of the countertop blender modeled in `blender.sysml`. A reviewer should be able to understand purpose, context, requirements, structure, interfaces, behavior, and allocations without opening the model. Generated views appear after the written architecture.
 
-Requirement text and numbers come from the SysML model unless marked as view-only. The model does not cite external standards. Where a view label disagrees with the model, the model text is the requirement.
+This is an example model, not a certifiable appliance. Requirement text and numbers come from the SysML model.
 
 ## 1. Purpose and Mission
 
 The system is a baseline countertop blender. Its mission is to accept ingredients, blend them under program control until a smoothness threshold is reached, stop on user command or fault, and allow the container to be cleaned.
 
-The model is a single baseline architecture, not a production certification package and not a product line.
+The model is a single baseline, not a product line.
 
 ## 2. Operating Context
 
@@ -23,7 +23,7 @@ The blender sits on a counter among the user, ingredients, and a mains supply. A
 
 Items that cross the boundary: `ElectricalEnergy`, `RotationalEnergy`, `SmoothnessSignal`, `UserCommand`. `Fruit` and `Liquid` are declared and unused.
 
-External interface defs: user controls, power, drive, sensing. `ContainerInterface` is declared and not wired. The context view labels the outlet 120 VAC; that number is view-only. The model does not give a voltage on `MainsSupply`.
+External interface defs: user controls, power, drive, sensing. `ContainerInterface` is declared and not wired. `MainsSupply` has no voltage in the model.
 
 ## 3. Stakeholders and Use Cases
 
@@ -40,13 +40,9 @@ The only named stakeholder is the user.
 - **Motor Load** — torque/speed/load constraint against motor control.
 - **Smoothness Detection** — smoothness-threshold constraint against the smoothness-detection requirement.
 
-**Verification cases**
+**Verification cases** (names only — no part, port, or effect is bound)
 
-- Verify lid interlock (interlock and interlock latency).
-- Verify smoothness detection (detection and threshold).
-- Verify stop command (user controls and motor control).
-- Verify overcurrent protection.
-- Verify container seat.
+`verifyLidInterlock`, `verifySmoothnessDetection`, `verifyStopCommand`, `verifyOvercurrentProtection`, `verifyContainerSeat`.
 
 ## 4. Requirements
 
@@ -65,14 +61,10 @@ The model states thirteen requirements. IDs such as REQ-B-xxx appear only on vie
 | REQ-B-010 | Lid interlock disables the motor after lid-removal detection | **within 50 ms** |
 | REQ-B-021 | Motor circuit overcurrent protection cuts power before motor damage | trip time **not in model** |
 | REQ-B-030 | Smoothness threshold configurable for blend program profiles | **at least three** profiles |
-| REQ-B-040 | Noise during normal use | **below 85 dB(A) at the operator position** |
+| REQ-B-040 | Noise during normal use | **below 85 dB(A) at the operator position** (model wording; not a blender certification) |
 | REQ-B-050 | Container locks to the motor base with positive mechanical engagement and deliberate release | none |
 
-**View-only numbers** (not in the model): interlock disable within 100 ms; 20,000 rpm no-load; overcurrent stop within 250 ms; 85 dBA at 1 m; blend program ≤ 120 s.
-
-Where the view disagrees with the model (100 ms vs 50 ms; 20,000 rpm vs ±10% set speed; 1 m vs operator position), the model text is the requirement.
-
-The model requires pause. The state machine has no pause state or transition.
+The model requires pause. The state machine has no pause state or transition. There is no interlock part; lid-to-container is a mechanical connection, and `interlockLatencyRequirement` is a requirement on that behavior. Power claims in this note refer to the modeled mains → control panel → motor path.
 
 ## 5. Structure
 
@@ -91,7 +83,7 @@ Blender
 └── controlPanel
 ```
 
-Multiplicity is view-only except that the architecture treats tamper as optional. System-level attributes are declared without values: `commandedSpeed`, `motorTorque`, `blendDuration`, `smoothnessIndex`, `motorSpeed`, `interlockLatency`, `motorPower`, `noiseLevel`.
+The definition view marks tamper `0..1`; the SysML source does not state multiplicity. System-level attributes are declared without values: `commandedSpeed`, `motorTorque`, `blendDuration`, `smoothnessIndex`, `motorSpeed`, `interlockLatency`, `motorPower`, `noiseLevel`.
 
 ## 6. Interfaces and Interconnections
 
@@ -161,7 +153,14 @@ Constraint names: `torqueSpeedLoadEstimate`, `motorPowerLimit`, `blendTimingEsti
 
 **Out of scope:** product-line variants; dishwasher material certifications; a detailed digital sensor protocol; pause as a state (required in text, not modeled).
 
-**Unmarked / not in the model:** rated power magnitude; smoothness numeric threshold; motor torque / jam margin; blend timeout duration; `ContainerInterface` usage; `Fruit` / `Liquid` usage. There are no `UNKNOWN` literals in this example.
+## 10. Open Risks
+
+- Rated power magnitude, blend timeout duration, and overcurrent trip time are unmarked.
+- Pause is required in `motorControlRequirement` and `userControlsRequirement` but has no state or transition.
+- There is no interlock part; only the lid–container mechanical connection and the 50 ms requirement.
+- `allocateCleaningToContainer`, `allocateProtectionToMotorBase`, and `allocateInterfaceToControlPanel` are names without model endpoints.
+- Constraint definitions have no equations.
+- Verification cases are names only.
 
 ---
 
@@ -171,7 +170,7 @@ The figures below are the generated SysMLD views for this model. They illustrate
 
 ### Cases
 
-Make a smoothie, stop a blend, and clean the container. Analysis cases evaluate motor load and smoothness detection. Verification cases check lid interlock, smoothness detection, and stop-command behavior.
+Make a smoothie, stop a blend, and clean the container. Analysis cases are `motorLoadAnalysis` and `smoothnessDetectionAnalysis`. Verification cases are names only.
 
 ![Blender Use Cases](blender-uc.svg)
 
@@ -187,7 +186,7 @@ The blender interacts with the user, ingredients, the mains outlet, the produced
 
 ### Requirements
 
-Requirement nodes carry intent and any quantitative labels drawn for the view.
+Requirement nodes follow the SysML model text.
 
 ![Blender Requirements](blender-req.svg)
 

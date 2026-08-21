@@ -2,7 +2,7 @@
 
 This document is the architecture and system-design description of the Apollo 11 / Block II system modeled in `apollo.sysml`. The example instance is Apollo 11 / AS-506 (SA-506): Saturn V serials S-IC-6 / S-II-6 / S-IVB-6N / IU-6 / SLA-14, CSM-107 *Columbia*, LM-5 *Eagle*. A reviewer should be able to understand purpose, context, requirements, structure, interfaces, behavior, and allocations without opening the model. Generated views appear after the written architecture.
 
-Numbers are from NASA primary sources cited in the model (Apollo 11 Press Kit 69-83K, Saturn V Flight Manual, Apollo Experience Reports, AGCIS / MIT IL, TN D-6718 / D-6724 / D-7082 / D-7143 / D-7375 / D-8093 / D-8227 / TN-7990). Values not in those extracts are left unmarked. There is no official CSM lunar Δv table in the sources used here — that table is not invented.
+This is an example model, not a certifiable vehicle. Numbers are from NASA primary sources cited in the model (Apollo 11 Press Kit 69-83K, Saturn V Flight Manual, Apollo Experience Reports, AGCIS / MIT IL, TN D-6718 / D-6724 / D-7082 / D-7143 / D-7375 / D-8093 / D-8227 / TN-7990). Values not in those extracts are left unmarked. There is no official CSM lunar Δv table in the sources used here — that table is not invented.
 
 Hyphens are not legal identifiers: S-IC / S-II / S-IVB appear as `SIC`, `SII`, `SIVB`. The mission phase surface/EVA is `surfaceEVA`.
 
@@ -43,7 +43,7 @@ Context flows: MCC → MSFN (Path A / voice); RSO → vehicle (destruct UHF, not
 
 **Analysis cases:** USB link analysis (`usbCsmLink` → CSM USB requirement); consumable analysis (CM ECS requirement).
 
-**Verification cases:** verify CSM USB numbers; verify A7L; verify P27 uplink (V70–V73 only); verify RSO destruct path.
+**Verification cases** (names only — no part, port, or effect is bound): `verifyUsbCsm`, `verifyA7l`, `verifyP27`, `verifyRso`.
 
 ## 4. Requirements
 
@@ -287,7 +287,7 @@ Named constraints: `usbCsmLink`, `usbLmLink`, `lunarDelay`, `f1Thrust`, `agcCycl
 | CSM PM downlink | 2287.5 MHz |
 | LM USB uplink | 2101.802 MHz |
 | Lunar delay | ~1.3 s |
-| F-1 | 1,530,000 lbf (SA-507 citation) |
+| F-1 | 1,530,000 lbf — **SA-507 citation, not an AS-506 requirement** |
 | AGC MCT | 11.7 µs |
 | Ignition mass | 6,484,280 lb |
 | Earth parking orbit | 100 nmi |
@@ -296,7 +296,14 @@ Named constraints: `usbCsmLink`, `usbLmLink`, `lunarDelay`, `f1Thrust`, `agcCycl
 
 **Out of scope:** J-mission 3+3 cryo, LRV, SIM bay, extended EVA. F-1 1,530,000 lbf is an SA-507 citation, not an AS-506 figure.
 
-**Unmarked list:** see §4. Do not invent a CSM lunar Δv table, SPS loaded mass, or SM/CM RCS propellant loads.
+**Unmarked / TBD:** CSM lunar Δv, SPS loaded mass, SM/CM RCS loaded propellant mass. See also §4 (AGS flight-program name, A11 food intake, entry blackout, RTCC MOC/DSC, 30-ft MSFN inventory, SCS switch deck).
+
+## 10. Open Risks
+
+- CSM lunar Δv, SPS loaded mass, and SM/CM RCS loaded propellant mass stay unmarked. There is no official CSM lunar Δv table in the sources used here.
+- F-1 1,530,000 lbf is an SA-507 citation. It is not an AS-506 requirement.
+- A11 AGS flight-program name, A11 actual food intake, entry blackout duration, RTCC MOC vs DSC on A11, and the complete 30-ft MSFN inventory stay unmarked.
+- Verification cases are names only.
 
 ---
 
@@ -322,7 +329,7 @@ Context, sourced requirements, the pad-stack definition, the vehicle interconnec
 
 ### Cases
 
-Fly Mission includes the lunar EVA. Recover Crew and Range Safety sit beside it. Analysis cases cover the USB links and consumables. Verification cases check the CSM USB numbers, the A7L suit, P27 uplink, and the range-safety destruct path.
+Fly Mission includes the lunar EVA. Recover Crew and Range Safety sit beside it. Analysis cases are `usbLinkAnalysis` and `consumableAnalysis`. Verification cases are names only.
 
 ![Apollo Use Cases](apollo-uc.svg)
 

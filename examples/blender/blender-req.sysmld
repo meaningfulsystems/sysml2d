@@ -11,7 +11,7 @@
     "kind": "RequirementView",
     "name": "Blender Requirements",
     "canvas": {
-      "width": 1891,
+      "width": 1828,
       "height": 628,
       "background": "#FFFFFF"
     },
@@ -24,13 +24,13 @@
         "model_ref": "lidInterlockRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 834,
+          "x": 795.5,
           "y": 72,
-          "width": 223,
+          "width": 237,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-B-001 Lid Interlock\nPrevent blending unless lid\nand container are seated.",
+        "label": "\u00abrequirement\u00bb\nREQ-B-001 Lid Interlock\nMotor shall not run unless\nthe lid is seated and locked.",
         "style": "requirement"
       },
       {
@@ -38,13 +38,13 @@
         "model_ref": "motorControlRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 202,
+          "x": 209,
           "y": 270,
-          "width": 230,
+          "width": 195,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-B-002 Motor Control\nCommand motor speed and stop\nunder program control.",
+        "label": "\u00abrequirement\u00bb\nREQ-B-002 Motor Control\nStart, pause, and stop\nwithin 200 ms.",
         "style": "requirement"
       },
       {
@@ -52,7 +52,7 @@
         "model_ref": "smoothnessDetectionRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 634,
+          "x": 613,
           "y": 270,
           "width": 265,
           "height": 88,
@@ -66,13 +66,13 @@
         "model_ref": "powerRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 971,
+          "x": 950,
           "y": 270,
-          "width": 237,
+          "width": 202,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-B-004 Power\nProvide controlled electrical\npower to the motor base.",
+        "label": "\u00abrequirement\u00bb\nREQ-B-004 Power\nOperate within the rated\npower envelope.",
         "style": "requirement"
       },
       {
@@ -80,13 +80,13 @@
         "model_ref": "interlockLatencyRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1280,
+          "x": 1224,
           "y": 270,
           "width": 223,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-B-010 Interlock Latency\nDisable motor within 100 ms\nof lid-open detection.",
+        "label": "\u00abrequirement\u00bb\nREQ-B-010 Interlock Latency\nDisable motor within 50 ms\nof lid-removal detection.",
         "style": "requirement"
       },
       {
@@ -96,11 +96,11 @@
         "layout": {
           "x": 72,
           "y": 468,
-          "width": 216,
+          "width": 209,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-B-020 Motor Speed\nAchieve 20,000 rpm no-load\nand controlled ramp-up.",
+        "label": "\u00abrequirement\u00bb\nREQ-B-020 Motor Speed\nMaintain set speed within\n\u00b110% on normal loads.",
         "style": "requirement"
       },
       {
@@ -108,13 +108,13 @@
         "model_ref": "overcurrentProtectionRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 360,
+          "x": 353,
           "y": 468,
-          "width": 202,
+          "width": 188,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-B-021 Overcurrent\nStop motor within 250 ms\nof jam or overcurrent.",
+        "label": "\u00abrequirement\u00bb\nREQ-B-021 Overcurrent\nCut power before motor\ndamage occurs.",
         "style": "requirement"
       },
       {
@@ -122,13 +122,13 @@
         "model_ref": "smoothnessThresholdRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 644.5,
+          "x": 623.5,
           "y": 468,
           "width": 244,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-B-030 Smoothness Threshold\nDeclare smooth when vibration\nindex remains below threshold.",
+        "label": "\u00abrequirement\u00bb\nREQ-B-030 Smoothness Threshold\nConfigurable for at least\nthree blend program profiles.",
         "style": "requirement"
       },
       {
@@ -136,13 +136,13 @@
         "model_ref": "noiseRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 978,
+          "x": 960.5,
           "y": 468,
-          "width": 223,
+          "width": 181,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-B-040 Noise\nOperate below 85 dBA at\n1 m during normal blending.",
+        "label": "\u00abrequirement\u00bb\nREQ-B-040 Noise\nBelow 85 dB(A) at the\noperator position.",
         "style": "requirement"
       },
       {
@@ -150,13 +150,13 @@
         "model_ref": "containerSeatRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1575,
+          "x": 1519,
           "y": 270,
-          "width": 244,
+          "width": 237,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-B-050 Container Seat\nDetect seated container before\nmotor torque is enabled.",
+        "label": "\u00abrequirement\u00bb\nREQ-B-050 Container Seat\nLock to the motor base;\ndeliberate action to release.",
         "style": "requirement"
       }
     ],

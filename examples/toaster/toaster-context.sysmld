@@ -57,7 +57,7 @@
           "height": 70,
           "z": 10
         },
-        "label": "120 VAC Outlet",
+        "label": "Mains Supply",
         "style": "part_usage",
         "model_ref": "mainsSupply"
       },
@@ -139,11 +139,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 346,
+              "x": 270,
               "y": 103.5
             },
             {
-              "x": 346,
+              "x": 270,
               "y": 94.5
             }
           ]
@@ -179,11 +179,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 346,
+              "x": 302,
               "y": 317
             },
             {
-              "x": 346,
+              "x": 302,
               "y": 117
             }
           ]
@@ -219,18 +219,18 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 346,
+              "x": 334,
               "y": 517
             },
             {
-              "x": 346,
+              "x": 334,
               "y": 139.5
             }
           ]
         },
         "labels": [
           {
-            "text": "900-1200 W",
+            "text": "power",
             "position": {
               "offset": 0.5
             }

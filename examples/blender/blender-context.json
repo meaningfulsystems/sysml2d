@@ -8,7 +8,7 @@
   "nodes": {
     "user": {"label": "User", "symbol": "actor", "rank": 0, "order": 0},
     "ingredients": {"label": "Ingredients", "symbol": "part_usage", "rank": 0, "order": 1},
-    "mainsSupply": {"label": "120 VAC Outlet", "symbol": "part_usage", "rank": 0, "order": 2},
+    "mainsSupply": {"label": "Mains Supply", "symbol": "part_usage", "rank": 0, "order": 2},
     "Blender": {"label": "Blender", "symbol": "part_usage", "rank": 1, "order": 1, "w": 190, "h": 90},
     "smoothie": {"label": "Smoothie", "symbol": "part_usage", "rank": 2, "order": 0},
     "SmoothnessSignal": {"label": "Smoothness Signal", "symbol": "signal", "rank": 2, "order": 1},

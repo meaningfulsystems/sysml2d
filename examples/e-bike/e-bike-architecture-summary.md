@@ -1,8 +1,8 @@
 # Electric Bike Architecture
 
-This document is the architecture and system-design description of the street-legal EPAC modeled in `e-bike.sysml`. A reviewer should be able to understand purpose, context, requirements, structure, interfaces, behavior, and allocations without opening the model. Generated views appear after the written architecture.
+This document is the architecture and system-design description of the EPAC modeled in `e-bike.sysml`. A reviewer should be able to understand purpose, context, requirements, structure, interfaces, behavior, and allocations without opening the model. Generated views appear after the written architecture.
 
-The bicycle is cadence PAS only: no certified throttle, assist cutoff at 25 km/h, walk assist at or below 6 km/h. The hub is rear geared with no regeneration. **250 W is the EU continuous rating (EN 15194), not peak power.** **40 N·m is hub peak torque, not continuous** — that torque does not sit with 250 W at 25 km/h as a continuous operating point. Charge energy enters the BMS, then the pack.
+This is an example model, not a certifiable appliance. The bicycle is cadence PAS only: no certified throttle, assist cutoff at 25 km/h, walk assist at or below 6 km/h. The hub is rear geared with no regeneration. **250 W is the EU continuous rating (EN 15194), not peak power.** **40 N·m is hub peak torque, not continuous** — that torque does not sit with 250 W at 25 km/h as a continuous operating point. Charge energy enters the BMS, then the pack.
 
 ## 1. Purpose and Mission
 
@@ -43,12 +43,9 @@ Ride Bike **includes** Adjust Assist. The charger is not associated with ride or
 - Tour-range analysis — `tourRangeBind` against the range requirement.
 - Brake-latency analysis — `brakeLatencyLimit` against brake override.
 
-**Verification cases**
+**Verification cases** (names only — no part, port, or effect is bound)
 
-- Verify range.
-- Verify brake cutoff.
-- Verify charge safety.
-- Verify assist limit.
+`verifyRange`, `verifyBrakeCutoff`, `verifyChargeSafety`, `verifyAssistLimit`.
 
 ## 4. Requirements
 
@@ -57,7 +54,7 @@ IDs are from the requirement view; text and numbers are from the model.
 | ID | Requirement | Quantitative target | Source in the model |
 |----|-------------|---------------------|---------------------|
 | REQ-E-001 | Ride safety — fail-silent torque cut. Brake, controller, cadence sensor, wheel-speed sensor, and BMS shall cut motor torque. Cadence-only cannot enforce 25 km/h | qualitative | EN 15194 EPAC safety (stated in the assist-limit family) |
-| REQ-E-002 | Tour-mode range | **500 Wh** usable / **~8.3 Wh/km** ≥ **60 km**. Not Eco / PAS-1 | Tour scenario binding |
+| REQ-E-002 | Tour-mode range | Tour-scenario `usableWh` binding: **500 Wh** / `energyPerKm` **~8.3 Wh/km** ≥ **60 km**. Not pack nameplate. Not Eco / PAS-1 | `rangeRequirement` / `tourRangeBind` |
 | REQ-E-003 | Assist limit — cadence PAS only, no certified throttle | Assist cut **25 km/h**; walk assist **≤ 6 km/h** | **EN 15194** |
 | REQ-E-004 | Charge safety — stop on over-temperature, over-voltage, or charger disconnect. BMS opens the pack contactor | qualitative | **UL 2849** |
 | REQ-E-010 | Electronic brake inhibit | **≤ 50 ms** from either lever (~10× tighter than the EN 15194 distance test) | design target vs EN 15194 distance test |
@@ -162,9 +159,9 @@ Ride safety and assist limit both allocate to the wheel-speed sensor. Cadence-on
 
 | Parameter | Value in the model |
 |-----------|--------------------|
-| Tour usable energy | 500 Wh |
-| Tour energy per km | ~8.3 Wh/km |
-| Tour range | ≥ 60 km |
+| Tour-scenario `usableWh` | 500 Wh (binding on `rangeRequirement`, not pack nameplate) |
+| Tour-scenario `energyPerKm` | ~8.3 Wh/km |
+| Tour-scenario range | ≥ 60 km |
 | Assist cutoff | 25 km/h |
 | Walk assist | ≤ 6 km/h |
 | EU continuous power | 250 W |
@@ -172,13 +169,19 @@ Ride safety and assist limit both allocate to the wheel-speed sensor. Cadence-on
 | Electronic brake inhibit | ≤ 50 ms |
 | EN 15194 distance cutoff | 5 m / 2 m |
 
-`energyBalance` is pack electrical energy only. Rider pedal watts use `riderInputBalance`. Do not add rider watts to pack `usableWh`. `tourRangeBind` is `usableWh / energyPerKm` for Tour 60 km — not Eco / PAS-1.
+`energyBalance` is pack electrical energy only. Rider pedal watts use `riderInputBalance`. Do not add rider watts to pack `usableWh`. `tourRangeBind` is `usableWh / energyPerKm` for the Tour 60 km scenario — not Eco / PAS-1. `packEnergy` and `packVoltage` are unmarked.
 
 Constraint names `rangeEstimate`, `assistPowerLimit`, `brakeLatencyLimit`, and `thermalDerate` have no formulas in the model.
 
 **Out of scope:** throttle variants, mid-drive kits, regenerative hubs, UN ECE R113 lighting, Eco / PAS-1 range, charging from Standby, treating 40 N·m as continuous with 250 W at 25 km/h.
 
-**Unmarked:** pack nameplate energy, pack voltage, lighting hardware, a separate display part. `ThrottleCommand` remains an unused item.
+## 10. Open Risks
+
+- `packEnergy` and `packVoltage` are unmarked. 500 Wh is only the Tour `usableWh` binding, not a pack nameplate.
+- Lighting is a requirement (`lightingRequirement`) with no lighting part.
+- Display is required on `humanInterface` with no separate display part.
+- `ThrottleCommand` is unused.
+- Verification cases are names only.
 
 ---
 
@@ -204,7 +207,7 @@ The bike interacts with the rider, an off-board charger, and the road. Those ext
 
 ### Requirements
 
-Tour-mode 500 Wh / ~8.3 Wh/km for 60 km, 50 ms electronic brake inhibit plus the EN 15194 5 m / 2 m distance cutoff, 25 km/h assist cut, walk assist ≤ 6 km/h, EU continuous 250 W, StVZO / ISO 6742 lighting.
+Tour-scenario `usableWh` 500 Wh / `energyPerKm` ~8.3 Wh/km for 60 km, 50 ms electronic brake inhibit plus the EN 15194 5 m / 2 m distance cutoff, 25 km/h assist cut, walk assist ≤ 6 km/h, EU continuous 250 W, StVZO / ISO 6742 lighting.
 
 ![Electric Bike Requirements](e-bike-req.svg)
 

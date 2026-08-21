@@ -11,8 +11,8 @@
     "kind": "ConstraintView",
     "name": "Toaster Parametrics",
     "canvas": {
-      "width": 1311,
-      "height": 638,
+      "width": 1276,
+      "height": 598,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -24,12 +24,12 @@
         "symbol": "value_property",
         "layout": {
           "x": 72,
-          "y": 82,
+          "y": 83,
           "width": 132,
-          "height": 58,
+          "height": 56,
           "z": 10
         },
-        "label": "targetBrowning\n7 levels",
+        "label": "targetBrowning",
         "style": "value_property",
         "model_ref": "targetBrowning"
       },
@@ -38,12 +38,12 @@
         "symbol": "value_property",
         "layout": {
           "x": 72,
-          "y": 270,
+          "y": 271,
           "width": 130,
-          "height": 58,
+          "height": 56,
           "z": 10
         },
-        "label": "inputPower\n900-1200 W",
+        "label": "inputPower",
         "style": "value_property",
         "model_ref": "inputPower"
       },
@@ -52,12 +52,12 @@
         "symbol": "value_property",
         "layout": {
           "x": 72,
-          "y": 458,
-          "width": 167,
-          "height": 58,
+          "y": 459,
+          "width": 130,
+          "height": 56,
           "z": 10
         },
-        "label": "toastDuration\n90-150 s at level 4",
+        "label": "toastDuration",
         "style": "value_property",
         "model_ref": "toastDuration"
       },
@@ -65,7 +65,7 @@
         "id": "heatEnergyBalance",
         "symbol": "constraint",
         "layout": {
-          "x": 399,
+          "x": 364,
           "y": 72,
           "width": 180,
           "height": 78,
@@ -79,13 +79,13 @@
         "id": "electricalPowerLimit",
         "symbol": "constraint",
         "layout": {
-          "x": 399,
+          "x": 364,
           "y": 260,
           "width": 180,
           "height": 78,
           "z": 10
         },
-        "label": "Electrical Power\nLimit <= 1200 W",
+        "label": "Electrical Power\nLimit",
         "style": "constraint",
         "model_ref": "electricalPowerLimit"
       },
@@ -93,7 +93,7 @@
         "id": "toastTimingEstimate",
         "symbol": "constraint",
         "layout": {
-          "x": 399,
+          "x": 364,
           "y": 448,
           "width": 180,
           "height": 78,
@@ -107,7 +107,7 @@
         "id": "browningTemperatureEstimate",
         "symbol": "constraint",
         "layout": {
-          "x": 739,
+          "x": 704,
           "y": 72,
           "width": 180,
           "height": 78,
@@ -121,13 +121,13 @@
         "id": "surfaceTemperatureLimit",
         "symbol": "constraint",
         "layout": {
-          "x": 739,
+          "x": 704,
           "y": 260,
           "width": 180,
           "height": 78,
           "z": 10
         },
-        "label": "Surface Temp\nLimit <= 60 C",
+        "label": "Surface Temp\nLimit",
         "style": "constraint",
         "model_ref": "surfaceTemperatureLimit"
       },
@@ -135,13 +135,13 @@
         "id": "carriageReleaseTiming",
         "symbol": "constraint",
         "layout": {
-          "x": 739,
+          "x": 704,
           "y": 448,
           "width": 180,
           "height": 78,
           "z": 10
         },
-        "label": "Carriage Release\n<= 2 s",
+        "label": "Carriage Release",
         "style": "constraint",
         "model_ref": "carriageReleaseTiming"
       },
@@ -149,7 +149,7 @@
         "id": "toastTemperature",
         "symbol": "value_property",
         "layout": {
-          "x": 1079,
+          "x": 1044,
           "y": 82,
           "width": 146,
           "height": 58,
@@ -163,7 +163,7 @@
         "id": "surfaceTemperature",
         "symbol": "value_property",
         "layout": {
-          "x": 1079,
+          "x": 1044,
           "y": 270,
           "width": 160,
           "height": 58,
@@ -177,13 +177,13 @@
         "id": "releaseTime",
         "symbol": "value_property",
         "layout": {
-          "x": 1079,
-          "y": 458,
+          "x": 1044,
+          "y": 459,
           "width": 130,
-          "height": 58,
+          "height": 56,
           "z": 10
         },
-        "label": "releaseTime\n<= 2 s",
+        "label": "releaseTime",
         "style": "value_property",
         "model_ref": "releaseTime"
       }
@@ -209,11 +209,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 238,
+              "x": 283,
               "y": 299
             },
             {
-              "x": 238,
+              "x": 283,
               "y": 111
             }
           ]
@@ -281,11 +281,7 @@
           "waypoints": [
             {
               "x": 138,
-              "y": 566
-            },
-            {
-              "x": 829,
-              "y": 566
+              "y": 150
             }
           ]
         },
@@ -413,11 +409,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 615,
+              "x": 580,
               "y": 111
             },
             {
-              "x": 615,
+              "x": 580,
               "y": 299
             }
           ]

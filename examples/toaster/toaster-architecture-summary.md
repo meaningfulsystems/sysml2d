@@ -2,7 +2,7 @@
 
 This document is the architecture and system-design description of the two-slice household toaster modeled in `toaster.sysml`. A reviewer should be able to understand purpose, context, requirements, structure, interfaces, behavior, and allocations without opening the model. Generated views appear after the written architecture.
 
-Requirement text and numbers in this document come from the SysML model unless marked as view-only. View labels sometimes add targets that the model does not state; those are called out rather than treated as model facts. The model does not cite external standards.
+This is an example model, not a certifiable appliance. Requirement text and numbers come from the SysML model. The model does not name an external standard.
 
 ## 1. Purpose and Mission
 
@@ -22,7 +22,7 @@ The toaster sits in a kitchen among three external parts: the user, a mains supp
 
 Items that cross the boundary: `BreadSlice`, `ToastSlice`, `ElectricalEnergy`, `HeatEnergy`, `UserCommand`, `CrumbDebris`.
 
-External-facing ports on the toaster are user inputs (lever, buttons, tray pull) and mains power. The model does not give a voltage or frequency on `MainsSupply`. The context view labels the outlet 120 VAC; that number is view-only.
+External-facing ports on the toaster are user inputs (lever, buttons, tray pull) and mains power. `MainsSupply` has no voltage or frequency in the model.
 
 ## 3. Stakeholders and Use Cases
 
@@ -39,15 +39,9 @@ The only named stakeholder is the user. A service technician is implied by a ser
 - **Thermal Performance** — uses the heat-energy constraint against browning.
 - **Electrical Load** — uses the electrical-power constraint against electrical safety.
 
-**Verification cases**
+**Verification cases** (names only — no part, port, or effect is bound)
 
-- Verify browning (browning and browning-level requirements).
-- Verify electrical safety (electrical safety, power rating, thermal cutoff).
-- Verify crumb-tray removal (tray force and cleanability).
-- Verify carriage release.
-- Verify surface temperature.
-
-User-interface, serviceability, timing, toast-safety, and cycle-life requirements have no verification case in the model.
+`verifyToastBrowning`, `verifyElectricalSafety`, `verifyCrumbTrayRemoval`, `verifyCarriageRelease`, `verifySurfaceTemperature`.
 
 ## 4. Requirements
 
@@ -62,17 +56,15 @@ The model states fourteen requirements. IDs such as REQ-T-xxx appear only on vie
 | — | User interface — insert bread, select browning, cancel, without tools | none |
 | — | Cleanability — crumb tray removable and washable without tools | none |
 | — | Serviceability — serviceable by a qualified technician without specialized equipment | none |
-| REQ-T-010 | Operate within rated power under normal use | rated value **not in model** |
-| REQ-T-011 | Exterior accessible surfaces shall not exceed safe touch temperature | limit **not in model** |
-| REQ-T-012 | Thermal cutoff disables heating if internal temperature exceeds a safe threshold | threshold **not in model** |
+| REQ-T-010 | Operate within rated power under normal use | rated watts unmarked |
+| REQ-T-011 | Exterior accessible surfaces shall not exceed safe touch temperature | touch temperature unmarked |
+| REQ-T-012 | Disable heating if internal temperature exceeds a safe threshold | cutoff threshold unmarked |
 | REQ-T-020 | Distinct, repeatable browning levels | **at least three** |
-| REQ-T-021 | Carriage releases on timer expiry or cancel | release time **not in model** |
+| REQ-T-021 | Carriage releases on timer expiry or cancel | carriage-release time unmarked |
 | REQ-T-030 | Crumb-tray removal force | **no more than 10 N** |
 | REQ-T-040 | Cycle life before maintenance | **at least 10,000** toast cycles |
 
-**View-only numbers** (not in the model; do not treat as sourced): 900–1200 W on 120 VAC / 60 Hz; touchable surfaces ≤ 60 °C at 25 °C ambient; cutoff before external surface exceeds 90 °C; seven browning levels and slot ΔE ≤ 1.5; carriage pop-up within 2 s; tray force 5–15 N and ≥ 90% crumb capture; toast duration 90–150 s at level 4; UL 1026 / IEC 60335-2-9 on the electrical-safety label.
-
-Where the view disagrees with the model (seven levels vs at least three; 5–15 N vs ≤ 10 N), the model text is the requirement.
+There is no thermal-cutoff part in the structure. The cutoff statement is a requirement only. Power claims in this note refer to the modeled `mainsPower` → cord → `powerAndControlSubsystem` → `heatingElement` path.
 
 ## 5. Structure
 
@@ -163,9 +155,15 @@ Constraint definitions exist as names only — `heatEnergyBalance`, `toastTiming
 
 Attributes declared without values: `targetBrowning`, `inputPower`, `toastDuration`, `toastTemperature`, `surfaceTemperature`, `releaseTime`, `trayRemovalForce`.
 
-**Out of scope:** 4-slice, bagel, defrost, and wide-slot variants; coil, thermostat, and latch geometry; constraint equations; named electrical standards in the model.
+**Out of scope:** 4-slice, bagel, defrost, and wide-slot variants; coil, thermostat, and latch geometry; constraint equations.
 
-**Unmarked / not in the model:** rated watts, mains voltage and frequency, touch-temperature and cutoff thresholds, carriage-release time, toast duration and temperature, crumb-capture fraction. There are no `UNKNOWN` literals in this example.
+## 10. Open Risks
+
+- Rated watts, mains voltage and frequency, touch-temperature limit, thermal-cutoff threshold, and carriage-release time are unmarked.
+- `thermalCutoffRequirement` has no matching part.
+- `allocateCarriageReleaseToMechanism` and `allocateSurfaceTemperatureToChassis` are names without model endpoints.
+- Constraint definitions have no equations.
+- Verification cases are names only.
 
 ---
 
@@ -175,7 +173,7 @@ The figures below are the generated SysMLD views for this model. They illustrate
 
 ### Cases
 
-The toaster cases focus on toasting bread, cancelling a toast cycle, and removing crumbs. Analysis cases evaluate thermal performance and electrical load. Verification cases check browning, electrical safety, and crumb-tray removal.
+The toaster cases focus on toasting bread, cancelling a toast cycle, and removing crumbs. Analysis cases are `thermalPerformanceAnalysis` and `electricalLoadAnalysis`. Verification cases are names only.
 
 ![Toaster Use Cases](toaster-uc.svg)
 
@@ -191,7 +189,7 @@ The toaster interacts with the user, bread, the mains outlet, the kitchen enviro
 
 ### Requirements
 
-Requirement nodes carry intent and any quantitative labels drawn for the view.
+Requirement nodes follow the SysML model text.
 
 ![Toaster Requirements](toaster-req.svg)
 
