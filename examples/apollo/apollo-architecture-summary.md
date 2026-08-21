@@ -29,7 +29,7 @@ Sections 8 and 9 walk every generated figure and then list unmarked items and ou
 
 ### NASA systems engineering (NPR 7123) mapped onto MagicGrid
 
-NASA Procedural Requirements (NPR) 7123.1, *NASA Systems Engineering Processes and Requirements*, is taught here as a **mapping onto MagicGrid**, not as a second framework. The left column is plain-language NASA process ideas. The right column uses MagicGrid section names. These rows are not NPR 7123 product titles.
+NASA Procedural Requirements (NPR 7123.1), *NASA Systems Engineering Processes and Requirements*, is taught here as a **mapping onto MagicGrid**, not as a second framework. The left column is plain-language NASA process ideas. The right column uses MagicGrid section names. These rows are not NPR 7123 product titles.
 
 | NASA process idea | MagicGrid section in this note |
 |-------------------|--------------------------------|
