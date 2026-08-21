@@ -9,7 +9,7 @@
   "default_h": 52,
   "sibling_gap": 18,
   "rank_gap": 78,
-  "max_siblings_per_row": 5,
+  "max_siblings_per_row": 6,
   "aliases": {
     "CSM": "Apollo11::CSM::CSM",
     "CM": "Apollo11::CSM::CM",
@@ -20,7 +20,15 @@
     "DSKY": "Apollo11::CSM::DSKY",
     "SPS": "Apollo11::CSM::SPS",
     "RCS": "Apollo11::CSM::RCS",
-    "ECLSS": "Apollo11::CSM::ECLSS"
+    "ECLSS": "Apollo11::CSM::ECLSS",
+    "FC": "Apollo11::CSM::FC",
+    "AgZn": "Apollo11::CSM::AgZn",
+    "charger": "Apollo11::CSM::charger",
+    "inverter": "Apollo11::CSM::inverter",
+    "probe": "Apollo11::CSM::probe",
+    "ringLatches": "Apollo11::CSM::ringLatches",
+    "quad": "Apollo11::CSM::quad",
+    "RCSSystem": "Apollo11::CSM::RCSSystem"
   },
   "roots": [{
     "id": "CSM",
@@ -33,11 +41,26 @@
         {"id": "AGC_CM", "label": "AGC_CM", "model_ref": "AGC_CM"},
         {"id": "IMU", "label": "IMU", "model_ref": "IMU"},
         {"id": "DSKY", "label": "DSKY", "model_ref": "DSKY"},
-        {"id": "RCS", "label": "RCS", "model_ref": "RCS"},
-        {"id": "ECLSS", "label": "ECLSS", "model_ref": "ECLSS"}
+        {"id": "RCS", "label": "RCS", "model_ref": "RCS", "children": [
+          {"id": "systemA", "label": "systemA 6×93 lbf", "model_ref": "RCSSystem"},
+          {"id": "systemB", "label": "systemB 6×93 lbf", "model_ref": "RCSSystem"}
+        ]},
+        {"id": "ECLSS", "label": "ECLSS", "model_ref": "ECLSS"},
+        {"id": "AgZn1", "label": "AgZn1", "model_ref": "AgZn"},
+        {"id": "charger", "label": "charger", "model_ref": "charger"},
+        {"id": "inverter1", "label": "inverter1", "model_ref": "inverter"},
+        {"id": "probe", "label": "probe", "model_ref": "probe"},
+        {"id": "ringLatches", "label": "ringLatches", "model_ref": "ringLatches"}
       ]},
       {"id": "SM", "label": "SM", "model_ref": "SM", "children": [
-        {"id": "SPS", "label": "SPS", "model_ref": "SPS"}
+        {"id": "SPS", "label": "SPS", "model_ref": "SPS"},
+        {"id": "FC1", "label": "FC1", "model_ref": "FC"},
+        {"id": "FC2", "label": "FC2", "model_ref": "FC"},
+        {"id": "FC3", "label": "FC3", "model_ref": "FC"},
+        {"id": "quadA", "label": "quadA", "model_ref": "quad"},
+        {"id": "quadB", "label": "quadB", "model_ref": "quad"},
+        {"id": "quadC", "label": "quadC", "model_ref": "quad"},
+        {"id": "quadD", "label": "quadD", "model_ref": "quad"}
       ]}
     ]
   }]

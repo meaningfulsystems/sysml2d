@@ -1,15 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2579" height="472" viewBox="0 0 2579 472">
+<svg xmlns="http://www.w3.org/2000/svg" width="3538" height="472" viewBox="0 0 3538 472">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="2579" height="472" fill="#FFFFFF"/>
-<rect x="2" y="38" width="2575" height="430" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="3538" height="472" fill="#FFFFFF"/>
+<rect x="2" y="38" width="3534" height="430" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 424 L 440 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[req.mb] Apollo 11 Sourced Requirements [Apollo11]</text>
-<rect x="2" y="38" width="2575" height="432" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="3534" height="432" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
 <rect id="agcRequirement" x="72" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle"><tspan x="166" y="93.5">«requirement»</tspan><tspan x="166" dy="15">Two AGCs Block II</tspan><tspan x="166" dy="15">2048 E / 36864 F</tspan><tspan x="166" dy="15">1.024 MHz, MCT 11.7 μs</tspan></text>
@@ -35,6 +35,14 @@
 <text class="label" text-anchor="middle"><tspan x="2206.5" y="93.5">«requirement»</tspan><tspan x="2206.5" dy="15">PNGS ≠ AGS</tspan><tspan x="2206.5" dy="15">AGC_LM + IMU + radars</tspan><tspan x="2206.5" dy="15">R47 inits AGS</tspan></text>
 <rect id="eclssLoopRequirement" x="2333" y="72" width="170" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle"><tspan x="2418" y="93.5">«requirement»</tspan><tspan x="2418" dy="15">ECLSS O2/H2O/LiOH</tspan><tspan x="2418" dy="15">5.0 psia 100% O2</tspan><tspan x="2418" dy="15">CO2 ≤7.6 torr</tspan></text>
+<rect id="epsRequirement" x="2539" y="72" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="2647" y="93.5">«requirement»</tspan><tspan x="2647" dy="15">EPS A11 Press Kit</tspan><tspan x="2647" dy="15">SM 3 FC; CM 3 AgZn+charger</tspan><tspan x="2647" dy="15">LM 6 AgZn + ECA; 28 V DC</tspan></text>
+<rect id="agsRequirement" x="2791" y="72" width="216" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="2899" y="93.5">«requirement»</tspan><tspan x="2899" dy="15">AGS AEA+ASA+DEDA</tspan><tspan x="2899" dy="15">AEA 4096×18, 5 μs, 32.7 lb</tspan><tspan x="2899" dy="15">Not a landing computer</tspan></text>
+<rect id="dockingRequirement" x="3043" y="72" width="188" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="3137" y="93.5">«requirement»</tspan><tspan x="3137" dy="15">CM probe / LM drogue</tspan><tspan x="3137" dy="15">12 ring latches</tspan><tspan x="3137" dy="15">soft then hard; hw off</tspan></text>
+<rect id="rcsRequirement" x="3267" y="72" width="195" height="88" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="3364.5" y="93.5">«requirement»</tspan><tspan x="3364.5" dy="15">SM 4 quads, lbf UNKNOWN</tspan><tspan x="3364.5" dy="15">CM 2×6 × 93 lbf</tspan><tspan x="3364.5" dy="15">no auto translation</tspan></text>
 <path d="M 166,160 L 166,264" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 932.5,160 L 932.5,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <text class="small" x="178" y="212">refine</text>

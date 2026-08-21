@@ -16,15 +16,21 @@
     "APS": "Apollo11::LM::APS",
     "RCS": "Apollo11::LM::RCS",
     "landingRadar": "Apollo11::LM::landingRadar",
-    "rendezvousRadar": "Apollo11::LM::rendezvousRadar"
+    "rendezvousRadar": "Apollo11::LM::rendezvousRadar",
+    "AEA": "Apollo11::LM::AEA",
+    "ASA": "Apollo11::LM::ASA",
+    "DEDA": "Apollo11::LM::DEDA",
+    "AgZn": "Apollo11::LM::AgZn",
+    "ECA": "Apollo11::LM::ECA",
+    "drogue": "Apollo11::LM::drogue"
   },
   "diagram": {
     "id": "apollo-bdd-lm",
     "kind": "DefinitionView",
     "name": "LM Definition Tree",
     "canvas": {
-      "width": 852,
-      "height": 472,
+      "width": 1563,
+      "height": 522,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -36,7 +42,7 @@
         "model_ref": "LM",
         "symbol": "part_definition",
         "layout": {
-          "x": 356,
+          "x": 672,
           "y": 40,
           "width": 140,
           "height": 52,
@@ -55,7 +61,7 @@
         "model_ref": "descent",
         "symbol": "part_definition",
         "layout": {
-          "x": 40,
+          "x": 198,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -89,11 +95,106 @@
         "style": "part.definition"
       },
       {
+        "id": "AgZn1",
+        "model_ref": "AgZn",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 198,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "AgZn1",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "AgZn2",
+        "model_ref": "AgZn",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 356,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "AgZn2",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "AgZn3",
+        "model_ref": "AgZn",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 119,
+          "y": 380,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "AgZn3",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "AgZn4",
+        "model_ref": "AgZn",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 277,
+          "y": 380,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "AgZn4",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ECA",
+        "model_ref": "ECA",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 435,
+          "y": 380,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "ECA",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
         "id": "ascent",
         "model_ref": "ascent",
         "symbol": "part_definition",
         "layout": {
-          "x": 435,
+          "x": 988,
           "y": 170,
           "width": 140,
           "height": 52,
@@ -112,7 +213,7 @@
         "model_ref": "PNGS",
         "symbol": "part_definition",
         "layout": {
-          "x": 198,
+          "x": 593,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -131,7 +232,7 @@
         "model_ref": "AGC_LM",
         "symbol": "part_definition",
         "layout": {
-          "x": 356,
+          "x": 751,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -150,7 +251,7 @@
         "model_ref": "AGS",
         "symbol": "part_definition",
         "layout": {
-          "x": 514,
+          "x": 1067,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -165,11 +266,68 @@
         "style": "part.definition"
       },
       {
+        "id": "AEA",
+        "model_ref": "AEA",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 909,
+          "y": 430,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "AEA",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ASA",
+        "model_ref": "ASA",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1067,
+          "y": 430,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "ASA",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "DEDA",
+        "model_ref": "DEDA",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1225,
+          "y": 430,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "DEDA",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
         "id": "APS",
         "model_ref": "APS",
         "symbol": "part_definition",
         "layout": {
-          "x": 672,
+          "x": 1383,
           "y": 300,
           "width": 140,
           "height": 52,
@@ -188,7 +346,7 @@
         "model_ref": "RCS",
         "symbol": "part_definition",
         "layout": {
-          "x": 269,
+          "x": 824,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -207,7 +365,7 @@
         "model_ref": "landingRadar",
         "symbol": "part_definition",
         "layout": {
-          "x": 427,
+          "x": 982,
           "y": 380,
           "width": 140,
           "height": 52,
@@ -226,13 +384,32 @@
         "model_ref": "rendezvousRadar",
         "symbol": "part_definition",
         "layout": {
-          "x": 585,
+          "x": 1140,
           "y": 380,
           "width": 156,
           "height": 52,
           "z": 10
         },
         "label": "rendezvousRadar",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "drogue",
+        "model_ref": "drogue",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1314,
+          "y": 380,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "drogue",
         "compartments": {
           "attributes": false,
           "ports": false,
@@ -263,11 +440,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 426,
+              "x": 742,
               "y": 131
             },
             {
-              "x": 110,
+              "x": 268,
               "y": 131
             }
           ]
@@ -306,11 +483,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 426,
+              "x": 742,
               "y": 131
             },
             {
-              "x": 505,
+              "x": 1058,
               "y": 131
             }
           ]
@@ -347,6 +524,49 @@
         },
         "route": {
           "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 268,
+              "y": 261
+            },
+            {
+              "x": 110,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-descent-AgZn1",
+        "model_ref": "AgZn",
+        "source": {
+          "element": "descent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AgZn1",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
           "waypoints": []
         },
         "labels": [
@@ -355,6 +575,178 @@
             "position": {
               "segment": 0,
               "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-descent-AgZn2",
+        "model_ref": "AgZn",
+        "source": {
+          "element": "descent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AgZn2",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 268,
+              "y": 261
+            },
+            {
+              "x": 426,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-descent-AgZn3",
+        "model_ref": "AgZn",
+        "source": {
+          "element": "descent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AgZn3",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 268,
+              "y": 352
+            },
+            {
+              "x": 189,
+              "y": 352
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-descent-AgZn4",
+        "model_ref": "AgZn",
+        "source": {
+          "element": "descent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AgZn4",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 268,
+              "y": 352
+            },
+            {
+              "x": 347,
+              "y": 352
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-descent-ECA",
+        "model_ref": "ECA",
+        "source": {
+          "element": "descent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ECA",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 268,
+              "y": 352
+            },
+            {
+              "x": 505,
+              "y": 352
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.94,
               "dx": 10,
               "dy": -4
             }
@@ -383,11 +775,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 505,
+              "x": 1058,
               "y": 261
             },
             {
-              "x": 268,
+              "x": 663,
               "y": 261
             }
           ]
@@ -426,11 +818,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 505,
+              "x": 1058,
               "y": 261
             },
             {
-              "x": 426,
+              "x": 821,
               "y": 261
             }
           ]
@@ -469,11 +861,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 505,
+              "x": 1058,
               "y": 261
             },
             {
-              "x": 584,
+              "x": 1137,
               "y": 261
             }
           ]
@@ -512,11 +904,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 505,
+              "x": 1058,
               "y": 261
             },
             {
-              "x": 742,
+              "x": 1453,
               "y": 261
             }
           ]
@@ -555,11 +947,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 505,
+              "x": 1058,
               "y": 352
             },
             {
-              "x": 339,
+              "x": 894,
               "y": 352
             }
           ]
@@ -598,11 +990,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 505,
+              "x": 1058,
               "y": 352
             },
             {
-              "x": 497,
+              "x": 1052,
               "y": 352
             }
           ]
@@ -641,11 +1033,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 505,
+              "x": 1058,
               "y": 352
             },
             {
-              "x": 663,
+              "x": 1218,
               "y": 352
             }
           ]
@@ -656,6 +1048,169 @@
             "position": {
               "segment": 2,
               "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ascent-drogue",
+        "model_ref": "drogue",
+        "source": {
+          "element": "ascent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "drogue",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1058,
+              "y": 352
+            },
+            {
+              "x": 1384,
+              "y": 352
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-AGS-AEA",
+        "model_ref": "AEA",
+        "source": {
+          "element": "AGS",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AEA",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1137,
+              "y": 391
+            },
+            {
+              "x": 979,
+              "y": 391
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-AGS-ASA",
+        "model_ref": "ASA",
+        "source": {
+          "element": "AGS",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ASA",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-AGS-DEDA",
+        "model_ref": "DEDA",
+        "source": {
+          "element": "AGS",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "DEDA",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1137,
+              "y": 391
+            },
+            {
+              "x": 1295,
+              "y": 391
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
               "dx": 10,
               "dy": -4
             }

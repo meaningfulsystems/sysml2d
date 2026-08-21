@@ -1,0 +1,39 @@
+{
+  "diagram": "apollo-ibd-rcs-cm",
+  "kind": "InterconnectionView",
+  "name": "CM RCS two × six 93 lbf",
+  "subject": "CM",
+  "model_files": ["apollo.sysml"],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 52,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "CM": "Apollo11::CSM::CM",
+    "RCS": "Apollo11::CSM::CM::RCS",
+    "systemA": "Apollo11::CSM::CM::systemA",
+    "systemB": "Apollo11::CSM::CM::systemB",
+    "RCS--systemA--src": "Apollo11::CSM::CM::RCS",
+    "RCS--systemA--tgt": "Apollo11::CSM::CM::systemA",
+    "conn-RCS-systemA": "Apollo11::CSM::CM::RCSToSystemA",
+    "RCS--systemB--src": "Apollo11::CSM::CM::RCS",
+    "RCS--systemB--tgt": "Apollo11::CSM::CM::systemB",
+    "conn-RCS-systemB": "Apollo11::CSM::CM::RCSToSystemB"
+  },
+  "nodes": {
+    "RCS": {"label": "RCS\nno auto translation", "style": "part.prop"},
+    "systemA": {"label": "systemA\n6 × 93 lbf", "style": "part.prop"},
+    "systemB": {"label": "systemB\n6 × 93 lbf", "style": "part.prop"}
+  },
+  "edges": [
+    {"from": "RCS", "to": "systemA", "label": "93 lbf", "model_ref": "conn-RCS-systemA"},
+    {"from": "RCS", "to": "systemB", "label": "93 lbf", "model_ref": "conn-RCS-systemB"}
+  ],
+  "styles": {
+    "boundary.system": {"fill": "#FFFFFF", "stroke": "#333333", "stroke_width": 2},
+    "part.prop": {"fill": "#FFF3E0", "stroke": "#E65100", "stroke_width": 2},
+    "connector.default": {"stroke": "#334155", "stroke_width": 2}
+  }
+}

@@ -1,0 +1,289 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "AGS": "Apollo11::LM::AGS",
+    "AEA": "Apollo11::LM::AGS::AEA",
+    "ASA": "Apollo11::LM::AGS::ASA",
+    "DEDA": "Apollo11::LM::AGS::DEDA",
+    "AEA--ASA--src": "Apollo11::LM::AGS::AEA",
+    "AEA--ASA--tgt": "Apollo11::LM::AGS::ASA",
+    "conn-AEA-ASA": "Apollo11::LM::AGS::AEAToASA",
+    "AEA--DEDA--src": "Apollo11::LM::AGS::AEA",
+    "AEA--DEDA--tgt": "Apollo11::LM::AGS::DEDA",
+    "conn-AEA-DEDA": "Apollo11::LM::AGS::AEAToDEDA"
+  },
+  "diagram": {
+    "id": "apollo-ibd-ags",
+    "kind": "InterconnectionView",
+    "name": "AGS AEA + ASA + DEDA (TN-7990)",
+    "canvas": {
+      "width": 564,
+      "height": 325,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "AGS",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 484,
+          "height": 245,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "AEA",
+        "model_ref": "AEA",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 126,
+          "width": 140,
+          "height": 73,
+          "z": 10
+        },
+        "label": "AEA\n4096 \u00d7 18-bit\n5 \u03bcs \u00b7 32.7 lb",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "ASA",
+        "model_ref": "ASA",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 348,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "ASA",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "DEDA",
+        "model_ref": "DEDA",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 348,
+          "y": 191,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "DEDA",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "AEA--ASA--src",
+        "model_ref": "AEA--ASA--src",
+        "symbol": "port",
+        "owner": "AEA",
+        "placement": {
+          "side": "right",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "AEA--DEDA--src",
+        "model_ref": "AEA--DEDA--src",
+        "symbol": "port",
+        "owner": "AEA",
+        "placement": {
+          "side": "right",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "AEA--ASA--tgt",
+        "model_ref": "AEA--ASA--tgt",
+        "symbol": "port",
+        "owner": "ASA",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AEA--DEDA--tgt",
+        "model_ref": "AEA--DEDA--tgt",
+        "symbol": "port",
+        "owner": "DEDA",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-AEA-ASA",
+        "model_ref": "conn-AEA-ASA",
+        "source": {
+          "element": "AEA--ASA--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AEA--ASA--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 268,
+              "y": 150.331
+            },
+            {
+              "x": 268,
+              "y": 105
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "attitude",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-AEA-DEDA",
+        "model_ref": "conn-AEA-DEDA",
+        "source": {
+          "element": "AEA--DEDA--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AEA--DEDA--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 296,
+              "y": 174.669
+            },
+            {
+              "x": 296,
+              "y": 220
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "display",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.eps": {
+        "fill": "#FEF9C3",
+        "stroke": "#A16207",
+        "stroke_width": 2
+      },
+      "part.dock": {
+        "fill": "#F1F5F9",
+        "stroke": "#475569",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "AGS"
+  }
+}

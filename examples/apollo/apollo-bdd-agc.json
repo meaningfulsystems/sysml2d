@@ -13,12 +13,20 @@
     "AGC_CM": "Apollo11::CSM::AGC_CM",
     "AGC_LM": "Apollo11::LM::AGC_LM",
     "DSKY": "Apollo11::CSM::DSKY",
-    "AGS": "Apollo11::LM::AGS"
+    "AGS": "Apollo11::LM::AGS",
+    "AEA": "Apollo11::LM::AEA",
+    "ASA": "Apollo11::LM::ASA",
+    "DEDA": "Apollo11::LM::DEDA"
   },
   "roots": [
     {"id": "AGC_CM", "label": "AGC_CM", "model_ref": "AGC_CM", "style": "part.definition.root",
      "children": [{"id": "DSKY", "label": "DSKY", "model_ref": "DSKY"}]},
     {"id": "AGC_LM", "label": "AGC_LM", "model_ref": "AGC_LM", "style": "part.definition.root"},
-    {"id": "AGS", "label": "AGS", "model_ref": "AGS", "style": "part.definition.root"}
+    {"id": "AGS", "label": "AGS", "model_ref": "AGS", "style": "part.definition.root",
+     "children": [
+       {"id": "AEA", "label": "AEA 4096×18", "model_ref": "AEA"},
+       {"id": "ASA", "label": "ASA", "model_ref": "ASA"},
+       {"id": "DEDA", "label": "DEDA", "model_ref": "DEDA"}
+     ]}
   ]
 }

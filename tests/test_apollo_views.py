@@ -95,6 +95,20 @@ LOCKED = (
     "state pad",
     "state contingencyTLI",
     "state lunar",
+    "part AEA : AEA",
+    "part ASA : ASA",
+    "part DEDA : DEDA",
+    "part FC1 : FC",
+    "part charger : charger",
+    "part ECA : ECA",
+    "part probe : probe",
+    "part drogue : drogue",
+    "part ringLatches : ringLatches",
+    "part quadA : quad",
+    "part systemA : RCSSystem",
+    "state soft",
+    "state hard",
+    "state hardwareOff",
 )
 
 
@@ -134,6 +148,13 @@ class ApolloViewTests(unittest.TestCase):
         self.assertNotIn("part lgc : LGC", text)
         self.assertNotIn("state dockEject", text)
         self.assertNotIn("part vanguard", text)
+        self.assertIn("Stage tank loads and Δv table UNKNOWN", text)
+        self.assertIn("A11 rope IDs UNKNOWN", text)
+        self.assertIn("per-engine lbf UNKNOWN in press kit", text)
+        self.assertIn("Not a landing computer", text)
+        self.assertIn("4096 × 18-bit", text)
+        self.assertIn("two × six 93 lbf", text)
+        self.assertIn("117 V 400 Hz", text)
 
 
 def _route_box_hits(doc: dict) -> list[tuple[str, str]]:

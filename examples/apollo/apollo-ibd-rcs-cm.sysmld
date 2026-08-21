@@ -1,0 +1,254 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "CM": "Apollo11::CSM::CM",
+    "RCS": "Apollo11::CSM::CM::RCS",
+    "systemA": "Apollo11::CSM::CM::systemA",
+    "systemB": "Apollo11::CSM::CM::systemB",
+    "RCS--systemA--src": "Apollo11::CSM::CM::RCS",
+    "RCS--systemA--tgt": "Apollo11::CSM::CM::systemA",
+    "conn-RCS-systemA": "Apollo11::CSM::CM::RCSToSystemA",
+    "RCS--systemB--src": "Apollo11::CSM::CM::RCS",
+    "RCS--systemB--tgt": "Apollo11::CSM::CM::systemB",
+    "conn-RCS-systemB": "Apollo11::CSM::CM::RCSToSystemB"
+  },
+  "diagram": {
+    "id": "apollo-ibd-rcs-cm",
+    "kind": "InterconnectionView",
+    "name": "CM RCS two \u00d7 six 93 lbf",
+    "canvas": {
+      "width": 587,
+      "height": 320,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "CM",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 507,
+          "height": 240,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "RCS",
+        "model_ref": "RCS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 131,
+          "width": 167,
+          "height": 58,
+          "z": 10
+        },
+        "label": "RCS\nno auto translation",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "systemA",
+        "model_ref": "systemA",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 371,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "systemA\n6 \u00d7 93 lbf",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "systemB",
+        "model_ref": "systemB",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 371,
+          "y": 186,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "systemB\n6 \u00d7 93 lbf",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "RCS--systemA--src",
+        "model_ref": "RCS--systemA--src",
+        "symbol": "port",
+        "owner": "RCS",
+        "placement": {
+          "side": "right",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "RCS--systemB--src",
+        "model_ref": "RCS--systemB--src",
+        "symbol": "port",
+        "owner": "RCS",
+        "placement": {
+          "side": "right",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "RCS--systemA--tgt",
+        "model_ref": "RCS--systemA--tgt",
+        "symbol": "port",
+        "owner": "systemA",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "RCS--systemB--tgt",
+        "model_ref": "RCS--systemB--tgt",
+        "symbol": "port",
+        "owner": "systemB",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-RCS-systemA",
+        "model_ref": "conn-RCS-systemA",
+        "source": {
+          "element": "RCS--systemA--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RCS--systemA--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 293.667,
+              "y": 150.331
+            },
+            {
+              "x": 293.667,
+              "y": 105
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "93 lbf",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-RCS-systemB",
+        "model_ref": "conn-RCS-systemB",
+        "source": {
+          "element": "RCS--systemB--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RCS--systemB--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 320.333,
+              "y": 169.669
+            },
+            {
+              "x": 320.333,
+              "y": 215
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "93 lbf",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "CM"
+  }
+}

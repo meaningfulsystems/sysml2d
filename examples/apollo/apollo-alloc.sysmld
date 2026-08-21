@@ -12,7 +12,7 @@
     "name": "Apollo 11 Allocations",
     "canvas": {
       "width": 624,
-      "height": 988,
+      "height": 1564,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -144,6 +144,90 @@
         "label": "AGS",
         "style": "part_usage",
         "model_ref": "AGS"
+      },
+      {
+        "id": "epsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 840,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "EPS Press Kit",
+        "style": "requirement",
+        "model_ref": "epsRequirement"
+      },
+      {
+        "id": "dockingRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 1032,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Docking",
+        "style": "requirement",
+        "model_ref": "dockingRequirement"
+      },
+      {
+        "id": "rcsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 1224,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "RCS",
+        "style": "requirement",
+        "model_ref": "rcsRequirement"
+      },
+      {
+        "id": "SM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 1038,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "SM",
+        "style": "part_usage",
+        "model_ref": "SM"
+      },
+      {
+        "id": "CM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 1230,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "CM",
+        "style": "part_usage",
+        "model_ref": "CM"
+      },
+      {
+        "id": "descent",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 402,
+          "y": 1422,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "descent",
+        "style": "part_usage",
+        "model_ref": "descent"
       }
     ],
     "connections": [
@@ -260,11 +344,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 322,
+              "x": 283.6,
               "y": 497
             },
             {
-              "x": 322,
+              "x": 283.6,
               "y": 689
             }
           ]
@@ -300,11 +384,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 354,
+              "x": 296.4,
               "y": 689
             },
             {
-              "x": 354,
+              "x": 296.4,
               "y": 881
             }
           ]
@@ -319,6 +403,237 @@
         ],
         "style": "connector.allocation",
         "model_ref": "allocateAGSToLM"
+      },
+      {
+        "id": "conn-epsRequirement-SM",
+        "source": {
+          "element": "epsRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SM",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 309.2,
+              "y": 881
+            },
+            {
+              "x": 309.2,
+              "y": 1073
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateEPSToSM"
+      },
+      {
+        "id": "conn-epsRequirement-CM",
+        "source": {
+          "element": "epsRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CM",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 322,
+              "y": 881
+            },
+            {
+              "x": 322,
+              "y": 1265
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateEPSToCM"
+      },
+      {
+        "id": "conn-epsRequirement-descent",
+        "source": {
+          "element": "epsRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "descent",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 334.8,
+              "y": 881
+            },
+            {
+              "x": 334.8,
+              "y": 1457
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateEPSToDescent"
+      },
+      {
+        "id": "conn-dockingRequirement-CM",
+        "source": {
+          "element": "dockingRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CM",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 347.6,
+              "y": 1073
+            },
+            {
+              "x": 347.6,
+              "y": 1265
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateDockToCM"
+      },
+      {
+        "id": "conn-rcsRequirement-SM",
+        "source": {
+          "element": "rcsRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SM",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 360.4,
+              "y": 1265
+            },
+            {
+              "x": 360.4,
+              "y": 1073
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateRCSToSM"
+      },
+      {
+        "id": "conn-rcsRequirement-CM",
+        "source": {
+          "element": "rcsRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CM",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateRCSToCM"
       }
     ],
     "annotations": [],

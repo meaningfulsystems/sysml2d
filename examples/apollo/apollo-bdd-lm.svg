@@ -1,57 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="856" height="514" viewBox="0 0 856 514">
+<svg xmlns="http://www.w3.org/2000/svg" width="1567" height="564" viewBox="0 0 1567 564">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="856" height="514" fill="#FFFFFF"/>
-<rect x="2" y="38" width="852" height="472" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1567" height="564" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1563" height="522" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 280 L 296 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[def.mb] LM Definition Tree [LM]</text>
-<rect x="2" y="38" width="852" height="474" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1563" height="524" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="LM" x="356" y="40" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="426" y="66">LM</text>
-<rect id="descent" x="40" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="110" y="196">descent</text>
+<rect id="LM" x="672" y="40" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="742" y="66">LM</text>
+<rect id="descent" x="198" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="268" y="196">descent</text>
 <rect id="DPS" x="40" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="110" y="326">DPS</text>
-<rect id="ascent" x="435" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="505" y="196">ascent</text>
-<rect id="PNGS" x="198" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="268" y="326">PNGS</text>
-<rect id="AGC_LM" x="356" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="426" y="326">AGC_LM</text>
-<rect id="AGS" x="514" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="584" y="326">AGS</text>
-<rect id="APS" x="672" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="742" y="326">APS</text>
-<rect id="RCS" x="269" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="339" y="406">RCS</text>
-<rect id="landingRadar" x="427" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="497" y="406">landingRadar</text>
-<rect id="rendezvousRadar" x="585" y="380" width="156" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="663" y="406">rendezvousRadar</text>
-<path d="M 426,92 L 426,131 L 110,131 L 110,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 426,92 L 426,131 L 505,131 L 505,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 110,222 L 110,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 505,222 L 505,261 L 268,261 L 268,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 505,222 L 505,261 L 426,261 L 426,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 505,222 L 505,261 L 584,261 L 584,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 505,222 L 505,261 L 742,261 L 742,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 505,222 L 505,352 L 339,352 L 339,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 505,222 L 505,352 L 497,352 L 497,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 505,222 L 505,352 L 663,352 L 663,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" x="120" y="158.98">1</text>
-<text class="small" x="515" y="158.98">1</text>
-<text class="small" x="120" y="281.96">1</text>
-<text class="small" x="278" y="288.98">1</text>
+<rect id="AgZn1" x="198" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="268" y="326">AgZn1</text>
+<rect id="AgZn2" x="356" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="426" y="326">AgZn2</text>
+<rect id="AgZn3" x="119" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="189" y="406">AgZn3</text>
+<rect id="AgZn4" x="277" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="347" y="406">AgZn4</text>
+<rect id="ECA" x="435" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="505" y="406">ECA</text>
+<rect id="ascent" x="988" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1058" y="196">ascent</text>
+<rect id="PNGS" x="593" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="663" y="326">PNGS</text>
+<rect id="AGC_LM" x="751" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="821" y="326">AGC_LM</text>
+<rect id="AGS" x="1067" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1137" y="326">AGS</text>
+<rect id="AEA" x="909" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="979" y="456">AEA</text>
+<rect id="ASA" x="1067" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1137" y="456">ASA</text>
+<rect id="DEDA" x="1225" y="430" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1295" y="456">DEDA</text>
+<rect id="APS" x="1383" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1453" y="326">APS</text>
+<rect id="RCS" x="824" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="894" y="406">RCS</text>
+<rect id="landingRadar" x="982" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1052" y="406">landingRadar</text>
+<rect id="rendezvousRadar" x="1140" y="380" width="156" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1218" y="406">rendezvousRadar</text>
+<rect id="drogue" x="1314" y="380" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1384" y="406">drogue</text>
+<path d="M 742,92 L 742,131 L 268,131 L 268,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 742,92 L 742,131 L 1058,131 L 1058,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 268,222 L 268,261 L 110,261 L 110,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 268,222 L 268,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 268,222 L 268,261 L 426,261 L 426,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 268,222 L 268,352 L 189,352 L 189,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 268,222 L 268,352 L 347,352 L 347,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 268,222 L 268,352 L 505,352 L 505,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1058,222 L 1058,261 L 663,261 L 663,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1058,222 L 1058,261 L 821,261 L 821,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1058,222 L 1058,261 L 1137,261 L 1137,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1058,222 L 1058,261 L 1453,261 L 1453,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1058,222 L 1058,352 L 894,352 L 894,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1058,222 L 1058,352 L 1052,352 L 1052,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1058,222 L 1058,352 L 1218,352 L 1218,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1058,222 L 1058,352 L 1384,352 L 1384,380" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1137,352 L 1137,391 L 979,391 L 979,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1137,352 L 1137,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1137,352 L 1137,391 L 1295,391 L 1295,430" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="278" y="158.98">1</text>
+<text class="small" x="1068" y="158.98">1</text>
+<text class="small" x="120" y="288.98">1</text>
+<text class="small" x="278" y="281.96">1</text>
 <text class="small" x="436" y="288.98">1</text>
-<text class="small" x="594" y="288.98">1</text>
-<text class="small" x="752" y="288.98">1</text>
-<text class="small" x="349" y="374.32">1</text>
-<text class="small" x="507" y="374.32">1</text>
-<text class="small" x="673" y="374.32">1</text>
+<text class="small" x="199" y="374.32">1</text>
+<text class="small" x="357" y="374.32">1</text>
+<text class="small" x="515" y="374.32">1</text>
+<text class="small" x="673" y="288.98">1</text>
+<text class="small" x="831" y="288.98">1</text>
+<text class="small" x="1147" y="288.98">1</text>
+<text class="small" x="1463" y="288.98">1</text>
+<text class="small" x="904" y="374.32">1</text>
+<text class="small" x="1062" y="374.32">1</text>
+<text class="small" x="1228" y="374.32">1</text>
+<text class="small" x="1394" y="374.32">1</text>
+<text class="small" x="989" y="418.98">1</text>
+<text class="small" x="1147" y="411.96">1</text>
+<text class="small" x="1305" y="418.98">1</text>
 </g>
 </svg>

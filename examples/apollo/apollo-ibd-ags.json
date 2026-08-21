@@ -1,0 +1,106 @@
+{
+  "diagram": "apollo-ibd-ags",
+  "kind": "InterconnectionView",
+  "name": "AGS AEA + ASA + DEDA (TN-7990)",
+  "subject": "AGS",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 52,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "AGS": "Apollo11::LM::AGS",
+    "AEA": "Apollo11::LM::AGS::AEA",
+    "ASA": "Apollo11::LM::AGS::ASA",
+    "DEDA": "Apollo11::LM::AGS::DEDA",
+    "AEA--ASA--src": "Apollo11::LM::AGS::AEA",
+    "AEA--ASA--tgt": "Apollo11::LM::AGS::ASA",
+    "conn-AEA-ASA": "Apollo11::LM::AGS::AEAToASA",
+    "AEA--DEDA--src": "Apollo11::LM::AGS::AEA",
+    "AEA--DEDA--tgt": "Apollo11::LM::AGS::DEDA",
+    "conn-AEA-DEDA": "Apollo11::LM::AGS::AEAToDEDA"
+  },
+  "nodes": {
+    "AEA": {
+      "label": "AEA\n4096 \u00d7 18-bit\n5 \u03bcs \u00b7 32.7 lb",
+      "style": "part.gnc"
+    },
+    "ASA": {
+      "label": "ASA",
+      "style": "part.gnc"
+    },
+    "DEDA": {
+      "label": "DEDA",
+      "style": "part.gnc"
+    }
+  },
+  "edges": [
+    {
+      "from": "AEA",
+      "to": "ASA",
+      "label": "attitude",
+      "model_ref": "conn-AEA-ASA"
+    },
+    {
+      "from": "AEA",
+      "to": "DEDA",
+      "label": "display",
+      "model_ref": "conn-AEA-DEDA"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.eps": {
+      "fill": "#FEF9C3",
+      "stroke": "#A16207",
+      "stroke_width": 2
+    },
+    "part.dock": {
+      "fill": "#F1F5F9",
+      "stroke": "#475569",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

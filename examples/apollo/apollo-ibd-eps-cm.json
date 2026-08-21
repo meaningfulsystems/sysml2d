@@ -1,0 +1,148 @@
+{
+  "diagram": "apollo-ibd-eps-cm",
+  "kind": "InterconnectionView",
+  "name": "CM AgZn / charger / inverters",
+  "subject": "CM",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 52,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "CM": "Apollo11::CSM::CM",
+    "charger": "Apollo11::CSM::CM::charger",
+    "AgZn1": "Apollo11::CSM::CM::AgZn1",
+    "AgZn2": "Apollo11::CSM::CM::AgZn2",
+    "AgZn3": "Apollo11::CSM::CM::AgZn3",
+    "inverter1": "Apollo11::CSM::CM::inverter1",
+    "inverter2": "Apollo11::CSM::CM::inverter2",
+    "charger--AgZn1--src": "Apollo11::CSM::CM::charger",
+    "charger--AgZn1--tgt": "Apollo11::CSM::CM::AgZn1",
+    "conn-charger-AgZn1": "Apollo11::CSM::CM::chargerToAgZn1",
+    "charger--AgZn2--src": "Apollo11::CSM::CM::charger",
+    "charger--AgZn2--tgt": "Apollo11::CSM::CM::AgZn2",
+    "conn-charger-AgZn2": "Apollo11::CSM::CM::chargerToAgZn2",
+    "charger--AgZn3--src": "Apollo11::CSM::CM::charger",
+    "charger--AgZn3--tgt": "Apollo11::CSM::CM::AgZn3",
+    "conn-charger-AgZn3": "Apollo11::CSM::CM::chargerToAgZn3",
+    "AgZn1--inverter1--src": "Apollo11::CSM::CM::AgZn1",
+    "AgZn1--inverter1--tgt": "Apollo11::CSM::CM::inverter1",
+    "conn-AgZn1-inverter1": "Apollo11::CSM::CM::AgZn1ToInverter1",
+    "AgZn3--inverter2--src": "Apollo11::CSM::CM::AgZn3",
+    "AgZn3--inverter2--tgt": "Apollo11::CSM::CM::inverter2",
+    "conn-AgZn3-inverter2": "Apollo11::CSM::CM::AgZn3ToInverter2"
+  },
+  "nodes": {
+    "charger": {
+      "label": "charger",
+      "style": "part.eps"
+    },
+    "AgZn1": {
+      "label": "AgZn1",
+      "style": "part.eps"
+    },
+    "AgZn2": {
+      "label": "AgZn2",
+      "style": "part.eps"
+    },
+    "AgZn3": {
+      "label": "AgZn3",
+      "style": "part.eps"
+    },
+    "inverter1": {
+      "label": "inverter1\n117 V 400 Hz",
+      "style": "part.eps"
+    },
+    "inverter2": {
+      "label": "inverter2\n117 V 400 Hz",
+      "style": "part.eps"
+    }
+  },
+  "edges": [
+    {
+      "from": "charger",
+      "to": "AgZn1",
+      "label": "charge",
+      "model_ref": "conn-charger-AgZn1"
+    },
+    {
+      "from": "charger",
+      "to": "AgZn2",
+      "label": "charge",
+      "model_ref": "conn-charger-AgZn2"
+    },
+    {
+      "from": "charger",
+      "to": "AgZn3",
+      "label": "charge",
+      "model_ref": "conn-charger-AgZn3"
+    },
+    {
+      "from": "AgZn1",
+      "to": "inverter1",
+      "label": "AC",
+      "model_ref": "conn-AgZn1-inverter1"
+    },
+    {
+      "from": "AgZn3",
+      "to": "inverter2",
+      "label": "AC",
+      "model_ref": "conn-AgZn3-inverter2"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.eps": {
+      "fill": "#FEF9C3",
+      "stroke": "#A16207",
+      "stroke_width": 2
+    },
+    "part.dock": {
+      "fill": "#F1F5F9",
+      "stroke": "#475569",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

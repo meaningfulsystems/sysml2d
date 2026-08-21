@@ -1,0 +1,106 @@
+{
+  "diagram": "apollo-ibd-dock",
+  "kind": "InterconnectionView",
+  "name": "CM probe / 12 latches / LM drogue",
+  "subject": "mission",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 52,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "probe": "Apollo11::CSM::CM::probe",
+    "ringLatches": "Apollo11::CSM::CM::ringLatches",
+    "drogue": "Apollo11::LM::ascent::drogue",
+    "probe--ringLatches--src": "Apollo11::CSM::CM::probe",
+    "probe--ringLatches--tgt": "Apollo11::CSM::CM::ringLatches",
+    "conn-probe-ringLatches": "Apollo11::CSM::CM::probeToLatches",
+    "ringLatches--drogue--src": "Apollo11::CSM::CM::ringLatches",
+    "ringLatches--drogue--tgt": "Apollo11::LM::ascent::drogue",
+    "conn-ringLatches-drogue": "Apollo11::Apollo11::CMToAscent"
+  },
+  "nodes": {
+    "probe": {
+      "label": "probe",
+      "style": "part.dock"
+    },
+    "ringLatches": {
+      "label": "ringLatches\n12 latches",
+      "style": "part.dock"
+    },
+    "drogue": {
+      "label": "drogue",
+      "style": "part.dock"
+    }
+  },
+  "edges": [
+    {
+      "from": "probe",
+      "to": "ringLatches",
+      "label": "soft",
+      "model_ref": "conn-probe-ringLatches"
+    },
+    {
+      "from": "ringLatches",
+      "to": "drogue",
+      "label": "hard",
+      "model_ref": "conn-ringLatches-drogue"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.eps": {
+      "fill": "#FEF9C3",
+      "stroke": "#A16207",
+      "stroke_width": 2
+    },
+    "part.dock": {
+      "fill": "#F1F5F9",
+      "stroke": "#475569",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

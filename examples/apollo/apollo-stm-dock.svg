@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="304" viewBox="0 0 1254 304">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1254" height="304" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1250" height="262" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 504 L 520 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[stv.mb] Docking: soft then hard [DockingMode : DockingMode]</text>
+<rect x="2" y="38" width="1250" height="264" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="114" y="98" width="1096" height="124" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="124" y="120">DockingMode</text>
+<circle id="initial" cx="160" cy="160" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="undocked" x="326" y="134" width="140" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="396" y="160">undocked</text>
+<rect id="soft" x="562" y="134" width="140" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="632" y="160">soft</text>
+<rect id="hard" x="798" y="134" width="140" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="868" y="160">hard</text>
+<rect id="hardwareOff" x="1034" y="134" width="140" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="1104" y="152.5">hardware off</tspan><tspan x="1104" dy="15">(transfer)</tspan></text>
+<path d="M 170,160 L 326,160" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 466,160 L 562,160" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 702,160 L 798,160" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 938,160 L 1034,160" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="514" y="168">probe capture</text>
+<text class="small" text-anchor="middle" x="750" y="168">12 latches</text>
+<text class="small" text-anchor="middle" x="986" y="168">remove hw</text>
+</g>
+</svg>

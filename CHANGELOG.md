@@ -10,6 +10,7 @@ All notable changes to SysMLD are documented here.
 - `examples/e-bike/` — a street-legal class e-bike model with intents, `.sysmld`, and SVG for all 15 view kinds plus an operating-context general view
 - Adoption pack: [AGENTS.md](AGENTS.md), four installable skills (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`), and [templates/new-project/](templates/new-project/) (copy-this `.sysml` + IBD + STM)
 - `examples/apollo/` — Apollo 11 / Block II (AS-506) whole-stack model: ground/crew, vehicles, two AGCs, AGS, IU LVDC, USB, mission + abort STMs. Sourced numbers only; UNKNOWN marked
+- Apollo morning delta: SM three fuel cells; CM AgZn + charger + two 117 V 400 Hz inverters; LM six AgZn + ECA; AGS AEA/ASA/DEDA (TN-7990); CM probe / LM drogue / 12 latches; SM four quads (lbf UNKNOWN) and CM 2×6 × 93 lbf. No invented tank loads / Δv / rope IDs
 
 ### Changed
 

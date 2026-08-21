@@ -1,0 +1,271 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "probe": "Apollo11::CSM::CM::probe",
+    "ringLatches": "Apollo11::CSM::CM::ringLatches",
+    "drogue": "Apollo11::LM::ascent::drogue",
+    "probe--ringLatches--src": "Apollo11::CSM::CM::probe",
+    "probe--ringLatches--tgt": "Apollo11::CSM::CM::ringLatches",
+    "conn-probe-ringLatches": "Apollo11::CSM::CM::probeToLatches",
+    "ringLatches--drogue--src": "Apollo11::CSM::CM::ringLatches",
+    "ringLatches--drogue--tgt": "Apollo11::LM::ascent::drogue",
+    "conn-ringLatches-drogue": "Apollo11::Apollo11::CMToAscent"
+  },
+  "diagram": {
+    "id": "apollo-ibd-dock",
+    "kind": "InterconnectionView",
+    "name": "CM probe / 12 latches / LM drogue",
+    "canvas": {
+      "width": 812,
+      "height": 210,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "mission",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 732,
+          "height": 130,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "probe",
+        "model_ref": "probe",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "probe",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.dock"
+      },
+      {
+        "id": "ringLatches",
+        "model_ref": "ringLatches",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 336,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "ringLatches\n12 latches",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.dock"
+      },
+      {
+        "id": "drogue",
+        "model_ref": "drogue",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 596,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "drogue",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.dock"
+      },
+      {
+        "id": "probe--ringLatches--src",
+        "model_ref": "probe--ringLatches--src",
+        "symbol": "port",
+        "owner": "probe",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "probe--ringLatches--tgt",
+        "model_ref": "probe--ringLatches--tgt",
+        "symbol": "port",
+        "owner": "ringLatches",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "ringLatches--drogue--src",
+        "model_ref": "ringLatches--drogue--src",
+        "symbol": "port",
+        "owner": "ringLatches",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "ringLatches--drogue--tgt",
+        "model_ref": "ringLatches--drogue--tgt",
+        "symbol": "port",
+        "owner": "drogue",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-probe-ringLatches",
+        "model_ref": "conn-probe-ringLatches",
+        "source": {
+          "element": "probe--ringLatches--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "probe--ringLatches--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "soft",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ringLatches-drogue",
+        "model_ref": "conn-ringLatches-drogue",
+        "source": {
+          "element": "ringLatches--drogue--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ringLatches--drogue--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "hard",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.eps": {
+        "fill": "#FEF9C3",
+        "stroke": "#A16207",
+        "stroke_width": 2
+      },
+      "part.dock": {
+        "fill": "#F1F5F9",
+        "stroke": "#475569",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "mission"
+  }
+}

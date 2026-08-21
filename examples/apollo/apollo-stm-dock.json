@@ -1,0 +1,33 @@
+{
+  "diagram": "apollo-stm-dock",
+  "kind": "StateView",
+  "name": "Docking: soft then hard",
+  "subject": "DockingMode",
+  "model_files": ["apollo.sysml"],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 52,
+  "aliases": {
+    "DockingMode": "Apollo11::DockingMode",
+    "undocked": "Apollo11::DockingMode::undocked",
+    "soft": "Apollo11::DockingMode::soft",
+    "hard": "Apollo11::DockingMode::hard",
+    "hardwareOff": "Apollo11::DockingMode::hardwareOff",
+    "capture": "Apollo11::DockingMode::capture",
+    "hardDock": "Apollo11::DockingMode::hardDock",
+    "removeHw": "Apollo11::DockingMode::removeHw"
+  },
+  "states": {
+    "initial": {"initial": true},
+    "undocked": {"label": "undocked", "model_ref": "undocked"},
+    "soft": {"label": "soft", "model_ref": "soft"},
+    "hard": {"label": "hard", "model_ref": "hard"},
+    "hardwareOff": {"label": "hardware off\n(transfer)", "model_ref": "hardwareOff"}
+  },
+  "transitions": [
+    {"from": "initial", "to": "undocked", "label": ""},
+    {"from": "undocked", "to": "soft", "label": "probe capture", "model_ref": "capture"},
+    {"from": "soft", "to": "hard", "label": "12 latches", "model_ref": "hardDock"},
+    {"from": "hard", "to": "hardwareOff", "label": "remove hw", "model_ref": "removeHw"}
+  ]
+}

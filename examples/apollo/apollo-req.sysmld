@@ -11,7 +11,7 @@
     "kind": "RequirementView",
     "name": "Apollo 11 Sourced Requirements",
     "canvas": {
-      "width": 2575,
+      "width": 3534,
       "height": 430,
       "background": "#FFFFFF"
     },
@@ -185,6 +185,62 @@
           "z": 10
         },
         "label": "\u00abrequirement\u00bb\nECLSS O2/H2O/LiOH\n5.0 psia 100% O2\nCO2 \u22647.6 torr",
+        "style": "requirement"
+      },
+      {
+        "id": "epsRequirement",
+        "model_ref": "epsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 2539,
+          "y": 72,
+          "width": 216,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nEPS A11 Press Kit\nSM 3 FC; CM 3 AgZn+charger\nLM 6 AgZn + ECA; 28 V DC",
+        "style": "requirement"
+      },
+      {
+        "id": "agsRequirement",
+        "model_ref": "agsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 2791,
+          "y": 72,
+          "width": 216,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nAGS AEA+ASA+DEDA\nAEA 4096\u00d718, 5 \u03bcs, 32.7 lb\nNot a landing computer",
+        "style": "requirement"
+      },
+      {
+        "id": "dockingRequirement",
+        "model_ref": "dockingRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 3043,
+          "y": 72,
+          "width": 188,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nCM probe / LM drogue\n12 ring latches\nsoft then hard; hw off",
+        "style": "requirement"
+      },
+      {
+        "id": "rcsRequirement",
+        "model_ref": "rcsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 3267,
+          "y": 72,
+          "width": 195,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nSM 4 quads, lbf UNKNOWN\nCM 2\u00d76 \u00d7 93 lbf\nno auto translation",
         "style": "requirement"
       }
     ],

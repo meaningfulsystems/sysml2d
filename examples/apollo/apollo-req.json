@@ -70,6 +70,26 @@
       "label": "\u00abrequirement\u00bb\nECLSS O2/H2O/LiOH\n5.0 psia 100% O2\nCO2 \u22647.6 torr",
       "rank": 2,
       "order": 3
+    },
+    "epsRequirement": {
+      "label": "\u00abrequirement\u00bb\nEPS A11 Press Kit\nSM 3 FC; CM 3 AgZn+charger\nLM 6 AgZn + ECA; 28 V DC",
+      "rank": 3,
+      "order": 0
+    },
+    "agsRequirement": {
+      "label": "\u00abrequirement\u00bb\nAGS AEA+ASA+DEDA\nAEA 4096\u00d718, 5 \u03bcs, 32.7 lb\nNot a landing computer",
+      "rank": 3,
+      "order": 1
+    },
+    "dockingRequirement": {
+      "label": "\u00abrequirement\u00bb\nCM probe / LM drogue\n12 ring latches\nsoft then hard; hw off",
+      "rank": 3,
+      "order": 2
+    },
+    "rcsRequirement": {
+      "label": "\u00abrequirement\u00bb\nSM 4 quads, lbf UNKNOWN\nCM 2\u00d76 \u00d7 93 lbf\nno auto translation",
+      "rank": 3,
+      "order": 3
     }
   },
   "edges": [

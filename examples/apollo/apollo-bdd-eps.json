@@ -1,0 +1,78 @@
+{
+  "diagram": "apollo-bdd-eps",
+  "kind": "DefinitionView",
+  "name": "Electrical (A11 Press Kit)",
+  "subject": "Apollo11::CSM::SM",
+  "model_files": ["apollo.sysml"],
+  "direction": "top-down",
+  "default_w": 140,
+  "default_h": 56,
+  "sibling_gap": 18,
+  "rank_gap": 78,
+  "max_siblings_per_row": 6,
+  "aliases": {
+    "SM": "Apollo11::CSM::SM",
+    "CM": "Apollo11::CSM::CM",
+    "descent": "Apollo11::LM::descent",
+    "ascent": "Apollo11::LM::ascent",
+    "FC1": "Apollo11::CSM::FC",
+    "FC2": "Apollo11::CSM::FC",
+    "FC3": "Apollo11::CSM::FC",
+    "charger": "Apollo11::CSM::charger",
+    "AgZn": "Apollo11::CSM::AgZn",
+    "inverter": "Apollo11::CSM::inverter",
+    "ECA": "Apollo11::LM::ECA",
+    "LmAgZn": "Apollo11::LM::AgZn"
+  },
+  "roots": [
+    {
+      "id": "SM",
+      "label": "SM",
+      "model_ref": "SM",
+      "style": "part.definition.root",
+      "children": [
+        {"id": "FC1", "label": "FC1 28 V DC", "model_ref": "FC1"},
+        {"id": "FC2", "label": "FC2 28 V DC", "model_ref": "FC2"},
+        {"id": "FC3", "label": "FC3 28 V DC", "model_ref": "FC3"}
+      ]
+    },
+    {
+      "id": "CM",
+      "label": "CM",
+      "model_ref": "CM",
+      "style": "part.definition.root",
+      "children": [
+        {"id": "AgZn1", "label": "AgZn1", "model_ref": "AgZn"},
+        {"id": "AgZn2", "label": "AgZn2", "model_ref": "AgZn"},
+        {"id": "AgZn3", "label": "AgZn3", "model_ref": "AgZn"},
+        {"id": "charger", "label": "charger", "model_ref": "charger"},
+        {"id": "inverter1", "label": "inverter1 117 V 400 Hz", "model_ref": "inverter"},
+        {"id": "inverter2", "label": "inverter2 117 V 400 Hz", "model_ref": "inverter"}
+      ]
+    },
+    {
+      "id": "descent",
+      "label": "descent",
+      "model_ref": "descent",
+      "style": "part.definition.root",
+      "children": [
+        {"id": "dAgZn1", "label": "AgZn1", "model_ref": "LmAgZn"},
+        {"id": "dAgZn2", "label": "AgZn2", "model_ref": "LmAgZn"},
+        {"id": "dAgZn3", "label": "AgZn3", "model_ref": "LmAgZn"},
+        {"id": "dAgZn4", "label": "AgZn4", "model_ref": "LmAgZn"},
+        {"id": "dECA", "label": "ECA", "model_ref": "ECA"}
+      ]
+    },
+    {
+      "id": "ascent",
+      "label": "ascent",
+      "model_ref": "ascent",
+      "style": "part.definition.root",
+      "children": [
+        {"id": "aAgZn1", "label": "AgZn1", "model_ref": "LmAgZn"},
+        {"id": "aAgZn2", "label": "AgZn2", "model_ref": "LmAgZn"},
+        {"id": "aECA", "label": "ECA", "model_ref": "ECA"}
+      ]
+    }
+  ]
+}

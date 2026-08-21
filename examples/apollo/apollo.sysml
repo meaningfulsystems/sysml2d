@@ -109,6 +109,7 @@ package Apollo11 {
         part def CSM {
             part CM : CM;
             part SM : SM;
+            connection SMToCMPower connect SM to CM;
         }
         part def CM {
             part SCS : SCS;
@@ -120,16 +121,47 @@ package Apollo11 {
             part ECLSS : ECLSS;
             part USB : USB;
             part EMS : EMS;
+            part AgZn1 : AgZn;
+            part AgZn2 : AgZn;
+            part AgZn3 : AgZn;
+            part charger : charger;
+            part inverter1 : inverter;
+            part inverter2 : inverter;
+            part probe : probe;
+            part ringLatches : ringLatches;
+            part systemA : RCSSystem;
+            part systemB : RCSSystem;
             connection AGC_CMToDSKY connect AGC_CM to DSKY;
             connection AGC_CMToDSKY2 connect AGC_CM to DSKY2;
             connection SCSToAGC_CM connect SCS to AGC_CM;
             connection SCSToRCS connect SCS to RCS;
             connection AGC_CMToIMU connect AGC_CM to IMU;
             connection ECLSSToAGC_CM connect ECLSS to AGC_CM;
+            connection chargerToAgZn1 connect charger to AgZn1;
+            connection chargerToAgZn2 connect charger to AgZn2;
+            connection chargerToAgZn3 connect charger to AgZn3;
+            connection AgZn1ToInverter1 connect AgZn1 to inverter1;
+            connection AgZn3ToInverter2 connect AgZn3 to inverter2;
+            connection probeToLatches connect probe to ringLatches;
+            connection RCSToSystemA connect RCS to systemA;
+            connection RCSToSystemB connect RCS to systemB;
         }
         part def SM {
             part SPS : SPS;
             part RCS : RCS;
+            part FC1 : FC;
+            part FC2 : FC;
+            part FC3 : FC;
+            part quadA : quad;
+            part quadB : quad;
+            part quadC : quad;
+            part quadD : quad;
+            connection FC1ToFC2 connect FC1 to FC2;
+            connection FC2ToFC3 connect FC2 to FC3;
+            connection RCSToQuadA connect RCS to quadA;
+            connection RCSToQuadB connect RCS to quadB;
+            connection RCSToQuadC connect RCS to quadC;
+            connection RCSToQuadD connect RCS to quadD;
         }
         part def SCS {
             part BMAG : BMAG;
@@ -160,6 +192,14 @@ package Apollo11 {
         }
         part def USB;
         part def EMS;
+        part def AgZn;
+        part def charger;
+        part def inverter;
+        part def probe;
+        part def ringLatches;
+        part def RCSSystem;
+        part def FC;
+        part def quad;
         part def BMAG;
         part def TVC;
         part def RHC;
@@ -179,6 +219,15 @@ package Apollo11 {
         }
         part def descent {
             part DPS : DPS;
+            part AgZn1 : AgZn;
+            part AgZn2 : AgZn;
+            part AgZn3 : AgZn;
+            part AgZn4 : AgZn;
+            part ECA : ECA;
+            connection ECAToAgZn1 connect ECA to AgZn1;
+            connection ECAToAgZn2 connect ECA to AgZn2;
+            connection ECAToAgZn3 connect ECA to AgZn3;
+            connection ECAToAgZn4 connect ECA to AgZn4;
         }
         part def ascent {
             part PNGS : PNGS;
@@ -190,6 +239,10 @@ package Apollo11 {
             part landingRadar : landingRadar;
             part rendezvousRadar : rendezvousRadar;
             part USB : USB;
+            part drogue : drogue;
+            part AgZn1 : AgZn;
+            part AgZn2 : AgZn;
+            part ECA : ECA;
             connection PNGSToAGC_LM connect PNGS to AGC_LM;
             connection AGC_LMToDSKY connect AGC_LM to DSKY;
             connection AGC_LMToAGS connect AGC_LM to AGS;
@@ -197,6 +250,8 @@ package Apollo11 {
             connection AGC_LMToRCS connect AGC_LM to RCS;
             connection PNGSToLandingRadar connect PNGS to landingRadar;
             connection PNGSToRendezvousRadar connect PNGS to rendezvousRadar;
+            connection ECAToAgZn1 connect ECA to AgZn1;
+            connection ECAToAgZn2 connect ECA to AgZn2;
         }
         part def PNGS {
             part IMU : IMU;
@@ -212,7 +267,19 @@ package Apollo11 {
             connection oscToErasable connect oscillator to erasable;
             connection oscToFixed connect oscillator to fixed;
         }
-        part def AGS;
+        part def AGS {
+            part AEA : AEA;
+            part ASA : ASA;
+            part DEDA : DEDA;
+            connection AEAToASA connect AEA to ASA;
+            connection AEAToDEDA connect AEA to DEDA;
+        }
+        part def AEA { doc /* TN-7990: 4096 × 18-bit, half/half, 5 μs, 32.7 lb. Not a landing computer. */ }
+        part def ASA;
+        part def DEDA;
+        part def AgZn;
+        part def ECA;
+        part def drogue;
         part def DPS;
         part def APS;
         part def RCS;
@@ -439,6 +506,17 @@ package Apollo11 {
         transition toCabin first eva accept ingress then cabin;
     }
 
+    state def DockingMode {
+        entry; then undocked;
+        state undocked;
+        state soft;
+        state hard;
+        state hardwareOff;
+        transition capture first undocked accept probeCapture then soft;
+        transition hardDock first soft accept twelveLatches then hard;
+        transition removeHw first hard accept transferPrep then hardwareOff;
+    }
+
     package ApolloModel;
     package ApolloStructure;
     package ApolloBehavior;
@@ -487,7 +565,10 @@ package Apollo11 {
     requirement apsRequirement { doc /* APS 3,500 lbf, 90% in 0.450 s (TN D-7082). */ }
     requirement a11MassRequirement { doc /* A11 PK masses: ignition 6,484,280 lb; first motion 6,398,535; LES 8,930; LM descent dry 4,483; LM RCS 604; DPS load 18,100; APS load 5,214. Stage tank loads and Δv table UNKNOWN. */ }
     requirement agcRequirement { doc /* Two AGCs: AGC_CM and AGC_LM. Block II: 16-bit, 2048 E / 36864 F, 1.024 MHz, MCT 11.7 μs (AGCIS 30). CM = 1 AGC + 2 DSKY. LM = 1 AGC + 1 DSKY. Do not merge. A11 rope IDs UNKNOWN. */ }
-    requirement agsRequirement { doc /* AGS is a separate computer. Memory UNKNOWN. R47 inits it from PNGS. */ }
+    requirement agsRequirement { doc /* AGS = AEA + ASA + DEDA (TN-7990). AEA 4096 × 18-bit, half/half, 5 μs, 32.7 lb. Not a landing computer. R47 inits it from PNGS. */ }
+    requirement epsRequirement { doc /* A11 Press Kit electrical: SM three fuel cells; CM three AgZn + charger; LM six AgZn (4 descent / 2 ascent) + ECA each; 28 V DC; two 117 V 400 Hz inverters. */ }
+    requirement dockingRequirement { doc /* CM probe / LM drogue; 12 ring latches; soft then hard dock; hardware removed for transfer. */ }
+    requirement rcsRequirement { doc /* SM four quads (per-engine lbf UNKNOWN in press kit). CM two × six 93 lbf engines; no auto translation. */ }
     requirement iuGncRequirement { doc /* IU LVDC stays separate from AGC. IU owns boost+TLI. */ }
     requirement rsoRequirement { doc /* RSO is OUTSIDE MCC. UHF destruct, safed after Earth orbit. */ }
     requirement a11AtypicalRequirement { doc /* A11 vs generic lunar stack: (1) first landing, one short EVA, 196 h vs 336 h ECLSS spec; (2) no LRV, no SIM bay; (3) P66 was the A11-flown landing program; (4) Parkes + Goldstone 210-ft is A11 coverage; (5) F-1 1,530,000 lbf sourced as SA-507, not AS-506; (6) PK masses A11-only; tank/Δv UNKNOWN; (7) rope IDs UNKNOWN. */ }
@@ -524,6 +605,9 @@ package Apollo11 {
     action p66Landing;
     action p70Abort;
     action p71Abort;
+    action softDock;
+    action hardDock;
+    action removeDockingHw;
 
     interaction commandPathAInteraction;
     interaction p27UplinkInteraction;
@@ -549,4 +633,11 @@ package Apollo11 {
     allocation allocateLVDCToIU;
     allocation allocatePathAToCCATS;
     allocation allocatePathBToP27;
+    allocation allocateEPSToSM;
+    allocation allocateEPSToCM;
+    allocation allocateEPSToDescent;
+    allocation allocateDockToCM;
+    allocation allocateDockToLM;
+    allocation allocateRCSToSM;
+    allocation allocateRCSToCM;
 }

@@ -21,7 +21,13 @@
     "APS": "Apollo11::LM::APS",
     "RCS": "Apollo11::LM::RCS",
     "landingRadar": "Apollo11::LM::landingRadar",
-    "rendezvousRadar": "Apollo11::LM::rendezvousRadar"
+    "rendezvousRadar": "Apollo11::LM::rendezvousRadar",
+    "AEA": "Apollo11::LM::AEA",
+    "ASA": "Apollo11::LM::ASA",
+    "DEDA": "Apollo11::LM::DEDA",
+    "AgZn": "Apollo11::LM::AgZn",
+    "ECA": "Apollo11::LM::ECA",
+    "drogue": "Apollo11::LM::drogue"
   },
   "roots": [{
     "id": "LM",
@@ -30,16 +36,26 @@
     "style": "part.definition.root",
     "children": [
       {"id": "descent", "label": "descent", "model_ref": "descent", "children": [
-        {"id": "DPS", "label": "DPS", "model_ref": "DPS"}
+        {"id": "DPS", "label": "DPS", "model_ref": "DPS"},
+        {"id": "AgZn1", "label": "AgZn1", "model_ref": "AgZn"},
+        {"id": "AgZn2", "label": "AgZn2", "model_ref": "AgZn"},
+        {"id": "AgZn3", "label": "AgZn3", "model_ref": "AgZn"},
+        {"id": "AgZn4", "label": "AgZn4", "model_ref": "AgZn"},
+        {"id": "ECA", "label": "ECA", "model_ref": "ECA"}
       ]},
       {"id": "ascent", "label": "ascent", "model_ref": "ascent", "children": [
         {"id": "PNGS", "label": "PNGS", "model_ref": "PNGS"},
         {"id": "AGC_LM", "label": "AGC_LM", "model_ref": "AGC_LM"},
-        {"id": "AGS", "label": "AGS", "model_ref": "AGS"},
+        {"id": "AGS", "label": "AGS", "model_ref": "AGS", "children": [
+          {"id": "AEA", "label": "AEA", "model_ref": "AEA"},
+          {"id": "ASA", "label": "ASA", "model_ref": "ASA"},
+          {"id": "DEDA", "label": "DEDA", "model_ref": "DEDA"}
+        ]},
         {"id": "APS", "label": "APS", "model_ref": "APS"},
         {"id": "RCS", "label": "RCS", "model_ref": "RCS"},
         {"id": "landingRadar", "label": "landingRadar", "model_ref": "landingRadar"},
-        {"id": "rendezvousRadar", "label": "rendezvousRadar", "model_ref": "rendezvousRadar"}
+        {"id": "rendezvousRadar", "label": "rendezvousRadar", "model_ref": "rendezvousRadar"},
+        {"id": "drogue", "label": "drogue", "model_ref": "drogue"}
       ]}
     ]
   }]
