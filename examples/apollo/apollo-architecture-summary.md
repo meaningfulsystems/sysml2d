@@ -193,9 +193,9 @@ National Aeronautics and Space Administration. (1969c, November). *Apollo 11 Mis
 
 Hall, E. C. (1972, August). *MIT's Role in Project Apollo, Volume III: Computer Subsystem* (R-700).
 
-National Aeronautics and Space Administration. (1972a). *Apollo Experience Report: S-Band System Signal Design and Analysis* (Technical Note D-6723).
+National Aeronautics and Space Administration. (1972). *Apollo Experience Report: S-Band System Signal Design and Analysis* (Technical Note D-6723).
 
-National Aeronautics and Space Administration. (1972b). *Apollo Experience Report: Lunar Module Environmental Control Subsystem* (Technical Note D-6724).
+National Aeronautics and Space Administration. (1972). *Apollo Experience Report: Lunar Module Environmental Control Subsystem* (Technical Note D-6724).
 
 National Aeronautics and Space Administration. (1973a, March). *Apollo Experience Report: Ascent Propulsion System* (Technical Note D-7082).
 
