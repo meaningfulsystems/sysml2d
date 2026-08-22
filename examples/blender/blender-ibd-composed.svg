@@ -67,29 +67,29 @@
 <path d="M 522,250 L 522,156" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 623,113 L 748,113" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
 <path d="M 849,156 L 849,250" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" text-anchor="end" x="180" y="177">tamper fit</text>
-<text class="small" text-anchor="end" x="180" y="240">tamper fit</text>
-<text class="small" text-anchor="end" x="180" y="357">lid seat</text>
-<text class="small" text-anchor="end" x="180" y="411">lid seat</text>
-<text class="small" x="332" y="457">contains</text>
-<text class="small" text-anchor="middle" x="196" y="563">container seat</text>
-<text class="small" text-anchor="end" x="411" y="500">contains</text>
-<text class="small" text-anchor="end" x="506" y="420">blade drive</text>
-<text class="small" text-anchor="middle" x="522" y="357">blade drive</text>
-<text class="small" text-anchor="middle" x="569.5" y="374">coupling support</text>
-<text class="small" x="633" y="277">motor drive</text>
-<text class="small" text-anchor="end" x="506" y="240">vibration/load</text>
-<text class="small" text-anchor="end" x="506" y="177">vibration/load</text>
-<text class="small" x="633" y="97">complete</text>
-<text class="small" text-anchor="middle" x="849" y="571">container seat</text>
-<text class="small" text-anchor="middle" x="794" y="420">coupling support</text>
-<text class="small" text-anchor="middle" x="849" y="403">motor mount</text>
-<text class="small" x="975" y="500">panel mount</text>
-<text class="small" text-anchor="end" x="833" y="357">motor mount</text>
-<text class="small" text-anchor="end" x="748" y="320">motor drive</text>
-<text class="small" text-anchor="end" x="833" y="240">command</text>
-<text class="small" x="960" y="97">panel mount</text>
-<text class="small" text-anchor="end" x="738" y="140">complete</text>
-<text class="small" text-anchor="end" x="833" y="177">command</text>
+<text class="small" text-anchor="end" x="178" y="179">tamper fit</text>
+<text class="small" text-anchor="end" x="178" y="238">tamper fit</text>
+<text class="small" text-anchor="end" x="178" y="359">lid seat</text>
+<text class="small" text-anchor="end" x="178" y="409">lid seat</text>
+<text class="small" x="334" y="455">contains</text>
+<text class="small" text-anchor="middle" x="196" y="565">container seat</text>
+<text class="small" text-anchor="end" x="409" y="502">contains</text>
+<text class="small" text-anchor="end" x="504" y="418">blade drive</text>
+<text class="small" text-anchor="middle" x="522" y="359">blade drive</text>
+<text class="small" text-anchor="middle" x="569.5" y="376">coupling support</text>
+<text class="small" x="635" y="275">motor drive</text>
+<text class="small" text-anchor="end" x="504" y="238">vibration/load</text>
+<text class="small" text-anchor="end" x="504" y="179">vibration/load</text>
+<text class="small" x="635" y="95">complete</text>
+<text class="small" text-anchor="middle" x="849" y="573">container seat</text>
+<text class="small" text-anchor="middle" x="794" y="418">coupling support</text>
+<text class="small" text-anchor="middle" x="849" y="401">motor mount</text>
+<text class="small" x="977" y="502">panel mount</text>
+<text class="small" text-anchor="end" x="831" y="359">motor mount</text>
+<text class="small" text-anchor="end" x="746" y="322">motor drive</text>
+<text class="small" text-anchor="end" x="831" y="238">command</text>
+<text class="small" x="962" y="95">panel mount</text>
+<text class="small" text-anchor="end" x="736" y="142">complete</text>
+<text class="small" text-anchor="end" x="831" y="179">command</text>
 </g>
 </svg>

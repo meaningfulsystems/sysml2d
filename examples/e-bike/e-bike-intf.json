@@ -1,0 +1,100 @@
+{
+  "diagram": "e-bike-intf",
+  "kind": "InterfaceView",
+  "name": "Electric Bike Interfaces",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "nodes": {
+    "RiderInterface": {
+      "label": "Rider Interface",
+      "rank": 0,
+      "order": 0
+    },
+    "ChargeInterface": {
+      "label": "Charge Interface",
+      "rank": 0,
+      "order": 1
+    },
+    "DriveInterface": {
+      "label": "Drive Interface",
+      "rank": 0,
+      "order": 2
+    },
+    "BrakeInterface": {
+      "label": "Brake Interface",
+      "rank": 0,
+      "order": 3
+    },
+    "PedalCadence": {
+      "label": "PedalCadence",
+      "symbol": "item",
+      "rank": 1,
+      "order": 0
+    },
+    "WalkAssistCommand": {
+      "label": "WalkAssist\n<= 6 km/h\n(not throttle)",
+      "symbol": "item",
+      "rank": 1,
+      "order": 5
+    },
+    "ChargeEnergy": {
+      "label": "ChargeEnergy",
+      "symbol": "item",
+      "rank": 1,
+      "order": 1
+    },
+    "ElectricalEnergy": {
+      "label": "ElectricalEnergy",
+      "symbol": "item",
+      "rank": 1,
+      "order": 2
+    },
+    "WheelTorque": {
+      "label": "WheelTorque",
+      "symbol": "item",
+      "rank": 1,
+      "order": 3
+    },
+    "BrakeInhibit": {
+      "label": "BrakeInhibit",
+      "symbol": "item",
+      "rank": 1,
+      "order": 4
+    }
+  },
+  "edges": [
+    {
+      "from": "RiderInterface",
+      "to": "PedalCadence",
+      "label": "carries"
+    },
+    {
+      "from": "RiderInterface",
+      "to": "WalkAssistCommand",
+      "label": "carries"
+    },
+    {
+      "from": "ChargeInterface",
+      "to": "ChargeEnergy",
+      "label": "carries"
+    },
+    {
+      "from": "ChargeInterface",
+      "to": "ElectricalEnergy",
+      "label": "carries"
+    },
+    {
+      "from": "DriveInterface",
+      "to": "WheelTorque",
+      "label": "carries"
+    },
+    {
+      "from": "BrakeInterface",
+      "to": "BrakeInhibit",
+      "label": "carries"
+    }
+  ]
+}

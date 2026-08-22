@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="484" height="1770" viewBox="0 0 484 1770">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="484" height="1770" fill="#FFFFFF"/>
+<rect x="2" y="38" width="480" height="1728" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 512 L 528 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] Apollo 11 Launch Stack (AS-506) [mission : Apollo11]</text>
+<rect x="2" y="38" width="480" height="1730" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="400" height="1648" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">mission</text>
+<rect id="LES" x="76" y="76" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="108">LES</text>
+<rect id="CM" x="76" y="328" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="360">CM</text>
+<rect id="SM" x="76" y="1336" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="1368">SM</text>
+<rect id="SLA" x="170" y="1084" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="240" y="1116">SLA</text>
+<rect id="descent" x="264" y="1336" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="334" y="1368">descent</text>
+<rect id="ascent" x="170" y="1588" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="240" y="1620">ascent</text>
+<rect id="IU" x="170" y="832" width="140" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="240" y="864">IU</text>
+<rect id="SIVB" x="170" y="580" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="240" y="612">S-IVB</text>
+<rect id="SII" x="264" y="328" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="334" y="360">S-II</text>
+<rect id="SIC" x="264" y="76" width="140" height="64" rx="4" fill="#F5F5F5" stroke="#424242" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="334" y="108">S-IC</text>
+<rect id="LES--CM--src" x="140" y="134" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="LES--CM--tgt" x="140" y="322" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CM--SM--src" x="140" y="386" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CM--ascent--src" x="210" y="354" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CM--SM--tgt" x="140" y="1330" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SLA--SM--tgt" x="175" y="1330" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SLA--SM--src" x="210.662" y="1142" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SLA--descent--src" x="257.338" y="1142" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="IU--SLA--tgt" x="234" y="1078" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SLA--descent--tgt" x="328" y="1330" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="descent--ascent--src" x="328" y="1394" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="descent--ascent--tgt" x="234" y="1582" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="CM--ascent--tgt" x="304" y="1614" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="IU--SLA--src" x="234" y="890" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SIVB--IU--tgt" x="234" y="826" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SIVB--IU--src" x="234" y="638" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SII--SIVB--tgt" x="234" y="574" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SII--SIVB--src" x="328" y="386" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SIC--SII--tgt" x="328" y="322" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SIC--SII--src" x="328" y="134" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 146,146 L 146,322" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 146,398 L 146,1330" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 216.662,1154 L 216.662,1218.67 L 181,1218.67 L 181,1330" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 240,902 L 240,1078" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 240,650 L 240,826" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 334,398 L 334,486 L 240,486 L 240,574" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 334,146 L 334,322" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 263.338,1154 L 263.338,1265.33 L 334,1265.33 L 334,1330" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 334,1406 L 334,1494 L 240,1494 L 240,1582" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 222,360 L 240,360 L 240,416 L 310,416 L 310,479 A 7 7 0 0 1 310,493 L 310,1172 L 270.338,1172 A 7 7 0 0 1 256.338,1172 L 240,1172 L 240,1424 L 310,1424 L 316,1620" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="158" y="234">tower</text>
+<text class="small" text-anchor="end" x="134" y="864">CM/SM</text>
+<text class="small" text-anchor="end" x="204.662" y="1186.33">adapter</text>
+<text class="small" x="252" y="990">stack</text>
+<text class="small" x="252" y="738">stack</text>
+<text class="small" text-anchor="middle" x="287" y="474">stack</text>
+<text class="small" x="346" y="234">stack</text>
+<text class="small" x="275.338" y="1209.67">stowed</text>
+<text class="small" text-anchor="middle" x="287" y="1482">stage</text>
+<text class="small" x="322" y="794">dock</text>
+</g>
+</svg>

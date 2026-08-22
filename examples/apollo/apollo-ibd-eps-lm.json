@@ -1,0 +1,134 @@
+{
+  "diagram": "apollo-ibd-eps-lm",
+  "kind": "InterconnectionView",
+  "name": "LM descent AgZn + ECA",
+  "subject": "descent",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 52,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "descent": "Apollo11::LM::descent",
+    "ECA": "Apollo11::LM::descent::ECA",
+    "AgZn1": "Apollo11::LM::descent::AgZn1",
+    "AgZn2": "Apollo11::LM::descent::AgZn2",
+    "AgZn3": "Apollo11::LM::descent::AgZn3",
+    "AgZn4": "Apollo11::LM::descent::AgZn4",
+    "ECA--AgZn1--src": "Apollo11::LM::descent::ECA",
+    "ECA--AgZn1--tgt": "Apollo11::LM::descent::AgZn1",
+    "conn-ECA-AgZn1": "Apollo11::LM::descent::ECAToAgZn1",
+    "ECA--AgZn2--src": "Apollo11::LM::descent::ECA",
+    "ECA--AgZn2--tgt": "Apollo11::LM::descent::AgZn2",
+    "conn-ECA-AgZn2": "Apollo11::LM::descent::ECAToAgZn2",
+    "ECA--AgZn3--src": "Apollo11::LM::descent::ECA",
+    "ECA--AgZn3--tgt": "Apollo11::LM::descent::AgZn3",
+    "conn-ECA-AgZn3": "Apollo11::LM::descent::ECAToAgZn3",
+    "ECA--AgZn4--src": "Apollo11::LM::descent::ECA",
+    "ECA--AgZn4--tgt": "Apollo11::LM::descent::AgZn4",
+    "conn-ECA-AgZn4": "Apollo11::LM::descent::ECAToAgZn4"
+  },
+  "nodes": {
+    "ECA": {
+      "label": "ECA",
+      "style": "part.eps"
+    },
+    "AgZn1": {
+      "label": "AgZn1",
+      "style": "part.eps"
+    },
+    "AgZn2": {
+      "label": "AgZn2",
+      "style": "part.eps"
+    },
+    "AgZn3": {
+      "label": "AgZn3",
+      "style": "part.eps"
+    },
+    "AgZn4": {
+      "label": "AgZn4",
+      "style": "part.eps"
+    }
+  },
+  "edges": [
+    {
+      "from": "ECA",
+      "to": "AgZn1",
+      "label": "28 V DC",
+      "model_ref": "conn-ECA-AgZn1"
+    },
+    {
+      "from": "ECA",
+      "to": "AgZn2",
+      "label": "28 V DC",
+      "model_ref": "conn-ECA-AgZn2"
+    },
+    {
+      "from": "ECA",
+      "to": "AgZn3",
+      "label": "28 V DC",
+      "model_ref": "conn-ECA-AgZn3"
+    },
+    {
+      "from": "ECA",
+      "to": "AgZn4",
+      "label": "28 V DC",
+      "model_ref": "conn-ECA-AgZn4"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.eps": {
+      "fill": "#FEF9C3",
+      "stroke": "#A16207",
+      "stroke_width": 2
+    },
+    "part.dock": {
+      "fill": "#F1F5F9",
+      "stroke": "#475569",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

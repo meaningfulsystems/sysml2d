@@ -1,0 +1,431 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "SCSMode": "Apollo11::SCSMode",
+    "AGC_CM": "Apollo11::SCSMode::AGC_CM",
+    "attHold": "Apollo11::SCSMode::attHold",
+    "rateCommand": "Apollo11::SCSMode::rateCommand",
+    "minImpulse": "Apollo11::SCSMode::minImpulse",
+    "scsToHold": "Apollo11::SCSMode::scsToHold",
+    "scsToRate": "Apollo11::SCSMode::scsToRate",
+    "scsToMin": "Apollo11::SCSMode::scsToMin",
+    "scsToAGC": "Apollo11::SCSMode::scsToAGC",
+    "scsRateToAGC": "Apollo11::SCSMode::scsRateToAGC",
+    "scsMinToAGC": "Apollo11::SCSMode::scsMinToAGC"
+  },
+  "diagram": {
+    "id": "apollo-stm-scs",
+    "kind": "StateView",
+    "name": "SCS modes",
+    "canvas": {
+      "width": 752,
+      "height": 536,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "SCSMode",
+        "symbol": "boundary",
+        "layout": {
+          "x": 109,
+          "y": 37,
+          "width": 603,
+          "height": 459,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 145,
+          "y": 271,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "AGC_CM",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 318,
+          "y": 255,
+          "width": 130,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "AGC_CM",
+        "label": "AGC_CM",
+        "style": "state.default"
+      },
+      {
+        "id": "attHold",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 546,
+          "y": 129,
+          "width": 130,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "attHold",
+        "label": "attitude hold",
+        "style": "state.default"
+      },
+      {
+        "id": "rateCommand",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 546,
+          "y": 255,
+          "width": 130,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "rateCommand",
+        "label": "rate command",
+        "style": "state.default"
+      },
+      {
+        "id": "minImpulse",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 546,
+          "y": 380,
+          "width": 130,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "minImpulse",
+        "label": "min impulse",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--AGC_CM",
+        "model_ref": "SCSMode",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "AGC_CM--attHold",
+        "model_ref": "scsToHold",
+        "source": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "right",
+            "offset": 0.25
+          }
+        },
+        "target": {
+          "element": "attHold",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 472,
+              "y": 268
+            },
+            {
+              "x": 472,
+              "y": 155
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "SCS hold",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "AGC_CM--rateCommand",
+        "model_ref": "scsToRate",
+        "source": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rateCommand",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "rate",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "AGC_CM--minImpulse",
+        "model_ref": "scsToMin",
+        "source": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "right",
+            "offset": 0.75
+          }
+        },
+        "target": {
+          "element": "minImpulse",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 522,
+              "y": 294
+            },
+            {
+              "x": 522,
+              "y": 406
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "min",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "attHold-back-AGC_CM",
+        "model_ref": "scsToAGC",
+        "source": {
+          "element": "attHold",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 611,
+              "y": 73
+            },
+            {
+              "x": 383,
+              "y": 73
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "AGC_CM",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "rateCommand-back-AGC_CM",
+        "model_ref": "scsRateToAGC",
+        "source": {
+          "element": "rateCommand",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 611,
+              "y": 335
+            },
+            {
+              "x": 383,
+              "y": 335
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "AGC_CM",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "minImpulse-back-AGC_CM",
+        "model_ref": "scsMinToAGC",
+        "source": {
+          "element": "minImpulse",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 611,
+              "y": 460
+            },
+            {
+              "x": 383,
+              "y": 460
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "AGC_CM",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "SCSMode"
+  }
+}

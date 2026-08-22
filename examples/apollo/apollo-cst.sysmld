@@ -1,0 +1,324 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-cst",
+    "kind": "ConstraintView",
+    "name": "Apollo 11 Sourced Parametrics",
+    "canvas": {
+      "width": 886,
+      "height": 754,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "usbCsmUplinkMhz",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 78,
+          "width": 132,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CSM uplink\n2106.40625 MHz",
+        "style": "value_property",
+        "model_ref": "usbCsmUplinkMhz"
+      },
+      {
+        "id": "f1Lbf",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 258,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "F-1\n1,530,000 lbf",
+        "style": "value_property",
+        "model_ref": "f1Lbf"
+      },
+      {
+        "id": "mctUs",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 438,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "MCT\n11.7 \u03bcs",
+        "style": "value_property",
+        "model_ref": "mctUs"
+      },
+      {
+        "id": "ignitionLb",
+        "symbol": "value_property",
+        "layout": {
+          "x": 72,
+          "y": 618,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Ignition\n6,484,280 lb",
+        "style": "value_property",
+        "model_ref": "ignitionLb"
+      },
+      {
+        "id": "usbCsmLink",
+        "symbol": "constraint",
+        "layout": {
+          "x": 364,
+          "y": 72,
+          "width": 160,
+          "height": 70,
+          "z": 10
+        },
+        "label": "USB CSM\nlink",
+        "style": "constraint",
+        "model_ref": "usbCsmLink"
+      },
+      {
+        "id": "f1Thrust",
+        "symbol": "constraint",
+        "layout": {
+          "x": 364,
+          "y": 252,
+          "width": 160,
+          "height": 70,
+          "z": 10
+        },
+        "label": "F-1 \u00d75\n(SA-507)",
+        "style": "constraint",
+        "model_ref": "f1Thrust"
+      },
+      {
+        "id": "agcCycle",
+        "symbol": "constraint",
+        "layout": {
+          "x": 364,
+          "y": 432,
+          "width": 160,
+          "height": 70,
+          "z": 10
+        },
+        "label": "AGC cycle\n(AGCIS 30)",
+        "style": "constraint",
+        "model_ref": "agcCycle"
+      },
+      {
+        "id": "a11IgnitionMass",
+        "symbol": "constraint",
+        "layout": {
+          "x": 364,
+          "y": 612,
+          "width": 160,
+          "height": 70,
+          "z": 10
+        },
+        "label": "A11 PK\nmass",
+        "style": "constraint",
+        "model_ref": "a11IgnitionMass"
+      },
+      {
+        "id": "lunarDelayS",
+        "symbol": "value_property",
+        "layout": {
+          "x": 684,
+          "y": 78,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "lunar delay\n~1.3 s",
+        "style": "value_property",
+        "model_ref": "lunarDelayS"
+      },
+      {
+        "id": "earthOrbitNmi",
+        "symbol": "value_property",
+        "layout": {
+          "x": 684,
+          "y": 258,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "EO planned\n100 nmi",
+        "style": "value_property",
+        "model_ref": "earthOrbitNmi"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-usbCsmUplinkMhz-usbCsmLink",
+        "source": {
+          "element": "usbCsmUplinkMhz",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "usbCsmLink",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "usbCsmUplinkMhz"
+      },
+      {
+        "id": "conn-f1Lbf-f1Thrust",
+        "source": {
+          "element": "f1Lbf",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "f1Thrust",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "f1Lbf"
+      },
+      {
+        "id": "conn-mctUs-agcCycle",
+        "source": {
+          "element": "mctUs",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "agcCycle",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "mctUs"
+      },
+      {
+        "id": "conn-ignitionLb-a11IgnitionMass",
+        "source": {
+          "element": "ignitionLb",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "a11IgnitionMass",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "bind",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "ignitionLb"
+      },
+      {
+        "id": "conn-usbCsmLink-lunarDelayS",
+        "source": {
+          "element": "usbCsmLink",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lunarDelayS",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "range/c",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "usbCsmLink"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

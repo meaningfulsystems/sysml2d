@@ -21,63 +21,62 @@
     "elements": [
       {
         "id": "thermalPerformanceAnalysis",
-        "model_ref": "thermalPerformanceAnalysis",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 84,
+          "y": 78,
           "width": 167,
           "height": 70,
           "z": 10
         },
         "label": "Thermal Performance",
-        "style": "case"
+        "style": "case",
+        "model_ref": "thermalPerformanceAnalysis"
       },
       {
         "id": "electricalLoadAnalysis",
-        "model_ref": "electricalLoadAnalysis",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 264,
+          "y": 270,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Electrical Load",
-        "style": "case"
+        "style": "case",
+        "model_ref": "electricalLoadAnalysis"
       },
       {
         "id": "heatEnergyBalance",
-        "model_ref": "heatEnergyBalance",
         "symbol": "constraint",
         "layout": {
           "x": 399,
-          "y": 78,
+          "y": 75,
           "width": 167,
           "height": 76,
           "z": 10
         },
         "label": "Heat Energy Balance",
-        "style": "constraint"
+        "style": "constraint",
+        "model_ref": "heatEnergyBalance"
       },
       {
         "id": "electricalPowerLimit",
-        "model_ref": "electricalPowerLimit",
         "symbol": "constraint",
         "layout": {
           "x": 399,
-          "y": 264,
+          "y": 267,
           "width": 160,
           "height": 76,
           "z": 10
         },
         "label": "Power Limit",
-        "style": "constraint"
+        "style": "constraint",
+        "model_ref": "electricalPowerLimit"
       },
       {
         "id": "browningRequirement",
-        "model_ref": "browningRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 726,
@@ -87,11 +86,11 @@
           "z": 10
         },
         "label": "Browning Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "browningRequirement"
       },
       {
         "id": "electricalSafetyRequirement",
-        "model_ref": "electricalSafetyRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 726,
@@ -101,13 +100,13 @@
           "z": 10
         },
         "label": "Electrical Safety Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "electricalSafetyRequirement"
       }
     ],
     "connections": [
       {
         "id": "conn-thermalPerformanceAnalysis-heatEnergyBalance",
-        "model_ref": "thermalPerformanceAnalysis",
         "source": {
           "element": "thermalPerformanceAnalysis",
           "anchor": {
@@ -124,31 +123,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 295,
-              "y": 119
-            },
-            {
-              "x": 295,
-              "y": 116
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "method",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "thermalPerformanceAnalysis"
       },
       {
         "id": "conn-electricalLoadAnalysis-electricalPowerLimit",
-        "model_ref": "electricalLoadAnalysis",
         "source": {
           "element": "electricalLoadAnalysis",
           "anchor": {
@@ -165,31 +154,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 278,
-              "y": 299
-            },
-            {
-              "x": 278,
-              "y": 302
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "method",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "electricalLoadAnalysis"
       },
       {
         "id": "conn-heatEnergyBalance-browningRequirement",
-        "model_ref": "heatEnergyBalance",
         "source": {
           "element": "heatEnergyBalance",
           "anchor": {
@@ -206,31 +185,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 622,
-              "y": 116
-            },
-            {
-              "x": 622,
-              "y": 113
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "evaluates",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "heatEnergyBalance"
       },
       {
         "id": "conn-electricalPowerLimit-electricalSafetyRequirement",
-        "model_ref": "electricalPowerLimit",
         "source": {
           "element": "electricalPowerLimit",
           "anchor": {
@@ -247,27 +216,18 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 615,
-              "y": 302
-            },
-            {
-              "x": 615,
-              "y": 305
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "evaluates",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "electricalPowerLimit"
       }
     ],
     "annotations": [],

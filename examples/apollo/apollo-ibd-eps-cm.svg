@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="896" height="472" viewBox="0 0 896 472">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="896" height="472" fill="#FFFFFF"/>
+<rect x="2" y="38" width="892" height="430" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 408 L 424 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] CM AgZn / charger / inverters [CM : CM]</text>
+<rect x="2" y="38" width="892" height="432" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="812" height="350" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">CM</text>
+<rect id="charger" x="76" y="186" width="140" height="58" rx="4" fill="#FEF9C3" stroke="#A16207" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="215">charger</text>
+<rect id="AgZn1" x="376" y="76" width="140" height="58" rx="4" fill="#FEF9C3" stroke="#A16207" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="446" y="105">AgZn1</text>
+<rect id="AgZn2" x="376" y="186" width="140" height="58" rx="4" fill="#FEF9C3" stroke="#A16207" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="446" y="215">AgZn2</text>
+<rect id="AgZn3" x="376" y="296" width="140" height="58" rx="4" fill="#FEF9C3" stroke="#A16207" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="446" y="325">AgZn3</text>
+<rect id="inverter1" x="676" y="131" width="140" height="58" rx="4" fill="#FEF9C3" stroke="#A16207" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="746" y="152.5">inverter1</tspan><tspan x="746" dy="15">117 V 400 Hz</tspan></text>
+<rect id="inverter2" x="676" y="241" width="140" height="58" rx="4" fill="#FEF9C3" stroke="#A16207" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="746" y="262.5">inverter2</tspan><tspan x="746" dy="15">117 V 400 Hz</tspan></text>
+<rect id="charger--AgZn1--src" x="210" y="194.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="charger--AgZn2--src" x="210" y="209" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="charger--AgZn3--src" x="210" y="223.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="charger--AgZn1--tgt" x="370" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AgZn1--inverter1--src" x="510" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="charger--AgZn2--tgt" x="370" y="209" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="charger--AgZn3--tgt" x="370" y="319" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AgZn3--inverter2--src" x="510" y="319" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AgZn1--inverter1--tgt" x="670" y="154" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AgZn3--inverter2--tgt" x="670" y="264" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 222,200.5 L 268,200.5 L 268,105 L 370,105" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 222,215 L 370,215" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 222,229.5 L 324,229.5 L 324,325 L 370,325" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 522,105 L 577.333,105 L 577.333,160 L 670,160" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 522,325 L 614.667,325 L 614.667,270 L 670,270" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="319" y="93">charge</text>
+<text class="small" text-anchor="middle" x="296" y="203">charge</text>
+<text class="small" text-anchor="middle" x="273" y="252.5">charge</text>
+<text class="small" text-anchor="middle" x="623.667" y="148">AC</text>
+<text class="small" text-anchor="middle" x="568.333" y="313">AC</text>
+</g>
+</svg>

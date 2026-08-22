@@ -1,0 +1,22 @@
+{
+  "diagram": "apollo-bdd-eclss",
+  "kind": "DefinitionView",
+  "name": "ECLSS",
+  "subject": "Apollo11::CSM::ECLSS",
+  "model_files": ["apollo.sysml"],
+  "direction": "top-down",
+  "default_w": 150,
+  "default_h": 56,
+  "sibling_gap": 22,
+  "rank_gap": 80,
+  "aliases": {
+    "ECLSS": "Apollo11::CSM::ECLSS",
+    "A7L": "Apollo11::Crew::A7L",
+    "PLSS": "Apollo11::Crew::PLSS"
+  },
+  "roots": [
+    {"id": "ECLSS", "label": "ECLSS", "model_ref": "ECLSS", "style": "part.definition.root"},
+    {"id": "A7L", "label": "A7L", "model_ref": "A7L", "style": "part.definition.root",
+     "children": [{"id": "PLSS", "label": "PLSS", "model_ref": "PLSS"}]}
+  ]
+}

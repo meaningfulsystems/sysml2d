@@ -1,0 +1,463 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "earthCoast": "Apollo11::MissionPhase::earthCoast",
+    "countdown": "Apollo11::MissionPhase::earthCoast::countdown",
+    "boost": "Apollo11::MissionPhase::earthCoast::boost",
+    "earthOrbit": "Apollo11::MissionPhase::earthCoast::earthOrbit",
+    "TLI": "Apollo11::MissionPhase::earthCoast::TLI",
+    "dockEject": "Apollo11::MissionPhase::earthCoast::dockEject",
+    "translunar": "Apollo11::MissionPhase::earthCoast::translunar",
+    "LOI": "Apollo11::MissionPhase::earthCoast::LOI",
+    "liftoff": "Apollo11::MissionPhase::earthCoast::liftoff",
+    "seoi": "Apollo11::MissionPhase::earthCoast::seoi",
+    "startTLI": "Apollo11::MissionPhase::earthCoast::startTLI",
+    "startDockEject": "Apollo11::MissionPhase::earthCoast::startDockEject",
+    "startTranslunar": "Apollo11::MissionPhase::earthCoast::startTranslunar",
+    "startLOI": "Apollo11::MissionPhase::earthCoast::startLOI"
+  },
+  "diagram": {
+    "id": "apollo-stm",
+    "kind": "StateView",
+    "name": "Apollo 11 Earth Coast",
+    "canvas": {
+      "width": 1018,
+      "height": 749,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "earthCoast",
+        "symbol": "boundary",
+        "layout": {
+          "x": 9,
+          "y": 5,
+          "width": 969,
+          "height": 704,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "earthCoast",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 45,
+          "y": 41,
+          "width": 897,
+          "height": 632,
+          "z": 4
+        },
+        "model_ref": "earthCoast",
+        "label": "Earth coast",
+        "style": "state.composite"
+      },
+      {
+        "id": "earthInitial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 164,
+          "y": 111,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "countdown",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 90,
+          "y": 146,
+          "width": 168,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "countdown",
+        "label": "Countdown",
+        "style": "state.default"
+      },
+      {
+        "id": "boost",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 90,
+          "y": 351,
+          "width": 168,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "boost",
+        "label": "Boost",
+        "style": "state.default"
+      },
+      {
+        "id": "earthOrbit",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 90,
+          "y": 552,
+          "width": 168,
+          "height": 64,
+          "z": 10
+        },
+        "model_ref": "earthOrbit",
+        "label": "Earth orbit\n100 nmi planned",
+        "style": "state.default"
+      },
+      {
+        "id": "TLI",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 385,
+          "y": 540,
+          "width": 200,
+          "height": 88,
+          "z": 10
+        },
+        "model_ref": "TLI",
+        "label": "Translunar Injection\nPK 02:44:15\nA11-FP 2:44:26\nflown 02:44:16",
+        "style": "state.default"
+      },
+      {
+        "id": "dockEject",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 401,
+          "y": 351,
+          "width": 168,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "dockEject",
+        "label": "dock and eject",
+        "style": "state.default"
+      },
+      {
+        "id": "translunar",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 401,
+          "y": 146,
+          "width": 168,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "translunar",
+        "label": "Translunar coast",
+        "style": "state.default"
+      },
+      {
+        "id": "LOI",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 697,
+          "y": 134,
+          "width": 200,
+          "height": 80,
+          "z": 10
+        },
+        "model_ref": "LOI",
+        "label": "Lunar Orbit Insertion\nplanned 75:54:28\nflown ~075:49:50",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "earthInitial--countdown",
+        "model_ref": "earthCoast",
+        "source": {
+          "element": "earthInitial",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "countdown",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "countdown--boost",
+        "model_ref": "liftoff",
+        "source": {
+          "element": "countdown",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "boost",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "tower clear",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "boost--earthOrbit",
+        "model_ref": "seoi",
+        "source": {
+          "element": "boost",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "earthOrbit",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "engine cutoff",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "earthOrbit--TLI",
+        "model_ref": "startTLI",
+        "source": {
+          "element": "earthOrbit",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "TLI",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 258,
+              "y": 578
+            },
+            {
+              "x": 385,
+              "y": 578
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "IU / S-IVB",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "TLI--dockEject",
+        "model_ref": "startDockEject",
+        "source": {
+          "element": "TLI",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "dockEject",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "TDE ~03:20\u201304:09",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "dockEject--translunar",
+        "model_ref": "startTranslunar",
+        "source": {
+          "element": "dockEject",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "translunar",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "LM extract",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "translunar--LOI",
+        "model_ref": "startLOI",
+        "source": {
+          "element": "translunar",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "LOI",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 569,
+              "y": 168
+            },
+            {
+              "x": 697,
+              "y": 168
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "Service Propulsion",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "earthCoast"
+  }
+}

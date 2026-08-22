@@ -1,0 +1,450 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "AGC_CM": "Apollo11::CSM::AGC_CM",
+    "AGC_LM": "Apollo11::LM::AGC_LM",
+    "DSKY": "Apollo11::CSM::DSKY",
+    "AGS": "Apollo11::LM::AGS",
+    "AEA": "Apollo11::LM::AEA",
+    "ASA": "Apollo11::LM::ASA",
+    "DEDA": "Apollo11::LM::DEDA",
+    "Comanche055": "Apollo11::CSM::AGC_CM::Comanche055",
+    "Luminary1A": "Apollo11::LM::AGC_LM::Luminary1A"
+  },
+  "diagram": {
+    "id": "apollo-bdd-agc",
+    "kind": "DefinitionView",
+    "name": "AGC_CM / AGC_LM",
+    "canvas": {
+      "width": 1138,
+      "height": 272,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "AGC_CM",
+        "model_ref": "AGC_CM",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 127,
+          "y": 40,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "AGC_CM",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      },
+      {
+        "id": "DSKY",
+        "model_ref": "DSKY",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 40,
+          "y": 176,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "DSKY",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "Comanche055",
+        "model_ref": "Comanche055",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 214,
+          "y": 176,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "Comanche 055",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "AGC_LM",
+        "model_ref": "AGC_LM",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 407,
+          "y": 40,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "AGC_LM",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      },
+      {
+        "id": "Luminary1A",
+        "model_ref": "Luminary1A",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 388,
+          "y": 176,
+          "width": 188,
+          "height": 56,
+          "z": 10
+        },
+        "label": "Luminary 1A LMY99/1",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "AGS",
+        "model_ref": "AGS",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 774,
+          "y": 40,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "AGS",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      },
+      {
+        "id": "AEA",
+        "model_ref": "AEA",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 600,
+          "y": 176,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "AEA 4096\u00d718",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ASA",
+        "model_ref": "ASA",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 774,
+          "y": 176,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "ASA",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "DEDA",
+        "model_ref": "DEDA",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 948,
+          "y": 176,
+          "width": 150,
+          "height": 56,
+          "z": 10
+        },
+        "label": "DEDA",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-AGC_CM-DSKY",
+        "model_ref": "DSKY",
+        "source": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "DSKY",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 202,
+              "y": 136
+            },
+            {
+              "x": 115,
+              "y": 136
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-AGC_CM-Comanche055",
+        "model_ref": "Comanche055",
+        "source": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Comanche055",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 202,
+              "y": 136
+            },
+            {
+              "x": 289,
+              "y": 136
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-AGC_LM-Luminary1A",
+        "model_ref": "Luminary1A",
+        "source": {
+          "element": "AGC_LM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Luminary1A",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-AGS-AEA",
+        "model_ref": "AEA",
+        "source": {
+          "element": "AGS",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AEA",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 849,
+              "y": 136
+            },
+            {
+              "x": 675,
+              "y": 136
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-AGS-ASA",
+        "model_ref": "ASA",
+        "source": {
+          "element": "AGS",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ASA",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 0,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-AGS-DEDA",
+        "model_ref": "DEDA",
+        "source": {
+          "element": "AGS",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "DEDA",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 849,
+              "y": 136
+            },
+            {
+              "x": 1023,
+              "y": 136
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11::CSM::AGC_CM"
+  }
+}

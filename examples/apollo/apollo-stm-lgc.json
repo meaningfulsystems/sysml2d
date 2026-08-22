@@ -1,0 +1,45 @@
+{
+  "diagram": "apollo-stm-lgc",
+  "kind": "StateView",
+  "name": "LGC LANDING P63–P68 (not CMC entry)",
+  "subject": "LGC_Landing",
+  "model_files": ["apollo.sysml"],
+  "direction": "left-right",
+  "default_w": 120,
+  "default_h": 52,
+  "aliases": {
+    "LGC_Landing": "Apollo11::LGC_Landing",
+    "p63": "Apollo11::LGC_Landing::p63",
+    "p64": "Apollo11::LGC_Landing::p64",
+    "p65": "Apollo11::LGC_Landing::p65",
+    "p66": "Apollo11::LGC_Landing::p66",
+    "p67": "Apollo11::LGC_Landing::p67",
+    "p68": "Apollo11::LGC_Landing::p68",
+    "toP64": "Apollo11::LGC_Landing::toP64",
+    "toP65": "Apollo11::LGC_Landing::toP65",
+    "toP66": "Apollo11::LGC_Landing::toP66",
+    "toP67": "Apollo11::LGC_Landing::toP67",
+    "p65ToP68": "Apollo11::LGC_Landing::p65ToP68",
+    "p66ToP68": "Apollo11::LGC_Landing::p66ToP68",
+    "p67ToP68": "Apollo11::LGC_Landing::p67ToP68"
+  },
+  "states": {
+    "initial": {"initial": true},
+    "p63": {"label": "P63 LANDING", "model_ref": "p63"},
+    "p64": {"label": "P64 LANDING", "model_ref": "p64"},
+    "p65": {"label": "P65 LANDING", "model_ref": "p65"},
+    "p66": {"label": "P66 LANDING\n(A11 flown)", "model_ref": "p66"},
+    "p67": {"label": "P67 LANDING", "model_ref": "p67"},
+    "p68": {"label": "P68 LANDING", "model_ref": "p68"}
+  },
+  "transitions": [
+    {"from": "initial", "to": "p63", "label": ""},
+    {"from": "p63", "to": "p64", "label": "", "model_ref": "toP64"},
+    {"from": "p64", "to": "p65", "label": "auto", "model_ref": "toP65"},
+    {"from": "p64", "to": "p66", "label": "A11", "model_ref": "toP66"},
+    {"from": "p66", "to": "p67", "label": "", "model_ref": "toP67"},
+    {"from": "p65", "to": "p68", "label": "", "model_ref": "p65ToP68"},
+    {"from": "p66", "to": "p68", "label": "", "model_ref": "p66ToP68"},
+    {"from": "p67", "to": "p68", "label": "", "model_ref": "p67ToP68"}
+  ]
+}

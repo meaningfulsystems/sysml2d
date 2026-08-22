@@ -197,8 +197,9 @@ open          coffee-maker-stm.svg
 
 ## Next Steps
 
-- Browse all 15 view types in [examples/toaster](examples/toaster) and [examples/blender](examples/blender)
+- Start a project of your own from [templates/new-project/](templates/new-project/) rather than cloning toaster. Pick SysML2d **or** [MSML](https://github.com/meaningfulsystems/msml) for a project — do not mix `.sysml` and `.msml`.
+- Browse all 15 view types in [examples/toaster](examples/toaster), [examples/blender](examples/blender), and [examples/e-bike](examples/e-bike)
 - Read [sysmld-specification.md](sysmld-specification.md) for the complete format reference
-- Use the prompt templates in [skills/](skills/) to generate models and intent files with AI assistance
+- Point an agent at [AGENTS.md](AGENTS.md) and the skills in [skills/](skills/) (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`)
 - Run `pytest` to verify the full test suite passes
 - See [CONTRIBUTING.md](CONTRIBUTING.md) to add a new view type or contribute a fix

@@ -1,0 +1,102 @@
+{
+  "diagram": "e-bike-req",
+  "kind": "RequirementView",
+  "name": "Electric Bike Requirements",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "top-down",
+  "default_w": 250,
+  "default_h": 118,
+  "sibling_gap": 56,
+  "nodes": {
+    "rideSafetyRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-001 Ride Safety\nFail-silent: brakes, controller,\nsensors, and BMS cut torque.",
+      "rank": 0,
+      "order": 0
+    },
+    "rangeRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-002 Range (Tour)\nusableWh 500 / energyPerKm\n~8.3 => 60 km. Not Eco/PAS-1.",
+      "rank": 0,
+      "order": 1
+    },
+    "assistLimitRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-003 Assist Limit\nEPAC cadence PAS, no throttle.\n25 km/h cut; walk assist <= 6.",
+      "rank": 0,
+      "order": 2
+    },
+    "chargeSafetyRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-004 Charge Safety\nStop on over-temp, over-voltage,\nor charger disconnect.",
+      "rank": 0,
+      "order": 3
+    },
+    "brakeOverrideRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-010 Brake Override\nElectronic inhibit <= 50 ms.\nNot the EN 15194 2 m / 5 m cut.",
+      "rank": 1,
+      "order": 0
+    },
+    "structuralRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-030 Structure\nFrame carries rider, cargo, and\nbattery loads without yield.",
+      "rank": 0,
+      "order": 4
+    },
+    "displayRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-020 Display\nShow speed, assist, and remaining\nrange on the bar display.",
+      "rank": 0,
+      "order": 5
+    },
+    "batteryCutoffRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-011 Battery Cutoff\nBMS inside the pack opens the\ncontactor (UL 2849).",
+      "rank": 1,
+      "order": 3
+    },
+    "walkAssistRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-013 Walk Assist\n<= 6 km/h EPAC feature.\nNot a throttle.",
+      "rank": 1,
+      "order": 4
+    },
+    "continuousPowerRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-014 Continuous Power\nEU 250 W continuous (EN 15194).\nNot hub peak torque 40 N\u00b7m.",
+      "rank": 1,
+      "order": 5
+    },
+    "en15194DistanceRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194:2017 4.2.13\nPower mgmt: cut-off after pedaling\nstops. 2 m; lever switches relax to 5 m.",
+      "rank": 1,
+      "order": 2
+    },
+    "lightingRequirement": {
+      "label": "\u00abrequirement\u00bb\nREQ-E-040 Lighting\nStVZO / ISO 6742.\nNot UN ECE R113.",
+      "rank": 0,
+      "order": 6
+    }
+  },
+  "edges": [
+    {
+      "from": "rideSafetyRequirement",
+      "to": "brakeOverrideRequirement",
+      "label": "refine"
+    },
+    {
+      "from": "assistLimitRequirement",
+      "to": "en15194DistanceRequirement",
+      "label": "refine"
+    },
+    {
+      "from": "assistLimitRequirement",
+      "to": "walkAssistRequirement",
+      "label": "refine"
+    },
+    {
+      "from": "assistLimitRequirement",
+      "to": "continuousPowerRequirement",
+      "label": "refine"
+    },
+    {
+      "from": "chargeSafetyRequirement",
+      "to": "batteryCutoffRequirement",
+      "label": "refine"
+    }
+  ]
+}

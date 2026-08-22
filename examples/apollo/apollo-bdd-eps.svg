@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2896" height="312" viewBox="0 0 2896 312">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="2896" height="312" fill="#FFFFFF"/>
+<rect x="2" y="38" width="2892" height="270" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 344 L 360 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[def.mb] Electrical (A11 Press Kit) [SM]</text>
+<rect x="2" y="38" width="2892" height="272" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="SM" x="198" y="40" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="268" y="68">SM</text>
+<rect id="FC1" x="40" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="110" y="202">FC1 28 V DC</text>
+<rect id="FC2" x="198" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="268" y="202">FC2 28 V DC</text>
+<rect id="FC3" x="356" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="426" y="202">FC3 28 V DC</text>
+<rect id="CM" x="981" y="40" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1051" y="68">CM</text>
+<rect id="AgZn1" x="514" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="584" y="202">AgZn1</text>
+<rect id="AgZn2" x="672" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="742" y="202">AgZn2</text>
+<rect id="AgZn3" x="830" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="900" y="202">AgZn3</text>
+<rect id="charger" x="988" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1058" y="202">charger</text>
+<rect id="inverter1" x="1146" y="174" width="212" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1252" y="202">inverter1 117 V 400 Hz</text>
+<rect id="inverter2" x="1376" y="174" width="212" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1482" y="202">inverter2 117 V 400 Hz</text>
+<rect id="descent" x="1922" y="40" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1992" y="68">descent</text>
+<rect id="dAgZn1" x="1606" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1676" y="202">AgZn1</text>
+<rect id="dAgZn2" x="1764" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1834" y="202">AgZn2</text>
+<rect id="dAgZn3" x="1922" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="1992" y="202">AgZn3</text>
+<rect id="dAgZn4" x="2080" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="2150" y="202">AgZn4</text>
+<rect id="dECA" x="2238" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="2308" y="202">ECA</text>
+<rect id="ascent" x="2554" y="40" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="2624" y="68">ascent</text>
+<rect id="aAgZn1" x="2396" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="2466" y="202">AgZn1</text>
+<rect id="aAgZn2" x="2554" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="2624" y="202">AgZn2</text>
+<rect id="aECA" x="2712" y="174" width="140" height="56" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="2782" y="202">ECA</text>
+<path d="M 268,96 L 268,135 L 110,135 L 110,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 268,96 L 268,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 268,96 L 268,135 L 426,135 L 426,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1051,96 L 1051,135 L 584,135 L 584,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1051,96 L 1051,135 L 742,135 L 742,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1051,96 L 1051,135 L 900,135 L 900,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1051,96 L 1051,135 L 1058,135 L 1058,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1051,96 L 1051,135 L 1252,135 L 1252,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1051,96 L 1051,135 L 1482,135 L 1482,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1992,96 L 1992,135 L 1676,135 L 1676,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1992,96 L 1992,135 L 1834,135 L 1834,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1992,96 L 1992,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1992,96 L 1992,135 L 2150,135 L 2150,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 1992,96 L 1992,135 L 2308,135 L 2308,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2624,96 L 2624,135 L 2466,135 L 2466,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2624,96 L 2624,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 2624,96 L 2624,135 L 2782,135 L 2782,174" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="120" y="162.98">1</text>
+<text class="small" x="278" y="155.96">1</text>
+<text class="small" x="436" y="162.98">1</text>
+<text class="small" x="594" y="162.98">1</text>
+<text class="small" x="752" y="162.98">1</text>
+<text class="small" x="910" y="162.98">1</text>
+<text class="small" x="1068" y="162.98">1</text>
+<text class="small" x="1262" y="162.98">1</text>
+<text class="small" x="1492" y="162.98">1</text>
+<text class="small" x="1686" y="162.98">1</text>
+<text class="small" x="1844" y="162.98">1</text>
+<text class="small" x="2002" y="155.96">1</text>
+<text class="small" x="2160" y="162.98">1</text>
+<text class="small" x="2318" y="162.98">1</text>
+<text class="small" x="2476" y="162.98">1</text>
+<text class="small" x="2634" y="155.96">1</text>
+<text class="small" x="2792" y="162.98">1</text>
+</g>
+</svg>

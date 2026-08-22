@@ -1,0 +1,459 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "LGC_Landing": "Apollo11::LGC_Landing",
+    "p63": "Apollo11::LGC_Landing::p63",
+    "p64": "Apollo11::LGC_Landing::p64",
+    "p65": "Apollo11::LGC_Landing::p65",
+    "p66": "Apollo11::LGC_Landing::p66",
+    "p67": "Apollo11::LGC_Landing::p67",
+    "p68": "Apollo11::LGC_Landing::p68",
+    "toP64": "Apollo11::LGC_Landing::toP64",
+    "toP65": "Apollo11::LGC_Landing::toP65",
+    "toP66": "Apollo11::LGC_Landing::toP66",
+    "toP67": "Apollo11::LGC_Landing::toP67",
+    "p65ToP68": "Apollo11::LGC_Landing::p65ToP68",
+    "p66ToP68": "Apollo11::LGC_Landing::p66ToP68",
+    "p67ToP68": "Apollo11::LGC_Landing::p67ToP68"
+  },
+  "diagram": {
+    "id": "apollo-stm-lgc",
+    "kind": "StateView",
+    "name": "LGC LANDING P63\u2013P68 (not CMC entry)",
+    "canvas": {
+      "width": 1189,
+      "height": 379,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "LGC_Landing",
+        "symbol": "boundary",
+        "layout": {
+          "x": 104,
+          "y": 88,
+          "width": 1045,
+          "height": 251,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 140,
+          "y": 204,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "p63",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 316,
+          "y": 188,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p63",
+        "label": "P63 LANDING",
+        "style": "state.default"
+      },
+      {
+        "id": "p64",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 541,
+          "y": 188,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p64",
+        "label": "P64 LANDING",
+        "style": "state.default"
+      },
+      {
+        "id": "p65",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 767,
+          "y": 124,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p65",
+        "label": "P65 LANDING",
+        "style": "state.default"
+      },
+      {
+        "id": "p66",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 767,
+          "y": 251,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p66",
+        "label": "P66 LANDING\n(A11 flown)",
+        "style": "state.default"
+      },
+      {
+        "id": "p67",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 993,
+          "y": 251,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p67",
+        "label": "P67 LANDING",
+        "style": "state.default"
+      },
+      {
+        "id": "p68",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 993,
+          "y": 124,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p68",
+        "label": "P68 LANDING",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--p63",
+        "model_ref": "LGC_Landing",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p63",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p63--p64",
+        "model_ref": "toP64",
+        "source": {
+          "element": "p63",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p64",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p64--p65",
+        "model_ref": "toP65",
+        "source": {
+          "element": "p64",
+          "anchor": {
+            "side": "right",
+            "offset": 0.3333
+          }
+        },
+        "target": {
+          "element": "p65",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 696,
+              "y": 205
+            },
+            {
+              "x": 696,
+              "y": 150
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "auto",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p64--p66",
+        "model_ref": "toP66",
+        "source": {
+          "element": "p64",
+          "anchor": {
+            "side": "right",
+            "offset": 0.6667
+          }
+        },
+        "target": {
+          "element": "p66",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 732,
+              "y": 223
+            },
+            {
+              "x": 732,
+              "y": 277
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "A11",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p66--p67",
+        "model_ref": "toP67",
+        "source": {
+          "element": "p66",
+          "anchor": {
+            "side": "right",
+            "offset": 0.3333
+          }
+        },
+        "target": {
+          "element": "p67",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 966,
+              "y": 268
+            },
+            {
+              "x": 966,
+              "y": 277
+            }
+          ]
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p65--p68",
+        "model_ref": "p65ToP68",
+        "source": {
+          "element": "p65",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p68",
+          "anchor": {
+            "side": "left",
+            "offset": 0.3333
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 914,
+              "y": 150
+            },
+            {
+              "x": 914,
+              "y": 141
+            }
+          ]
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p66--p68",
+        "model_ref": "p66ToP68",
+        "source": {
+          "element": "p66",
+          "anchor": {
+            "side": "right",
+            "offset": 0.6667
+          }
+        },
+        "target": {
+          "element": "p68",
+          "anchor": {
+            "side": "left",
+            "offset": 0.6667
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 940,
+              "y": 286
+            },
+            {
+              "x": 940,
+              "y": 159
+            }
+          ]
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p67--p68",
+        "model_ref": "p67ToP68",
+        "source": {
+          "element": "p67",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p68",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1053,
+              "y": 251
+            },
+            {
+              "x": 1053,
+              "y": 176
+            }
+          ]
+        },
+        "labels": [],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "LGC_Landing"
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "diagram": "apollo-act",
+  "kind": "ActionView",
+  "name": "A11 Powered Descent (P63/P64/P66)",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "start": "Apollo11",
+    "abort": "Apollo11",
+    "done": "Apollo11",
+    "p63Braking": "p63Braking",
+    "p64Approach": "p64Approach",
+    "p66Landing": "p66Landing",
+    "p70Abort": "p70Abort"
+  },
+  "direction": "top-down",
+  "default_w": 150,
+  "default_h": 56,
+  "rank_gap": 64,
+  "nodes": {
+    "start": {
+      "label": "",
+      "symbol": "initial_state",
+      "model_ref": null,
+      "rank": 0,
+      "order": 0
+    },
+    "p63Braking": {
+      "label": "P63 braking",
+      "rank": 1,
+      "order": 0
+    },
+    "p64Approach": {
+      "label": "P64 approach",
+      "rank": 2,
+      "order": 0
+    },
+    "abort": {
+      "label": "abort?",
+      "symbol": "decision_node",
+      "model_ref": null,
+      "rank": 3,
+      "order": 0
+    },
+    "p66Landing": {
+      "label": "P66 landing (flown)",
+      "rank": 4,
+      "order": 0
+    },
+    "p70Abort": {
+      "label": "P70 DPS abort",
+      "rank": 4,
+      "order": 1
+    },
+    "done": {
+      "label": "",
+      "symbol": "activity_final_node",
+      "model_ref": null,
+      "rank": 5,
+      "order": 0
+    }
+  },
+  "edges": [
+    {
+      "from": "start",
+      "to": "p63Braking"
+    },
+    {
+      "from": "p63Braking",
+      "to": "p64Approach"
+    },
+    {
+      "from": "p64Approach",
+      "to": "abort"
+    },
+    {
+      "from": "abort",
+      "to": "p66Landing",
+      "label": "no",
+      "source_side": "left",
+      "target_side": "top"
+    },
+    {
+      "from": "abort",
+      "to": "p70Abort",
+      "label": "yes",
+      "model_ref": "p70Abort",
+      "source_side": "right",
+      "target_side": "top"
+    },
+    {
+      "from": "p66Landing",
+      "to": "done",
+      "model_ref": "p66Landing"
+    },
+    {
+      "from": "p70Abort",
+      "to": "done"
+    }
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "DockingMode": "Apollo11::DockingMode",
+    "undocked": "Apollo11::DockingMode::undocked",
+    "soft": "Apollo11::DockingMode::soft",
+    "hard": "Apollo11::DockingMode::hard",
+    "hardwareOff": "Apollo11::DockingMode::hardwareOff",
+    "capture": "Apollo11::DockingMode::capture",
+    "hardDock": "Apollo11::DockingMode::hardDock",
+    "removeHw": "Apollo11::DockingMode::removeHw"
+  },
+  "diagram": {
+    "id": "apollo-stm-dock",
+    "kind": "StateView",
+    "name": "Docking: soft then hard",
+    "canvas": {
+      "width": 1250,
+      "height": 262,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "DockingMode",
+        "symbol": "boundary",
+        "layout": {
+          "x": 114,
+          "y": 98,
+          "width": 1096,
+          "height": 124,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 150,
+          "y": 150,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "undocked",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 326,
+          "y": 134,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "undocked",
+        "label": "undocked",
+        "style": "state.default"
+      },
+      {
+        "id": "soft",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 562,
+          "y": 134,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "soft",
+        "label": "soft",
+        "style": "state.default"
+      },
+      {
+        "id": "hard",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 798,
+          "y": 134,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "hard",
+        "label": "hard",
+        "style": "state.default"
+      },
+      {
+        "id": "hardwareOff",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1034,
+          "y": 134,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "hardwareOff",
+        "label": "hardware off\n(transfer)",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--undocked",
+        "model_ref": "DockingMode",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "undocked",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "undocked--soft",
+        "model_ref": "capture",
+        "source": {
+          "element": "undocked",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "soft",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "probe capture",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "soft--hard",
+        "model_ref": "hardDock",
+        "source": {
+          "element": "soft",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "hard",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "12 latches",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "hard--hardwareOff",
+        "model_ref": "removeHw",
+        "source": {
+          "element": "hard",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "hardwareOff",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "remove hw",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "DockingMode"
+  }
+}

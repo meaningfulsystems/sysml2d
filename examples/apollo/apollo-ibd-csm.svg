@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="896" height="594" viewBox="0 0 896 594">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="896" height="594" fill="#FFFFFF"/>
+<rect x="2" y="38" width="892" height="552" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 344 L 360 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] CSM Interconnection [CSM : CSM]</text>
+<rect x="2" y="38" width="892" height="554" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="812" height="472" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">CSM</text>
+<rect id="SCS" x="76" y="190" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="219">SCS</text>
+<rect id="AGC_CM" x="376" y="190" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="446" y="219">AGC_CM</text>
+<rect id="IMU" x="676" y="247" width="140" height="58" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="746" y="276">IMU</text>
+<rect id="RCS" x="376" y="304" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="446" y="333">RCS</text>
+<rect id="ECLSS" x="76" y="76" width="140" height="58" rx="4" fill="#E3F2FD" stroke="#1565C0" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="105">ECLSS</text>
+<rect id="SPS" x="76" y="418" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="447">SPS</text>
+<rect id="SM_RCS" x="76" y="304" width="140" height="58" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="146" y="333">RCS</text>
+<rect id="SCS--AGC_CM--src" x="210" y="213" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SCS--RCS--src" x="210" y="227.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="ECLSS--AGC_CM--tgt" x="370" y="198.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SCS--AGC_CM--tgt" x="370" y="213" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_CM--IMU--src" x="510" y="213" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_CM--IMU--tgt" x="670" y="270" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="SCS--RCS--tgt" x="370" y="327" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="ECLSS--AGC_CM--src" x="140" y="70" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 222,219 L 370,219" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 222,233.5 L 314.667,233.5 L 314.667,333 L 370,333" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 522,219 L 596,219 L 596,276 L 670,276" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 146,70 L 376,76 L 370,204.5" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="296" y="207">backup</text>
+<text class="small" x="326.667" y="283.25">jets</text>
+<text class="small" text-anchor="middle" x="559" y="207">IMU</text>
+<text class="small" text-anchor="middle" x="261" y="61">cabin</text>
+</g>
+</svg>

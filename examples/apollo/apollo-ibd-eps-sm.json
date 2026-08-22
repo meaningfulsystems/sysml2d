@@ -1,0 +1,106 @@
+{
+  "diagram": "apollo-ibd-eps-sm",
+  "kind": "InterconnectionView",
+  "name": "SM fuel cells (A11 Press Kit)",
+  "subject": "SM",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 52,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "SM": "Apollo11::CSM::SM",
+    "FC1": "Apollo11::CSM::SM::FC1",
+    "FC2": "Apollo11::CSM::SM::FC2",
+    "FC3": "Apollo11::CSM::SM::FC3",
+    "FC1--FC2--src": "Apollo11::CSM::SM::FC1",
+    "FC1--FC2--tgt": "Apollo11::CSM::SM::FC2",
+    "conn-FC1-FC2": "Apollo11::CSM::SM::FC1ToFC2",
+    "FC2--FC3--src": "Apollo11::CSM::SM::FC2",
+    "FC2--FC3--tgt": "Apollo11::CSM::SM::FC3",
+    "conn-FC2-FC3": "Apollo11::CSM::SM::FC2ToFC3"
+  },
+  "nodes": {
+    "FC1": {
+      "label": "FC1\n28 V DC",
+      "style": "part.eps"
+    },
+    "FC2": {
+      "label": "FC2\n28 V DC",
+      "style": "part.eps"
+    },
+    "FC3": {
+      "label": "FC3\n28 V DC",
+      "style": "part.eps"
+    }
+  },
+  "edges": [
+    {
+      "from": "FC1",
+      "to": "FC2",
+      "label": "parallel",
+      "model_ref": "conn-FC1-FC2"
+    },
+    {
+      "from": "FC2",
+      "to": "FC3",
+      "label": "parallel",
+      "model_ref": "conn-FC2-FC3"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.eps": {
+      "fill": "#FEF9C3",
+      "stroke": "#A16207",
+      "stroke_width": 2
+    },
+    "part.dock": {
+      "fill": "#F1F5F9",
+      "stroke": "#475569",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

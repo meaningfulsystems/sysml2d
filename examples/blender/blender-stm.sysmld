@@ -26,8 +26,8 @@
     "kind": "StateView",
     "name": "Blender Control State Machine",
     "canvas": {
-      "width": 1429,
-      "height": 529,
+      "width": 1295,
+      "height": 395,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -39,10 +39,10 @@
         "model_ref": "blenderControl",
         "symbol": "boundary",
         "layout": {
-          "x": 100,
-          "y": 10,
-          "width": 1289,
-          "height": 479,
+          "x": 114,
+          "y": 24,
+          "width": 1141,
+          "height": 331,
           "z": 0
         },
         "compartments": {
@@ -476,11 +476,11 @@
           "waypoints": [
             {
               "x": 1104,
-              "y": 102
+              "y": 74
             },
             {
               "x": 632,
-              "y": 102
+              "y": 74
             }
           ]
         },

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1072" height="606" viewBox="0 0 1072 606">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1072" height="606" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1068" height="564" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 352 L 368 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] LM PNGS / AGC_LM / AGS [LM : LM]</text>
+<rect x="2" y="38" width="1068" height="566" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="988" height="484" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">LM</text>
+<rect id="PNGS" x="76" y="308" width="180" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="166" y="332.5">Primary Guidance</tspan><tspan x="166" dy="15">(PNGS)</tspan></text>
+<rect id="AGC_LM" x="444" y="134" width="180" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="534" y="158.5">LM guidance</tspan><tspan x="534" dy="15">computer</tspan></text>
+<rect id="DSKY" x="812" y="76" width="180" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="902" y="100.5">Display and</tspan><tspan x="902" dy="15">Keyboard</tspan></text>
+<rect id="AGS" x="812" y="192" width="180" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="902" y="216.5">Abort Guidance</tspan><tspan x="902" dy="15">System</tspan></text>
+<rect id="landingRadar" x="444" y="250" width="180" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="534" y="282">Landing radar</text>
+<rect id="rendezvousRadar" x="444" y="366" width="180" height="64" rx="4" fill="#E8F5E9" stroke="#2E7D32" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="534" y="398">Rendezvous radar</text>
+<rect id="DPS" x="76" y="192" width="180" height="64" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="166" y="216.5">Descent Propulsion</tspan><tspan x="166" dy="15">System</tspan></text>
+<rect id="APS" x="812" y="308" width="180" height="64" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="902" y="332.5">Ascent Propulsion</tspan><tspan x="902" dy="15">System</tspan></text>
+<rect id="RCS" x="812" y="424" width="180" height="64" rx="4" fill="#FFF3E0" stroke="#E65100" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="902" y="456">Reaction control</text>
+<rect id="PNGS--AGC_LM--src" x="250" y="318" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="PNGS--landingRadar--src" x="250" y="334" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="PNGS--rendezvousRadar--src" x="250" y="350" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="PNGS--AGC_LM--tgt" x="438" y="160" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_LM--DSKY--src" x="618" y="140.8" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_LM--AGS--src" x="618" y="153.6" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_LM--APS--src" x="618" y="166.4" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_LM--RCS--src" x="618" y="179.2" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_LM--DSKY--tgt" x="806" y="102" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_LM--AGS--tgt" x="806" y="218" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="PNGS--landingRadar--tgt" x="438" y="276" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="PNGS--rendezvousRadar--tgt" x="438" y="392" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_LM--APS--tgt" x="806" y="334" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="AGC_LM--RCS--tgt" x="806" y="450" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 262,324 L 315,324 L 315,166 L 438,166" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 630,146.8 L 676,146.8 L 676,108 L 806,108" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 630,159.6 L 760,159.6 L 760,224 L 806,224" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 630,172.4 L 732,172.4 L 732,340 L 806,340" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 630,185.2 L 704,185.2 L 704,456 L 806,456" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 262,340 L 350,340 L 350,282 L 438,282" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 262,356 L 385,356 L 385,398 L 438,398" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="327" y="245">computer</text>
+<text class="small" text-anchor="middle" x="741" y="96">DSKY</text>
+<text class="small" text-anchor="middle" x="695" y="147.6">R47</text>
+<text class="small" x="744" y="256.2">P12</text>
+<text class="small" text-anchor="end" x="692" y="320.6">jets</text>
+<text class="small" text-anchor="middle" x="332.4" y="328">LR</text>
+<text class="small" text-anchor="middle" x="323.5" y="379">RR</text>
+</g>
+</svg>

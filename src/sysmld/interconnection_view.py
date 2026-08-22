@@ -41,6 +41,7 @@ from typing import Any
 
 from .layout import compute as _layout
 from .layout import _segments_cross
+from .routing import orthogonal_path_avoiding_boxes, path_crosses_boxes
 
 OPP = {"top": "bottom", "bottom": "top", "left": "right", "right": "left"}
 
@@ -82,6 +83,16 @@ def compose(spec: dict[str, Any]) -> dict[str, Any]:
     # average box dimension to convert from edge-gap to centre-gap.
     avg_w = sum(nw(n) for n in nids) / max(len(nids), 1)
     avg_h = sum(nh(n) for n in nids) / max(len(nids), 1)
+    fixed_ranks = (
+        {n: int(nodes[n]["rank"]) for n in nids}
+        if nids and all("rank" in nodes[n] for n in nids)
+        else None
+    )
+    fixed_order = (
+        {n: int(nodes[n].get("order", 0)) for n in nids}
+        if fixed_ranks is not None
+        else None
+    )
     lo = _layout(
         nids, edges, direction,
         col_gap  = col_gap  + (avg_w if lo_vertical(direction) else avg_h),
@@ -89,6 +100,8 @@ def compose(spec: dict[str, Any]) -> dict[str, Any]:
         margin   = CANVAS_MARGIN + BND_PAD + max(dw, dh) // 2,
         rank_wrap=rank_wrap,
         target_aspect=target_aspect,
+        fixed_ranks=fixed_ranks,
+        fixed_order=fixed_order,
     )
     max_channel = _max_adjacent_channel_members(edges, lo.rank)
     if rank_wrap:
@@ -104,6 +117,8 @@ def compose(spec: dict[str, Any]) -> dict[str, Any]:
             margin   = CANVAS_MARGIN + BND_PAD + max(dw, dh) // 2,
             rank_wrap=rank_wrap,
             target_aspect=target_aspect,
+            fixed_ranks=fixed_ranks,
+            fixed_order=fixed_order,
         )
 
     rank_groups = lo.rank_groups
@@ -233,6 +248,8 @@ def compose(spec: dict[str, Any]) -> dict[str, Any]:
             diagonal = abs(cy_map[src] - cy_map[tgt]) > min(nh(src), nh(tgt)) * 0.75
             if cx_map[src] != cx_map[tgt] and diagonal and edge_degree[src] == 1:
                 sf = open_vertical_face(src)
+            if cx_map[src] != cx_map[tgt] and _same_row_blocked(src, tgt, boxes):
+                sf = tf = _clear_row_face(src, tgt, boxes)
 
         if src_override in OPP:
             sf = src_override
@@ -397,14 +414,26 @@ def compose(spec: dict[str, Any]) -> dict[str, Any]:
                 waypoints = _horizontal_waypoints(ax, ay, bx_, by_, sf, tf, track, port_stub)
 
             points = [(ax, ay), *[(point["x"], point["y"]) for point in waypoints], (bx_, by_)]
+            avoided = orthogonal_path_avoiding_boxes(
+                (ax, ay),
+                (bx_, by_),
+                boxes,
+                ignore={src_node, tgt_node},
+                clearance=float(route_clearance),
+                preferred=points,
+            )
+            if avoided != [(point["x"], point["y"]) for point in waypoints]:
+                waypoints = _clean_waypoints(avoided)
+                points = [(ax, ay), *avoided, (bx_, by_)]
             return conn_id, waypoints, points
 
         def _assignment_score(assigned_tracks):
             routed = [_route_for(member, track) for member, track in zip(members, assigned_tracks)]
+            box_hits = sum(1 for _, _, points in routed if path_crosses_boxes(points, boxes))
             crossings = _route_crossing_count(routed)
             length = sum(_route_length(points) for _, _, points in routed)
             displacement = sum(abs(track - tracks[i]) for i, track in enumerate(assigned_tracks))
-            return (crossings, round(length, 3), round(displacement, 3), tuple(round(track, 3) for track in assigned_tracks))
+            return (box_hits, crossings, round(length, 3), round(displacement, 3), tuple(round(track, 3) for track in assigned_tracks))
 
         best_tracks = tuple(tracks)
         best_score = _assignment_score(best_tracks)
@@ -652,30 +681,7 @@ def _route_crosses_box(
     target_node: str,
     boxes: dict[str, tuple[int, int, int, int]],
 ) -> bool:
-    for start, end in zip(points, points[1:]):
-        for node_id, box in boxes.items():
-            if node_id in (source_node, target_node):
-                continue
-            if _segment_crosses_box_interior(start, end, box):
-                return True
-    return False
-
-
-def _segment_crosses_box_interior(
-    start: tuple[float, float],
-    end: tuple[float, float],
-    box: tuple[int, int, int, int],
-) -> bool:
-    x1, y1 = start
-    x2, y2 = end
-    left, top, width, height = box
-    right = left + width
-    bottom = top + height
-    if round(x1, 3) == round(x2, 3):
-        return left < x1 < right and max(y1, y2) > top and min(y1, y2) < bottom
-    if round(y1, 3) == round(y2, 3):
-        return top < y1 < bottom and max(x1, x2) > left and min(x1, x2) < right
-    return False
+    return path_crosses_boxes(points, boxes, {source_node, target_node})
 
 
 def _spread_offsets(count: int, start: float, end: float) -> list[float]:
@@ -728,6 +734,36 @@ def _route_vertical(source_side: str, target_side: str) -> bool:
 
 def _ranges_overlap(a1: float, a2: float, b1: float, b2: float) -> bool:
     return max(a1, b1) < min(a2, b2)
+
+
+def _clear_row_face(
+    src: str,
+    tgt: str,
+    boxes: dict[str, tuple[int, int, int, int]],
+) -> str:
+    sx, sy, sw, sh = boxes[src]
+    tx, ty, tw, th = boxes[tgt]
+    left = min(sx, tx)
+    right = max(sx + sw, tx + tw)
+    top = min(sy, ty)
+    bottom = max(sy + sh, ty + th)
+
+    def strip_blocked(y1: float, y2: float) -> bool:
+        for node, (ox, oy, ow, oh) in boxes.items():
+            if node in (src, tgt):
+                continue
+            if ox < right and ox + ow > left and _ranges_overlap(oy, oy + oh, y1, y2):
+                return True
+        return False
+
+    pad = float(ROUTE_CLEARANCE)
+    above_blocked = strip_blocked(top - pad, top)
+    below_blocked = strip_blocked(bottom, bottom + pad)
+    if above_blocked and not below_blocked:
+        return "bottom"
+    if below_blocked and not above_blocked:
+        return "top"
+    return "top"
 
 
 def _same_row_blocked(

@@ -1,0 +1,205 @@
+{
+  "diagram": "apollo-ibd-vehicle",
+  "kind": "InterconnectionView",
+  "name": "Apollo 11 Launch Stack (AS-506)",
+  "subject": "mission",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "top-down",
+  "default_w": 140,
+  "default_h": 64,
+  "col_gap": 48,
+  "rank_gap": 100,
+  "label_mode": "connection",
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "LES": "Apollo11::SaturnV::SaturnV::LES",
+    "CM": "Apollo11::CSM::CSM::CM",
+    "SM": "Apollo11::CSM::CSM::SM",
+    "SLA": "Apollo11::SaturnV::SaturnV::SLA",
+    "descent": "Apollo11::LM::LM::descent",
+    "ascent": "Apollo11::LM::LM::ascent",
+    "IU": "Apollo11::SaturnV::SaturnV::IU",
+    "SIVB": "Apollo11::SaturnV::SaturnV::SIVB",
+    "SII": "Apollo11::SaturnV::SaturnV::SII",
+    "SIC": "Apollo11::SaturnV::SaturnV::SIC",
+    "LES--CM--src": "Apollo11::Apollo11::LESToCMOut",
+    "LES--CM--tgt": "Apollo11::Apollo11::CMFromLESIn",
+    "conn-LES-CM": "Apollo11::Apollo11::LESToCM",
+    "CM--SM--src": "Apollo11::Apollo11::CMToSMOut",
+    "CM--SM--tgt": "Apollo11::Apollo11::SMFromCMIn",
+    "conn-CM-SM": "Apollo11::Apollo11::CMToSM",
+    "SLA--SM--src": "Apollo11::Apollo11::SLAToSMOut",
+    "SLA--SM--tgt": "Apollo11::Apollo11::SMFromSLAIn",
+    "conn-SLA-SM": "Apollo11::Apollo11::SLAToSM",
+    "IU--SLA--src": "Apollo11::Apollo11::IUToSLAOut",
+    "IU--SLA--tgt": "Apollo11::Apollo11::SLAFromIUIn",
+    "conn-IU-SLA": "Apollo11::Apollo11::IUToSLA",
+    "SIVB--IU--src": "Apollo11::Apollo11::SIVBToIUOut",
+    "SIVB--IU--tgt": "Apollo11::Apollo11::IUFromSIVBIn",
+    "conn-SIVB-IU": "Apollo11::Apollo11::SIVBToIU",
+    "SII--SIVB--src": "Apollo11::Apollo11::SIIToSIVBOut",
+    "SII--SIVB--tgt": "Apollo11::Apollo11::SIVBFromSIIIn",
+    "conn-SII-SIVB": "Apollo11::Apollo11::SIIToSIVB",
+    "SIC--SII--src": "Apollo11::Apollo11::SICToSIIOut",
+    "SIC--SII--tgt": "Apollo11::Apollo11::SIIFromSICIn",
+    "conn-SIC-SII": "Apollo11::Apollo11::SICToSII",
+    "SLA--descent--src": "Apollo11::Apollo11::SLALmOut",
+    "SLA--descent--tgt": "Apollo11::Apollo11::descentSlaIn",
+    "conn-SLA-descent": "Apollo11::Apollo11::SLAToDescent",
+    "descent--ascent--src": "Apollo11::Apollo11::descentToAscentOut",
+    "descent--ascent--tgt": "Apollo11::Apollo11::ascentFromDescentIn",
+    "conn-descent-ascent": "Apollo11::Apollo11::descentToAscent",
+    "CM--ascent--src": "Apollo11::Apollo11::CMDockOut",
+    "CM--ascent--tgt": "Apollo11::Apollo11::ascentDockIn",
+    "conn-CM-ascent": "Apollo11::Apollo11::CMToAscent"
+  },
+  "nodes": {
+    "LES": {
+      "label": "LES",
+      "style": "part.vehicle"
+    },
+    "CM": {
+      "label": "CM",
+      "style": "part.vehicle"
+    },
+    "SM": {
+      "label": "SM",
+      "style": "part.vehicle"
+    },
+    "SLA": {
+      "label": "SLA",
+      "style": "part.vehicle"
+    },
+    "descent": {
+      "label": "descent",
+      "style": "part.vehicle"
+    },
+    "ascent": {
+      "label": "ascent",
+      "style": "part.vehicle"
+    },
+    "IU": {
+      "label": "IU",
+      "style": "part.gnc"
+    },
+    "SIVB": {
+      "label": "S-IVB",
+      "style": "part.vehicle"
+    },
+    "SII": {
+      "label": "S-II",
+      "style": "part.vehicle"
+    },
+    "SIC": {
+      "label": "S-IC",
+      "style": "part.vehicle"
+    }
+  },
+  "edges": [
+    {
+      "from": "LES",
+      "to": "CM",
+      "label": "tower",
+      "model_ref": "conn-LES-CM"
+    },
+    {
+      "from": "CM",
+      "to": "SM",
+      "label": "CM/SM",
+      "model_ref": "conn-CM-SM"
+    },
+    {
+      "from": "SLA",
+      "to": "SM",
+      "label": "adapter",
+      "model_ref": "conn-SLA-SM"
+    },
+    {
+      "from": "IU",
+      "to": "SLA",
+      "label": "stack",
+      "model_ref": "conn-IU-SLA"
+    },
+    {
+      "from": "SIVB",
+      "to": "IU",
+      "label": "stack",
+      "model_ref": "conn-SIVB-IU"
+    },
+    {
+      "from": "SII",
+      "to": "SIVB",
+      "label": "stack",
+      "model_ref": "conn-SII-SIVB"
+    },
+    {
+      "from": "SIC",
+      "to": "SII",
+      "label": "stack",
+      "model_ref": "conn-SIC-SII"
+    },
+    {
+      "from": "SLA",
+      "to": "descent",
+      "label": "stowed",
+      "model_ref": "conn-SLA-descent"
+    },
+    {
+      "from": "descent",
+      "to": "ascent",
+      "label": "stage",
+      "model_ref": "conn-descent-ascent"
+    },
+    {
+      "from": "CM",
+      "to": "ascent",
+      "label": "dock",
+      "source_side": "right",
+      "target_side": "right",
+      "model_ref": "conn-CM-ascent"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

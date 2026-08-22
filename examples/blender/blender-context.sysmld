@@ -12,7 +12,7 @@
     "name": "Blender Operating Context",
     "canvas": {
       "width": 957,
-      "height": 594,
+      "height": 624,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -21,7 +21,6 @@
     "elements": [
       {
         "id": "user",
-        "model_ref": "user",
         "symbol": "actor",
         "layout": {
           "x": 72,
@@ -31,53 +30,53 @@
           "z": 10
         },
         "label": "User",
-        "style": "actor"
+        "style": "actor",
+        "model_ref": "user"
       },
       {
         "id": "ingredients",
-        "model_ref": "ingredients",
         "symbol": "part_usage",
         "layout": {
           "x": 72,
-          "y": 272,
+          "y": 282,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Ingredients",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "ingredients"
       },
       {
         "id": "mainsSupply",
-        "model_ref": "mainsSupply",
         "symbol": "part_usage",
         "layout": {
           "x": 72,
-          "y": 452,
+          "y": 482,
           "width": 150,
           "height": 70,
           "z": 10
         },
-        "label": "120 VAC Outlet",
-        "style": "part_usage"
+        "label": "Mains Supply",
+        "style": "part_usage",
+        "model_ref": "mainsSupply"
       },
       {
         "id": "Blender",
-        "model_ref": "Blender",
         "symbol": "part_usage",
         "layout": {
           "x": 382,
-          "y": 252,
+          "y": 72,
           "width": 190,
           "height": 90,
           "z": 10
         },
         "label": "Blender",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "Blender"
       },
       {
         "id": "smoothie",
-        "model_ref": "smoothie",
         "symbol": "part_usage",
         "layout": {
           "x": 732,
@@ -87,41 +86,41 @@
           "z": 10
         },
         "label": "Smoothie",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "smoothie"
       },
       {
         "id": "SmoothnessSignal",
-        "model_ref": "SmoothnessSignal",
         "symbol": "signal",
         "layout": {
           "x": 732,
-          "y": 262,
+          "y": 282,
           "width": 153,
           "height": 70,
           "z": 10
         },
         "label": "Smoothness Signal",
-        "style": "signal"
+        "style": "signal",
+        "model_ref": "SmoothnessSignal"
       },
       {
         "id": "UserCommand",
-        "model_ref": "UserCommand",
         "symbol": "item",
         "layout": {
           "x": 732,
-          "y": 442,
+          "y": 482,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "User Command",
-        "style": "item"
+        "style": "item",
+        "model_ref": "UserCommand"
       }
     ],
     "connections": [
       {
         "id": "conn-user-Blender",
-        "model_ref": "commandToControlPanel",
         "source": {
           "element": "user",
           "anchor": {
@@ -140,12 +139,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 226,
+              "x": 270,
               "y": 103.5
             },
             {
-              "x": 226,
-              "y": 297
+              "x": 270,
+              "y": 117
             }
           ]
         },
@@ -153,16 +152,15 @@
           {
             "text": "controls",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "commandToControlPanel"
       },
       {
         "id": "conn-ingredients-Blender",
-        "model_ref": "ingredientsIntoContainer",
         "source": {
           "element": "ingredients",
           "anchor": {
@@ -181,12 +179,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 278,
-              "y": 307
+              "x": 302,
+              "y": 317
             },
             {
-              "x": 278,
-              "y": 297
+              "x": 302,
+              "y": 117
             }
           ]
         },
@@ -194,16 +192,15 @@
           {
             "text": "load",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "ingredientsIntoContainer"
       },
       {
         "id": "conn-mainsSupply-Blender",
-        "model_ref": "mainsPowerFlow",
         "source": {
           "element": "mainsSupply",
           "anchor": {
@@ -222,12 +219,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 278,
-              "y": 487
+              "x": 334,
+              "y": 517
             },
             {
-              "x": 278,
-              "y": 297
+              "x": 334,
+              "y": 117
             }
           ]
         },
@@ -235,16 +232,15 @@
           {
             "text": "power",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "mainsPowerFlow"
       },
       {
         "id": "conn-Blender-smoothie",
-        "model_ref": "bladeShearFlow",
         "source": {
           "element": "Blender",
           "anchor": {
@@ -261,31 +257,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 628,
-              "y": 297
-            },
-            {
-              "x": 628,
-              "y": 117
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "blend",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "bladeShearFlow"
       },
       {
         "id": "conn-Blender-SmoothnessSignal",
-        "model_ref": "smoothnessFeedbackFlow",
         "source": {
           "element": "Blender",
           "anchor": {
@@ -302,22 +288,30 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 608,
+              "y": 117
+            },
+            {
+              "x": 608,
+              "y": 317
+            }
+          ]
         },
         "labels": [
           {
             "text": "feedback",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "smoothnessFeedbackFlow"
       },
       {
         "id": "conn-Blender-UserCommand",
-        "model_ref": "commandToControlPanel",
         "source": {
           "element": "Blender",
           "anchor": {
@@ -336,12 +330,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 628,
-              "y": 297
+              "x": 608,
+              "y": 117
             },
             {
-              "x": 628,
-              "y": 477
+              "x": 608,
+              "y": 517
             }
           ]
         },
@@ -349,12 +343,12 @@
           {
             "text": "status",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "commandToControlPanel"
       }
     ],
     "annotations": [],

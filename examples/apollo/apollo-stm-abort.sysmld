@@ -1,0 +1,601 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "abortMode": "Apollo11::AbortMode",
+    "nominal": "Apollo11::AbortMode::nominal",
+    "pad": "Apollo11::AbortMode::pad",
+    "I": "Apollo11::AbortMode::I",
+    "II": "Apollo11::AbortMode::II",
+    "III": "Apollo11::AbortMode::III",
+    "IV": "Apollo11::AbortMode::IV",
+    "contingencyTLI": "Apollo11::AbortMode::contingencyTLI",
+    "lunar": "Apollo11::AbortMode::lunar",
+    "SPS": "Apollo11::AbortMode::SPS",
+    "abortPad": "Apollo11::AbortMode::abortPad",
+    "abortI": "Apollo11::AbortMode::abortI",
+    "abortII": "Apollo11::AbortMode::abortII",
+    "abortIII": "Apollo11::AbortMode::abortIII",
+    "abortIV": "Apollo11::AbortMode::abortIV",
+    "abortTLI": "Apollo11::AbortMode::abortTLI",
+    "abortLunar": "Apollo11::AbortMode::abortLunar",
+    "abortSPS": "Apollo11::AbortMode::abortSPS"
+  },
+  "diagram": {
+    "id": "apollo-stm-abort",
+    "kind": "StateView",
+    "name": "Apollo 11 Abort Modes",
+    "canvas": {
+      "width": 2105,
+      "height": 819,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "abortMode",
+        "symbol": "boundary",
+        "layout": {
+          "x": 54,
+          "y": 149,
+          "width": 2011,
+          "height": 630,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 1050,
+          "y": 185,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "nominal",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 954,
+          "y": 409,
+          "width": 210,
+          "height": 80,
+          "z": 10
+        },
+        "model_ref": "nominal",
+        "label": "Nominal",
+        "style": "state.default"
+      },
+      {
+        "id": "pad",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 90,
+          "y": 663,
+          "width": 210,
+          "height": 80,
+          "z": 10
+        },
+        "model_ref": "pad",
+        "label": "Pad\nLaunch Escape System",
+        "style": "state.default"
+      },
+      {
+        "id": "I",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 337,
+          "y": 663,
+          "width": 210,
+          "height": 80,
+          "z": 10
+        },
+        "model_ref": "I",
+        "label": "Mode I\nLaunch Escape System",
+        "style": "state.default"
+      },
+      {
+        "id": "II",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 584,
+          "y": 663,
+          "width": 210,
+          "height": 80,
+          "z": 10
+        },
+        "model_ref": "II",
+        "label": "Mode II\nnot Launch Escape System",
+        "style": "state.default"
+      },
+      {
+        "id": "III",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 831,
+          "y": 663,
+          "width": 210,
+          "height": 80,
+          "z": 10
+        },
+        "model_ref": "III",
+        "label": "Mode III\nnot Launch Escape System",
+        "style": "state.default"
+      },
+      {
+        "id": "IV",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1078,
+          "y": 663,
+          "width": 210,
+          "height": 80,
+          "z": 10
+        },
+        "model_ref": "IV",
+        "label": "Mode IV\nnot Launch Escape System",
+        "style": "state.default"
+      },
+      {
+        "id": "contingencyTLI",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1325,
+          "y": 663,
+          "width": 210,
+          "height": 80,
+          "z": 10
+        },
+        "model_ref": "contingencyTLI",
+        "label": "Contingency Translunar\nInjection\nnot Launch Escape System",
+        "style": "state.default"
+      },
+      {
+        "id": "lunar",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1572,
+          "y": 663,
+          "width": 210,
+          "height": 80,
+          "z": 10
+        },
+        "model_ref": "lunar",
+        "label": "Lunar\nnot Launch Escape System",
+        "style": "state.default"
+      },
+      {
+        "id": "SPS",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1819,
+          "y": 663,
+          "width": 210,
+          "height": 80,
+          "z": 10
+        },
+        "model_ref": "SPS",
+        "label": "Service Propulsion\nSystem\nnot Launch Escape System",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--nominal",
+        "model_ref": "abortMode",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "nominal",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--pad",
+        "model_ref": "abortPad",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.1111
+          }
+        },
+        "target": {
+          "element": "pad",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 977,
+              "y": 524
+            },
+            {
+              "x": 195,
+              "y": 524
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "pad",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--I",
+        "model_ref": "abortI",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.2222
+          }
+        },
+        "target": {
+          "element": "I",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1001,
+              "y": 559
+            },
+            {
+              "x": 442,
+              "y": 559
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "I",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--II",
+        "model_ref": "abortII",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.3333
+          }
+        },
+        "target": {
+          "element": "II",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1024,
+              "y": 593
+            },
+            {
+              "x": 689,
+              "y": 593
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "II",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--III",
+        "model_ref": "abortIII",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.4444
+          }
+        },
+        "target": {
+          "element": "III",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1047,
+              "y": 628
+            },
+            {
+              "x": 936,
+              "y": 628
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "III",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--IV",
+        "model_ref": "abortIV",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5556
+          }
+        },
+        "target": {
+          "element": "IV",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1071,
+              "y": 628
+            },
+            {
+              "x": 1183,
+              "y": 628
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "IV",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--contingencyTLI",
+        "model_ref": "abortTLI",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.6667
+          }
+        },
+        "target": {
+          "element": "contingencyTLI",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1094,
+              "y": 593
+            },
+            {
+              "x": 1430,
+              "y": 593
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "TLI",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--lunar",
+        "model_ref": "abortLunar",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.7778
+          }
+        },
+        "target": {
+          "element": "lunar",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1117,
+              "y": 559
+            },
+            {
+              "x": 1677,
+              "y": 559
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "lunar",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "nominal--SPS",
+        "model_ref": "abortSPS",
+        "source": {
+          "element": "nominal",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.8889
+          }
+        },
+        "target": {
+          "element": "SPS",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1141,
+              "y": 524
+            },
+            {
+              "x": 1924,
+              "y": 524
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "SPS",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "abortMode"
+  }
+}

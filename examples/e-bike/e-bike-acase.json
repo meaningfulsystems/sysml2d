@@ -1,0 +1,94 @@
+{
+  "diagram": "e-bike-acase",
+  "kind": "AnalysisCaseView",
+  "name": "Electric Bike Analysis Cases",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "nodes": {
+    "rangeAnalysis": {
+      "label": "Range Analysis",
+      "rank": 0,
+      "order": 0
+    },
+    "tourRangeAnalysis": {
+      "label": "Tour Range Bind",
+      "rank": 0,
+      "order": 2
+    },
+    "brakeLatencyAnalysis": {
+      "label": "Brake Latency",
+      "rank": 0,
+      "order": 1
+    },
+    "energyBalance": {
+      "label": "Energy Balance",
+      "symbol": "constraint",
+      "rank": 1,
+      "order": 0
+    },
+    "brakeLatencyLimit": {
+      "label": "Brake Latency Limit",
+      "symbol": "constraint",
+      "rank": 1,
+      "order": 1
+    },
+    "tourRangeBind": {
+      "label": "Tour Scenario",
+      "symbol": "constraint",
+      "rank": 1,
+      "order": 2
+    },
+    "rangeRequirement": {
+      "label": "Range Req (Tour)",
+      "symbol": "requirement",
+      "rank": 2,
+      "order": 0
+    },
+    "brakeOverrideRequirement": {
+      "label": "Brake Override Req",
+      "symbol": "requirement",
+      "rank": 2,
+      "order": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "rangeAnalysis",
+      "to": "energyBalance",
+      "label": "method"
+    },
+    {
+      "from": "brakeLatencyAnalysis",
+      "to": "brakeLatencyLimit",
+      "label": "method"
+    },
+    {
+      "from": "rangeAnalysis",
+      "to": "tourRangeBind",
+      "label": "scenario"
+    },
+    {
+      "from": "tourRangeAnalysis",
+      "to": "tourRangeBind",
+      "label": "method"
+    },
+    {
+      "from": "energyBalance",
+      "to": "rangeRequirement",
+      "label": "evaluates"
+    },
+    {
+      "from": "tourRangeBind",
+      "to": "rangeRequirement",
+      "label": "binds"
+    },
+    {
+      "from": "brakeLatencyLimit",
+      "to": "brakeOverrideRequirement",
+      "label": "evaluates"
+    }
+  ]
+}

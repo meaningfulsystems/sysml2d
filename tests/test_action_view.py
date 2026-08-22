@@ -61,6 +61,34 @@ class ActionComposerTests(unittest.TestCase):
         self.assertEqual(loop["target"]["anchor"]["side"], "right")
         self.assertEqual(len(loop["route"]["waypoints"]), 2)
 
+    def test_same_rank_actions_sit_side_by_side(self):
+        doc = action({
+            "kind": "ActionView",
+            "direction": "top-down",
+            "default_w": 80,
+            "default_h": 40,
+            "rank_gap": 48,
+            "col_gap": 40,
+            "nodes": {
+                "start": {"label": "", "symbol": "initial_state", "rank": 0, "order": 0},
+                "decide": {"label": "go?", "symbol": "decision_node", "rank": 1, "order": 0},
+                "left": {"label": "Left", "rank": 2, "order": 0},
+                "right": {"label": "Right", "rank": 2, "order": 1},
+                "done": {"label": "", "symbol": "activity_final_node", "rank": 3, "order": 0},
+            },
+            "edges": [
+                {"from": "start", "to": "decide"},
+                {"from": "decide", "to": "left", "label": "no", "source_side": "left", "target_side": "top"},
+                {"from": "decide", "to": "right", "label": "yes", "source_side": "right", "target_side": "top"},
+                {"from": "left", "to": "done"},
+                {"from": "right", "to": "done"},
+            ],
+        })
+        boxes = {element["id"]: element["layout"] for element in doc["diagram"]["elements"]}
+        self.assertAlmostEqual(boxes["left"]["y"], boxes["right"]["y"], delta=1)
+        self.assertLess(boxes["left"]["x"] + boxes["left"]["width"], boxes["right"]["x"])
+        self.assertEqual(_route_box_hits(doc), [])
+
     def test_activity_edges_default_to_control_flow_arrows(self):
         spec = json.loads((ROOT / "examples/toaster/toaster-act.json").read_text(encoding="utf-8"))
         doc = action(spec)

@@ -11,16 +11,16 @@
 <text class="header" x="12" y="24">[vcase.mb] Toaster Verification Cases [Toaster]</text>
 <rect x="2" y="38" width="687" height="1764" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="verifyToastBrowning" x="72" y="486" width="150" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="147" y="521">Verify Browning</text>
-<rect id="verifyElectricalSafety" x="72" y="666" width="202" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="173" y="701">Verify Electrical Safety</text>
-<rect id="verifyCrumbTrayRemoval" x="72" y="846" width="153" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="148.5" y="881">Verify Crumb Tray</text>
-<rect id="verifyCarriageRelease" x="72" y="1026" width="195" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="169.5" y="1061">Verify Carriage Release</text>
-<rect id="verifySurfaceTemperature" x="72" y="1206" width="167" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
-<text class="label" text-anchor="middle" x="155.5" y="1241">Verify Surface Temp</text>
+<rect id="verifyToastBrowning" x="72" y="78" width="150" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="147" y="113">Verify Browning</text>
+<rect id="verifyElectricalSafety" x="72" y="270" width="202" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="173" y="305">Verify Electrical Safety</text>
+<rect id="verifyCrumbTrayRemoval" x="72" y="462" width="153" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="148.5" y="497">Verify Crumb Tray</text>
+<rect id="verifyCarriageRelease" x="72" y="654" width="195" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="169.5" y="689">Verify Carriage Release</text>
+<rect id="verifySurfaceTemperature" x="72" y="846" width="167" height="70" rx="4" fill="#F0FDFA" stroke="#0F766E" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="155.5" y="881">Verify Surface Temp</text>
 <rect id="browningRequirement" x="434" y="72" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="519" y="113">Browning Req</text>
 <rect id="browningLevelsRequirement" x="434" y="264" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
@@ -39,23 +39,23 @@
 <text class="label" text-anchor="middle" x="521" y="1457">Carriage Release Req</text>
 <rect id="surfaceTemperatureRequirement" x="434" y="1608" width="170" height="82" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="519" y="1649">Surface Temp Req</text>
-<path d="M 222,521 L 278,521 L 278,113 L 434,113" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 222,521 L 278,521 L 278,305 L 434,305" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 274,701 L 330,701 L 330,497 L 434,497" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 274,701 L 330,701 L 330,689 L 434,689" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 274,701 L 330,701 L 330,881 L 434,881" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 225,881 L 281,881 L 281,1073 L 434,1073" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 225,881 L 281,881 L 281,1265 L 434,1265" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 267,1061 L 323,1061 L 323,1457 L 434,1457" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<path d="M 239,1241 L 295,1241 L 295,1649 L 434,1649" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-<text class="small" text-anchor="middle" x="278" y="263.8">verifies</text>
-<text class="small" x="288" y="413">verifies</text>
-<text class="small" text-anchor="middle" x="330" y="607">verifies</text>
-<text class="small" text-anchor="middle" x="382" y="697">verifies</text>
-<text class="small" text-anchor="middle" x="330" y="799">verifies</text>
-<text class="small" x="291" y="977">verifies</text>
-<text class="small" text-anchor="middle" x="281" y="1138.6">verifies</text>
-<text class="small" text-anchor="middle" x="323" y="1207.6">verifies</text>
-<text class="small" text-anchor="middle" x="295" y="1514.2">verifies</text>
+<path d="M 222,113 L 434,113" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 222,113 L 315.6,113 L 315.6,305 L 434,305" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 274,305 L 328.4,305 L 328.4,497 L 434,497" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 274,305 L 341.2,305 L 341.2,490 A 7 7 0 0 1 341.2,504 L 341.2,689 L 434,689" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 274,305 L 354,305 L 354,490 A 7 7 0 0 1 354,504 L 354,682 A 7 7 0 0 1 354,696 L 354,881 L 434,881" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 225,497 L 334.2,497 A 7 7 0 0 0 348.2,497 L 366.8,497 L 366.8,682 A 7 7 0 0 1 366.8,696 L 366.8,874 A 7 7 0 0 1 366.8,888 L 366.8,1073 L 434,1073" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 225,497 L 334.2,497 A 7 7 0 0 0 348.2,497 L 379.6,497 L 379.6,682 A 7 7 0 0 1 379.6,696 L 379.6,874 A 7 7 0 0 1 379.6,888 L 379.6,1066 A 7 7 0 0 1 379.6,1080 L 379.6,1265 L 434,1265" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 267,689 L 347,689 A 7 7 0 0 0 361,689 L 372.6,689 A 7 7 0 0 0 386.6,689 L 392.4,689 L 392.4,874 A 7 7 0 0 1 392.4,888 L 392.4,1066 A 7 7 0 0 1 392.4,1080 L 392.4,1258 A 7 7 0 0 1 392.4,1272 L 392.4,1457 L 434,1457" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 239,881 L 359.8,881 A 7 7 0 0 0 373.8,881 L 385.4,881 A 7 7 0 0 0 399.4,881 L 405.2,881 L 405.2,1066 A 7 7 0 0 1 405.2,1080 L 405.2,1258 A 7 7 0 0 1 405.2,1272 L 405.2,1450 A 7 7 0 0 1 405.2,1464 L 405.2,1649 L 434,1649" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="328" y="101">verifies</text>
+<text class="small" x="327.6" y="209">verifies</text>
+<text class="small" text-anchor="end" x="316.4" y="401">verifies</text>
+<text class="small" text-anchor="end" x="329.2" y="554.6">verifies</text>
+<text class="small" x="366" y="420.2">verifies</text>
+<text class="small" text-anchor="end" x="354.8" y="957.8">verifies</text>
+<text class="small" text-anchor="end" x="367.6" y="1111.4">verifies</text>
+<text class="small" text-anchor="end" x="380.4" y="1303.4">verifies</text>
+<text class="small" x="417.2" y="1149.8">verifies</text>
 </g>
 </svg>

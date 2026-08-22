@@ -1,0 +1,243 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-uc",
+    "kind": "UseCaseView",
+    "name": "Electric Bike Use Cases",
+    "canvas": {
+      "width": 807,
+      "height": 654,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "bikeBoundary",
+        "symbol": "boundary",
+        "layout": {
+          "x": 252,
+          "y": 72,
+          "width": 290.0,
+          "height": 510.0,
+          "z": 0
+        },
+        "label": "Electric Bike",
+        "style": "boundary.system",
+        "model_ref": "ElectricBike"
+      },
+      {
+        "id": "rider",
+        "symbol": "actor",
+        "layout": {
+          "x": 72,
+          "y": 112,
+          "width": 70,
+          "height": 90,
+          "z": 10
+        },
+        "label": "Rider",
+        "style": "actor",
+        "model_ref": "rider"
+      },
+      {
+        "id": "rideBikeUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 322,
+          "y": 122,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Ride Bike",
+        "style": "use_case",
+        "model_ref": "rideBikeUseCase"
+      },
+      {
+        "id": "adjustAssistUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 322,
+          "y": 292,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Adjust Assist",
+        "style": "use_case",
+        "model_ref": "adjustAssistUseCase"
+      },
+      {
+        "id": "chargeBikeUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 322,
+          "y": 462,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Charge Bike",
+        "style": "use_case",
+        "model_ref": "chargeBikeUseCase"
+      },
+      {
+        "id": "charger",
+        "symbol": "actor",
+        "layout": {
+          "x": 652,
+          "y": 112,
+          "width": 83,
+          "height": 90,
+          "z": 10
+        },
+        "label": "Charger",
+        "style": "actor",
+        "model_ref": "charger"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-rider-rideBikeUseCase",
+        "source": {
+          "element": "rider",
+          "anchor": {
+            "side": "right",
+            "offset": 0.3
+          }
+        },
+        "target": {
+          "element": "rideBikeUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 177.5,
+              "y": 139
+            },
+            {
+              "x": 177.5,
+              "y": 157
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "rider"
+      },
+      {
+        "id": "conn-rider-adjustAssistUseCase",
+        "source": {
+          "element": "rider",
+          "anchor": {
+            "side": "right",
+            "offset": 0.45
+          }
+        },
+        "target": {
+          "element": "adjustAssistUseCase",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 177.5,
+              "y": 152.5
+            },
+            {
+              "x": 177.5,
+              "y": 327
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "rider"
+      },
+      {
+        "id": "conn-charger-chargeBikeUseCase",
+        "source": {
+          "element": "charger",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "chargeBikeUseCase",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 597,
+              "y": 157
+            },
+            {
+              "x": 597,
+              "y": 497
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "charger"
+      },
+      {
+        "id": "conn-rideBikeUseCase-adjustAssistUseCase",
+        "source": {
+          "element": "rideBikeUseCase",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "adjustAssistUseCase",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "include",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.include",
+        "model_ref": "rideBikeUseCase"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

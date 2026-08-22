@@ -48,6 +48,7 @@ from pathlib import Path
 from typing import Any
 
 from .layout import compute as _layout
+from .routing import path_crosses_boxes
 
 # ── Layout constants ──────────────────────────────────────────────────────────
 CANVAS_MARGIN   = 40
@@ -68,6 +69,8 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
     direction   = spec.get("direction", "left-right")
     default_w   = int(spec.get("default_w", DEFAULT_W))
     default_h   = int(spec.get("default_h", DEFAULT_H))
+    col_gap     = int(spec.get("col_gap", COL_GAP))
+    rank_gap    = int(spec.get("rank_gap", RANK_GAP))
     states_spec = spec.get("states", {})
     trans_spec  = spec.get("transitions", [])
     aliases     = spec.get("aliases", {})
@@ -176,17 +179,103 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
 
     layout_edges = [{"from": f, "to": t} for f, t in fwd_set]
 
-    # ── Sugiyama layout ───────────────────────────────────────────────────────
-    vertical = direction in ("top-down", "bottom-up")
-    avg_w = sum(sw(s) for s in layout_ids) / max(len(layout_ids), 1)
-    avg_h = sum(sh(s) for s in layout_ids) / max(len(layout_ids), 1)
-    lo = _layout(
-        layout_ids, layout_edges, direction,
-        col_gap  = COL_GAP  + (avg_w if vertical else avg_h),
-        rank_gap = RANK_GAP + (avg_h if vertical else avg_w),
-        margin   = CANVAS_MARGIN + BND_PAD + max(default_w, default_h) // 2,
+    def _region_of(sid: str) -> str:
+        seen = {sid}
+        current = sid
+        inherited = ""
+        while current in states_spec:
+            region = states_spec[current].get("region")
+            if region:
+                inherited = str(region)
+            parent = states_spec[current].get("parent")
+            if parent == concurrent_id:
+                return str(states_spec[current].get("region") or inherited)
+            if not parent or parent in seen:
+                break
+            seen.add(str(parent))
+            current = str(parent)
+        return inherited
+
+    concurrent_candidates = [
+        sid
+        for sid, state in states_spec.items()
+        if state.get("concurrent") or state.get("regions")
+    ]
+    concurrent_id = next(
+        (
+            sid
+            for sid in concurrent_candidates
+            if not states_spec[sid].get("parent")
+            or states_spec[sid].get("parent") not in concurrent_candidates
+        ),
+        concurrent_candidates[0] if concurrent_candidates else None,
     )
-    cx_map, cy_map, rank = lo.cx, lo.cy, lo.rank
+    region_ids = [
+        region_id
+        for region_id, _label in _ordered_regions(
+            states_spec.get(concurrent_id, {}),
+            children_by_parent.get(concurrent_id, []),
+            states_spec,
+        )
+    ] if concurrent_id else []
+    if len(region_ids) >= 2:
+        groups = []
+        assigned = set()
+        leftover = [sid for sid in layout_ids if _region_of(sid) not in region_ids]
+        if leftover:
+            groups.append(leftover)
+            assigned.update(leftover)
+        for region_id in region_ids:
+            group = [sid for sid in layout_ids if _region_of(sid) == region_id]
+            if group:
+                groups.append(group)
+                assigned.update(group)
+        groups.extend([[sid] for sid in layout_ids if sid not in assigned])
+    else:
+        groups = [layout_ids] if layout_ids else []
+
+    # ── Sugiyama layout, one pass per concurrent region ───────────────────────
+    vertical = direction in ("top-down", "bottom-up")
+
+    def _layout_group(group: list[str], stack: bool = False):
+        group_set = set(group)
+        group_edges = [
+            edge for edge in layout_edges
+            if edge["from"] in group_set and edge["to"] in group_set
+        ]
+        avg_w = sum(sw(s) for s in group) / max(len(group), 1)
+        avg_h = sum(sh(s) for s in group) / max(len(group), 1)
+        return _layout(
+            group, group_edges, direction,
+            col_gap  = col_gap  + (avg_w if vertical else avg_h),
+            rank_gap = rank_gap + (avg_h if vertical else avg_w),
+            margin   = CANVAS_MARGIN + BND_PAD + max(default_w, default_h) // 2,
+            rank_wrap=spec.get("rank_wrap"),
+            target_aspect=float(spec.get("target_aspect", 1.618)),
+            fixed_ranks={sid: index for index, sid in enumerate(group)} if stack else None,
+        )
+
+    if len(groups) <= 1:
+        lo = _layout_group(layout_ids)
+        cx_map, cy_map, rank = lo.cx, lo.cy, lo.rank
+    else:
+        cx_map = {}
+        cy_map = {}
+        rank = {}
+        cursor_x = 0.0
+        cursor_y = 0.0
+        region_gap = 48
+        for group in groups:
+            lo = _layout_group(group, stack=True)
+            min_x = min(lo.cx[sid] - sw(sid) / 2 for sid in group)
+            min_y = min(lo.cy[sid] - sh(sid) / 2 for sid in group)
+            for sid in group:
+                cx_map[sid] = lo.cx[sid] - min_x + cursor_x
+                cy_map[sid] = lo.cy[sid] - min_y + cursor_y
+                rank[sid] = lo.rank[sid]
+            width = max(lo.cx[sid] - min_x + sw(sid) / 2 for sid in group)
+            height = max(lo.cy[sid] - min_y + sh(sid) / 2 for sid in group)
+            cursor_x += width + region_gap
 
     # ── Element boxes ─────────────────────────────────────────────────────────
     boxes: dict[str, tuple[int, int, int, int]] = {
@@ -248,12 +337,6 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
     by = min(y     for x, y, w, h in boxes.values()) - BND_PAD
     bw = max(x + w for x, y, w, h in boxes.values()) - bx + BND_PAD
     bh = max(y + h for x, y, w, h in boxes.values()) - by + BND_PAD
-
-    if n_back > 0 and vertical:
-        bw += BACK_ARC_MARGIN + (n_back - 1) * BACK_ARC_STEP
-    elif n_back > 0:
-        bw += BACK_ARC_MARGIN + (n_back - 1) * BACK_ARC_STEP
-        bh += BACK_ARC_MARGIN + (n_back - 1) * BACK_ARC_STEP
 
     canvas_w = bx + bw + CANVAS_MARGIN
     canvas_h = by + bh + CANVAS_MARGIN
@@ -345,7 +428,11 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
 
         sorted_idxs = sorted(idxs, key=_mid)
         n = len(sorted_idxs)
-        step = max((chan_hi - chan_lo) / (n + 1), 20)
+        usable = max(chan_hi - chan_lo, 1)
+        step = usable / (n + 1)
+        mirror_fan = spec.get("fan_tracks") == "mirror"
+        pair_count = max((n + 1) // 2, 1)
+        pair_step = usable / (pair_count + 1)
 
         for pos, i in enumerate(sorted_idxs):
             t = forward_trans[i]
@@ -355,12 +442,16 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
             tf, to_ = ta[0], ta[1]
             ax, ay = _anchor_xy(t["from"], sf, so)
             ex, ey = _anchor_xy(t["to"],   tf, to_)   # ex/ey avoids shadowing boundary bx/by
-            if vertical and abs(ax - ex) < 2:
+            if vertical and abs(ax - ex) < 8:
                 conn_waypoints[i] = []
-            elif not vertical and abs(ay - ey) < 2:
+            elif not vertical and abs(ay - ey) < 8:
                 conn_waypoints[i] = []
             else:
-                track = chan_lo + step * (pos + 1)
+                if mirror_fan:
+                    pair = min(pos, n - 1 - pos)
+                    track = chan_lo + pair_step * (pair + 1)
+                else:
+                    track = chan_lo + step * (pos + 1)
                 conn_waypoints[i] = (
                     [{"x": round(ax), "y": round(track)}, {"x": round(ex), "y": round(track)}]
                     if vertical else
@@ -498,7 +589,13 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
             if sy + sh_ <= ty:
                 return "over_top" if sx > tx and rank_delta == 1 else None
             if ty + th_ <= sy:
-                return "under_bottom" if sx > tx and rank_delta == 1 else None
+                if sx > tx and rank_delta == 1:
+                    under_y = max(sy + sh_, ty + th_) + SELF_LOOP_H
+                    under_path = [(sx + sw_ / 2, under_y), (tx + tw_ / 2, under_y)]
+                    if path_crosses_boxes(under_path, boxes, {src, tgt}):
+                        return "over_top"
+                    return "under_bottom"
+                return None
             return None
         if sx <= tx:
             return None
@@ -591,6 +688,7 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
 
     top_lane = 0
     bottom_lane = 0
+    used_bottom_rails: list[float] = []
     for members in local_back.values():
         n = len(members)
         for pos, (idx, t, mode) in enumerate(members):
@@ -612,13 +710,30 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
             elif mode in ("bottom", "bottom_span") and not (mode == "bottom" and t["from"] in local_bottom_targets):
                 src_bottom = boxes[t["from"]][1] + boxes[t["from"]][3]
                 tgt_bottom = boxes[t["to"]][1] + boxes[t["to"]][3]
-                local_y = max(src_bottom, tgt_bottom) + SELF_LOOP_H + bottom_lane * BACK_ARC_STEP
-                bottom_lane += 1
                 if mode == "bottom_span":
                     soff = bottom_endpoint_offset.get((idx, "src"), soff)
                     toff = bottom_endpoint_offset.get((idx, "tgt"), toff)
                 source_x = round(_anchor_xy(t["from"], "bottom", soff)[0])
                 target_x = round(_anchor_xy(t["to"], "bottom", toff)[0])
+                local_y = _clear_horizontal_rail(
+                    max(src_bottom, tgt_bottom) + SELF_LOOP_H + bottom_lane * BACK_ARC_STEP,
+                    source_x,
+                    target_x,
+                    boxes,
+                    {t["from"], t["to"]},
+                    SELF_LOOP_H,
+                )
+                while any(abs(local_y - used) < BACK_ARC_STEP for used in used_bottom_rails):
+                    local_y = _clear_horizontal_rail(
+                        local_y + BACK_ARC_STEP,
+                        source_x,
+                        target_x,
+                        boxes,
+                        {t["from"], t["to"]},
+                        SELF_LOOP_H,
+                    )
+                used_bottom_rails.append(local_y)
+                bottom_lane += 1
                 wps = [
                     {"x": source_x, "y": round(local_y)},
                     {"x": target_x, "y": round(local_y)},
@@ -629,16 +744,70 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
                 src_box = boxes[t["from"]]
                 tgt_box = boxes[t["to"]]
                 if mode in ("over_top", "top_span", "bottom"):
-                    local_y = min(src_box[1], tgt_box[1]) - SELF_LOOP_H - top_lane * BACK_ARC_STEP
-                    top_lane += 1
                     src_face, tgt_face = "top", "top"
                     soff = top_endpoint_offset.get((idx, "src"), soff)
                     toff = top_endpoint_offset.get((idx, "tgt"), toff)
+                    source_x = round(_anchor_xy(t["from"], src_face, soff)[0])
+                    target_x = round(_anchor_xy(t["to"], tgt_face, toff)[0])
+                    local_y = _clear_horizontal_rail(
+                        min(src_box[1], tgt_box[1]) - SELF_LOOP_H * 2 - top_lane * BACK_ARC_STEP,
+                        source_x,
+                        target_x,
+                        boxes,
+                        {t["from"], t["to"]},
+                        SELF_LOOP_H,
+                        prefer="above",
+                    )
+                    top_lane += 1
+                    if mode == "top_span":
+                        stepped = _stepped_skip_return(
+                            t["from"], t["to"], source_x, local_y, boxes
+                        )
+                        if stepped is not None:
+                            wps, tgt_face, toff = stepped
+                            _append_back(out_conns, t, tid, subject_raw, t["from"], t["to"],
+                                         src_face, soff, tgt_face, toff, wps)
+                            continue
                 else:
-                    local_y = max(src_box[1] + src_box[3], tgt_box[1] + tgt_box[3]) + SELF_LOOP_H + pos * BACK_ARC_STEP
                     src_face, tgt_face = "bottom", "bottom"
-                source_x = round(_anchor_xy(t["from"], src_face, soff)[0])
-                target_x = round(_anchor_xy(t["to"], tgt_face, toff)[0])
+                    source_x = round(_anchor_xy(t["from"], src_face, soff)[0])
+                    target_x = round(_anchor_xy(t["to"], tgt_face, toff)[0])
+                    local_y = _clear_horizontal_rail(
+                        max(src_box[1] + src_box[3], tgt_box[1] + tgt_box[3]) + SELF_LOOP_H + pos * BACK_ARC_STEP,
+                        source_x,
+                        target_x,
+                        boxes,
+                        {t["from"], t["to"]},
+                        SELF_LOOP_H,
+                    )
+                    while any(abs(local_y - used) < BACK_ARC_STEP for used in used_bottom_rails):
+                        local_y = _clear_horizontal_rail(
+                            local_y + BACK_ARC_STEP,
+                            source_x,
+                            target_x,
+                            boxes,
+                            {t["from"], t["to"]},
+                            SELF_LOOP_H,
+                        )
+                    used_bottom_rails.append(local_y)
+                    target_edge_y = tgt_box[1] + tgt_box[3] if src_face == "bottom" else tgt_box[1]
+                    clear_x = _offset_vertical_stub(
+                        target_x,
+                        local_y,
+                        target_edge_y,
+                        boxes,
+                        {t["from"], t["to"]},
+                        SELF_LOOP_H,
+                    )
+                    if abs(clear_x - target_x) >= 1:
+                        wps = [
+                            {"x": source_x, "y": round(local_y)},
+                            {"x": round(clear_x), "y": round(local_y)},
+                            {"x": round(clear_x), "y": round(target_edge_y)},
+                        ]
+                        _append_back(out_conns, t, tid, subject_raw, t["from"], t["to"],
+                                     src_face, soff, tgt_face, toff, wps)
+                        continue
                 wps = [
                     {"x": source_x, "y": round(local_y)},
                     {"x": target_x, "y": round(local_y)},
@@ -747,7 +916,117 @@ def compose_stm(spec: dict[str, Any]) -> dict[str, Any]:
     }
     if subject_raw:
         doc["diagram"]["subject"] = subject_raw
+    _fit_stm_canvas(doc, boxes, out_elems, out_conns)
     return doc
+
+
+def _stepped_skip_return(
+    src: str,
+    tgt: str,
+    source_x: float,
+    rail_y: float,
+    boxes: dict[str, tuple[float, float, float, float]],
+) -> tuple[list[dict[str, float]], str, float] | None:
+    sx, sy, sw, sh = boxes[src]
+    tx, ty, tw, th = boxes[tgt]
+    if abs(source_x - (tx + tw / 2)) < 280:
+        return None
+    skip = {src, tgt}
+    target_y = ty + th / 2
+    target_x = tx + tw
+    candidates = [sx - SELF_LOOP_H]
+    for sid, (x, y, w, h) in boxes.items():
+        if sid in skip:
+            continue
+        if x + w <= tx or x >= sx:
+            continue
+        candidates.append(x - SELF_LOOP_H)
+        candidates.append(x + w + SELF_LOOP_H)
+    for drop_x in sorted(set(round(value, 3) for value in candidates), reverse=True):
+        if drop_x >= sx or drop_x <= tx + tw:
+            continue
+        points = [
+            (source_x, sy),
+            (source_x, rail_y),
+            (drop_x, rail_y),
+            (drop_x, target_y),
+            (target_x, target_y),
+        ]
+        if path_crosses_boxes(points, boxes, skip):
+            continue
+        return (
+            [
+                {"x": round(source_x), "y": round(rail_y)},
+                {"x": round(drop_x), "y": round(rail_y)},
+                {"x": round(drop_x), "y": round(target_y)},
+            ],
+            "right",
+            0.5,
+        )
+    return None
+
+
+def _fit_stm_canvas(
+    doc: dict[str, Any],
+    boxes: dict[str, tuple[float, float, float, float]],
+    elements: list[dict[str, Any]],
+    connections: list[dict[str, Any]],
+) -> None:
+    xs: list[float] = []
+    ys: list[float] = []
+    for sid, (x, y, w, h) in boxes.items():
+        if sid == "boundary":
+            continue
+        xs.extend((x, x + w))
+        ys.extend((y, y + h))
+    by_id = {element["id"]: element for element in elements}
+
+    def _anchor(element_id: str, side: str, offset: float) -> tuple[float, float]:
+        layout = by_id[element_id]["layout"]
+        x, y, w, h = layout["x"], layout["y"], layout["width"], layout["height"]
+        if side == "left":
+            return x, y + h * offset
+        if side == "right":
+            return x + w, y + h * offset
+        if side == "top":
+            return x + w * offset, y
+        return x + w * offset, y + h
+
+    for connection in connections:
+        sx, sy = _anchor(
+            connection["source"]["element"],
+            connection["source"]["anchor"]["side"],
+            float(connection["source"]["anchor"]["offset"]),
+        )
+        tx, ty = _anchor(
+            connection["target"]["element"],
+            connection["target"]["anchor"]["side"],
+            float(connection["target"]["anchor"]["offset"]),
+        )
+        xs.extend((sx, tx))
+        ys.extend((sy, ty))
+        for point in connection["route"].get("waypoints", []):
+            xs.append(float(point["x"]))
+            ys.append(float(point["y"]))
+    if not xs or not ys:
+        return
+    pad = 36
+    raw_bx = min(xs) - pad
+    raw_by = min(ys) - pad
+    raw_br = max(xs) + pad
+    raw_bb = max(ys) + pad
+    for element in elements:
+        if element["id"] == "boundary":
+            element["layout"] = {
+                "x": round(raw_bx),
+                "y": round(raw_by),
+                "width": round(raw_br - raw_bx),
+                "height": round(raw_bb - raw_by),
+                "z": 0,
+            }
+            break
+    doc["diagram"]["canvas"]["width"] = round(max(raw_br, 0) + CANVAS_MARGIN)
+    doc["diagram"]["canvas"]["height"] = round(max(raw_bb, 0) + CANVAS_MARGIN)
 
 
 def _append_back(out_conns, t, tid, subject_raw, src, tgt,
@@ -846,6 +1125,75 @@ def _container_peer_pairs(transition: dict[str, Any], container_ids: set[str]) -
     if tgt in container_ids and src not in container_ids:
         pairs.append((tgt, src))
     return pairs
+
+
+def _clear_horizontal_rail(
+    y: float,
+    x1: float,
+    x2: float,
+    boxes: dict[str, tuple[float, float, float, float]],
+    skip: set[str],
+    pad: float,
+    prefer: str = "below",
+) -> float:
+    left, right = sorted((x1, x2))
+    parents = {
+        node_id
+        for node_id, box in boxes.items()
+        if node_id not in skip and all(_box_contains(box, boxes[other]) for other in skip if other in boxes)
+    }
+    changed = True
+    while changed:
+        changed = False
+        for node_id, (bx, by, bw, bh) in boxes.items():
+            if node_id in skip or node_id in parents:
+                continue
+            if bx + bw < left or bx > right:
+                continue
+            if by - pad < y < by + bh + pad:
+                y = by - pad if prefer == "above" else by + bh + pad
+                changed = True
+    return y
+
+
+def _offset_vertical_stub(
+    x: float,
+    y0: float,
+    y1: float,
+    boxes: dict[str, tuple[float, float, float, float]],
+    skip: set[str],
+    pad: float,
+) -> float:
+    lo, hi = sorted((y0, y1))
+    parents = {
+        node_id
+        for node_id, box in boxes.items()
+        if node_id not in skip and all(_box_contains(box, boxes[other]) for other in skip if other in boxes)
+    }
+    blockers: list[tuple[float, float]] = []
+    for node_id, (bx, by, bw, bh) in boxes.items():
+        if node_id in skip or node_id in parents:
+            continue
+        if by + bh < lo or by > hi:
+            continue
+        if bx < x < bx + bw:
+            blockers.append((bx, bx + bw))
+    if not blockers:
+        return x
+    candidates = [edge + shift for left, right in blockers for edge, shift in ((left, -pad), (right, pad))]
+    return min(candidates, key=lambda value: (abs(value - x), value))
+
+
+def _box_contains(
+    outer: tuple[float, float, float, float],
+    inner: tuple[float, float, float, float],
+) -> bool:
+    return (
+        outer[0] <= inner[0]
+        and outer[1] <= inner[1]
+        and outer[0] + outer[2] >= inner[0] + inner[2]
+        and outer[1] + outer[3] >= inner[1] + inner[3]
+    )
 
 
 def _same_container_scope(src: str, tgt: str, container_id: str, states_spec: dict[str, Any]) -> bool:

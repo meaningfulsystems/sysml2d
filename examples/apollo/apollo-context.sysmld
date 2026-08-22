@@ -1,0 +1,264 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-context",
+    "kind": "GeneralView",
+    "name": "Apollo 11 Operating Context",
+    "canvas": {
+      "width": 974,
+      "height": 519,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "Crew",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 72,
+          "y": 77,
+          "width": 170,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Crew",
+        "style": "part_usage",
+        "model_ref": "Crew"
+      },
+      {
+        "id": "MCC",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 72,
+          "y": 227,
+          "width": 170,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Mission Control",
+        "style": "part_usage",
+        "model_ref": "MCC"
+      },
+      {
+        "id": "RSO",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 72,
+          "y": 377,
+          "width": 190,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Range Safety Officer",
+        "style": "part_usage",
+        "model_ref": "RSO"
+      },
+      {
+        "id": "MSFN",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 422,
+          "y": 72,
+          "width": 170,
+          "height": 80,
+          "z": 10
+        },
+        "label": "tracking net",
+        "style": "part_usage",
+        "model_ref": "MSFN"
+      },
+      {
+        "id": "earth",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 752,
+          "y": 77,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Earth",
+        "style": "part_usage",
+        "model_ref": "earth"
+      },
+      {
+        "id": "moon",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 752,
+          "y": 227,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Moon",
+        "style": "part_usage",
+        "model_ref": "moon"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-MCC-MSFN",
+        "source": {
+          "element": "MCC",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "MSFN",
+          "anchor": {
+            "side": "left",
+            "offset": 0.3
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 320.667,
+              "y": 262
+            },
+            {
+              "x": 320.667,
+              "y": 96
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "path A / voice",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "commandPathA"
+      },
+      {
+        "id": "conn-RSO-MSFN",
+        "source": {
+          "element": "RSO",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "MSFN",
+          "anchor": {
+            "side": "left",
+            "offset": 0.7
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 363.333,
+              "y": 412
+            },
+            {
+              "x": 363.333,
+              "y": 128
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "destruct UHF (not Mission Control)",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "destructFlow"
+      },
+      {
+        "id": "conn-MSFN-earth",
+        "source": {
+          "element": "MSFN",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "earth",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "USB / 210-ft / Parkes",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "usbCsmFlow"
+      },
+      {
+        "id": "conn-MSFN-moon",
+        "source": {
+          "element": "MSFN",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "moon",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 628,
+              "y": 112
+            },
+            {
+              "x": 628,
+              "y": 262
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "~1.3 s",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "usbLmFlow"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

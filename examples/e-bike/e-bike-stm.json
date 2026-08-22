@@ -1,0 +1,132 @@
+{
+  "diagram": "e-bike-stm",
+  "kind": "StateView",
+  "name": "Ride Control State Machine",
+  "subject": "rideControl",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 130,
+  "default_h": 60,
+  "rank_gap": 170,
+  "col_gap": 90,
+  "aliases": {
+    "rideControl": "ElectricBike::RideControl",
+    "off": "ElectricBike::RideControl::off",
+    "standby": "ElectricBike::RideControl::standby",
+    "assist": "ElectricBike::RideControl::assist",
+    "walk": "ElectricBike::RideControl::walk",
+    "charging": "ElectricBike::RideControl::charging",
+    "fault": "ElectricBike::RideControl::fault",
+    "powerOn": "ElectricBike::RideControl::powerOn",
+    "startAssist": "ElectricBike::RideControl::startAssist",
+    "stopAssist": "ElectricBike::RideControl::stopAssist",
+    "startWalk": "ElectricBike::RideControl::startWalk",
+    "stopWalk": "ElectricBike::RideControl::stopWalk",
+    "brakeWalk": "ElectricBike::RideControl::brakeWalk",
+    "brakeCut": "ElectricBike::RideControl::brakeCut",
+    "plugIn": "ElectricBike::RideControl::plugIn",
+    "chargeComplete": "ElectricBike::RideControl::chargeComplete",
+    "unplug": "ElectricBike::RideControl::unplug",
+    "powerOff": "ElectricBike::RideControl::powerOff",
+    "faultFromAssist": "ElectricBike::RideControl::faultFromAssist",
+    "resetFault": "ElectricBike::RideControl::resetFault"
+  },
+  "states": {
+    "initial": {
+      "initial": true
+    },
+    "off": {
+      "label": "Off",
+      "model_ref": "off"
+    },
+    "standby": {
+      "label": "Standby",
+      "model_ref": "standby"
+    },
+    "assist": {
+      "label": "Assist",
+      "model_ref": "assist"
+    },
+    "walk": {
+      "label": "walk\ndo / <= 6 km/h",
+      "model_ref": "walk"
+    },
+    "charging": {
+      "label": "Charging\nfrom Off only",
+      "model_ref": "charging"
+    },
+    "fault": {
+      "label": "Fault",
+      "model_ref": "fault"
+    }
+  },
+  "transitions": [
+    {
+      "from": "initial",
+      "to": "off",
+      "label": ""
+    },
+    {
+      "from": "off",
+      "to": "standby",
+      "label": "power button",
+      "model_ref": "powerOn"
+    },
+    {
+      "from": "standby",
+      "to": "assist",
+      "label": "cadence (EPAC)",
+      "model_ref": "startAssist"
+    },
+    {
+      "from": "standby",
+      "to": "walk",
+      "label": "walk button",
+      "model_ref": "startWalk"
+    },
+    {
+      "from": "walk",
+      "to": "standby",
+      "label": "release / brake",
+      "model_ref": "stopWalk"
+    },
+    {
+      "from": "assist",
+      "to": "standby",
+      "label": "no pedal / brake",
+      "model_ref": "stopAssist"
+    },
+    {
+      "from": "off",
+      "to": "charging",
+      "label": "charger in (Off only)",
+      "model_ref": "plugIn"
+    },
+    {
+      "from": "charging",
+      "to": "off",
+      "label": "full / unplug",
+      "model_ref": "chargeComplete"
+    },
+    {
+      "from": "standby",
+      "to": "off",
+      "label": "power button",
+      "model_ref": "powerOff"
+    },
+    {
+      "from": "assist",
+      "to": "fault",
+      "label": "overcurrent",
+      "model_ref": "faultFromAssist"
+    },
+    {
+      "from": "fault",
+      "to": "off",
+      "label": "reset → Off",
+      "model_ref": "resetFault"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "safety": "rsoRequirement",
+    "land": "a11AtypicalRequirement",
+    "talk": "usbCsmRequirement",
+    "abort": "agsRequirement",
+    "air": "lm5ConsumableRequirement",
+    "guide": "pngsRequirement"
+  },
+  "diagram": {
+    "id": "apollo-req",
+    "kind": "RequirementView",
+    "name": "Apollo 11 Sourced Requirements",
+    "canvas": {
+      "width": 913,
+      "height": 512,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "safety",
+        "model_ref": "safety",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 216,
+          "height": 168,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nSafety\nThe Range Safety Officer\nshall command\nultra-high-frequency (UHF)\ndestruct from outside\nMission Control until that\ncommand is safed after\nEarth orbit.",
+        "style": "requirement"
+      },
+      {
+        "id": "land",
+        "model_ref": "land",
+        "symbol": "requirement",
+        "layout": {
+          "x": 324,
+          "y": 72,
+          "width": 223,
+          "height": 156,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nLand\nThe Lunar Module shall land\ntwo crew on the Moon under\nrate of descent.",
+        "style": "requirement"
+      },
+      {
+        "id": "talk",
+        "model_ref": "talk",
+        "symbol": "requirement",
+        "layout": {
+          "x": 583,
+          "y": 72,
+          "width": 223,
+          "height": 156,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nTalk\nThe stack shall communicate\nwith Mission Control on\nUnified S-Band.",
+        "style": "requirement"
+      },
+      {
+        "id": "abort",
+        "model_ref": "abort",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 284,
+          "width": 230,
+          "height": 156,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nAbort\nThe Abort Guidance System\nshall provide abort guidance\nwithout landing the Lunar\nModule.",
+        "style": "requirement"
+      },
+      {
+        "id": "air",
+        "model_ref": "air",
+        "symbol": "requirement",
+        "layout": {
+          "x": 338,
+          "y": 284,
+          "width": 237,
+          "height": 156,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nAir\nThe Lunar Module shall supply\noxygen, water, and lithium\nhydroxide for life support.",
+        "style": "requirement"
+      },
+      {
+        "id": "guide",
+        "model_ref": "guide",
+        "symbol": "requirement",
+        "layout": {
+          "x": 611,
+          "y": 284,
+          "width": 230,
+          "height": 156,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nGuide\nThe Lunar Module Primary\nGuidance system shall use\nlanding radar during descent\nand rendezvous radar during\nascent.",
+        "style": "requirement"
+      }
+    ],
+    "connections": [],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

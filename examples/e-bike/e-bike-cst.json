@@ -1,0 +1,208 @@
+{
+  "diagram": "e-bike-cst",
+  "kind": "ConstraintView",
+  "name": "Electric Bike Parametrics",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 180,
+  "default_h": 78,
+  "nodes": {
+    "packEnergy": {
+      "label": "packEnergy\nnameplate",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 0
+    },
+    "usableWh": {
+      "label": "usableWh\n500 Wh Tour",
+      "symbol": "value_property",
+      "rank": 2,
+      "order": 4
+    },
+    "energyPerKm": {
+      "label": "energyPerKm\n~8.3 Wh/km Tour",
+      "symbol": "value_property",
+      "rank": 2,
+      "order": 3
+    },
+    "riderPower": {
+      "label": "riderPower\npedal input",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 1
+    },
+    "cutoffSpeed": {
+      "label": "cutoffSpeed\n25 km/h",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 2
+    },
+    "energyBalance": {
+      "label": "Energy Balance\n(pack only)",
+      "rank": 1,
+      "order": 0
+    },
+    "riderInputBalance": {
+      "label": "Rider Input\n(not pack Wh)",
+      "rank": 1,
+      "order": 3
+    },
+    "thermalDerate": {
+      "label": "Thermal\nDerate",
+      "rank": 1,
+      "order": 4
+    },
+    "packVoltage": {
+      "label": "packVoltage",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 3
+    },
+    "continuousPowerW": {
+      "label": "EU continuous\n250 W",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 4
+    },
+    "walkAssistSpeed": {
+      "label": "walkAssist\n<= 6 km/h",
+      "symbol": "value_property",
+      "rank": 0,
+      "order": 5
+    },
+    "assistPowerLimit": {
+      "label": "Assist Power\nLimit",
+      "rank": 1,
+      "order": 1
+    },
+    "brakeLatencyLimit": {
+      "label": "Brake Latency\n<= 50 ms",
+      "rank": 1,
+      "order": 2
+    },
+    "rangeEstimate": {
+      "label": "Range\nEstimate",
+      "rank": 2,
+      "order": 0
+    },
+    "assistPower": {
+      "label": "assistPower\nlimited",
+      "symbol": "value_property",
+      "rank": 2,
+      "order": 1
+    },
+    "brakeLatency": {
+      "label": "brakeLatency\nmeasured",
+      "symbol": "value_property",
+      "rank": 2,
+      "order": 2
+    },
+    "tourWhPerKm": {
+      "label": "tourWhPerKm\n(alias energyPerKm)",
+      "symbol": "value_property",
+      "rank": 2,
+      "order": 5
+    },
+    "tourRangeBind": {
+      "label": "Tour Scenario\n(not Eco/PAS-1)",
+      "rank": 3,
+      "order": 0
+    },
+    "rangeKm": {
+      "label": "rangeKm\n>= 60 km Tour",
+      "symbol": "value_property",
+      "rank": 4,
+      "order": 0
+    }
+  },
+  "edges": [
+    {
+      "from": "packEnergy",
+      "to": "energyBalance",
+      "label": "bind"
+    },
+    {
+      "from": "riderPower",
+      "to": "riderInputBalance",
+      "label": "bind"
+    },
+    {
+      "from": "packVoltage",
+      "to": "energyBalance",
+      "label": "bind"
+    },
+    {
+      "from": "continuousPowerW",
+      "to": "assistPowerLimit",
+      "label": "bind"
+    },
+    {
+      "from": "walkAssistSpeed",
+      "to": "assistPowerLimit",
+      "label": "bind"
+    },
+    {
+      "from": "assistPower",
+      "to": "thermalDerate",
+      "label": "bind"
+    },
+    {
+      "from": "cutoffSpeed",
+      "to": "assistPowerLimit",
+      "label": "bind"
+    },
+    {
+      "from": "energyBalance",
+      "to": "usableWh",
+      "label": "usable Wh"
+    },
+    {
+      "from": "energyBalance",
+      "to": "rangeEstimate",
+      "label": "feeds"
+    },
+    {
+      "from": "usableWh",
+      "to": "tourRangeBind",
+      "label": "bind"
+    },
+    {
+      "from": "energyPerKm",
+      "to": "tourRangeBind",
+      "label": "bind"
+    },
+    {
+      "from": "assistPowerLimit",
+      "to": "rangeEstimate",
+      "label": "bounds"
+    },
+    {
+      "from": "rangeEstimate",
+      "to": "tourRangeBind",
+      "label": "feeds"
+    },
+    {
+      "from": "tourWhPerKm",
+      "to": "tourRangeBind",
+      "label": "bind"
+    },
+    {
+      "from": "tourRangeBind",
+      "to": "rangeKm",
+      "label": "result"
+    },
+    {
+      "from": "assistPowerLimit",
+      "to": "assistPower",
+      "label": "result"
+    },
+    {
+      "from": "brakeLatencyLimit",
+      "to": "brakeLatency",
+      "label": "limit"
+    }
+  ]
+}

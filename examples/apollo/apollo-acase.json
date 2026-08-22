@@ -1,0 +1,57 @@
+{
+  "diagram": "apollo-acase",
+  "kind": "AnalysisCaseView",
+  "name": "Apollo 11 Analysis Cases",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "nodes": {
+    "usbLinkAnalysis": {
+      "label": "USB link",
+      "rank": 0,
+      "order": 0
+    },
+    "consumableAnalysis": {
+      "label": "Consumables",
+      "rank": 0,
+      "order": 1
+    },
+    "usbCsmLink": {
+      "label": "USB CSM link",
+      "symbol": "constraint",
+      "rank": 1,
+      "order": 0
+    },
+    "usbCsmRequirement": {
+      "label": "USB CSM req",
+      "symbol": "requirement",
+      "rank": 2,
+      "order": 0
+    },
+    "cmEcsRequirement": {
+      "label": "CM ECS req",
+      "symbol": "requirement",
+      "rank": 2,
+      "order": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "usbLinkAnalysis",
+      "to": "usbCsmLink",
+      "label": "method"
+    },
+    {
+      "from": "usbCsmLink",
+      "to": "usbCsmRequirement",
+      "label": "evaluates"
+    },
+    {
+      "from": "consumableAnalysis",
+      "to": "cmEcsRequirement",
+      "label": "evaluates"
+    }
+  ]
+}

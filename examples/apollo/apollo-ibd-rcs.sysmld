@@ -1,0 +1,459 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "SM": "Apollo11::CSM::SM",
+    "RCS": "Apollo11::CSM::SM::RCS",
+    "quadA": "Apollo11::CSM::SM::quadA",
+    "quadB": "Apollo11::CSM::SM::quadB",
+    "quadC": "Apollo11::CSM::SM::quadC",
+    "quadD": "Apollo11::CSM::SM::quadD",
+    "RCS--quadA--src": "Apollo11::CSM::SM::RCS",
+    "RCS--quadA--tgt": "Apollo11::CSM::SM::quadA",
+    "conn-RCS-quadA": "Apollo11::CSM::SM::RCSToQuadA",
+    "RCS--quadB--src": "Apollo11::CSM::SM::RCS",
+    "RCS--quadB--tgt": "Apollo11::CSM::SM::quadB",
+    "conn-RCS-quadB": "Apollo11::CSM::SM::RCSToQuadB",
+    "RCS--quadC--src": "Apollo11::CSM::SM::RCS",
+    "RCS--quadC--tgt": "Apollo11::CSM::SM::quadC",
+    "conn-RCS-quadC": "Apollo11::CSM::SM::RCSToQuadC",
+    "RCS--quadD--src": "Apollo11::CSM::SM::RCS",
+    "RCS--quadD--tgt": "Apollo11::CSM::SM::quadD",
+    "conn-RCS-quadD": "Apollo11::CSM::SM::RCSToQuadD"
+  },
+  "diagram": {
+    "id": "apollo-ibd-rcs",
+    "kind": "InterconnectionView",
+    "name": "SM RCS four quads (100 lbf/engine)",
+    "canvas": {
+      "width": 620,
+      "height": 540,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "SM",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 540,
+          "height": 460,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "RCS",
+        "model_ref": "RCS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 241,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "RCS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "quadA",
+        "model_ref": "quadA",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "quadA\n100 lbf/engine",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "quadB",
+        "model_ref": "quadB",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 186,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "quadB\n100 lbf/engine",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "quadC",
+        "model_ref": "quadC",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 296,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "quadC\n100 lbf/engine",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "quadD",
+        "model_ref": "quadD",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 406,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "quadD\n100 lbf/engine",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "RCS--quadA--src",
+        "model_ref": "RCS--quadA--src",
+        "symbol": "port",
+        "owner": "RCS",
+        "placement": {
+          "side": "right",
+          "offset": 0.2
+        },
+        "label": ""
+      },
+      {
+        "id": "RCS--quadB--src",
+        "model_ref": "RCS--quadB--src",
+        "symbol": "port",
+        "owner": "RCS",
+        "placement": {
+          "side": "right",
+          "offset": 0.4
+        },
+        "label": ""
+      },
+      {
+        "id": "RCS--quadC--src",
+        "model_ref": "RCS--quadC--src",
+        "symbol": "port",
+        "owner": "RCS",
+        "placement": {
+          "side": "right",
+          "offset": 0.6
+        },
+        "label": ""
+      },
+      {
+        "id": "RCS--quadD--src",
+        "model_ref": "RCS--quadD--src",
+        "symbol": "port",
+        "owner": "RCS",
+        "placement": {
+          "side": "right",
+          "offset": 0.8
+        },
+        "label": ""
+      },
+      {
+        "id": "RCS--quadA--tgt",
+        "model_ref": "RCS--quadA--tgt",
+        "symbol": "port",
+        "owner": "quadA",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "RCS--quadB--tgt",
+        "model_ref": "RCS--quadB--tgt",
+        "symbol": "port",
+        "owner": "quadB",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "RCS--quadC--tgt",
+        "model_ref": "RCS--quadC--tgt",
+        "symbol": "port",
+        "owner": "quadC",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "RCS--quadD--tgt",
+        "model_ref": "RCS--quadD--tgt",
+        "symbol": "port",
+        "owner": "quadD",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-RCS-quadA",
+        "model_ref": "conn-RCS-quadA",
+        "source": {
+          "element": "RCS--quadA--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RCS--quadA--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 268,
+              "y": 252.6
+            },
+            {
+              "x": 268,
+              "y": 105
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "100 lbf",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-RCS-quadB",
+        "model_ref": "conn-RCS-quadB",
+        "source": {
+          "element": "RCS--quadB--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RCS--quadB--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 296,
+              "y": 264.2
+            },
+            {
+              "x": 296,
+              "y": 215
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "100 lbf",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-RCS-quadC",
+        "model_ref": "conn-RCS-quadC",
+        "source": {
+          "element": "RCS--quadC--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RCS--quadC--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 352,
+              "y": 275.8
+            },
+            {
+              "x": 352,
+              "y": 325
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "100 lbf",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-RCS-quadD",
+        "model_ref": "conn-RCS-quadD",
+        "source": {
+          "element": "RCS--quadD--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RCS--quadD--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 324,
+              "y": 287.4
+            },
+            {
+              "x": 324,
+              "y": 435
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "100 lbf",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.eps": {
+        "fill": "#FEF9C3",
+        "stroke": "#A16207",
+        "stroke_width": 2
+      },
+      "part.dock": {
+        "fill": "#F1F5F9",
+        "stroke": "#475569",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "SM"
+  }
+}

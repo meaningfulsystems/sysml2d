@@ -1,0 +1,491 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "LM": "Apollo11::LM::LM",
+    "descent": "Apollo11::LM::descent",
+    "ascent": "Apollo11::LM::ascent",
+    "PNGS": "Apollo11::LM::PNGS",
+    "AGS": "Apollo11::LM::AGS",
+    "DPS": "Apollo11::LM::DPS",
+    "landingRadar": "Apollo11::LM::landingRadar",
+    "rendezvousRadar": "Apollo11::LM::rendezvousRadar"
+  },
+  "diagram": {
+    "id": "apollo-bdd-lm",
+    "kind": "DefinitionView",
+    "name": "LM Definition Tree",
+    "canvas": {
+      "width": 1204,
+      "height": 410,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "LM",
+        "model_ref": "LM",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 502,
+          "y": 40,
+          "width": 200,
+          "height": 56,
+          "z": 10
+        },
+        "label": "Lunar Module",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      },
+      {
+        "id": "descent",
+        "model_ref": "descent",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 154,
+          "y": 174,
+          "width": 200,
+          "height": 56,
+          "z": 10
+        },
+        "label": "Descent stage",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "DPS",
+        "model_ref": "DPS",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 40,
+          "y": 312,
+          "width": 200,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Descent Propulsion\nSystem",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "landingRadar",
+        "model_ref": "landingRadar",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 268,
+          "y": 308,
+          "width": 200,
+          "height": 56,
+          "z": 10
+        },
+        "label": "Landing radar",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ascent",
+        "model_ref": "ascent",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 730,
+          "y": 174,
+          "width": 200,
+          "height": 56,
+          "z": 10
+        },
+        "label": "Ascent stage",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "PNGS",
+        "model_ref": "PNGS",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 496,
+          "y": 312,
+          "width": 212,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Primary Guidance\nNavigation and Control",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "AGS",
+        "model_ref": "AGS",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 736,
+          "y": 312,
+          "width": 200,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Abort Guidance\nSystem",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "rendezvousRadar",
+        "model_ref": "rendezvousRadar",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 964,
+          "y": 308,
+          "width": 200,
+          "height": 56,
+          "z": 10
+        },
+        "label": "Rendezvous radar",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-LM-descent",
+        "model_ref": "descent",
+        "source": {
+          "element": "LM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "descent",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 602,
+              "y": 135
+            },
+            {
+              "x": 254,
+              "y": 135
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-LM-ascent",
+        "model_ref": "ascent",
+        "source": {
+          "element": "LM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ascent",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 602,
+              "y": 135
+            },
+            {
+              "x": 830,
+              "y": 135
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-descent-DPS",
+        "model_ref": "DPS",
+        "source": {
+          "element": "descent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "DPS",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 254,
+              "y": 269
+            },
+            {
+              "x": 140,
+              "y": 269
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-descent-landingRadar",
+        "model_ref": "landingRadar",
+        "source": {
+          "element": "descent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "landingRadar",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 254,
+              "y": 269
+            },
+            {
+              "x": 368,
+              "y": 269
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ascent-PNGS",
+        "model_ref": "PNGS",
+        "source": {
+          "element": "ascent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "PNGS",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 830,
+              "y": 269
+            },
+            {
+              "x": 602,
+              "y": 269
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ascent-AGS",
+        "model_ref": "AGS",
+        "source": {
+          "element": "ascent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGS",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 830,
+              "y": 269
+            },
+            {
+              "x": 836,
+              "y": 269
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-ascent-rendezvousRadar",
+        "model_ref": "rendezvousRadar",
+        "source": {
+          "element": "ascent",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rendezvousRadar",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 830,
+              "y": 269
+            },
+            {
+              "x": 1064,
+              "y": 269
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11::LM::LM"
+  }
+}

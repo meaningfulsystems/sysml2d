@@ -1,0 +1,363 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "MSFN": "Apollo11::Ground::MSFN",
+    "Goldstone": "Apollo11::Ground::MSFN::Goldstone",
+    "Madrid": "Apollo11::Ground::MSFN::Madrid",
+    "Honeysuckle": "Apollo11::Ground::MSFN::Honeysuckle",
+    "NASCOM": "Apollo11::Ground::Ground::NASCOM",
+    "Goldstone--NASCOM--src": "Apollo11::Ground::MSFN::Goldstone",
+    "Goldstone--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Goldstone-NASCOM": "Apollo11::Ground::MSFN::Goldstone",
+    "Madrid--NASCOM--src": "Apollo11::Ground::MSFN::Madrid",
+    "Madrid--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Madrid-NASCOM": "Apollo11::Ground::MSFN::Madrid",
+    "Honeysuckle--NASCOM--src": "Apollo11::Ground::MSFN::Honeysuckle",
+    "Honeysuckle--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Honeysuckle-NASCOM": "Apollo11::Ground::MSFN::Honeysuckle"
+  },
+  "diagram": {
+    "id": "apollo-ibd-msfn",
+    "kind": "InterconnectionView",
+    "name": "MSFN Goldstone/Madrid/Honeysuckle + NASCOM",
+    "canvas": {
+      "width": 612,
+      "height": 422,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "MSFN",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 532,
+          "height": 342,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "Goldstone",
+        "model_ref": "Goldstone",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 150,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Goldstone",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "Madrid",
+        "model_ref": "Madrid",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 288,
+          "width": 150,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Madrid",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "Honeysuckle",
+        "model_ref": "Honeysuckle",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 182,
+          "width": 150,
+          "height": 58,
+          "z": 10
+        },
+        "label": "Honeysuckle",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "NASCOM",
+        "model_ref": "NASCOM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 386,
+          "y": 182,
+          "width": 150,
+          "height": 58,
+          "z": 10
+        },
+        "label": "NASCOM",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "Goldstone--NASCOM--src",
+        "model_ref": "Goldstone--NASCOM--src",
+        "symbol": "port",
+        "owner": "Goldstone",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "Madrid--NASCOM--src",
+        "model_ref": "Madrid--NASCOM--src",
+        "symbol": "port",
+        "owner": "Madrid",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "Honeysuckle--NASCOM--src",
+        "model_ref": "Honeysuckle--NASCOM--src",
+        "symbol": "port",
+        "owner": "Honeysuckle",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "Goldstone--NASCOM--tgt",
+        "model_ref": "Goldstone--NASCOM--tgt",
+        "symbol": "port",
+        "owner": "NASCOM",
+        "placement": {
+          "side": "left",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "Honeysuckle--NASCOM--tgt",
+        "model_ref": "Honeysuckle--NASCOM--tgt",
+        "symbol": "port",
+        "owner": "NASCOM",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "Madrid--NASCOM--tgt",
+        "model_ref": "Madrid--NASCOM--tgt",
+        "symbol": "port",
+        "owner": "NASCOM",
+        "placement": {
+          "side": "left",
+          "offset": 0.75
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-Goldstone-NASCOM",
+        "model_ref": "conn-Goldstone-NASCOM",
+        "source": {
+          "element": "Goldstone--NASCOM--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Goldstone--NASCOM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 151,
+              "y": 158
+            },
+            {
+              "x": 358,
+              "y": 158
+            },
+            {
+              "x": 358,
+              "y": 196.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "USB",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-Madrid-NASCOM",
+        "model_ref": "conn-Madrid-NASCOM",
+        "source": {
+          "element": "Madrid--NASCOM--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Madrid--NASCOM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 151,
+              "y": 264
+            },
+            {
+              "x": 250,
+              "y": 264
+            },
+            {
+              "x": 250,
+              "y": 225.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "USB",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-Honeysuckle-NASCOM",
+        "model_ref": "conn-Honeysuckle-NASCOM",
+        "source": {
+          "element": "Honeysuckle--NASCOM--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Honeysuckle--NASCOM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "USB",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "MSFN"
+  }
+}

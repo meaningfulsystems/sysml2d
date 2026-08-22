@@ -1,0 +1,91 @@
+{
+  "diagram": "starter-ibd",
+  "kind": "InterconnectionView",
+  "name": "Starter System Interconnection",
+  "subject": "system",
+  "model_files": [
+    "starter.sysml"
+  ],
+  "aliases": {
+    "system": "StarterSystem::StarterSystem",
+    "sensor": "StarterSystem::StarterSystem::sensor",
+    "controller": "StarterSystem::StarterSystem::controller",
+    "actuator": "StarterSystem::StarterSystem::actuator",
+    "sensor--controller--src": "StarterSystem::StarterSystem::sensorOut",
+    "sensor--controller--tgt": "StarterSystem::StarterSystem::controllerSenseIn",
+    "controller--actuator--src": "StarterSystem::StarterSystem::controllerCmdOut",
+    "controller--actuator--tgt": "StarterSystem::StarterSystem::actuatorIn",
+    "bnd--sensor": "StarterSystem::StarterSystem::environmentIn",
+    "sensor--bnd--tgt": "StarterSystem::StarterSystem::sensorIn",
+    "conn-sensor-controller": "StarterSystem::StarterSystem::sensorToController",
+    "conn-controller-actuator": "StarterSystem::StarterSystem::controllerToActuator",
+    "conn-bnd-sensor": "StarterSystem::StarterSystem::envToSensor"
+  },
+  "direction": "left-right",
+  "default_w": 150,
+  "default_h": 70,
+  "col_gap": 70,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "nodes": {
+    "sensor": {
+      "label": "Sensor",
+      "style": "part.sensor"
+    },
+    "controller": {
+      "label": "Controller",
+      "style": "part.control"
+    },
+    "actuator": {
+      "label": "Actuator",
+      "style": "part.actuator"
+    }
+  },
+  "edges": [
+    {
+      "from": "sensor",
+      "to": "controller",
+      "label": "sense",
+      "model_ref": "conn-sensor-controller"
+    },
+    {
+      "from": "controller",
+      "to": "actuator",
+      "label": "command",
+      "model_ref": "conn-controller-actuator"
+    }
+  ],
+  "boundary_inputs": [
+    {
+      "to": "sensor",
+      "label": "environment",
+      "model_ref": "conn-bnd-sensor"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.sensor": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.control": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.actuator": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

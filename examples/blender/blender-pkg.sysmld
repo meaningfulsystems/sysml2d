@@ -11,8 +11,8 @@
     "kind": "PackageView",
     "name": "Blender Package Organization",
     "canvas": {
-      "width": 814,
-      "height": 674,
+      "width": 1334,
+      "height": 444,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -21,21 +21,20 @@
     "elements": [
       {
         "id": "BlenderModel",
-        "model_ref": "BlenderModel",
         "symbol": "package",
         "layout": {
-          "x": 332,
+          "x": 72,
           "y": 72,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Blender Model",
-        "style": "package"
+        "style": "package",
+        "model_ref": "BlenderModel"
       },
       {
         "id": "BlenderStructure",
-        "model_ref": "BlenderStructure",
         "symbol": "package",
         "layout": {
           "x": 72,
@@ -45,11 +44,11 @@
           "z": 10
         },
         "label": "Structure",
-        "style": "package"
+        "style": "package",
+        "model_ref": "BlenderStructure"
       },
       {
         "id": "BlenderBehavior",
-        "model_ref": "BlenderBehavior",
         "symbol": "package",
         "layout": {
           "x": 332,
@@ -59,11 +58,11 @@
           "z": 10
         },
         "label": "Behavior",
-        "style": "package"
+        "style": "package",
+        "model_ref": "BlenderBehavior"
       },
       {
         "id": "BlenderRequirements",
-        "model_ref": "BlenderRequirements",
         "symbol": "package",
         "layout": {
           "x": 592,
@@ -73,41 +72,41 @@
           "z": 10
         },
         "label": "Requirements",
-        "style": "package"
+        "style": "package",
+        "model_ref": "BlenderRequirements"
       },
       {
         "id": "BlenderAnalysis",
-        "model_ref": "BlenderAnalysis",
         "symbol": "package",
         "layout": {
-          "x": 202,
-          "y": 532,
+          "x": 852,
+          "y": 302,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Analysis",
-        "style": "package"
+        "style": "package",
+        "model_ref": "BlenderAnalysis"
       },
       {
         "id": "BlenderVerification",
-        "model_ref": "BlenderVerification",
         "symbol": "package",
         "layout": {
-          "x": 462,
-          "y": 532,
+          "x": 1112,
+          "y": 302,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Verification",
-        "style": "package"
+        "style": "package",
+        "model_ref": "BlenderVerification"
       }
     ],
     "connections": [
       {
         "id": "conn-BlenderModel-BlenderStructure",
-        "model_ref": "BlenderModel",
         "source": {
           "element": "BlenderModel",
           "anchor": {
@@ -124,31 +123,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 407,
-              "y": 198
-            },
-            {
-              "x": 147,
-              "y": 198
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "contains",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "BlenderModel"
       },
       {
         "id": "conn-BlenderModel-BlenderBehavior",
-        "model_ref": "BlenderModel",
         "source": {
           "element": "BlenderModel",
           "anchor": {
@@ -165,22 +154,30 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 407,
+              "y": 178
+            }
+          ]
         },
         "labels": [
           {
             "text": "contains",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "BlenderModel"
       },
       {
         "id": "conn-BlenderModel-BlenderRequirements",
-        "model_ref": "BlenderModel",
         "source": {
           "element": "BlenderModel",
           "anchor": {
@@ -199,12 +196,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 407,
-              "y": 198
+              "x": 147,
+              "y": 178
             },
             {
               "x": 667,
-              "y": 198
+              "y": 178
             }
           ]
         },
@@ -212,16 +209,15 @@
           {
             "text": "contains",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "BlenderModel"
       },
       {
         "id": "conn-BlenderModel-BlenderAnalysis",
-        "model_ref": "BlenderModel",
         "source": {
           "element": "BlenderModel",
           "anchor": {
@@ -240,12 +236,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 407,
-              "y": 198
+              "x": 147,
+              "y": 178
             },
             {
-              "x": 277,
-              "y": 198
+              "x": 927,
+              "y": 178
             }
           ]
         },
@@ -253,16 +249,15 @@
           {
             "text": "contains",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "BlenderModel"
       },
       {
         "id": "conn-BlenderModel-BlenderVerification",
-        "model_ref": "BlenderModel",
         "source": {
           "element": "BlenderModel",
           "anchor": {
@@ -281,12 +276,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 407,
-              "y": 198
+              "x": 147,
+              "y": 178
             },
             {
-              "x": 537,
-              "y": 198
+              "x": 1187,
+              "y": 178
             }
           ]
         },
@@ -294,12 +289,12 @@
           {
             "text": "contains",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "BlenderModel"
       }
     ],
     "annotations": [],

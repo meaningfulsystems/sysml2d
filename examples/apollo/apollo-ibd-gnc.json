@@ -1,0 +1,181 @@
+{
+  "diagram": "apollo-ibd-gnc",
+  "kind": "InterconnectionView",
+  "name": "AGC / GNC (do not merge)",
+  "subject": "mission",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 64,
+  "col_gap": 56,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "DSKY": "Apollo11::CSM::CM::DSKY",
+    "DSKY2": "Apollo11::CSM::CM::DSKY2",
+    "SCS": "Apollo11::CSM::CM::SCS",
+    "AGC_CM": "Apollo11::CSM::CM::AGC_CM",
+    "IMU": "Apollo11::CSM::CM::IMU",
+    "USB": "Apollo11::CSM::CM::USB",
+    "PNGS": "Apollo11::LM::ascent::PNGS",
+    "AGC_LM": "Apollo11::LM::ascent::AGC_LM",
+    "DSKY_LM": "Apollo11::LM::ascent::DSKY",
+    "AGS": "Apollo11::LM::ascent::AGS",
+    "LVDC": "Apollo11::SaturnV::IU::LVDC",
+    "DSKY--AGC_CM--src": "Apollo11::CSM::CM::DSKY",
+    "DSKY--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-DSKY-AGC_CM": "Apollo11::CSM::CM::DSKY",
+    "DSKY2--AGC_CM--src": "Apollo11::CSM::CM::DSKY2",
+    "DSKY2--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-DSKY2-AGC_CM": "Apollo11::CSM::CM::DSKY2",
+    "SCS--AGC_CM--src": "Apollo11::CSM::CM::SCS",
+    "SCS--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-SCS-AGC_CM": "Apollo11::CSM::CM::SCS",
+    "AGC_CM--IMU--src": "Apollo11::CSM::CM::AGC_CM",
+    "AGC_CM--IMU--tgt": "Apollo11::CSM::CM::IMU",
+    "conn-AGC_CM-IMU": "Apollo11::CSM::CM::AGC_CM",
+    "PNGS--AGC_LM--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--AGC_LM--tgt": "Apollo11::LM::ascent::AGC_LM",
+    "conn-PNGS-AGC_LM": "Apollo11::LM::ascent::PNGS",
+    "DSKY_LM--AGC_LM--src": "Apollo11::LM::ascent::DSKY",
+    "DSKY_LM--AGC_LM--tgt": "Apollo11::LM::ascent::AGC_LM",
+    "conn-DSKY_LM-AGC_LM": "Apollo11::LM::ascent::DSKY",
+    "AGC_LM--AGS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--AGS--tgt": "Apollo11::LM::ascent::AGS",
+    "conn-AGC_LM-AGS": "Apollo11::LM::ascent::AGC_LM"
+  },
+  "nodes": {
+    "DSKY": {
+      "label": "DSKY",
+      "style": "part.gnc"
+    },
+    "DSKY2": {
+      "label": "DSKY 2",
+      "style": "part.gnc"
+    },
+    "SCS": {
+      "label": "SCS",
+      "style": "part.gnc"
+    },
+    "AGC_CM": {
+      "label": "AGC_CM",
+      "style": "part.gnc"
+    },
+    "IMU": {
+      "label": "IMU",
+      "style": "part.gnc"
+    },
+    "USB": {
+      "label": "USB",
+      "style": "part.comms"
+    },
+    "PNGS": {
+      "label": "PNGS",
+      "style": "part.gnc"
+    },
+    "AGC_LM": {
+      "label": "AGC_LM",
+      "style": "part.gnc"
+    },
+    "DSKY_LM": {
+      "label": "DSKY",
+      "style": "part.gnc"
+    },
+    "AGS": {
+      "label": "AGS",
+      "style": "part.gnc"
+    },
+    "LVDC": {
+      "label": "LVDC",
+      "style": "part.gnc"
+    }
+  },
+  "edges": [
+    {
+      "from": "DSKY",
+      "to": "AGC_CM",
+      "label": "DSKY",
+      "model_ref": "conn-DSKY-AGC_CM"
+    },
+    {
+      "from": "DSKY2",
+      "to": "AGC_CM",
+      "label": "DSKY",
+      "model_ref": "conn-DSKY2-AGC_CM"
+    },
+    {
+      "from": "SCS",
+      "to": "AGC_CM",
+      "label": "backup",
+      "model_ref": "conn-SCS-AGC_CM"
+    },
+    {
+      "from": "AGC_CM",
+      "to": "IMU",
+      "label": "IMU",
+      "model_ref": "conn-AGC_CM-IMU"
+    },
+    {
+      "from": "PNGS",
+      "to": "AGC_LM",
+      "label": "computer",
+      "model_ref": "conn-PNGS-AGC_LM"
+    },
+    {
+      "from": "DSKY_LM",
+      "to": "AGC_LM",
+      "label": "DSKY",
+      "model_ref": "conn-DSKY_LM-AGC_LM"
+    },
+    {
+      "from": "AGC_LM",
+      "to": "AGS",
+      "label": "R47",
+      "model_ref": "conn-AGC_LM-AGS"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

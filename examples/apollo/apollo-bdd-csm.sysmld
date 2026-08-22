@@ -1,0 +1,1565 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "CSM": "Apollo11::CSM::CSM",
+    "CM": "Apollo11::CSM::CM",
+    "SM": "Apollo11::CSM::SM",
+    "SCS": "Apollo11::CSM::SCS",
+    "AGC_CM": "Apollo11::CSM::AGC_CM",
+    "IMU": "Apollo11::CSM::IMU",
+    "DSKY": "Apollo11::CSM::DSKY",
+    "SPS": "Apollo11::CSM::SPS",
+    "RCS": "Apollo11::CSM::RCS",
+    "ECLSS": "Apollo11::CSM::ECLSS",
+    "FC": "Apollo11::CSM::FC",
+    "AgZn": "Apollo11::CSM::AgZn",
+    "charger": "Apollo11::CSM::charger",
+    "inverter": "Apollo11::CSM::inverter",
+    "probe": "Apollo11::CSM::probe",
+    "ringLatches": "Apollo11::CSM::ringLatches",
+    "quad": "Apollo11::CSM::quad",
+    "RCSSystem": "Apollo11::CSM::RCSSystem"
+  },
+  "diagram": {
+    "id": "apollo-bdd-csm",
+    "kind": "DefinitionView",
+    "name": "CSM Definition Tree",
+    "canvas": {
+      "width": 1852,
+      "height": 652,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "CSM",
+        "model_ref": "CSM",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 858,
+          "y": 40,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "CSM",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition.root"
+      },
+      {
+        "id": "CM",
+        "model_ref": "CM",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 463,
+          "y": 170,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "CM",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "SCS",
+        "model_ref": "SCS",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 68,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "SCS",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "AGC_CM",
+        "model_ref": "AGC_CM",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 226,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "AGC_CM",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "IMU",
+        "model_ref": "IMU",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 384,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "IMU",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "DSKY",
+        "model_ref": "DSKY",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 542,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "DSKY",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ECLSS",
+        "model_ref": "ECLSS",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 700,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "ECLSS",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "AgZn1",
+        "model_ref": "AgZn",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 858,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "AgZn1",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "charger",
+        "model_ref": "charger",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 44,
+          "y": 430,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "charger",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "inverter1",
+        "model_ref": "inverter",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 202,
+          "y": 430,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "inverter1",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "probe",
+        "model_ref": "probe",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 360,
+          "y": 430,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "probe",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "ringLatches",
+        "model_ref": "ringLatches",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 518,
+          "y": 430,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "ringLatches",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "RCS",
+        "model_ref": "RCS",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 779,
+          "y": 430,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "RCS",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "systemA",
+        "model_ref": "RCSSystem",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 676,
+          "y": 560,
+          "width": 164,
+          "height": 52,
+          "z": 10
+        },
+        "label": "systemA 6\u00d793 lbf",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "systemB",
+        "model_ref": "RCSSystem",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 858,
+          "y": 560,
+          "width": 164,
+          "height": 52,
+          "z": 10
+        },
+        "label": "systemB 6\u00d793 lbf",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "SM",
+        "model_ref": "SM",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1356,
+          "y": 170,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "SM",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "SPS",
+        "model_ref": "SPS",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1119,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "SPS",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "FC1",
+        "model_ref": "FC",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1277,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "FC1",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "FC2",
+        "model_ref": "FC",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1435,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "FC2",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "FC3",
+        "model_ref": "FC",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1593,
+          "y": 300,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "FC3",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "quadA",
+        "model_ref": "quad",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1198,
+          "y": 380,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "quadA 100 lbf",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "quadB",
+        "model_ref": "quad",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1356,
+          "y": 380,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "quadB 100 lbf",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "quadC",
+        "model_ref": "quad",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1514,
+          "y": 380,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "quadC 100 lbf",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      },
+      {
+        "id": "quadD",
+        "model_ref": "quad",
+        "symbol": "part_definition",
+        "layout": {
+          "x": 1672,
+          "y": 380,
+          "width": 140,
+          "height": 52,
+          "z": 10
+        },
+        "label": "quadD 100 lbf",
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "part.definition"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-CSM-CM",
+        "model_ref": "CM",
+        "source": {
+          "element": "CSM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 928,
+              "y": 131
+            },
+            {
+              "x": 533,
+              "y": 131
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CSM-SM",
+        "model_ref": "SM",
+        "source": {
+          "element": "CSM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 928,
+              "y": 131
+            },
+            {
+              "x": 1426,
+              "y": 131
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-SCS",
+        "model_ref": "SCS",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SCS",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 261
+            },
+            {
+              "x": 138,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-AGC_CM",
+        "model_ref": "AGC_CM",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 261
+            },
+            {
+              "x": 296,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-IMU",
+        "model_ref": "IMU",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "IMU",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 261
+            },
+            {
+              "x": 454,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-DSKY",
+        "model_ref": "DSKY",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "DSKY",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 261
+            },
+            {
+              "x": 612,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-ECLSS",
+        "model_ref": "ECLSS",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ECLSS",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 261
+            },
+            {
+              "x": 770,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-AgZn1",
+        "model_ref": "AgZn",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AgZn1",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 261
+            },
+            {
+              "x": 928,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-charger",
+        "model_ref": "charger",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "charger",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 250
+            },
+            {
+              "x": 40,
+              "y": 250
+            },
+            {
+              "x": 40,
+              "y": 402
+            },
+            {
+              "x": 114,
+              "y": 402
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-inverter1",
+        "model_ref": "inverter",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "inverter1",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 250
+            },
+            {
+              "x": 40,
+              "y": 250
+            },
+            {
+              "x": 40,
+              "y": 402
+            },
+            {
+              "x": 272,
+              "y": 402
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-probe",
+        "model_ref": "probe",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "probe",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 250
+            },
+            {
+              "x": 40,
+              "y": 250
+            },
+            {
+              "x": 40,
+              "y": 402
+            },
+            {
+              "x": 430,
+              "y": 402
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-ringLatches",
+        "model_ref": "ringLatches",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ringLatches",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 250
+            },
+            {
+              "x": 1026,
+              "y": 250
+            },
+            {
+              "x": 1026,
+              "y": 402
+            },
+            {
+              "x": 588,
+              "y": 402
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-CM-RCS",
+        "model_ref": "RCS",
+        "source": {
+          "element": "CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RCS",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 533,
+              "y": 250
+            },
+            {
+              "x": 1026,
+              "y": 250
+            },
+            {
+              "x": 1026,
+              "y": 402
+            },
+            {
+              "x": 849,
+              "y": 402
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-RCS-systemA",
+        "model_ref": "RCSSystem",
+        "source": {
+          "element": "RCS",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "systemA",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 849,
+              "y": 521
+            },
+            {
+              "x": 758,
+              "y": 521
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-RCS-systemB",
+        "model_ref": "RCSSystem",
+        "source": {
+          "element": "RCS",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "systemB",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 849,
+              "y": 521
+            },
+            {
+              "x": 940,
+              "y": 521
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-SM-SPS",
+        "model_ref": "SPS",
+        "source": {
+          "element": "SM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SPS",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1426,
+              "y": 261
+            },
+            {
+              "x": 1189,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-SM-FC1",
+        "model_ref": "FC",
+        "source": {
+          "element": "SM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "FC1",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1426,
+              "y": 261
+            },
+            {
+              "x": 1347,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-SM-FC2",
+        "model_ref": "FC",
+        "source": {
+          "element": "SM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "FC2",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1426,
+              "y": 261
+            },
+            {
+              "x": 1505,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-SM-FC3",
+        "model_ref": "FC",
+        "source": {
+          "element": "SM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "FC3",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1426,
+              "y": 261
+            },
+            {
+              "x": 1663,
+              "y": 261
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 2,
+              "offset": 0.82,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-SM-quadA",
+        "model_ref": "quad",
+        "source": {
+          "element": "SM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "quadA",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1426,
+              "y": 250
+            },
+            {
+              "x": 1091,
+              "y": 250
+            },
+            {
+              "x": 1091,
+              "y": 352
+            },
+            {
+              "x": 1268,
+              "y": 352
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-SM-quadB",
+        "model_ref": "quad",
+        "source": {
+          "element": "SM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "quadB",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1426,
+              "y": 250
+            },
+            {
+              "x": 1091,
+              "y": 250
+            },
+            {
+              "x": 1091,
+              "y": 352
+            },
+            {
+              "x": 1426,
+              "y": 352
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-SM-quadC",
+        "model_ref": "quad",
+        "source": {
+          "element": "SM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "quadC",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1426,
+              "y": 250
+            },
+            {
+              "x": 1761,
+              "y": 250
+            },
+            {
+              "x": 1761,
+              "y": 352
+            },
+            {
+              "x": 1584,
+              "y": 352
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      },
+      {
+        "id": "conn-SM-quadD",
+        "model_ref": "quad",
+        "source": {
+          "element": "SM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "quadD",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1426,
+              "y": 250
+            },
+            {
+              "x": 1761,
+              "y": 250
+            },
+            {
+              "x": 1761,
+              "y": 352
+            },
+            {
+              "x": 1742,
+              "y": 352
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1",
+            "position": {
+              "segment": 4,
+              "offset": 0.94,
+              "dx": 10,
+              "dy": -4
+            }
+          }
+        ],
+        "style": "connector.definition"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11::CSM::CSM"
+  }
+}

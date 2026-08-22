@@ -1,0 +1,353 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-flow",
+    "kind": "FlowView",
+    "name": "Apollo 11 Command and USB Flows",
+    "canvas": {
+      "width": 1844,
+      "height": 394,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "FLIGHT",
+        "symbol": "flow_node",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "FLIGHT",
+        "style": "flow_node",
+        "model_ref": "FLIGHT"
+      },
+      {
+        "id": "CCC",
+        "symbol": "flow_node",
+        "layout": {
+          "x": 382,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "CCC",
+        "style": "flow_node",
+        "model_ref": "CCC"
+      },
+      {
+        "id": "RTCC",
+        "symbol": "flow_node",
+        "layout": {
+          "x": 692,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "RTCC",
+        "style": "flow_node",
+        "model_ref": "RTCC"
+      },
+      {
+        "id": "CCATS",
+        "symbol": "flow_node",
+        "layout": {
+          "x": 1002,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "CCATS",
+        "style": "flow_node",
+        "model_ref": "CCATS"
+      },
+      {
+        "id": "MSFN",
+        "symbol": "flow_node",
+        "layout": {
+          "x": 1312,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "MSFN",
+        "style": "flow_node",
+        "model_ref": "MSFN"
+      },
+      {
+        "id": "AGC_CM",
+        "symbol": "flow_node",
+        "layout": {
+          "x": 1622,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "AGC_CM",
+        "style": "flow_node",
+        "model_ref": "AGC_CM"
+      },
+      {
+        "id": "AGC_LM",
+        "symbol": "flow_node",
+        "layout": {
+          "x": 1622,
+          "y": 252,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "AGC_LM",
+        "style": "flow_node",
+        "model_ref": "AGC_LM"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-FLIGHT-CCC",
+        "source": {
+          "element": "FLIGHT",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CCC",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "FC",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "commandPathA"
+      },
+      {
+        "id": "conn-CCC-RTCC",
+        "source": {
+          "element": "CCC",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RTCC",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "path A",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "commandPathA"
+      },
+      {
+        "id": "conn-RTCC-CCATS",
+        "source": {
+          "element": "RTCC",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CCATS",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "path A",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "commandPathA"
+      },
+      {
+        "id": "conn-CCATS-MSFN",
+        "source": {
+          "element": "CCATS",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "MSFN",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "70 kHz",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "commandPathA"
+      },
+      {
+        "id": "conn-MSFN-AGC_CM",
+        "source": {
+          "element": "MSFN",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "USB",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "usbCsmFlow"
+      },
+      {
+        "id": "conn-MSFN-AGC_LM",
+        "source": {
+          "element": "MSFN",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_LM",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1498,
+              "y": 107
+            },
+            {
+              "x": 1498,
+              "y": 287
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "USB",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "usbLmFlow"
+      },
+      {
+        "id": "conn-FLIGHT-AGC_CM",
+        "source": {
+          "element": "FLIGHT",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "P27 V70\u2013V73",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "commandPathB"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

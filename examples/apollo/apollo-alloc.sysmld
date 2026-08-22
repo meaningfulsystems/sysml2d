@@ -1,0 +1,634 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-alloc",
+    "kind": "AllocationView",
+    "name": "Apollo 11 Allocations",
+    "canvas": {
+      "width": 2311,
+      "height": 476,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "iuGncRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 244,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Instrument Unit owns\nboost and Translunar Injection",
+        "style": "requirement",
+        "model_ref": "iuGncRequirement"
+      },
+      {
+        "id": "rsoRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 387,
+          "y": 72,
+          "width": 174,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Range Safety Officer\ndestruct",
+        "style": "requirement",
+        "model_ref": "rsoRequirement"
+      },
+      {
+        "id": "agcRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 649.5,
+          "y": 72,
+          "width": 209,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Command Module and Lunar\nModule guidance computers",
+        "style": "requirement",
+        "model_ref": "agcRequirement"
+      },
+      {
+        "id": "agsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1223.5,
+          "y": 72,
+          "width": 181,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Abort Guidance System\nseparate",
+        "style": "requirement",
+        "model_ref": "agsRequirement"
+      },
+      {
+        "id": "epsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1509,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Electrical Power",
+        "style": "requirement",
+        "model_ref": "epsRequirement"
+      },
+      {
+        "id": "dockingRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1789,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Docking",
+        "style": "requirement",
+        "model_ref": "dockingRequirement"
+      },
+      {
+        "id": "rcsRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 2069,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Reaction Control",
+        "style": "requirement",
+        "model_ref": "rcsRequirement"
+      },
+      {
+        "id": "IU",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 119,
+          "y": 334,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Instrument Unit",
+        "style": "part_usage",
+        "model_ref": "IU"
+      },
+      {
+        "id": "RSO",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 387,
+          "y": 334,
+          "width": 174,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Range Safety Officer",
+        "style": "part_usage",
+        "model_ref": "RSO"
+      },
+      {
+        "id": "AGC_CM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 677.5,
+          "y": 334,
+          "width": 153,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Command Module\nguidance computer",
+        "style": "part_usage",
+        "model_ref": "AGC_CM"
+      },
+      {
+        "id": "AGC_LM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 957.5,
+          "y": 334,
+          "width": 153,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Lunar Module\nguidance computer",
+        "style": "part_usage",
+        "model_ref": "AGC_LM"
+      },
+      {
+        "id": "AGS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 1223.5,
+          "y": 334,
+          "width": 181,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Abort Guidance System",
+        "style": "part_usage",
+        "model_ref": "AGS"
+      },
+      {
+        "id": "SM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 1519,
+          "y": 334,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Service Module",
+        "style": "part_usage",
+        "model_ref": "SM"
+      },
+      {
+        "id": "CM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 1799,
+          "y": 334,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Command Module",
+        "style": "part_usage",
+        "model_ref": "CM"
+      },
+      {
+        "id": "descent",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 2079,
+          "y": 334,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Descent stage",
+        "style": "part_usage",
+        "model_ref": "descent"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-iuGncRequirement-IU",
+        "source": {
+          "element": "iuGncRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "IU",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateBoostToIU"
+      },
+      {
+        "id": "conn-rsoRequirement-RSO",
+        "source": {
+          "element": "rsoRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RSO",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateDestructToRSO"
+      },
+      {
+        "id": "conn-agcRequirement-AGC_CM",
+        "source": {
+          "element": "agcRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateAGC_CMToCM"
+      },
+      {
+        "id": "conn-agcRequirement-AGC_LM",
+        "source": {
+          "element": "agcRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_LM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 754,
+              "y": 202.889
+            },
+            {
+              "x": 1034,
+              "y": 202.889
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateAGC_LMToLM"
+      },
+      {
+        "id": "conn-agsRequirement-AGS",
+        "source": {
+          "element": "agsRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGS",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateAGSToLM"
+      },
+      {
+        "id": "conn-epsRequirement-SM",
+        "source": {
+          "element": "epsRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.28
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1594,
+              "y": 219.333
+            },
+            {
+              "x": 1561,
+              "y": 219.333
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateEPSToSM"
+      },
+      {
+        "id": "conn-epsRequirement-CM",
+        "source": {
+          "element": "epsRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.22
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1594,
+              "y": 235.778
+            },
+            {
+              "x": 1832,
+              "y": 235.778
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateEPSToCM"
+      },
+      {
+        "id": "conn-epsRequirement-descent",
+        "source": {
+          "element": "epsRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "descent",
+          "anchor": {
+            "side": "top",
+            "offset": 0.22
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1594,
+              "y": 252.222
+            },
+            {
+              "x": 2112,
+              "y": 252.222
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateEPSToDescent"
+      },
+      {
+        "id": "conn-dockingRequirement-CM",
+        "source": {
+          "element": "dockingRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateDockToCM"
+      },
+      {
+        "id": "conn-rcsRequirement-SM",
+        "source": {
+          "element": "rcsRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.72
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 2154,
+              "y": 285.111
+            },
+            {
+              "x": 1627,
+              "y": 285.111
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateRCSToSM"
+      },
+      {
+        "id": "conn-rcsRequirement-CM",
+        "source": {
+          "element": "rcsRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.78
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 2154,
+              "y": 301.556
+            },
+            {
+              "x": 1916,
+              "y": 301.556
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateRCSToCM"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

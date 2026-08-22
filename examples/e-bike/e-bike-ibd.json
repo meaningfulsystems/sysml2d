@@ -1,0 +1,231 @@
+{
+  "diagram": "e-bike-ibd",
+  "kind": "InterconnectionView",
+  "name": "Electric Bike Interconnection",
+  "subject": "bike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {
+    "bike": "ElectricBike::ElectricBike",
+    "boundary": "ElectricBike::ElectricBike",
+    "frame": "ElectricBike::ElectricBike::frame",
+    "batteryPack": "ElectricBike::ElectricBike::batteryPack",
+    "motorController": "ElectricBike::ElectricBike::motorController",
+    "hubMotor": "ElectricBike::ElectricBike::hubMotor",
+    "humanInterface": "ElectricBike::ElectricBike::humanInterface",
+    "brakeSystem": "ElectricBike::ElectricBike::brakeSystem",
+    "bms": "ElectricBike::BatteryPack::bms",
+    "cadenceSensor": "ElectricBike::ElectricBike::cadenceSensor",
+    "wheelSpeedSensor": "ElectricBike::ElectricBike::wheelSpeedSensor",
+    "frame--batteryPack--src": "ElectricBike::Frame::batteryMountOut",
+    "frame--batteryPack--tgt": "ElectricBike::BatteryPack::mountIn",
+    "frame--hubMotor--src": "ElectricBike::Frame::motorMountOut",
+    "frame--hubMotor--tgt": "ElectricBike::HubMotor::mountIn",
+    "frame--humanInterface--src": "ElectricBike::Frame::interfaceMountOut",
+    "frame--humanInterface--tgt": "ElectricBike::HumanInterface::mountIn",
+    "frame--brakeSystem--src": "ElectricBike::Frame::brakeMountOut",
+    "frame--brakeSystem--tgt": "ElectricBike::BrakeSystem::mountIn",
+    "batteryPack--motorController--src": "ElectricBike::BatteryPack::powerOut",
+    "batteryPack--motorController--tgt": "ElectricBike::MotorController::powerIn",
+    "motorController--hubMotor--src": "ElectricBike::MotorController::driveOut",
+    "motorController--hubMotor--tgt": "ElectricBike::HubMotor::driveIn",
+    "humanInterface--motorController--src": "ElectricBike::HumanInterface::commandOut",
+    "humanInterface--motorController--tgt": "ElectricBike::MotorController::commandIn",
+    "brakeSystem--motorController--src": "ElectricBike::BrakeSystem::inhibitOut",
+    "brakeSystem--motorController--tgt": "ElectricBike::MotorController::inhibitIn",
+    "bnd--humanInterface": "ElectricBike::HumanInterface::riderIn",
+    "humanInterface--bnd--tgt": "ElectricBike::HumanInterface::riderIn",
+    "bnd--bms": "ElectricBike::BMS::chargerIn",
+    "bms--bnd--tgt": "ElectricBike::BMS::chargerIn",
+    "bms--batteryPack--src": "ElectricBike::BMS::contactorOut",
+    "bms--batteryPack--tgt": "ElectricBike::BatteryPack::powerOut",
+    "cadenceSensor--motorController--src": "ElectricBike::CadenceSensor::cadenceOut",
+    "cadenceSensor--motorController--tgt": "ElectricBike::MotorController::sensorIn",
+    "wheelSpeedSensor--motorController--src": "ElectricBike::WheelSpeedSensor::speedOut",
+    "wheelSpeedSensor--motorController--tgt": "ElectricBike::MotorController::sensorIn",
+    "bnd--hubMotor": "ElectricBike::HubMotor::roadLoadIn",
+    "hubMotor--bnd--tgt": "ElectricBike::HubMotor::roadLoadIn",
+    "conn-frame-batteryPack": "ElectricBike::ElectricBike::frameToBattery",
+    "conn-frame-hubMotor": "ElectricBike::ElectricBike::frameToMotor",
+    "conn-frame-humanInterface": "ElectricBike::ElectricBike::frameToInterface",
+    "conn-frame-brakeSystem": "ElectricBike::ElectricBike::frameToBrakes",
+    "conn-batteryPack-motorController": "ElectricBike::ElectricBike::batteryToController",
+    "conn-motorController-hubMotor": "ElectricBike::ElectricBike::controllerToMotor",
+    "conn-humanInterface-motorController": "ElectricBike::ElectricBike::interfaceToController",
+    "conn-brakeSystem-motorController": "ElectricBike::ElectricBike::brakesToController",
+    "conn-bnd-humanInterface": "ElectricBike::ElectricBike::riderToInterface",
+    "conn-bnd-bms": "ElectricBike::ElectricBike::chargerToBms",
+    "conn-bms-batteryPack": "ElectricBike::BatteryPack::bmsToPackPower",
+    "conn-cadenceSensor-motorController": "ElectricBike::ElectricBike::cadenceToController",
+    "conn-wheelSpeedSensor-motorController": "ElectricBike::ElectricBike::wheelSpeedToController",
+    "conn-bnd-hubMotor": "ElectricBike::ElectricBike::roadToMotor"
+  },
+  "direction": "left-right",
+  "default_w": 170,
+  "default_h": 78,
+  "col_gap": 70,
+  "rank_gap": 140,
+  "label_mode": "connection",
+  "nodes": {
+    "humanInterface": {
+      "label": "Human Interface",
+      "style": "part.control"
+    },
+    "brakeSystem": {
+      "label": "Brake System",
+      "style": "part.mechanical"
+    },
+    "batteryPack": {
+      "label": "Battery Pack",
+      "style": "part.power"
+    },
+    "motorController": {
+      "label": "Motor Controller",
+      "style": "part.control"
+    },
+    "hubMotor": {
+      "label": "Rear Geared Hub\n250 W cont. (EU)\n40 N\u00b7m peak \u00b7 regen none",
+      "style": "part.mechanical",
+      "h": 86
+    },
+    "frame": {
+      "label": "Frame",
+      "style": "part.structure"
+    },
+    "bms": {
+      "label": "BMS",
+      "style": "part.power",
+      "w": 140,
+      "h": 58
+    },
+    "cadenceSensor": {
+      "label": "Cadence Sensor",
+      "style": "part.control",
+      "w": 150,
+      "h": 58
+    },
+    "wheelSpeedSensor": {
+      "label": "Wheel Speed Sensor",
+      "style": "part.control",
+      "w": 150,
+      "h": 58
+    }
+  },
+  "edges": [
+    {
+      "from": "frame",
+      "to": "batteryPack",
+      "label": "mount",
+      "source_side": "right",
+      "target_side": "left",
+      "model_ref": "conn-frame-batteryPack"
+    },
+    {
+      "from": "frame",
+      "to": "humanInterface",
+      "label": "mount",
+      "source_side": "right",
+      "target_side": "left",
+      "model_ref": "conn-frame-humanInterface"
+    },
+    {
+      "from": "frame",
+      "to": "brakeSystem",
+      "label": "mount",
+      "source_side": "right",
+      "target_side": "left",
+      "model_ref": "conn-frame-brakeSystem"
+    },
+    {
+      "from": "batteryPack",
+      "to": "motorController",
+      "label": "pack power",
+      "model_ref": "conn-batteryPack-motorController"
+    },
+    {
+      "from": "motorController",
+      "to": "hubMotor",
+      "label": "phase drive",
+      "model_ref": "conn-motorController-hubMotor"
+    },
+    {
+      "from": "humanInterface",
+      "to": "motorController",
+      "label": "assist command",
+      "model_ref": "conn-humanInterface-motorController"
+    },
+    {
+      "from": "brakeSystem",
+      "to": "motorController",
+      "label": "inhibit",
+      "model_ref": "conn-brakeSystem-motorController"
+    },
+    {
+      "from": "bms",
+      "to": "batteryPack",
+      "label": "contactor",
+      "model_ref": "conn-bms-batteryPack"
+    },
+    {
+      "from": "cadenceSensor",
+      "to": "motorController",
+      "label": "cadence",
+      "model_ref": "conn-cadenceSensor-motorController"
+    },
+    {
+      "from": "wheelSpeedSensor",
+      "to": "motorController",
+      "label": "wheel speed",
+      "model_ref": "conn-wheelSpeedSensor-motorController"
+    }
+  ],
+  "boundary_inputs": [
+    {
+      "to": "humanInterface",
+      "label": "rider",
+      "model_ref": "conn-bnd-humanInterface"
+    },
+    {
+      "to": "bms",
+      "label": "charger",
+      "model_ref": "conn-bnd-bms"
+    },
+    {
+      "to": "hubMotor",
+      "label": "road load",
+      "model_ref": "conn-bnd-hubMotor"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.structure": {
+      "fill": "#F5F5F5",
+      "stroke": "#616161",
+      "stroke_width": 2
+    },
+    "part.mechanical": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.control": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.power": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

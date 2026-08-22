@@ -1,0 +1,64 @@
+{
+  "diagram": "e-bike-general",
+  "kind": "GeneralView",
+  "name": "Electric Bike Cross-View Trace",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "top-down",
+  "nodes": {
+    "rideBikeUseCase": {
+      "label": "Ride Bike",
+      "symbol": "use_case",
+      "rank": 0,
+      "order": 0
+    },
+    "rideSafetyRequirement": {
+      "label": "Ride Safety",
+      "symbol": "requirement",
+      "rank": 1,
+      "order": 0
+    },
+    "applyBrake": {
+      "label": "Apply Brake",
+      "symbol": "action",
+      "rank": 2,
+      "order": 0
+    },
+    "verifyBrakeCutoff": {
+      "label": "Verify Brake Cutoff",
+      "symbol": "case",
+      "rank": 2,
+      "order": 1
+    },
+    "brakeSystem": {
+      "label": "Brake System",
+      "symbol": "part_usage",
+      "rank": 3,
+      "order": 0
+    }
+  },
+  "edges": [
+    {
+      "from": "rideBikeUseCase",
+      "to": "rideSafetyRequirement",
+      "label": "refine"
+    },
+    {
+      "from": "rideSafetyRequirement",
+      "to": "applyBrake",
+      "label": "allocate"
+    },
+    {
+      "from": "applyBrake",
+      "to": "brakeSystem",
+      "label": "performed by"
+    },
+    {
+      "from": "verifyBrakeCutoff",
+      "to": "rideSafetyRequirement",
+      "label": "verify"
+    }
+  ]
+}

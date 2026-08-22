@@ -21,77 +21,76 @@
     "elements": [
       {
         "id": "verifyLidInterlock",
-        "model_ref": "verifyLidInterlock",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 390,
+          "y": 78,
           "width": 174,
           "height": 70,
           "z": 10
         },
         "label": "Verify Lid Interlock",
-        "style": "case"
+        "style": "case",
+        "model_ref": "verifyLidInterlock"
       },
       {
         "id": "verifySmoothnessDetection",
-        "model_ref": "verifySmoothnessDetection",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 570,
+          "y": 270,
           "width": 153,
           "height": 70,
           "z": 10
         },
         "label": "Verify Smoothness",
-        "style": "case"
+        "style": "case",
+        "model_ref": "verifySmoothnessDetection"
       },
       {
         "id": "verifyStopCommand",
-        "model_ref": "verifyStopCommand",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 750,
+          "y": 462,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Verify Stop",
-        "style": "case"
+        "style": "case",
+        "model_ref": "verifyStopCommand"
       },
       {
         "id": "verifyOvercurrentProtection",
-        "model_ref": "verifyOvercurrentProtection",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 930,
+          "y": 654,
           "width": 160,
           "height": 70,
           "z": 10
         },
         "label": "Verify Overcurrent",
-        "style": "case"
+        "style": "case",
+        "model_ref": "verifyOvercurrentProtection"
       },
       {
         "id": "verifyContainerSeat",
-        "model_ref": "verifyContainerSeat",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 1110,
+          "y": 846,
           "width": 181,
           "height": 70,
           "z": 10
         },
         "label": "Verify Container Seat",
-        "style": "case"
+        "style": "case",
+        "model_ref": "verifyContainerSeat"
       },
       {
         "id": "lidInterlockRequirement",
-        "model_ref": "lidInterlockRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 413,
@@ -101,11 +100,11 @@
           "z": 10
         },
         "label": "Lid Interlock Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "lidInterlockRequirement"
       },
       {
         "id": "interlockLatencyRequirement",
-        "model_ref": "interlockLatencyRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 413,
@@ -115,11 +114,11 @@
           "z": 10
         },
         "label": "Interlock Latency Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "interlockLatencyRequirement"
       },
       {
         "id": "smoothnessDetectionRequirement",
-        "model_ref": "smoothnessDetectionRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 413,
@@ -129,11 +128,11 @@
           "z": 10
         },
         "label": "Smoothness Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "smoothnessDetectionRequirement"
       },
       {
         "id": "smoothnessThresholdRequirement",
-        "model_ref": "smoothnessThresholdRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 413,
@@ -143,11 +142,11 @@
           "z": 10
         },
         "label": "Smoothness Threshold Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "smoothnessThresholdRequirement"
       },
       {
         "id": "userControlsRequirement",
-        "model_ref": "userControlsRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 413,
@@ -157,11 +156,11 @@
           "z": 10
         },
         "label": "User Controls Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "userControlsRequirement"
       },
       {
         "id": "motorControlRequirement",
-        "model_ref": "motorControlRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 413,
@@ -171,11 +170,11 @@
           "z": 10
         },
         "label": "Motor Control Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "motorControlRequirement"
       },
       {
         "id": "overcurrentProtectionRequirement",
-        "model_ref": "overcurrentProtectionRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 413,
@@ -185,11 +184,11 @@
           "z": 10
         },
         "label": "Overcurrent Protection Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "overcurrentProtectionRequirement"
       },
       {
         "id": "containerSeatRequirement",
-        "model_ref": "containerSeatRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 413,
@@ -199,13 +198,13 @@
           "z": 10
         },
         "label": "Container Seat Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "containerSeatRequirement"
       }
     ],
     "connections": [
       {
         "id": "conn-verifyLidInterlock-lidInterlockRequirement",
-        "model_ref": "verifyLidInterlock",
         "source": {
           "element": "verifyLidInterlock",
           "anchor": {
@@ -222,31 +221,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 302,
-              "y": 425
-            },
-            {
-              "x": 302,
-              "y": 113
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyLidInterlock"
       },
       {
         "id": "conn-verifyLidInterlock-interlockLatencyRequirement",
-        "model_ref": "verifyLidInterlock",
         "source": {
           "element": "verifyLidInterlock",
           "anchor": {
@@ -265,11 +254,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 302,
-              "y": 425
+              "x": 297.444,
+              "y": 113
             },
             {
-              "x": 302,
+              "x": 297.444,
               "y": 305
             }
           ]
@@ -278,16 +267,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyLidInterlock"
       },
       {
         "id": "conn-verifySmoothnessDetection-smoothnessDetectionRequirement",
-        "model_ref": "verifySmoothnessDetection",
         "source": {
           "element": "verifySmoothnessDetection",
           "anchor": {
@@ -306,11 +294,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 281,
-              "y": 605
+              "x": 311.667,
+              "y": 305
             },
             {
-              "x": 281,
+              "x": 311.667,
               "y": 497
             }
           ]
@@ -319,16 +307,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifySmoothnessDetection"
       },
       {
         "id": "conn-verifySmoothnessDetection-smoothnessThresholdRequirement",
-        "model_ref": "verifySmoothnessDetection",
         "source": {
           "element": "verifySmoothnessDetection",
           "anchor": {
@@ -347,11 +334,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 281,
-              "y": 605
+              "x": 325.889,
+              "y": 305
             },
             {
-              "x": 281,
+              "x": 325.889,
               "y": 689
             }
           ]
@@ -360,16 +347,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifySmoothnessDetection"
       },
       {
         "id": "conn-verifyStopCommand-userControlsRequirement",
-        "model_ref": "verifyStopCommand",
         "source": {
           "element": "verifyStopCommand",
           "anchor": {
@@ -388,11 +374,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 278,
-              "y": 785
+              "x": 340.111,
+              "y": 497
             },
             {
-              "x": 278,
+              "x": 340.111,
               "y": 881
             }
           ]
@@ -401,16 +387,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyStopCommand"
       },
       {
         "id": "conn-verifyStopCommand-motorControlRequirement",
-        "model_ref": "verifyStopCommand",
         "source": {
           "element": "verifyStopCommand",
           "anchor": {
@@ -429,11 +414,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 278,
-              "y": 785
+              "x": 354.333,
+              "y": 497
             },
             {
-              "x": 278,
+              "x": 354.333,
               "y": 1073
             }
           ]
@@ -442,16 +427,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyStopCommand"
       },
       {
         "id": "conn-verifyOvercurrentProtection-overcurrentProtectionRequirement",
-        "model_ref": "verifyOvercurrentProtection",
         "source": {
           "element": "verifyOvercurrentProtection",
           "anchor": {
@@ -470,11 +454,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 288,
-              "y": 965
+              "x": 368.556,
+              "y": 689
             },
             {
-              "x": 288,
+              "x": 368.556,
               "y": 1265
             }
           ]
@@ -483,16 +467,15 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyOvercurrentProtection"
       },
       {
         "id": "conn-verifyContainerSeat-containerSeatRequirement",
-        "model_ref": "verifyContainerSeat",
         "source": {
           "element": "verifyContainerSeat",
           "anchor": {
@@ -511,11 +494,11 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 309,
-              "y": 1145
+              "x": 382.778,
+              "y": 881
             },
             {
-              "x": 309,
+              "x": 382.778,
               "y": 1457
             }
           ]
@@ -524,12 +507,12 @@
           {
             "text": "verifies",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "verifyContainerSeat"
       }
     ],
     "annotations": [],

@@ -1,0 +1,276 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-pkg",
+    "kind": "PackageView",
+    "name": "Electric Bike Packages",
+    "canvas": {
+      "width": 1334,
+      "height": 444,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "BikeModel",
+        "symbol": "package",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Bike Model",
+        "style": "package",
+        "model_ref": "BikeModel"
+      },
+      {
+        "id": "BikeStructure",
+        "symbol": "package",
+        "layout": {
+          "x": 72,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Structure",
+        "style": "package",
+        "model_ref": "BikeStructure"
+      },
+      {
+        "id": "BikeBehavior",
+        "symbol": "package",
+        "layout": {
+          "x": 332,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Behavior",
+        "style": "package",
+        "model_ref": "BikeBehavior"
+      },
+      {
+        "id": "BikeRequirements",
+        "symbol": "package",
+        "layout": {
+          "x": 592,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Requirements",
+        "style": "package",
+        "model_ref": "BikeRequirements"
+      },
+      {
+        "id": "BikeAnalysis",
+        "symbol": "package",
+        "layout": {
+          "x": 852,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Analysis",
+        "style": "package",
+        "model_ref": "BikeAnalysis"
+      },
+      {
+        "id": "BikeVerification",
+        "symbol": "package",
+        "layout": {
+          "x": 1112,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Verification",
+        "style": "package",
+        "model_ref": "BikeVerification"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-BikeModel-BikeStructure",
+        "source": {
+          "element": "BikeModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "BikeStructure",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "contains",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "BikeModel"
+      },
+      {
+        "id": "conn-BikeModel-BikeBehavior",
+        "source": {
+          "element": "BikeModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "BikeBehavior",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 407,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "BikeModel"
+      },
+      {
+        "id": "conn-BikeModel-BikeRequirements",
+        "source": {
+          "element": "BikeModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "BikeRequirements",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 667,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "BikeModel"
+      },
+      {
+        "id": "conn-BikeModel-BikeAnalysis",
+        "source": {
+          "element": "BikeModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "BikeAnalysis",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 927,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "BikeModel"
+      },
+      {
+        "id": "conn-BikeModel-BikeVerification",
+        "source": {
+          "element": "BikeModel",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "BikeVerification",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 1187,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "BikeModel"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

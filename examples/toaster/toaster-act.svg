@@ -40,9 +40,9 @@
 <path d="M 147,902 L 147,974" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 147,1038 L 147,1110" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
 <path d="M 147,1174 L 147,1246" fill="none" stroke="#047857" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow-dark)"/>
-<text class="small" text-anchor="middle" x="147" y="272">bread loaded</text>
-<text class="small" text-anchor="middle" x="147" y="816">sample</text>
-<text class="small" text-anchor="middle" x="266" y="814.5">not done</text>
-<text class="small" text-anchor="middle" x="147" y="946">complete</text>
+<text class="small" x="159" y="264">bread loaded</text>
+<text class="small" x="159" y="808">sample</text>
+<text class="small" x="278" y="806.5">not done</text>
+<text class="small" x="159" y="938">complete</text>
 </g>
 </svg>

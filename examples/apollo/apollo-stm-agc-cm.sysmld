@@ -1,0 +1,476 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "AGC_CM_Mode": "Apollo11::AGC_CM_Mode",
+    "p00": "Apollo11::AGC_CM_Mode::p00",
+    "mode": "Apollo11::AGC_CM_Mode::mode",
+    "freshStart": "Apollo11::AGC_CM_Mode::freshStart",
+    "restart": "Apollo11::AGC_CM_Mode::restart",
+    "execOverflow": "Apollo11::AGC_CM_Mode::execOverflow",
+    "v37": "Apollo11::AGC_CM_Mode::v37",
+    "v36": "Apollo11::AGC_CM_Mode::v36",
+    "v69": "Apollo11::AGC_CM_Mode::v69",
+    "alarm1201": "Apollo11::AGC_CM_Mode::alarm1201",
+    "alarm1202": "Apollo11::AGC_CM_Mode::alarm1202",
+    "overflowToP00": "Apollo11::AGC_CM_Mode::overflowToP00",
+    "v36ToP00": "Apollo11::AGC_CM_Mode::v36ToP00",
+    "v69ToP00": "Apollo11::AGC_CM_Mode::v69ToP00"
+  },
+  "diagram": {
+    "id": "apollo-stm-agc-cm",
+    "kind": "StateView",
+    "name": "AGC_CM verbs (V37/V36/V69; 1201/1202 \u2260 abort)",
+    "canvas": {
+      "width": 1026,
+      "height": 552,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "AGC_CM_Mode",
+        "symbol": "boundary",
+        "layout": {
+          "x": 114,
+          "y": 68,
+          "width": 872,
+          "height": 444,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 150,
+          "y": 280,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "p00",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 330,
+          "y": 262,
+          "width": 140,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "p00",
+        "label": "P00",
+        "style": "state.default"
+      },
+      {
+        "id": "mode",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 570,
+          "y": 132,
+          "width": 140,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "mode",
+        "label": "V37 mode",
+        "style": "state.default"
+      },
+      {
+        "id": "freshStart",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 570,
+          "y": 262,
+          "width": 140,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "freshStart",
+        "label": "V36 fresh start",
+        "style": "state.default"
+      },
+      {
+        "id": "restart",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 570,
+          "y": 392,
+          "width": 140,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "restart",
+        "label": "V69 restart",
+        "style": "state.default"
+      },
+      {
+        "id": "execOverflow",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 810,
+          "y": 262,
+          "width": 140,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "execOverflow",
+        "label": "1201/1202\nexec overflow\n(not abort)",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--p00",
+        "model_ref": "AGC_CM_Mode",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p00",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p00--mode",
+        "model_ref": "v37",
+        "source": {
+          "element": "p00",
+          "anchor": {
+            "side": "right",
+            "offset": 0.25
+          }
+        },
+        "target": {
+          "element": "mode",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 495,
+              "y": 276
+            },
+            {
+              "x": 495,
+              "y": 160
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "V37",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p00--freshStart",
+        "model_ref": "v36",
+        "source": {
+          "element": "p00",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "freshStart",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "V36",
+            "position": {
+              "segment": 0,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "p00--restart",
+        "model_ref": "v69",
+        "source": {
+          "element": "p00",
+          "anchor": {
+            "side": "right",
+            "offset": 0.75
+          }
+        },
+        "target": {
+          "element": "restart",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 545,
+              "y": 304
+            },
+            {
+              "x": 545,
+              "y": 420
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "V69",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "mode--execOverflow",
+        "model_ref": "alarm1201",
+        "source": {
+          "element": "mode",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "execOverflow",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 760,
+              "y": 160
+            },
+            {
+              "x": 760,
+              "y": 290
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "1201/1202",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "freshStart-back-p00",
+        "model_ref": "v36ToP00",
+        "source": {
+          "element": "freshStart",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p00",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 640,
+              "y": 346
+            },
+            {
+              "x": 400,
+              "y": 346
+            }
+          ]
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "restart-back-p00",
+        "model_ref": "v69ToP00",
+        "source": {
+          "element": "restart",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p00",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 640,
+              "y": 476
+            },
+            {
+              "x": 400,
+              "y": 476
+            }
+          ]
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "execOverflow-back-p00",
+        "model_ref": "overflowToP00",
+        "source": {
+          "element": "execOverflow",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p00",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 880,
+              "y": 104
+            },
+            {
+              "x": 542,
+              "y": 104
+            },
+            {
+              "x": 542,
+              "y": 290
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "resume",
+            "position": {
+              "segment": 2,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "AGC_CM_Mode"
+  }
+}

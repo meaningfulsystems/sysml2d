@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1090" height="541" viewBox="0 0 1090 541">
+<svg xmlns="http://www.w3.org/2000/svg" width="1048" height="527" viewBox="0 0 1048 527">
 <defs>
 <style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
 <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
 <marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
 <marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
 </defs>
-<rect x="0" y="0" width="1090" height="541" fill="#FFFFFF"/>
-<rect x="2" y="38" width="1086" height="499" fill="none" stroke="#333333" stroke-width="2"/>
+<rect x="0" y="0" width="1048" height="527" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1044" height="485" fill="none" stroke="#333333" stroke-width="2"/>
 <path d="M 2 1 H 600 L 616 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
 <text class="header" x="12" y="24">[stv.mb] Toaster Control State Machine [toasterControl : ToasterControl]</text>
-<rect x="2" y="38" width="1086" height="501" fill="none" stroke="#333333" stroke-width="0"/>
+<rect x="2" y="38" width="1044" height="487" fill="none" stroke="#333333" stroke-width="0"/>
 <g transform="translate(2,40)">
-<rect id="boundary" x="95" y="75" width="951" height="384" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
-<text class="label" x="105" y="97">toasterControl</text>
+<rect id="boundary" x="109" y="89" width="895" height="356" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="119" y="111">toasterControl</text>
 <circle id="initial" cx="155" cy="221" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
 <rect id="idle" x="318" y="191" width="130" height="60" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
 <text class="label" text-anchor="middle" x="383" y="221">Idle</text>
@@ -31,7 +31,7 @@
 <path d="M 904,297.002 L 932,297 Q 940,297 940,305 L 940,373 Q 940,381 932,381 L 372,381 Q 364,381 363.969,373 L 363.5,251" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
 <text class="small" text-anchor="middle" x="497" y="229">lever down</text>
 <text class="small" text-anchor="middle" x="709" y="174.2">timer expired</text>
-<text class="small" x="751" y="242.2">fault: overheat / jam / power</text>
+<text class="small" x="753" y="242.2">fault: overheat / jam / power</text>
 <text class="small" text-anchor="middle" x="497" y="287">carriage up abort</text>
 <text class="small" text-anchor="middle" x="656" y="417">carriage up</text>
 <text class="small" text-anchor="middle" x="652" y="389">reset</text>

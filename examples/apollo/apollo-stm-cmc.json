@@ -1,0 +1,45 @@
+{
+  "diagram": "apollo-stm-cmc",
+  "kind": "StateView",
+  "name": "CMC ENTRY P61–P67 (not LGC landing)",
+  "subject": "CMC_Entry",
+  "model_files": ["apollo.sysml"],
+  "direction": "left-right",
+  "default_w": 120,
+  "default_h": 52,
+  "aliases": {
+    "CMC_Entry": "Apollo11::CMC_Entry",
+    "p61": "Apollo11::CMC_Entry::p61",
+    "p62": "Apollo11::CMC_Entry::p62",
+    "p63": "Apollo11::CMC_Entry::p63",
+    "p64": "Apollo11::CMC_Entry::p64",
+    "p65": "Apollo11::CMC_Entry::p65",
+    "p66": "Apollo11::CMC_Entry::p66",
+    "p67": "Apollo11::CMC_Entry::p67",
+    "toP62": "Apollo11::CMC_Entry::toP62",
+    "toP63": "Apollo11::CMC_Entry::toP63",
+    "toP64": "Apollo11::CMC_Entry::toP64",
+    "toP65": "Apollo11::CMC_Entry::toP65",
+    "toP66": "Apollo11::CMC_Entry::toP66",
+    "toP67": "Apollo11::CMC_Entry::toP67"
+  },
+  "states": {
+    "initial": {"initial": true},
+    "p61": {"label": "P61 ENTRY", "model_ref": "p61"},
+    "p62": {"label": "P62 ENTRY", "model_ref": "p62"},
+    "p63": {"label": "P63 ENTRY", "model_ref": "p63"},
+    "p64": {"label": "P64 ENTRY", "model_ref": "p64"},
+    "p65": {"label": "P65 ENTRY", "model_ref": "p65"},
+    "p66": {"label": "P66 ENTRY", "model_ref": "p66"},
+    "p67": {"label": "P67 ENTRY", "model_ref": "p67"}
+  },
+  "transitions": [
+    {"from": "initial", "to": "p61", "label": ""},
+    {"from": "p61", "to": "p62", "label": "", "model_ref": "toP62"},
+    {"from": "p62", "to": "p63", "label": "", "model_ref": "toP63"},
+    {"from": "p63", "to": "p64", "label": "", "model_ref": "toP64"},
+    {"from": "p64", "to": "p65", "label": "", "model_ref": "toP65"},
+    {"from": "p65", "to": "p66", "label": "", "model_ref": "toP66"},
+    {"from": "p66", "to": "p67", "label": "", "model_ref": "toP67"}
+  ]
+}

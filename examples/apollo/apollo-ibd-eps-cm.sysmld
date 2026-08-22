@@ -1,0 +1,535 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "CM": "Apollo11::CSM::CM",
+    "charger": "Apollo11::CSM::CM::charger",
+    "AgZn1": "Apollo11::CSM::CM::AgZn1",
+    "AgZn2": "Apollo11::CSM::CM::AgZn2",
+    "AgZn3": "Apollo11::CSM::CM::AgZn3",
+    "inverter1": "Apollo11::CSM::CM::inverter1",
+    "inverter2": "Apollo11::CSM::CM::inverter2",
+    "charger--AgZn1--src": "Apollo11::CSM::CM::charger",
+    "charger--AgZn1--tgt": "Apollo11::CSM::CM::AgZn1",
+    "conn-charger-AgZn1": "Apollo11::CSM::CM::chargerToAgZn1",
+    "charger--AgZn2--src": "Apollo11::CSM::CM::charger",
+    "charger--AgZn2--tgt": "Apollo11::CSM::CM::AgZn2",
+    "conn-charger-AgZn2": "Apollo11::CSM::CM::chargerToAgZn2",
+    "charger--AgZn3--src": "Apollo11::CSM::CM::charger",
+    "charger--AgZn3--tgt": "Apollo11::CSM::CM::AgZn3",
+    "conn-charger-AgZn3": "Apollo11::CSM::CM::chargerToAgZn3",
+    "AgZn1--inverter1--src": "Apollo11::CSM::CM::AgZn1",
+    "AgZn1--inverter1--tgt": "Apollo11::CSM::CM::inverter1",
+    "conn-AgZn1-inverter1": "Apollo11::CSM::CM::AgZn1ToInverter1",
+    "AgZn3--inverter2--src": "Apollo11::CSM::CM::AgZn3",
+    "AgZn3--inverter2--tgt": "Apollo11::CSM::CM::inverter2",
+    "conn-AgZn3-inverter2": "Apollo11::CSM::CM::AgZn3ToInverter2"
+  },
+  "diagram": {
+    "id": "apollo-ibd-eps-cm",
+    "kind": "InterconnectionView",
+    "name": "CM AgZn / charger / inverters",
+    "canvas": {
+      "width": 892,
+      "height": 430,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "CM",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 812,
+          "height": 350,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "charger",
+        "model_ref": "charger",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 186,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "charger",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "AgZn1",
+        "model_ref": "AgZn1",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 376,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AgZn1",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "AgZn2",
+        "model_ref": "AgZn2",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 376,
+          "y": 186,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AgZn2",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "AgZn3",
+        "model_ref": "AgZn3",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 376,
+          "y": 296,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AgZn3",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "inverter1",
+        "model_ref": "inverter1",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 676,
+          "y": 131,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "inverter1\n117 V 400 Hz",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "inverter2",
+        "model_ref": "inverter2",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 676,
+          "y": 241,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "inverter2\n117 V 400 Hz",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "charger--AgZn1--src",
+        "model_ref": "charger--AgZn1--src",
+        "symbol": "port",
+        "owner": "charger",
+        "placement": {
+          "side": "right",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "charger--AgZn2--src",
+        "model_ref": "charger--AgZn2--src",
+        "symbol": "port",
+        "owner": "charger",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "charger--AgZn3--src",
+        "model_ref": "charger--AgZn3--src",
+        "symbol": "port",
+        "owner": "charger",
+        "placement": {
+          "side": "right",
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "charger--AgZn1--tgt",
+        "model_ref": "charger--AgZn1--tgt",
+        "symbol": "port",
+        "owner": "AgZn1",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AgZn1--inverter1--src",
+        "model_ref": "AgZn1--inverter1--src",
+        "symbol": "port",
+        "owner": "AgZn1",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "charger--AgZn2--tgt",
+        "model_ref": "charger--AgZn2--tgt",
+        "symbol": "port",
+        "owner": "AgZn2",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "charger--AgZn3--tgt",
+        "model_ref": "charger--AgZn3--tgt",
+        "symbol": "port",
+        "owner": "AgZn3",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AgZn3--inverter2--src",
+        "model_ref": "AgZn3--inverter2--src",
+        "symbol": "port",
+        "owner": "AgZn3",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AgZn1--inverter1--tgt",
+        "model_ref": "AgZn1--inverter1--tgt",
+        "symbol": "port",
+        "owner": "inverter1",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AgZn3--inverter2--tgt",
+        "model_ref": "AgZn3--inverter2--tgt",
+        "symbol": "port",
+        "owner": "inverter2",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-charger-AgZn1",
+        "model_ref": "conn-charger-AgZn1",
+        "source": {
+          "element": "charger--AgZn1--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "charger--AgZn1--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 268,
+              "y": 200.5
+            },
+            {
+              "x": 268,
+              "y": 105
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "charge",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-charger-AgZn2",
+        "model_ref": "conn-charger-AgZn2",
+        "source": {
+          "element": "charger--AgZn2--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "charger--AgZn2--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "charge",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-charger-AgZn3",
+        "model_ref": "conn-charger-AgZn3",
+        "source": {
+          "element": "charger--AgZn3--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "charger--AgZn3--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 324,
+              "y": 229.5
+            },
+            {
+              "x": 324,
+              "y": 325
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "charge",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-AgZn1-inverter1",
+        "model_ref": "conn-AgZn1-inverter1",
+        "source": {
+          "element": "AgZn1--inverter1--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AgZn1--inverter1--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 577.333,
+              "y": 105
+            },
+            {
+              "x": 577.333,
+              "y": 160
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "AC",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-AgZn3-inverter2",
+        "model_ref": "conn-AgZn3-inverter2",
+        "source": {
+          "element": "AgZn3--inverter2--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AgZn3--inverter2--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 614.667,
+              "y": 325
+            },
+            {
+              "x": 614.667,
+              "y": 270
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "AC",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.eps": {
+        "fill": "#FEF9C3",
+        "stroke": "#A16207",
+        "stroke_width": 2
+      },
+      "part.dock": {
+        "fill": "#F1F5F9",
+        "stroke": "#475569",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "CM"
+  }
+}

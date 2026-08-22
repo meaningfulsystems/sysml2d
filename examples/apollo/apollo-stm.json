@@ -1,0 +1,126 @@
+{
+  "diagram": "apollo-stm",
+  "kind": "StateView",
+  "name": "Apollo 11 Earth Coast",
+  "subject": "earthCoast",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "top-down",
+  "rank_wrap": "snake",
+  "default_w": 168,
+  "default_h": 56,
+  "rank_gap": 140,
+  "col_gap": 72,
+  "aliases": {
+    "earthCoast": "Apollo11::MissionPhase::earthCoast",
+    "countdown": "Apollo11::MissionPhase::earthCoast::countdown",
+    "boost": "Apollo11::MissionPhase::earthCoast::boost",
+    "earthOrbit": "Apollo11::MissionPhase::earthCoast::earthOrbit",
+    "TLI": "Apollo11::MissionPhase::earthCoast::TLI",
+    "dockEject": "Apollo11::MissionPhase::earthCoast::dockEject",
+    "translunar": "Apollo11::MissionPhase::earthCoast::translunar",
+    "LOI": "Apollo11::MissionPhase::earthCoast::LOI",
+    "liftoff": "Apollo11::MissionPhase::earthCoast::liftoff",
+    "seoi": "Apollo11::MissionPhase::earthCoast::seoi",
+    "startTLI": "Apollo11::MissionPhase::earthCoast::startTLI",
+    "startDockEject": "Apollo11::MissionPhase::earthCoast::startDockEject",
+    "startTranslunar": "Apollo11::MissionPhase::earthCoast::startTranslunar",
+    "startLOI": "Apollo11::MissionPhase::earthCoast::startLOI"
+  },
+  "states": {
+    "earthCoast": {
+      "label": "Earth coast",
+      "composite": true,
+      "style": "state.composite",
+      "model_ref": "earthCoast"
+    },
+    "earthInitial": {
+      "initial": true,
+      "parent": "earthCoast"
+    },
+    "countdown": {
+      "label": "Countdown",
+      "model_ref": "countdown",
+      "parent": "earthCoast"
+    },
+    "boost": {
+      "label": "Boost",
+      "model_ref": "boost",
+      "parent": "earthCoast"
+    },
+    "earthOrbit": {
+      "label": "Earth orbit\n100 nmi planned",
+      "model_ref": "earthOrbit",
+      "parent": "earthCoast",
+      "h": 64
+    },
+    "TLI": {
+      "label": "Translunar Injection\nPK 02:44:15\nA11-FP 2:44:26\nflown 02:44:16",
+      "model_ref": "TLI",
+      "parent": "earthCoast",
+      "w": 200,
+      "h": 88
+    },
+    "dockEject": {
+      "label": "dock and eject",
+      "model_ref": "dockEject",
+      "parent": "earthCoast"
+    },
+    "translunar": {
+      "label": "Translunar coast",
+      "model_ref": "translunar",
+      "parent": "earthCoast"
+    },
+    "LOI": {
+      "label": "Lunar Orbit Insertion\nplanned 75:54:28\nflown ~075:49:50",
+      "model_ref": "LOI",
+      "parent": "earthCoast",
+      "w": 200,
+      "h": 80
+    }
+  },
+  "transitions": [
+    {
+      "from": "earthInitial",
+      "to": "countdown",
+      "label": ""
+    },
+    {
+      "from": "countdown",
+      "to": "boost",
+      "label": "tower clear",
+      "model_ref": "liftoff"
+    },
+    {
+      "from": "boost",
+      "to": "earthOrbit",
+      "label": "engine cutoff",
+      "model_ref": "seoi"
+    },
+    {
+      "from": "earthOrbit",
+      "to": "TLI",
+      "label": "IU / S-IVB",
+      "model_ref": "startTLI"
+    },
+    {
+      "from": "TLI",
+      "to": "dockEject",
+      "label": "TDE ~03:20–04:09",
+      "model_ref": "startDockEject"
+    },
+    {
+      "from": "dockEject",
+      "to": "translunar",
+      "label": "LM extract",
+      "model_ref": "startTranslunar"
+    },
+    {
+      "from": "translunar",
+      "to": "LOI",
+      "label": "Service Propulsion",
+      "model_ref": "startLOI"
+    }
+  ]
+}

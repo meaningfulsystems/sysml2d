@@ -1,0 +1,41 @@
+{
+  "diagram": "apollo-bdd-lm",
+  "kind": "DefinitionView",
+  "name": "LM Definition Tree",
+  "subject": "Apollo11::LM::LM",
+  "model_files": ["apollo.sysml"],
+  "direction": "top-down",
+  "default_w": 200,
+  "default_h": 56,
+  "sibling_gap": 28,
+  "rank_gap": 78,
+  "max_siblings_per_row": 4,
+  "route_around_boxes": true,
+  "aliases": {
+    "LM": "Apollo11::LM::LM",
+    "descent": "Apollo11::LM::descent",
+    "ascent": "Apollo11::LM::ascent",
+    "PNGS": "Apollo11::LM::PNGS",
+    "AGS": "Apollo11::LM::AGS",
+    "DPS": "Apollo11::LM::DPS",
+    "landingRadar": "Apollo11::LM::landingRadar",
+    "rendezvousRadar": "Apollo11::LM::rendezvousRadar"
+  },
+  "roots": [{
+    "id": "LM",
+    "label": "Lunar Module",
+    "model_ref": "LM",
+    "style": "part.definition.root",
+    "children": [
+      {"id": "descent", "label": "Descent stage", "model_ref": "descent", "max_siblings_per_row": 2, "children": [
+        {"id": "DPS", "label": "Descent Propulsion\nSystem", "model_ref": "DPS"},
+        {"id": "landingRadar", "label": "Landing radar", "model_ref": "landingRadar"}
+      ]},
+      {"id": "ascent", "label": "Ascent stage", "model_ref": "ascent", "max_siblings_per_row": 3, "children": [
+        {"id": "PNGS", "label": "Primary Guidance\nNavigation and Control", "model_ref": "PNGS"},
+        {"id": "AGS", "label": "Abort Guidance\nSystem", "model_ref": "AGS"},
+        {"id": "rendezvousRadar", "label": "Rendezvous radar", "model_ref": "rendezvousRadar"}
+      ]}
+    ]
+  }]
+}

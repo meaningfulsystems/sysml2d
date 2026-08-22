@@ -1,0 +1,68 @@
+{
+  "diagram": "apollo-bdd-csm",
+  "kind": "DefinitionView",
+  "name": "CSM Definition Tree",
+  "subject": "Apollo11::CSM::CSM",
+  "model_files": ["apollo.sysml"],
+  "direction": "top-down",
+  "default_w": 140,
+  "default_h": 52,
+  "sibling_gap": 18,
+  "rank_gap": 78,
+  "max_siblings_per_row": 6,
+  "route_around_boxes": true,
+  "aliases": {
+    "CSM": "Apollo11::CSM::CSM",
+    "CM": "Apollo11::CSM::CM",
+    "SM": "Apollo11::CSM::SM",
+    "SCS": "Apollo11::CSM::SCS",
+    "AGC_CM": "Apollo11::CSM::AGC_CM",
+    "IMU": "Apollo11::CSM::IMU",
+    "DSKY": "Apollo11::CSM::DSKY",
+    "SPS": "Apollo11::CSM::SPS",
+    "RCS": "Apollo11::CSM::RCS",
+    "ECLSS": "Apollo11::CSM::ECLSS",
+    "FC": "Apollo11::CSM::FC",
+    "AgZn": "Apollo11::CSM::AgZn",
+    "charger": "Apollo11::CSM::charger",
+    "inverter": "Apollo11::CSM::inverter",
+    "probe": "Apollo11::CSM::probe",
+    "ringLatches": "Apollo11::CSM::ringLatches",
+    "quad": "Apollo11::CSM::quad",
+    "RCSSystem": "Apollo11::CSM::RCSSystem"
+  },
+  "roots": [{
+    "id": "CSM",
+    "label": "CSM",
+    "model_ref": "CSM",
+    "style": "part.definition.root",
+    "children": [
+      {"id": "CM", "label": "CM", "model_ref": "CM", "children": [
+        {"id": "SCS", "label": "SCS", "model_ref": "SCS"},
+        {"id": "AGC_CM", "label": "AGC_CM", "model_ref": "AGC_CM"},
+        {"id": "IMU", "label": "IMU", "model_ref": "IMU"},
+        {"id": "DSKY", "label": "DSKY", "model_ref": "DSKY"},
+        {"id": "ECLSS", "label": "ECLSS", "model_ref": "ECLSS"},
+        {"id": "AgZn1", "label": "AgZn1", "model_ref": "AgZn"},
+        {"id": "charger", "label": "charger", "model_ref": "charger"},
+        {"id": "inverter1", "label": "inverter1", "model_ref": "inverter"},
+        {"id": "probe", "label": "probe", "model_ref": "probe"},
+        {"id": "ringLatches", "label": "ringLatches", "model_ref": "ringLatches"},
+        {"id": "RCS", "label": "RCS", "model_ref": "RCS", "children": [
+          {"id": "systemA", "label": "systemA 6×93 lbf", "model_ref": "RCSSystem"},
+          {"id": "systemB", "label": "systemB 6×93 lbf", "model_ref": "RCSSystem"}
+        ]}
+      ]},
+      {"id": "SM", "label": "SM", "model_ref": "SM", "children": [
+        {"id": "SPS", "label": "SPS", "model_ref": "SPS"},
+        {"id": "FC1", "label": "FC1", "model_ref": "FC"},
+        {"id": "FC2", "label": "FC2", "model_ref": "FC"},
+        {"id": "FC3", "label": "FC3", "model_ref": "FC"},
+        {"id": "quadA", "label": "quadA 100 lbf", "model_ref": "quad"},
+        {"id": "quadB", "label": "quadB 100 lbf", "model_ref": "quad"},
+        {"id": "quadC", "label": "quadC 100 lbf", "model_ref": "quad"},
+        {"id": "quadD", "label": "quadD 100 lbf", "model_ref": "quad"}
+      ]}
+    ]
+  }]
+}

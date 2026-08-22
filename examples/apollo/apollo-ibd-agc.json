@@ -1,0 +1,129 @@
+{
+  "diagram": "apollo-ibd-agc",
+  "kind": "InterconnectionView",
+  "name": "AGC_CM / AGC_LM hardware",
+  "subject": "mission",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 48,
+  "rank_gap": 130,
+  "label_mode": "connection",
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "cmOsc": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmE": "Apollo11::CSM::AGC_CM::erasable",
+    "cmF": "Apollo11::CSM::AGC_CM::fixed",
+    "lmOsc": "Apollo11::LM::AGC_LM::oscillator",
+    "lmE": "Apollo11::LM::AGC_LM::erasable",
+    "lmF": "Apollo11::LM::AGC_LM::fixed",
+    "cmOsc--cmE--src": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmOsc--cmE--tgt": "Apollo11::CSM::AGC_CM::erasable",
+    "conn-cmOsc-cmE": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmOsc--cmF--src": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmOsc--cmF--tgt": "Apollo11::CSM::AGC_CM::fixed",
+    "conn-cmOsc-cmF": "Apollo11::CSM::AGC_CM::oscillator",
+    "lmOsc--lmE--src": "Apollo11::LM::AGC_LM::oscillator",
+    "lmOsc--lmE--tgt": "Apollo11::LM::AGC_LM::erasable",
+    "conn-lmOsc-lmE": "Apollo11::LM::AGC_LM::oscillator",
+    "lmOsc--lmF--src": "Apollo11::LM::AGC_LM::oscillator",
+    "lmOsc--lmF--tgt": "Apollo11::LM::AGC_LM::fixed",
+    "conn-lmOsc-lmF": "Apollo11::LM::AGC_LM::oscillator"
+  },
+  "nodes": {
+    "cmOsc": {
+      "label": "AGC_CM osc\n1.024 MHz",
+      "style": "part.gnc"
+    },
+    "cmE": {
+      "label": "AGC_CM 2048 E",
+      "style": "part.gnc"
+    },
+    "cmF": {
+      "label": "AGC_CM 36864 F",
+      "style": "part.gnc"
+    },
+    "lmOsc": {
+      "label": "AGC_LM osc\n1.024 MHz",
+      "style": "part.gnc"
+    },
+    "lmE": {
+      "label": "AGC_LM 2048 E",
+      "style": "part.gnc"
+    },
+    "lmF": {
+      "label": "AGC_LM 36864 F",
+      "style": "part.gnc"
+    }
+  },
+  "edges": [
+    {
+      "from": "cmOsc",
+      "to": "cmE",
+      "label": "MCT 11.7 \u03bcs",
+      "model_ref": "conn-cmOsc-cmE"
+    },
+    {
+      "from": "cmOsc",
+      "to": "cmF",
+      "label": "fixed",
+      "model_ref": "conn-cmOsc-cmF"
+    },
+    {
+      "from": "lmOsc",
+      "to": "lmE",
+      "label": "MCT 11.7 \u03bcs",
+      "model_ref": "conn-lmOsc-lmE"
+    },
+    {
+      "from": "lmOsc",
+      "to": "lmF",
+      "label": "fixed",
+      "model_ref": "conn-lmOsc-lmF"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

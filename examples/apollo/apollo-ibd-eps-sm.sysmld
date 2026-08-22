@@ -1,0 +1,271 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "SM": "Apollo11::CSM::SM",
+    "FC1": "Apollo11::CSM::SM::FC1",
+    "FC2": "Apollo11::CSM::SM::FC2",
+    "FC3": "Apollo11::CSM::SM::FC3",
+    "FC1--FC2--src": "Apollo11::CSM::SM::FC1",
+    "FC1--FC2--tgt": "Apollo11::CSM::SM::FC2",
+    "conn-FC1-FC2": "Apollo11::CSM::SM::FC1ToFC2",
+    "FC2--FC3--src": "Apollo11::CSM::SM::FC2",
+    "FC2--FC3--tgt": "Apollo11::CSM::SM::FC3",
+    "conn-FC2-FC3": "Apollo11::CSM::SM::FC2ToFC3"
+  },
+  "diagram": {
+    "id": "apollo-ibd-eps-sm",
+    "kind": "InterconnectionView",
+    "name": "SM fuel cells (A11 Press Kit)",
+    "canvas": {
+      "width": 812,
+      "height": 210,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "SM",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 732,
+          "height": 130,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "FC1",
+        "model_ref": "FC1",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "FC1\n28 V DC",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "FC2",
+        "model_ref": "FC2",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 336,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "FC2\n28 V DC",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "FC3",
+        "model_ref": "FC3",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 596,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "FC3\n28 V DC",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "FC1--FC2--src",
+        "model_ref": "FC1--FC2--src",
+        "symbol": "port",
+        "owner": "FC1",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "FC1--FC2--tgt",
+        "model_ref": "FC1--FC2--tgt",
+        "symbol": "port",
+        "owner": "FC2",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "FC2--FC3--src",
+        "model_ref": "FC2--FC3--src",
+        "symbol": "port",
+        "owner": "FC2",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "FC2--FC3--tgt",
+        "model_ref": "FC2--FC3--tgt",
+        "symbol": "port",
+        "owner": "FC3",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-FC1-FC2",
+        "model_ref": "conn-FC1-FC2",
+        "source": {
+          "element": "FC1--FC2--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "FC1--FC2--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "parallel",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-FC2-FC3",
+        "model_ref": "conn-FC2-FC3",
+        "source": {
+          "element": "FC2--FC3--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "FC2--FC3--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "parallel",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.eps": {
+        "fill": "#FEF9C3",
+        "stroke": "#A16207",
+        "stroke_width": 2
+      },
+      "part.dock": {
+        "fill": "#F1F5F9",
+        "stroke": "#475569",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "SM"
+  }
+}

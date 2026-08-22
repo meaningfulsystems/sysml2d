@@ -1,0 +1,653 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {
+    "rideControl": "ElectricBike::RideControl",
+    "off": "ElectricBike::RideControl::off",
+    "standby": "ElectricBike::RideControl::standby",
+    "assist": "ElectricBike::RideControl::assist",
+    "walk": "ElectricBike::RideControl::walk",
+    "charging": "ElectricBike::RideControl::charging",
+    "fault": "ElectricBike::RideControl::fault",
+    "powerOn": "ElectricBike::RideControl::powerOn",
+    "startAssist": "ElectricBike::RideControl::startAssist",
+    "stopAssist": "ElectricBike::RideControl::stopAssist",
+    "startWalk": "ElectricBike::RideControl::startWalk",
+    "stopWalk": "ElectricBike::RideControl::stopWalk",
+    "brakeWalk": "ElectricBike::RideControl::brakeWalk",
+    "brakeCut": "ElectricBike::RideControl::brakeCut",
+    "plugIn": "ElectricBike::RideControl::plugIn",
+    "chargeComplete": "ElectricBike::RideControl::chargeComplete",
+    "unplug": "ElectricBike::RideControl::unplug",
+    "powerOff": "ElectricBike::RideControl::powerOff",
+    "faultFromAssist": "ElectricBike::RideControl::faultFromAssist",
+    "resetFault": "ElectricBike::RideControl::resetFault"
+  },
+  "diagram": {
+    "id": "e-bike-stm",
+    "kind": "StateView",
+    "name": "Ride Control State Machine",
+    "canvas": {
+      "width": 1433,
+      "height": 461,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "rideControl",
+        "symbol": "boundary",
+        "layout": {
+          "x": 109,
+          "y": 33,
+          "width": 1284,
+          "height": 388,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 145,
+          "y": 217,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "off",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 374,
+          "y": 197,
+          "width": 130,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "off",
+        "label": "Off",
+        "style": "state.default"
+      },
+      {
+        "id": "standby",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 659,
+          "y": 125,
+          "width": 130,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "standby",
+        "label": "Standby",
+        "style": "state.default"
+      },
+      {
+        "id": "assist",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 943,
+          "y": 125,
+          "width": 130,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "assist",
+        "label": "Assist",
+        "style": "state.default"
+      },
+      {
+        "id": "walk",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 943,
+          "y": 269,
+          "width": 130,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "walk",
+        "label": "walk\ndo / <= 6 km/h",
+        "style": "state.default"
+      },
+      {
+        "id": "charging",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 659,
+          "y": 269,
+          "width": 130,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "charging",
+        "label": "Charging\nfrom Off only",
+        "style": "state.default"
+      },
+      {
+        "id": "fault",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1227,
+          "y": 197,
+          "width": 130,
+          "height": 60,
+          "z": 10
+        },
+        "model_ref": "fault",
+        "label": "Fault",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--off",
+        "model_ref": "rideControl",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "off",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "off--standby",
+        "model_ref": "powerOn",
+        "source": {
+          "element": "off",
+          "anchor": {
+            "side": "right",
+            "offset": 0.3333
+          }
+        },
+        "target": {
+          "element": "standby",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 556,
+              "y": 217
+            },
+            {
+              "x": 556,
+              "y": 155
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "power button",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "standby--assist",
+        "model_ref": "startAssist",
+        "source": {
+          "element": "standby",
+          "anchor": {
+            "side": "right",
+            "offset": 0.3333
+          }
+        },
+        "target": {
+          "element": "assist",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 840,
+              "y": 145
+            },
+            {
+              "x": 840,
+              "y": 155
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "cadence (EPAC)",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "standby--walk",
+        "model_ref": "startWalk",
+        "source": {
+          "element": "standby",
+          "anchor": {
+            "side": "right",
+            "offset": 0.6667
+          }
+        },
+        "target": {
+          "element": "walk",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 892,
+              "y": 165
+            },
+            {
+              "x": 892,
+              "y": 299
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "walk button",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "off--charging",
+        "model_ref": "plugIn",
+        "source": {
+          "element": "off",
+          "anchor": {
+            "side": "right",
+            "offset": 0.6667
+          }
+        },
+        "target": {
+          "element": "charging",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 607,
+              "y": 237
+            },
+            {
+              "x": 607,
+              "y": 299
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "charger in (Off only)",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "assist--fault",
+        "model_ref": "faultFromAssist",
+        "source": {
+          "element": "assist",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "fault",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1150,
+              "y": 155
+            },
+            {
+              "x": 1150,
+              "y": 227
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "overcurrent",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "walk-back-standby",
+        "model_ref": "stopWalk",
+        "source": {
+          "element": "walk",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "standby",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1008,
+              "y": 357
+            },
+            {
+              "x": 631,
+              "y": 357
+            },
+            {
+              "x": 631,
+              "y": 185
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "release / brake",
+            "position": {
+              "segment": 2,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "assist-back-standby",
+        "model_ref": "stopAssist",
+        "source": {
+          "element": "assist",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "standby",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1008,
+              "y": 213
+            },
+            {
+              "x": 724,
+              "y": 213
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "no pedal / brake",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "charging-back-off",
+        "model_ref": "chargeComplete",
+        "source": {
+          "element": "charging",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "off",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 724,
+              "y": 385
+            },
+            {
+              "x": 439,
+              "y": 385
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "full / unplug",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "standby-back-off",
+        "model_ref": "powerOff",
+        "source": {
+          "element": "standby",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "off",
+          "anchor": {
+            "side": "top",
+            "offset": 0.3333
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 724,
+              "y": 69
+            },
+            {
+              "x": 417,
+              "y": 69
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "power button",
+            "position": {
+              "segment": 1,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      },
+      {
+        "id": "fault-back-off",
+        "model_ref": "resetFault",
+        "source": {
+          "element": "fault",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "off",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 1292,
+              "y": 97
+            },
+            {
+              "x": 1199,
+              "y": 97
+            },
+            {
+              "x": 1199,
+              "y": 227
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "reset \u2192 Off",
+            "position": {
+              "segment": 2,
+              "offset": 0.5,
+              "placement": "centerline"
+            }
+          }
+        ],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "rideControl"
+  }
+}

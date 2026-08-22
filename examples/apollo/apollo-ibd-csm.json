@@ -1,0 +1,134 @@
+{
+  "diagram": "apollo-ibd-csm",
+  "kind": "InterconnectionView",
+  "name": "CSM Interconnection",
+  "subject": "CSM",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 56,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "CSM": "Apollo11::CSM::CSM",
+    "SCS": "Apollo11::CSM::CM::SCS",
+    "AGC_CM": "Apollo11::CSM::CM::AGC_CM",
+    "IMU": "Apollo11::CSM::CM::IMU",
+    "RCS": "Apollo11::CSM::CM::RCS",
+    "ECLSS": "Apollo11::CSM::CM::ECLSS",
+    "SPS": "Apollo11::CSM::SM::SPS",
+    "SM_RCS": "Apollo11::CSM::SM::RCS",
+    "SCS--AGC_CM--src": "Apollo11::CSM::CM::SCS",
+    "SCS--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-SCS-AGC_CM": "Apollo11::CSM::CM::SCS",
+    "SCS--RCS--src": "Apollo11::CSM::CM::SCS",
+    "SCS--RCS--tgt": "Apollo11::CSM::CM::RCS",
+    "conn-SCS-RCS": "Apollo11::CSM::CM::SCS",
+    "AGC_CM--IMU--src": "Apollo11::CSM::CM::AGC_CM",
+    "AGC_CM--IMU--tgt": "Apollo11::CSM::CM::IMU",
+    "conn-AGC_CM-IMU": "Apollo11::CSM::CM::AGC_CM",
+    "ECLSS--AGC_CM--src": "Apollo11::CSM::CM::ECLSS",
+    "ECLSS--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-ECLSS-AGC_CM": "Apollo11::CSM::CM::ECLSS"
+  },
+  "nodes": {
+    "SCS": {
+      "label": "SCS",
+      "style": "part.gnc"
+    },
+    "AGC_CM": {
+      "label": "AGC_CM",
+      "style": "part.gnc"
+    },
+    "IMU": {
+      "label": "IMU",
+      "style": "part.gnc"
+    },
+    "RCS": {
+      "label": "RCS",
+      "style": "part.prop"
+    },
+    "ECLSS": {
+      "label": "ECLSS",
+      "style": "part.eclss"
+    },
+    "SPS": {
+      "label": "SPS",
+      "style": "part.prop"
+    },
+    "SM_RCS": {
+      "label": "RCS",
+      "style": "part.prop"
+    }
+  },
+  "edges": [
+    {
+      "from": "SCS",
+      "to": "AGC_CM",
+      "label": "backup",
+      "model_ref": "conn-SCS-AGC_CM"
+    },
+    {
+      "from": "SCS",
+      "to": "RCS",
+      "label": "jets",
+      "model_ref": "conn-SCS-RCS"
+    },
+    {
+      "from": "AGC_CM",
+      "to": "IMU",
+      "label": "IMU",
+      "model_ref": "conn-AGC_CM-IMU"
+    },
+    {
+      "from": "ECLSS",
+      "to": "AGC_CM",
+      "label": "cabin",
+      "model_ref": "conn-ECLSS-AGC_CM"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

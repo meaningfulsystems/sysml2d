@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1004" height="434" viewBox="0 0 1004 434">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1004" height="434" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1000" height="392" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 320 L 336 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[def.mb] Ground / MSFN / MCC [Ground]</text>
+<rect x="2" y="38" width="1000" height="394" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="Ground" x="430" y="40" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="500" y="66">Ground</text>
+<rect id="KSC_LCC" x="40" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="110" y="196">KSC_LCC</text>
+<rect id="MCC" x="196" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="266" y="196">MCC</text>
+<rect id="RTCC" x="196" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="266" y="326">RTCC</text>
+<rect id="MSFN" x="508" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="578" y="196">MSFN</text>
+<rect id="Goldstone" x="352" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="422" y="326">Goldstone</text>
+<rect id="Madrid" x="508" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="578" y="326">Madrid</text>
+<rect id="Honeysuckle" x="664" y="300" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="734" y="326">Honeysuckle</text>
+<rect id="NASCOM" x="820" y="170" width="140" height="52" rx="4" fill="#F8FAFC" stroke="#475569" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="890" y="196">NASCOM</text>
+<path d="M 500,92 L 500,131 L 110,131 L 110,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 500,92 L 500,131 L 266,131 L 266,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 500,92 L 500,131 L 578,131 L 578,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 500,92 L 500,131 L 890,131 L 890,170" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 266,222 L 266,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 578,222 L 578,261 L 422,261 L 422,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 578,222 L 578,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 578,222 L 578,261 L 734,261 L 734,300" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" x="120" y="158.98">1</text>
+<text class="small" x="276" y="158.98">1</text>
+<text class="small" x="588" y="158.98">1</text>
+<text class="small" x="900" y="158.98">1</text>
+<text class="small" x="276" y="281.96">1</text>
+<text class="small" x="432" y="288.98">1</text>
+<text class="small" x="588" y="281.96">1</text>
+<text class="small" x="744" y="288.98">1</text>
+</g>
+</svg>

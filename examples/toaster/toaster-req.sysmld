@@ -11,7 +11,7 @@
     "kind": "RequirementView",
     "name": "Toaster Requirements",
     "canvas": {
-      "width": 1849,
+      "width": 1919,
       "height": 826,
       "background": "#FFFFFF"
     },
@@ -24,7 +24,7 @@
         "model_ref": "toastSafetyRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 820,
+          "x": 855,
           "y": 72,
           "width": 209,
           "height": 88,
@@ -38,13 +38,13 @@
         "model_ref": "electricalSafetyRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 374,
+          "x": 395,
           "y": 270,
-          "width": 223,
+          "width": 258,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-T-002 Electrical Safety\nComply with UL 1026 / IEC\n60335-2-9 safety intent.",
+        "label": "\u00abrequirement\u00bb\nREQ-T-002 Electrical Safety\nComply with applicable household\nappliance electrical standards.",
         "style": "requirement"
       },
       {
@@ -52,7 +52,7 @@
         "model_ref": "browningRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 971,
+          "x": 1048,
           "y": 270,
           "width": 223,
           "height": 88,
@@ -66,13 +66,13 @@
         "model_ref": "timingRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1410,
+          "x": 1483.5,
           "y": 270,
           "width": 223,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-T-004 Toast Timing\nRelease carriage when timer\nor cancel event occurs.",
+        "label": "\u00abrequirement\u00bb\nREQ-T-004 Toast Timing\nHeating duration within \u00b15%\nof the selected setting.",
         "style": "requirement"
       },
       {
@@ -82,11 +82,11 @@
         "layout": {
           "x": 72,
           "y": 468,
-          "width": 202,
+          "width": 216,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-T-010 Power Rating\nOperate at 900-1200 W on\n120 VAC / 60 Hz supply.",
+        "label": "\u00abrequirement\u00bb\nREQ-T-010 Power Rating\nOperate within rated power\nunder normal use.",
         "style": "requirement"
       },
       {
@@ -94,13 +94,13 @@
         "model_ref": "surfaceTemperatureRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 346,
+          "x": 360,
           "y": 468,
-          "width": 237,
+          "width": 251,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-T-011 Surface Temp\nTouchable surfaces <= 60 C\nat max setting, 25 C ambient.",
+        "label": "\u00abrequirement\u00bb\nREQ-T-011 Surface Temp\nAccessible exteriors shall stay\nwithin safe touch limits.",
         "style": "requirement"
       },
       {
@@ -108,13 +108,13 @@
         "model_ref": "thermalCutoffRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 655,
+          "x": 683,
           "y": 468,
-          "width": 244,
+          "width": 293,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-T-012 Thermal Cutoff\nOpen heater circuit before\nexternal surface exceeds 90 C.",
+        "label": "\u00abrequirement\u00bb\nREQ-T-012 Thermal Cutoff\nDisable heating if internal\ntemperature exceeds a safe threshold.",
         "style": "requirement"
       },
       {
@@ -122,13 +122,13 @@
         "model_ref": "browningLevelsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 974.5,
+          "x": 1048,
           "y": 468,
-          "width": 216,
+          "width": 223,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-T-020 Browning Levels\nProvide 7 browning levels;\nslot delta <= 1.5 DeltaE.",
+        "label": "\u00abrequirement\u00bb\nREQ-T-020 Browning Levels\nAt least three distinct and\nrepeatable browning levels.",
         "style": "requirement"
       },
       {
@@ -136,13 +136,13 @@
         "model_ref": "carriageReleaseRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1269.5,
+          "x": 1343,
           "y": 468,
           "width": 216,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-T-021 Carriage Release\nPop up within 2 s of cycle\ncompletion or cancel.",
+        "label": "\u00abrequirement\u00bb\nREQ-T-021 Carriage Release\nRelease on timer expiry\nor user cancel.",
         "style": "requirement"
       },
       {
@@ -150,13 +150,13 @@
         "model_ref": "crumbTrayForceRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1266,
+          "x": 1343,
           "y": 666,
-          "width": 223,
+          "width": 216,
           "height": 88,
           "z": 10
         },
-        "label": "\u00abrequirement\u00bb\nREQ-T-030 Crumb Tray Force\nRemove tray with 5-15 N and\ncapture >= 90% crumbs.",
+        "label": "\u00abrequirement\u00bb\nREQ-T-030 Crumb Tray Force\nRemoval force no more\nthan 10 N.",
         "style": "requirement"
       },
       {
@@ -164,7 +164,7 @@
         "model_ref": "cycleLifeRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 1561,
+          "x": 1631,
           "y": 468,
           "width": 216,
           "height": 88,
@@ -200,8 +200,7 @@
           {
             "text": "derive",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
@@ -232,8 +231,7 @@
           {
             "text": "derive",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
@@ -264,8 +262,7 @@
           {
             "text": "derive",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
@@ -296,8 +293,7 @@
           {
             "text": "refine",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
@@ -328,8 +324,7 @@
           {
             "text": "refine",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
@@ -360,8 +355,7 @@
           {
             "text": "refine",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
@@ -392,8 +386,7 @@
           {
             "text": "refine",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
@@ -424,8 +417,7 @@
           {
             "text": "refine",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
@@ -456,8 +448,7 @@
           {
             "text": "trace",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
@@ -488,8 +479,7 @@
           {
             "text": "trace",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],

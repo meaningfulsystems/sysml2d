@@ -1,0 +1,391 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-act",
+    "kind": "ActionView",
+    "name": "Start Ride Cycle",
+    "canvas": {
+      "width": 348,
+      "height": 1206,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "rideStart",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 142,
+          "y": 72,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "label": "",
+        "style": "initial_state"
+      },
+      {
+        "id": "powerOnBike",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 164,
+          "width": 160,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Power On",
+        "style": "action",
+        "model_ref": "powerOnBike"
+      },
+      {
+        "id": "selectAssist",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 300,
+          "width": 160,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Select Assist",
+        "style": "action",
+        "model_ref": "selectAssist"
+      },
+      {
+        "id": "pedalAndThrottle",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 436,
+          "width": 160,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Pedal (EPAC)",
+        "style": "action",
+        "model_ref": "pedalAndThrottle"
+      },
+      {
+        "id": "deliverTorque",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 572,
+          "width": 160,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Deliver Torque",
+        "style": "action",
+        "model_ref": "deliverTorque"
+      },
+      {
+        "id": "brakeDecision",
+        "symbol": "decision_node",
+        "layout": {
+          "x": 114,
+          "y": 708,
+          "width": 76,
+          "height": 58,
+          "z": 10
+        },
+        "label": "brake?",
+        "style": "decision_node"
+      },
+      {
+        "id": "applyBrake",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 838,
+          "width": 160,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Apply Brake",
+        "style": "action",
+        "model_ref": "applyBrake"
+      },
+      {
+        "id": "inhibitMotor",
+        "symbol": "action",
+        "layout": {
+          "x": 72,
+          "y": 974,
+          "width": 160,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Inhibit Motor",
+        "style": "action",
+        "model_ref": "inhibitMotor"
+      },
+      {
+        "id": "rideEnd",
+        "symbol": "activity_final_node",
+        "layout": {
+          "x": 140,
+          "y": 1110,
+          "width": 24,
+          "height": 24,
+          "z": 10
+        },
+        "label": "",
+        "style": "activity_final_node"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-rideStart-powerOnBike",
+        "source": {
+          "element": "rideStart",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "powerOnBike",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "powerOnBike"
+      },
+      {
+        "id": "conn-powerOnBike-selectAssist",
+        "source": {
+          "element": "powerOnBike",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "selectAssist",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "powerOnBike"
+      },
+      {
+        "id": "conn-selectAssist-pedalAndThrottle",
+        "source": {
+          "element": "selectAssist",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "pedalAndThrottle",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "selectAssist"
+      },
+      {
+        "id": "conn-pedalAndThrottle-deliverTorque",
+        "source": {
+          "element": "pedalAndThrottle",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "deliverTorque",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "deliverTorque"
+      },
+      {
+        "id": "conn-deliverTorque-brakeDecision",
+        "source": {
+          "element": "deliverTorque",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "brakeDecision",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "deliverTorque"
+      },
+      {
+        "id": "conn-brakeDecision-applyBrake",
+        "source": {
+          "element": "brakeDecision",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "applyBrake",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "yes",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.control_flow",
+        "model_ref": "applyBrake"
+      },
+      {
+        "id": "conn-brakeDecision-pedalAndThrottle",
+        "source": {
+          "element": "brakeDecision",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "pedalAndThrottle",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 276,
+              "y": 737
+            },
+            {
+              "x": 276,
+              "y": 468
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "no",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.control_flow",
+        "model_ref": "pedalAndThrottle"
+      },
+      {
+        "id": "conn-applyBrake-inhibitMotor",
+        "source": {
+          "element": "applyBrake",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "inhibitMotor",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "inhibitMotor"
+      },
+      {
+        "id": "conn-inhibitMotor-rideEnd",
+        "source": {
+          "element": "inhibitMotor",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "rideEnd",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.control_flow",
+        "model_ref": "inhibitMotor"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

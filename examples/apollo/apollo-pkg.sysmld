@@ -1,0 +1,269 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-pkg",
+    "kind": "PackageView",
+    "name": "Apollo 11 Packages",
+    "canvas": {
+      "width": 1334,
+      "height": 444,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "Apollo11",
+        "symbol": "package",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Apollo11",
+        "style": "package",
+        "model_ref": "Apollo11"
+      },
+      {
+        "id": "SaturnV",
+        "symbol": "package",
+        "layout": {
+          "x": 72,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "SaturnV",
+        "style": "package",
+        "model_ref": "SaturnV"
+      },
+      {
+        "id": "CSM",
+        "symbol": "package",
+        "layout": {
+          "x": 332,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "CSM",
+        "style": "package",
+        "model_ref": "CSM"
+      },
+      {
+        "id": "LM",
+        "symbol": "package",
+        "layout": {
+          "x": 592,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "LM",
+        "style": "package",
+        "model_ref": "LM"
+      },
+      {
+        "id": "Crew",
+        "symbol": "package",
+        "layout": {
+          "x": 852,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Crew",
+        "style": "package",
+        "model_ref": "Crew"
+      },
+      {
+        "id": "Ground",
+        "symbol": "package",
+        "layout": {
+          "x": 1112,
+          "y": 302,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Ground",
+        "style": "package",
+        "model_ref": "Ground"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-Apollo11-SaturnV",
+        "source": {
+          "element": "Apollo11",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SaturnV",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "Apollo11"
+      },
+      {
+        "id": "conn-Apollo11-CSM",
+        "source": {
+          "element": "Apollo11",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CSM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 407,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "Apollo11"
+      },
+      {
+        "id": "conn-Apollo11-LM",
+        "source": {
+          "element": "Apollo11",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "LM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 667,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "Apollo11"
+      },
+      {
+        "id": "conn-Apollo11-Crew",
+        "source": {
+          "element": "Apollo11",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Crew",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 927,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "Apollo11"
+      },
+      {
+        "id": "conn-Apollo11-Ground",
+        "source": {
+          "element": "Apollo11",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "Ground",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 147,
+              "y": 178
+            },
+            {
+              "x": 1187,
+              "y": 178
+            }
+          ]
+        },
+        "labels": [],
+        "style": "connector.default",
+        "model_ref": "Apollo11"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

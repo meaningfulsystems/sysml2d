@@ -8,18 +8,18 @@
   "default_w": 180,
   "default_h": 78,
   "nodes": {
-    "commandedSpeed": {"label": "commandedSpeed\n20k rpm no-load", "symbol": "value_property", "rank": 0, "order": 0},
-    "motorTorque": {"label": "motorTorque\njam margin", "symbol": "value_property", "rank": 0, "order": 1},
-    "blendDuration": {"label": "blendDuration\n<= 120 s program", "symbol": "value_property", "rank": 0, "order": 2},
-    "interlockLatency": {"label": "interlockLatency\n<= 100 ms", "symbol": "value_property", "rank": 0, "order": 3},
+    "commandedSpeed": {"label": "commandedSpeed", "symbol": "value_property", "rank": 0, "order": 0},
+    "motorTorque": {"label": "motorTorque", "symbol": "value_property", "rank": 0, "order": 1},
+    "blendDuration": {"label": "blendDuration", "symbol": "value_property", "rank": 0, "order": 2},
+    "interlockLatency": {"label": "interlockLatency\n<= 50 ms", "symbol": "value_property", "rank": 0, "order": 3},
     "torqueSpeedLoadEstimate": {"label": "Torque-Speed-\nLoad", "rank": 1, "order": 0},
     "motorPowerLimit": {"label": "Motor Power\nLimit", "rank": 1, "order": 1},
     "blendTimingEstimate": {"label": "Blend Timing\nEstimate", "rank": 1, "order": 2},
     "interlockStopTiming": {"label": "Interlock Stop\nTiming", "rank": 1, "order": 3},
     "smoothnessThresholdEstimate": {"label": "Smoothness\nThreshold", "rank": 2, "order": 1},
-    "noisePowerTradeoff": {"label": "Noise-Power\nTradeoff <= 85 dBA", "rank": 2, "order": 2},
+    "noisePowerTradeoff": {"label": "Noise-Power\nTradeoff", "rank": 2, "order": 2},
     "smoothnessIndex": {"label": "smoothnessIndex\nbelow threshold", "symbol": "value_property", "rank": 3, "order": 1},
-    "noiseLevel": {"label": "noiseLevel\n1 m distance", "symbol": "value_property", "rank": 3, "order": 2}
+    "noiseLevel": {"label": "noiseLevel\noperator position", "symbol": "value_property", "rank": 3, "order": 2}
   },
   "edges": [
     {"from": "commandedSpeed", "to": "torqueSpeedLoadEstimate", "label": "bind"},

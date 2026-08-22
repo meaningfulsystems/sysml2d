@@ -1,0 +1,89 @@
+{
+  "diagram": "apollo-ibd-mcc",
+  "kind": "InterconnectionView",
+  "name": "MCC / RTCC",
+  "subject": "MCC",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 130,
+  "default_h": 58,
+  "col_gap": 40,
+  "rank_gap": 110,
+  "label_mode": "connection",
+  "aliases": {
+    "MCC": "Apollo11::Ground::MCC",
+    "FLIGHT": "Apollo11::Ground::MOCR::FLIGHT",
+    "CAPCOM": "Apollo11::Ground::MOCR::CAPCOM",
+    "EECOM": "Apollo11::Ground::MOCR::EECOM",
+    "CCC": "Apollo11::Ground::MOCR::CCC",
+    "RTCC": "Apollo11::Ground::MCC::RTCC",
+    "CCATS": "Apollo11::Ground::MCC::CCATS",
+    "FLIGHT--CCC--src": "Apollo11::Ground::MOCR::FLIGHT",
+    "FLIGHT--CCC--tgt": "Apollo11::Ground::MOCR::CCC",
+    "conn-FLIGHT-CCC": "Apollo11::Ground::MOCR::FLIGHT",
+    "CAPCOM--CCC--src": "Apollo11::Ground::MOCR::CAPCOM",
+    "CAPCOM--CCC--tgt": "Apollo11::Ground::MOCR::CCC",
+    "conn-CAPCOM-CCC": "Apollo11::Ground::MOCR::CAPCOM",
+    "EECOM--CCC--src": "Apollo11::Ground::MOCR::EECOM",
+    "EECOM--CCC--tgt": "Apollo11::Ground::MOCR::CCC",
+    "conn-EECOM-CCC": "Apollo11::Ground::MOCR::EECOM",
+    "CCC--RTCC--src": "Apollo11::Ground::MOCR::CCC",
+    "CCC--RTCC--tgt": "Apollo11::Ground::MCC::RTCC",
+    "conn-CCC-RTCC": "Apollo11::Ground::MOCR::CCC",
+    "RTCC--CCATS--src": "Apollo11::Ground::MCC::RTCC",
+    "RTCC--CCATS--tgt": "Apollo11::Ground::MCC::CCATS",
+    "conn-RTCC-CCATS": "Apollo11::Ground::MCC::RTCC"
+  },
+  "nodes": {
+    "FLIGHT": {
+      "label": "FLIGHT"
+    },
+    "CAPCOM": {
+      "label": "CAPCOM"
+    },
+    "EECOM": {
+      "label": "EECOM"
+    },
+    "CCC": {
+      "label": "CCC"
+    },
+    "RTCC": {
+      "label": "RTCC\n5\u00d7 360/75"
+    },
+    "CCATS": {
+      "label": "CCATS"
+    }
+  },
+  "edges": [
+    {
+      "from": "FLIGHT",
+      "to": "CCC",
+      "label": "FC",
+      "model_ref": "conn-FLIGHT-CCC"
+    },
+    {
+      "from": "CAPCOM",
+      "to": "CCC",
+      "model_ref": "conn-CAPCOM-CCC"
+    },
+    {
+      "from": "EECOM",
+      "to": "CCC",
+      "model_ref": "conn-EECOM-CCC"
+    },
+    {
+      "from": "CCC",
+      "to": "RTCC",
+      "label": "path A",
+      "model_ref": "conn-CCC-RTCC"
+    },
+    {
+      "from": "RTCC",
+      "to": "CCATS",
+      "label": "load",
+      "model_ref": "conn-RTCC-CCATS"
+    }
+  ]
+}

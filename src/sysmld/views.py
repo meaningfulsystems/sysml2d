@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from .layout import compute as _layout
+from .routing import ALIGN_SNAP, orthogonal_path_avoiding_boxes, path_crosses_boxes, rank_route_assignments
 
 
 VIEW_DEFAULT_SYMBOL = {
@@ -79,13 +80,26 @@ def view(spec: dict[str, Any], *, kind: str | None = None, default_symbol: str |
         rank_gap,
         spec.get("rank_wrap"),
     )
+    group_boxes = _group_boxes(spec.get("groups", []), boxes)
+    routes = rank_route_assignments(
+        edges,
+        boxes,
+        nodes,
+        direction,
+        member_bounds=_member_group_bounds(spec.get("groups", []), group_boxes),
+    )
     connections = [
-        _edge_connection(edge, boxes, nodes=nodes, direction=direction, view_kind=view_kind)
-        for edge in edges
+        _edge_connection(
+            edge,
+            boxes,
+            nodes=nodes,
+            direction=direction,
+            view_kind=view_kind,
+            assignment=routes[index],
+        )
+        for index, edge in enumerate(edges)
         if edge.get("from") in boxes and edge.get("to") in boxes
     ]
-
-    group_boxes = _group_boxes(spec.get("groups", []), boxes)
     bounds = _bounds([*boxes.values(), *group_boxes.values()], connections)
     shift_x = MARGIN - bounds[0]
     shift_y = MARGIN - bounds[1]
@@ -102,28 +116,32 @@ def view(spec: dict[str, Any], *, kind: str | None = None, default_symbol: str |
     elements: list[dict[str, Any]] = []
     for group in spec.get("groups", []):
         group_id = group["id"]
+        if group_id not in group_boxes:
+            continue
         x, y, w, h = group_boxes[group_id]
-        elements.append({
+        element = {
             "id": group_id,
-            "model_ref": group.get("model_ref", spec.get("subject", group_id)),
             "symbol": group.get("symbol", "boundary"),
             "layout": {"x": x, "y": y, "width": w, "height": h, "z": group.get("z", 0)},
             "label": group.get("label", group_id),
             "style": group.get("style", "boundary.system"),
-        })
+        }
+        element.update(_model_ref_field(group, spec.get("subject", group_id)))
+        elements.append(element)
 
     for node_id in nids:
         node = nodes[node_id]
         symbol = node.get("symbol", symbol_default)
         x, y, w, h = boxes[node_id]
-        elements.append({
+        element = {
             "id": node_id,
-            "model_ref": node.get("model_ref", node_id),
             "symbol": symbol,
             "layout": {"x": x, "y": y, "width": w, "height": h, "z": node.get("z", 10)},
             "label": node.get("label", node_id),
             "style": node.get("style", symbol),
-        })
+        }
+        element.update(_model_ref_field(node, node_id))
+        elements.append(element)
 
     diagram_id = spec.get("diagram", f"{view_kind.lower()}-view")
     diagram: dict[str, Any] = {
@@ -158,7 +176,7 @@ def interaction(spec: dict[str, Any]) -> dict[str, Any]:
     message_gap = int(spec.get("message_gap", 54))
     top = int(spec.get("top", 70))
     left = int(spec.get("left", 70))
-    height = top + 60 + max(1, len(messages)) * message_gap + 50
+    height = top + 70 + max(0, len(messages) - 1) * message_gap + 32
     elements = []
     centers: dict[str, float] = {}
     cursor_x = left
@@ -170,14 +188,15 @@ def interaction(spec: dict[str, Any]) -> dict[str, Any]:
         width = lifeline_widths[line_id]
         x = cursor_x
         centers[line_id] = x + width / 2
-        elements.append({
+        element = {
             "id": line_id,
-            "model_ref": line.get("model_ref", line_id),
             "symbol": "lifeline",
-            "layout": {"x": x, "y": top, "width": width, "height": height - top - 40, "z": 10},
+            "layout": {"x": x, "y": top, "width": width, "height": height - top - 8, "z": 10},
             "label": line.get("label", line_id),
             "style": line.get("style", "lifeline"),
-        })
+        }
+        element.update(_model_ref_field(line, line_id))
+        elements.append(element)
         cursor_x += width + spacing_x
 
     connections = []
@@ -194,11 +213,11 @@ def interaction(spec: dict[str, Any]) -> dict[str, Any]:
                 {"x": _clean(centers[src] + 70), "y": y},
                 {"x": _clean(centers[src] + 70), "y": y + 28},
             ]
-            target_offset = (y + 28 - top) / (height - top - 40)
+            target_offset = (y + 28 - top) / (height - top - 8)
         else:
             waypoints = []
-            target_offset = (y - top) / (height - top - 40)
-        source_offset = (y - top) / (height - top - 40)
+            target_offset = (y - top) / (height - top - 8)
+        source_offset = (y - top) / (height - top - 8)
         connections.append({
             "id": message.get("id", f"msg-{index + 1}"),
             "model_ref": message.get("model_ref", message.get("id", src)),
@@ -291,28 +310,32 @@ def action(spec: dict[str, Any]) -> dict[str, Any]:
     elements: list[dict[str, Any]] = []
     for group in spec.get("groups", []):
         group_id = group["id"]
+        if group_id not in group_boxes:
+            continue
         x, y, w, h = group_boxes[group_id]
-        elements.append({
+        element = {
             "id": group_id,
-            "model_ref": group.get("model_ref", spec.get("subject", group_id)),
             "symbol": group.get("symbol", "boundary"),
             "layout": {"x": x, "y": y, "width": w, "height": h, "z": group.get("z", 0)},
             "label": group.get("label", group_id),
             "style": group.get("style", "boundary.system"),
-        })
+        }
+        element.update(_model_ref_field(group, spec.get("subject", group_id)))
+        elements.append(element)
 
     for node_id in nids:
         node = nodes[node_id]
         symbol = node.get("symbol", symbol_default)
         x, y, w, h = boxes[node_id]
-        elements.append({
+        element = {
             "id": node_id,
-            "model_ref": node.get("model_ref", node_id),
             "symbol": symbol,
             "layout": {"x": x, "y": y, "width": w, "height": h, "z": node.get("z", 10)},
             "label": node.get("label", node_id),
             "style": node.get("style", symbol),
-        })
+        }
+        element.update(_model_ref_field(node, node_id))
+        elements.append(element)
 
     diagram_id = spec.get("diagram", "action-view")
     diagram: dict[str, Any] = {
@@ -418,23 +441,37 @@ def _action_boxes(
     explicit_columns: Any = None,
     explicit_rows: Any = None,
 ) -> tuple[dict[str, tuple[float, float, float, float]], dict[int, float], dict[int, float], dict[str, int]]:
-    columns = _action_column_count(len(nids), explicit_columns, direction)
-    rows_per_column = _action_rows_per_column(len(nids), columns, explicit_rows)
     sizes = {
         node_id: _node_size({**nodes[node_id], "symbol": nodes[node_id].get("symbol", symbol_default)}, default_w, default_h)
         for node_id in nids
     }
+    ranked = bool(nids) and all("rank" in nodes[node_id] for node_id in nids)
     cell_positions: dict[str, tuple[int, int]] = {}
-    for index, node_id in enumerate(nids):
-        if direction in {"top-down", "bottom-up"}:
-            col = index // rows_per_column
-            row_in_sequence = index % rows_per_column
-            row = row_in_sequence if col % 2 == 0 else rows_per_column - 1 - row_in_sequence
-        else:
-            row = index // columns
-            col_in_sequence = index % columns
-            col = col_in_sequence if row % 2 == 0 else columns - 1 - col_in_sequence
-        cell_positions[node_id] = (row, col)
+    rank_groups: dict[int, list[str]] | None = None
+    if ranked:
+        rank_groups = defaultdict(list)
+        for node_id in nids:
+            rank_groups[int(nodes[node_id]["rank"])].append(node_id)
+        for group in rank_groups.values():
+            group.sort(key=lambda node_id: (int(nodes[node_id].get("order", 0)), node_id))
+        ranks = sorted(rank_groups)
+        columns = max(len(rank_groups[rank]) for rank in ranks)
+        for row, rank in enumerate(ranks):
+            for col, node_id in enumerate(rank_groups[rank]):
+                cell_positions[node_id] = (row, col)
+    else:
+        columns = _action_column_count(len(nids), explicit_columns, direction)
+        rows_per_column = _action_rows_per_column(len(nids), columns, explicit_rows)
+        for index, node_id in enumerate(nids):
+            if direction in {"top-down", "bottom-up"}:
+                col = index // rows_per_column
+                row_in_sequence = index % rows_per_column
+                row = row_in_sequence if col % 2 == 0 else rows_per_column - 1 - row_in_sequence
+            else:
+                row = index // columns
+                col_in_sequence = index % columns
+                col = col_in_sequence if row % 2 == 0 else columns - 1 - col_in_sequence
+            cell_positions[node_id] = (row, col)
 
     row_count = max((row for row, _col in cell_positions.values()), default=0) + 1
     col_widths = [0] * columns
@@ -457,11 +494,25 @@ def _action_boxes(
         cursor_y += height + row_gap
 
     boxes: dict[str, tuple[float, float, float, float]] = {}
-    for node_id, (row, col) in cell_positions.items():
-        width, height = sizes[node_id]
-        x = x_by_col[col] + (col_widths[col] - width) / 2
-        y = y_by_row[row] + (row_heights[row] - height) / 2
-        boxes[node_id] = (_clean(x), _clean(y), width, height)
+    total_span = (x_by_col[-1] + col_widths[-1]) if columns else 0
+    if rank_groups is not None:
+        ranks = sorted(rank_groups)
+        for row, rank in enumerate(ranks):
+            group = rank_groups[rank]
+            used = len(group)
+            group_width = x_by_col[used - 1] + col_widths[used - 1] if used else 0
+            offset = (total_span - group_width) / 2
+            for col, node_id in enumerate(group):
+                width, height = sizes[node_id]
+                x = offset + x_by_col[col] + (col_widths[col] - width) / 2
+                y = y_by_row[row] + (row_heights[row] - height) / 2
+                boxes[node_id] = (_clean(x), _clean(y), width, height)
+    else:
+        for node_id, (row, col) in cell_positions.items():
+            width, height = sizes[node_id]
+            x = x_by_col[col] + (col_widths[col] - width) / 2
+            y = y_by_row[row] + (row_heights[row] - height) / 2
+            boxes[node_id] = (_clean(x), _clean(y), width, height)
 
     row_bottoms = {
         row: y_by_row[row] + row_heights[row]
@@ -499,18 +550,32 @@ def _action_edge_connection(
         if waypoints is None:
             waypoints = _orthogonal_waypoints(source_point, target_point, source_side, target_side)
 
+    source_point = _anchor_point(boxes[src], source_side, float(edge.get("source_offset", 0.5)))
+    target_point = _anchor_point(boxes[tgt], target_side, float(edge.get("target_offset", 0.5)))
+    points = [source_point, *[(point["x"], point["y"]) for point in waypoints], target_point]
+    if path_crosses_boxes(points, boxes, {src, tgt}):
+        avoided = orthogonal_path_avoiding_boxes(
+            source_point,
+            target_point,
+            boxes,
+            ignore={src, tgt},
+            preferred=points,
+        )
+        waypoints = _clean_waypoints(avoided)
+
     labels = []
     if edge.get("label", ""):
-        labels.append({"text": edge["label"], "position": {"offset": 0.5, "placement": "centerline"}})
-    return {
+        labels.append({"text": edge["label"], "position": {"offset": 0.5}})
+    connection = {
         "id": edge.get("id", f"conn-{src}-{tgt}"),
-        "model_ref": edge.get("model_ref", src),
         "source": {"element": src, "anchor": {"side": source_side, "offset": _clean(float(edge.get("source_offset", 0.5)))}},
         "target": {"element": tgt, "anchor": {"side": target_side, "offset": _clean(float(edge.get("target_offset", 0.5)))}},
         "route": {"kind": "orthogonal", "waypoints": waypoints},
         "labels": labels,
         "style": edge.get("style", "connector.control_flow"),
     }
+    connection.update(_model_ref_field(edge, src))
+    return connection
 
 
 def _action_loop_route(
@@ -578,6 +643,8 @@ def _node_boxes(
             group.sort(key=lambda node_id: (nodes[node_id].get("order", 0), node_id))
         boxes = {}
         vertical = direction in {"top-down", "bottom-up"}
+        cross_dim = 0 if vertical else 1
+        row_pitch = max(sizes[node_id][cross_dim] for node_id in nids) + col_gap
         primary_by_rank: dict[int, float] = {}
         cursor = 0.0
         for rank in sorted(rank_groups):
@@ -586,18 +653,18 @@ def _node_boxes(
             cursor += max_primary + rank_gap
         for rank in sorted(rank_groups):
             group = rank_groups[rank]
-            total_cross = sum(sizes[node_id][0 if vertical else 1] for node_id in group) + col_gap * max(0, len(group) - 1)
-            cross = -total_cross / 2
-            for node_id in group:
+            orders = [int(nodes[node_id].get("order", index)) for index, node_id in enumerate(group)]
+            span = max(orders) - min(orders) + 1 if orders else 0
+            use_order_slots = len(set(orders)) == len(orders) and span > len(orders)
+            for index, node_id in enumerate(group):
                 w, h = sizes[node_id]
+                slot = (orders[index] if use_order_slots else index) * row_pitch
                 if vertical:
-                    x = cross
+                    x = slot + (row_pitch - col_gap - w) / 2
                     y = primary_by_rank[rank]
-                    cross += w + col_gap
                 else:
                     x = primary_by_rank[rank]
-                    y = cross
-                    cross += h + col_gap
+                    y = slot + (row_pitch - col_gap - h) / 2
                 boxes[node_id] = (x, y, w, h)
         return boxes
 
@@ -655,32 +722,59 @@ def _edge_connection(
     nodes: dict[str, dict[str, Any]] | None = None,
     direction: str | None = None,
     view_kind: str = "GeneralView",
+    assignment: tuple[str, float] | None = None,
 ) -> dict[str, Any]:
     src = edge["from"]
     tgt = edge["to"]
     source_side, target_side = _rank_sides(edge, nodes, direction) or _sides(boxes[src], boxes[tgt], edge)
+    if edge.get("source_side"):
+        source_side = str(edge["source_side"])
+    if edge.get("target_side"):
+        target_side = str(edge["target_side"])
     source_offset = float(edge.get("source_offset", 0.5))
     target_offset = float(edge.get("target_offset", 0.5))
+    if assignment and assignment[0] == "rail":
+        source_side, target_side = _rail_sides(boxes[src], boxes[tgt], assignment[1], direction)
     source_point = _anchor_point(boxes[src], source_side, source_offset)
     target_point = _anchor_point(boxes[tgt], target_side, target_offset)
+    if assignment is None:
+        source_point, target_point, source_offset, target_offset = _snap_aligned_anchors(
+            boxes[src],
+            boxes[tgt],
+            source_side,
+            target_side,
+            source_offset,
+            target_offset,
+        )
     waypoints = edge.get("waypoints")
     if waypoints is None:
-        if view_kind == "ConstraintView" and str(edge.get("label", "")).lower() == "bind":
-            waypoints = []
-        else:
+        waypoints = _assigned_waypoints(source_point, target_point, source_side, target_side, assignment)
+        if waypoints is None:
             waypoints = _orthogonal_waypoints_avoiding_boxes(source_point, target_point, source_side, target_side, boxes, src, tgt)
+        else:
+            points = [source_point, *[(point["x"], point["y"]) for point in waypoints], target_point]
+            if path_crosses_boxes(points, boxes, {src, tgt}):
+                avoided = orthogonal_path_avoiding_boxes(
+                    source_point,
+                    target_point,
+                    boxes,
+                    ignore={src, tgt},
+                    preferred=points,
+                )
+                waypoints = _clean_waypoints(avoided)
     labels = []
     if edge.get("label", ""):
-        labels.append({"text": edge["label"], "position": {"offset": 0.5, "placement": "centerline"}})
-    return {
+        labels.append({"text": edge["label"], "position": {"offset": 0.5}})
+    connection = {
         "id": edge.get("id", f"conn-{src}-{tgt}"),
-        "model_ref": edge.get("model_ref", src),
         "source": {"element": src, "anchor": {"side": source_side, "offset": _clean(source_offset)}},
         "target": {"element": tgt, "anchor": {"side": target_side, "offset": _clean(target_offset)}},
         "route": {"kind": _default_route_kind(view_kind, edge), "waypoints": waypoints},
         "labels": labels,
         "style": edge.get("style", _default_edge_style(view_kind, edge)),
     }
+    connection.update(_model_ref_field(edge, src))
+    return connection
 
 
 def _default_edge_style(view_kind: str, edge: dict[str, Any]) -> str:
@@ -696,9 +790,55 @@ def _default_edge_style(view_kind: str, edge: dict[str, Any]) -> str:
 
 
 def _default_route_kind(view_kind: str, edge: dict[str, Any]) -> str:
-    if view_kind == "ConstraintView" and str(edge.get("label", "")).lower() == "bind":
-        return "polyline"
+    if edge.get("route_kind") in {"orthogonal", "polyline"}:
+        return str(edge["route_kind"])
     return "orthogonal"
+
+
+def _assigned_waypoints(
+    source: tuple[float, float],
+    target: tuple[float, float],
+    source_side: str,
+    target_side: str,
+    assignment: tuple[str, float] | None,
+) -> list[dict[str, float]] | None:
+    if assignment is None:
+        return None
+    kind, track = assignment
+    sx, sy = source
+    tx, ty = target
+    if kind == "channel":
+        if source_side in {"left", "right"} and target_side in {"left", "right"}:
+            if abs(sy - ty) < 1:
+                return []
+            return [{"x": _clean(track), "y": _clean(sy)}, {"x": _clean(track), "y": _clean(ty)}]
+        if source_side in {"top", "bottom"} and target_side in {"top", "bottom"}:
+            if abs(sx - tx) < 1:
+                return []
+            return [{"x": _clean(sx), "y": _clean(track)}, {"x": _clean(tx), "y": _clean(track)}]
+        return None
+    if source_side in {"left", "right"}:
+        return [{"x": _clean(track), "y": _clean(sy)}, {"x": _clean(track), "y": _clean(ty)}]
+    return [{"x": _clean(sx), "y": _clean(track)}, {"x": _clean(tx), "y": _clean(track)}]
+
+
+def _rail_sides(
+    source_box: tuple[float, float, float, float],
+    target_box: tuple[float, float, float, float],
+    rail: float,
+    direction: str | None,
+) -> tuple[str, str]:
+    if direction in {"top-down", "bottom-up"}:
+        side = "right" if rail >= max(source_box[0] + source_box[2], target_box[0] + target_box[2]) else "left"
+        return side, side
+    side = "bottom" if rail >= max(source_box[1] + source_box[3], target_box[1] + target_box[3]) else "top"
+    return side, side
+
+
+def _model_ref_field(owner: dict[str, Any], default: str) -> dict[str, str]:
+    if "model_ref" in owner and owner["model_ref"] is None:
+        return {}
+    return {"model_ref": str(owner.get("model_ref", default))}
 
 
 def _rank_sides(
@@ -817,7 +957,16 @@ def _orthogonal_waypoints_avoiding_boxes(
         for elbow in candidates:
             if not _route_crosses_obstacle([src, elbow, tgt], obstacles):
                 return _clean_waypoints([elbow])
-    return _orthogonal_waypoints(src, tgt, source_side, target_side)
+    fallback = _orthogonal_waypoints(src, tgt, source_side, target_side)
+    preferred = [src, *[(point["x"], point["y"]) for point in fallback], tgt]
+    avoided = orthogonal_path_avoiding_boxes(
+        src,
+        tgt,
+        boxes,
+        ignore={source_id, target_id},
+        preferred=preferred,
+    )
+    return _clean_waypoints(avoided)
 
 
 def _detour_candidates(
@@ -916,6 +1065,74 @@ def _segment_crosses_box_interior(
             return False
         return max(x1, x2) > left and min(x1, x2) < right
     return True
+
+
+def _member_group_bounds(
+    groups: list[dict[str, Any]],
+    group_boxes: dict[str, tuple[float, float, float, float]],
+) -> dict[str, tuple[float, float, float, float]]:
+    bounds: dict[str, tuple[float, float, float, float]] = {}
+    for group in groups:
+        box = group_boxes.get(group.get("id", ""))
+        if box is None:
+            continue
+        for member in group.get("members", []):
+            bounds[member] = box
+    return bounds
+
+
+def _snap_aligned_anchors(
+    source_box: tuple[float, float, float, float],
+    target_box: tuple[float, float, float, float],
+    source_side: str,
+    target_side: str,
+    source_offset: float,
+    target_offset: float,
+) -> tuple[tuple[float, float], tuple[float, float], float, float]:
+    source_point = _anchor_point(source_box, source_side, source_offset)
+    target_point = _anchor_point(target_box, target_side, target_offset)
+    if source_side in {"left", "right"} and target_side in {"left", "right"}:
+        shared = _shared_axis(source_box[1], source_box[3], target_box[1], target_box[3], source_point[1], target_point[1])
+        if shared is not None:
+            source_offset = _offset_along(source_box[1], source_box[3], shared)
+            target_offset = _offset_along(target_box[1], target_box[3], shared)
+            source_point = _anchor_point(source_box, source_side, source_offset)
+            target_point = _anchor_point(target_box, target_side, target_offset)
+    elif source_side in {"top", "bottom"} and target_side in {"top", "bottom"}:
+        shared = _shared_axis(source_box[0], source_box[2], target_box[0], target_box[2], source_point[0], target_point[0])
+        if shared is not None:
+            source_offset = _offset_along(source_box[0], source_box[2], shared)
+            target_offset = _offset_along(target_box[0], target_box[2], shared)
+            source_point = _anchor_point(source_box, source_side, source_offset)
+            target_point = _anchor_point(target_box, target_side, target_offset)
+    return source_point, target_point, source_offset, target_offset
+
+
+def _shared_axis(
+    source_origin: float,
+    source_span: float,
+    target_origin: float,
+    target_span: float,
+    source_value: float,
+    target_value: float,
+) -> float | None:
+    if abs(source_value - target_value) >= ALIGN_SNAP:
+        return None
+    if target_origin + 2 <= source_value <= target_origin + target_span - 2:
+        return source_value
+    if source_origin + 2 <= target_value <= source_origin + source_span - 2:
+        return target_value
+    overlap_lo = max(source_origin, target_origin)
+    overlap_hi = min(source_origin + source_span, target_origin + target_span)
+    if overlap_hi - overlap_lo >= 8:
+        return (overlap_lo + overlap_hi) / 2
+    return None
+
+
+def _offset_along(origin: float, span: float, value: float) -> float:
+    if span <= 0:
+        return 0.5
+    return max(0.12, min(0.88, (value - origin) / span))
 
 
 def _group_boxes(groups: list[dict[str, Any]], boxes: dict[str, tuple[float, float, float, float]]) -> dict[str, tuple[float, float, float, float]]:

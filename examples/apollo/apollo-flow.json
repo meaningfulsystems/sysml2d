@@ -1,0 +1,91 @@
+{
+  "diagram": "apollo-flow",
+  "kind": "FlowView",
+  "name": "Apollo 11 Command and USB Flows",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "nodes": {
+    "FLIGHT": {
+      "label": "FLIGHT",
+      "rank": 0,
+      "order": 0
+    },
+    "CCC": {
+      "label": "CCC",
+      "rank": 1,
+      "order": 0
+    },
+    "RTCC": {
+      "label": "RTCC",
+      "rank": 2,
+      "order": 0
+    },
+    "CCATS": {
+      "label": "CCATS",
+      "rank": 3,
+      "order": 0
+    },
+    "MSFN": {
+      "label": "MSFN",
+      "rank": 4,
+      "order": 0
+    },
+    "AGC_CM": {
+      "label": "AGC_CM",
+      "rank": 5,
+      "order": 0
+    },
+    "AGC_LM": {
+      "label": "AGC_LM",
+      "rank": 5,
+      "order": 1
+    }
+  },
+  "edges": [
+    {
+      "from": "FLIGHT",
+      "to": "CCC",
+      "label": "FC",
+      "model_ref": "commandPathA"
+    },
+    {
+      "from": "CCC",
+      "to": "RTCC",
+      "label": "path A",
+      "model_ref": "commandPathA"
+    },
+    {
+      "from": "RTCC",
+      "to": "CCATS",
+      "label": "path A",
+      "model_ref": "commandPathA"
+    },
+    {
+      "from": "CCATS",
+      "to": "MSFN",
+      "label": "70 kHz",
+      "model_ref": "commandPathA"
+    },
+    {
+      "from": "MSFN",
+      "to": "AGC_CM",
+      "label": "USB",
+      "model_ref": "usbCsmFlow"
+    },
+    {
+      "from": "MSFN",
+      "to": "AGC_LM",
+      "label": "USB",
+      "model_ref": "usbLmFlow"
+    },
+    {
+      "from": "FLIGHT",
+      "to": "AGC_CM",
+      "label": "P27 V70\u2013V73",
+      "model_ref": "commandPathB"
+    }
+  ]
+}

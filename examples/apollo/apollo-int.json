@@ -1,0 +1,73 @@
+{
+  "diagram": "apollo-int",
+  "kind": "InteractionView",
+  "name": "Two command paths (A vs P27)",
+  "subject": "Apollo11",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "lifelines": {
+    "FLIGHT": {
+      "label": "FLIGHT"
+    },
+    "CCC": {
+      "label": "CCC"
+    },
+    "RTCC": {
+      "label": "RTCC"
+    },
+    "CCATS": {
+      "label": "CCATS"
+    },
+    "MSFN": {
+      "label": "MSFN"
+    },
+    "AGC_CM": {
+      "label": "AGC_CM"
+    }
+  },
+  "messages": [
+    {
+      "id": "m1",
+      "from": "FLIGHT",
+      "to": "CCC",
+      "label": "FC",
+      "model_ref": "sendPathA"
+    },
+    {
+      "id": "m2",
+      "from": "CCC",
+      "to": "RTCC",
+      "label": "path A",
+      "model_ref": "commandPathA"
+    },
+    {
+      "id": "m3",
+      "from": "RTCC",
+      "to": "CCATS",
+      "label": "load",
+      "model_ref": "commandPathA"
+    },
+    {
+      "id": "m4",
+      "from": "CCATS",
+      "to": "MSFN",
+      "label": "70 kHz",
+      "model_ref": "commandPathA"
+    },
+    {
+      "id": "m5",
+      "from": "MSFN",
+      "to": "AGC_CM",
+      "label": "USB",
+      "model_ref": "usbCsmFlow"
+    },
+    {
+      "id": "m6",
+      "from": "FLIGHT",
+      "to": "AGC_CM",
+      "label": "P27 V70\u2013V73",
+      "model_ref": "sendP27"
+    }
+  ]
+}

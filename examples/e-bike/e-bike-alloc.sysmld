@@ -1,0 +1,645 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-alloc",
+    "kind": "AllocationView",
+    "name": "Electric Bike Allocations",
+    "canvas": {
+      "width": 666,
+      "height": 1180,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "rideSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Ride Safety",
+        "style": "requirement",
+        "model_ref": "rideSafetyRequirement"
+      },
+      {
+        "id": "rangeRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 264,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Range",
+        "style": "requirement",
+        "model_ref": "rangeRequirement"
+      },
+      {
+        "id": "chargeSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 456,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Charge Safety",
+        "style": "requirement",
+        "model_ref": "chargeSafetyRequirement"
+      },
+      {
+        "id": "assistLimitRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 648,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "Assist Limit",
+        "style": "requirement",
+        "model_ref": "assistLimitRequirement"
+      },
+      {
+        "id": "en15194DistanceRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 840,
+          "width": 202,
+          "height": 82,
+          "z": 10
+        },
+        "label": "EN 15194:2017 4.2.13\n2 m; levers relax to 5 m",
+        "style": "requirement",
+        "model_ref": "en15194DistanceRequirement"
+      },
+      {
+        "id": "brakeSystem",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 434,
+          "y": 78,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Brake System",
+        "style": "part_usage",
+        "model_ref": "brakeSystem"
+      },
+      {
+        "id": "motorController",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 434,
+          "y": 270,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Controller",
+        "style": "part_usage",
+        "model_ref": "motorController"
+      },
+      {
+        "id": "cadenceSensor",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 434,
+          "y": 462,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Cadence Sensor",
+        "style": "part_usage",
+        "model_ref": "cadenceSensor"
+      },
+      {
+        "id": "wheelSpeedSensor",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 434,
+          "y": 654,
+          "width": 160,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Wheel Speed Sensor",
+        "style": "part_usage",
+        "model_ref": "wheelSpeedSensor"
+      },
+      {
+        "id": "bms",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 434,
+          "y": 846,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "BMS",
+        "style": "part_usage",
+        "model_ref": "bms"
+      },
+      {
+        "id": "batteryPack",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 434,
+          "y": 1038,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Battery Pack",
+        "style": "part_usage",
+        "model_ref": "batteryPack"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-rideSafetyRequirement-brakeSystem",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "brakeSystem",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateSafetyToBrakes"
+      },
+      {
+        "id": "conn-rideSafetyRequirement-motorController",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 309.692,
+              "y": 113
+            },
+            {
+              "x": 309.692,
+              "y": 305
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateSafetyToController"
+      },
+      {
+        "id": "conn-rideSafetyRequirement-cadenceSensor",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cadenceSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 319.538,
+              "y": 113
+            },
+            {
+              "x": 319.538,
+              "y": 497
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateSafetyToSensors"
+      },
+      {
+        "id": "conn-rideSafetyRequirement-wheelSpeedSensor",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "wheelSpeedSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 329.385,
+              "y": 113
+            },
+            {
+              "x": 329.385,
+              "y": 689
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateSafetyToWheelSpeed"
+      },
+      {
+        "id": "conn-rideSafetyRequirement-bms",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "bms",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 339.231,
+              "y": 113
+            },
+            {
+              "x": 339.231,
+              "y": 881
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateSafetyToBms"
+      },
+      {
+        "id": "conn-rangeRequirement-batteryPack",
+        "source": {
+          "element": "rangeRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "batteryPack",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 368.769,
+              "y": 305
+            },
+            {
+              "x": 368.769,
+              "y": 1073
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateRangeToBattery"
+      },
+      {
+        "id": "conn-assistLimitRequirement-motorController",
+        "source": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 349.077,
+              "y": 689
+            },
+            {
+              "x": 349.077,
+              "y": 305
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateAssistToController"
+      },
+      {
+        "id": "conn-assistLimitRequirement-wheelSpeedSensor",
+        "source": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "wheelSpeedSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateAssistToWheelSpeed"
+      },
+      {
+        "id": "conn-en15194DistanceRequirement-motorController",
+        "source": {
+          "element": "en15194DistanceRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 358.923,
+              "y": 881
+            },
+            {
+              "x": 358.923,
+              "y": 305
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateDistanceToController"
+      },
+      {
+        "id": "conn-en15194DistanceRequirement-cadenceSensor",
+        "source": {
+          "element": "en15194DistanceRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cadenceSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 388.462,
+              "y": 881
+            },
+            {
+              "x": 388.462,
+              "y": 497
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateDistanceToCadence"
+      },
+      {
+        "id": "conn-en15194DistanceRequirement-wheelSpeedSensor",
+        "source": {
+          "element": "en15194DistanceRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "wheelSpeedSensor",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 408.154,
+              "y": 881
+            },
+            {
+              "x": 408.154,
+              "y": 689
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateDistanceToWheelSpeed"
+      },
+      {
+        "id": "conn-chargeSafetyRequirement-bms",
+        "source": {
+          "element": "chargeSafetyRequirement",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "bms",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 398.308,
+              "y": 497
+            },
+            {
+              "x": 398.308,
+              "y": 881
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.allocation",
+        "model_ref": "allocateChargeToBms"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "diagram": "apollo-stm-scs",
+  "kind": "StateView",
+  "name": "SCS modes",
+  "subject": "SCSMode",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 130,
+  "default_h": 52,
+  "aliases": {
+    "SCSMode": "Apollo11::SCSMode",
+    "AGC_CM": "Apollo11::SCSMode::AGC_CM",
+    "attHold": "Apollo11::SCSMode::attHold",
+    "rateCommand": "Apollo11::SCSMode::rateCommand",
+    "minImpulse": "Apollo11::SCSMode::minImpulse",
+    "scsToHold": "Apollo11::SCSMode::scsToHold",
+    "scsToRate": "Apollo11::SCSMode::scsToRate",
+    "scsToMin": "Apollo11::SCSMode::scsToMin",
+    "scsToAGC": "Apollo11::SCSMode::scsToAGC",
+    "scsRateToAGC": "Apollo11::SCSMode::scsRateToAGC",
+    "scsMinToAGC": "Apollo11::SCSMode::scsMinToAGC"
+  },
+  "states": {
+    "initial": {
+      "initial": true
+    },
+    "AGC_CM": {
+      "label": "AGC_CM",
+      "model_ref": "AGC_CM"
+    },
+    "attHold": {
+      "label": "attitude hold",
+      "model_ref": "attHold"
+    },
+    "rateCommand": {
+      "label": "rate command",
+      "model_ref": "rateCommand"
+    },
+    "minImpulse": {
+      "label": "min impulse",
+      "model_ref": "minImpulse"
+    }
+  },
+  "transitions": [
+    {
+      "from": "initial",
+      "to": "AGC_CM",
+      "label": ""
+    },
+    {
+      "from": "AGC_CM",
+      "to": "attHold",
+      "label": "SCS hold",
+      "model_ref": "scsToHold"
+    },
+    {
+      "from": "AGC_CM",
+      "to": "rateCommand",
+      "label": "rate",
+      "model_ref": "scsToRate"
+    },
+    {
+      "from": "AGC_CM",
+      "to": "minImpulse",
+      "label": "min",
+      "model_ref": "scsToMin"
+    },
+    {
+      "from": "attHold",
+      "to": "AGC_CM",
+      "label": "AGC_CM",
+      "model_ref": "scsToAGC"
+    },
+    {
+      "from": "rateCommand",
+      "to": "AGC_CM",
+      "label": "AGC_CM",
+      "model_ref": "scsRateToAGC"
+    },
+    {
+      "from": "minImpulse",
+      "to": "AGC_CM",
+      "label": "AGC_CM",
+      "model_ref": "scsMinToAGC"
+    }
+  ]
+}

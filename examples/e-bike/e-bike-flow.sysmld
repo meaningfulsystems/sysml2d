@@ -1,0 +1,430 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-flow",
+    "kind": "FlowView",
+    "name": "Electric Bike Energy and Control Flows",
+    "canvas": {
+      "width": 1224,
+      "height": 824,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "rider",
+        "symbol": "actor",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 70,
+          "height": 90,
+          "z": 10
+        },
+        "label": "Rider",
+        "style": "actor",
+        "model_ref": "rider"
+      },
+      {
+        "id": "charger",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 72,
+          "y": 282,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Charger",
+        "style": "part_usage",
+        "model_ref": "charger"
+      },
+      {
+        "id": "humanInterface",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 382,
+          "y": 82,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Human Interface",
+        "style": "part_usage",
+        "model_ref": "humanInterface"
+      },
+      {
+        "id": "bms",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 382,
+          "y": 282,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "BMS",
+        "style": "part_usage",
+        "model_ref": "bms"
+      },
+      {
+        "id": "batteryPack",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 382,
+          "y": 482,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Battery Pack",
+        "style": "part_usage",
+        "model_ref": "batteryPack"
+      },
+      {
+        "id": "brakeSystem",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 382,
+          "y": 682,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Brake System",
+        "style": "part_usage",
+        "model_ref": "brakeSystem"
+      },
+      {
+        "id": "motorController",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 692,
+          "y": 82,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Controller",
+        "style": "part_usage",
+        "model_ref": "motorController"
+      },
+      {
+        "id": "hubMotor",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 692,
+          "y": 282,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Rear Geared Hub",
+        "style": "part_usage",
+        "model_ref": "hubMotor"
+      },
+      {
+        "id": "road",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 1002,
+          "y": 82,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Road",
+        "style": "part_usage",
+        "model_ref": "road"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-rider-humanInterface",
+        "source": {
+          "element": "rider",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "humanInterface",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "command",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "riderCommandFlow"
+      },
+      {
+        "id": "conn-charger-bms",
+        "source": {
+          "element": "charger",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "bms",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "charge",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "chargerToBms"
+      },
+      {
+        "id": "conn-bms-batteryPack",
+        "source": {
+          "element": "bms",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "batteryPack",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "contactor",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "bmsToPackPower"
+      },
+      {
+        "id": "conn-batteryPack-motorController",
+        "source": {
+          "element": "batteryPack",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 612,
+              "y": 517
+            },
+            {
+              "x": 612,
+              "y": 117
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "dc power",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "batteryPowerFlow"
+      },
+      {
+        "id": "conn-humanInterface-motorController",
+        "source": {
+          "element": "humanInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "assist",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "riderCommandFlow"
+      },
+      {
+        "id": "conn-brakeSystem-motorController",
+        "source": {
+          "element": "brakeSystem",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "motorController",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 644,
+              "y": 717
+            },
+            {
+              "x": 644,
+              "y": 117
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "inhibit",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "brakeInhibitFlow"
+      },
+      {
+        "id": "conn-motorController-hubMotor",
+        "source": {
+          "element": "motorController",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "hubMotor",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "torque",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "motorTorqueFlow"
+      },
+      {
+        "id": "conn-hubMotor-road",
+        "source": {
+          "element": "hubMotor",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "road",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 922,
+              "y": 317
+            },
+            {
+              "x": 922,
+              "y": 117
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "tractive",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.flow",
+        "model_ref": "roadLoadFlow"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

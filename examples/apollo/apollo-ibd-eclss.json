@@ -1,0 +1,110 @@
+{
+  "diagram": "apollo-ibd-eclss",
+  "kind": "InterconnectionView",
+  "name": "ECLSS loops",
+  "subject": "ECLSS",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 140,
+  "default_h": 58,
+  "col_gap": 52,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "ECLSS": "Apollo11::CSM::ECLSS",
+    "oxygenLoop": "Apollo11::CSM::ECLSS::oxygenLoop",
+    "waterLoop": "Apollo11::CSM::ECLSS::waterLoop",
+    "suitCircuit": "Apollo11::CSM::ECLSS::suitCircuit",
+    "co2Removal": "Apollo11::CSM::ECLSS::co2Removal",
+    "oxygenLoop--suitCircuit--src": "Apollo11::CSM::ECLSS::oxygenLoop",
+    "oxygenLoop--suitCircuit--tgt": "Apollo11::CSM::ECLSS::suitCircuit",
+    "conn-oxygenLoop-suitCircuit": "Apollo11::CSM::ECLSS::oxygenLoop",
+    "waterLoop--suitCircuit--src": "Apollo11::CSM::ECLSS::waterLoop",
+    "waterLoop--suitCircuit--tgt": "Apollo11::CSM::ECLSS::suitCircuit",
+    "conn-waterLoop-suitCircuit": "Apollo11::CSM::ECLSS::waterLoop",
+    "suitCircuit--co2Removal--src": "Apollo11::CSM::ECLSS::suitCircuit",
+    "suitCircuit--co2Removal--tgt": "Apollo11::CSM::ECLSS::co2Removal",
+    "conn-suitCircuit-co2Removal": "Apollo11::CSM::ECLSS::suitCircuit"
+  },
+  "nodes": {
+    "oxygenLoop": {
+      "label": "O2 5.0 psia",
+      "style": "part.eclss"
+    },
+    "waterLoop": {
+      "label": "water 36/56 lb",
+      "style": "part.eclss"
+    },
+    "suitCircuit": {
+      "label": "suit circuit",
+      "style": "part.eclss"
+    },
+    "co2Removal": {
+      "label": "LiOH 12 h",
+      "style": "part.eclss"
+    }
+  },
+  "edges": [
+    {
+      "from": "oxygenLoop",
+      "to": "suitCircuit",
+      "label": "O2",
+      "model_ref": "conn-oxygenLoop-suitCircuit"
+    },
+    {
+      "from": "waterLoop",
+      "to": "suitCircuit",
+      "label": "water",
+      "model_ref": "conn-waterLoop-suitCircuit"
+    },
+    {
+      "from": "suitCircuit",
+      "to": "co2Removal",
+      "label": "CO2 \u22647.6 torr",
+      "model_ref": "conn-suitCircuit-co2Removal"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

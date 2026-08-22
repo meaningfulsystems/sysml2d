@@ -1,0 +1,232 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "apollo-general",
+    "kind": "GeneralView",
+    "name": "Apollo 11 Cross-View Trace",
+    "canvas": {
+      "width": 594,
+      "height": 922,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "flyMissionUseCase",
+        "symbol": "use_case",
+        "layout": {
+          "x": 82,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Fly mission",
+        "style": "use_case",
+        "model_ref": "flyMissionUseCase"
+      },
+      {
+        "id": "p27Requirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 302,
+          "width": 170,
+          "height": 82,
+          "z": 10
+        },
+        "label": "P27 V70\u2013V73",
+        "style": "requirement",
+        "model_ref": "p27Requirement"
+      },
+      {
+        "id": "sendP27",
+        "symbol": "action",
+        "layout": {
+          "x": 82,
+          "y": 544,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Send P27",
+        "style": "action",
+        "model_ref": "sendP27"
+      },
+      {
+        "id": "AGC_CM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 82,
+          "y": 780,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "AGC_CM",
+        "style": "part_usage",
+        "model_ref": "AGC_CM"
+      },
+      {
+        "id": "verifyP27",
+        "symbol": "case",
+        "layout": {
+          "x": 352,
+          "y": 544,
+          "width": 170,
+          "height": 76,
+          "z": 10
+        },
+        "label": "Verify P27",
+        "style": "case",
+        "model_ref": "verifyP27"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-flyMissionUseCase-p27Requirement",
+        "source": {
+          "element": "flyMissionUseCase",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p27Requirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "flyMissionUseCase"
+      },
+      {
+        "id": "conn-p27Requirement-sendP27",
+        "source": {
+          "element": "p27Requirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "sendP27",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "allocate",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "p27Requirement"
+      },
+      {
+        "id": "conn-sendP27-AGC_CM",
+        "source": {
+          "element": "sendP27",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "performed by",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "sendP27"
+      },
+      {
+        "id": "conn-verifyP27-p27Requirement",
+        "source": {
+          "element": "verifyP27",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p27Requirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 437,
+              "y": 464
+            },
+            {
+              "x": 157,
+              "y": 464
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "verify",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.directed",
+        "model_ref": "verifyP27"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "Apollo11"
+  }
+}

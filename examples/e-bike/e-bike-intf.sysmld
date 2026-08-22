@@ -1,0 +1,391 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-intf",
+    "kind": "InterfaceView",
+    "name": "Electric Bike Interfaces",
+    "canvas": {
+      "width": 604,
+      "height": 1130.5,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "RiderInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Rider Interface",
+        "style": "interface",
+        "model_ref": "RiderInterface"
+      },
+      {
+        "id": "ChargeInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 255,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Charge Interface",
+        "style": "interface",
+        "model_ref": "ChargeInterface"
+      },
+      {
+        "id": "DriveInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 438,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Drive Interface",
+        "style": "interface",
+        "model_ref": "DriveInterface"
+      },
+      {
+        "id": "BrakeInterface",
+        "symbol": "interface",
+        "layout": {
+          "x": 72,
+          "y": 621,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "Brake Interface",
+        "style": "interface",
+        "model_ref": "BrakeInterface"
+      },
+      {
+        "id": "PedalCadence",
+        "symbol": "item",
+        "layout": {
+          "x": 382,
+          "y": 72,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "PedalCadence",
+        "style": "item",
+        "model_ref": "PedalCadence"
+      },
+      {
+        "id": "WalkAssistCommand",
+        "symbol": "item",
+        "layout": {
+          "x": 382,
+          "y": 985.5,
+          "width": 150,
+          "height": 73,
+          "z": 10
+        },
+        "label": "WalkAssist\n<= 6 km/h\n(not throttle)",
+        "style": "item",
+        "model_ref": "WalkAssistCommand"
+      },
+      {
+        "id": "ChargeEnergy",
+        "symbol": "item",
+        "layout": {
+          "x": 382,
+          "y": 255,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "ChargeEnergy",
+        "style": "item",
+        "model_ref": "ChargeEnergy"
+      },
+      {
+        "id": "ElectricalEnergy",
+        "symbol": "item",
+        "layout": {
+          "x": 382,
+          "y": 438,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "ElectricalEnergy",
+        "style": "item",
+        "model_ref": "ElectricalEnergy"
+      },
+      {
+        "id": "WheelTorque",
+        "symbol": "item",
+        "layout": {
+          "x": 382,
+          "y": 621,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "WheelTorque",
+        "style": "item",
+        "model_ref": "WheelTorque"
+      },
+      {
+        "id": "BrakeInhibit",
+        "symbol": "item",
+        "layout": {
+          "x": 382,
+          "y": 804,
+          "width": 150,
+          "height": 70,
+          "z": 10
+        },
+        "label": "BrakeInhibit",
+        "style": "item",
+        "model_ref": "BrakeInhibit"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-RiderInterface-PedalCadence",
+        "source": {
+          "element": "RiderInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "PedalCadence",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "RiderInterface"
+      },
+      {
+        "id": "conn-RiderInterface-WalkAssistCommand",
+        "source": {
+          "element": "RiderInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "WalkAssistCommand",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 311.143,
+              "y": 107
+            },
+            {
+              "x": 311.143,
+              "y": 1022
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "RiderInterface"
+      },
+      {
+        "id": "conn-ChargeInterface-ChargeEnergy",
+        "source": {
+          "element": "ChargeInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ChargeEnergy",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "ChargeInterface"
+      },
+      {
+        "id": "conn-ChargeInterface-ElectricalEnergy",
+        "source": {
+          "element": "ChargeInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ElectricalEnergy",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 292.857,
+              "y": 290
+            },
+            {
+              "x": 292.857,
+              "y": 473
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "ChargeInterface"
+      },
+      {
+        "id": "conn-DriveInterface-WheelTorque",
+        "source": {
+          "element": "DriveInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "WheelTorque",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 329.429,
+              "y": 473
+            },
+            {
+              "x": 329.429,
+              "y": 656
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "DriveInterface"
+      },
+      {
+        "id": "conn-BrakeInterface-BrakeInhibit",
+        "source": {
+          "element": "BrakeInterface",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "BrakeInhibit",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 347.714,
+              "y": 656
+            },
+            {
+              "x": 347.714,
+              "y": 839
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "carries",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default",
+        "model_ref": "BrakeInterface"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

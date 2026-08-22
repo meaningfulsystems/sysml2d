@@ -1,0 +1,962 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "KSC_LCC": "Apollo11::Ground::Ground::KSC_LCC",
+    "RSO": "Apollo11::Apollo11::RSO",
+    "SIC": "Apollo11::SaturnV::SaturnV::SIC",
+    "MCC": "Apollo11::Ground::Ground::MCC",
+    "NASCOM": "Apollo11::Ground::Ground::NASCOM",
+    "MSFN": "Apollo11::Ground::Ground::MSFN",
+    "CM": "Apollo11::CSM::CSM::CM",
+    "descent": "Apollo11::LM::LM::descent",
+    "ascent": "Apollo11::LM::LM::ascent",
+    "recovery": "Apollo11::Apollo11::recovery",
+    "KSC_LCC--SIC--src": "Apollo11::Apollo11::KSC_LCCUmbilicalOut",
+    "KSC_LCC--SIC--tgt": "Apollo11::Apollo11::SICUmbilicalIn",
+    "conn-KSC_LCC-SIC": "Apollo11::Apollo11::KSC_LCCToSIC",
+    "RSO--SIC--src": "Apollo11::Apollo11::rsoDestructOut",
+    "RSO--SIC--tgt": "Apollo11::Apollo11::SICDestructIn",
+    "conn-RSO-SIC": "Apollo11::Apollo11::rsoToSIC",
+    "KSC_LCC--MCC--src": "Apollo11::Apollo11::KSC_LCCHandoffOut",
+    "KSC_LCC--MCC--tgt": "Apollo11::Apollo11::MCCHandoffIn",
+    "conn-KSC_LCC-MCC": "Apollo11::Apollo11::KSC_LCCToMCCHandoff",
+    "NASCOM--MCC--src": "Apollo11::Apollo11::NASCOMToMCCOut",
+    "NASCOM--MCC--tgt": "Apollo11::Apollo11::MCCFromNASCOMIn",
+    "conn-NASCOM-MCC": "Apollo11::Apollo11::NASCOMToMCC",
+    "NASCOM--MSFN--src": "Apollo11::Apollo11::NASCOMOut",
+    "NASCOM--MSFN--tgt": "Apollo11::Apollo11::NASCOMIn",
+    "conn-NASCOM-MSFN": "Apollo11::Apollo11::NASCOMToGround",
+    "MCC--MSFN--src": "Apollo11::Apollo11::MCCCcatsOut",
+    "MCC--MSFN--tgt": "Apollo11::Apollo11::MSFN642BIn",
+    "conn-MCC-MSFN": "Apollo11::Apollo11::MCCToMSFNCommand",
+    "MSFN--CM--src": "Apollo11::Apollo11::MSFNUsbOut",
+    "MSFN--CM--tgt": "Apollo11::Apollo11::CMUsbIn",
+    "conn-MSFN-CM": "Apollo11::Apollo11::MSFNToCMUsb",
+    "MSFN--ascent--src": "Apollo11::Apollo11::MSFNUsbOut",
+    "MSFN--ascent--tgt": "Apollo11::Apollo11::LMUsbIn",
+    "conn-MSFN-ascent": "Apollo11::Apollo11::MSFNToLMUsb",
+    "CM--ascent--src": "Apollo11::Apollo11::CMDockOut",
+    "CM--ascent--tgt": "Apollo11::Apollo11::ascentDockIn",
+    "conn-CM-ascent": "Apollo11::Apollo11::CMToAscent",
+    "descent--ascent--src": "Apollo11::Apollo11::descentToAscentOut",
+    "descent--ascent--tgt": "Apollo11::Apollo11::ascentFromDescentIn",
+    "conn-descent-ascent": "Apollo11::Apollo11::descentToAscent",
+    "recovery--CM--src": "Apollo11::Apollo11::recoveryToCMOut",
+    "recovery--CM--tgt": "Apollo11::Apollo11::CMRecoveryIn",
+    "conn-recovery-CM": "Apollo11::Apollo11::recoveryToCM"
+  },
+  "diagram": {
+    "id": "apollo-ibd",
+    "kind": "InterconnectionView",
+    "name": "Apollo 11 Mission Interconnection",
+    "canvas": {
+      "width": 732,
+      "height": 1136,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "mission",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 652,
+          "height": 1056,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "KSC_LCC",
+        "model_ref": "KSC_LCC",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 186,
+          "y": 100,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "KSC_LCC",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.ground"
+      },
+      {
+        "id": "RSO",
+        "model_ref": "RSO",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 406,
+          "y": 100,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "RSO",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.safety"
+      },
+      {
+        "id": "SIC",
+        "model_ref": "SIC",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 324,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "S-IC",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.vehicle"
+      },
+      {
+        "id": "MCC",
+        "model_ref": "MCC",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 296,
+          "y": 324,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "MCC",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.ground"
+      },
+      {
+        "id": "NASCOM",
+        "model_ref": "NASCOM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 516,
+          "y": 324,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "NASCOM",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "MSFN",
+        "model_ref": "MSFN",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 296,
+          "y": 548,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "MSFN",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "CM",
+        "model_ref": "CM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 186,
+          "y": 772,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "CM",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.vehicle"
+      },
+      {
+        "id": "recovery",
+        "model_ref": "recovery",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 406,
+          "y": 772,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Recovery",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.ground"
+      },
+      {
+        "id": "descent",
+        "model_ref": "descent",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 186,
+          "y": 996,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "descent",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.vehicle"
+      },
+      {
+        "id": "ascent",
+        "model_ref": "ascent",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 406,
+          "y": 996,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "ascent",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.vehicle"
+      },
+      {
+        "id": "KSC_LCC--SIC--src",
+        "model_ref": "KSC_LCC--SIC--src",
+        "symbol": "port",
+        "owner": "KSC_LCC",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "KSC_LCC--MCC--src",
+        "model_ref": "KSC_LCC--MCC--src",
+        "symbol": "port",
+        "owner": "KSC_LCC",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "RSO--SIC--src",
+        "model_ref": "RSO--SIC--src",
+        "symbol": "port",
+        "owner": "RSO",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "KSC_LCC--SIC--tgt",
+        "model_ref": "KSC_LCC--SIC--tgt",
+        "symbol": "port",
+        "owner": "SIC",
+        "placement": {
+          "side": "top",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "RSO--SIC--tgt",
+        "model_ref": "RSO--SIC--tgt",
+        "symbol": "port",
+        "owner": "SIC",
+        "placement": {
+          "side": "top",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "KSC_LCC--MCC--tgt",
+        "model_ref": "KSC_LCC--MCC--tgt",
+        "symbol": "port",
+        "owner": "MCC",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "NASCOM--MCC--tgt",
+        "model_ref": "NASCOM--MCC--tgt",
+        "symbol": "port",
+        "owner": "MCC",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "MCC--MSFN--src",
+        "model_ref": "MCC--MSFN--src",
+        "symbol": "port",
+        "owner": "MCC",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "NASCOM--MCC--src",
+        "model_ref": "NASCOM--MCC--src",
+        "symbol": "port",
+        "owner": "NASCOM",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "NASCOM--MSFN--src",
+        "model_ref": "NASCOM--MSFN--src",
+        "symbol": "port",
+        "owner": "NASCOM",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "MSFN--ascent--src",
+        "model_ref": "MSFN--ascent--src",
+        "symbol": "port",
+        "owner": "MSFN",
+        "placement": {
+          "side": "top",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "NASCOM--MSFN--tgt",
+        "model_ref": "NASCOM--MSFN--tgt",
+        "symbol": "port",
+        "owner": "MSFN",
+        "placement": {
+          "side": "top",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "MCC--MSFN--tgt",
+        "model_ref": "MCC--MSFN--tgt",
+        "symbol": "port",
+        "owner": "MSFN",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "MSFN--CM--src",
+        "model_ref": "MSFN--CM--src",
+        "symbol": "port",
+        "owner": "MSFN",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "MSFN--CM--tgt",
+        "model_ref": "MSFN--CM--tgt",
+        "symbol": "port",
+        "owner": "CM",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "CM--ascent--src",
+        "model_ref": "CM--ascent--src",
+        "symbol": "port",
+        "owner": "CM",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "recovery--CM--tgt",
+        "model_ref": "recovery--CM--tgt",
+        "symbol": "port",
+        "owner": "CM",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "recovery--CM--src",
+        "model_ref": "recovery--CM--src",
+        "symbol": "port",
+        "owner": "recovery",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "descent--ascent--src",
+        "model_ref": "descent--ascent--src",
+        "symbol": "port",
+        "owner": "descent",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "CM--ascent--tgt",
+        "model_ref": "CM--ascent--tgt",
+        "symbol": "port",
+        "owner": "ascent",
+        "placement": {
+          "side": "top",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "MSFN--ascent--tgt",
+        "model_ref": "MSFN--ascent--tgt",
+        "symbol": "port",
+        "owner": "ascent",
+        "placement": {
+          "side": "top",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "descent--ascent--tgt",
+        "model_ref": "descent--ascent--tgt",
+        "symbol": "port",
+        "owner": "ascent",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-KSC_LCC-SIC",
+        "model_ref": "conn-KSC_LCC-SIC",
+        "source": {
+          "element": "KSC_LCC--SIC--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "KSC_LCC--SIC--tgt",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 256,
+              "y": 225.333
+            },
+            {
+              "x": 122.662,
+              "y": 225.333
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "umbilical",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-RSO-SIC",
+        "model_ref": "conn-RSO-SIC",
+        "source": {
+          "element": "RSO--SIC--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RSO--SIC--tgt",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 574,
+              "y": 132
+            },
+            {
+              "x": 574,
+              "y": 262.667
+            },
+            {
+              "x": 169.338,
+              "y": 262.667
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "UHF destruct",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-KSC_LCC-MCC",
+        "model_ref": "conn-KSC_LCC-MCC",
+        "source": {
+          "element": "KSC_LCC--MCC--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "KSC_LCC--MCC--tgt",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 256,
+              "y": 76
+            },
+            {
+              "x": 366,
+              "y": 76
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "handoff",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-NASCOM-MCC",
+        "model_ref": "conn-NASCOM-MCC",
+        "source": {
+          "element": "NASCOM--MCC--src",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "NASCOM--MCC--tgt",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "NASCOM",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-NASCOM-MSFN",
+        "model_ref": "conn-NASCOM-MSFN",
+        "source": {
+          "element": "NASCOM--MSFN--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "NASCOM--MSFN--tgt",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 586,
+              "y": 468
+            },
+            {
+              "x": 389.338,
+              "y": 468
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "NASCOM",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-MCC-MSFN",
+        "model_ref": "conn-MCC-MSFN",
+        "source": {
+          "element": "MCC--MSFN--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "MCC--MSFN--tgt",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "path A 70 kHz",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-MSFN-CM",
+        "model_ref": "conn-MSFN-CM",
+        "source": {
+          "element": "MSFN--CM--src",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "MSFN--CM--tgt",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 256,
+              "y": 580
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "USB",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-MSFN-ascent",
+        "model_ref": "conn-MSFN-ascent",
+        "source": {
+          "element": "MSFN--ascent--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "MSFN--ascent--tgt",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 382,
+              "y": 548
+            },
+            {
+              "x": 382,
+              "y": 972
+            },
+            {
+              "x": 499.338,
+              "y": 972
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "USB",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-CM-ascent",
+        "model_ref": "conn-CM-ascent",
+        "source": {
+          "element": "CM--ascent--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CM--ascent--tgt",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 256,
+              "y": 916
+            },
+            {
+              "x": 452.662,
+              "y": 916
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "dock",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-descent-ascent",
+        "model_ref": "conn-descent-ascent",
+        "source": {
+          "element": "descent--ascent--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "descent--ascent--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "stage",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-recovery-CM",
+        "model_ref": "conn-recovery-CM",
+        "source": {
+          "element": "recovery--CM--src",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "recovery--CM--tgt",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "recovery",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.safety": {
+        "fill": "#FFEBEE",
+        "stroke": "#B71C1C",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "mission"
+  }
+}

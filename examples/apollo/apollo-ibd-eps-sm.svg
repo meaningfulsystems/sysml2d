@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="816" height="252" viewBox="0 0 816 252">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="816" height="252" fill="#FFFFFF"/>
+<rect x="2" y="38" width="812" height="210" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 408 L 424 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] SM fuel cells (A11 Press Kit) [SM : SM]</text>
+<rect x="2" y="38" width="812" height="212" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="732" height="130" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">SM</text>
+<rect id="FC1" x="76" y="76" width="140" height="58" rx="4" fill="#FEF9C3" stroke="#A16207" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="146" y="97.5">FC1</tspan><tspan x="146" dy="15">28 V DC</tspan></text>
+<rect id="FC2" x="336" y="76" width="140" height="58" rx="4" fill="#FEF9C3" stroke="#A16207" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="406" y="97.5">FC2</tspan><tspan x="406" dy="15">28 V DC</tspan></text>
+<rect id="FC3" x="596" y="76" width="140" height="58" rx="4" fill="#FEF9C3" stroke="#A16207" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="666" y="97.5">FC3</tspan><tspan x="666" dy="15">28 V DC</tspan></text>
+<rect id="FC1--FC2--src" x="210" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="FC1--FC2--tgt" x="330" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="FC2--FC3--src" x="470" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="FC2--FC3--tgt" x="590" y="99" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 222,105 L 330,105" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 482,105 L 590,105" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="276" y="93">parallel</text>
+<text class="small" text-anchor="middle" x="536" y="93">parallel</text>
+</g>
+</svg>

@@ -1,0 +1,352 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "aliases": {},
+  "diagram": {
+    "id": "e-bike-req",
+    "kind": "RequirementView",
+    "name": "Electric Bike Requirements",
+    "canvas": {
+      "width": 2791,
+      "height": 430,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "rideSafetyRequirement",
+        "model_ref": "rideSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 72,
+          "y": 72,
+          "width": 258,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-001 Ride Safety\nFail-silent: brakes, controller,\nsensors, and BMS cut torque.",
+        "style": "requirement"
+      },
+      {
+        "id": "rangeRequirement",
+        "model_ref": "rangeRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 386,
+          "y": 72,
+          "width": 237,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-002 Range (Tour)\nusableWh 500 / energyPerKm\n~8.3 => 60 km. Not Eco/PAS-1.",
+        "style": "requirement"
+      },
+      {
+        "id": "assistLimitRequirement",
+        "model_ref": "assistLimitRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 993,
+          "y": 72,
+          "width": 244,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-003 Assist Limit\nEPAC cadence PAS, no throttle.\n25 km/h cut; walk assist <= 6.",
+        "style": "requirement"
+      },
+      {
+        "id": "chargeSafetyRequirement",
+        "model_ref": "chargeSafetyRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1607,
+          "y": 72,
+          "width": 258,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-004 Charge Safety\nStop on over-temp, over-voltage,\nor charger disconnect.",
+        "style": "requirement"
+      },
+      {
+        "id": "structuralRequirement",
+        "model_ref": "structuralRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1921,
+          "y": 72,
+          "width": 251,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-030 Structure\nFrame carries rider, cargo, and\nbattery loads without yield.",
+        "style": "requirement"
+      },
+      {
+        "id": "displayRequirement",
+        "model_ref": "displayRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 2228,
+          "y": 72,
+          "width": 265,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-020 Display\nShow speed, assist, and remaining\nrange on the bar display.",
+        "style": "requirement"
+      },
+      {
+        "id": "lightingRequirement",
+        "model_ref": "lightingRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 2549,
+          "y": 72,
+          "width": 170,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-040 Lighting\nStVZO / ISO 6742.\nNot UN ECE R113.",
+        "style": "requirement"
+      },
+      {
+        "id": "brakeOverrideRequirement",
+        "model_ref": "brakeOverrideRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 75.5,
+          "y": 270,
+          "width": 251,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-010 Brake Override\nElectronic inhibit <= 50 ms.\nNot the EN 15194 2 m / 5 m cut.",
+        "style": "requirement"
+      },
+      {
+        "id": "en15194DistanceRequirement",
+        "model_ref": "en15194DistanceRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 679,
+          "y": 270,
+          "width": 314,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-012 EN 15194:2017 4.2.13\nPower mgmt: cut-off after pedaling\nstops. 2 m; lever switches relax to 5 m.",
+        "style": "requirement"
+      },
+      {
+        "id": "batteryCutoffRequirement",
+        "model_ref": "batteryCutoffRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1617.5,
+          "y": 270,
+          "width": 237,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-011 Battery Cutoff\nBMS inside the pack opens the\ncontactor (UL 2849).",
+        "style": "requirement"
+      },
+      {
+        "id": "walkAssistRequirement",
+        "model_ref": "walkAssistRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1049,
+          "y": 270,
+          "width": 195,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-013 Walk Assist\n<= 6 km/h EPAC feature.\nNot a throttle.",
+        "style": "requirement"
+      },
+      {
+        "id": "continuousPowerRequirement",
+        "model_ref": "continuousPowerRequirement",
+        "symbol": "requirement",
+        "layout": {
+          "x": 1300,
+          "y": 270,
+          "width": 251,
+          "height": 88,
+          "z": 10
+        },
+        "label": "\u00abrequirement\u00bb\nREQ-E-014 Continuous Power\nEU 250 W continuous (EN 15194).\nNot hub peak torque 40 N\u00b7m.",
+        "style": "requirement"
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-rideSafetyRequirement-brakeOverrideRequirement",
+        "model_ref": "rideSafetyRequirement",
+        "source": {
+          "element": "rideSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "brakeOverrideRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-assistLimitRequirement-en15194DistanceRequirement",
+        "model_ref": "assistLimitRequirement",
+        "source": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.25
+          }
+        },
+        "target": {
+          "element": "en15194DistanceRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-assistLimitRequirement-walkAssistRequirement",
+        "model_ref": "assistLimitRequirement",
+        "source": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "walkAssistRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-assistLimitRequirement-continuousPowerRequirement",
+        "model_ref": "assistLimitRequirement",
+        "source": {
+          "element": "assistLimitRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.75
+          }
+        },
+        "target": {
+          "element": "continuousPowerRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-chargeSafetyRequirement-batteryCutoffRequirement",
+        "model_ref": "chargeSafetyRequirement",
+        "source": {
+          "element": "chargeSafetyRequirement",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "batteryCutoffRequirement",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "polyline",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "refine",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "ElectricBike"
+  }
+}

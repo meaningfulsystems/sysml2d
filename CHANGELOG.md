@@ -2,6 +2,29 @@
 
 All notable changes to SysMLD are documented here.
 
+## Unreleased
+
+### Added
+
+- Shared orthogonal autorouting helpers (`src/sysmld/routing.py`): unique channel tracks for adjacent-rank edges, outside rails for skip-rank edges, and renderer hop-overs as small half-circle arcs where later connections cross earlier ones
+- `examples/e-bike/` — a street-legal class e-bike model with intents, `.sysmld`, and SVG for all 15 view kinds plus an operating-context general view
+- Adoption pack: [AGENTS.md](AGENTS.md), four installable skills (`bootstrap-project`, `author-model`, `compose-views`, `vision-review`), and [templates/new-project/](templates/new-project/) (copy-this `.sysml` + IBD + STM)
+- `examples/apollo/` — Apollo 11 / Block II (AS-506) whole-stack model: ground/crew, vehicles, two AGCs, AGS, IU LVDC, USB, mission + abort STMs. Sourced numbers only; UNKNOWN marked
+- Apollo morning delta: SM three fuel cells; CM AgZn + charger + two 117 V 400 Hz inverters; LM six AgZn + ECA; AGS AEA/ASA/DEDA (TN-7990); CM probe / LM drogue / 12 latches; SM/LM RCS 100 lbf (PK p.93 / p.106), CM 93 lbf; loaded SM/CM RCS propellant mass UNKNOWN
+- Apollo Press Kit p.109 tank loads filled; A11 ropes Comanche 055 + Luminary 1A LMY99/1; CMC ENTRY vs LGC LANDING split; SPS/DPS cited as PK vs TN conflicts. SPS loaded mass and CSM lunar Δv stay UNKNOWN
+
+### Changed
+
+- Shared router refuses any orthogonal path through a node or part rectangle; hop-overs stay line-on-line only. Interconnection views (e-bike, toaster, blender) detour around boxes
+- State-machine long skip-rank returns can step off the top rail; interaction canvases no longer reserve a blank trailing message row
+- Generic view routing now keeps fan-out/fan-in on separated tracks, snaps exclusive 1:1 pairs to a straight line, and places association rails outside system-boundary groups
+- Crossing hop-overs are drawn at true interior crossings, including near route corners (still skipped at shared connection endpoints)
+- Connection labels on generic, action, and requirement views sit beside the line instead of on the centerline
+- Toaster, blender, and e-bike example artifacts regenerated from the composers
+- README / CONTRIBUTING test counts updated for the new routing and e-bike coverage
+- E-bike review: EPAC cadence PAS only (throttle removed from RideControl, HumanInterface, and RiderInterface), Tour-mode 500 Wh / 60 km bind, BMS inside BatteryPack, EN 15194 5 m / 2 m plus 50 ms inhibit, fail-silent allocated beyond brakes, `lockBikeUseCase` removed, rear geared hub (no regen), StVZO / ISO 6742 lighting
+- E-bike addendum: RideControl state `walk` (≤ 6 km/h, not throttle); Tour binds `usableWh` + `energyPerKm`; energyBalance is pack-only; ports live on child parts only
+
 ## [0.1.0] — 2026-05-22
 
 First public release.

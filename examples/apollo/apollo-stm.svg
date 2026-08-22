@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1022" height="791" viewBox="0 0 1022 791">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="1022" height="791" fill="#FFFFFF"/>
+<rect x="2" y="38" width="1018" height="749" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 472 L 488 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[stv.mb] Apollo 11 Earth Coast [earthCoast : earthCoast]</text>
+<rect x="2" y="38" width="1018" height="751" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="9" y="5" width="969" height="704" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="19" y="27">earthCoast</text>
+<rect id="earthCoast" x="45" y="41" width="897" height="632" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" x="57" y="65">Earth coast</text>
+<circle id="earthInitial" cx="174" cy="121" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="countdown" x="90" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="174" y="174">Countdown</text>
+<rect id="boost" x="90" y="351" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="174" y="379">Boost</text>
+<rect id="earthOrbit" x="90" y="552" width="168" height="64" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="174" y="576.5">Earth orbit</tspan><tspan x="174" dy="15">100 nmi planned</tspan></text>
+<rect id="TLI" x="385" y="540" width="200" height="88" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="485" y="561.5">Translunar Injection</tspan><tspan x="485" dy="15">PK 02:44:15</tspan><tspan x="485" dy="15">A11-FP 2:44:26</tspan><tspan x="485" dy="15">flown 02:44:16</tspan></text>
+<rect id="dockEject" x="401" y="351" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="485" y="379">dock and eject</text>
+<rect id="translunar" x="401" y="146" width="168" height="56" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="485" y="174">Translunar coast</text>
+<rect id="LOI" x="697" y="134" width="200" height="80" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle"><tspan x="797" y="159">Lunar Orbit Insertion</tspan><tspan x="797" dy="15">planned 75:54:28</tspan><tspan x="797" dy="15">flown ~075:49:50</tspan></text>
+<path d="M 174,131 L 174,146" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 174,202 L 174,351" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 174,407 L 174,552" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 258,584 L 258,581 Q 258,578 261,578 L 385,578" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 485,540 L 485,407" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 485,351 L 485,202" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 569,174 L 569,171 Q 569,168 572,168 L 697,168" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="174" y="284.5">tower clear</text>
+<text class="small" text-anchor="middle" x="174" y="487.5">engine cutoff</text>
+<text class="small" text-anchor="middle" x="321.5" y="586">IU / S-IVB</text>
+<text class="small" text-anchor="middle" x="485" y="481.5">TDE ~03:20–04:09</text>
+<text class="small" text-anchor="middle" x="485" y="284.5">LM extract</text>
+<text class="small" text-anchor="middle" x="633" y="176">Service Propulsion</text>
+</g>
+</svg>

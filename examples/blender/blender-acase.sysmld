@@ -21,63 +21,62 @@
     "elements": [
       {
         "id": "motorLoadAnalysis",
-        "model_ref": "motorLoadAnalysis",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 84,
+          "y": 78,
           "width": 150,
           "height": 70,
           "z": 10
         },
         "label": "Motor Load",
-        "style": "case"
+        "style": "case",
+        "model_ref": "motorLoadAnalysis"
       },
       {
         "id": "smoothnessDetectionAnalysis",
-        "model_ref": "smoothnessDetectionAnalysis",
         "symbol": "case",
         "layout": {
           "x": 72,
-          "y": 264,
+          "y": 270,
           "width": 174,
           "height": 70,
           "z": 10
         },
         "label": "Smoothness Detection",
-        "style": "case"
+        "style": "case",
+        "model_ref": "smoothnessDetectionAnalysis"
       },
       {
         "id": "torqueSpeedLoadEstimate",
-        "model_ref": "torqueSpeedLoadEstimate",
         "symbol": "constraint",
         "layout": {
           "x": 406,
-          "y": 78,
+          "y": 75,
           "width": 160,
           "height": 76,
           "z": 10
         },
         "label": "Torque-Speed-Load",
-        "style": "constraint"
+        "style": "constraint",
+        "model_ref": "torqueSpeedLoadEstimate"
       },
       {
         "id": "smoothnessThresholdEstimate",
-        "model_ref": "smoothnessThresholdEstimate",
         "symbol": "constraint",
         "layout": {
           "x": 406,
-          "y": 264,
+          "y": 267,
           "width": 174,
           "height": 76,
           "z": 10
         },
         "label": "Smoothness Threshold",
-        "style": "constraint"
+        "style": "constraint",
+        "model_ref": "smoothnessThresholdEstimate"
       },
       {
         "id": "motorControlRequirement",
-        "model_ref": "motorControlRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 740,
@@ -87,11 +86,11 @@
           "z": 10
         },
         "label": "Motor Control Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "motorControlRequirement"
       },
       {
         "id": "smoothnessDetectionRequirement",
-        "model_ref": "smoothnessDetectionRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 740,
@@ -101,13 +100,13 @@
           "z": 10
         },
         "label": "Smoothness Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "smoothnessDetectionRequirement"
       }
     ],
     "connections": [
       {
         "id": "conn-motorLoadAnalysis-torqueSpeedLoadEstimate",
-        "model_ref": "motorLoadAnalysis",
         "source": {
           "element": "motorLoadAnalysis",
           "anchor": {
@@ -124,31 +123,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 278,
-              "y": 119
-            },
-            {
-              "x": 278,
-              "y": 116
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "method",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "motorLoadAnalysis"
       },
       {
         "id": "conn-smoothnessDetectionAnalysis-smoothnessThresholdEstimate",
-        "model_ref": "smoothnessDetectionAnalysis",
         "source": {
           "element": "smoothnessDetectionAnalysis",
           "anchor": {
@@ -165,31 +154,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 302,
-              "y": 299
-            },
-            {
-              "x": 302,
-              "y": 302
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "method",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "smoothnessDetectionAnalysis"
       },
       {
         "id": "conn-torqueSpeedLoadEstimate-motorControlRequirement",
-        "model_ref": "torqueSpeedLoadEstimate",
         "source": {
           "element": "torqueSpeedLoadEstimate",
           "anchor": {
@@ -206,31 +185,21 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 622,
-              "y": 116
-            },
-            {
-              "x": 622,
-              "y": 113
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "evaluates",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "torqueSpeedLoadEstimate"
       },
       {
         "id": "conn-smoothnessThresholdEstimate-smoothnessDetectionRequirement",
-        "model_ref": "smoothnessThresholdEstimate",
         "source": {
           "element": "smoothnessThresholdEstimate",
           "anchor": {
@@ -247,27 +216,18 @@
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 636,
-              "y": 302
-            },
-            {
-              "x": 636,
-              "y": 305
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "evaluates",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.default"
+        "style": "connector.default",
+        "model_ref": "smoothnessThresholdEstimate"
       }
     ],
     "annotations": [],

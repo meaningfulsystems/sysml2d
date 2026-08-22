@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="616" height="464" viewBox="0 0 616 464">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="616" height="464" fill="#FFFFFF"/>
+<rect x="2" y="38" width="612" height="422" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 544 L 560 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[icn.mb] MSFN Goldstone/Madrid/Honeysuckle + NASCOM [MSFN : MSFN]</text>
+<rect x="2" y="38" width="612" height="424" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="40" y="40" width="532" height="342" rx="0" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="label" x="50" y="62">MSFN</text>
+<rect id="Goldstone" x="76" y="76" width="150" height="58" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="151" y="105">Goldstone</text>
+<rect id="Madrid" x="76" y="288" width="150" height="58" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="151" y="317">Madrid</text>
+<rect id="Honeysuckle" x="76" y="182" width="150" height="58" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="151" y="211">Honeysuckle</text>
+<rect id="NASCOM" x="386" y="182" width="150" height="58" rx="4" fill="#FFF7ED" stroke="#C2410C" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="461" y="211">NASCOM</text>
+<rect id="Goldstone--NASCOM--src" x="145" y="70" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="Madrid--NASCOM--src" x="145" y="340" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="Honeysuckle--NASCOM--src" x="220" y="205" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="Goldstone--NASCOM--tgt" x="380" y="190.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="Honeysuckle--NASCOM--tgt" x="380" y="205" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<rect id="Madrid--NASCOM--tgt" x="380" y="219.5" width="12" height="12" fill="#FFFFFF" stroke="#334155" stroke-width="1"/>
+<path d="M 151,70 L 151,158 L 358,158 L 358,196.5 L 380,196.5" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 151,352 L 151,264 L 250,264 L 250,225.5 L 380,225.5" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M 232,211 L 380,211" fill="none" stroke="#334155" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<text class="small" text-anchor="middle" x="254.5" y="146">USB</text>
+<text class="small" text-anchor="middle" x="315" y="248.5">USB</text>
+<text class="small" text-anchor="middle" x="306" y="199">USB</text>
+</g>
+</svg>

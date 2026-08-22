@@ -1,0 +1,475 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "MCC": "Apollo11::Ground::MCC",
+    "FLIGHT": "Apollo11::Ground::MOCR::FLIGHT",
+    "CAPCOM": "Apollo11::Ground::MOCR::CAPCOM",
+    "EECOM": "Apollo11::Ground::MOCR::EECOM",
+    "CCC": "Apollo11::Ground::MOCR::CCC",
+    "RTCC": "Apollo11::Ground::MCC::RTCC",
+    "CCATS": "Apollo11::Ground::MCC::CCATS",
+    "FLIGHT--CCC--src": "Apollo11::Ground::MOCR::FLIGHT",
+    "FLIGHT--CCC--tgt": "Apollo11::Ground::MOCR::CCC",
+    "conn-FLIGHT-CCC": "Apollo11::Ground::MOCR::FLIGHT",
+    "CAPCOM--CCC--src": "Apollo11::Ground::MOCR::CAPCOM",
+    "CAPCOM--CCC--tgt": "Apollo11::Ground::MOCR::CCC",
+    "conn-CAPCOM-CCC": "Apollo11::Ground::MOCR::CAPCOM",
+    "EECOM--CCC--src": "Apollo11::Ground::MOCR::EECOM",
+    "EECOM--CCC--tgt": "Apollo11::Ground::MOCR::CCC",
+    "conn-EECOM-CCC": "Apollo11::Ground::MOCR::EECOM",
+    "CCC--RTCC--src": "Apollo11::Ground::MOCR::CCC",
+    "CCC--RTCC--tgt": "Apollo11::Ground::MCC::RTCC",
+    "conn-CCC-RTCC": "Apollo11::Ground::MOCR::CCC",
+    "RTCC--CCATS--src": "Apollo11::Ground::MCC::RTCC",
+    "RTCC--CCATS--tgt": "Apollo11::Ground::MCC::CCATS",
+    "conn-RTCC-CCATS": "Apollo11::Ground::MCC::RTCC"
+  },
+  "diagram": {
+    "id": "apollo-ibd-mcc",
+    "kind": "InterconnectionView",
+    "name": "MCC / RTCC",
+    "canvas": {
+      "width": 1152,
+      "height": 406,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "MCC",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 1072,
+          "height": 326,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "FLIGHT",
+        "model_ref": "FLIGHT",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 272,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "FLIGHT",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "CAPCOM",
+        "model_ref": "CAPCOM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CAPCOM",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "EECOM",
+        "model_ref": "EECOM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 174,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "EECOM",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "CCC",
+        "model_ref": "CCC",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 366,
+          "y": 174,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CCC",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "RTCC",
+        "model_ref": "RTCC",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 656,
+          "y": 174,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "RTCC\n5\u00d7 360/75",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "CCATS",
+        "model_ref": "CCATS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 946,
+          "y": 174,
+          "width": 130,
+          "height": 58,
+          "z": 10
+        },
+        "label": "CCATS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.default"
+      },
+      {
+        "id": "FLIGHT--CCC--src",
+        "model_ref": "FLIGHT--CCC--src",
+        "symbol": "port",
+        "owner": "FLIGHT",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "CAPCOM--CCC--src",
+        "model_ref": "CAPCOM--CCC--src",
+        "symbol": "port",
+        "owner": "CAPCOM",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "EECOM--CCC--src",
+        "model_ref": "EECOM--CCC--src",
+        "symbol": "port",
+        "owner": "EECOM",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "CAPCOM--CCC--tgt",
+        "model_ref": "CAPCOM--CCC--tgt",
+        "symbol": "port",
+        "owner": "CCC",
+        "placement": {
+          "side": "left",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "EECOM--CCC--tgt",
+        "model_ref": "EECOM--CCC--tgt",
+        "symbol": "port",
+        "owner": "CCC",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "FLIGHT--CCC--tgt",
+        "model_ref": "FLIGHT--CCC--tgt",
+        "symbol": "port",
+        "owner": "CCC",
+        "placement": {
+          "side": "left",
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "CCC--RTCC--src",
+        "model_ref": "CCC--RTCC--src",
+        "symbol": "port",
+        "owner": "CCC",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "CCC--RTCC--tgt",
+        "model_ref": "CCC--RTCC--tgt",
+        "symbol": "port",
+        "owner": "RTCC",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "RTCC--CCATS--src",
+        "model_ref": "RTCC--CCATS--src",
+        "symbol": "port",
+        "owner": "RTCC",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "RTCC--CCATS--tgt",
+        "model_ref": "RTCC--CCATS--tgt",
+        "symbol": "port",
+        "owner": "CCATS",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-FLIGHT-CCC",
+        "model_ref": "conn-FLIGHT-CCC",
+        "source": {
+          "element": "FLIGHT--CCC--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "FLIGHT--CCC--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 141,
+              "y": 256
+            },
+            {
+              "x": 230,
+              "y": 256
+            },
+            {
+              "x": 230,
+              "y": 217.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "FC",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-CAPCOM-CCC",
+        "model_ref": "conn-CAPCOM-CCC",
+        "source": {
+          "element": "CAPCOM--CCC--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CAPCOM--CCC--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 141,
+              "y": 154
+            },
+            {
+              "x": 338,
+              "y": 154
+            },
+            {
+              "x": 338,
+              "y": 188.5
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-EECOM-CCC",
+        "model_ref": "conn-EECOM-CCC",
+        "source": {
+          "element": "EECOM--CCC--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "EECOM--CCC--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-CCC-RTCC",
+        "model_ref": "conn-CCC-RTCC",
+        "source": {
+          "element": "CCC--RTCC--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "CCC--RTCC--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "path A",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-RTCC-CCATS",
+        "model_ref": "conn-RTCC-CCATS",
+        "source": {
+          "element": "RTCC--CCATS--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "RTCC--CCATS--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "load",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {},
+    "subject": "MCC"
+  }
+}

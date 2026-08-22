@@ -1,0 +1,347 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "ECLSS": "Apollo11::CSM::ECLSS",
+    "oxygenLoop": "Apollo11::CSM::ECLSS::oxygenLoop",
+    "waterLoop": "Apollo11::CSM::ECLSS::waterLoop",
+    "suitCircuit": "Apollo11::CSM::ECLSS::suitCircuit",
+    "co2Removal": "Apollo11::CSM::ECLSS::co2Removal",
+    "oxygenLoop--suitCircuit--src": "Apollo11::CSM::ECLSS::oxygenLoop",
+    "oxygenLoop--suitCircuit--tgt": "Apollo11::CSM::ECLSS::suitCircuit",
+    "conn-oxygenLoop-suitCircuit": "Apollo11::CSM::ECLSS::oxygenLoop",
+    "waterLoop--suitCircuit--src": "Apollo11::CSM::ECLSS::waterLoop",
+    "waterLoop--suitCircuit--tgt": "Apollo11::CSM::ECLSS::suitCircuit",
+    "conn-waterLoop-suitCircuit": "Apollo11::CSM::ECLSS::waterLoop",
+    "suitCircuit--co2Removal--src": "Apollo11::CSM::ECLSS::suitCircuit",
+    "suitCircuit--co2Removal--tgt": "Apollo11::CSM::ECLSS::co2Removal",
+    "conn-suitCircuit-co2Removal": "Apollo11::CSM::ECLSS::suitCircuit"
+  },
+  "diagram": {
+    "id": "apollo-ibd-eclss",
+    "kind": "InterconnectionView",
+    "name": "ECLSS loops",
+    "canvas": {
+      "width": 836,
+      "height": 320,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "ECLSS",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 756,
+          "height": 240,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "oxygenLoop",
+        "model_ref": "oxygenLoop",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "O2 5.0 psia",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "waterLoop",
+        "model_ref": "waterLoop",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 186,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "water 36/56 lb",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "suitCircuit",
+        "model_ref": "suitCircuit",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 348,
+          "y": 131,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "suit circuit",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "co2Removal",
+        "model_ref": "co2Removal",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 620,
+          "y": 131,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "LiOH 12 h",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "oxygenLoop--suitCircuit--src",
+        "model_ref": "oxygenLoop--suitCircuit--src",
+        "symbol": "port",
+        "owner": "oxygenLoop",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "waterLoop--suitCircuit--src",
+        "model_ref": "waterLoop--suitCircuit--src",
+        "symbol": "port",
+        "owner": "waterLoop",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "oxygenLoop--suitCircuit--tgt",
+        "model_ref": "oxygenLoop--suitCircuit--tgt",
+        "symbol": "port",
+        "owner": "suitCircuit",
+        "placement": {
+          "side": "left",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "waterLoop--suitCircuit--tgt",
+        "model_ref": "waterLoop--suitCircuit--tgt",
+        "symbol": "port",
+        "owner": "suitCircuit",
+        "placement": {
+          "side": "left",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "suitCircuit--co2Removal--src",
+        "model_ref": "suitCircuit--co2Removal--src",
+        "symbol": "port",
+        "owner": "suitCircuit",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "suitCircuit--co2Removal--tgt",
+        "model_ref": "suitCircuit--co2Removal--tgt",
+        "symbol": "port",
+        "owner": "co2Removal",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-oxygenLoop-suitCircuit",
+        "model_ref": "conn-oxygenLoop-suitCircuit",
+        "source": {
+          "element": "oxygenLoop--suitCircuit--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "oxygenLoop--suitCircuit--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 146,
+              "y": 150.331
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "O2",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-waterLoop-suitCircuit",
+        "model_ref": "conn-waterLoop-suitCircuit",
+        "source": {
+          "element": "waterLoop--suitCircuit--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "waterLoop--suitCircuit--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 146,
+              "y": 169.669
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "water",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-suitCircuit-co2Removal",
+        "model_ref": "conn-suitCircuit-co2Removal",
+        "source": {
+          "element": "suitCircuit--co2Removal--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "suitCircuit--co2Removal--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "CO2 \u22647.6 torr",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "ECLSS"
+  }
+}

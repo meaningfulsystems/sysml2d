@@ -1,0 +1,476 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "CSM": "Apollo11::CSM::CSM",
+    "SCS": "Apollo11::CSM::CM::SCS",
+    "AGC_CM": "Apollo11::CSM::CM::AGC_CM",
+    "IMU": "Apollo11::CSM::CM::IMU",
+    "RCS": "Apollo11::CSM::CM::RCS",
+    "ECLSS": "Apollo11::CSM::CM::ECLSS",
+    "SPS": "Apollo11::CSM::SM::SPS",
+    "SM_RCS": "Apollo11::CSM::SM::RCS",
+    "SCS--AGC_CM--src": "Apollo11::CSM::CM::SCS",
+    "SCS--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-SCS-AGC_CM": "Apollo11::CSM::CM::SCS",
+    "SCS--RCS--src": "Apollo11::CSM::CM::SCS",
+    "SCS--RCS--tgt": "Apollo11::CSM::CM::RCS",
+    "conn-SCS-RCS": "Apollo11::CSM::CM::SCS",
+    "AGC_CM--IMU--src": "Apollo11::CSM::CM::AGC_CM",
+    "AGC_CM--IMU--tgt": "Apollo11::CSM::CM::IMU",
+    "conn-AGC_CM-IMU": "Apollo11::CSM::CM::AGC_CM",
+    "ECLSS--AGC_CM--src": "Apollo11::CSM::CM::ECLSS",
+    "ECLSS--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-ECLSS-AGC_CM": "Apollo11::CSM::CM::ECLSS"
+  },
+  "diagram": {
+    "id": "apollo-ibd-csm",
+    "kind": "InterconnectionView",
+    "name": "CSM Interconnection",
+    "canvas": {
+      "width": 892,
+      "height": 552,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "CSM",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 812,
+          "height": 472,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "SCS",
+        "model_ref": "SCS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 190,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "SCS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "AGC_CM",
+        "model_ref": "AGC_CM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 376,
+          "y": 190,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AGC_CM",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "IMU",
+        "model_ref": "IMU",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 676,
+          "y": 247,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "IMU",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "RCS",
+        "model_ref": "RCS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 376,
+          "y": 304,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "RCS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "ECLSS",
+        "model_ref": "ECLSS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "ECLSS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eclss"
+      },
+      {
+        "id": "SPS",
+        "model_ref": "SPS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 418,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "SPS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "SM_RCS",
+        "model_ref": "SM_RCS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 304,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "RCS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "SCS--AGC_CM--src",
+        "model_ref": "SCS--AGC_CM--src",
+        "symbol": "port",
+        "owner": "SCS",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "SCS--RCS--src",
+        "model_ref": "SCS--RCS--src",
+        "symbol": "port",
+        "owner": "SCS",
+        "placement": {
+          "side": "right",
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "ECLSS--AGC_CM--tgt",
+        "model_ref": "ECLSS--AGC_CM--tgt",
+        "symbol": "port",
+        "owner": "AGC_CM",
+        "placement": {
+          "side": "left",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "SCS--AGC_CM--tgt",
+        "model_ref": "SCS--AGC_CM--tgt",
+        "symbol": "port",
+        "owner": "AGC_CM",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_CM--IMU--src",
+        "model_ref": "AGC_CM--IMU--src",
+        "symbol": "port",
+        "owner": "AGC_CM",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_CM--IMU--tgt",
+        "model_ref": "AGC_CM--IMU--tgt",
+        "symbol": "port",
+        "owner": "IMU",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "SCS--RCS--tgt",
+        "model_ref": "SCS--RCS--tgt",
+        "symbol": "port",
+        "owner": "RCS",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "ECLSS--AGC_CM--src",
+        "model_ref": "ECLSS--AGC_CM--src",
+        "symbol": "port",
+        "owner": "ECLSS",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-SCS-AGC_CM",
+        "model_ref": "conn-SCS-AGC_CM",
+        "source": {
+          "element": "SCS--AGC_CM--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SCS--AGC_CM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "backup",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-SCS-RCS",
+        "model_ref": "conn-SCS-RCS",
+        "source": {
+          "element": "SCS--RCS--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SCS--RCS--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 314.667,
+              "y": 233.5
+            },
+            {
+              "x": 314.667,
+              "y": 333
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "jets",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-AGC_CM-IMU",
+        "model_ref": "conn-AGC_CM-IMU",
+        "source": {
+          "element": "AGC_CM--IMU--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM--IMU--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 596,
+              "y": 219
+            },
+            {
+              "x": 596,
+              "y": 276
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "IMU",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ECLSS-AGC_CM",
+        "model_ref": "conn-ECLSS-AGC_CM",
+        "source": {
+          "element": "ECLSS--AGC_CM--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ECLSS--AGC_CM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 376,
+              "y": 76
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "cabin",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "CSM"
+  }
+}

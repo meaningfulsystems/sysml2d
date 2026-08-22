@@ -1,0 +1,72 @@
+{
+  "diagram": "starter-stm",
+  "kind": "StateView",
+  "name": "Starter System Cycle",
+  "subject": "cycle",
+  "model_files": [
+    "starter.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 130,
+  "default_h": 60,
+  "rank_gap": 140,
+  "col_gap": 80,
+  "aliases": {
+    "cycle": "StarterSystem::Cycle",
+    "idle": "StarterSystem::Cycle::idle",
+    "running": "StarterSystem::Cycle::running",
+    "fault": "StarterSystem::Cycle::fault",
+    "start": "StarterSystem::Cycle::start",
+    "stop": "StarterSystem::Cycle::stop",
+    "trip": "StarterSystem::Cycle::trip",
+    "reset": "StarterSystem::Cycle::reset"
+  },
+  "states": {
+    "initial": {
+      "initial": true
+    },
+    "idle": {
+      "label": "Idle",
+      "model_ref": "idle"
+    },
+    "running": {
+      "label": "Running",
+      "model_ref": "running"
+    },
+    "fault": {
+      "label": "Fault",
+      "model_ref": "fault"
+    }
+  },
+  "transitions": [
+    {
+      "from": "initial",
+      "to": "idle",
+      "label": ""
+    },
+    {
+      "from": "idle",
+      "to": "running",
+      "label": "start",
+      "model_ref": "start"
+    },
+    {
+      "from": "running",
+      "to": "idle",
+      "label": "stop",
+      "model_ref": "stop"
+    },
+    {
+      "from": "running",
+      "to": "fault",
+      "label": "fault",
+      "model_ref": "trip"
+    },
+    {
+      "from": "fault",
+      "to": "idle",
+      "label": "reset",
+      "model_ref": "reset"
+    }
+  ]
+}

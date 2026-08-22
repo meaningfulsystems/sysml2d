@@ -1,0 +1,724 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "LM": "Apollo11::LM::LM",
+    "PNGS": "Apollo11::LM::ascent::PNGS",
+    "AGC_LM": "Apollo11::LM::ascent::AGC_LM",
+    "DSKY": "Apollo11::LM::ascent::DSKY",
+    "AGS": "Apollo11::LM::ascent::AGS",
+    "APS": "Apollo11::LM::ascent::APS",
+    "RCS": "Apollo11::LM::ascent::RCS",
+    "landingRadar": "Apollo11::LM::descent::landingRadar",
+    "rendezvousRadar": "Apollo11::LM::ascent::rendezvousRadar",
+    "DPS": "Apollo11::LM::descent::DPS",
+    "PNGS--AGC_LM--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--AGC_LM--tgt": "Apollo11::LM::ascent::AGC_LM",
+    "conn-PNGS-AGC_LM": "Apollo11::LM::ascent::PNGS",
+    "AGC_LM--DSKY--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--DSKY--tgt": "Apollo11::LM::ascent::DSKY",
+    "conn-AGC_LM-DSKY": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--AGS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--AGS--tgt": "Apollo11::LM::ascent::AGS",
+    "conn-AGC_LM-AGS": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--APS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--APS--tgt": "Apollo11::LM::ascent::APS",
+    "conn-AGC_LM-APS": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--RCS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--RCS--tgt": "Apollo11::LM::ascent::RCS",
+    "conn-AGC_LM-RCS": "Apollo11::LM::ascent::AGC_LM",
+    "PNGS--landingRadar--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--landingRadar--tgt": "Apollo11::LM::descent::landingRadar",
+    "conn-PNGS-landingRadar": "Apollo11::LM::LM::PNGSToLandingRadar",
+    "PNGS--rendezvousRadar--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--rendezvousRadar--tgt": "Apollo11::LM::ascent::rendezvousRadar",
+    "conn-PNGS-rendezvousRadar": "Apollo11::LM::ascent::PNGSToRendezvousRadar"
+  },
+  "diagram": {
+    "id": "apollo-ibd-lm",
+    "kind": "InterconnectionView",
+    "name": "LM PNGS / AGC_LM / AGS",
+    "canvas": {
+      "width": 1068,
+      "height": 564,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "LM",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 988,
+          "height": 484,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "PNGS",
+        "model_ref": "PNGS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 308,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Primary Guidance\n(PNGS)",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "AGC_LM",
+        "model_ref": "AGC_LM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 444,
+          "y": 134,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "label": "LM guidance\ncomputer",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "DSKY",
+        "model_ref": "DSKY",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 812,
+          "y": 76,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Display and\nKeyboard",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "AGS",
+        "model_ref": "AGS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 812,
+          "y": 192,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Abort Guidance\nSystem",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "landingRadar",
+        "model_ref": "landingRadar",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 444,
+          "y": 250,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Landing radar",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "rendezvousRadar",
+        "model_ref": "rendezvousRadar",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 444,
+          "y": 366,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Rendezvous radar",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "DPS",
+        "model_ref": "DPS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 192,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Descent Propulsion\nSystem",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "APS",
+        "model_ref": "APS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 812,
+          "y": 308,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Ascent Propulsion\nSystem",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "RCS",
+        "model_ref": "RCS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 812,
+          "y": 424,
+          "width": 180,
+          "height": 64,
+          "z": 10
+        },
+        "label": "Reaction control",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.prop"
+      },
+      {
+        "id": "PNGS--AGC_LM--src",
+        "model_ref": "PNGS--AGC_LM--src",
+        "symbol": "port",
+        "owner": "PNGS",
+        "placement": {
+          "side": "right",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "PNGS--landingRadar--src",
+        "model_ref": "PNGS--landingRadar--src",
+        "symbol": "port",
+        "owner": "PNGS",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "PNGS--rendezvousRadar--src",
+        "model_ref": "PNGS--rendezvousRadar--src",
+        "symbol": "port",
+        "owner": "PNGS",
+        "placement": {
+          "side": "right",
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "PNGS--AGC_LM--tgt",
+        "model_ref": "PNGS--AGC_LM--tgt",
+        "symbol": "port",
+        "owner": "AGC_LM",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--DSKY--src",
+        "model_ref": "AGC_LM--DSKY--src",
+        "symbol": "port",
+        "owner": "AGC_LM",
+        "placement": {
+          "side": "right",
+          "offset": 0.2
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--AGS--src",
+        "model_ref": "AGC_LM--AGS--src",
+        "symbol": "port",
+        "owner": "AGC_LM",
+        "placement": {
+          "side": "right",
+          "offset": 0.4
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--APS--src",
+        "model_ref": "AGC_LM--APS--src",
+        "symbol": "port",
+        "owner": "AGC_LM",
+        "placement": {
+          "side": "right",
+          "offset": 0.6
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--RCS--src",
+        "model_ref": "AGC_LM--RCS--src",
+        "symbol": "port",
+        "owner": "AGC_LM",
+        "placement": {
+          "side": "right",
+          "offset": 0.8
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--DSKY--tgt",
+        "model_ref": "AGC_LM--DSKY--tgt",
+        "symbol": "port",
+        "owner": "DSKY",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--AGS--tgt",
+        "model_ref": "AGC_LM--AGS--tgt",
+        "symbol": "port",
+        "owner": "AGS",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "PNGS--landingRadar--tgt",
+        "model_ref": "PNGS--landingRadar--tgt",
+        "symbol": "port",
+        "owner": "landingRadar",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "PNGS--rendezvousRadar--tgt",
+        "model_ref": "PNGS--rendezvousRadar--tgt",
+        "symbol": "port",
+        "owner": "rendezvousRadar",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--APS--tgt",
+        "model_ref": "AGC_LM--APS--tgt",
+        "symbol": "port",
+        "owner": "APS",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--RCS--tgt",
+        "model_ref": "AGC_LM--RCS--tgt",
+        "symbol": "port",
+        "owner": "RCS",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-PNGS-AGC_LM",
+        "model_ref": "conn-PNGS-AGC_LM",
+        "source": {
+          "element": "PNGS--AGC_LM--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "PNGS--AGC_LM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 315,
+              "y": 324
+            },
+            {
+              "x": 315,
+              "y": 166
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "computer",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-AGC_LM-DSKY",
+        "model_ref": "conn-AGC_LM-DSKY",
+        "source": {
+          "element": "AGC_LM--DSKY--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_LM--DSKY--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 676,
+              "y": 146.8
+            },
+            {
+              "x": 676,
+              "y": 108
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "DSKY",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-AGC_LM-AGS",
+        "model_ref": "conn-AGC_LM-AGS",
+        "source": {
+          "element": "AGC_LM--AGS--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_LM--AGS--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 760,
+              "y": 159.6
+            },
+            {
+              "x": 760,
+              "y": 224
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "R47",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-AGC_LM-APS",
+        "model_ref": "conn-AGC_LM-APS",
+        "source": {
+          "element": "AGC_LM--APS--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_LM--APS--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 732,
+              "y": 172.4
+            },
+            {
+              "x": 732,
+              "y": 340
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "P12",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-AGC_LM-RCS",
+        "model_ref": "conn-AGC_LM-RCS",
+        "source": {
+          "element": "AGC_LM--RCS--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_LM--RCS--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 704,
+              "y": 185.2
+            },
+            {
+              "x": 704,
+              "y": 456
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "jets",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-PNGS-landingRadar",
+        "model_ref": "conn-PNGS-landingRadar",
+        "source": {
+          "element": "PNGS--landingRadar--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "PNGS--landingRadar--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 350,
+              "y": 340
+            },
+            {
+              "x": 350,
+              "y": 282
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "LR",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-PNGS-rendezvousRadar",
+        "model_ref": "conn-PNGS-rendezvousRadar",
+        "source": {
+          "element": "PNGS--rendezvousRadar--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "PNGS--rendezvousRadar--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 385,
+              "y": 356
+            },
+            {
+              "x": 385,
+              "y": 398
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "RR",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "LM"
+  }
+}

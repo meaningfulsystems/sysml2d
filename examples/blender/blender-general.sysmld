@@ -12,7 +12,7 @@
     "name": "Blender Cross-View Trace",
     "canvas": {
       "width": 1577,
-      "height": 264,
+      "height": 266,
       "background": "#FFFFFF"
     },
     "frame": {
@@ -21,7 +21,6 @@
     "elements": [
       {
         "id": "makeSmoothieUseCase",
-        "model_ref": "makeSmoothieUseCase",
         "symbol": "use_case",
         "layout": {
           "x": 72,
@@ -31,11 +30,11 @@
           "z": 10
         },
         "label": "Make Smoothie",
-        "style": "use_case"
+        "style": "use_case",
+        "model_ref": "makeSmoothieUseCase"
       },
       {
         "id": "smoothnessDetectionRequirement",
-        "model_ref": "smoothnessDetectionRequirement",
         "symbol": "requirement",
         "layout": {
           "x": 382,
@@ -45,11 +44,11 @@
           "z": 10
         },
         "label": "Smoothness Req",
-        "style": "requirement"
+        "style": "requirement",
+        "model_ref": "smoothnessDetectionRequirement"
       },
       {
         "id": "senseSmoothness",
-        "model_ref": "senseSmoothness",
         "symbol": "action",
         "layout": {
           "x": 712,
@@ -59,11 +58,11 @@
           "z": 10
         },
         "label": "Sense Smoothness",
-        "style": "action"
+        "style": "action",
+        "model_ref": "senseSmoothness"
       },
       {
         "id": "smoothnessSensor",
-        "model_ref": "smoothnessSensor",
         "symbol": "part_usage",
         "layout": {
           "x": 1022,
@@ -73,11 +72,11 @@
           "z": 10
         },
         "label": "Smoothness Sensor",
-        "style": "part_usage"
+        "style": "part_usage",
+        "model_ref": "smoothnessSensor"
       },
       {
         "id": "verifySmoothnessDetection",
-        "model_ref": "verifySmoothnessDetection",
         "symbol": "case",
         "layout": {
           "x": 1335,
@@ -87,13 +86,13 @@
           "z": 10
         },
         "label": "Verify Smoothness",
-        "style": "case"
+        "style": "case",
+        "model_ref": "verifySmoothnessDetection"
       }
     ],
     "connections": [
       {
         "id": "conn-makeSmoothieUseCase-smoothnessDetectionRequirement",
-        "model_ref": "makeSmoothieUseCase",
         "source": {
           "element": "makeSmoothieUseCase",
           "anchor": {
@@ -116,16 +115,15 @@
           {
             "text": "refine",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "makeSmoothieUseCase"
       },
       {
         "id": "conn-smoothnessDetectionRequirement-senseSmoothness",
-        "model_ref": "smoothnessDetectionRequirement",
         "source": {
           "element": "smoothnessDetectionRequirement",
           "anchor": {
@@ -148,16 +146,15 @@
           {
             "text": "allocate",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "smoothnessDetectionRequirement"
       },
       {
         "id": "conn-senseSmoothness-smoothnessSensor",
-        "model_ref": "senseSmoothness",
         "source": {
           "element": "senseSmoothness",
           "anchor": {
@@ -180,27 +177,26 @@
           {
             "text": "performed by",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "senseSmoothness"
       },
       {
         "id": "conn-verifySmoothnessDetection-smoothnessDetectionRequirement",
-        "model_ref": "verifySmoothnessDetection",
         "source": {
           "element": "verifySmoothnessDetection",
           "anchor": {
-            "side": "left",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "smoothnessDetectionRequirement",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
@@ -208,12 +204,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 1335,
-              "y": 192
+              "x": 1420,
+              "y": 194
             },
             {
-              "x": 552,
-              "y": 192
+              "x": 467,
+              "y": 194
             }
           ]
         },
@@ -221,12 +217,12 @@
           {
             "text": "verify",
             "position": {
-              "offset": 0.5,
-              "placement": "centerline"
+              "offset": 0.5
             }
           }
         ],
-        "style": "connector.directed"
+        "style": "connector.directed",
+        "model_ref": "verifySmoothnessDetection"
       }
     ],
     "annotations": [],

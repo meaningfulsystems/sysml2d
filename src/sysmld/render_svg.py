@@ -6,13 +6,14 @@ from html import escape
 from pathlib import Path
 from typing import NamedTuple
 
+from .routing import HOP_RADIUS, hop_arc, hop_crossings
 from .scene import Scene, SceneElement, build_scene
 from .validate import validate_file
 
 
 FRAME_HEIGHT = 38
 PADDING = 2
-DEFAULT_LABEL_OFFSET = 10
+DEFAULT_LABEL_OFFSET = 12
 LABEL_PADDING_X = 4
 LABEL_PADDING_Y = 3
 TEXT_CHAR_WIDTH = 6.2
@@ -110,8 +111,9 @@ def scene_to_svg(scene: Scene) -> str:
         body.extend(_element(element))
     for annotation in scene.annotations:
         body.extend(_annotation(annotation))
-    for connection in scene.connections:
-        body.extend(_connection(connection.points, connection.style))
+    hop_sets = hop_crossings([connection.points for connection in scene.connections])
+    for connection, hops in zip(scene.connections, hop_sets):
+        body.extend(_connection(connection.points, connection.style, hops))
     for element in scene.elements:
         body.extend(_placed_port_label(element, occupied, route_segments, element.id in close_packed_ports, label_bounds))
     route_segments_by_connection = {
@@ -383,11 +385,15 @@ def _port_label_candidates(element: SceneElement) -> list[tuple[float, float, st
     return [(x, y, anchor, _text_bounds(text, x, y, anchor)) for x, y, anchor in specs]
 
 
-def _connection(points: list[tuple[float, float]], style: dict) -> list[str]:
+def _connection(
+    points: list[tuple[float, float]],
+    style: dict,
+    hops: list[tuple[int, float, float]] | None = None,
+) -> list[str]:
     stroke = escape(str(style.get("stroke", "#334155")))
     stroke_width = float(style.get("stroke_width", 2))
     corner_radius = float(style.get("corner_radius", 0))
-    path_data = _connection_path(points, corner_radius)
+    path_data = _connection_path(points, corner_radius, hops or [])
     marker_start = style.get("marker_start", "")
     marker = style.get("marker_end", "")
     marker_start_attr = f' marker-start="url(#{marker_start})"' if marker_start else ""
@@ -399,30 +405,84 @@ def _connection(points: list[tuple[float, float]], style: dict) -> list[str]:
     ]
 
 
-def _connection_path(points: list[tuple[float, float]], corner_radius: float) -> str:
+def _align_last_approach(
+    points: list[tuple[float, float]],
+    min_len: float = 8.0,
+) -> list[tuple[float, float]]:
+    """Drop a 1-px hook so marker-end follows the shaft, not a stub."""
+    if len(points) < 3:
+        return points
+    aligned = list(points)
+    prev, last, end = aligned[-3], aligned[-2], aligned[-1]
+    last_dx = end[0] - last[0]
+    last_dy = end[1] - last[1]
+    last_len = (last_dx * last_dx + last_dy * last_dy) ** 0.5
+    if last_len >= min_len:
+        return aligned
+    shaft_dx = last[0] - prev[0]
+    shaft_dy = last[1] - prev[1]
+    if abs(shaft_dx) >= abs(shaft_dy):
+        aligned[-1] = (end[0], last[1])
+    else:
+        aligned[-1] = (last[0], end[1])
+    if abs(aligned[-2][0] - aligned[-1][0]) < 1 and abs(aligned[-2][1] - aligned[-1][1]) < 1:
+        aligned.pop(-2)
+    return aligned
+
+
+def _connection_path(
+    points: list[tuple[float, float]],
+    corner_radius: float,
+    hops: list[tuple[int, float, float]] | None = None,
+) -> str:
+    points = _align_last_approach(points)
     if not points:
         return ""
     if len(points) == 1:
         return f"M {_point(points[0])}"
 
-    commands = [f"M {_point(points[0])}"]
-    if corner_radius <= 0 or len(points) == 2:
-        commands.extend(f"L {_point(point)}" for point in points[1:])
-        return " ".join(commands)
+    hops_by_seg: dict[int, list[tuple[float, float]]] = {}
+    for segment_index, x, y in hops or []:
+        hops_by_seg.setdefault(segment_index, []).append((x, y))
 
-    for index in range(1, len(points) - 1):
-        previous = points[index - 1]
-        current = points[index]
-        following = points[index + 1]
-        rounded = _rounded_corner(previous, current, following, corner_radius)
+    commands = [f"M {_point(points[0])}"]
+    for index, (start, end) in enumerate(zip(points, points[1:])):
+        commands.extend(_hop_path_commands(start, end, hops_by_seg.get(index, [])))
+        if index == len(points) - 2:
+            commands.append(f"L {_point(end)}")
+            continue
+        rounded = _rounded_corner(start, end, points[index + 2], corner_radius) if corner_radius > 0 else None
         if rounded is None:
-            commands.append(f"L {_point(current)}")
+            commands.append(f"L {_point(end)}")
             continue
         before, after = rounded
         commands.append(f"L {_point(before)}")
-        commands.append(f"Q {_point(current)} {_point(after)}")
-    commands.append(f"L {_point(points[-1])}")
+        commands.append(f"Q {_point(end)} {_point(after)}")
     return " ".join(commands)
+
+
+def _hop_path_commands(
+    start: tuple[float, float],
+    end: tuple[float, float],
+    hops: list[tuple[float, float]],
+) -> list[str]:
+    if not hops:
+        return []
+    if abs(end[0] - start[0]) >= abs(end[1] - start[1]):
+        ordered = sorted(hops, key=lambda point: point[0], reverse=end[0] < start[0])
+    else:
+        ordered = sorted(hops, key=lambda point: point[1], reverse=end[1] < start[1])
+    commands = []
+    for hop in ordered:
+        arc = hop_arc(start, end, hop)
+        if arc is None:
+            continue
+        before, after, sweep = arc
+        commands.append(f"L {_point(before)}")
+        commands.append(
+            f"A {HOP_RADIUS:g} {HOP_RADIUS:g} 0 0 {sweep} {_point(after)}"
+        )
+    return commands
 
 
 def _rounded_corner(

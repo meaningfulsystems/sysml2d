@@ -1,0 +1,110 @@
+{
+  "diagram": "apollo-ibd-msfn",
+  "kind": "InterconnectionView",
+  "name": "MSFN Goldstone/Madrid/Honeysuckle + NASCOM",
+  "subject": "MSFN",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "left-right",
+  "default_w": 150,
+  "default_h": 58,
+  "col_gap": 48,
+  "rank_gap": 120,
+  "label_mode": "connection",
+  "aliases": {
+    "MSFN": "Apollo11::Ground::MSFN",
+    "Goldstone": "Apollo11::Ground::MSFN::Goldstone",
+    "Madrid": "Apollo11::Ground::MSFN::Madrid",
+    "Honeysuckle": "Apollo11::Ground::MSFN::Honeysuckle",
+    "NASCOM": "Apollo11::Ground::Ground::NASCOM",
+    "Goldstone--NASCOM--src": "Apollo11::Ground::MSFN::Goldstone",
+    "Goldstone--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Goldstone-NASCOM": "Apollo11::Ground::MSFN::Goldstone",
+    "Madrid--NASCOM--src": "Apollo11::Ground::MSFN::Madrid",
+    "Madrid--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Madrid-NASCOM": "Apollo11::Ground::MSFN::Madrid",
+    "Honeysuckle--NASCOM--src": "Apollo11::Ground::MSFN::Honeysuckle",
+    "Honeysuckle--NASCOM--tgt": "Apollo11::Ground::Ground::NASCOM",
+    "conn-Honeysuckle-NASCOM": "Apollo11::Ground::MSFN::Honeysuckle"
+  },
+  "nodes": {
+    "Goldstone": {
+      "label": "Goldstone",
+      "style": "part.comms"
+    },
+    "Madrid": {
+      "label": "Madrid",
+      "style": "part.comms"
+    },
+    "Honeysuckle": {
+      "label": "Honeysuckle",
+      "style": "part.comms"
+    },
+    "NASCOM": {
+      "label": "NASCOM",
+      "style": "part.comms"
+    }
+  },
+  "edges": [
+    {
+      "from": "Goldstone",
+      "to": "NASCOM",
+      "label": "USB",
+      "model_ref": "conn-Goldstone-NASCOM"
+    },
+    {
+      "from": "Madrid",
+      "to": "NASCOM",
+      "label": "USB",
+      "model_ref": "conn-Madrid-NASCOM"
+    },
+    {
+      "from": "Honeysuckle",
+      "to": "NASCOM",
+      "label": "USB",
+      "model_ref": "conn-Honeysuckle-NASCOM"
+    }
+  ],
+  "styles": {
+    "boundary.system": {
+      "fill": "#FFFFFF",
+      "stroke": "#333333",
+      "stroke_width": 2
+    },
+    "part.vehicle": {
+      "fill": "#F5F5F5",
+      "stroke": "#424242",
+      "stroke_width": 2
+    },
+    "part.gnc": {
+      "fill": "#E8F5E9",
+      "stroke": "#2E7D32",
+      "stroke_width": 2
+    },
+    "part.prop": {
+      "fill": "#FFF3E0",
+      "stroke": "#E65100",
+      "stroke_width": 2
+    },
+    "part.eclss": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "part.comms": {
+      "fill": "#FFF7ED",
+      "stroke": "#C2410C",
+      "stroke_width": 2
+    },
+    "part.ground": {
+      "fill": "#E3F2FD",
+      "stroke": "#1565C0",
+      "stroke_width": 2
+    },
+    "connector.default": {
+      "stroke": "#334155",
+      "stroke_width": 2
+    }
+  }
+}

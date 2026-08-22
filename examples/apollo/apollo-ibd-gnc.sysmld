@@ -1,0 +1,758 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "DSKY": "Apollo11::CSM::CM::DSKY",
+    "DSKY2": "Apollo11::CSM::CM::DSKY2",
+    "SCS": "Apollo11::CSM::CM::SCS",
+    "AGC_CM": "Apollo11::CSM::CM::AGC_CM",
+    "IMU": "Apollo11::CSM::CM::IMU",
+    "USB": "Apollo11::CSM::CM::USB",
+    "PNGS": "Apollo11::LM::ascent::PNGS",
+    "AGC_LM": "Apollo11::LM::ascent::AGC_LM",
+    "DSKY_LM": "Apollo11::LM::ascent::DSKY",
+    "AGS": "Apollo11::LM::ascent::AGS",
+    "LVDC": "Apollo11::SaturnV::IU::LVDC",
+    "DSKY--AGC_CM--src": "Apollo11::CSM::CM::DSKY",
+    "DSKY--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-DSKY-AGC_CM": "Apollo11::CSM::CM::DSKY",
+    "DSKY2--AGC_CM--src": "Apollo11::CSM::CM::DSKY2",
+    "DSKY2--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-DSKY2-AGC_CM": "Apollo11::CSM::CM::DSKY2",
+    "SCS--AGC_CM--src": "Apollo11::CSM::CM::SCS",
+    "SCS--AGC_CM--tgt": "Apollo11::CSM::CM::AGC_CM",
+    "conn-SCS-AGC_CM": "Apollo11::CSM::CM::SCS",
+    "AGC_CM--IMU--src": "Apollo11::CSM::CM::AGC_CM",
+    "AGC_CM--IMU--tgt": "Apollo11::CSM::CM::IMU",
+    "conn-AGC_CM-IMU": "Apollo11::CSM::CM::AGC_CM",
+    "PNGS--AGC_LM--src": "Apollo11::LM::ascent::PNGS",
+    "PNGS--AGC_LM--tgt": "Apollo11::LM::ascent::AGC_LM",
+    "conn-PNGS-AGC_LM": "Apollo11::LM::ascent::PNGS",
+    "DSKY_LM--AGC_LM--src": "Apollo11::LM::ascent::DSKY",
+    "DSKY_LM--AGC_LM--tgt": "Apollo11::LM::ascent::AGC_LM",
+    "conn-DSKY_LM-AGC_LM": "Apollo11::LM::ascent::DSKY",
+    "AGC_LM--AGS--src": "Apollo11::LM::ascent::AGC_LM",
+    "AGC_LM--AGS--tgt": "Apollo11::LM::ascent::AGS",
+    "conn-AGC_LM-AGS": "Apollo11::LM::ascent::AGC_LM"
+  },
+  "diagram": {
+    "id": "apollo-ibd-gnc",
+    "kind": "InterconnectionView",
+    "name": "AGC / GNC (do not merge)",
+    "canvas": {
+      "width": 1004,
+      "height": 936,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "mission",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 924,
+          "height": 856,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "DSKY",
+        "model_ref": "DSKY",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 76,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "DSKY",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "DSKY2",
+        "model_ref": "DSKY2",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 196,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "DSKY 2",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "SCS",
+        "model_ref": "SCS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 676,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "SCS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "AGC_CM",
+        "model_ref": "AGC_CM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 432,
+          "y": 376,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "AGC_CM",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "IMU",
+        "model_ref": "IMU",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 788,
+          "y": 376,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "IMU",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "USB",
+        "model_ref": "USB",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 796,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "USB",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.comms"
+      },
+      {
+        "id": "PNGS",
+        "model_ref": "PNGS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 556,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "PNGS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "AGC_LM",
+        "model_ref": "AGC_LM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 432,
+          "y": 496,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "AGC_LM",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "DSKY_LM",
+        "model_ref": "DSKY_LM",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 316,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "DSKY",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "AGS",
+        "model_ref": "AGS",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 788,
+          "y": 496,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "AGS",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "LVDC",
+        "model_ref": "LVDC",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 436,
+          "width": 140,
+          "height": 64,
+          "z": 10
+        },
+        "label": "LVDC",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "DSKY--AGC_CM--src",
+        "model_ref": "DSKY--AGC_CM--src",
+        "symbol": "port",
+        "owner": "DSKY",
+        "placement": {
+          "side": "top",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "DSKY2--AGC_CM--src",
+        "model_ref": "DSKY2--AGC_CM--src",
+        "symbol": "port",
+        "owner": "DSKY2",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "SCS--AGC_CM--src",
+        "model_ref": "SCS--AGC_CM--src",
+        "symbol": "port",
+        "owner": "SCS",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "DSKY--AGC_CM--tgt",
+        "model_ref": "DSKY--AGC_CM--tgt",
+        "symbol": "port",
+        "owner": "AGC_CM",
+        "placement": {
+          "side": "left",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "DSKY2--AGC_CM--tgt",
+        "model_ref": "DSKY2--AGC_CM--tgt",
+        "symbol": "port",
+        "owner": "AGC_CM",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "SCS--AGC_CM--tgt",
+        "model_ref": "SCS--AGC_CM--tgt",
+        "symbol": "port",
+        "owner": "AGC_CM",
+        "placement": {
+          "side": "left",
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_CM--IMU--src",
+        "model_ref": "AGC_CM--IMU--src",
+        "symbol": "port",
+        "owner": "AGC_CM",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_CM--IMU--tgt",
+        "model_ref": "AGC_CM--IMU--tgt",
+        "symbol": "port",
+        "owner": "IMU",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "PNGS--AGC_LM--src",
+        "model_ref": "PNGS--AGC_LM--src",
+        "symbol": "port",
+        "owner": "PNGS",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "DSKY_LM--AGC_LM--tgt",
+        "model_ref": "DSKY_LM--AGC_LM--tgt",
+        "symbol": "port",
+        "owner": "AGC_LM",
+        "placement": {
+          "side": "left",
+          "offset": 0.3333
+        },
+        "label": ""
+      },
+      {
+        "id": "PNGS--AGC_LM--tgt",
+        "model_ref": "PNGS--AGC_LM--tgt",
+        "symbol": "port",
+        "owner": "AGC_LM",
+        "placement": {
+          "side": "left",
+          "offset": 0.6667
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--AGS--src",
+        "model_ref": "AGC_LM--AGS--src",
+        "symbol": "port",
+        "owner": "AGC_LM",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "DSKY_LM--AGC_LM--src",
+        "model_ref": "DSKY_LM--AGC_LM--src",
+        "symbol": "port",
+        "owner": "DSKY_LM",
+        "placement": {
+          "side": "bottom",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "AGC_LM--AGS--tgt",
+        "model_ref": "AGC_LM--AGS--tgt",
+        "symbol": "port",
+        "owner": "AGS",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-DSKY-AGC_CM",
+        "model_ref": "conn-DSKY-AGC_CM",
+        "source": {
+          "element": "DSKY--AGC_CM--src",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "DSKY--AGC_CM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 240,
+              "y": 76
+            },
+            {
+              "x": 240,
+              "y": 292
+            },
+            {
+              "x": 432,
+              "y": 292
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "DSKY",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-DSKY2-AGC_CM",
+        "model_ref": "conn-DSKY2-AGC_CM",
+        "source": {
+          "element": "DSKY2--AGC_CM--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "DSKY2--AGC_CM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 146,
+              "y": 292
+            },
+            {
+              "x": 240,
+              "y": 292
+            },
+            {
+              "x": 240,
+              "y": 408
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "DSKY",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-SCS-AGC_CM",
+        "model_ref": "conn-SCS-AGC_CM",
+        "source": {
+          "element": "SCS--AGC_CM--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "SCS--AGC_CM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 240,
+              "y": 740
+            },
+            {
+              "x": 240,
+              "y": 464
+            },
+            {
+              "x": 432,
+              "y": 464
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "backup",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-AGC_CM-IMU",
+        "model_ref": "conn-AGC_CM-IMU",
+        "source": {
+          "element": "AGC_CM--IMU--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_CM--IMU--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "IMU",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-PNGS-AGC_LM",
+        "model_ref": "conn-PNGS-AGC_LM",
+        "source": {
+          "element": "PNGS--AGC_LM--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "PNGS--AGC_LM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 146,
+              "y": 538.669
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "computer",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-DSKY_LM-AGC_LM",
+        "model_ref": "conn-DSKY_LM-AGC_LM",
+        "source": {
+          "element": "DSKY_LM--AGC_LM--src",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "DSKY_LM--AGC_LM--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 146,
+              "y": 318
+            },
+            {
+              "x": 404,
+              "y": 318
+            },
+            {
+              "x": 404,
+              "y": 517.331
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "DSKY",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-AGC_LM-AGS",
+        "model_ref": "conn-AGC_LM-AGS",
+        "source": {
+          "element": "AGC_LM--AGS--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "AGC_LM--AGS--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "R47",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "mission"
+  }
+}

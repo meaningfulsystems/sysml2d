@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="756" height="578" viewBox="0 0 756 578">
+<defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#111827}.label{font-size:13px}.small{font-size:11px}.header{font-size:14px;font-weight:600}</style>
+<marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#1D4ED8"/></marker>
+<marker id="arrow-dark" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#334155"/></marker>
+<marker id="composition" markerWidth="12" markerHeight="12" refX="0" refY="6" orient="auto" markerUnits="strokeWidth"><polygon points="0 6,6 0,12 6,6 12" fill="#111827" stroke="#111827"/></marker>
+</defs>
+<rect x="0" y="0" width="756" height="578" fill="#FFFFFF"/>
+<rect x="2" y="38" width="752" height="536" fill="none" stroke="#333333" stroke-width="2"/>
+<path d="M 2 1 H 328 L 344 38 H 2 Z" fill="#FFFFFF" stroke="#333333" stroke-width="2"/>
+<text class="header" x="12" y="24">[stv.mb] SCS modes [SCSMode : SCSMode]</text>
+<rect x="2" y="38" width="752" height="538" fill="none" stroke="#333333" stroke-width="0"/>
+<g transform="translate(2,40)">
+<rect id="boundary" x="109" y="37" width="603" height="459" rx="12" fill="#FFFFFF" stroke="#334155" stroke-width="2"/>
+<text class="label" x="119" y="59">SCSMode</text>
+<circle id="initial" cx="155" cy="281" r="10" fill="#1E293B" stroke="#1E293B" stroke-width="1"/>
+<rect id="AGC_CM" x="318" y="255" width="130" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="383" y="281">AGC_CM</text>
+<rect id="attHold" x="546" y="129" width="130" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="611" y="155">attitude hold</text>
+<rect id="rateCommand" x="546" y="255" width="130" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="611" y="281">rate command</text>
+<rect id="minImpulse" x="546" y="380" width="130" height="52" rx="16" fill="#EFF6FF" stroke="#1D4ED8" stroke-width="2"/>
+<text class="label" text-anchor="middle" x="611" y="406">min impulse</text>
+<path d="M 165,281 L 318,281" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 448,268 L 464,268 Q 472,268 472,260 L 472,163 Q 472,155 480,155 L 546,155" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 448,281 L 546,281" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 448,294 L 514,294 Q 522,294 522,302 L 522,398 Q 522,406 530,406 L 546,406" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 611,129 L 611,81 Q 611,73 603,73 L 391,73 Q 383,73 383,81 L 383,255" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 611,307 L 611,327 Q 611,335 603,335 L 529,335 A 7 7 0 0 1 515,335 L 391,335 Q 383,335 383,327 L 383,307" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<path d="M 611,432 L 611,452 Q 611,460 603,460 L 391,460 Q 383,460 383,452 L 383,307" fill="none" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round" marker-end="url(#arrow)"/>
+<text class="small" text-anchor="middle" x="472" y="219.5">SCS hold</text>
+<text class="small" text-anchor="middle" x="497" y="289">rate</text>
+<text class="small" text-anchor="middle" x="522" y="358">min</text>
+<text class="small" text-anchor="middle" x="497" y="81">AGC_CM</text>
+<text class="small" text-anchor="middle" x="462.8" y="343">AGC_CM</text>
+<text class="small" text-anchor="middle" x="497" y="468">AGC_CM</text>
+</g>
+</svg>

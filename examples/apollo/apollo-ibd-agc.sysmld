@@ -1,0 +1,451 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "mission": "Apollo11::Apollo11",
+    "cmOsc": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmE": "Apollo11::CSM::AGC_CM::erasable",
+    "cmF": "Apollo11::CSM::AGC_CM::fixed",
+    "lmOsc": "Apollo11::LM::AGC_LM::oscillator",
+    "lmE": "Apollo11::LM::AGC_LM::erasable",
+    "lmF": "Apollo11::LM::AGC_LM::fixed",
+    "cmOsc--cmE--src": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmOsc--cmE--tgt": "Apollo11::CSM::AGC_CM::erasable",
+    "conn-cmOsc-cmE": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmOsc--cmF--src": "Apollo11::CSM::AGC_CM::oscillator",
+    "cmOsc--cmF--tgt": "Apollo11::CSM::AGC_CM::fixed",
+    "conn-cmOsc-cmF": "Apollo11::CSM::AGC_CM::oscillator",
+    "lmOsc--lmE--src": "Apollo11::LM::AGC_LM::oscillator",
+    "lmOsc--lmE--tgt": "Apollo11::LM::AGC_LM::erasable",
+    "conn-lmOsc-lmE": "Apollo11::LM::AGC_LM::oscillator",
+    "lmOsc--lmF--src": "Apollo11::LM::AGC_LM::oscillator",
+    "lmOsc--lmF--tgt": "Apollo11::LM::AGC_LM::fixed",
+    "conn-lmOsc-lmF": "Apollo11::LM::AGC_LM::oscillator"
+  },
+  "diagram": {
+    "id": "apollo-ibd-agc",
+    "kind": "InterconnectionView",
+    "name": "AGC_CM / AGC_LM hardware",
+    "canvas": {
+      "width": 620,
+      "height": 528,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "mission",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 540,
+          "height": 448,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "cmOsc",
+        "model_ref": "cmOsc",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 182,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AGC_CM osc\n1.024 MHz",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "cmE",
+        "model_ref": "cmE",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AGC_CM 2048 E",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "cmF",
+        "model_ref": "cmF",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 182,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AGC_CM 36864 F",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "lmOsc",
+        "model_ref": "lmOsc",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 288,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AGC_LM osc\n1.024 MHz",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "lmE",
+        "model_ref": "lmE",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 288,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AGC_LM 2048 E",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "lmF",
+        "model_ref": "lmF",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 394,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AGC_LM 36864 F",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.gnc"
+      },
+      {
+        "id": "cmOsc--cmE--src",
+        "model_ref": "cmOsc--cmE--src",
+        "symbol": "port",
+        "owner": "cmOsc",
+        "placement": {
+          "side": "right",
+          "offset": 0.25
+        },
+        "label": ""
+      },
+      {
+        "id": "cmOsc--cmF--src",
+        "model_ref": "cmOsc--cmF--src",
+        "symbol": "port",
+        "owner": "cmOsc",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "cmOsc--cmE--tgt",
+        "model_ref": "cmOsc--cmE--tgt",
+        "symbol": "port",
+        "owner": "cmE",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "cmOsc--cmF--tgt",
+        "model_ref": "cmOsc--cmF--tgt",
+        "symbol": "port",
+        "owner": "cmF",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "lmOsc--lmE--src",
+        "model_ref": "lmOsc--lmE--src",
+        "symbol": "port",
+        "owner": "lmOsc",
+        "placement": {
+          "side": "right",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "lmOsc--lmF--src",
+        "model_ref": "lmOsc--lmF--src",
+        "symbol": "port",
+        "owner": "lmOsc",
+        "placement": {
+          "side": "right",
+          "offset": 0.75
+        },
+        "label": ""
+      },
+      {
+        "id": "lmOsc--lmE--tgt",
+        "model_ref": "lmOsc--lmE--tgt",
+        "symbol": "port",
+        "owner": "lmE",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "lmOsc--lmF--tgt",
+        "model_ref": "lmOsc--lmF--tgt",
+        "symbol": "port",
+        "owner": "lmF",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-cmOsc-cmE",
+        "model_ref": "conn-cmOsc-cmE",
+        "source": {
+          "element": "cmOsc--cmE--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmOsc--cmE--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 268,
+              "y": 196.5
+            },
+            {
+              "x": 268,
+              "y": 105
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "MCT 11.7 \u03bcs",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-cmOsc-cmF",
+        "model_ref": "conn-cmOsc-cmF",
+        "source": {
+          "element": "cmOsc--cmF--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "cmOsc--cmF--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "fixed",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-lmOsc-lmE",
+        "model_ref": "conn-lmOsc-lmE",
+        "source": {
+          "element": "lmOsc--lmE--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lmOsc--lmE--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [
+          {
+            "text": "MCT 11.7 \u03bcs",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-lmOsc-lmF",
+        "model_ref": "conn-lmOsc-lmF",
+        "source": {
+          "element": "lmOsc--lmF--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "lmOsc--lmF--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 352,
+              "y": 331.5
+            },
+            {
+              "x": 352,
+              "y": 423
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "fixed",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "mission"
+  }
+}

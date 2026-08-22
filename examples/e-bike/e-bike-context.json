@@ -1,0 +1,68 @@
+{
+  "diagram": "e-bike-context",
+  "kind": "GeneralView",
+  "name": "Electric Bike Operating Context",
+  "subject": "ElectricBike",
+  "model_files": [
+    "e-bike.sysml"
+  ],
+  "direction": "left-right",
+  "rank_gap": 160,
+  "col_gap": 90,
+  "nodes": {
+    "rider": {
+      "label": "Rider",
+      "symbol": "actor",
+      "rank": 0,
+      "order": 0
+    },
+    "charger": {
+      "label": "Charger",
+      "symbol": "part_usage",
+      "rank": 0,
+      "order": 1
+    },
+    "ElectricBike": {
+      "label": "Electric Bike",
+      "symbol": "part_usage",
+      "rank": 1,
+      "order": 0,
+      "w": 190,
+      "h": 110
+    },
+    "road": {
+      "label": "Road",
+      "symbol": "part_usage",
+      "rank": 2,
+      "order": 0
+    }
+  },
+  "edges": [
+    {
+      "from": "rider",
+      "to": "ElectricBike",
+      "label": "commands",
+      "model_ref": "riderCommandFlow",
+      "source_side": "right",
+      "target_side": "left",
+      "target_offset": 0.3
+    },
+    {
+      "from": "charger",
+      "to": "ElectricBike",
+      "label": "charge",
+      "model_ref": "chargeEnergyFlow",
+      "source_side": "right",
+      "target_side": "left",
+      "target_offset": 0.7
+    },
+    {
+      "from": "ElectricBike",
+      "to": "road",
+      "label": "tractive",
+      "model_ref": "roadLoadFlow",
+      "source_side": "right",
+      "target_side": "left"
+    }
+  ]
+}

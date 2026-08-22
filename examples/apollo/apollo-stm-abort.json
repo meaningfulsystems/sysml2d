@@ -1,0 +1,131 @@
+{
+  "diagram": "apollo-stm-abort",
+  "kind": "StateView",
+  "name": "Apollo 11 Abort Modes",
+  "subject": "abortMode",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "direction": "top-down",
+  "default_w": 210,
+  "default_h": 80,
+  "rank_gap": 180,
+  "col_gap": 56,
+  "fan_tracks": "mirror",
+  "aliases": {
+    "abortMode": "Apollo11::AbortMode",
+    "nominal": "Apollo11::AbortMode::nominal",
+    "pad": "Apollo11::AbortMode::pad",
+    "I": "Apollo11::AbortMode::I",
+    "II": "Apollo11::AbortMode::II",
+    "III": "Apollo11::AbortMode::III",
+    "IV": "Apollo11::AbortMode::IV",
+    "contingencyTLI": "Apollo11::AbortMode::contingencyTLI",
+    "lunar": "Apollo11::AbortMode::lunar",
+    "SPS": "Apollo11::AbortMode::SPS",
+    "abortPad": "Apollo11::AbortMode::abortPad",
+    "abortI": "Apollo11::AbortMode::abortI",
+    "abortII": "Apollo11::AbortMode::abortII",
+    "abortIII": "Apollo11::AbortMode::abortIII",
+    "abortIV": "Apollo11::AbortMode::abortIV",
+    "abortTLI": "Apollo11::AbortMode::abortTLI",
+    "abortLunar": "Apollo11::AbortMode::abortLunar",
+    "abortSPS": "Apollo11::AbortMode::abortSPS"
+  },
+  "states": {
+    "initial": {
+      "initial": true
+    },
+    "nominal": {
+      "label": "Nominal",
+      "model_ref": "nominal"
+    },
+    "pad": {
+      "label": "Pad\nLaunch Escape System",
+      "model_ref": "pad"
+    },
+    "I": {
+      "label": "Mode I\nLaunch Escape System",
+      "model_ref": "I"
+    },
+    "II": {
+      "label": "Mode II\nnot Launch Escape System",
+      "model_ref": "II"
+    },
+    "III": {
+      "label": "Mode III\nnot Launch Escape System",
+      "model_ref": "III"
+    },
+    "IV": {
+      "label": "Mode IV\nnot Launch Escape System",
+      "model_ref": "IV"
+    },
+    "contingencyTLI": {
+      "label": "Contingency Translunar\nInjection\nnot Launch Escape System",
+      "model_ref": "contingencyTLI"
+    },
+    "lunar": {
+      "label": "Lunar\nnot Launch Escape System",
+      "model_ref": "lunar"
+    },
+    "SPS": {
+      "label": "Service Propulsion\nSystem\nnot Launch Escape System",
+      "model_ref": "SPS"
+    }
+  },
+  "transitions": [
+    {
+      "from": "initial",
+      "to": "nominal",
+      "label": ""
+    },
+    {
+      "from": "nominal",
+      "to": "pad",
+      "label": "pad",
+      "model_ref": "abortPad"
+    },
+    {
+      "from": "nominal",
+      "to": "I",
+      "label": "I",
+      "model_ref": "abortI"
+    },
+    {
+      "from": "nominal",
+      "to": "II",
+      "label": "II",
+      "model_ref": "abortII"
+    },
+    {
+      "from": "nominal",
+      "to": "III",
+      "label": "III",
+      "model_ref": "abortIII"
+    },
+    {
+      "from": "nominal",
+      "to": "IV",
+      "label": "IV",
+      "model_ref": "abortIV"
+    },
+    {
+      "from": "nominal",
+      "to": "contingencyTLI",
+      "label": "TLI",
+      "model_ref": "abortTLI"
+    },
+    {
+      "from": "nominal",
+      "to": "lunar",
+      "label": "lunar",
+      "model_ref": "abortLunar"
+    },
+    {
+      "from": "nominal",
+      "to": "SPS",
+      "label": "SPS",
+      "model_ref": "abortSPS"
+    }
+  ]
+}

@@ -1,16 +1,23 @@
 # SysMLD Skills
 
-This folder contains reusable prompt templates for generating SysMLD content with AI assistance. Each file is a self-contained prompt that can be used with Claude, ChatGPT, or any other LLM.
+Installable Cursor-style skills for taking SysML2d onto a new project. Stems match the MSML skill pack — **not** one file per view kind, and **no** `sysmld-` prefix. This repo is SysML v2 (`.sysml` / `.sysmld` / SVG). MSML is a different language (`.msml` / `.msmd` / PNG). Do not mix them.
 
-## Skills
+| Skill | When to use it |
+| --- | --- |
+| [bootstrap-project](bootstrap-project/SKILL.md) | Start a new user project from [templates/new-project/](../templates/new-project/) |
+| [author-model](author-model/SKILL.md) | Write or update SysML v2 textual models in this style |
+| [compose-views](compose-views/SKILL.md) | Write intent JSON and run the right `sysmld` command (all 15 kinds) |
+| [vision-review](vision-review/SKILL.md) | Vision QA: no line through a box, hop-overs only for line crossings, meaning checks |
+
+Repo working rules for agents: [AGENTS.md](../AGENTS.md). Language-specific bits (`.sysml`, `sysmld` CLI) stay in the skill body.
+
+## One-shot leftovers
+
+These `.md` files are paste-in prompts, not per-view agent files. Prefer the four skills above.
 
 | File | Purpose |
-|---|---|
+| --- | --- |
 | [new-model.md](new-model.md) | Generate a `.sysml` model from a system description |
 | [new-interconnection.md](new-interconnection.md) | Generate an IBD intent JSON from a `.sysml` model |
 | [new-state-machine.md](new-state-machine.md) | Generate a state machine intent JSON from a `.sysml` model |
 | [new-requirement-view.md](new-requirement-view.md) | Generate a requirement view intent JSON from a `.sysml` model |
-
-## How to Use
-
-Copy the contents of a skill file and paste it into your AI conversation. Replace the `[SYSTEM DESCRIPTION]` or `[SYSML MODEL]` placeholder with your actual content. The skill file provides the context and format constraints the AI needs to produce valid SysMLD output.

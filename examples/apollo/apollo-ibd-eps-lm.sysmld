@@ -1,0 +1,459 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "descent": "Apollo11::LM::descent",
+    "ECA": "Apollo11::LM::descent::ECA",
+    "AgZn1": "Apollo11::LM::descent::AgZn1",
+    "AgZn2": "Apollo11::LM::descent::AgZn2",
+    "AgZn3": "Apollo11::LM::descent::AgZn3",
+    "AgZn4": "Apollo11::LM::descent::AgZn4",
+    "ECA--AgZn1--src": "Apollo11::LM::descent::ECA",
+    "ECA--AgZn1--tgt": "Apollo11::LM::descent::AgZn1",
+    "conn-ECA-AgZn1": "Apollo11::LM::descent::ECAToAgZn1",
+    "ECA--AgZn2--src": "Apollo11::LM::descent::ECA",
+    "ECA--AgZn2--tgt": "Apollo11::LM::descent::AgZn2",
+    "conn-ECA-AgZn2": "Apollo11::LM::descent::ECAToAgZn2",
+    "ECA--AgZn3--src": "Apollo11::LM::descent::ECA",
+    "ECA--AgZn3--tgt": "Apollo11::LM::descent::AgZn3",
+    "conn-ECA-AgZn3": "Apollo11::LM::descent::ECAToAgZn3",
+    "ECA--AgZn4--src": "Apollo11::LM::descent::ECA",
+    "ECA--AgZn4--tgt": "Apollo11::LM::descent::AgZn4",
+    "conn-ECA-AgZn4": "Apollo11::LM::descent::ECAToAgZn4"
+  },
+  "diagram": {
+    "id": "apollo-ibd-eps-lm",
+    "kind": "InterconnectionView",
+    "name": "LM descent AgZn + ECA",
+    "canvas": {
+      "width": 620,
+      "height": 540,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "descent",
+        "symbol": "boundary",
+        "layout": {
+          "x": 40,
+          "y": 40,
+          "width": 540,
+          "height": 460,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "ECA",
+        "model_ref": "ECA",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 76,
+          "y": 241,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "ECA",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "AgZn1",
+        "model_ref": "AgZn1",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 76,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AgZn1",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "AgZn2",
+        "model_ref": "AgZn2",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 186,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AgZn2",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "AgZn3",
+        "model_ref": "AgZn3",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 296,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AgZn3",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "AgZn4",
+        "model_ref": "AgZn4",
+        "symbol": "part_usage",
+        "layout": {
+          "x": 404,
+          "y": 406,
+          "width": 140,
+          "height": 58,
+          "z": 10
+        },
+        "label": "AgZn4",
+        "compartments": {
+          "attributes": false,
+          "ports": true,
+          "actions": false
+        },
+        "style": "part.eps"
+      },
+      {
+        "id": "ECA--AgZn1--src",
+        "model_ref": "ECA--AgZn1--src",
+        "symbol": "port",
+        "owner": "ECA",
+        "placement": {
+          "side": "right",
+          "offset": 0.2
+        },
+        "label": ""
+      },
+      {
+        "id": "ECA--AgZn2--src",
+        "model_ref": "ECA--AgZn2--src",
+        "symbol": "port",
+        "owner": "ECA",
+        "placement": {
+          "side": "right",
+          "offset": 0.4
+        },
+        "label": ""
+      },
+      {
+        "id": "ECA--AgZn3--src",
+        "model_ref": "ECA--AgZn3--src",
+        "symbol": "port",
+        "owner": "ECA",
+        "placement": {
+          "side": "right",
+          "offset": 0.6
+        },
+        "label": ""
+      },
+      {
+        "id": "ECA--AgZn4--src",
+        "model_ref": "ECA--AgZn4--src",
+        "symbol": "port",
+        "owner": "ECA",
+        "placement": {
+          "side": "right",
+          "offset": 0.8
+        },
+        "label": ""
+      },
+      {
+        "id": "ECA--AgZn1--tgt",
+        "model_ref": "ECA--AgZn1--tgt",
+        "symbol": "port",
+        "owner": "AgZn1",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "ECA--AgZn2--tgt",
+        "model_ref": "ECA--AgZn2--tgt",
+        "symbol": "port",
+        "owner": "AgZn2",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "ECA--AgZn3--tgt",
+        "model_ref": "ECA--AgZn3--tgt",
+        "symbol": "port",
+        "owner": "AgZn3",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      },
+      {
+        "id": "ECA--AgZn4--tgt",
+        "model_ref": "ECA--AgZn4--tgt",
+        "symbol": "port",
+        "owner": "AgZn4",
+        "placement": {
+          "side": "left",
+          "offset": 0.5
+        },
+        "label": ""
+      }
+    ],
+    "connections": [
+      {
+        "id": "conn-ECA-AgZn1",
+        "model_ref": "conn-ECA-AgZn1",
+        "source": {
+          "element": "ECA--AgZn1--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ECA--AgZn1--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 268,
+              "y": 252.6
+            },
+            {
+              "x": 268,
+              "y": 105
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "28 V DC",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ECA-AgZn2",
+        "model_ref": "conn-ECA-AgZn2",
+        "source": {
+          "element": "ECA--AgZn2--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ECA--AgZn2--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 296,
+              "y": 264.2
+            },
+            {
+              "x": 296,
+              "y": 215
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "28 V DC",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ECA-AgZn3",
+        "model_ref": "conn-ECA-AgZn3",
+        "source": {
+          "element": "ECA--AgZn3--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ECA--AgZn3--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 352,
+              "y": 275.8
+            },
+            {
+              "x": 352,
+              "y": 325
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "28 V DC",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      },
+      {
+        "id": "conn-ECA-AgZn4",
+        "model_ref": "conn-ECA-AgZn4",
+        "source": {
+          "element": "ECA--AgZn4--src",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "ECA--AgZn4--tgt",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": [
+            {
+              "x": 324,
+              "y": 287.4
+            },
+            {
+              "x": 324,
+              "y": 435
+            }
+          ]
+        },
+        "labels": [
+          {
+            "text": "28 V DC",
+            "position": {
+              "offset": 0.5
+            }
+          }
+        ],
+        "style": "connector.default"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#333333",
+        "stroke_width": 2
+      },
+      "part.vehicle": {
+        "fill": "#F5F5F5",
+        "stroke": "#424242",
+        "stroke_width": 2
+      },
+      "part.gnc": {
+        "fill": "#E8F5E9",
+        "stroke": "#2E7D32",
+        "stroke_width": 2
+      },
+      "part.prop": {
+        "fill": "#FFF3E0",
+        "stroke": "#E65100",
+        "stroke_width": 2
+      },
+      "part.eclss": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.comms": {
+        "fill": "#FFF7ED",
+        "stroke": "#C2410C",
+        "stroke_width": 2
+      },
+      "part.ground": {
+        "fill": "#E3F2FD",
+        "stroke": "#1565C0",
+        "stroke_width": 2
+      },
+      "part.eps": {
+        "fill": "#FEF9C3",
+        "stroke": "#A16207",
+        "stroke_width": 2
+      },
+      "part.dock": {
+        "fill": "#F1F5F9",
+        "stroke": "#475569",
+        "stroke_width": 2
+      },
+      "connector.default": {
+        "stroke": "#334155",
+        "stroke_width": 2
+      }
+    },
+    "subject": "descent"
+  }
+}

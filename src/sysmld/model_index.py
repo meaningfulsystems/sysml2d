@@ -61,6 +61,6 @@ def build_model_index(paths: list[Path]) -> ModelIndex:
             if owner:
                 index.names.add("::".join(owner + [name]))
             index.names.add("::".join(package_stack + [name]))
-            if kind in {"state", "action", "interaction"} and line.endswith("{"):
+            if kind in {"state", "action", "interaction", "use case"} and line.endswith("{"):
                 def_stack.append(name)
     return index

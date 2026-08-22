@@ -1,0 +1,377 @@
+{
+  "$schema": "../../schemas/sysmld.schema.json",
+  "version": "0.1",
+  "mode": "model_based",
+  "model_files": [
+    "apollo.sysml"
+  ],
+  "aliases": {
+    "CMC_Entry": "Apollo11::CMC_Entry",
+    "p61": "Apollo11::CMC_Entry::p61",
+    "p62": "Apollo11::CMC_Entry::p62",
+    "p63": "Apollo11::CMC_Entry::p63",
+    "p64": "Apollo11::CMC_Entry::p64",
+    "p65": "Apollo11::CMC_Entry::p65",
+    "p66": "Apollo11::CMC_Entry::p66",
+    "p67": "Apollo11::CMC_Entry::p67",
+    "toP62": "Apollo11::CMC_Entry::toP62",
+    "toP63": "Apollo11::CMC_Entry::toP63",
+    "toP64": "Apollo11::CMC_Entry::toP64",
+    "toP65": "Apollo11::CMC_Entry::toP65",
+    "toP66": "Apollo11::CMC_Entry::toP66",
+    "toP67": "Apollo11::CMC_Entry::toP67"
+  },
+  "diagram": {
+    "id": "apollo-stm-cmc",
+    "kind": "StateView",
+    "name": "CMC ENTRY P61\u2013P67 (not LGC landing)",
+    "canvas": {
+      "width": 1878,
+      "height": 252,
+      "background": "#FFFFFF"
+    },
+    "frame": {
+      "visible": true
+    },
+    "elements": [
+      {
+        "id": "boundary",
+        "model_ref": "CMC_Entry",
+        "symbol": "boundary",
+        "layout": {
+          "x": 104,
+          "y": 88,
+          "width": 1734,
+          "height": 124,
+          "z": 0
+        },
+        "compartments": {
+          "attributes": false,
+          "ports": false,
+          "actions": false
+        },
+        "style": "boundary.system"
+      },
+      {
+        "id": "initial",
+        "symbol": "initial_state",
+        "layout": {
+          "x": 140,
+          "y": 140,
+          "width": 20,
+          "height": 20,
+          "z": 10
+        },
+        "style": "initial_state"
+      },
+      {
+        "id": "p61",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 318,
+          "y": 124,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p61",
+        "label": "P61 ENTRY",
+        "style": "state.default"
+      },
+      {
+        "id": "p62",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 545,
+          "y": 124,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p62",
+        "label": "P62 ENTRY",
+        "style": "state.default"
+      },
+      {
+        "id": "p63",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 772,
+          "y": 124,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p63",
+        "label": "P63 ENTRY",
+        "style": "state.default"
+      },
+      {
+        "id": "p64",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1000,
+          "y": 124,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p64",
+        "label": "P64 ENTRY",
+        "style": "state.default"
+      },
+      {
+        "id": "p65",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1228,
+          "y": 124,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p65",
+        "label": "P65 ENTRY",
+        "style": "state.default"
+      },
+      {
+        "id": "p66",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1455,
+          "y": 124,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p66",
+        "label": "P66 ENTRY",
+        "style": "state.default"
+      },
+      {
+        "id": "p67",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 1682,
+          "y": 124,
+          "width": 120,
+          "height": 52,
+          "z": 10
+        },
+        "model_ref": "p67",
+        "label": "P67 ENTRY",
+        "style": "state.default"
+      }
+    ],
+    "connections": [
+      {
+        "id": "initial--p61",
+        "model_ref": "CMC_Entry",
+        "source": {
+          "element": "initial",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p61",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p61--p62",
+        "model_ref": "toP62",
+        "source": {
+          "element": "p61",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p62",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p62--p63",
+        "model_ref": "toP63",
+        "source": {
+          "element": "p62",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p63",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p63--p64",
+        "model_ref": "toP64",
+        "source": {
+          "element": "p63",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p64",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p64--p65",
+        "model_ref": "toP65",
+        "source": {
+          "element": "p64",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p65",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p65--p66",
+        "model_ref": "toP66",
+        "source": {
+          "element": "p65",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p66",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "p66--p67",
+        "model_ref": "toP67",
+        "source": {
+          "element": "p66",
+          "anchor": {
+            "side": "right",
+            "offset": 0.5
+          }
+        },
+        "target": {
+          "element": "p67",
+          "anchor": {
+            "side": "left",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
+        "style": "transition"
+      }
+    ],
+    "annotations": [],
+    "styles": {
+      "boundary.system": {
+        "fill": "#FFFFFF",
+        "stroke": "#334155",
+        "stroke_width": 2,
+        "corner_radius": 12
+      },
+      "state.default": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16
+      },
+      "initial_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 1
+      },
+      "final_state": {
+        "fill": "#1E293B",
+        "stroke": "#1E293B",
+        "stroke_width": 2
+      },
+      "transition": {
+        "stroke": "#1D4ED8",
+        "stroke_width": 1.5,
+        "corner_radius": 8,
+        "marker_end": "arrow"
+      },
+      "state.composite": {
+        "fill": "#EFF6FF",
+        "stroke": "#1D4ED8",
+        "stroke_width": 2,
+        "corner_radius": 16,
+        "label_position": "top",
+        "container": true
+      }
+    },
+    "subject": "CMC_Entry"
+  }
+}

@@ -8,18 +8,18 @@
   "default_w": 180,
   "default_h": 78,
   "nodes": {
-    "targetBrowning": {"label": "targetBrowning\n7 levels", "symbol": "value_property", "rank": 0, "order": 0},
-    "inputPower": {"label": "inputPower\n900-1200 W", "symbol": "value_property", "rank": 0, "order": 1},
-    "toastDuration": {"label": "toastDuration\n90-150 s at level 4", "symbol": "value_property", "rank": 0, "order": 2},
+    "targetBrowning": {"label": "targetBrowning", "symbol": "value_property", "rank": 0, "order": 0},
+    "inputPower": {"label": "inputPower", "symbol": "value_property", "rank": 0, "order": 1},
+    "toastDuration": {"label": "toastDuration", "symbol": "value_property", "rank": 0, "order": 2},
     "heatEnergyBalance": {"label": "Heat Energy\nBalance", "rank": 1, "order": 0},
-    "electricalPowerLimit": {"label": "Electrical Power\nLimit <= 1200 W", "rank": 1, "order": 1},
+    "electricalPowerLimit": {"label": "Electrical Power\nLimit", "rank": 1, "order": 1},
     "toastTimingEstimate": {"label": "Toast Timing\nEstimate", "rank": 1, "order": 2},
     "browningTemperatureEstimate": {"label": "Browning Temp\nEstimate", "rank": 2, "order": 0},
-    "surfaceTemperatureLimit": {"label": "Surface Temp\nLimit <= 60 C", "rank": 2, "order": 1},
-    "carriageReleaseTiming": {"label": "Carriage Release\n<= 2 s", "rank": 2, "order": 2},
+    "surfaceTemperatureLimit": {"label": "Surface Temp\nLimit", "rank": 2, "order": 1},
+    "carriageReleaseTiming": {"label": "Carriage Release", "rank": 2, "order": 2},
     "toastTemperature": {"label": "toastTemperature\ncontrolled range", "symbol": "value_property", "rank": 3, "order": 0},
     "surfaceTemperature": {"label": "surfaceTemperature\nexternal touch", "symbol": "value_property", "rank": 3, "order": 1},
-    "releaseTime": {"label": "releaseTime\n<= 2 s", "symbol": "value_property", "rank": 3, "order": 2}
+    "releaseTime": {"label": "releaseTime", "symbol": "value_property", "rank": 3, "order": 2}
   },
   "edges": [
     {"from": "inputPower", "to": "heatEnergyBalance", "label": "bind"},
