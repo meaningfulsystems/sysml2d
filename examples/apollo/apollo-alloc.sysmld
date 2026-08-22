@@ -11,7 +11,7 @@
     "kind": "AllocationView",
     "name": "Apollo 11 Allocations",
     "canvas": {
-      "width": 2311,
+      "width": 2301,
       "height": 476,
       "background": "#FFFFFF"
     },
@@ -90,24 +90,10 @@
         "model_ref": "epsRequirement"
       },
       {
-        "id": "dockingRequirement",
-        "symbol": "requirement",
-        "layout": {
-          "x": 1789,
-          "y": 72,
-          "width": 170,
-          "height": 82,
-          "z": 10
-        },
-        "label": "Docking",
-        "style": "requirement",
-        "model_ref": "dockingRequirement"
-      },
-      {
         "id": "rcsRequirement",
         "symbol": "requirement",
         "layout": {
-          "x": 2069,
+          "x": 1789,
           "y": 72,
           "width": 170,
           "height": 82,
@@ -345,11 +331,11 @@
           "waypoints": [
             {
               "x": 754,
-              "y": 202.889
+              "y": 207
             },
             {
               "x": 1034,
-              "y": 202.889
+              "y": 207
             }
           ]
         },
@@ -416,11 +402,11 @@
           "waypoints": [
             {
               "x": 1594,
-              "y": 219.333
+              "y": 225.5
             },
             {
               "x": 1561,
-              "y": 219.333
+              "y": 225.5
             }
           ]
         },
@@ -456,11 +442,11 @@
           "waypoints": [
             {
               "x": 1594,
-              "y": 235.778
+              "y": 244
             },
             {
               "x": 1832,
-              "y": 235.778
+              "y": 244
             }
           ]
         },
@@ -496,11 +482,11 @@
           "waypoints": [
             {
               "x": 1594,
-              "y": 252.222
+              "y": 281
             },
             {
               "x": 2112,
-              "y": 252.222
+              "y": 281
             }
           ]
         },
@@ -514,37 +500,6 @@
         ],
         "style": "connector.allocation",
         "model_ref": "allocateEPSToDescent"
-      },
-      {
-        "id": "conn-dockingRequirement-CM",
-        "source": {
-          "element": "dockingRequirement",
-          "anchor": {
-            "side": "bottom",
-            "offset": 0.5
-          }
-        },
-        "target": {
-          "element": "CM",
-          "anchor": {
-            "side": "top",
-            "offset": 0.5
-          }
-        },
-        "route": {
-          "kind": "orthogonal",
-          "waypoints": []
-        },
-        "labels": [
-          {
-            "text": "allocate",
-            "position": {
-              "offset": 0.5
-            }
-          }
-        ],
-        "style": "connector.allocation",
-        "model_ref": "allocateDockToCM"
       },
       {
         "id": "conn-rcsRequirement-SM",
@@ -566,12 +521,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2154,
-              "y": 285.111
+              "x": 1874,
+              "y": 262.5
             },
             {
               "x": 1627,
-              "y": 285.111
+              "y": 262.5
             }
           ]
         },
@@ -606,12 +561,12 @@
           "kind": "orthogonal",
           "waypoints": [
             {
-              "x": 2154,
-              "y": 301.556
+              "x": 1874,
+              "y": 299.5
             },
             {
               "x": 1916,
-              "y": 301.556
+              "y": 299.5
             }
           ]
         },

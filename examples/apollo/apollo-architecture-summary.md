@@ -61,11 +61,11 @@ The engine table is the number fight. There is no required thrust. SPS and DPS c
 | SPS | 20,500 lbf (Press Kit) | 21,500 lbf vac (TN D-7375) | — |
 | DPS | 9,870 / 1,050–6,300 lbf (Press Kit) | 10,500 lbf 10:1 (TN D-7143) | 9,870 / 1,050–6,800 lbf (LMA790) |
 
-LM APS is 3,500 lbf, 90% in 0.450 s, 1.5° cant (NASA, 1973a, Technical Note D-7082). F-1 ×5 is 1,530,000 lbf each, sourced as SA-507, not AS-506. F-1 hydraulics are collapsed. J-2 is 230,000 lbf on S-II ×5 and 207,000 lbf on S-IVB ×1.
+LM APS is 3,500 lbf, 90% in 0.450 s, 1.5° cant (NASA, 1973a, Technical Note D-7082). F-1 ×5 is 1,530,000 lbf each, sourced as SA-507, not AS-506. F-1 hydraulics are collapsed. J-2 is 230,000 lbf on S-II ×5. On S-IVB ×1 the cites are 200,000 lbf (Press Kit) beside 207,000 lbf (Flight Manual / SA-507). No winner.
 
 SM RCS is 100 lbf/engine (NASA, 1969b, p. 93), four quads. LM RCS is 100 lbf/engine (NASA, 1969b, p. 106). CM RCS is 93 lbf/engine, two systems of six, no automatic translation. Loaded SM/CM RCS propellant mass is unmarked.
 
-There are two Apollo Guidance Computers (AGC): `AGC_CM` and `AGC_LM`. They are not one machine with two nameplates. Block II is 16-bit, 2048 erasable / 36864 fixed, 1.024 MHz, memory cycle time (MCT) 11.7 µs, 65 lb / 70 W (AGCIS 30). The CM is 1 AGC + 2 Display and Keyboard (DSKY). The LM is 1 AGC + 1 DSKY. A11 ropes are Comanche 055 on AGC_CM and Luminary 1A LMY99/1 on AGC_LM. Command Module Computer (CMC) P61–P67 is entry. Lunar Module Guidance Computer (LGC) P63–P68 is landing. Pulse Integrating Pendulous Accelerometer (PIPA) scale is CM 5.85 cm/s/pulse versus LM 1.0 cm/s/pulse.
+There are two Apollo Guidance Computers (AGC): `AGC_CM` and `AGC_LM`. They are not one machine with two nameplates. Block II is 16-bit, 2048 erasable / 36864 fixed, 1.024 MHz, memory cycle time (MCT) 11.7 µs, 65 lb / 70 W (MIT R-700 Volume III). AGCIS 30 is the ~60 lb approximation and stays unmarked; the sources used here do not give it a full title. The CM is 1 AGC + 2 Display and Keyboard (DSKY). The LM is 1 AGC + 1 DSKY. A11 ropes are Comanche 055 on AGC_CM and Luminary 1A LMY99/1 on AGC_LM. Command Module Computer (CMC) P61–P67 is entry. Lunar Module Guidance Computer (LGC) P63–P68 is landing. Pulse Integrating Pendulous Accelerometer (PIPA) scale is CM 5.85 cm/s/pulse versus LM 1.0 cm/s/pulse.
 
 The IU is physically LVDC + ST-124 + Flight Control Computer (FCC). LVDC is 82.03125 µs, 26+2 bits, with no digital AGC↔LVDC, and the IU owns boost + TLI. Abort Guidance System (AGS) is Abort Electronics Assembly (AEA) + Abort Sensor Assembly (ASA) + Data Entry and Display Assembly (DEDA): AEA 4096×18, 5 µs, 32.7 lb, not a landing computer (Kurten, 1975, Technical Note D-7990). AGS ≠ DSKY. AGS display is DEDA. R47 inits AGS from PNGS. Verb 37 (V37) is mode, V36 is fresh start, V69 is restart. 1201/1202 is executive overflow, not an abort.
 
@@ -79,7 +79,7 @@ Telemetry comes back as pulse-code modulation (PCM). The rate is 51.2 or 1.6 kbp
 
 The Lunar Module cannot share the Command Module pair. Its uplink is 2101.802 MHz. Its downlink is 2282.5 MHz. The steerable antenna is 20.5 dB transmit. The amplitron is 20 W. The LM does not run PM and FM at the same time.
 
-The High-Gain Antenna has three beam widths. Wide is 8.0 dB. Medium is 18.0 dB. Narrow is 25.7 dB. The power amplifier is 11.2 W on PM and 12.6 W on FM. The crew picks the beam. The ground cannot command it on Block II.
+The High-Gain Antenna (HGA) has three transmit gains from Technical Note D-6723 Table I: wide 8.0 dB, medium 18.0 dB, and narrow 25.7 dB. Those figures are not beam widths. The beam widths are 40.0 / 11.3 / 4.4 degrees. The power amplifier is 11.2 W on PM and 12.6 W on FM. The crew picks the beam. The ground cannot command it on Block II.
 
 A command from a Flight Controller (FC) has to walk a path before the stack hears it. That path is Path A. It goes to the Command and Communications Controller (CCC), then the RTCC, then Communications, Command, and Telemetry System (CCATS), then site 642B, then USB at 70 kHz. P27 is a different door. It accepts verbs V70–V73 only. Close-in voice uses Very High Frequency (VHF). Those frequencies are 296.8 MHz and 259.7 MHz. Recovery uses 243.0 MHz.
 
@@ -135,7 +135,7 @@ The mechanical stack is Saturn first stage to second stage to third stage to Ins
 
 The hop that must stay is Translunar Injection → dock and eject → translunar coast → Lunar Orbit Insertion. There is no hop from Translunar Injection straight to translunar coast. Dock and eject is after Translunar Injection and before translunar coast.
 
-countdown → boost → Earth orbit → Translunar Injection → dock and eject → translunar coast → Lunar Orbit Insertion → undock → Descent Orbit Insertion → descent → surface extravehicular activity → ascent → rendezvous → Trans-Earth Injection → entry → recovery
+countdown → boost → Earth orbit → Translunar Injection → dock and eject → translunar coast → Lunar Orbit Insertion → undock → Descent Orbit Insertion → Braking → Approach → Rate of descent → landing confirmation → surface extravehicular activity → ascent → rendezvous → Trans-Earth Injection → entry → recovery
 
 Tower clear starts boost. Orbital insertion follows engine cutoff. The Translunar Injection burn, then Lunar Module extract, then the Service Propulsion Lunar Orbit Insertion burn. Descent Propulsion does Descent Orbit Insertion. Apollo 11 lands under rate of descent. Ascent follows surface extravehicular activity. Service Propulsion does Trans-Earth Injection. The recovery force closes the book.
 
@@ -147,7 +147,7 @@ Earth coast holds countdown through Lunar Orbit Insertion. The locked hop sits o
 
 *Apollo earth coast. The locked hop is Translunar Injection, then dock and eject, then translunar coast, then Lunar Orbit Insertion.*
 
-Lunar return holds Lunar Orbit Insertion through recovery. Arrows on that page are English: braking, landing confirmation, ascent, and rendezvous.
+Lunar return holds Lunar Orbit Insertion through recovery. Braking sits inside Descent, between Descent Orbit Insertion and Approach. The walk is Descent Orbit Insertion to Braking to Approach to Rate of descent to landing confirmation to Surface extravehicular activity. Arrows on that page are English: landing confirmation, ascent, and rendezvous.
 
 ![Apollo lunar states](apollo-stm-lunar.svg)
 
@@ -190,6 +190,10 @@ National Aeronautics and Space Administration. (1969a, May 20). *69-HC-620* [Pho
 National Aeronautics and Space Administration. (1969b). *Apollo 11 press kit* (69-83K).
 
 National Aeronautics and Space Administration. (1969c, November). *Apollo 11 Mission Report* (MSC-00171).
+
+Hall, E. C. (1972, August). *MIT's Role in Project Apollo, Volume III: Computer Subsystem* (R-700).
+
+National Aeronautics and Space Administration. (1972). *Apollo Experience Report: S-Band System Signal Design and Analysis* (Technical Note D-6723).
 
 National Aeronautics and Space Administration. (1972). *Apollo Experience Report: Lunar Module Environmental Control Subsystem* (Technical Note D-6724).
 

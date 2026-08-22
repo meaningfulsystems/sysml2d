@@ -8,73 +8,29 @@ package Apollo11 {
         part RSO : RSO;
         part recovery : RecoveryForces;
 
-        port rsoDestructOut : UhfDestructPort;
-        port SICDestructIn : UhfDestructPort;
-        port KSC_LCCUmbilicalOut : UmbilicalPort;
-        port SICUmbilicalIn : UmbilicalPort;
-        port KSC_LCCHandoffOut : VoicePort;
-        port MCCHandoffIn : VoicePort;
-        port IUBoostOut : GuidancePort;
-        port SICIuIn : GuidancePort;
-        port SIIIuIn : GuidancePort;
-        port SIVBIuIn : GuidancePort;
-        port IUTliOut : GuidancePort;
-        port SIVBTliIn : GuidancePort;
-        port SICToSIIOut : MechanicalPort;
-        port SIIFromSICIn : MechanicalPort;
-        port SIIToSIVBOut : MechanicalPort;
-        port SIVBFromSIIIn : MechanicalPort;
-        port SIVBToIUOut : MechanicalPort;
-        port IUFromSIVBIn : MechanicalPort;
-        port IUToSLAOut : MechanicalPort;
-        port SLAFromIUIn : MechanicalPort;
-        port SLAToSMOut : MechanicalPort;
-        port SMFromSLAIn : MechanicalPort;
-        port LESToCMOut : MechanicalPort;
-        port CMFromLESIn : MechanicalPort;
-        port CMToSMOut : MechanicalPort;
-        port SMFromCMIn : MechanicalPort;
-        port SLALmOut : MechanicalPort;
-        port descentSlaIn : MechanicalPort;
-        port CMDockOut : DockingPort;
-        port ascentDockIn : DockingPort;
-        port descentToAscentOut : MechanicalPort;
-        port ascentFromDescentIn : MechanicalPort;
-        port MSFNUsbOut : UsbPort;
-        port CMUsbIn : UsbPort;
-        port LMUsbIn : UsbPort;
-        port NASCOMOut : NascomPort;
-        port NASCOMIn : NascomPort;
-        port NASCOMToMCCOut : NascomPort;
-        port MCCFromNASCOMIn : NascomPort;
-        port MCCCcatsOut : CommandPort;
-        port MSFN642BIn : CommandPort;
-        port recoveryToCMOut : RecoveryPort;
-        port CMRecoveryIn : RecoveryPort;
-
-        connection rsoToSIC connect rsoDestructOut to SICDestructIn;
-        connection KSC_LCCToSIC connect KSC_LCCUmbilicalOut to SICUmbilicalIn;
-        connection KSC_LCCToMCCHandoff connect KSC_LCCHandoffOut to MCCHandoffIn;
-        connection IUToSIC connect IUBoostOut to SICIuIn;
-        connection IUToSII connect IUBoostOut to SIIIuIn;
-        connection IUToSIVBBoost connect IUBoostOut to SIVBIuIn;
-        connection IUToSIVBTli connect IUTliOut to SIVBTliIn;
-        connection SICToSII connect SICToSIIOut to SIIFromSICIn;
-        connection SIIToSIVB connect SIIToSIVBOut to SIVBFromSIIIn;
-        connection SIVBToIU connect SIVBToIUOut to IUFromSIVBIn;
-        connection IUToSLA connect IUToSLAOut to SLAFromIUIn;
-        connection SLAToSM connect SLAToSMOut to SMFromSLAIn;
-        connection LESToCM connect LESToCMOut to CMFromLESIn;
-        connection CMToSM connect CMToSMOut to SMFromCMIn;
-        connection SLAToDescent connect SLALmOut to descentSlaIn;
-        connection CMToAscent connect CMDockOut to ascentDockIn;
-        connection descentToAscent connect descentToAscentOut to ascentFromDescentIn;
-        connection MSFNToCMUsb connect MSFNUsbOut to CMUsbIn;
-        connection MSFNToLMUsb connect MSFNUsbOut to LMUsbIn;
-        connection NASCOMToGround connect NASCOMOut to NASCOMIn;
-        connection NASCOMToMCC connect NASCOMToMCCOut to MCCFromNASCOMIn;
-        connection MCCToMSFNCommand connect MCCCcatsOut to MSFN642BIn;
-        connection recoveryToCM connect recoveryToCMOut to CMRecoveryIn;
+        connection rsoToSIC connect RSO.rsoDestructOut to SaturnV.SIC.SICDestructIn;
+        connection KSC_LCCToSIC connect Ground.KSC_LCC.KSC_LCCUmbilicalOut to SaturnV.SIC.SICUmbilicalIn;
+        connection KSC_LCCToMCCHandoff connect Ground.KSC_LCC.KSC_LCCHandoffOut to Ground.MCC.MCCHandoffIn;
+        connection IUToSIC connect SaturnV.IU.IUBoostOut to SaturnV.SIC.SICIuIn;
+        connection IUToSII connect SaturnV.IU.IUBoostOut to SaturnV.SII.SIIIuIn;
+        connection IUToSIVBBoost connect SaturnV.IU.IUBoostOut to SaturnV.SIVB.SIVBIuIn;
+        connection IUToSIVBTli connect SaturnV.IU.IUTliOut to SaturnV.SIVB.SIVBTliIn;
+        connection SICToSII connect SaturnV.SIC.SICToSIIOut to SaturnV.SII.SIIFromSICIn;
+        connection SIIToSIVB connect SaturnV.SII.SIIToSIVBOut to SaturnV.SIVB.SIVBFromSIIIn;
+        connection SIVBToIU connect SaturnV.SIVB.SIVBToIUOut to SaturnV.IU.IUFromSIVBIn;
+        connection IUToSLA connect SaturnV.IU.IUToSLAOut to SaturnV.SLA.SLAFromIUIn;
+        connection SLAToSM connect SaturnV.SLA.SLAToSMOut to CSM.SM.SMFromSLAIn;
+        connection LESToCM connect SaturnV.LES.LESToCMOut to CSM.CM.CMFromLESIn;
+        connection CMToSM connect CSM.CM.CMToSMOut to CSM.SM.SMFromCMIn;
+        connection SLAToDescent connect SaturnV.SLA.SLALmOut to LM.descent.descentSlaIn;
+        connection CMToAscent connect CSM.CM.CMDockOut to LM.ascent.ascentDockIn;
+        connection descentToAscent connect LM.descent.descentToAscentOut to LM.ascent.ascentFromDescentIn;
+        connection MSFNToCMUsb connect Ground.MSFN.MSFNUsbOut to CSM.CM.CMUsbIn;
+        connection MSFNToLMUsb connect Ground.MSFN.MSFNUsbOut to LM.ascent.LMUsbIn;
+        connection NASCOMToGround connect Ground.NASCOM.NASCOMOut to Ground.MSFN.NASCOMIn;
+        connection NASCOMToMCC connect Ground.NASCOM.NASCOMToMCCOut to Ground.MCC.MCCFromNASCOMIn;
+        connection MCCToMSFNCommand connect Ground.MCC.MCCCcatsOut to Ground.MSFN.MSFN642BIn;
+        connection recoveryToCM connect recovery.recoveryToCMOut to CSM.CM.CMRecoveryIn;
     }
 
     package SaturnV {
@@ -88,24 +44,46 @@ package Apollo11 {
         }
         part def SIC {
             part F1 : F1;
+            port SICDestructIn : UhfDestructPort;
+            port SICUmbilicalIn : UmbilicalPort;
+            port SICIuIn : GuidancePort;
+            port SICToSIIOut : MechanicalPort;
             doc /* Stack serial S-IC-6. A11 PK p.109: 5,022,674 fueled / 288,750 dry; LOX 3,307,855; RP-1 1,426,069; liftoff 7,653,854 lbf. */
         }
         part def SII {
             part J2 : J2;
+            port SIIIuIn : GuidancePort;
+            port SIIFromSICIn : MechanicalPort;
+            port SIIToSIVBOut : MechanicalPort;
             doc /* Stack serial S-II-6. A11 PK p.109: 1,059,171 fueled / 79,918 dry; LOX 821,022; LH2 158,221. */
         }
         part def SIVB {
             part J2 : J2;
+            port SIVBIuIn : GuidancePort;
+            port SIVBTliIn : GuidancePort;
+            port SIVBFromSIIIn : MechanicalPort;
+            port SIVBToIUOut : MechanicalPort;
             doc /* Stack serial S-IVB-6N. A11 PK p.109: 260,523 fueled / 25,000 dry; LOX 192,023; LH2 43,500. */
         }
         part def IU {
             part LVDC : LVDC;
             part ST124 : ST124;
             part FCC : FCC;
+            port IUBoostOut : GuidancePort;
+            port IUTliOut : GuidancePort;
+            port IUFromSIVBIn : MechanicalPort;
+            port IUToSLAOut : MechanicalPort;
             doc /* Stack serial IU-6. A11 PK p.109: 4,306 lb. IU physically is LVDC + ST-124 + Flight Control Computer (FCC). No digital AGC↔LVDC. */
         }
-        part def SLA { doc /* Stack serial SLA-14. Eight panels: four jettison, four stay. LM extract after transposition. */ }
-        part def LES;
+        part def SLA {
+            port SLAFromIUIn : MechanicalPort;
+            port SLAToSMOut : MechanicalPort;
+            port SLALmOut : MechanicalPort;
+            doc /* Stack serial SLA-14. Eight panels: four jettison, four stay. LM extract after transposition. */
+        }
+        part def LES {
+            port LESToCMOut : MechanicalPort;
+        }
         part def F1;
         part def J2;
         part def LVDC { doc /* 82.03125 µs, 26+2 bits. No digital AGC↔LVDC. */ }
@@ -121,6 +99,11 @@ package Apollo11 {
         }
         part def CM {
             doc /* A11 PK p.109: 12,250 lb. */
+            port CMFromLESIn : MechanicalPort;
+            port CMToSMOut : MechanicalPort;
+            port CMDockOut : DockingPort;
+            port CMUsbIn : UsbPort;
+            port CMRecoveryIn : RecoveryPort;
             part SCS : SCS;
             part AGC_CM : AGC_CM;
             part IMU : IMU;
@@ -157,6 +140,8 @@ package Apollo11 {
         }
         part def SM {
             doc /* A11 PK p.109: 51,243 lb. SPS loaded mass UNKNOWN. A11 SM cryo is 2+2 (two H2 + two O2), not J-mission 3+3. */
+            port SMFromSLAIn : MechanicalPort;
+            port SMFromCMIn : MechanicalPort;
             part SPS : SPS;
             part RCS : RCS;
             part FC1 : FC;
@@ -231,6 +216,8 @@ package Apollo11 {
             connection PNGSToLandingRadar connect ascent.PNGS to descent.landingRadar;
         }
         part def descent {
+            port descentSlaIn : MechanicalPort;
+            port descentToAscentOut : MechanicalPort;
             part DPS : DPS;
             part AgZn1 : AgZn;
             part AgZn2 : AgZn;
@@ -244,6 +231,9 @@ package Apollo11 {
             connection ECAToAgZn4 connect ECA to AgZn4;
         }
         part def ascent {
+            port ascentDockIn : DockingPort;
+            port ascentFromDescentIn : MechanicalPort;
+            port LMUsbIn : UsbPort;
             part PNGS : PNGS;
             part AGC_LM : AGC_LM;
             part AGS : AGS;
@@ -334,11 +324,17 @@ package Apollo11 {
             part MSFN : MSFN;
             part NASCOM : NASCOM;
         }
-        part def KSC_LCC;
+        part def KSC_LCC {
+            port KSC_LCCUmbilicalOut : UmbilicalPort;
+            port KSC_LCCHandoffOut : VoicePort;
+        }
         part def MCC {
             part RTCC : RTCC;
             part MOCR2 : MOCR;
             part CCATS : CCATS;
+            port MCCHandoffIn : VoicePort;
+            port MCCFromNASCOMIn : NascomPort;
+            port MCCCcatsOut : CommandPort;
             doc /* A11 MCC is MOCR 2. Handoff from KSC_LCC at tower clear — Mission Rule 1-21. */
         }
         part def RTCC {
@@ -367,17 +363,26 @@ package Apollo11 {
             part Madrid : Madrid;
             part Honeysuckle : Honeysuckle;
             part ships : AISShip;
+            port MSFNUsbOut : UsbPort;
+            port NASCOMIn : NascomPort;
+            port MSFN642BIn : CommandPort;
         }
         part def Goldstone;
         part def Madrid;
         part def Honeysuckle;
         part def AISShip;
-        part def NASCOM;
+        part def NASCOM {
+            port NASCOMOut : NascomPort;
+            port NASCOMToMCCOut : NascomPort;
+        }
     }
 
-    part def RSO;
+    part def RSO {
+        port rsoDestructOut : UhfDestructPort;
+    }
     part def RecoveryForces {
         part Hornet : Hornet;
+        port recoveryToCMOut : RecoveryPort;
         doc /* USS Hornet (CV-12). Splash flown 195:18:35 GET. 13 nmi from USS Hornet, not from the target. Weather-revised miss ~1.7 nmi. */
     }
     part def Hornet;
@@ -418,9 +423,11 @@ package Apollo11 {
             state afterUndock;
             state DOI;
             state descent {
-                entry; then approach;
+                entry; then braking;
+                state braking;
                 state approach;
                 state rateOfDescent;
+                transition startApproach first braking then approach;
                 transition startRateOfDescent first approach then rateOfDescent;
             }
             state surfaceEVA;
@@ -430,7 +437,7 @@ package Apollo11 {
             state entry;
             state recovery;
             transition startDOI first undock accept doiBurn then DOI;
-            transition startDescent first DOI accept p63 then approach;
+            transition startDescent first DOI accept p63 then braking;
             transition touchdown first rateOfDescent accept p68 then surfaceEVA;
             transition startAscent first surfaceEVA accept p12 then ascent;
             transition startRndz first ascent accept p30 then rendezvous;
@@ -636,7 +643,7 @@ package Apollo11 {
 
     requirement usbCsmRequirement { doc /* The stack shall communicate with Mission Control on Unified S-Band. USB CSM: uplink 2106.40625 MHz; PM down 2287.5; FM down 2272.5. PCM 51.2 or 1.6 kbps. Uplink digital ~2 kbps. PRN range 992 kbps, ±15 m, ~540,000 mi unambiguous. */ }
     requirement usbLmRequirement { doc /* USB LM: uplink 2101.802 MHz; down 2282.5. LM steerable 20.5 dB tx; amplitron 20 W; no simultaneous PM+FM. */ }
-    requirement csmHgaRequirement { doc /* CSM HGA: wide 8.0 dB / med 18.0 / narrow 25.7. PA 11.2 W PM / 12.6 W FM. Antennas CREW-selected, not ground-commandable on Block II. */ }
+    requirement csmHgaRequirement { doc /* CSM High-Gain Antenna (HGA): transmit gains wide 8.0 / med 18.0 / narrow 25.7 dB (Technical Note D-6723 Table I), not beam widths. Beam widths 40.0 / 11.3 / 4.4 degrees. PA 11.2 W PM / 12.6 W FM. Antennas CREW-selected, not ground-commandable on Block II. */ }
     requirement p27Requirement { doc /* P27 uplink verbs ONLY V70–V73 (clock/block/scatter). Separate from CCATS real-time command-load path. */ }
     requirement commandPathARequirement { doc /* Path A: FC→CCC→RTCC→CCATS→site 642B→USB 70 kHz. */ }
     requirement cmEcsRequirement { doc /* CM ECLSS: 3 crew / 14 d spec; 5.0 psia 100% O2; CO2 ≤7.6 torr; SM O2 640 lb; potable 36 lb / waste 56 lb; LiOH 1.5 man-day, swap 12 h. A11 mission 196 h vs 336 h spec. */ }
@@ -646,7 +653,7 @@ package Apollo11 {
     requirement delayRequirement { doc /* Lunar delay = range/c (~1.3 s). Entry blackout duration UNKNOWN. */ }
     requirement earthOrbitRequirement { doc /* Earth parking orbit 100 nmi planned. */ }
     requirement f1Requirement { doc /* F-1 ×5 @ 1,530,000 lbf each (SA-507). F-1 hydraulics collapsed. */ }
-    requirement j2Requirement { doc /* J-2 ×5 @ 230,000 lbf (S-II); J-2 ×1 @ 207,000 lbf (S-IVB). */ }
+    requirement j2Requirement { doc /* J-2 ×5 @ 230,000 lbf (S-II); J-2 ×1 @ 200,000 lbf (Press Kit) vs 207,000 lbf (Flight Manual / SA-507). No winner. */ }
     requirement spsRequirement { doc /* Engine conflict — cite both, no silent winner, no required thrust: SPS 20,500 lbf (PK) vs 21,500 lbf (TN D-7375). SPS loaded mass UNKNOWN. */ }
     requirement dpsRequirement { doc /* Engine conflict — cite all three, no silent winner, no required thrust: DPS 9,870 / 1,050–6,300 lbf (PK) vs 10,500 lbf 10:1 (TN D-7143) vs 9,870 / 1,050–6,800 lbf (LMA790). */ }
     requirement apsRequirement { doc /* APS 3,500 lbf, 90% in 0.450 s (TN D-7082); 1.5° cant. */ }
@@ -716,20 +723,18 @@ package Apollo11 {
     verification case verifyP27;
     verification case verifyRso;
 
-    allocation allocateBoostToIU;
-    allocation allocateTliToIU;
-    allocation allocateDestructToRSO;
-    allocation allocateAGC_CMToCM;
-    allocation allocateAGC_LMToLM;
-    allocation allocateAGSToLM;
-    allocation allocateLVDCToIU;
-    allocation allocatePathAToCCATS;
-    allocation allocatePathBToP27;
-    allocation allocateEPSToSM;
-    allocation allocateEPSToCM;
-    allocation allocateEPSToDescent;
-    allocation allocateDockToCM;
-    allocation allocateDockToLM;
-    allocation allocateRCSToSM;
-    allocation allocateRCSToCM;
+    allocation allocateBoostToIU allocate boost to IU;
+    allocation allocateTliToIU allocate TLI to IU;
+    allocation allocateDestructToRSO allocate rsoRequirement to RSO;
+    allocation allocateAGC_CMToCM allocate AGC_CM to CM;
+    allocation allocateAGC_LMToLM allocate AGC_LM to LM;
+    allocation allocateAGSToLM allocate AGS to LM;
+    allocation allocateLVDCToIU allocate LVDC to IU;
+    allocation allocatePathAToCCATS allocate commandPathA to CCATS;
+    allocation allocatePathBToP27 allocate commandPathB to p27;
+    allocation allocateEPSToSM allocate epsRequirement to SM;
+    allocation allocateEPSToCM allocate epsRequirement to CM;
+    allocation allocateEPSToDescent allocate epsRequirement to descent;
+    allocation allocateRCSToSM allocate rcsRequirement to SM;
+    allocation allocateRCSToCM allocate rcsRequirement to CM;
 }
