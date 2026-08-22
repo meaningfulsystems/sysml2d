@@ -11,8 +11,10 @@
     "undock": "Apollo11::MissionPhase::lunarReturn::undock",
     "DOI": "Apollo11::MissionPhase::lunarReturn::DOI",
     "descent": "Apollo11::MissionPhase::lunarReturn::descent",
+    "braking": "Apollo11::MissionPhase::lunarReturn::descent::braking",
     "approach": "Apollo11::MissionPhase::lunarReturn::descent::approach",
     "rateOfDescent": "Apollo11::MissionPhase::lunarReturn::descent::rateOfDescent",
+    "startApproach": "Apollo11::MissionPhase::lunarReturn::descent::startApproach",
     "startRateOfDescent": "Apollo11::MissionPhase::lunarReturn::descent::startRateOfDescent",
     "surfaceEVA": "Apollo11::MissionPhase::lunarReturn::surfaceEVA",
     "ascent": "Apollo11::MissionPhase::lunarReturn::ascent",
@@ -35,7 +37,7 @@
     "kind": "StateView",
     "name": "Apollo 11 Lunar Return",
     "canvas": {
-      "width": 1275,
+      "width": 1273,
       "height": 764,
       "background": "#FFFFFF"
     },
@@ -49,9 +51,9 @@
         "symbol": "boundary",
         "layout": {
           "x": -7,
-          "y": 5,
-          "width": 1242,
-          "height": 719,
+          "y": -30,
+          "width": 1240,
+          "height": 754,
           "z": 0
         },
         "compartments": {
@@ -66,9 +68,9 @@
         "symbol": "state_usage",
         "layout": {
           "x": 29,
-          "y": 41,
-          "width": 1170,
-          "height": 647,
+          "y": 6,
+          "width": 1168,
+          "height": 682,
           "z": 4
         },
         "model_ref": "lunarReturn",
@@ -133,10 +135,10 @@
         "id": "descent",
         "symbol": "state_usage",
         "layout": {
-          "x": 338,
-          "y": 274,
+          "x": 337,
+          "y": 76,
           "width": 270,
-          "height": 369,
+          "height": 567,
           "z": 5
         },
         "model_ref": "descent",
@@ -144,11 +146,25 @@
         "style": "state.composite"
       },
       {
+        "id": "braking",
+        "symbol": "state_usage",
+        "layout": {
+          "x": 388,
+          "y": 542,
+          "width": 168,
+          "height": 56,
+          "z": 10
+        },
+        "model_ref": "braking",
+        "label": "Braking",
+        "style": "state.default"
+      },
+      {
         "id": "approach",
         "symbol": "state_usage",
         "layout": {
-          "x": 389,
-          "y": 542,
+          "x": 388,
+          "y": 344,
           "width": 168,
           "height": 56,
           "z": 10
@@ -161,8 +177,8 @@
         "id": "rateOfDescent",
         "symbol": "state_usage",
         "layout": {
-          "x": 383,
-          "y": 344,
+          "x": 382,
+          "y": 146,
           "width": 180,
           "height": 56,
           "z": 10
@@ -175,7 +191,7 @@
         "id": "surfaceEVA",
         "symbol": "state_usage",
         "layout": {
-          "x": 373,
+          "x": 670,
           "y": 142,
           "width": 200,
           "height": 64,
@@ -189,8 +205,8 @@
         "id": "ascent",
         "symbol": "state_usage",
         "layout": {
-          "x": 687,
-          "y": 146,
+          "x": 686,
+          "y": 344,
           "width": 168,
           "height": 56,
           "z": 10
@@ -203,8 +219,8 @@
         "id": "rendezvous",
         "symbol": "state_usage",
         "layout": {
-          "x": 687,
-          "y": 344,
+          "x": 686,
+          "y": 542,
           "width": 168,
           "height": 56,
           "z": 10
@@ -217,7 +233,7 @@
         "id": "TEI",
         "symbol": "state_usage",
         "layout": {
-          "x": 687,
+          "x": 984,
           "y": 538,
           "width": 168,
           "height": 64,
@@ -231,8 +247,8 @@
         "id": "entry",
         "symbol": "state_usage",
         "layout": {
-          "x": 986,
-          "y": 542,
+          "x": 984,
+          "y": 344,
           "width": 168,
           "height": 56,
           "z": 10
@@ -245,8 +261,8 @@
         "id": "recovery",
         "symbol": "state_usage",
         "layout": {
-          "x": 986,
-          "y": 344,
+          "x": 984,
+          "y": 146,
           "width": 168,
           "height": 56,
           "z": 10
@@ -339,7 +355,7 @@
         "style": "transition"
       },
       {
-        "id": "DOI--approach",
+        "id": "DOI--braking",
         "model_ref": "startDescent",
         "source": {
           "element": "DOI",
@@ -349,7 +365,7 @@
           }
         },
         "target": {
-          "element": "approach",
+          "element": "braking",
           "anchor": {
             "side": "left",
             "offset": 0.5
@@ -363,21 +379,36 @@
               "y": 572
             },
             {
-              "x": 389,
+              "x": 388,
               "y": 572
             }
           ]
         },
-        "labels": [
-          {
-            "text": "braking",
-            "position": {
-              "segment": 1,
-              "offset": 0.5,
-              "placement": "centerline"
-            }
+        "labels": [],
+        "style": "transition"
+      },
+      {
+        "id": "braking--approach",
+        "model_ref": "startApproach",
+        "source": {
+          "element": "braking",
+          "anchor": {
+            "side": "top",
+            "offset": 0.5
           }
-        ],
+        },
+        "target": {
+          "element": "approach",
+          "anchor": {
+            "side": "bottom",
+            "offset": 0.5
+          }
+        },
+        "route": {
+          "kind": "orthogonal",
+          "waypoints": []
+        },
+        "labels": [],
         "style": "transition"
       },
       {
@@ -410,26 +441,35 @@
         "source": {
           "element": "rateOfDescent",
           "anchor": {
-            "side": "top",
+            "side": "right",
             "offset": 0.5
           }
         },
         "target": {
           "element": "surfaceEVA",
           "anchor": {
-            "side": "bottom",
+            "side": "left",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 562,
+              "y": 172
+            },
+            {
+              "x": 670,
+              "y": 172
+            }
+          ]
         },
         "labels": [
           {
             "text": "landing confirmation",
             "position": {
-              "segment": 0,
+              "segment": 1,
               "offset": 0.5,
               "placement": "centerline"
             }
@@ -443,35 +483,26 @@
         "source": {
           "element": "surfaceEVA",
           "anchor": {
-            "side": "right",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "target": {
           "element": "ascent",
           "anchor": {
-            "side": "left",
+            "side": "top",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 573,
-              "y": 176
-            },
-            {
-              "x": 687,
-              "y": 176
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "ascent",
             "position": {
-              "segment": 1,
+              "segment": 0,
               "offset": 0.5,
               "placement": "centerline"
             }
@@ -518,26 +549,35 @@
         "source": {
           "element": "rendezvous",
           "anchor": {
-            "side": "bottom",
+            "side": "right",
             "offset": 0.5
           }
         },
         "target": {
           "element": "TEI",
           "anchor": {
-            "side": "top",
+            "side": "left",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": []
+          "waypoints": [
+            {
+              "x": 854,
+              "y": 568
+            },
+            {
+              "x": 984,
+              "y": 568
+            }
+          ]
         },
         "labels": [
           {
             "text": "Service Propulsion",
             "position": {
-              "segment": 0,
+              "segment": 1,
               "offset": 0.5,
               "placement": "centerline"
             }
@@ -551,35 +591,26 @@
         "source": {
           "element": "TEI",
           "anchor": {
-            "side": "right",
+            "side": "top",
             "offset": 0.5
           }
         },
         "target": {
           "element": "entry",
           "anchor": {
-            "side": "left",
+            "side": "bottom",
             "offset": 0.5
           }
         },
         "route": {
           "kind": "orthogonal",
-          "waypoints": [
-            {
-              "x": 855,
-              "y": 572
-            },
-            {
-              "x": 986,
-              "y": 572
-            }
-          ]
+          "waypoints": []
         },
         "labels": [
           {
             "text": "entry interface",
             "position": {
-              "segment": 1,
+              "segment": 0,
               "offset": 0.5,
               "placement": "centerline"
             }

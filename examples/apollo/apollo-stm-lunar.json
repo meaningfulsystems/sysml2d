@@ -18,8 +18,10 @@
     "undock": "Apollo11::MissionPhase::lunarReturn::undock",
     "DOI": "Apollo11::MissionPhase::lunarReturn::DOI",
     "descent": "Apollo11::MissionPhase::lunarReturn::descent",
+    "braking": "Apollo11::MissionPhase::lunarReturn::descent::braking",
     "approach": "Apollo11::MissionPhase::lunarReturn::descent::approach",
     "rateOfDescent": "Apollo11::MissionPhase::lunarReturn::descent::rateOfDescent",
+    "startApproach": "Apollo11::MissionPhase::lunarReturn::descent::startApproach",
     "startRateOfDescent": "Apollo11::MissionPhase::lunarReturn::descent::startRateOfDescent",
     "surfaceEVA": "Apollo11::MissionPhase::lunarReturn::surfaceEVA",
     "ascent": "Apollo11::MissionPhase::lunarReturn::ascent",
@@ -71,6 +73,11 @@
       "style": "state.composite",
       "model_ref": "descent",
       "parent": "lunarReturn"
+    },
+    "braking": {
+      "label": "Braking",
+      "model_ref": "braking",
+      "parent": "descent"
     },
     "approach": {
       "label": "Approach",
@@ -137,9 +144,15 @@
     },
     {
       "from": "DOI",
-      "to": "approach",
-      "label": "braking",
+      "to": "braking",
+      "label": "",
       "model_ref": "startDescent"
+    },
+    {
+      "from": "braking",
+      "to": "approach",
+      "label": "",
+      "model_ref": "startApproach"
     },
     {
       "from": "approach",

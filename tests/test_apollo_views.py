@@ -393,8 +393,10 @@ class ApolloViewTests(unittest.TestCase):
         ]
         self.assertLessEqual(len(lunar_children), 10)
         self.assertTrue(lunar_spec["states"]["descent"].get("composite"))
+        self.assertEqual(lunar_spec["states"]["braking"].get("parent"), "descent")
         self.assertEqual(lunar_spec["states"]["approach"].get("parent"), "descent")
         self.assertEqual(lunar_spec["states"]["rateOfDescent"].get("parent"), "descent")
+        self.assertEqual(lunar_spec["states"]["braking"]["label"], "Braking")
         self.assertEqual(lunar_spec["states"]["approach"]["label"], "Approach")
         self.assertEqual(lunar_spec["states"]["rateOfDescent"]["label"], "Rate of descent")
         lunar_hops = {(edge["from"], edge["to"]) for edge in lunar_spec["transitions"]}
@@ -402,6 +404,7 @@ class ApolloViewTests(unittest.TestCase):
             "LOI",
             "undock",
             "DOI",
+            "braking",
             "approach",
             "rateOfDescent",
             "surfaceEVA",
@@ -416,9 +419,11 @@ class ApolloViewTests(unittest.TestCase):
             lunar[1:],
         )
         self.assertIn(("undock", "DOI"), lunar_hops)
-        self.assertIn(("DOI", "approach"), lunar_hops)
+        self.assertIn(("DOI", "braking"), lunar_hops)
+        self.assertIn(("braking", "approach"), lunar_hops)
         self.assertIn(("approach", "rateOfDescent"), lunar_hops)
         self.assertIn(("rateOfDescent", "surfaceEVA"), lunar_hops)
+        self.assertNotIn(("DOI", "approach"), lunar_hops)
         self.assertNotIn(("descent", "surfaceEVA"), lunar_hops)
         self.assertNotIn(("DOI", "descent"), lunar_hops)
         context = json.loads((APOLLO / "apollo-context.json").read_text(encoding="utf-8"))
@@ -621,7 +626,7 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("extravehicular activity", lunar_surface)
         self.assertNotEqual(lunar_surface, "Surface EVA")
         lunar_labels = [edge.get("label", "") for edge in json.loads((APOLLO / "apollo-stm-lunar.json").read_text(encoding="utf-8"))["transitions"]]
-        self.assertIn("braking", lunar_labels)
+        self.assertEqual(json.loads((APOLLO / "apollo-stm-lunar.json").read_text(encoding="utf-8"))["states"]["braking"]["label"], "Braking")
         self.assertIn("landing confirmation", lunar_labels)
         self.assertIn("ascent", lunar_labels)
         self.assertIn("rendezvous", lunar_labels)
@@ -678,6 +683,35 @@ class ApolloViewTests(unittest.TestCase):
         self.assertIn("part FCC : FCC", iu)
         self.assertIn("part LVDC : LVDC", iu)
         self.assertIn("Eight panels: four jettison, four stay", sla)
+        parent = _sysml_block(text, "part def Apollo11")
+        self.assertNotIn("port ", parent)
+        self.assertIn("connect RSO.rsoDestructOut to SaturnV.SIC.SICDestructIn", parent)
+        self.assertIn("connect SaturnV.IU.IUBoostOut to SaturnV.SIC.SICIuIn", parent)
+        self.assertIn("connect Ground.MSFN.MSFNUsbOut to CSM.CM.CMUsbIn", parent)
+        rso = _sysml_block(text, "part def RSO")
+        sic = _sysml_block(text, "part def SIC")
+        self.assertIn("port rsoDestructOut", rso)
+        self.assertIn("port SICDestructIn", sic)
+        self.assertIn("port IUBoostOut", iu)
+        self.assertIn("allocation allocateBoostToIU allocate boost to IU", text)
+        self.assertIn("allocation allocateTliToIU allocate TLI to IU", text)
+        self.assertIn("allocation allocateDestructToRSO allocate rsoRequirement to RSO", text)
+        self.assertIn("allocation allocatePathAToCCATS allocate commandPathA to CCATS", text)
+        self.assertIn("allocation allocatePathBToP27 allocate commandPathB to p27", text)
+        self.assertNotIn("allocation allocateBoostToIU;", text)
+        self.assertIn("transmit gains wide 8.0 / med 18.0 / narrow 25.7 dB", text)
+        self.assertIn("Beam widths 40.0 / 11.3 / 4.4 degrees", text)
+        self.assertNotIn("wide 8.0 dB / med 18.0 / narrow 25.7.", text)
+        self.assertIn("state braking", text)
+        self.assertIn("first DOI accept p63 then braking", text)
+        self.assertIn("first braking then approach", text)
+        self.assertIn("65 lb / 70 W (MIT R-700 Volume III)", note)
+        self.assertIn("~60 lb approximation", note)
+        self.assertNotIn("65 lb / 70 W (AGCIS 30)", note)
+        self.assertIn("transmit gains from Technical Note D-6723 Table I", note)
+        self.assertIn("40.0 / 11.3 / 4.4 degrees", note)
+        self.assertNotIn("The High-Gain Antenna has three beam widths. Wide is 8.0 dB.", note)
+        self.assertIn("Descent Orbit Insertion to Braking to Approach to Rate of descent to landing confirmation to Surface extravehicular activity", note)
         ibd = json.loads((APOLLO / "apollo-ibd-lm.json").read_text(encoding="utf-8"))
         self.assertEqual(ibd["aliases"]["landingRadar"], "Apollo11::LM::descent::landingRadar")
         self.assertEqual(ibd["aliases"]["rendezvousRadar"], "Apollo11::LM::ascent::rendezvousRadar")
