@@ -642,15 +642,21 @@ class ApolloViewTests(unittest.TestCase):
             if edge["to"] in {"SM", "CM", "descent"}
         }
         self.assertNotEqual(right_offsets[("epsRequirement", "SM")], right_offsets[("rcsRequirement", "SM")])
-        self.assertEqual(
-            len({
-                right_offsets[("epsRequirement", "CM")],
-                right_offsets[("dockingRequirement", "CM")],
-                right_offsets[("rcsRequirement", "CM")],
-            }),
-            3,
-        )
+        self.assertNotEqual(right_offsets[("epsRequirement", "CM")], right_offsets[("rcsRequirement", "CM")])
         self.assertIn(("epsRequirement", "descent"), right_offsets)
+        self.assertNotIn(("dockingRequirement", "CM"), right_offsets)
+        self.assertNotIn(("dockingRequirement", "descent"), right_offsets)
+        self.assertNotIn(("rcsRequirement", "descent"), right_offsets)
+        self.assertNotIn("allocateDockToCM", text)
+        self.assertNotIn("allocateDockToLM", text)
+        self.assertNotIn("dockingRequirement", alloc_spec["nodes"])
+        self.assertFalse(any(edge.get("from") == "dockingRequirement" for edge in alloc_spec["edges"]))
+        self.assertIn("200,000 lbf (Press Kit)", text)
+        self.assertIn("207,000 lbf (Flight Manual / SA-507)", text)
+        self.assertIn("200,000 lbf (Press Kit)", note)
+        self.assertIn("207,000 lbf (Flight Manual / SA-507)", note)
+        self.assertNotIn("21,900", text)
+        self.assertNotIn("21,900", note)
         self.assertNotIn("├──", note)
         self.assertNotIn("\n*Saturn V SA-506", note)
         self.assertIn("Stakeholder", note)

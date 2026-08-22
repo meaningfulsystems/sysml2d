@@ -13,8 +13,7 @@
     "agcRequirement": {"label": "Command Module and Lunar\nModule guidance computers", "symbol": "requirement", "rank": 0, "order": 2},
     "agsRequirement": {"label": "Abort Guidance System\nseparate", "symbol": "requirement", "rank": 0, "order": 4},
     "epsRequirement": {"label": "Electrical Power", "symbol": "requirement", "rank": 0, "order": 5},
-    "dockingRequirement": {"label": "Docking", "symbol": "requirement", "rank": 0, "order": 6},
-    "rcsRequirement": {"label": "Reaction Control", "symbol": "requirement", "rank": 0, "order": 7},
+    "rcsRequirement": {"label": "Reaction Control", "symbol": "requirement", "rank": 0, "order": 6},
     "IU": {"label": "Instrument Unit", "symbol": "part_usage", "rank": 1, "order": 0},
     "RSO": {"label": "Range Safety Officer", "symbol": "part_usage", "rank": 1, "order": 1},
     "AGC_CM": {"label": "Command Module\nguidance computer", "symbol": "part_usage", "rank": 1, "order": 2},
@@ -33,7 +32,6 @@
     {"from": "epsRequirement", "to": "SM", "label": "allocate", "model_ref": "allocateEPSToSM", "target_offset": 0.28},
     {"from": "epsRequirement", "to": "CM", "label": "allocate", "model_ref": "allocateEPSToCM", "target_offset": 0.22},
     {"from": "epsRequirement", "to": "descent", "label": "allocate", "model_ref": "allocateEPSToDescent", "target_offset": 0.22},
-    {"from": "dockingRequirement", "to": "CM", "label": "allocate", "model_ref": "allocateDockToCM", "target_offset": 0.50},
     {"from": "rcsRequirement", "to": "SM", "label": "allocate", "model_ref": "allocateRCSToSM", "target_offset": 0.72},
     {"from": "rcsRequirement", "to": "CM", "label": "allocate", "model_ref": "allocateRCSToCM", "target_offset": 0.78}
   ]

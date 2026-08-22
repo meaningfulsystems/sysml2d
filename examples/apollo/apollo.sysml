@@ -653,7 +653,7 @@ package Apollo11 {
     requirement delayRequirement { doc /* Lunar delay = range/c (~1.3 s). Entry blackout duration UNKNOWN. */ }
     requirement earthOrbitRequirement { doc /* Earth parking orbit 100 nmi planned. */ }
     requirement f1Requirement { doc /* F-1 ×5 @ 1,530,000 lbf each (SA-507). F-1 hydraulics collapsed. */ }
-    requirement j2Requirement { doc /* J-2 ×5 @ 230,000 lbf (S-II); J-2 ×1 @ 207,000 lbf (S-IVB). */ }
+    requirement j2Requirement { doc /* J-2 ×5 @ 230,000 lbf (S-II); J-2 ×1 @ 200,000 lbf (Press Kit) vs 207,000 lbf (Flight Manual / SA-507). No winner. */ }
     requirement spsRequirement { doc /* Engine conflict — cite both, no silent winner, no required thrust: SPS 20,500 lbf (PK) vs 21,500 lbf (TN D-7375). SPS loaded mass UNKNOWN. */ }
     requirement dpsRequirement { doc /* Engine conflict — cite all three, no silent winner, no required thrust: DPS 9,870 / 1,050–6,300 lbf (PK) vs 10,500 lbf 10:1 (TN D-7143) vs 9,870 / 1,050–6,800 lbf (LMA790). */ }
     requirement apsRequirement { doc /* APS 3,500 lbf, 90% in 0.450 s (TN D-7082); 1.5° cant. */ }
@@ -735,8 +735,6 @@ package Apollo11 {
     allocation allocateEPSToSM allocate epsRequirement to SM;
     allocation allocateEPSToCM allocate epsRequirement to CM;
     allocation allocateEPSToDescent allocate epsRequirement to descent;
-    allocation allocateDockToCM allocate dockingRequirement to CM;
-    allocation allocateDockToLM allocate dockingRequirement to LM;
     allocation allocateRCSToSM allocate rcsRequirement to SM;
     allocation allocateRCSToCM allocate rcsRequirement to CM;
 }

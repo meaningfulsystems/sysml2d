@@ -61,7 +61,7 @@ The engine table is the number fight. There is no required thrust. SPS and DPS c
 | SPS | 20,500 lbf (Press Kit) | 21,500 lbf vac (TN D-7375) | — |
 | DPS | 9,870 / 1,050–6,300 lbf (Press Kit) | 10,500 lbf 10:1 (TN D-7143) | 9,870 / 1,050–6,800 lbf (LMA790) |
 
-LM APS is 3,500 lbf, 90% in 0.450 s, 1.5° cant (NASA, 1973a, Technical Note D-7082). F-1 ×5 is 1,530,000 lbf each, sourced as SA-507, not AS-506. F-1 hydraulics are collapsed. J-2 is 230,000 lbf on S-II ×5 and 207,000 lbf on S-IVB ×1.
+LM APS is 3,500 lbf, 90% in 0.450 s, 1.5° cant (NASA, 1973a, Technical Note D-7082). F-1 ×5 is 1,530,000 lbf each, sourced as SA-507, not AS-506. F-1 hydraulics are collapsed. J-2 is 230,000 lbf on S-II ×5. On S-IVB ×1 the cites are 200,000 lbf (Press Kit) beside 207,000 lbf (Flight Manual / SA-507). No winner.
 
 SM RCS is 100 lbf/engine (NASA, 1969b, p. 93), four quads. LM RCS is 100 lbf/engine (NASA, 1969b, p. 106). CM RCS is 93 lbf/engine, two systems of six, no automatic translation. Loaded SM/CM RCS propellant mass is unmarked.
 
